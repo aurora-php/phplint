@@ -1,9 +1,11 @@
 ./configure || exit 1
+CC="${CC:-cc}"
+
 echo Compiling...
 if grep -q USE_GC include/missing.c; then
-    cc -lgc src/phplint.c -o src/phplint
+    $CC -lgc src/phplint.c -o src/phplint
 else
-    cc src/phplint.c -o src/phplint
+    $CC src/phplint.c -o src/phplint
 fi || exit 1
 echo Now running PHPLint:
 echo

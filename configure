@@ -27,12 +27,14 @@ echo "#define M2_SYSTEM_TYPE_$t" >> $missing
 
 
 echo "Checking compiler:"
-cc --version 2>&1 >/dev/null \
-|| cc -v  2>&1 >/dev/null
+CC="${CC:-cc}"
+
+$CC --version 2>&1 >/dev/null \
+|| $CC -v  2>&1 >/dev/null
 if [ $? -eq 0 ]; then
 	echo "...ok"
 else
-	echo "ERROR: cc command missing or not in PATH."
+	echo "ERROR: $CC command missing or not in PATH."
 	exit 1
 fi
 
@@ -42,7 +44,7 @@ cat > try.c <<EOT
 #include <alloca.h>
 int main(){ alloca(1); }
 EOT
-cc try.c -o try 2>&1
+$CC try.c -o try 2>&1
 if [ $? -eq 0 ]; then
 	echo "...ok"
 else
@@ -55,7 +57,7 @@ fi
 
 echo "Checking vasprintf():"
 echo "int main(){ vasprintf(); }" > try.c
-cc try.c -o try 2>&1
+$CC try.c -o try 2>&1
 if [ $? -eq 0 ]; then
 	echo "...ok"
 else
@@ -71,7 +73,7 @@ cat > try.c <<EOT
 #include <gc/gc.h>
 int main(){ GC_INIT(); }
 EOT
-cc try.c -lgc -o try 2>&1
+$CC try.c -lgc -o try 2>&1
 if [ $? -eq 0 ]; then
 	echo "...ok"
 	echo "#define USE_GC" >> $missing
@@ -155,7 +157,7 @@ int main()
 }
 EOT
 
-cc -Wall endianess_guess.c -o endianess_guess
+$CC -Wall endianess_guess.c -o endianess_guess
 if [ $? -ne 0 ]; then
 	echo "ERROR: failed to compile endianess_guess.c"
 	exit 1
