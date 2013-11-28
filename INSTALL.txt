@@ -9,6 +9,11 @@ simply run the compile script:
 
    $ ./compile
 
+To use a different C compiler than default (cc) you can specify
+the alternative compiler using the CC environment variable:
+
+   $ CC=/usr/local/bin/gcc ./compile
+
 Installation
 ------------
 Simply copy the executable program src/phplint[.exe] and the
