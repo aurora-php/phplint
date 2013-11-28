@@ -1,0 +1,195 @@
+<HTML><BODY>
+<H1>mssql</H1>
+<P><b>Microsoft SQL Server Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.mssql.php"><code>http://www.php.net/manual/en/ref.mssql.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="MSSQL_ASSOC"></A>
+<CODE><BIG><B>MSSQL_ASSOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MSSQL_NUM"></A>
+<CODE><BIG><B>MSSQL_NUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MSSQL_BOTH"></A>
+<CODE><BIG><B>MSSQL_BOTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLTEXT"></A>
+<CODE><BIG><B>SQLTEXT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLVARCHAR"></A>
+<CODE><BIG><B>SQLVARCHAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLCHAR"></A>
+<CODE><BIG><B>SQLCHAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLINT1"></A>
+<CODE><BIG><B>SQLINT1</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLINT2"></A>
+<CODE><BIG><B>SQLINT2</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLINT4"></A>
+<CODE><BIG><B>SQLINT4</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLBIT"></A>
+<CODE><BIG><B>SQLBIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLFLT4"></A>
+<CODE><BIG><B>SQLFLT4</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLFLT8"></A>
+<CODE><BIG><B>SQLFLT8</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLFLTN"></A>
+<CODE><BIG><B>SQLFLTN</B></BIG> = 1</CODE>
+<P>
+
+<A name="mssql_connect()"></A>
+<CODE><I>int</I> <BIG><B>mssql_connect</B></BIG>(...)</CODE>
+<P>
+
+<A name="mssql_pconnect()"></A>
+<CODE><I>int</I> <BIG><B>mssql_pconnect</B></BIG>(...)</CODE>
+<P>
+
+<A name="mssql_close()"></A>
+<CODE><I>boolean</I> <BIG><B>mssql_close</B></BIG>(...)</CODE>
+<P>
+
+<A name="mssql_select_db()"></A>
+<CODE><I>boolean</I> <BIG><B>mssql_select_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="mssql_fetch_batch()"></A>
+<CODE><I>int</I> <BIG><B>mssql_fetch_batch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_index)</CODE>
+<P>
+
+<A name="mssql_query()"></A>
+<CODE><I>resource</I> <BIG><B>mssql_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="mssql_rows_affected()"></A>
+<CODE><I>int</I> <BIG><B>mssql_rows_affected</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn_id)</CODE>
+<P>
+
+<A name="mssql_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>mssql_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_index)</CODE>
+<P>
+
+<A name="mssql_get_last_message()"></A>
+<CODE><I>string</I> <BIG><B>mssql_get_last_message</B></BIG>()</CODE>
+<P>
+
+<A name="mssql_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>mssql_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$mssql_result_index)</CODE>
+<P>
+
+<A name="mssql_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>mssql_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$mssql_result_index)</CODE>
+<P>
+
+<A name="mssql_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mssql_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="mssql_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>mssql_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="mssql_fetch_array()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mssql_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="mssql_fetch_assoc()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mssql_fetch_assoc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="mssql_data_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>mssql_data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="mssql_fetch_field()"></A>
+<CODE><I>object</I> <BIG><B>mssql_fetch_field</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="mssql_field_length()"></A>
+<CODE><I>int</I> <BIG><B>mssql_field_length</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="mssql_field_name()"></A>
+<CODE><I>string</I> <BIG><B>mssql_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="mssql_field_type()"></A>
+<CODE><I>string</I> <BIG><B>mssql_field_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="mssql_field_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>mssql_field_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="mssql_result()"></A>
+<CODE><I>string</I> <BIG><B>mssql_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$field)</CODE>
+<P>
+
+<A name="mssql_next_result()"></A>
+<CODE><I>boolean</I> <BIG><B>mssql_next_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="mssql_min_error_severity()"></A>
+<CODE><I>void</I> <BIG><B>mssql_min_error_severity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$severity)</CODE>
+<P>
+
+<A name="mssql_min_message_severity()"></A>
+<CODE><I>void</I> <BIG><B>mssql_min_message_severity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$severity)</CODE>
+<P>
+
+<A name="mssql_init()"></A>
+<CODE><I>int</I> <BIG><B>mssql_init</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sp_name, ...)</CODE>
+<P>
+
+<A name="mssql_bind()"></A>
+<CODE><I>boolean</I> <BIG><B>mssql_bind</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$param_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$var_,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type, ...)</CODE>
+<P>
+
+<A name="mssql_execute()"></A>
+<CODE><I>mixed</I> <BIG><B>mssql_execute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt, ...)</CODE>
+<P>
+
+<A name="mssql_free_statement()"></A>
+<CODE><I>boolean</I> <BIG><B>mssql_free_statement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_index)</CODE>
+<P>
+
+<A name="mssql_guid_string()"></A>
+<CODE><I>string</I> <BIG><B>mssql_guid_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$binary, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

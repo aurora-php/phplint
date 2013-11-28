@@ -1,0 +1,101 @@
+<HTML><BODY>
+<H1>ExprEval</H1>
+<P><b>Simple algebraic expression evaluator with arbitrary precision</b></P><P><B>Version:</B> $Date: 2012/01/22 19:26:26 $</P>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="BigFloat.html"><code>BigFloat.php</code></a>, <a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="BigInt.html"><code>BigInt.php</code></a>, <a href="../containers/Hash.html"><code>Hash.php</code></a><P>
+<P><B>Author:</B> icosaedro.it di Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+<p>
+  This package demonstrates how the <a href="BigFloat.html#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a> class can be used
+  to evaluate simple algebraic expressions. For example, input fields of
+  a WEB form can be made clever enough to accept not only bare numbers,
+  but also complete expressions.
+<p>
+
+
+
+
+</P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/ExprEval"></A>
+<pre>class <BIG><B>it\icosaedro\bignumbers\ExprEval</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/ExprEval::value()"></A>
+<CODE>static <I><a href="BigFloat.html#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>value</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$expr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$precision)</CODE>
+<BLOCKQUOTE>
+<P><b>Evaluate a simple algebraic expression</b></P><P>
+<p>
+  An expression can be as simple as a fractional number, but
+  arithmetic operators <code>+ -  /</code>, the remainder operator
+  <code>%</code> and sub-expressions are also allowed. Spaces
+  between numbers and operators are ignored. Calculations are
+  performed with the class BigFloat.
+<p>
+  The syntax of an expression, spaces apart, can be expressed
+  in EBNF notation as follows:
+<p>
+  <pre>
+      expr = ["+"|"-"] term { ("+"|"-") term };
+      term = factor { (""|"/"|"%") factor };
+      factor = BigFloat | "(" expr ")";
+  </pre>
+<p>
+  Examples:
+<p>
+  <pre>
+      ExprEval::value("1/3", -5)  gives 0.33333
+      ExprEval::value("2  (0.57 - 0.56)", -2) gives 0.02
+  </pre>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$expr&nbsp;&nbsp;</code></b></td> <td valign=top>The algebraic expression to be evaluated.</td></tr>
+<tr><td valign=top><b><code>$precision&nbsp;&nbsp;</code></b></td> <td valign=top>Values resulting from divisions are
+         rounded to 10e$precision so to get two decimal digits
+         $precision must be set to -2.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The result of the evaluation.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if the expression contains
+          syntactical errors and on division by zero.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+<h2>Private items</h2>
+<blockquote>
+<code>it\icosaedro\bignumbers\ExprScanner</code><br>
+
+</blockquote>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

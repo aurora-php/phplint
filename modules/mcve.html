@@ -1,0 +1,1535 @@
+<HTML><BODY>
+<H1>mcve</H1>
+<P><b>MCVE Payment Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.mcve.php"><code>http://www.php.net/manual/en/ref.mcve.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="MC_TRANTYPE"></A>
+<CODE><BIG><B>MC_TRANTYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USERNAME"></A>
+<CODE><BIG><B>MC_USERNAME</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_PASSWORD"></A>
+<CODE><BIG><B>MC_PASSWORD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ACCOUNT"></A>
+<CODE><BIG><B>MC_ACCOUNT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRACKDATA"></A>
+<CODE><BIG><B>MC_TRACKDATA</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXPDATE"></A>
+<CODE><BIG><B>MC_EXPDATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_STREET"></A>
+<CODE><BIG><B>MC_STREET</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ZIP"></A>
+<CODE><BIG><B>MC_ZIP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CV"></A>
+<CODE><BIG><B>MC_CV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_COMMENTS"></A>
+<CODE><BIG><B>MC_COMMENTS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CLERKID"></A>
+<CODE><BIG><B>MC_CLERKID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_STATIONID"></A>
+<CODE><BIG><B>MC_STATIONID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_APPRCODE"></A>
+<CODE><BIG><B>MC_APPRCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_AMOUNT"></A>
+<CODE><BIG><B>MC_AMOUNT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_PTRANNUM"></A>
+<CODE><BIG><B>MC_PTRANNUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TTID"></A>
+<CODE><BIG><B>MC_TTID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER"></A>
+<CODE><BIG><B>MC_USER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_PWD"></A>
+<CODE><BIG><B>MC_PWD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ACCT"></A>
+<CODE><BIG><B>MC_ACCT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_BDATE"></A>
+<CODE><BIG><B>MC_BDATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EDATE"></A>
+<CODE><BIG><B>MC_EDATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_BATCH"></A>
+<CODE><BIG><B>MC_BATCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_FILE"></A>
+<CODE><BIG><B>MC_FILE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN"></A>
+<CODE><BIG><B>MC_ADMIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_AUDITTYPE"></A>
+<CODE><BIG><B>MC_AUDITTYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CUSTOM"></A>
+<CODE><BIG><B>MC_CUSTOM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXAMOUNT"></A>
+<CODE><BIG><B>MC_EXAMOUNT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES"></A>
+<CODE><BIG><B>MC_EXCHARGES</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_RATE"></A>
+<CODE><BIG><B>MC_RATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_RENTERNAME"></A>
+<CODE><BIG><B>MC_RENTERNAME</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_RETURNCITY"></A>
+<CODE><BIG><B>MC_RETURNCITY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_RETURNSTATE"></A>
+<CODE><BIG><B>MC_RETURNSTATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_RETURNLOCATION"></A>
+<CODE><BIG><B>MC_RETURNLOCATION</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_PRIORITY"></A>
+<CODE><BIG><B>MC_PRIORITY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_INQUIRY"></A>
+<CODE><BIG><B>MC_INQUIRY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARDTYPES"></A>
+<CODE><BIG><B>MC_CARDTYPES</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_SUB"></A>
+<CODE><BIG><B>MC_SUB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_MARKER"></A>
+<CODE><BIG><B>MC_MARKER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_DEVICETYPE"></A>
+<CODE><BIG><B>MC_DEVICETYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ERRORCODE"></A>
+<CODE><BIG><B>MC_ERRORCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_NEWBATCH"></A>
+<CODE><BIG><B>MC_NEWBATCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CURR"></A>
+<CODE><BIG><B>MC_CURR</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_DESCMERCH"></A>
+<CODE><BIG><B>MC_DESCMERCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_DESCLOC"></A>
+<CODE><BIG><B>MC_DESCLOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ORIGTYPE"></A>
+<CODE><BIG><B>MC_ORIGTYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_PIN"></A>
+<CODE><BIG><B>MC_PIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_VOIDORIGTYPE"></A>
+<CODE><BIG><B>MC_VOIDORIGTYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TIMESTAMP"></A>
+<CODE><BIG><B>MC_TIMESTAMP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_PRIO_HIGH"></A>
+<CODE><BIG><B>MC_PRIO_HIGH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_PRIO_NORMAL"></A>
+<CODE><BIG><B>MC_PRIO_NORMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_PRIO_LOW"></A>
+<CODE><BIG><B>MC_PRIO_LOW</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_PROC"></A>
+<CODE><BIG><B>MC_USER_PROC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_USER"></A>
+<CODE><BIG><B>MC_USER_USER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_PWD"></A>
+<CODE><BIG><B>MC_USER_PWD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_INDCODE"></A>
+<CODE><BIG><B>MC_USER_INDCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_MERCHID"></A>
+<CODE><BIG><B>MC_USER_MERCHID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_BANKID"></A>
+<CODE><BIG><B>MC_USER_BANKID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_TERMID"></A>
+<CODE><BIG><B>MC_USER_TERMID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_CLIENTNUM"></A>
+<CODE><BIG><B>MC_USER_CLIENTNUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_STOREID"></A>
+<CODE><BIG><B>MC_USER_STOREID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_AGENTID"></A>
+<CODE><BIG><B>MC_USER_AGENTID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_CHAINID"></A>
+<CODE><BIG><B>MC_USER_CHAINID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_ZIPCODE"></A>
+<CODE><BIG><B>MC_USER_ZIPCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_TIMEZONE"></A>
+<CODE><BIG><B>MC_USER_TIMEZONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_MERCHCAT"></A>
+<CODE><BIG><B>MC_USER_MERCHCAT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_MERNAME"></A>
+<CODE><BIG><B>MC_USER_MERNAME</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_MERCHLOC"></A>
+<CODE><BIG><B>MC_USER_MERCHLOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_STATECODE"></A>
+<CODE><BIG><B>MC_USER_STATECODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_PHONE"></A>
+<CODE><BIG><B>MC_USER_PHONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_SUB"></A>
+<CODE><BIG><B>MC_USER_SUB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_CARDTYPES"></A>
+<CODE><BIG><B>MC_USER_CARDTYPES</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_MODE"></A>
+<CODE><BIG><B>MC_USER_MODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_VNUMBER"></A>
+<CODE><BIG><B>MC_USER_VNUMBER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_ROUTINGID"></A>
+<CODE><BIG><B>MC_USER_ROUTINGID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_PPROPERTY"></A>
+<CODE><BIG><B>MC_USER_PPROPERTY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_PID"></A>
+<CODE><BIG><B>MC_USER_PID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_PIDPWD"></A>
+<CODE><BIG><B>MC_USER_PIDPWD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_SMID"></A>
+<CODE><BIG><B>MC_USER_SMID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_SMIDPWD"></A>
+<CODE><BIG><B>MC_USER_SMIDPWD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_USDDIV"></A>
+<CODE><BIG><B>MC_USER_USDDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_AUDDIV"></A>
+<CODE><BIG><B>MC_USER_AUDDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_DKKDIV"></A>
+<CODE><BIG><B>MC_USER_DKKDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_GBPDIV"></A>
+<CODE><BIG><B>MC_USER_GBPDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_HKDDIV"></A>
+<CODE><BIG><B>MC_USER_HKDDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_JPYDIV"></A>
+<CODE><BIG><B>MC_USER_JPYDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_NZDDIV"></A>
+<CODE><BIG><B>MC_USER_NZDDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_NOKDIV"></A>
+<CODE><BIG><B>MC_USER_NOKDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_SGDDIV"></A>
+<CODE><BIG><B>MC_USER_SGDDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_ZARDIV"></A>
+<CODE><BIG><B>MC_USER_ZARDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_SEKDIV"></A>
+<CODE><BIG><B>MC_USER_SEKDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_CHFDIV"></A>
+<CODE><BIG><B>MC_USER_CHFDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_CADDIV"></A>
+<CODE><BIG><B>MC_USER_CADDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_USER_DIVNUM"></A>
+<CODE><BIG><B>MC_USER_DIVNUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_VISA"></A>
+<CODE><BIG><B>MC_CARD_VISA</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_MC"></A>
+<CODE><BIG><B>MC_CARD_MC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_AMEX"></A>
+<CODE><BIG><B>MC_CARD_AMEX</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_DISC"></A>
+<CODE><BIG><B>MC_CARD_DISC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_JCB"></A>
+<CODE><BIG><B>MC_CARD_JCB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_CB"></A>
+<CODE><BIG><B>MC_CARD_CB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_DC"></A>
+<CODE><BIG><B>MC_CARD_DC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_GIFT"></A>
+<CODE><BIG><B>MC_CARD_GIFT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_OTHER"></A>
+<CODE><BIG><B>MC_CARD_OTHER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_CARD_ALL"></A>
+<CODE><BIG><B>MC_CARD_ALL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_MODE_AUTH"></A>
+<CODE><BIG><B>MC_MODE_AUTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_MODE_SETTLE"></A>
+<CODE><BIG><B>MC_MODE_SETTLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_MODE_BOTH"></A>
+<CODE><BIG><B>MC_MODE_BOTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_MODE_ALL"></A>
+<CODE><BIG><B>MC_MODE_ALL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_REST"></A>
+<CODE><BIG><B>MC_EXCHARGES_REST</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_GIFT"></A>
+<CODE><BIG><B>MC_EXCHARGES_GIFT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_MINI"></A>
+<CODE><BIG><B>MC_EXCHARGES_MINI</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_TELE"></A>
+<CODE><BIG><B>MC_EXCHARGES_TELE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_OTHER"></A>
+<CODE><BIG><B>MC_EXCHARGES_OTHER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_LAUND"></A>
+<CODE><BIG><B>MC_EXCHARGES_LAUND</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_NONE"></A>
+<CODE><BIG><B>MC_EXCHARGES_NONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_GAS"></A>
+<CODE><BIG><B>MC_EXCHARGES_GAS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_MILE"></A>
+<CODE><BIG><B>MC_EXCHARGES_MILE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_LATE"></A>
+<CODE><BIG><B>MC_EXCHARGES_LATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_1WAY"></A>
+<CODE><BIG><B>MC_EXCHARGES_1WAY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_EXCHARGES_VIOL"></A>
+<CODE><BIG><B>MC_EXCHARGES_VIOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_SALE"></A>
+<CODE><BIG><B>MC_TRAN_SALE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_REDEMPTION"></A>
+<CODE><BIG><B>MC_TRAN_REDEMPTION</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_PREAUTH"></A>
+<CODE><BIG><B>MC_TRAN_PREAUTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_VOID"></A>
+<CODE><BIG><B>MC_TRAN_VOID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_PREAUTHCOMPLETE"></A>
+<CODE><BIG><B>MC_TRAN_PREAUTHCOMPLETE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_FORCE"></A>
+<CODE><BIG><B>MC_TRAN_FORCE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_OVERRIDE"></A>
+<CODE><BIG><B>MC_TRAN_OVERRIDE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_RETURN"></A>
+<CODE><BIG><B>MC_TRAN_RETURN</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_RELOAD"></A>
+<CODE><BIG><B>MC_TRAN_RELOAD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_CREDIT"></A>
+<CODE><BIG><B>MC_TRAN_CREDIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_SETTLE"></A>
+<CODE><BIG><B>MC_TRAN_SETTLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_INCREMENTAL"></A>
+<CODE><BIG><B>MC_TRAN_INCREMENTAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_REVERSAL"></A>
+<CODE><BIG><B>MC_TRAN_REVERSAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_ACTIVATE"></A>
+<CODE><BIG><B>MC_TRAN_ACTIVATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_BALANCEINQ"></A>
+<CODE><BIG><B>MC_TRAN_BALANCEINQ</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_CASHOUT"></A>
+<CODE><BIG><B>MC_TRAN_CASHOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_TOREVERSAL"></A>
+<CODE><BIG><B>MC_TRAN_TOREVERSAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_SETTLERFR"></A>
+<CODE><BIG><B>MC_TRAN_SETTLERFR</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_ISSUE"></A>
+<CODE><BIG><B>MC_TRAN_ISSUE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_TIP"></A>
+<CODE><BIG><B>MC_TRAN_TIP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_MERCHRETURN"></A>
+<CODE><BIG><B>MC_TRAN_MERCHRETURN</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_IVRREQ"></A>
+<CODE><BIG><B>MC_TRAN_IVRREQ</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_IVRRESP"></A>
+<CODE><BIG><B>MC_TRAN_IVRRESP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_ADMIN"></A>
+<CODE><BIG><B>MC_TRAN_ADMIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_PING"></A>
+<CODE><BIG><B>MC_TRAN_PING</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_CHKPWD"></A>
+<CODE><BIG><B>MC_TRAN_CHKPWD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_CHNGPWD"></A>
+<CODE><BIG><B>MC_TRAN_CHNGPWD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_LISTSTATS"></A>
+<CODE><BIG><B>MC_TRAN_LISTSTATS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_LISTUSERS"></A>
+<CODE><BIG><B>MC_TRAN_LISTUSERS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_GETUSERINFO"></A>
+<CODE><BIG><B>MC_TRAN_GETUSERINFO</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_ADDUSER"></A>
+<CODE><BIG><B>MC_TRAN_ADDUSER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_EDITUSER"></A>
+<CODE><BIG><B>MC_TRAN_EDITUSER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_DELUSER"></A>
+<CODE><BIG><B>MC_TRAN_DELUSER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_ENABLEUSER"></A>
+<CODE><BIG><B>MC_TRAN_ENABLEUSER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_DISABLEUSER"></A>
+<CODE><BIG><B>MC_TRAN_DISABLEUSER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_IMPORT"></A>
+<CODE><BIG><B>MC_TRAN_IMPORT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_EXPORT"></A>
+<CODE><BIG><B>MC_TRAN_EXPORT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_ERRORLOG"></A>
+<CODE><BIG><B>MC_TRAN_ERRORLOG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_CLEARERRORLOG"></A>
+<CODE><BIG><B>MC_TRAN_CLEARERRORLOG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_TRAN_GETSUBACCTS"></A>
+<CODE><BIG><B>MC_TRAN_GETSUBACCTS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_GUT"></A>
+<CODE><BIG><B>MC_ADMIN_GUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_GL"></A>
+<CODE><BIG><B>MC_ADMIN_GL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_GFT"></A>
+<CODE><BIG><B>MC_ADMIN_GFT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_BT"></A>
+<CODE><BIG><B>MC_ADMIN_BT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_UB"></A>
+<CODE><BIG><B>MC_ADMIN_UB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_QC"></A>
+<CODE><BIG><B>MC_ADMIN_QC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_RS"></A>
+<CODE><BIG><B>MC_ADMIN_RS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_CTH"></A>
+<CODE><BIG><B>MC_ADMIN_CTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_CFH"></A>
+<CODE><BIG><B>MC_ADMIN_CFH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_FORCESETTLE"></A>
+<CODE><BIG><B>MC_ADMIN_FORCESETTLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_SETBATCHNUM"></A>
+<CODE><BIG><B>MC_ADMIN_SETBATCHNUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_RENUMBERBATCH"></A>
+<CODE><BIG><B>MC_ADMIN_RENUMBERBATCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_FIELDEDIT"></A>
+<CODE><BIG><B>MC_ADMIN_FIELDEDIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MC_ADMIN_CLOSEBATCH"></A>
+<CODE><BIG><B>MC_ADMIN_CLOSEBATCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_UNUSED"></A>
+<CODE><BIG><B>M_UNUSED</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_NEW"></A>
+<CODE><BIG><B>M_NEW</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_PENDING"></A>
+<CODE><BIG><B>M_PENDING</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_DONE"></A>
+<CODE><BIG><B>M_DONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_GOOD"></A>
+<CODE><BIG><B>M_GOOD</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_BAD"></A>
+<CODE><BIG><B>M_BAD</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_STREET"></A>
+<CODE><BIG><B>M_STREET</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_ZIP"></A>
+<CODE><BIG><B>M_ZIP</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_UNKNOWN"></A>
+<CODE><BIG><B>M_UNKNOWN</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_ERROR"></A>
+<CODE><BIG><B>M_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_FAIL"></A>
+<CODE><BIG><B>M_FAIL</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_SUCCESS"></A>
+<CODE><BIG><B>M_SUCCESS</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_AUTH"></A>
+<CODE><BIG><B>M_AUTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_DENY"></A>
+<CODE><BIG><B>M_DENY</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_CALL"></A>
+<CODE><BIG><B>M_CALL</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_DUPL"></A>
+<CODE><BIG><B>M_DUPL</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_PKUP"></A>
+<CODE><BIG><B>M_PKUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_RETRY"></A>
+<CODE><BIG><B>M_RETRY</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_SETUP"></A>
+<CODE><BIG><B>M_SETUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_TIMEOUT"></A>
+<CODE><BIG><B>M_TIMEOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_SALE"></A>
+<CODE><BIG><B>M_SALE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_PREAUTH"></A>
+<CODE><BIG><B>M_PREAUTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_FORCE"></A>
+<CODE><BIG><B>M_FORCE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_OVERRIDE"></A>
+<CODE><BIG><B>M_OVERRIDE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_RETURN"></A>
+<CODE><BIG><B>M_RETURN</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_SETTLE"></A>
+<CODE><BIG><B>M_SETTLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_PROC"></A>
+<CODE><BIG><B>M_PROC</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_USER"></A>
+<CODE><BIG><B>M_USER</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_PWD"></A>
+<CODE><BIG><B>M_PWD</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_INDCODE"></A>
+<CODE><BIG><B>M_INDCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_MERCHID"></A>
+<CODE><BIG><B>M_MERCHID</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_BANKID"></A>
+<CODE><BIG><B>M_BANKID</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_TERMID"></A>
+<CODE><BIG><B>M_TERMID</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_CLIENTNUM"></A>
+<CODE><BIG><B>M_CLIENTNUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_STOREID"></A>
+<CODE><BIG><B>M_STOREID</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_AGENTID"></A>
+<CODE><BIG><B>M_AGENTID</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_CHAINID"></A>
+<CODE><BIG><B>M_CHAINID</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_ZIPCODE"></A>
+<CODE><BIG><B>M_ZIPCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_TIMEZONE"></A>
+<CODE><BIG><B>M_TIMEZONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_MERCHCAT"></A>
+<CODE><BIG><B>M_MERCHCAT</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_MERNAME"></A>
+<CODE><BIG><B>M_MERNAME</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_MERCHLOC"></A>
+<CODE><BIG><B>M_MERCHLOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_STATECODE"></A>
+<CODE><BIG><B>M_STATECODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="M_SERVICEPHONE"></A>
+<CODE><BIG><B>M_SERVICEPHONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_UNUSED"></A>
+<CODE><BIG><B>MCVE_UNUSED</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_NEW"></A>
+<CODE><BIG><B>MCVE_NEW</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_PENDING"></A>
+<CODE><BIG><B>MCVE_PENDING</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_DONE"></A>
+<CODE><BIG><B>MCVE_DONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_GOOD"></A>
+<CODE><BIG><B>MCVE_GOOD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_BAD"></A>
+<CODE><BIG><B>MCVE_BAD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_STREET"></A>
+<CODE><BIG><B>MCVE_STREET</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_ZIP"></A>
+<CODE><BIG><B>MCVE_ZIP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_UNKNOWN"></A>
+<CODE><BIG><B>MCVE_UNKNOWN</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_ERROR"></A>
+<CODE><BIG><B>MCVE_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_FAIL"></A>
+<CODE><BIG><B>MCVE_FAIL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_SUCCESS"></A>
+<CODE><BIG><B>MCVE_SUCCESS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_AUTH"></A>
+<CODE><BIG><B>MCVE_AUTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_DENY"></A>
+<CODE><BIG><B>MCVE_DENY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_CALL"></A>
+<CODE><BIG><B>MCVE_CALL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_DUPL"></A>
+<CODE><BIG><B>MCVE_DUPL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_PKUP"></A>
+<CODE><BIG><B>MCVE_PKUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_RETRY"></A>
+<CODE><BIG><B>MCVE_RETRY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_SETUP"></A>
+<CODE><BIG><B>MCVE_SETUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_TIMEOUT"></A>
+<CODE><BIG><B>MCVE_TIMEOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_SALE"></A>
+<CODE><BIG><B>MCVE_SALE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_PREAUTH"></A>
+<CODE><BIG><B>MCVE_PREAUTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_FORCE"></A>
+<CODE><BIG><B>MCVE_FORCE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_OVERRIDE"></A>
+<CODE><BIG><B>MCVE_OVERRIDE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_RETURN"></A>
+<CODE><BIG><B>MCVE_RETURN</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_SETTLE"></A>
+<CODE><BIG><B>MCVE_SETTLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_PROC"></A>
+<CODE><BIG><B>MCVE_PROC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_USER"></A>
+<CODE><BIG><B>MCVE_USER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_PWD"></A>
+<CODE><BIG><B>MCVE_PWD</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_INDCODE"></A>
+<CODE><BIG><B>MCVE_INDCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_MERCHID"></A>
+<CODE><BIG><B>MCVE_MERCHID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_BANKID"></A>
+<CODE><BIG><B>MCVE_BANKID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_TERMID"></A>
+<CODE><BIG><B>MCVE_TERMID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_CLIENTNUM"></A>
+<CODE><BIG><B>MCVE_CLIENTNUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_STOREID"></A>
+<CODE><BIG><B>MCVE_STOREID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_AGENTID"></A>
+<CODE><BIG><B>MCVE_AGENTID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_CHAINID"></A>
+<CODE><BIG><B>MCVE_CHAINID</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_ZIPCODE"></A>
+<CODE><BIG><B>MCVE_ZIPCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_TIMEZONE"></A>
+<CODE><BIG><B>MCVE_TIMEZONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_MERCHCAT"></A>
+<CODE><BIG><B>MCVE_MERCHCAT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_MERNAME"></A>
+<CODE><BIG><B>MCVE_MERNAME</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_MERCHLOC"></A>
+<CODE><BIG><B>MCVE_MERCHLOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_STATECODE"></A>
+<CODE><BIG><B>MCVE_STATECODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MCVE_SERVICEPHONE"></A>
+<CODE><BIG><B>MCVE_SERVICEPHONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="m_initengine()"></A>
+<CODE><I>int</I> <BIG><B>m_initengine</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$location)</CODE>
+<P>
+
+<A name="m_initconn()"></A>
+<CODE><I>resource</I> <BIG><B>m_initconn</B></BIG>()</CODE>
+<P>
+
+<A name="m_deleteresponse()"></A>
+<CODE><I>boolean</I> <BIG><B>m_deleteresponse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_deletetrans()"></A>
+<CODE><I>boolean</I> <BIG><B>m_deletetrans</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_destroyconn()"></A>
+<CODE><I>void</I> <BIG><B>m_destroyconn</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="m_setdropfile()"></A>
+<CODE><I>int</I> <BIG><B>m_setdropfile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$directory)</CODE>
+<P>
+
+<A name="m_setip()"></A>
+<CODE><I>int</I> <BIG><B>m_setip</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port)</CODE>
+<P>
+
+<A name="m_setssl()"></A>
+<CODE><I>int</I> <BIG><B>m_setssl</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port)</CODE>
+<P>
+
+<A name="m_setssl_files()"></A>
+<CODE><I>int</I> <BIG><B>m_setssl_files</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sslkeyfile,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sslcertfile)</CODE>
+<P>
+
+<A name="m_settimeout()"></A>
+<CODE><I>int</I> <BIG><B>m_settimeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$seconds)</CODE>
+<P>
+
+<A name="m_setblocking()"></A>
+<CODE><I>int</I> <BIG><B>m_setblocking</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tf)</CODE>
+<P>
+
+<A name="m_verifyconnection()"></A>
+<CODE><I>boolean</I> <BIG><B>m_verifyconnection</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tf)</CODE>
+<P>
+
+<A name="m_verifysslcert()"></A>
+<CODE><I>boolean</I> <BIG><B>m_verifysslcert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tf)</CODE>
+<P>
+
+<A name="m_maxconntimeout()"></A>
+<CODE><I>boolean</I> <BIG><B>m_maxconntimeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$secs)</CODE>
+<P>
+
+<A name="m_connect()"></A>
+<CODE><I>int</I> <BIG><B>m_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="m_connectionerror()"></A>
+<CODE><I>string</I> <BIG><B>m_connectionerror</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="m_transactionssent()"></A>
+<CODE><I>int</I> <BIG><B>m_transactionssent</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="m_ping()"></A>
+<CODE><I>int</I> <BIG><B>m_ping</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="m_transnew()"></A>
+<CODE><I>int</I> <BIG><B>m_transnew</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="m_transsend()"></A>
+<CODE><I>int</I> <BIG><B>m_transsend</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_responseparam()"></A>
+<CODE><I>string</I> <BIG><B>m_responseparam</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="m_getuserparam()"></A>
+<CODE><I>string</I> <BIG><B>m_getuserparam</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="m_returnstatus()"></A>
+<CODE><I>int</I> <BIG><B>m_returnstatus</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_returncode()"></A>
+<CODE><I>int</I> <BIG><B>m_returncode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_transactionitem()"></A>
+<CODE><I>int</I> <BIG><B>m_transactionitem</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_transactionavs()"></A>
+<CODE><I>int</I> <BIG><B>m_transactionavs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_transactioncv()"></A>
+<CODE><I>int</I> <BIG><B>m_transactioncv</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_transactionbatch()"></A>
+<CODE><I>int</I> <BIG><B>m_transactionbatch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_transactionid()"></A>
+<CODE><I>int</I> <BIG><B>m_transactionid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_transactionauth()"></A>
+<CODE><I>string</I> <BIG><B>m_transactionauth</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_transactiontext()"></A>
+<CODE><I>string</I> <BIG><B>m_transactiontext</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_monitor()"></A>
+<CODE><I>int</I> <BIG><B>m_monitor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="m_transinqueue()"></A>
+<CODE><I>int</I> <BIG><B>m_transinqueue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="m_checkstatus()"></A>
+<CODE><I>int</I> <BIG><B>m_checkstatus</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_completeauthorizations()"></A>
+<CODE><I>int</I> <BIG><B>m_completeauthorizations</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $array_)</CODE>
+<P>
+
+<A name="m_sale()"></A>
+<CODE><I>int</I> <BIG><B>m_sale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$trackdata,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$account,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$expdate,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$amount,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$street,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$zip,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cv,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum)</CODE>
+<P>
+
+<A name="m_preauth()"></A>
+<CODE><I>int</I> <BIG><B>m_preauth</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$trackdata,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$account,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$expdate,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$amount,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$street,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$zip,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cv,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum)</CODE>
+<P>
+
+<A name="m_override()"></A>
+<CODE><I>int</I> <BIG><B>m_override</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$trackdata,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$account,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$expdate,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$amount,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$street,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$zip,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cv,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum)</CODE>
+<P>
+
+<A name="m_void()"></A>
+<CODE><I>int</I> <BIG><B>m_void</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum)</CODE>
+<P>
+
+<A name="m_preauthcompletion()"></A>
+<CODE><I>int</I> <BIG><B>m_preauthcompletion</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$finalamount,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum)</CODE>
+<P>
+
+<A name="m_force()"></A>
+<CODE><I>int</I> <BIG><B>m_force</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$trackdata,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$account,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$expdate,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$amount,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$authcode,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum)</CODE>
+<P>
+
+<A name="m_return()"></A>
+<CODE><I>int</I> <BIG><B>m_return</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$trackdata,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$account,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$expdate,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$amount,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum)</CODE>
+<P>
+
+<A name="m_settle()"></A>
+<CODE><I>int</I> <BIG><B>m_settle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$batch)</CODE>
+<P>
+
+<A name="m_ub()"></A>
+<CODE><I>int</I> <BIG><B>m_ub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<P>
+
+<A name="m_qc()"></A>
+<CODE><I>int</I> <BIG><B>m_qc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum)</CODE>
+<P>
+
+<A name="m_gut()"></A>
+<CODE><I>int</I> <BIG><B>m_gut</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$account,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$startdate,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$enddate)</CODE>
+<P>
+
+<A name="m_gl()"></A>
+<CODE><I>int</I> <BIG><B>m_gl</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$account,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$batch,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$startdate,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$enddate)</CODE>
+<P>
+
+<A name="m_gft()"></A>
+<CODE><I>int</I> <BIG><B>m_gft</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$account,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clerkid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stationid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comments,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ptrannum,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$startdate,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$enddate)</CODE>
+<P>
+
+<A name="m_chkpwd()"></A>
+<CODE><I>int</I> <BIG><B>m_chkpwd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<P>
+
+<A name="m_bt()"></A>
+<CODE><I>int</I> <BIG><B>m_bt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<P>
+
+<A name="m_getcell()"></A>
+<CODE><I>string</I> <BIG><B>m_getcell</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row)</CODE>
+<P>
+
+<A name="m_getcellbynum()"></A>
+<CODE><I>string</I> <BIG><B>m_getcellbynum</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row)</CODE>
+<P>
+
+<A name="m_numcolumns()"></A>
+<CODE><I>int</I> <BIG><B>m_numcolumns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_numrows()"></A>
+<CODE><I>int</I> <BIG><B>m_numrows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_iscommadelimited()"></A>
+<CODE><I>int</I> <BIG><B>m_iscommadelimited</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_parsecommadelimited()"></A>
+<CODE><I>int</I> <BIG><B>m_parsecommadelimited</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_getcommadelimited()"></A>
+<CODE><I>string</I> <BIG><B>m_getcommadelimited</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier)</CODE>
+<P>
+
+<A name="m_getheader()"></A>
+<CODE><I>string</I> <BIG><B>m_getheader</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$identifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_num)</CODE>
+<P>
+
+<A name="m_destroyengine()"></A>
+<CODE><I>void</I> <BIG><B>m_destroyengine</B></BIG>()</CODE>
+<P>
+
+<A name="m_chngpwd()"></A>
+<CODE><I>int</I> <BIG><B>m_chngpwd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$admin_password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$new_password)</CODE>
+<P>
+
+<A name="m_listusers()"></A>
+<CODE><I>int</I> <BIG><B>m_listusers</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$admin_password)</CODE>
+<P>
+
+<A name="m_enableuser()"></A>
+<CODE><I>int</I> <BIG><B>m_enableuser</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$admin_password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username)</CODE>
+<P>
+
+<A name="m_disableuser()"></A>
+<CODE><I>int</I> <BIG><B>m_disableuser</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$admin_password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username)</CODE>
+<P>
+
+<A name="m_deluser()"></A>
+<CODE><I>int</I> <BIG><B>m_deluser</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$admin_password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username)</CODE>
+<P>
+
+<A name="m_liststats()"></A>
+<CODE><I>int</I> <BIG><B>m_liststats</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$admin_password)</CODE>
+<P>
+
+<A name="m_initusersetup()"></A>
+<CODE><I>resource</I> <BIG><B>m_initusersetup</B></BIG>()</CODE>
+<P>
+
+<A name="m_deleteusersetup()"></A>
+<CODE><I>void</I> <BIG><B>m_deleteusersetup</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$usersetup)</CODE>
+<P>
+
+<A name="m_adduserarg()"></A>
+<CODE><I>int</I> <BIG><B>m_adduserarg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$usersetup,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$argtype,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$argval)</CODE>
+<P>
+
+<A name="m_getuserarg()"></A>
+<CODE><I>string</I> <BIG><B>m_getuserarg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$usersetup,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$argtype)</CODE>
+<P>
+
+<A name="m_adduser()"></A>
+<CODE><I>int</I> <BIG><B>m_adduser</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$admin_password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$usersetup)</CODE>
+<P>
+
+<A name="m_edituser()"></A>
+<CODE><I>int</I> <BIG><B>m_edituser</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$admin_password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$usersetup)</CODE>
+<P>
+
+<A name="m_uwait()"></A>
+<CODE><I>int</I> <BIG><B>m_uwait</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$microsecs)</CODE>
+<P>
+
+<A name="m_text_code()"></A>
+<CODE><I>string</I> <BIG><B>m_text_code</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$code)</CODE>
+<P>
+
+<A name="m_text_avs()"></A>
+<CODE><I>string</I> <BIG><B>m_text_avs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$code)</CODE>
+<P>
+
+<A name="m_text_cv()"></A>
+<CODE><I>string</I> <BIG><B>m_text_cv</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$code)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

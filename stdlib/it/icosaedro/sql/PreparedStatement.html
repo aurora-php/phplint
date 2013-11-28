@@ -1,0 +1,452 @@
+<HTML><BODY>
+<H1>PreparedStatement</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="SQLDriverInterface.html"><code>SQLDriverInterface.php</code></a>, <a href="SQLException.html"><code>SQLException.php</code></a>, <a href="ResultSet.html"><code>ResultSet.php</code></a>, <a href="../utils/Integers.html"><code>Integers.php</code></a>, <a href="../bignumbers/BigInt.html"><code>BigInt.php</code></a>, <a href="../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="../containers/Hash.html"><code>Hash.php</code></a>, <a href="../bignumbers/BigFloat.html"><code>BigFloat.php</code></a>, <a href="../utils/Date.html"><code>Date.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement"></A>
+<pre>class <BIG><B>it\icosaedro\sql\PreparedStatement</B></BIG>
+      |  
+      `--(<i><a href="../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>SQL prepared statement</b></P><P><B>Version:</B> $Date: 2012/02/01 08:12:30 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+A prepared statement is an SQL command with
+	variable parts (the "parameters") marked by a placeholder, that is the
+	question mark character <code>?</code>.
+	These parameters can then be set with proper values given as regular PHP
+	language types, and these values are automatically properly encoded and
+	possibly quoted as required by the underlying specific implementation of
+	the SQL server.
+	Once all the parameters are being set, the resulting complete SQL
+	statement can be sent to the SQL server for the execution.
+	The same prepared statement can then be re-used several times
+	changing the values of the parameters. Example:
+	<pre>
+	$db = new it\icosaedro\sql\mysql\Driver(...);
+	$ps = $db-&gt;prepareStatement("SELECT name, code FROM products WHERE price &gt; ? AND available = ?");
+	$ps-&gt;setBigFloat(0, new BigFloat("100.00"));
+	$ps-&gt;setBoolean(1, TRUE);
+	$rs = $ps-&gt;query();
+	echo $rs;
+	</pre>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="SQLDriverInterface.html#it/icosaedro/sql/SQLDriverInterface"><code>it\icosaedro\sql\SQLDriverInterface</code></a></I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+<BLOCKQUOTE>
+<P><b>Constructor called by the SQL driver to create a new SQL prepared 		statement</b></P><P>
+This constructor should never be called directly from
+		the user code. An instance of this class can be used several times
+		setting different values for the variable parts.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$db&nbsp;&nbsp;</code></b></td> <td valign=top>The SQL driver engine.</td></tr>
+<tr><td valign=top><b><code>$cmd&nbsp;&nbsp;</code></b></td> <td valign=top>Prepared statement, that is an SQL statement
+		where the variable parts are marked by a question mark. The question
+		mark must not be enclosed between single quotes. For example
+		<code>"SELECT * FROM mytable WHERE pk=? AND name=?"</code>.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setParameter()"></A>
+<CODE>protected <I>void</I> <BIG><B>setParameter</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets the value of a parameter</b></P><P>
+This method should never be called
+		directly from the user code. The parameter is set verbatim - no
+		escaping is performed and no quotes are inserted.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value as a string that repleces the placeholder.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setNull()"></A>
+<CODE><I>void</I> <BIG><B>setNull</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets the parameter as SQL literal NULL value</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setString()"></A>
+<CODE><I>void</I> <BIG><B>setString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter, encoded accordingly to
+		the instance of the client data base established. If NULL, then the
+		SQL NULL value is set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setBoolean()"></A>
+<CODE><I>void</I> <BIG><B>setBoolean</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type boolean</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter. If the parameter has to
+		be set to the SQL NULL value, use <a href="#it/icosaedro/sql/PreparedStatement::setNull()"><code>it\icosaedro\sql\PreparedStatement::setNull()</code></a> instead.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setInt()"></A>
+<CODE><I>void</I> <BIG><B>setInt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type int</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter. If the parameter has to
+		be set to the SQL NULL value, use <a href="#it/icosaedro/sql/PreparedStatement::setNull()"><code>it\icosaedro\sql\PreparedStatement::setNull()</code></a> instead.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setBigInt()"></A>
+<CODE><I>void</I> <BIG><B>setBigInt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../bignumbers/BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type BigInt</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter. If NULL, then the SQL
+		NULL value is set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setBigFloat()"></A>
+<CODE><I>void</I> <BIG><B>setBigFloat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../bignumbers/BigFloat.html#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type BigFloat</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter. If NULL, then the SQL
+		NULL value is set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setDate()"></A>
+<CODE><I>void</I> <BIG><B>setDate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../utils/Date.html#it/icosaedro/utils/Date"><code>it\icosaedro\utils\Date</code></a></I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type gregorian date</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter. If NULL, then the SQL
+		NULL value is set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setDateTime()"></A>
+<CODE><I>void</I> <BIG><B>setDateTime</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../../../../modules/standard.html#DateTime"><code>DateTime</code></a></I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type date with time</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter. If NULL, then the SQL
+		NULL value is set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::setBytes()"></A>
+<CODE><I>void</I> <BIG><B>setBytes</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type binary (for example, an image)</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter as an array of bytes.
+		If NULL, then the SQL NULL value is set.
+		In this generic implementation the value is sent to the data base as
+		a Base64-encoded ASCII string, that is the safer and most efficient
+		known encoding using only ASCII characters. Implementations for
+		specific data base engines that provide a binary field type should
+		override this method with something more efficient.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::getSQLStatement()"></A>
+<CODE><I>string</I> <BIG><B>getSQLStatement</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the prepared statement in its current state</b></P><P>
+<p><b>Return:</b> The prepared statement as a SQL string with parameters
+		replaced by their values as set so far. Parameters still not set are
+		rendered as empty strings; the original question mark placeholder
+		does not appear anymore.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::update()"></A>
+<CODE><I>int</I> <BIG><B>update</B></BIG>()</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sends the prepared statement to the data base for execution as 		an update command, typically UPDATE or INSERT</b></P><P>
+The variable
+		parameters, marked by the question mark placeholder. Variable
+		parameters still not set are left as empty strings, possibly
+		resulting in an invalid SQL command.
+
+<p><b>Return:</b> Number of rows affected by the change.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the execution of the prepared statement
+		failed, possibly because some variable parameters were not set,
+		or the syntax of the command was not valid, or the specified
+		tables and fields do not exist.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::query()"></A>
+<CODE><I><a href="ResultSet.html#it/icosaedro/sql/ResultSet"><code>it\icosaedro\sql\ResultSet</code></a></I> <BIG><B>query</B></BIG>()</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Sends the prepared statement to the data base for execution as 		an enquiry command, typically a SELECT</b></P><P>
+The variable
+		parameters, marked by the question mark placeholder. Variable
+		parameters still not set are left as empty strings, possibly
+		resulting in an invalid SQL command.
+
+<p><b>Return:</b> Resulting table.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the execution of the prepared statement
+		failed, possibly because some variable parameters were not set,
+		or the syntax of the command was not valid, or the specified
+		tables and fields do not exist.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::clearParameters()"></A>
+<CODE><I>void</I> <BIG><B>clearParameters</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all the variable parameters of the prepared statement 		to their initial default value, that is undefined</b></P><P>
+If this prepared
+		statement gets reused there is not really need to call this method,
+		but it may help to detect missing parameter assignments because an
+		incomplete (and then invalid) SQL command would be generated.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/PreparedStatement::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns the prepared statement in its current state</b></P><P>
+It is simply an alias of the getSQLStatement() method.
+
+<p><b>Return:</b> The prepared statement as a SQL string with parameters
+		replaced by their values as set so far. Parameters still not set are
+		rendered as empty strings; the original question mark placeholder
+		does not appear anymore.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

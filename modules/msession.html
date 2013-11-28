@@ -1,0 +1,127 @@
+<HTML><BODY>
+<H1>msession</H1>
+<P><b>Mohawk Software Session Handler Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.msession.php"><code>http://www.php.net/manual/en/ref.msession.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="msession_connect()"></A>
+<CODE><I>boolean</I> <BIG><B>msession_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$port)</CODE>
+<P>
+
+<A name="msession_disconnect()"></A>
+<CODE><I>void</I> <BIG><B>msession_disconnect</B></BIG>()</CODE>
+<P>
+
+<A name="msession_count()"></A>
+<CODE><I>int</I> <BIG><B>msession_count</B></BIG>()</CODE>
+<P>
+
+<A name="msession_create()"></A>
+<CODE><I>boolean</I> <BIG><B>msession_create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session)</CODE>
+<P>
+
+<A name="msession_destroy()"></A>
+<CODE><I>boolean</I> <BIG><B>msession_destroy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="msession_lock()"></A>
+<CODE><I>int</I> <BIG><B>msession_lock</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="msession_ctl()"></A>
+<CODE><I>int</I> <BIG><B>msession_ctl</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="msession_unlock()"></A>
+<CODE><I>int</I> <BIG><B>msession_unlock</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="msession_set()"></A>
+<CODE><I>boolean</I> <BIG><B>msession_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="msession_get()"></A>
+<CODE><I>string</I> <BIG><B>msession_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$default_value)</CODE>
+<P>
+
+<A name="msession_uniq()"></A>
+<CODE><I>string</I> <BIG><B>msession_uniq</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$num_chars)</CODE>
+<P>
+
+<A name="msession_randstr()"></A>
+<CODE><I>string</I> <BIG><B>msession_randstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$num_chars)</CODE>
+<P>
+
+<A name="msession_find()"></A>
+<CODE><I>mixed[]</I> <BIG><B>msession_find</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="msession_list()"></A>
+<CODE><I>mixed[]</I> <BIG><B>msession_list</B></BIG>()</CODE>
+<P>
+
+<A name="msession_get_array()"></A>
+<CODE><I>mixed[]</I> <BIG><B>msession_get_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session)</CODE>
+<P>
+
+<A name="msession_set_array()"></A>
+<CODE><I>boolean</I> <BIG><B>msession_set_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$tuples)</CODE>
+<P>
+
+<A name="msession_listvar()"></A>
+<CODE><I>mixed[]</I> <BIG><B>msession_listvar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="msession_timeout()"></A>
+<CODE><I>int</I> <BIG><B>msession_timeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session, ...)</CODE>
+<P>
+
+<A name="msession_inc()"></A>
+<CODE><I>string</I> <BIG><B>msession_inc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="msession_get_data()"></A>
+<CODE><I>string</I> <BIG><B>msession_get_data</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session)</CODE>
+<P>
+
+<A name="msession_set_data()"></A>
+<CODE><I>boolean</I> <BIG><B>msession_set_data</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="msession_plugin()"></A>
+<CODE><I>string</I> <BIG><B>msession_plugin</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$val, ...)</CODE>
+<P>
+
+<A name="msession_call()"></A>
+<CODE><I>string</I> <BIG><B>msession_call</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fn_name, ...)</CODE>
+<P>
+
+<A name="msession_exec()"></A>
+<CODE><I>string</I> <BIG><B>msession_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmdline)</CODE>
+<P>
+
+<A name="msession_ping()"></A>
+<CODE><I>boolean</I> <BIG><B>msession_ping</B></BIG>()</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

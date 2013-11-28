@@ -1,0 +1,371 @@
+<HTML><BODY>
+<H1>zip</H1>
+<P><b>Zip File Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/book.zip.php">www.php.net/manual/en/book.zip.php</a>.
+
+
+</P>
+<HR>
+<P>
+
+<A name="zip_open()"></A>
+<CODE><I>resource</I> <BIG><B>zip_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="zip_close()"></A>
+<CODE><I>void</I> <BIG><B>zip_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip)</CODE>
+<P>
+
+<A name="zip_read()"></A>
+<CODE><I>resource</I> <BIG><B>zip_read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip)</CODE>
+<P>
+
+<A name="zip_entry_open()"></A>
+<CODE><I>boolean</I> <BIG><B>zip_entry_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip_dp,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip_entry, ...)</CODE>
+<P>
+
+<A name="zip_entry_close()"></A>
+<CODE><I>void</I> <BIG><B>zip_entry_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip_ent)</CODE>
+<P>
+
+<A name="zip_entry_read()"></A>
+<CODE><I>mixed</I> <BIG><B>zip_entry_read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip_entry, ...)</CODE>
+<P>
+
+<A name="zip_entry_name()"></A>
+<CODE><I>string</I> <BIG><B>zip_entry_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip_entry)</CODE>
+<P>
+
+<A name="zip_entry_compressedsize()"></A>
+<CODE><I>int</I> <BIG><B>zip_entry_compressedsize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip_entry)</CODE>
+<P>
+
+<A name="zip_entry_filesize()"></A>
+<CODE><I>int</I> <BIG><B>zip_entry_filesize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip_entry)</CODE>
+<P>
+
+<A name="zip_entry_compressionmethod()"></A>
+<CODE><I>string</I> <BIG><B>zip_entry_compressionmethod</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$zip_entry)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ZipArchive"></A>
+<pre>class <BIG><B>ZipArchive</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ZipArchive::CREATE"></A>
+<CODE><BIG><B>CREATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="ZipArchive::OVERWRITE"></A>
+<CODE><BIG><B>OVERWRITE</B></BIG> = 2</CODE>
+<P>
+
+<A name="ZipArchive::EXCL"></A>
+<CODE><BIG><B>EXCL</B></BIG> = 3</CODE>
+<P>
+
+<A name="ZipArchive::CHECKCONS"></A>
+<CODE><BIG><B>CHECKCONS</B></BIG> = 4</CODE>
+<P>
+
+<A name="ZipArchive::FL_NOCASE"></A>
+<CODE><BIG><B>FL_NOCASE</B></BIG> = 5</CODE>
+<P>
+
+<A name="ZipArchive::FL_NODIR"></A>
+<CODE><BIG><B>FL_NODIR</B></BIG> = 6</CODE>
+<P>
+
+<A name="ZipArchive::FL_COMPRESSED"></A>
+<CODE><BIG><B>FL_COMPRESSED</B></BIG> = 7</CODE>
+<P>
+
+<A name="ZipArchive::FL_UNCHANGED"></A>
+<CODE><BIG><B>FL_UNCHANGED</B></BIG> = 8</CODE>
+<P>
+
+<A name="ZipArchive::CM_DEFAULT"></A>
+<CODE><BIG><B>CM_DEFAULT</B></BIG> = 9</CODE>
+<P>
+
+<A name="ZipArchive::CM_STORE"></A>
+<CODE><BIG><B>CM_STORE</B></BIG> = 10</CODE>
+<P>
+
+<A name="ZipArchive::CM_SHRINK"></A>
+<CODE><BIG><B>CM_SHRINK</B></BIG> = 11</CODE>
+<P>
+
+<A name="ZipArchive::CM_REDUCE_1"></A>
+<CODE><BIG><B>CM_REDUCE_1</B></BIG> = 12</CODE>
+<P>
+
+<A name="ZipArchive::CM_REDUCE_2"></A>
+<CODE><BIG><B>CM_REDUCE_2</B></BIG> = 13</CODE>
+<P>
+
+<A name="ZipArchive::CM_REDUCE_3"></A>
+<CODE><BIG><B>CM_REDUCE_3</B></BIG> = 14</CODE>
+<P>
+
+<A name="ZipArchive::CM_REDUCE_4"></A>
+<CODE><BIG><B>CM_REDUCE_4</B></BIG> = 15</CODE>
+<P>
+
+<A name="ZipArchive::CM_IMPLODE"></A>
+<CODE><BIG><B>CM_IMPLODE</B></BIG> = 16</CODE>
+<P>
+
+<A name="ZipArchive::CM_DEFLATE"></A>
+<CODE><BIG><B>CM_DEFLATE</B></BIG> = 17</CODE>
+<P>
+
+<A name="ZipArchive::CM_DEFLATE64"></A>
+<CODE><BIG><B>CM_DEFLATE64</B></BIG> = 18</CODE>
+<P>
+
+<A name="ZipArchive::CM_PKWARE_IMPLODE"></A>
+<CODE><BIG><B>CM_PKWARE_IMPLODE</B></BIG> = 19</CODE>
+<P>
+
+<A name="ZipArchive::CM_BZIP2"></A>
+<CODE><BIG><B>CM_BZIP2</B></BIG> = 20</CODE>
+<P>
+
+<A name="ZipArchive::ER_OK"></A>
+<CODE><BIG><B>ER_OK</B></BIG> = 21</CODE>
+<P>
+
+<A name="ZipArchive::ER_MULTIDISK"></A>
+<CODE><BIG><B>ER_MULTIDISK</B></BIG> = 22</CODE>
+<P>
+
+<A name="ZipArchive::ER_RENAME"></A>
+<CODE><BIG><B>ER_RENAME</B></BIG> = 23</CODE>
+<P>
+
+<A name="ZipArchive::ER_CLOSE"></A>
+<CODE><BIG><B>ER_CLOSE</B></BIG> = 24</CODE>
+<P>
+
+<A name="ZipArchive::ER_SEEK"></A>
+<CODE><BIG><B>ER_SEEK</B></BIG> = 25</CODE>
+<P>
+
+<A name="ZipArchive::ER_READ"></A>
+<CODE><BIG><B>ER_READ</B></BIG> = 26</CODE>
+<P>
+
+<A name="ZipArchive::ER_WRITE"></A>
+<CODE><BIG><B>ER_WRITE</B></BIG> = 27</CODE>
+<P>
+
+<A name="ZipArchive::ER_CRC"></A>
+<CODE><BIG><B>ER_CRC</B></BIG> = 28</CODE>
+<P>
+
+<A name="ZipArchive::ER_ZIPCLOSED"></A>
+<CODE><BIG><B>ER_ZIPCLOSED</B></BIG> = 29</CODE>
+<P>
+
+<A name="ZipArchive::ER_NOENT"></A>
+<CODE><BIG><B>ER_NOENT</B></BIG> = 30</CODE>
+<P>
+
+<A name="ZipArchive::ER_EXISTS"></A>
+<CODE><BIG><B>ER_EXISTS</B></BIG> = 31</CODE>
+<P>
+
+<A name="ZipArchive::ER_OPEN"></A>
+<CODE><BIG><B>ER_OPEN</B></BIG> = 32</CODE>
+<P>
+
+<A name="ZipArchive::ER_TMPOPEN"></A>
+<CODE><BIG><B>ER_TMPOPEN</B></BIG> = 33</CODE>
+<P>
+
+<A name="ZipArchive::ER_ZLIB"></A>
+<CODE><BIG><B>ER_ZLIB</B></BIG> = 34</CODE>
+<P>
+
+<A name="ZipArchive::ER_MEMORY"></A>
+<CODE><BIG><B>ER_MEMORY</B></BIG> = 35</CODE>
+<P>
+
+<A name="ZipArchive::ER_CHANGED"></A>
+<CODE><BIG><B>ER_CHANGED</B></BIG> = 36</CODE>
+<P>
+
+<A name="ZipArchive::ER_COMPNOTSUPP"></A>
+<CODE><BIG><B>ER_COMPNOTSUPP</B></BIG> = 37</CODE>
+<P>
+
+<A name="ZipArchive::ER_EOF"></A>
+<CODE><BIG><B>ER_EOF</B></BIG> = 38</CODE>
+<P>
+
+<A name="ZipArchive::ER_INVAL"></A>
+<CODE><BIG><B>ER_INVAL</B></BIG> = 39</CODE>
+<P>
+
+<A name="ZipArchive::ER_NOZIP"></A>
+<CODE><BIG><B>ER_NOZIP</B></BIG> = 40</CODE>
+<P>
+
+<A name="ZipArchive::ER_INTERNAL"></A>
+<CODE><BIG><B>ER_INTERNAL</B></BIG> = 41</CODE>
+<P>
+
+<A name="ZipArchive::ER_INCONS"></A>
+<CODE><BIG><B>ER_INCONS</B></BIG> = 42</CODE>
+<P>
+
+<A name="ZipArchive::ER_REMOVE"></A>
+<CODE><BIG><B>ER_REMOVE</B></BIG> = 43</CODE>
+<P>
+
+<A name="ZipArchive::ER_DELETED"></A>
+<CODE><BIG><B>ER_DELETED</B></BIG> = 44</CODE>
+<P>
+
+<A name="ZipArchive::$status"></A>
+<CODE><I>int</I> <BIG><B>$status</B></BIG> = 0</CODE>
+<P>
+
+<A name="ZipArchive::$statusSys"></A>
+<CODE><I>int</I> <BIG><B>$statusSys</B></BIG> = 0</CODE>
+<P>
+
+<A name="ZipArchive::$numFiles"></A>
+<CODE><I>int</I> <BIG><B>$numFiles</B></BIG> = 0</CODE>
+<P>
+
+<A name="ZipArchive::$filename"></A>
+<CODE><I>string</I> <BIG><B>$filename</B></BIG> = NULL</CODE>
+<P>
+
+<A name="ZipArchive::$comment"></A>
+<CODE><I>string</I> <BIG><B>$comment</B></BIG> = NULL</CODE>
+<P>
+
+<A name="ZipArchive::open()"></A>
+<CODE><I>mixed</I> <BIG><B>open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source, ...)</CODE>
+<P>
+
+<A name="ZipArchive::close()"></A>
+<CODE><I>resource</I> <BIG><B>close</B></BIG>()</CODE>
+<P>
+
+<A name="ZipArchive::addFile()"></A>
+<CODE><I>boolean</I> <BIG><B>addFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filepath, ...)</CODE>
+<P>
+
+<A name="ZipArchive::addFromString()"></A>
+<CODE><I>resource</I> <BIG><B>addFromString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="ZipArchive::statName()"></A>
+<CODE><I>resource</I> <BIG><B>statName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="ZipArchive::statIndex()"></A>
+<CODE><I>resource</I> <BIG><B>statIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index, ...)</CODE>
+<P>
+
+<A name="ZipArchive::locateName()"></A>
+<CODE><I>resource</I> <BIG><B>locateName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="ZipArchive::getNameIndex()"></A>
+<CODE><I>resource</I> <BIG><B>getNameIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index, ...)</CODE>
+<P>
+
+<A name="ZipArchive::setArchiveComment()"></A>
+<CODE><I>resource</I> <BIG><B>setArchiveComment</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comment)</CODE>
+<P>
+
+<A name="ZipArchive::getArchiveComment()"></A>
+<CODE><I>resource</I> <BIG><B>getArchiveComment</B></BIG>()</CODE>
+<P>
+
+<A name="ZipArchive::setCommentName()"></A>
+<CODE><I>resource</I> <BIG><B>setCommentName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comment)</CODE>
+<P>
+
+<A name="ZipArchive::setCommentIndex()"></A>
+<CODE><I>resource</I> <BIG><B>setCommentIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$comment)</CODE>
+<P>
+
+<A name="ZipArchive::getCommentName()"></A>
+<CODE><I>resource</I> <BIG><B>getCommentName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ZipArchive::getCommentIndex()"></A>
+<CODE><I>resource</I> <BIG><B>getCommentIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="ZipArchive::deleteIndex()"></A>
+<CODE><I>resource</I> <BIG><B>deleteIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="ZipArchive::deleteName()"></A>
+<CODE><I>resource</I> <BIG><B>deleteName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ZipArchive::renameIndex()"></A>
+<CODE><I>resource</I> <BIG><B>renameIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$new_name)</CODE>
+<P>
+
+<A name="ZipArchive::renameName()"></A>
+<CODE><I>resource</I> <BIG><B>renameName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$new_name)</CODE>
+<P>
+
+<A name="ZipArchive::unchangeIndex()"></A>
+<CODE><I>resource</I> <BIG><B>unchangeIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="ZipArchive::unchangeName()"></A>
+<CODE><I>resource</I> <BIG><B>unchangeName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ZipArchive::unchangeAll()"></A>
+<CODE><I>resource</I> <BIG><B>unchangeAll</B></BIG>()</CODE>
+<P>
+
+<A name="ZipArchive::getFromName()"></A>
+<CODE><I>resource</I> <BIG><B>getFromName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$entryname, ...)</CODE>
+<P>
+
+<A name="ZipArchive::getFromIndex()"></A>
+<CODE><I>resource</I> <BIG><B>getFromIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$entryname, ...)</CODE>
+<P>
+
+<A name="ZipArchive::getStream()"></A>
+<CODE><I>resource</I> <BIG><B>getStream</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$entryname)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,1433 @@
+<HTML><BODY>
+<H1>phar</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="spl.html"><code>spl</code></a>, <a href="simplexml.html"><code>simplexml</code></a>, <a href="dom.html"><code>dom</code></a>, <a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="PharException"></A>
+<pre>class <BIG><B>PharException</B></BIG>
+      |  
+      `--<a href="standard.html#Exception"><code>Exception</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<i>This class merely extends another class and does not add any new member. Please see the extended class for details.</i><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="PharData"></A>
+<pre>class <BIG><B>PharData</B></BIG>
+      |  
+      `--<a href="#Phar"><code>Phar</code></a>
+           +--<a href="spl.html#RecursiveDirectoryIterator"><code>RecursiveDirectoryIterator</code></a>
+           |    +--<a href="spl.html#DirectoryIterator"><code>DirectoryIterator</code></a>
+           |    |    +--<a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a>
+           |    |    `--(<i><a href="spl.html#Iterator"><code>Iterator</code></a></i>)
+           |    |         `--(<i><a href="spl.html#Traversable"><code>Traversable</code></a></i>)
+           |    `--(<i><a href="spl.html#RecursiveIterator"><code>RecursiveIterator</code></a></i>)
+           |         `--(<i><a href="spl.html#Iterator"><code>Iterator</code></a></i>)
+           |              `--(<i><a href="spl.html#Traversable"><code>Traversable</code></a></i>)
+           +--(<i><a href="spl.html#Countable"><code>Countable</code></a></i>)
+           `--(<i><a href="spl.html#ArrayAccess"><code>ArrayAccess</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="PharData::NONE"></A>
+<CODE><BIG><B>NONE</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::NONE"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::COMPRESSED"></A>
+<CODE><BIG><B>COMPRESSED</B></BIG> = 61440</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::COMPRESSED"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::GZ"></A>
+<CODE><BIG><B>GZ</B></BIG> = 4096</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::GZ"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::BZ2"></A>
+<CODE><BIG><B>BZ2</B></BIG> = 8192</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::BZ2"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::SAME"></A>
+<CODE><BIG><B>SAME</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::SAME"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::PHAR"></A>
+<CODE><BIG><B>PHAR</B></BIG> = 1</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::PHAR"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::TAR"></A>
+<CODE><BIG><B>TAR</B></BIG> = 2</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::TAR"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::ZIP"></A>
+<CODE><BIG><B>ZIP</B></BIG> = 3</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::ZIP"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::MD5"></A>
+<CODE><BIG><B>MD5</B></BIG> = 1</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::MD5"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::SHA1"></A>
+<CODE><BIG><B>SHA1</B></BIG> = 2</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::SHA1"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::SHA256"></A>
+<CODE><BIG><B>SHA256</B></BIG> = 3</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::SHA256"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::SHA512"></A>
+<CODE><BIG><B>SHA512</B></BIG> = 4</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::SHA512"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::OPENSSL"></A>
+<CODE><BIG><B>OPENSSL</B></BIG> = 16</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::OPENSSL"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::PHP"></A>
+<CODE><BIG><B>PHP</B></BIG> = 1</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::PHP"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::PHPS"></A>
+<CODE><BIG><B>PHPS</B></BIG> = 2</CODE>
+<BR><I>inherited from</i> <CODE><a href="#Phar::PHPS"><code>Phar</code></a></CODE>
+<P>
+
+<A name="PharData::CURRENT_MODE_MASK"></A>
+<CODE><BIG><B>CURRENT_MODE_MASK</B></BIG> = 240</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::CURRENT_MODE_MASK"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="PharData::CURRENT_AS_PATHNAME"></A>
+<CODE><BIG><B>CURRENT_AS_PATHNAME</B></BIG> = 32</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::CURRENT_AS_PATHNAME"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="PharData::CURRENT_AS_FILEINFO"></A>
+<CODE><BIG><B>CURRENT_AS_FILEINFO</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::CURRENT_AS_FILEINFO"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="PharData::CURRENT_AS_SELF"></A>
+<CODE><BIG><B>CURRENT_AS_SELF</B></BIG> = 16</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::CURRENT_AS_SELF"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="PharData::KEY_MODE_MASK"></A>
+<CODE><BIG><B>KEY_MODE_MASK</B></BIG> = 3840</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::KEY_MODE_MASK"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="PharData::KEY_AS_PATHNAME"></A>
+<CODE><BIG><B>KEY_AS_PATHNAME</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::KEY_AS_PATHNAME"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="PharData::KEY_AS_FILENAME"></A>
+<CODE><BIG><B>KEY_AS_FILENAME</B></BIG> = 256</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::KEY_AS_FILENAME"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="PharData::NEW_CURRENT_AND_KEY"></A>
+<CODE><BIG><B>NEW_CURRENT_AND_KEY</B></BIG> = 256</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::NEW_CURRENT_AND_KEY"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="PharData::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$format = 2)</CODE>
+<P>
+
+<A name="PharData::addEmptyDir()"></A>
+<CODE><I>void</I> <BIG><B>addEmptyDir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dirname)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::addEmptyDir()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::addFile()"></A>
+<CODE><I>void</I> <BIG><B>addFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localname = NULL)</CODE>
+<br>throws <a href="standard.html#Exception"><code>Exception</code></a><BR><I>inherited from</i> <a href="#Phar::addFile()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::addFromString()"></A>
+<CODE><I>void</I> <BIG><B>addFromString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$contents)</CODE>
+<br>throws <a href="standard.html#Exception"><code>Exception</code></a><BR><I>inherited from</i> <a href="#Phar::addFromString()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::apiVersion()"></A>
+<CODE><I>string</I> <BIG><B>apiVersion</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::apiVersion()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::buildFromDirectory()"></A>
+<CODE><I>string[string]</I> <BIG><B>buildFromDirectory</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$base_dir,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$regex = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::buildFromDirectory()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::buildFromIterator()"></A>
+<CODE><I>string[string]</I> <BIG><B>buildFromIterator</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="spl.html#Iterator"><code>Iterator</code></a></I>&nbsp;$iter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$base_directory = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::buildFromIterator()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::canCompress()"></A>
+<CODE><I>boolean</I> <BIG><B>canCompress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 0)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::canCompress()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::canWrite()"></A>
+<CODE><I>boolean</I> <BIG><B>canWrite</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::canWrite()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::compress()"></A>
+<CODE><I><a href="#Phar"><code>Phar</code></a></I> <BIG><B>compress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension = NULL)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::compress()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::compressAllFilesBZIP2()"></A>
+<CODE><I>boolean</I> <BIG><B>compressAllFilesBZIP2</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::compressAllFilesBZIP2()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::compressAllFilesGZ()"></A>
+<CODE><I>boolean</I> <BIG><B>compressAllFilesGZ</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::compressAllFilesGZ()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::compressFiles()"></A>
+<CODE><I>void</I> <BIG><B>compressFiles</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::compressFiles()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::convertToData()"></A>
+<CODE><I><a href="#PharData"><code>PharData</code></a></I> <BIG><B>convertToData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$format = 9021976,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression = 9021976,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::convertToData()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::convertToExecutable()"></A>
+<CODE><I><a href="#Phar"><code>Phar</code></a></I> <BIG><B>convertToExecutable</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$format = 9021976,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression = 9021976,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::convertToExecutable()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::copy()"></A>
+<CODE><I>boolean</I> <BIG><B>copy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$oldfile,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$newfile)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::copy()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::count()"></A>
+<CODE><I>int</I> <BIG><B>count</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::count()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::createDefaultStub()"></A>
+<CODE><I>string</I> <BIG><B>createDefaultStub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$indexfile = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$webindexfile = NULL)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::createDefaultStub()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::decompress()"></A>
+<CODE><I><a href="#Phar"><code>Phar</code></a></I> <BIG><B>decompress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension = NULL)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::decompress()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::decompressFiles()"></A>
+<CODE><I>boolean</I> <BIG><B>decompressFiles</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::decompressFiles()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::delMetadata()"></A>
+<CODE><I>boolean</I> <BIG><B>delMetadata</B></BIG>()</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::delMetadata()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::delete()"></A>
+<CODE><I>boolean</I> <BIG><B>delete</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$entry)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::delete()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::extractTo()"></A>
+<CODE><I>boolean</I> <BIG><B>extractTo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pathto,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$files_or_dir,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$overwrite = FALSE)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::extractTo()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::getMetadata()"></A>
+<CODE><I>mixed</I> <BIG><B>getMetadata</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::getMetadata()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::getModified()"></A>
+<CODE><I>boolean</I> <BIG><B>getModified</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::getModified()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::getSignature()"></A>
+<CODE><I>string[string]</I> <BIG><B>getSignature</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::getSignature()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::getStub()"></A>
+<CODE><I>string</I> <BIG><B>getStub</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::getStub()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::getSupportedCompression()"></A>
+<CODE><I>string[int]</I> <BIG><B>getSupportedCompression</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::getSupportedCompression()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::getSupportedSignatures()"></A>
+<CODE><I>string[int]</I> <BIG><B>getSupportedSignatures</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::getSupportedSignatures()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::getVersion()"></A>
+<CODE><I>string</I> <BIG><B>getVersion</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::getVersion()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::hasMetadata()"></A>
+<CODE><I>boolean</I> <BIG><B>hasMetadata</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::hasMetadata()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::interceptFileFuncs()"></A>
+<CODE><I>void</I> <BIG><B>interceptFileFuncs</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::interceptFileFuncs()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::isBuffering()"></A>
+<CODE><I>boolean</I> <BIG><B>isBuffering</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::isBuffering()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::isCompressed()"></A>
+<CODE><I>mixed</I> <BIG><B>isCompressed</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::isCompressed()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::isFileFormat()"></A>
+<CODE><I>boolean</I> <BIG><B>isFileFormat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$format)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::isFileFormat()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::isValidPharFilename()"></A>
+<CODE><I>boolean</I> <BIG><B>isValidPharFilename</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$executable = TRUE)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::isValidPharFilename()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::isWritable()"></A>
+<CODE><I>boolean</I> <BIG><B>isWritable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::isWritable()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::loadPhar()"></A>
+<CODE><I>boolean</I> <BIG><B>loadPhar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::loadPhar()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::mapPhar()"></A>
+<CODE><I>boolean</I> <BIG><B>mapPhar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dataoffset = 0)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::mapPhar()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::mount()"></A>
+<CODE><I>void</I> <BIG><B>mount</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pharpath,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$externalpath)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::mount()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::mungServer()"></A>
+<CODE><I>void</I> <BIG><B>mungServer</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$munglist)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::mungServer()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::offsetExists()"></A>
+<CODE><I>boolean</I> <BIG><B>offsetExists</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$offset)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::offsetExists()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::offsetGet()"></A>
+<CODE><I>mixed</I> <BIG><B>offsetGet</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$offset)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::offsetGet()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::offsetSet()"></A>
+<CODE><I>void</I> <BIG><B>offsetSet</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::offsetSet()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::offsetUnset()"></A>
+<CODE><I>void</I> <BIG><B>offsetUnset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$offset)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::offsetUnset()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::running()"></A>
+<CODE><I>string</I> <BIG><B>running</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$retphar = TRUE)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::running()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::setAlias()"></A>
+<CODE><I>boolean</I> <BIG><B>setAlias</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::setAlias()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::setDefaultStub()"></A>
+<CODE><I>boolean</I> <BIG><B>setDefaultStub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$index = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$webindex = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::setDefaultStub()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::setMetadata()"></A>
+<CODE><I>void</I> <BIG><B>setMetadata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$metadata)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::setMetadata()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::setSignatureAlgorithm()"></A>
+<CODE><I>void</I> <BIG><B>setSignatureAlgorithm</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sigtype,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$privatekey = NULL)</CODE>
+<BR><I>inherited from</i> <a href="#Phar::setSignatureAlgorithm()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::setStub()"></A>
+<CODE><I>boolean</I> <BIG><B>setStub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stub)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::setStub()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::startBuffering()"></A>
+<CODE><I>void</I> <BIG><B>startBuffering</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::startBuffering()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::stopBuffering()"></A>
+<CODE><I>void</I> <BIG><B>stopBuffering</B></BIG>()</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::stopBuffering()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::uncompressAllFiles()"></A>
+<CODE><I>boolean</I> <BIG><B>uncompressAllFiles</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Phar::uncompressAllFiles()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::unlinkArchive()"></A>
+<CODE><I>boolean</I> <BIG><B>unlinkArchive</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$archive)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::unlinkArchive()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::webPhar()"></A>
+<CODE><I>void</I> <BIG><B>webPhar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$index = "index.php",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$f404 = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[string]</I>&nbsp;$mimetypes = array(...),
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[string]</I>&nbsp;$rewrites = array(...))</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><BR><I>inherited from</i> <a href="#Phar::webPhar()"><code>Phar</code></a>
+<P>
+
+<A name="PharData::rewind()"></A>
+<CODE><I>void</I> <BIG><B>rewind</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::rewind()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="PharData::next()"></A>
+<CODE><I>void</I> <BIG><B>next</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::next()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="PharData::hasChildren()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildren</B></BIG>(...)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::hasChildren()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getChildren()"></A>
+<CODE><I><a href="spl.html#RecursiveDirectoryIterator"><code>RecursiveDirectoryIterator</code></a></I> <BIG><B>getChildren</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::getChildren()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="PharData::key()"></A>
+<CODE><I>string</I> <BIG><B>key</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::key()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="PharData::current()"></A>
+<CODE><I><a href="spl.html#RecursiveDirectoryIterator"><code>RecursiveDirectoryIterator</code></a></I> <BIG><B>current</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::current()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="PharData::valid()"></A>
+<CODE><I>boolean</I> <BIG><B>valid</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::valid()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getPath()"></A>
+<CODE><I>string</I> <BIG><B>getPath</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getPath()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getFilename()"></A>
+<CODE><I>string</I> <BIG><B>getFilename</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getFilename()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getPathname()"></A>
+<CODE><I>string</I> <BIG><B>getPathname</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getPathname()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::Recursivekey()"></A>
+<CODE><I>string</I> <BIG><B>Recursivekey</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::Recursivekey()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::isDot()"></A>
+<CODE><I>boolean</I> <BIG><B>isDot</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isDot()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getPerms()"></A>
+<CODE><I>int</I> <BIG><B>getPerms</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getPerms()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getInode()"></A>
+<CODE><I>int</I> <BIG><B>getInode</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getInode()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getSize()"></A>
+<CODE><I>int</I> <BIG><B>getSize</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getSize()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getOwner()"></A>
+<CODE><I>int</I> <BIG><B>getOwner</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getOwner()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getGroup()"></A>
+<CODE><I>int</I> <BIG><B>getGroup</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getGroup()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getATime()"></A>
+<CODE><I>int</I> <BIG><B>getATime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getATime()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getMTime()"></A>
+<CODE><I>int</I> <BIG><B>getMTime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getMTime()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getCTime()"></A>
+<CODE><I>int</I> <BIG><B>getCTime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getCTime()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getType()"></A>
+<CODE><I>string</I> <BIG><B>getType</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getType()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::isReadable()"></A>
+<CODE><I>boolean</I> <BIG><B>isReadable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isReadable()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::isExecutable()"></A>
+<CODE><I>boolean</I> <BIG><B>isExecutable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isExecutable()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::isFile()"></A>
+<CODE><I>boolean</I> <BIG><B>isFile</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isFile()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::isDir()"></A>
+<CODE><I>boolean</I> <BIG><B>isDir</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isDir()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::isLink()"></A>
+<CODE><I>boolean</I> <BIG><B>isLink</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isLink()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="PharData::getBasename()"></A>
+<CODE><I>string</I> <BIG><B>getBasename</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$suffix = "")</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getBasename()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharData::getFileInfo()"></A>
+<CODE><I><a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a></I> <BIG><B>getFileInfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getFileInfo()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharData::getLinkTarget()"></A>
+<CODE><I>string</I> <BIG><B>getLinkTarget</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getLinkTarget()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharData::getPathInfo()"></A>
+<CODE><I><a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a></I> <BIG><B>getPathInfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getPathInfo()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharData::getRealPath()"></A>
+<CODE><I>string</I> <BIG><B>getRealPath</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getRealPath()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharData::openFile()"></A>
+<CODE><I><a href="spl.html#SplFileObject"><code>SplFileObject</code></a></I> <BIG><B>openFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$open_mode = "r",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$use_include_path = FALSE,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$context = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::openFile()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharData::setFileClass()"></A>
+<CODE><I>void</I> <BIG><B>setFileClass</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::setFileClass()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharData::setInfoClass()"></A>
+<CODE><I>void</I> <BIG><B>setInfoClass</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::setInfoClass()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharData::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::__toString()"><code>SplFileInfo</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Phar"></A>
+<pre>class <BIG><B>Phar</B></BIG>
+      |  
+      +--<a href="spl.html#RecursiveDirectoryIterator"><code>RecursiveDirectoryIterator</code></a>
+      |    +--<a href="spl.html#DirectoryIterator"><code>DirectoryIterator</code></a>
+      |    |    +--<a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a>
+      |    |    `--(<i><a href="spl.html#Iterator"><code>Iterator</code></a></i>)
+      |    |         `--(<i><a href="spl.html#Traversable"><code>Traversable</code></a></i>)
+      |    `--(<i><a href="spl.html#RecursiveIterator"><code>RecursiveIterator</code></a></i>)
+      |         `--(<i><a href="spl.html#Iterator"><code>Iterator</code></a></i>)
+      |              `--(<i><a href="spl.html#Traversable"><code>Traversable</code></a></i>)
+      +--(<i><a href="spl.html#Countable"><code>Countable</code></a></i>)
+      `--(<i><a href="spl.html#ArrayAccess"><code>ArrayAccess</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Phar::NONE"></A>
+<CODE><BIG><B>NONE</B></BIG> = 0</CODE>
+<P>
+
+<A name="Phar::COMPRESSED"></A>
+<CODE><BIG><B>COMPRESSED</B></BIG> = 61440</CODE>
+<P>
+
+<A name="Phar::GZ"></A>
+<CODE><BIG><B>GZ</B></BIG> = 4096</CODE>
+<P>
+
+<A name="Phar::BZ2"></A>
+<CODE><BIG><B>BZ2</B></BIG> = 8192</CODE>
+<P>
+
+<A name="Phar::SAME"></A>
+<CODE><BIG><B>SAME</B></BIG> = 0</CODE>
+<P>
+
+<A name="Phar::PHAR"></A>
+<CODE><BIG><B>PHAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="Phar::TAR"></A>
+<CODE><BIG><B>TAR</B></BIG> = 2</CODE>
+<P>
+
+<A name="Phar::ZIP"></A>
+<CODE><BIG><B>ZIP</B></BIG> = 3</CODE>
+<P>
+
+<A name="Phar::MD5"></A>
+<CODE><BIG><B>MD5</B></BIG> = 1</CODE>
+<P>
+
+<A name="Phar::SHA1"></A>
+<CODE><BIG><B>SHA1</B></BIG> = 2</CODE>
+<P>
+
+<A name="Phar::SHA256"></A>
+<CODE><BIG><B>SHA256</B></BIG> = 3</CODE>
+<P>
+
+<A name="Phar::SHA512"></A>
+<CODE><BIG><B>SHA512</B></BIG> = 4</CODE>
+<P>
+
+<A name="Phar::OPENSSL"></A>
+<CODE><BIG><B>OPENSSL</B></BIG> = 16</CODE>
+<P>
+
+<A name="Phar::PHP"></A>
+<CODE><BIG><B>PHP</B></BIG> = 1</CODE>
+<P>
+
+<A name="Phar::PHPS"></A>
+<CODE><BIG><B>PHPS</B></BIG> = 2</CODE>
+<P>
+
+<A name="Phar::CURRENT_MODE_MASK"></A>
+<CODE><BIG><B>CURRENT_MODE_MASK</B></BIG> = 240</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::CURRENT_MODE_MASK"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="Phar::CURRENT_AS_PATHNAME"></A>
+<CODE><BIG><B>CURRENT_AS_PATHNAME</B></BIG> = 32</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::CURRENT_AS_PATHNAME"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="Phar::CURRENT_AS_FILEINFO"></A>
+<CODE><BIG><B>CURRENT_AS_FILEINFO</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::CURRENT_AS_FILEINFO"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="Phar::CURRENT_AS_SELF"></A>
+<CODE><BIG><B>CURRENT_AS_SELF</B></BIG> = 16</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::CURRENT_AS_SELF"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="Phar::KEY_MODE_MASK"></A>
+<CODE><BIG><B>KEY_MODE_MASK</B></BIG> = 3840</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::KEY_MODE_MASK"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="Phar::KEY_AS_PATHNAME"></A>
+<CODE><BIG><B>KEY_AS_PATHNAME</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::KEY_AS_PATHNAME"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="Phar::KEY_AS_FILENAME"></A>
+<CODE><BIG><B>KEY_AS_FILENAME</B></BIG> = 256</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::KEY_AS_FILENAME"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="Phar::NEW_CURRENT_AND_KEY"></A>
+<CODE><BIG><B>NEW_CURRENT_AND_KEY</B></BIG> = 256</CODE>
+<BR><I>inherited from</i> <CODE><a href="spl.html#DirectoryIterator::NEW_CURRENT_AND_KEY"><code>DirectoryIterator</code></a></CODE>
+<P>
+
+<A name="Phar::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias = NULL)</CODE>
+<P>
+
+<A name="Phar::addEmptyDir()"></A>
+<CODE><I>void</I> <BIG><B>addEmptyDir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dirname)</CODE>
+<P>
+
+<A name="Phar::addFile()"></A>
+<CODE><I>void</I> <BIG><B>addFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localname = NULL)</CODE>
+<br>throws <a href="standard.html#Exception"><code>Exception</code></a><P>
+
+<A name="Phar::addFromString()"></A>
+<CODE><I>void</I> <BIG><B>addFromString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$contents)</CODE>
+<br>throws <a href="standard.html#Exception"><code>Exception</code></a><P>
+
+<A name="Phar::apiVersion()"></A>
+<CODE><I>string</I> <BIG><B>apiVersion</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::buildFromDirectory()"></A>
+<CODE><I>string[string]</I> <BIG><B>buildFromDirectory</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$base_dir,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$regex = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::buildFromIterator()"></A>
+<CODE><I>string[string]</I> <BIG><B>buildFromIterator</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="spl.html#Iterator"><code>Iterator</code></a></I>&nbsp;$iter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$base_directory = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::canCompress()"></A>
+<CODE><I>boolean</I> <BIG><B>canCompress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 0)</CODE>
+<P>
+
+<A name="Phar::canWrite()"></A>
+<CODE><I>boolean</I> <BIG><B>canWrite</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::compress()"></A>
+<CODE><I><a href="#Phar"><code>Phar</code></a></I> <BIG><B>compress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension = NULL)</CODE>
+<P>
+
+<A name="Phar::compressAllFilesBZIP2()"></A>
+<CODE><I>boolean</I> <BIG><B>compressAllFilesBZIP2</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::compressAllFilesGZ()"></A>
+<CODE><I>boolean</I> <BIG><B>compressAllFilesGZ</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::compressFiles()"></A>
+<CODE><I>void</I> <BIG><B>compressFiles</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression)</CODE>
+<P>
+
+<A name="Phar::convertToData()"></A>
+<CODE><I><a href="#PharData"><code>PharData</code></a></I> <BIG><B>convertToData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$format = 9021976,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression = 9021976,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::convertToExecutable()"></A>
+<CODE><I><a href="#Phar"><code>Phar</code></a></I> <BIG><B>convertToExecutable</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$format = 9021976,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression = 9021976,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::copy()"></A>
+<CODE><I>boolean</I> <BIG><B>copy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$oldfile,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$newfile)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::count()"></A>
+<CODE><I>int</I> <BIG><B>count</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="spl.html#Countable::count()"><code>Countable</code></a><P>
+
+<A name="Phar::createDefaultStub()"></A>
+<CODE><I>string</I> <BIG><B>createDefaultStub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$indexfile = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$webindexfile = NULL)</CODE>
+<P>
+
+<A name="Phar::decompress()"></A>
+<CODE><I><a href="#Phar"><code>Phar</code></a></I> <BIG><B>decompress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension = NULL)</CODE>
+<P>
+
+<A name="Phar::decompressFiles()"></A>
+<CODE><I>boolean</I> <BIG><B>decompressFiles</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::delMetadata()"></A>
+<CODE><I>boolean</I> <BIG><B>delMetadata</B></BIG>()</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::delete()"></A>
+<CODE><I>boolean</I> <BIG><B>delete</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$entry)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::extractTo()"></A>
+<CODE><I>boolean</I> <BIG><B>extractTo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pathto,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$files_or_dir,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$overwrite = FALSE)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::getMetadata()"></A>
+<CODE><I>mixed</I> <BIG><B>getMetadata</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::getModified()"></A>
+<CODE><I>boolean</I> <BIG><B>getModified</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::getSignature()"></A>
+<CODE><I>string[string]</I> <BIG><B>getSignature</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::getStub()"></A>
+<CODE><I>string</I> <BIG><B>getStub</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::getSupportedCompression()"></A>
+<CODE><I>string[int]</I> <BIG><B>getSupportedCompression</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::getSupportedSignatures()"></A>
+<CODE><I>string[int]</I> <BIG><B>getSupportedSignatures</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::getVersion()"></A>
+<CODE><I>string</I> <BIG><B>getVersion</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::hasMetadata()"></A>
+<CODE><I>boolean</I> <BIG><B>hasMetadata</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::interceptFileFuncs()"></A>
+<CODE><I>void</I> <BIG><B>interceptFileFuncs</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::isBuffering()"></A>
+<CODE><I>boolean</I> <BIG><B>isBuffering</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::isCompressed()"></A>
+<CODE><I>mixed</I> <BIG><B>isCompressed</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::isFileFormat()"></A>
+<CODE><I>boolean</I> <BIG><B>isFileFormat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$format)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::isValidPharFilename()"></A>
+<CODE><I>boolean</I> <BIG><B>isValidPharFilename</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$executable = TRUE)</CODE>
+<P>
+
+<A name="Phar::isWritable()"></A>
+<CODE><I>boolean</I> <BIG><B>isWritable</B></BIG>()</CODE>
+
+<BR><I>overrides</i> <a href="spl.html#DirectoryIterator::isWritable()"><code>DirectoryIterator</code></a>, <a href="spl.html#SplFileInfo::isWritable()"><code>SplFileInfo</code></a><P>
+
+<A name="Phar::loadPhar()"></A>
+<CODE><I>boolean</I> <BIG><B>loadPhar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::mapPhar()"></A>
+<CODE><I>boolean</I> <BIG><B>mapPhar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dataoffset = 0)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::mount()"></A>
+<CODE><I>void</I> <BIG><B>mount</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pharpath,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$externalpath)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::mungServer()"></A>
+<CODE><I>void</I> <BIG><B>mungServer</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$munglist)</CODE>
+<P>
+
+<A name="Phar::offsetExists()"></A>
+<CODE><I>boolean</I> <BIG><B>offsetExists</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$offset)</CODE>
+
+<BR><I>implements</i> <a href="spl.html#ArrayAccess::offsetExists()"><code>ArrayAccess</code></a><P>
+
+<A name="Phar::offsetGet()"></A>
+<CODE><I>mixed</I> <BIG><B>offsetGet</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$offset)</CODE>
+
+<BR><I>implements</i> <a href="spl.html#ArrayAccess::offsetGet()"><code>ArrayAccess</code></a><P>
+
+<A name="Phar::offsetSet()"></A>
+<CODE><I>void</I> <BIG><B>offsetSet</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+
+<BR><I>implements</i> <a href="spl.html#ArrayAccess::offsetSet()"><code>ArrayAccess</code></a><P>
+
+<A name="Phar::offsetUnset()"></A>
+<CODE><I>void</I> <BIG><B>offsetUnset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$offset)</CODE>
+
+<BR><I>implements</i> <a href="spl.html#ArrayAccess::offsetUnset()"><code>ArrayAccess</code></a><P>
+
+<A name="Phar::running()"></A>
+<CODE><I>string</I> <BIG><B>running</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$retphar = TRUE)</CODE>
+<P>
+
+<A name="Phar::setAlias()"></A>
+<CODE><I>boolean</I> <BIG><B>setAlias</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias)</CODE>
+<P>
+
+<A name="Phar::setDefaultStub()"></A>
+<CODE><I>boolean</I> <BIG><B>setDefaultStub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$index = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$webindex = NULL)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::setMetadata()"></A>
+<CODE><I>void</I> <BIG><B>setMetadata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$metadata)</CODE>
+<P>
+
+<A name="Phar::setSignatureAlgorithm()"></A>
+<CODE><I>void</I> <BIG><B>setSignatureAlgorithm</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sigtype,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$privatekey = NULL)</CODE>
+<P>
+
+<A name="Phar::setStub()"></A>
+<CODE><I>boolean</I> <BIG><B>setStub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stub)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::startBuffering()"></A>
+<CODE><I>void</I> <BIG><B>startBuffering</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::stopBuffering()"></A>
+<CODE><I>void</I> <BIG><B>stopBuffering</B></BIG>()</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::uncompressAllFiles()"></A>
+<CODE><I>boolean</I> <BIG><B>uncompressAllFiles</B></BIG>()</CODE>
+<P>
+
+<A name="Phar::unlinkArchive()"></A>
+<CODE><I>boolean</I> <BIG><B>unlinkArchive</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$archive)</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::webPhar()"></A>
+<CODE><I>void</I> <BIG><B>webPhar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$alias = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$index = "index.php",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$f404 = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[string]</I>&nbsp;$mimetypes = array(...),
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[string]</I>&nbsp;$rewrites = array(...))</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="Phar::rewind()"></A>
+<CODE><I>void</I> <BIG><B>rewind</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::rewind()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="Phar::next()"></A>
+<CODE><I>void</I> <BIG><B>next</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::next()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="Phar::hasChildren()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildren</B></BIG>(...)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::hasChildren()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getChildren()"></A>
+<CODE><I><a href="spl.html#RecursiveDirectoryIterator"><code>RecursiveDirectoryIterator</code></a></I> <BIG><B>getChildren</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::getChildren()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="Phar::key()"></A>
+<CODE><I>string</I> <BIG><B>key</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::key()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="Phar::current()"></A>
+<CODE><I><a href="spl.html#RecursiveDirectoryIterator"><code>RecursiveDirectoryIterator</code></a></I> <BIG><B>current</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::current()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="Phar::valid()"></A>
+<CODE><I>boolean</I> <BIG><B>valid</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#RecursiveDirectoryIterator::valid()"><code>RecursiveDirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getPath()"></A>
+<CODE><I>string</I> <BIG><B>getPath</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getPath()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getFilename()"></A>
+<CODE><I>string</I> <BIG><B>getFilename</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getFilename()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getPathname()"></A>
+<CODE><I>string</I> <BIG><B>getPathname</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getPathname()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::Recursivekey()"></A>
+<CODE><I>string</I> <BIG><B>Recursivekey</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::Recursivekey()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::isDot()"></A>
+<CODE><I>boolean</I> <BIG><B>isDot</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isDot()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getPerms()"></A>
+<CODE><I>int</I> <BIG><B>getPerms</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getPerms()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getInode()"></A>
+<CODE><I>int</I> <BIG><B>getInode</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getInode()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getSize()"></A>
+<CODE><I>int</I> <BIG><B>getSize</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getSize()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getOwner()"></A>
+<CODE><I>int</I> <BIG><B>getOwner</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getOwner()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getGroup()"></A>
+<CODE><I>int</I> <BIG><B>getGroup</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getGroup()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getATime()"></A>
+<CODE><I>int</I> <BIG><B>getATime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getATime()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getMTime()"></A>
+<CODE><I>int</I> <BIG><B>getMTime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getMTime()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getCTime()"></A>
+<CODE><I>int</I> <BIG><B>getCTime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getCTime()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getType()"></A>
+<CODE><I>string</I> <BIG><B>getType</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::getType()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::isReadable()"></A>
+<CODE><I>boolean</I> <BIG><B>isReadable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isReadable()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::isExecutable()"></A>
+<CODE><I>boolean</I> <BIG><B>isExecutable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isExecutable()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::isFile()"></A>
+<CODE><I>boolean</I> <BIG><B>isFile</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isFile()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::isDir()"></A>
+<CODE><I>boolean</I> <BIG><B>isDir</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isDir()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::isLink()"></A>
+<CODE><I>boolean</I> <BIG><B>isLink</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#DirectoryIterator::isLink()"><code>DirectoryIterator</code></a>
+<P>
+
+<A name="Phar::getBasename()"></A>
+<CODE><I>string</I> <BIG><B>getBasename</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$suffix = "")</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getBasename()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="Phar::getFileInfo()"></A>
+<CODE><I><a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a></I> <BIG><B>getFileInfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getFileInfo()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="Phar::getLinkTarget()"></A>
+<CODE><I>string</I> <BIG><B>getLinkTarget</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getLinkTarget()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="Phar::getPathInfo()"></A>
+<CODE><I><a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a></I> <BIG><B>getPathInfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getPathInfo()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="Phar::getRealPath()"></A>
+<CODE><I>string</I> <BIG><B>getRealPath</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getRealPath()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="Phar::openFile()"></A>
+<CODE><I><a href="spl.html#SplFileObject"><code>SplFileObject</code></a></I> <BIG><B>openFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$open_mode = "r",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$use_include_path = FALSE,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$context = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::openFile()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="Phar::setFileClass()"></A>
+<CODE><I>void</I> <BIG><B>setFileClass</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::setFileClass()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="Phar::setInfoClass()"></A>
+<CODE><I>void</I> <BIG><B>setInfoClass</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::setInfoClass()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="Phar::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::__toString()"><code>SplFileInfo</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="PharFileInfo"></A>
+<pre>class <BIG><B>PharFileInfo</B></BIG>
+      |  
+      `--<a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="PharFileInfo::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$entry)</CODE>
+<P>
+
+<A name="PharFileInfo::chmod()"></A>
+<CODE><I>void</I> <BIG><B>chmod</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$permissions)</CODE>
+<P>
+
+<A name="PharFileInfo::compress()"></A>
+<CODE><I>boolean</I> <BIG><B>compress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression)</CODE>
+<P>
+
+<A name="PharFileInfo::decompress()"></A>
+<CODE><I>boolean</I> <BIG><B>decompress</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::delMetadata()"></A>
+<CODE><I>boolean</I> <BIG><B>delMetadata</B></BIG>()</CODE>
+<br>throws <a href="#PharException"><code>PharException</code></a><P>
+
+<A name="PharFileInfo::getCRC32()"></A>
+<CODE><I>int</I> <BIG><B>getCRC32</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::getCompressedSize()"></A>
+<CODE><I>int</I> <BIG><B>getCompressedSize</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::getMetadata()"></A>
+<CODE><I>mixed</I> <BIG><B>getMetadata</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::getPharFlags()"></A>
+<CODE><I>int</I> <BIG><B>getPharFlags</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::hasMetadata()"></A>
+<CODE><I>boolean</I> <BIG><B>hasMetadata</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::isCRCChecked()"></A>
+<CODE><I>boolean</I> <BIG><B>isCRCChecked</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::isCompressed()"></A>
+<CODE><I>boolean</I> <BIG><B>isCompressed</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression_type = 9021976)</CODE>
+<P>
+
+<A name="PharFileInfo::isCompressedBZIP2()"></A>
+<CODE><I>boolean</I> <BIG><B>isCompressedBZIP2</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::isCompressedGZ()"></A>
+<CODE><I>boolean</I> <BIG><B>isCompressedGZ</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::setCompressedBZIP2()"></A>
+<CODE><I>boolean</I> <BIG><B>setCompressedBZIP2</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::setCompressedGZ()"></A>
+<CODE><I>boolean</I> <BIG><B>setCompressedGZ</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::setMetadata()"></A>
+<CODE><I>void</I> <BIG><B>setMetadata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$metadata)</CODE>
+<P>
+
+<A name="PharFileInfo::setUncompressed()"></A>
+<CODE><I>boolean</I> <BIG><B>setUncompressed</B></BIG>()</CODE>
+<P>
+
+<A name="PharFileInfo::getATime()"></A>
+<CODE><I>int</I> <BIG><B>getATime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getATime()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getBasename()"></A>
+<CODE><I>string</I> <BIG><B>getBasename</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$suffix = "")</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getBasename()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getCTime()"></A>
+<CODE><I>int</I> <BIG><B>getCTime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getCTime()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getFileInfo()"></A>
+<CODE><I><a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a></I> <BIG><B>getFileInfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getFileInfo()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getFilename()"></A>
+<CODE><I>string</I> <BIG><B>getFilename</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getFilename()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getGroup()"></A>
+<CODE><I>int</I> <BIG><B>getGroup</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getGroup()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getInode()"></A>
+<CODE><I>int</I> <BIG><B>getInode</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getInode()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getLinkTarget()"></A>
+<CODE><I>string</I> <BIG><B>getLinkTarget</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getLinkTarget()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getMTime()"></A>
+<CODE><I>int</I> <BIG><B>getMTime</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getMTime()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getOwner()"></A>
+<CODE><I>int</I> <BIG><B>getOwner</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getOwner()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getPath()"></A>
+<CODE><I>string</I> <BIG><B>getPath</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getPath()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getPathInfo()"></A>
+<CODE><I><a href="spl.html#SplFileInfo"><code>SplFileInfo</code></a></I> <BIG><B>getPathInfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getPathInfo()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getPathname()"></A>
+<CODE><I>string</I> <BIG><B>getPathname</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getPathname()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getPerms()"></A>
+<CODE><I>int</I> <BIG><B>getPerms</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getPerms()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getRealPath()"></A>
+<CODE><I>string</I> <BIG><B>getRealPath</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getRealPath()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getSize()"></A>
+<CODE><I>int</I> <BIG><B>getSize</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getSize()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::getType()"></A>
+<CODE><I>string</I> <BIG><B>getType</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::getType()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::isDir()"></A>
+<CODE><I>boolean</I> <BIG><B>isDir</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::isDir()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::isExecutable()"></A>
+<CODE><I>boolean</I> <BIG><B>isExecutable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::isExecutable()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::isFile()"></A>
+<CODE><I>boolean</I> <BIG><B>isFile</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::isFile()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::isLink()"></A>
+<CODE><I>boolean</I> <BIG><B>isLink</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::isLink()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::isReadable()"></A>
+<CODE><I>boolean</I> <BIG><B>isReadable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::isReadable()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::isWritable()"></A>
+<CODE><I>boolean</I> <BIG><B>isWritable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::isWritable()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::openFile()"></A>
+<CODE><I><a href="spl.html#SplFileObject"><code>SplFileObject</code></a></I> <BIG><B>openFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$open_mode = "r",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$use_include_path = FALSE,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$context = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::openFile()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::setFileClass()"></A>
+<CODE><I>void</I> <BIG><B>setFileClass</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::setFileClass()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::setInfoClass()"></A>
+<CODE><I>void</I> <BIG><B>setInfoClass</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name = NULL)</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::setInfoClass()"><code>SplFileInfo</code></a>
+<P>
+
+<A name="PharFileInfo::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="spl.html#SplFileInfo::__toString()"><code>SplFileInfo</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

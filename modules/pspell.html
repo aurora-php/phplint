@@ -1,0 +1,123 @@
+<HTML><BODY>
+<H1>pspell</H1>
+<P><b>Pspell Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.pspell.php"><code>http://www.php.net/manual/en/ref.pspell.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="PSPELL_FAST"></A>
+<CODE><BIG><B>PSPELL_FAST</B></BIG> = 1</CODE>
+<P>
+
+<A name="PSPELL_NORMAL"></A>
+<CODE><BIG><B>PSPELL_NORMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="PSPELL_BAD_SPELLERS"></A>
+<CODE><BIG><B>PSPELL_BAD_SPELLERS</B></BIG> = 1</CODE>
+<P>
+
+<A name="PSPELL_RUN_TOGETHER"></A>
+<CODE><BIG><B>PSPELL_RUN_TOGETHER</B></BIG> = 1</CODE>
+<P>
+
+<A name="pspell_new()"></A>
+<CODE><I>int</I> <BIG><B>pspell_new</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$language, ...)</CODE>
+<P>
+
+<A name="pspell_new_personal()"></A>
+<CODE><I>int</I> <BIG><B>pspell_new_personal</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$personal,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$language, ...)</CODE>
+<P>
+
+<A name="pspell_new_config()"></A>
+<CODE><I>int</I> <BIG><B>pspell_new_config</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$config)</CODE>
+<P>
+
+<A name="pspell_check()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_check</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pspell,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$word)</CODE>
+<P>
+
+<A name="pspell_suggest()"></A>
+<CODE><I>mixed[]</I> <BIG><B>pspell_suggest</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pspell,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$word)</CODE>
+<P>
+
+<A name="pspell_store_replacement()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_store_replacement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pspell,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$misspell,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$correct)</CODE>
+<P>
+
+<A name="pspell_add_to_personal()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_add_to_personal</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pspell,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$word)</CODE>
+<P>
+
+<A name="pspell_add_to_session()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_add_to_session</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pspell,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$word)</CODE>
+<P>
+
+<A name="pspell_clear_session()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_clear_session</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pspell)</CODE>
+<P>
+
+<A name="pspell_save_wordlist()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_save_wordlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pspell)</CODE>
+<P>
+
+<A name="pspell_config_create()"></A>
+<CODE><I>int</I> <BIG><B>pspell_config_create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$language, ...)</CODE>
+<P>
+
+<A name="pspell_config_runtogether()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_config_runtogether</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$runtogether)</CODE>
+<P>
+
+<A name="pspell_config_mode()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_config_mode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="pspell_config_ignore()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_config_ignore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ignore)</CODE>
+<P>
+
+<A name="pspell_config_personal()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_config_personal</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$personal)</CODE>
+<P>
+
+<A name="pspell_config_dict_dir()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_config_dict_dir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$directory)</CODE>
+<P>
+
+<A name="pspell_config_data_dir()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_config_data_dir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$directory)</CODE>
+<P>
+
+<A name="pspell_config_repl()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_config_repl</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$repl)</CODE>
+<P>
+
+<A name="pspell_config_save_repl()"></A>
+<CODE><I>boolean</I> <BIG><B>pspell_config_save_repl</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$conf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$save)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

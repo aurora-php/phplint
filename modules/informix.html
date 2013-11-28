@@ -1,0 +1,214 @@
+<HTML><BODY>
+<H1>informix</H1>
+<P><b>Informix Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.informix.php"><code>http://www.php.net/manual/en/ref.informix.php</code></a>
+
+<p>
+This extension has moved to PECL since PHP 5.2.1.
+
+
+</P>
+<HR>
+<P>
+
+<A name="IFX_SCROLL"></A>
+<CODE><BIG><B>IFX_SCROLL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IFX_HOLD"></A>
+<CODE><BIG><B>IFX_HOLD</B></BIG> = 1</CODE>
+<P>
+
+<A name="IFX_LO_RDONLY"></A>
+<CODE><BIG><B>IFX_LO_RDONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="IFX_LO_WRONLY"></A>
+<CODE><BIG><B>IFX_LO_WRONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="IFX_LO_APPEND"></A>
+<CODE><BIG><B>IFX_LO_APPEND</B></BIG> = 1</CODE>
+<P>
+
+<A name="IFX_LO_RDWR"></A>
+<CODE><BIG><B>IFX_LO_RDWR</B></BIG> = 1</CODE>
+<P>
+
+<A name="IFX_LO_BUFFER"></A>
+<CODE><BIG><B>IFX_LO_BUFFER</B></BIG> = 1</CODE>
+<P>
+
+<A name="IFX_LO_NOBUFFER"></A>
+<CODE><BIG><B>IFX_LO_NOBUFFER</B></BIG> = 1</CODE>
+<P>
+
+<A name="ifx_connect()"></A>
+<CODE><I>resource</I> <BIG><B>ifx_connect</B></BIG>(...)</CODE>
+<P>
+
+<A name="ifx_pconnect()"></A>
+<CODE><I>resource</I> <BIG><B>ifx_pconnect</B></BIG>(...)</CODE>
+<P>
+
+<A name="ifx_close()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_close</B></BIG>(...)</CODE>
+<P>
+
+<A name="ifx_query()"></A>
+<CODE><I>resource</I> <BIG><B>ifx_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connid, ...)</CODE>
+<P>
+
+<A name="ifx_prepare()"></A>
+<CODE><I>resource</I> <BIG><B>ifx_prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connid, ...)</CODE>
+<P>
+
+<A name="ifx_do()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_do</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid)</CODE>
+<P>
+
+<A name="ifx_error()"></A>
+<CODE><I>string</I> <BIG><B>ifx_error</B></BIG>(...)</CODE>
+<P>
+
+<A name="ifx_errormsg()"></A>
+<CODE><I>string</I> <BIG><B>ifx_errormsg</B></BIG>(...)</CODE>
+<P>
+
+<A name="ifx_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>ifx_affected_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid)</CODE>
+<P>
+
+<A name="ifx_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ifx_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid, ...)</CODE>
+<P>
+
+<A name="ifx_htmltbl_result()"></A>
+<CODE><I>int</I> <BIG><B>ifx_htmltbl_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid, ...)</CODE>
+<P>
+
+<A name="ifx_fieldtypes()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ifx_fieldtypes</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid)</CODE>
+<P>
+
+<A name="ifx_fieldproperties()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ifx_fieldproperties</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid)</CODE>
+<P>
+
+<A name="ifx_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>ifx_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid)</CODE>
+<P>
+
+<A name="ifx_getsqlca()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ifx_getsqlca</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid)</CODE>
+<P>
+
+<A name="ifx_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>ifx_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid)</CODE>
+<P>
+
+<A name="ifx_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$resultid)</CODE>
+<P>
+
+<A name="ifx_create_blob()"></A>
+<CODE><I>int</I> <BIG><B>ifx_create_blob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$param)</CODE>
+<P>
+
+<A name="ifx_copy_blob()"></A>
+<CODE><I>int</I> <BIG><B>ifx_copy_blob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid)</CODE>
+<P>
+
+<A name="ifx_free_blob()"></A>
+<CODE><I>int</I> <BIG><B>ifx_free_blob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid)</CODE>
+<P>
+
+<A name="ifx_get_blob()"></A>
+<CODE><I>string</I> <BIG><B>ifx_get_blob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid)</CODE>
+<P>
+
+<A name="ifx_update_blob()"></A>
+<CODE><I>int</I> <BIG><B>ifx_update_blob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="ifx_blobinfile_mode()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_blobinfile_mode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="ifx_textasvarchar()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_textasvarchar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="ifx_byteasvarchar()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_byteasvarchar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="ifx_nullformat()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_nullformat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="ifx_create_char()"></A>
+<CODE><I>int</I> <BIG><B>ifx_create_char</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$param)</CODE>
+<P>
+
+<A name="ifx_get_char()"></A>
+<CODE><I>string</I> <BIG><B>ifx_get_char</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid)</CODE>
+<P>
+
+<A name="ifx_free_char()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_free_char</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid)</CODE>
+<P>
+
+<A name="ifx_update_char()"></A>
+<CODE><I>boolean</I> <BIG><B>ifx_update_char</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="ifxus_create_slob()"></A>
+<CODE><I>int</I> <BIG><B>ifxus_create_slob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="ifxus_free_slob()"></A>
+<CODE><I>boolean</I> <BIG><B>ifxus_free_slob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid)</CODE>
+<P>
+
+<A name="ifxus_close_slob()"></A>
+<CODE><I>boolean</I> <BIG><B>ifxus_close_slob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid)</CODE>
+<P>
+
+<A name="ifxus_open_slob()"></A>
+<CODE><I>int</I> <BIG><B>ifxus_open_slob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="ifxus_tell_slob()"></A>
+<CODE><I>int</I> <BIG><B>ifxus_tell_slob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid)</CODE>
+<P>
+
+<A name="ifxus_seek_slob()"></A>
+<CODE><I>int</I> <BIG><B>ifxus_seek_slob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="ifxus_read_slob()"></A>
+<CODE><I>string</I> <BIG><B>ifxus_read_slob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$nbytes)</CODE>
+<P>
+
+<A name="ifxus_write_slob()"></A>
+<CODE><I>int</I> <BIG><B>ifxus_write_slob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

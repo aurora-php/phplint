@@ -1,0 +1,239 @@
+<HTML><BODY>
+<H1>xml</H1>
+<P><b>XML Parser Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.xml.php"><code>http://www.php.net/manual/en/ref.xml.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="XML_ERROR_ASYNC_ENTITY"></A>
+<CODE><BIG><B>XML_ERROR_ASYNC_ENTITY</B></BIG> = 13</CODE>
+<P>
+
+<A name="XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF"></A>
+<CODE><BIG><B>XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF</B></BIG> = 16</CODE>
+<P>
+
+<A name="XML_ERROR_BAD_CHAR_REF"></A>
+<CODE><BIG><B>XML_ERROR_BAD_CHAR_REF</B></BIG> = 14</CODE>
+<P>
+
+<A name="XML_ERROR_BINARY_ENTITY_REF"></A>
+<CODE><BIG><B>XML_ERROR_BINARY_ENTITY_REF</B></BIG> = 15</CODE>
+<P>
+
+<A name="XML_ERROR_DUPLICATE_ATTRIBUTE"></A>
+<CODE><BIG><B>XML_ERROR_DUPLICATE_ATTRIBUTE</B></BIG> = 8</CODE>
+<P>
+
+<A name="XML_ERROR_EXTERNAL_ENTITY_HANDLING"></A>
+<CODE><BIG><B>XML_ERROR_EXTERNAL_ENTITY_HANDLING</B></BIG> = 21</CODE>
+<P>
+
+<A name="XML_ERROR_INCORRECT_ENCODING"></A>
+<CODE><BIG><B>XML_ERROR_INCORRECT_ENCODING</B></BIG> = 19</CODE>
+<P>
+
+<A name="XML_ERROR_INVALID_TOKEN"></A>
+<CODE><BIG><B>XML_ERROR_INVALID_TOKEN</B></BIG> = 4</CODE>
+<P>
+
+<A name="XML_ERROR_JUNK_AFTER_DOC_ELEMENT"></A>
+<CODE><BIG><B>XML_ERROR_JUNK_AFTER_DOC_ELEMENT</B></BIG> = 9</CODE>
+<P>
+
+<A name="XML_ERROR_MISPLACED_XML_PI"></A>
+<CODE><BIG><B>XML_ERROR_MISPLACED_XML_PI</B></BIG> = 17</CODE>
+<P>
+
+<A name="XML_ERROR_NONE"></A>
+<CODE><BIG><B>XML_ERROR_NONE</B></BIG> = 0</CODE>
+<P>
+
+<A name="XML_ERROR_NO_ELEMENTS"></A>
+<CODE><BIG><B>XML_ERROR_NO_ELEMENTS</B></BIG> = 3</CODE>
+<P>
+
+<A name="XML_ERROR_NO_MEMORY"></A>
+<CODE><BIG><B>XML_ERROR_NO_MEMORY</B></BIG> = 1</CODE>
+<P>
+
+<A name="XML_ERROR_PARAM_ENTITY_REF"></A>
+<CODE><BIG><B>XML_ERROR_PARAM_ENTITY_REF</B></BIG> = 10</CODE>
+<P>
+
+<A name="XML_ERROR_PARTIAL_CHAR"></A>
+<CODE><BIG><B>XML_ERROR_PARTIAL_CHAR</B></BIG> = 6</CODE>
+<P>
+
+<A name="XML_ERROR_RECURSIVE_ENTITY_REF"></A>
+<CODE><BIG><B>XML_ERROR_RECURSIVE_ENTITY_REF</B></BIG> = 12</CODE>
+<P>
+
+<A name="XML_ERROR_SYNTAX"></A>
+<CODE><BIG><B>XML_ERROR_SYNTAX</B></BIG> = 2</CODE>
+<P>
+
+<A name="XML_ERROR_TAG_MISMATCH"></A>
+<CODE><BIG><B>XML_ERROR_TAG_MISMATCH</B></BIG> = 7</CODE>
+<P>
+
+<A name="XML_ERROR_UNCLOSED_CDATA_SECTION"></A>
+<CODE><BIG><B>XML_ERROR_UNCLOSED_CDATA_SECTION</B></BIG> = 20</CODE>
+<P>
+
+<A name="XML_ERROR_UNCLOSED_TOKEN"></A>
+<CODE><BIG><B>XML_ERROR_UNCLOSED_TOKEN</B></BIG> = 5</CODE>
+<P>
+
+<A name="XML_ERROR_UNDEFINED_ENTITY"></A>
+<CODE><BIG><B>XML_ERROR_UNDEFINED_ENTITY</B></BIG> = 11</CODE>
+<P>
+
+<A name="XML_ERROR_UNKNOWN_ENCODING"></A>
+<CODE><BIG><B>XML_ERROR_UNKNOWN_ENCODING</B></BIG> = 18</CODE>
+<P>
+
+<A name="XML_OPTION_CASE_FOLDING"></A>
+<CODE><BIG><B>XML_OPTION_CASE_FOLDING</B></BIG> = 1</CODE>
+<P>
+
+<A name="XML_OPTION_SKIP_TAGSTART"></A>
+<CODE><BIG><B>XML_OPTION_SKIP_TAGSTART</B></BIG> = 3</CODE>
+<P>
+
+<A name="XML_OPTION_SKIP_WHITE"></A>
+<CODE><BIG><B>XML_OPTION_SKIP_WHITE</B></BIG> = 4</CODE>
+<P>
+
+<A name="XML_OPTION_TARGET_ENCODING"></A>
+<CODE><BIG><B>XML_OPTION_TARGET_ENCODING</B></BIG> = 2</CODE>
+<P>
+
+<A name="XML_SAX_IMPL"></A>
+<CODE><BIG><B>XML_SAX_IMPL</B></BIG> = "?"</CODE>
+<P>
+
+<A name="xml_parser_create()"></A>
+<CODE><I>resource</I> <BIG><B>xml_parser_create</B></BIG>(...)</CODE>
+<P>
+
+<A name="xml_parser_create_ns()"></A>
+<CODE><I>resource</I> <BIG><B>xml_parser_create_ns</B></BIG>(...)</CODE>
+<P>
+
+<A name="xml_set_object()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;&amp; $obj)</CODE>
+<P>
+
+<A name="xml_set_element_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_element_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$shdl,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$ehdl)</CODE>
+<P>
+
+<A name="xml_set_character_data_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_character_data_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$hdl)</CODE>
+<P>
+
+<A name="xml_set_processing_instruction_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_processing_instruction_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$hdl)</CODE>
+<P>
+
+<A name="xml_set_default_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_default_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$hdl)</CODE>
+<P>
+
+<A name="xml_set_unparsed_entity_decl_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_unparsed_entity_decl_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$hdl)</CODE>
+<P>
+
+<A name="xml_set_notation_decl_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_notation_decl_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$hdl)</CODE>
+<P>
+
+<A name="xml_set_external_entity_ref_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_external_entity_ref_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$hdl)</CODE>
+<P>
+
+<A name="xml_set_start_namespace_decl_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_start_namespace_decl_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$hdl)</CODE>
+<P>
+
+<A name="xml_set_end_namespace_decl_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_set_end_namespace_decl_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$hdl)</CODE>
+<P>
+
+<A name="xml_parse()"></A>
+<CODE><I>int</I> <BIG><B>xml_parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$is_final = FALSE)</CODE>
+<P>
+
+<A name="xml_parse_into_struct()"></A>
+<CODE><I>int</I> <BIG><B>xml_parse_into_struct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>mixed[]</I>&nbsp;&amp; $values,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>mixed[]</I>&nbsp;&amp; $index)</CODE>
+<P>
+
+<A name="xml_get_error_code()"></A>
+<CODE><I>int</I> <BIG><B>xml_get_error_code</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser)</CODE>
+<P>
+
+<A name="xml_error_string()"></A>
+<CODE><I>string</I> <BIG><B>xml_error_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$code)</CODE>
+<P>
+
+<A name="xml_get_current_line_number()"></A>
+<CODE><I>int</I> <BIG><B>xml_get_current_line_number</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser)</CODE>
+<P>
+
+<A name="xml_get_current_column_number()"></A>
+<CODE><I>int</I> <BIG><B>xml_get_current_column_number</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser)</CODE>
+<P>
+
+<A name="xml_get_current_byte_index()"></A>
+<CODE><I>int</I> <BIG><B>xml_get_current_byte_index</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser)</CODE>
+<P>
+
+<A name="xml_parser_free()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_parser_free</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser)</CODE>
+<P>
+
+<A name="xml_parser_set_option()"></A>
+<CODE><I>boolean</I> <BIG><B>xml_parser_set_option</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$option,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="xml_parser_get_option()"></A>
+<CODE><I>mixed</I> <BIG><B>xml_parser_get_option</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$parser,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$option)</CODE>
+<P>
+
+<A name="utf8_encode()"></A>
+<CODE><I>string</I> <BIG><B>utf8_encode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="utf8_decode()"></A>
+<CODE><I>string</I> <BIG><B>utf8_decode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

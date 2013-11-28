@@ -1,0 +1,68 @@
+#!/bin/bash
+# Generates HTML docs about modules and stdlib it found in the "modules"
+# and "stdlib" directories.
+# Files and directories whose names contains an hyphen are ignored and skipped,
+# so for example "test-code.php" will not be documented and the dir.
+# "test-dir" will be skipped along with all its content. Since namespaces
+# and class names cannot contain hyphens, this is not a limitation.
+# Also skip "CVS" directories.
+
+PROJECT=$(cd $(dirname $0)/.. && pwd) || exit 1
+
+true=1
+false=0
+
+verbose=$false
+HTML_EXTENSION=.html
+
+while [ $# -gt 0 ]; do
+	case "$1" in
+		--verbose) verbose=$true;;
+		--doc-extension) HTML_EXTENSION=$2; shift ;;
+		*) echo "$0: unknown option: $1" >&2; exit 1 ;;
+	esac
+	shift
+done
+
+PHPLINT=$PROJECT/src/phplint
+MODULES=$PROJECT/modules
+STDLIB=$PROJECT/stdlib
+OPTIONS=$(echo --php-version 5 \
+	--no-print-notices \
+	--no-print-source \
+	--modules-path $MODULES \
+	--print-path shortest \
+	--fails-on-warning \
+	--no-overall \
+	--doc \
+	--doc-extension $HTML_EXTENSION )
+
+umask u=rw,go=r
+
+{
+	find $MODULES \( -name CVS -prune -o -type d -o -name "*$HTML_EXTENSION" -o -name '*-*' -prune \) -o -print \
+	| xargs -n 1 echo --is-module
+
+	# Redundant "--doc" option sets the first parameter of the following "read".
+	find $STDLIB -name '*-*' -prune -o -name '*.php' -print \
+	| xargs -n 1 echo "--doc"
+} \
+| \
+{
+	tot=0
+	err=0
+	while read more_opts src; do
+		[ $verbose = $true ] && echo "Generating doc for $src ..."
+		$PHPLINT $OPTIONS $more_opts $src
+		if [ $? -ne 0 ]; then
+			err=$((err+1))
+		fi
+		tot=$((tot+1))
+	done
+	[ $verbose = $true ] && echo "$tot tests performed, $err failed."
+	if [ $err -eq 0 ]; then
+		exit 0
+	else
+		exit 1
+	fi
+}

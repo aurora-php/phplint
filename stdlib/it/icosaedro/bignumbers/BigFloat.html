@@ -1,0 +1,732 @@
+<HTML><BODY>
+<H1>BigFloat</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="BigInt.html"><code>BigInt.php</code></a>, <a href="../containers/Hash.html"><code>Hash.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat"></A>
+<pre>class <BIG><B>it\icosaedro\bignumbers\BigFloat</B></BIG>
+      |  
+      +--(<i><a href="../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+      +--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      +--(<i><a href="../containers/Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a></i>)
+      |    `--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      `--(<i><a href="../containers/Hashable.html#it/icosaedro/containers/Hashable"><code>it\icosaedro\containers\Hashable</code></a></i>)
+           `--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Implements floating point numbers of arbitrary length and precision</b></P><P><B>Version:</B> $Date: 2013/05/30 16:01:02 $</P>
+<P><B>Copyright:</B> 2007 by icosaedro.it di Umberto Salsi</P>
+<P><B>License:</B> <a href="http://www.icosaedro.it/license/bsd-style.html">BSD-style</a></P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+BigFloat are floating point numbers with sign and arbitrary length and
+  precision suitable for monetary calculations and other numerical non-intensive
+  tasks. Big floating numbers can be entered using a syntax similar to that
+  of regular floating point numbers of the PHP language, included sign,
+  fractional part and scale coefficient. For example:
+<p>
+  <code>+12.3456789012e+123</code>
+<p>
+  All the operations are performed with absolute precision using a decimal
+  internal representation. A number can take as many digits as needed, either
+  in the integer part or in the decimal part. Only the division requires to
+  set a limit to the precision.
+<p>
+  Example:
+<p>
+  <pre>
+      use it\icosaedro\bignumbers\BigFloat;
+      $price = new BigFloat("56.78");
+      $VAT = $price
+          -&gt;mul( new BigFloat("0.20") )  # apply VAT 20%
+          -&gt;round(-2);  # round to 2 decimal digits
+      $total = $price-&gt;add($VAT);
+      echo "Price: ", $price-&gt;format(2), "\n";
+      echo "VAT  : ", $VAT-&gt;format(2), "\n";
+      echo "Total: ", $total-&gt;format(2), "\n";
+  </pre>
+<p>
+  The code above displays:
+<p>
+  <pre>
+      Price: 56.78
+      VAT  : 11.36
+      Total: 68.14
+  </pre>
+<p>
+  Currently the exponent part of the number is handled as <code>int</code>
+  number and possible overflows are not detected.  The method
+  <code>isValid()</code> devoted to validate input submitted by the user
+  sets a quite
+  arbitrary limit of +/-9999 to the exponent, and this should be enough to
+  protect the application.  However, it is unlikely that so big numbers can
+  ever be required by real-world applications.
+<p>
+  A note about the interface provided by this class.  Every object of the class
+  holds a big floating point number, so most of the methods have this value
+  as implicit argument, here represented with the word "<code>$this</code>".
+  Methods that require two or more numbers take <code>$this</code> as the
+  first argument.
+  Once created, an object is never changed, i.e. it is immutable.
+<p>
+  <b>See also:</b>
+  <a href="http://www.php.net/manual/en/ref.bc.php">www.php.net/manual/en/ref.bc.php</a> (BCMath extension)
+<p>
+
+
+
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="it/icosaedro/bignumbers/BigFloat::VERSION"></A>
+<CODE><BIG><B>VERSION</B></BIG> = "$Date:&nbsp;2013/05/30&nbsp;16:01:02&nbsp;$"</CODE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::isValid()"></A>
+<CODE>static <I>boolean</I> <BIG><B>isValid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$f)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns TRUE if the string represents a valid BigFloat</b></P><P>
+Valid BigFloat numbers looks like regular PHP floating point
+  numbers with the only difference that, if a decimal point is
+  present, at least a digit must be present before and after
+  that decimal point.  To be more precise, a BigFloat may
+  have a sign +/- followed by one or more decimal digits with
+  possibly a decimal point followed by one or more digits and
+  an exponent. The exponent can range from -9999 up to +9999.
+  Spaces and any other character are not allowed.
+  Examples:
+<p>
+  <code> 0 -1.5 +0.012345 1e6 12.34E-128  </code>
+<p>
+  Invalid examples:
+<p>
+  <code> .1 100. 1^6 1,234 </code>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$f&nbsp;&nbsp;</code></b></td> <td valign=top>The string to be evaluated as BigFloat.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> TRUE if the string represents a valid BigFloat.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$x)</CODE>
+<BLOCKQUOTE>
+<P><b>Builds a new BigFloat number</b></P><P>
+<b>int</b> numbers and <a href="BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a> numbers can always be
+  converted exactly into BigFloat numbers.
+<p>
+  If $x is a <b>string</b>, always use <a href="#it/icosaedro/bignumbers/BigFloat::isValid()"><code>it\icosaedro\bignumbers\BigFloat::isValid()</code></a> before
+  passing arbitrary strings, i.e. user submitted input. Spaces
+  are not allowed, so use <a href="../../../../modules/standard.html#trim()"><code>trim()</code></a>.
+<p>
+  If $x is a <b>float</b> it is converted exactly into its
+  corresponding decimal representation.
+  BigFloat guarantees all the bits of a floating point number be
+  preserved, but this does not prevent "unexpected" values from
+  appearing.
+  INF and NAN yield exception as they cannot be represented
+  internally.
+<p>
+  WARNING: avoid to use floating-point numbers at all as they may
+  give unexpected results due to the rounding that occurs in the
+  conversion process from decimal to binary form operated at the
+  parsing stage by the PHP interpreter. For example
+  printf("%.0F", 1e23) prints "99999999999999991611392" rather
+  than the expected "1" followed by 23 zeroes just because 1e23
+  requires 54 bits, one more than those available in a
+  double-precision IEEE 754 register; so $f must store a truncated
+  value. Also numbers as simple as 0.1 cannot be stored in a
+  float without loss of precision. To avoid these problems avoid
+  passing float numbers to the constructor <code>new
+  BigFloat(0.1)</code> but instead use the string notation
+  <code>new BigFloat("0.1")</code> as this latter preserves the
+  precision.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$x&nbsp;&nbsp;</code></b></td> <td valign=top>The value to be converted to BigFloat. It may be:
+         int, float, string or <a href="BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a>.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if the argument passed is a
+          string that does not represent a valid floating point
+          number, or it is a non-finite floating point number,
+          or it is any another unexpected type of data.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns the number represented as string</b></P><P>
+<p><b>Return:</b> An optional "-" is followed by one or more digits
+          and a possible fractional part.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::format()"></A>
+<CODE><I>string</I> <BIG><B>format</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$decimals,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dec_point = ".",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$thousands_sep = ",")</CODE>
+<BLOCKQUOTE>
+<P><b>Pretty formatting</b></P><P>
+WARNING! The number is truncated as needed, but not rounded.
+  If a rounding is required, apply <a href="#it/icosaedro/bignumbers/BigFloat::round()"><code>it\icosaedro\bignumbers\BigFloat::round()</code></a> before
+  formatting.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$decimals&nbsp;&nbsp;</code></b></td> <td valign=top>Number of digits in the fractional part.
+         The BigFloat is truncated or some zero is added if
+         required. If negative, the fractional part is omitted.</td></tr>
+<tr><td valign=top><b><code>$dec_point&nbsp;&nbsp;</code></b></td> <td valign=top>Separator string between integral part
+         and fractional part.</td></tr>
+<tr><td valign=top><b><code>$thousands_sep&nbsp;&nbsp;</code></b></td> <td valign=top>Separator string between thousands.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The BigFloat formatted.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::sign()"></A>
+<CODE><I>int</I> <BIG><B>sign</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the sign of the number</b></P><P>
+<p>
+
+<p><b>Return:</b> +1 if the number is positive, -1 if negative, 0 if zero.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::scale()"></A>
+<CODE><I>int</I> <BIG><B>scale</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the scale factor, that is the power of the first digit</b></P><P>
+For example, the scale of 1230 is 4, the scale of 0.00123 is -3.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::abs()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>abs</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the number without the sign</b></P><P>
+<p>
+
+<p><b>Return:</b> The number without the sign.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::minus()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>minus</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the number with the sign reversed</b></P><P>
+<p>
+
+<p><b>Return:</b> The number with the sign reversed.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::cmp()"></A>
+<CODE><I>int</I> <BIG><B>cmp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Compare $this with $b</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The number to be compared.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Negative if $this is less than $b, positive if
+          $this is greater than $b, zero if they are equal.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::compareTo()"></A>
+<CODE><I>int</I> <BIG><B>compareTo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="../containers/Sortable.html#it/icosaedro/containers/Sortable::compareTo()"><code>it\icosaedro\containers\Sortable</code></a><BLOCKQUOTE>
+<P><b>Compares this number with another</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>Another BigFloat number to compare.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Negative if $this &lt; $other, positive if $this &gt; $other,
+ zero if they are equal.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../CastException.html#CastException"><code>CastException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the object passed is NULL or does not
+ belong exactly to this class (not extended).
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::add()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>add</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Addition</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The second term to add.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The sum $this+$b.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::sub()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>sub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Subtraction</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The term to subtract.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The difference $this-$b.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::mul()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>mul</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Multiplication</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The second factor.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The product $this*$b.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::div()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>div</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;$b,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$precision)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns $this/$b</b></P><P>
+<p>
+  Calculate the quotient $q=$this/$b precise up to the digit of
+  the power 1e$precision.  For example, to obtain a result
+  with 5 decimal digits you must set $precision to -5. Note
+  that the result is truncated. If a rounding is required,
+  the division must be performed with higher precision -6
+  and the result can then be rounded:
+<p>
+  <code>$q = $n ->div($d, -6) ->round(-5);</code>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The divisor.</td></tr>
+<tr><td valign=top><b><code>$precision&nbsp;&nbsp;</code></b></td> <td valign=top>Power of ten of the last digit to calculate.
+         For example, to calculate up to the second fractional digit,
+         set $precision to -2. Setting $precision=0 would return the
+         integral part of the division. Positive values would stop
+         the calculation to the given power of ten. Examples:
+ <pre>
+ echo $a-&gt;div( new BigFloat(3), -2), "\n";  # 1.66
+ echo $a-&gt;div( new BigFloat(3), 0), "\n";  # 1
+ echo $a-&gt;div( new BigFloat(3), 1), "\n";  # 0
+ </pre></td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The quotient calculated up to the given precision.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if the divisor $b is zero.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::div_rem()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>div_rem</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;$b,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$precision,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;&amp; $rem)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns $this/$b and the remainder</b></P><P>
+Returns the quotient $q=$this/$b precise up to the power
+  1e$precision, just like <a href="#it/icosaedro/bignumbers/BigFloat::div()"><code>it\icosaedro\bignumbers\BigFloat::div()</code></a> does, but it returns
+  also the remainder $rem = $this - $q*$b.
+  For example, having to divide 100 EUR into 3 parts with
+  precision of 1 cent ($precision=-2) we get the quotient
+  100/3=33.33 with remainder 0.01.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The divisor.</td></tr>
+<tr><td valign=top><b><code>$precision&nbsp;&nbsp;</code></b></td> <td valign=top>Power of ten of the last digit to calculate.</td></tr>
+<tr><td valign=top><b><code>$rem&nbsp;&nbsp;</code></b></td> <td valign=top>Remainder of the division.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The quotient calculated up to the given precision.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if the divisor $b is zero.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::trunc()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>trunc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$precision)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the number truncated to a given power of ten</b></P><P>
+The digits of power 1e($precision-1), 1e($precision-2),
+  ... are simply discarded. <code>trunc(0)</code> returns
+  the integer part of the number. Examples:
+  <pre>
+      $n = new BigFloat("12.345");
+      echo $n-&gt;trunc(-2);  # 12.34
+      echo $n-&gt;trunc( 1);  # 10
+      echo $n-&gt;trunc( 2);  # 0
+      echo $n-&gt;trunc(-9);  # 12.345
+  </pre>
+  Note that if the $precision is greater than the scale of the
+  number, zero is returned.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$precision&nbsp;&nbsp;</code></b></td> <td valign=top>Power of ten of the last digit to retain.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The truncated number.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::trunc_rem()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>trunc_rem</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$precision,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;&amp; $rem)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the truncated number and the remainder</b></P><P>
+The same as <a href="#it/icosaedro/bignumbers/BigFloat::trunc()"><code>it\icosaedro\bignumbers\BigFloat::trunc()</code></a> but it returns also the truncated
+  remainder $rem. Note that the truncated number added to the
+  remainder give back the original number.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$precision&nbsp;&nbsp;</code></b></td> <td valign=top>Power of ten of the last digit to retain.</td></tr>
+<tr><td valign=top><b><code>$rem&nbsp;&nbsp;</code></b></td> <td valign=top>The truncated part.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The truncated number.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::round()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>round</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$precision)</CODE>
+<BLOCKQUOTE>
+<P><b>Rounds the number to a given power of ten</b></P><P>
+Returns $this truncated just as explained for <a href="#it/icosaedro/bignumbers/BigFloat::trunc()"><code>it\icosaedro\bignumbers\BigFloat::trunc()</code></a>.
+  If the first digit of the remainder is 5 or greater, the
+  truncated number is also rounded.  For example, round(0)
+  returns the nearest integer.  Examples:
+  <pre>
+      $n = new BigFloat("1.4");
+      echo $n-&gt;round(0);  # displays 1
+      $n = new BigFloat("1.5");
+      echo $n-&gt;round(0);  # displays 2
+      $n = new BigFloat("-1.4");
+      echo $n-&gt;round(0);  # displays -1
+      $n = new BigFloat("-1.5");
+      echo $n-&gt;round(0);  # displays -2
+  </pre>
+<p>
+  <b>See also:</b>
+  <a href="http://en.wikipedia.org/wiki/Rounding">http://en.wikipedia.org/wiki/Rounding</a>
+  for a discussion of various rounding methods.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$precision&nbsp;&nbsp;</code></b></td> <td valign=top>Power of ten of the last digit to retain.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The rounded number.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::ceil()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>ceil</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the smallest integral value not less than $this</b></P><P>
+<p>
+
+<p><b>Return:</b> The ceil of $this.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::floor()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>floor</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the largest integral value not greater than $this</b></P><P>
+<p>
+
+<p><b>Return:</b> The floor of $this.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::toInt()"></A>
+<CODE><I>int</I> <BIG><B>toInt</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the integral part of $this as an int number</b></P><P>
+<p><b>Return:</b> If $this is positive the floor() is returned,
+          otherwise the ceil() is returned, so for example 1.2
+          gives 1 while -1.2 gives -1.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if the resulting number is too big to
+          fit int.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::toFloat()"></A>
+<CODE><I>float</I> <BIG><B>toFloat</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the best approximating floating point representation</b></P><P>
+<p>
+  WARNING: 1) very large positive numbers may give INF, while
+  negative ones may give -INF; 2) some BigFloat decimal numbers
+  cannot be represented exactly under the <b>float</b> binary
+  representation and must be rounded; 3) precision may be lost as
+  <b>float</b> numbers can hold typically only about 15 decimal
+  digits, and with very large number the precision decreases even
+  further. Because of that, conversion from BigFloat to
+  <b>float</b> requires maximum care and should be avoided.
+<p>
+
+<p><b>Return:</b> The best approximating floating point representation.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::toBigInt()"></A>
+<CODE><I><a href="BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>toBigInt</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the integral part of $this as a BigInt number</b></P><P>
+<p><b>Return:</b> If $this is positive the floor() is returned,
+          otherwise the ceil() is returned, so for example 1.2
+          gives 1 while -1.2 gives -1.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::sqrt()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>sqrt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$precision)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the square root of $this</b></P><P>
+The result il calculated up to the digit of power 1e$precision.
+  No rounding is performed. If a rounding is required, the sqrt()
+  can be calculated with higher precision ($precision+1) then
+  the result can be rounded at $precision. Example:
+<p>
+  <pre>
+      $x = new BigFloat("2");
+      echo $x-&gt;sqrt(-5);  # displays 1.41421
+  </pre>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$precision&nbsp;&nbsp;</code></b></td> <td valign=top>The power of ten of the last digit to calculate.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The square root.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if $this is negative.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::getHash()"></A>
+<CODE><I>int</I> <BIG><B>getHash</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Hashable.html#it/icosaedro/containers/Hashable::getHash()"><code>it\icosaedro\containers\Hashable</code></a><PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigFloat::equals()"></A>
+<CODE><I>boolean</I> <BIG><B>equals</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="../containers/Comparable.html#it/icosaedro/containers/Comparable::equals()"><code>it\icosaedro\containers\Comparable</code></a><BLOCKQUOTE>
+<P><b>Compares this with another number for equality</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other number.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the other number is not NULL, belongs exactly to
+ this same class (not extended) and carries the same value.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

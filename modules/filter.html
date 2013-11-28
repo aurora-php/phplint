@@ -1,0 +1,262 @@
+<HTML><BODY>
+<H1>filter</H1>
+<P><b>Filter Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P><B>Deprecated:</B> Very poorly written interface with too many 'mixed' values,
+	difficult to validate automatically, leaving to the programmer all the
+	responsability to handle properly arguments and returned values. The
+	returned values are also 'mixed' with a complex semantic based on the
+	special values NULL, FALSE/TRUE, etc. It is questionable if this library
+	really adds security. [Umberto Salsi] </P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.filter.php">www.php.net/manual/en/ref.filter.php</a>.
+
+	
+
+
+</P>
+<HR>
+<P>
+
+<A name="INPUT_POST"></A>
+<CODE><BIG><B>INPUT_POST</B></BIG> = 1</CODE>
+<P>
+
+<A name="INPUT_GET"></A>
+<CODE><BIG><B>INPUT_GET</B></BIG> = 2</CODE>
+<P>
+
+<A name="INPUT_COOKIE"></A>
+<CODE><BIG><B>INPUT_COOKIE</B></BIG> = 3</CODE>
+<P>
+
+<A name="INPUT_ENV"></A>
+<CODE><BIG><B>INPUT_ENV</B></BIG> = 4</CODE>
+<P>
+
+<A name="INPUT_SERVER"></A>
+<CODE><BIG><B>INPUT_SERVER</B></BIG> = 5</CODE>
+<P>
+
+<A name="INPUT_SESSION"></A>
+<CODE><BIG><B>INPUT_SESSION</B></BIG> = 6</CODE>
+<P>
+
+<A name="INPUT_REQUEST"></A>
+<CODE><BIG><B>INPUT_REQUEST</B></BIG> = 7</CODE>
+<P>
+
+<A name="FILTER_FLAG_NONE"></A>
+<CODE><BIG><B>FILTER_FLAG_NONE</B></BIG> = 8</CODE>
+<P>
+
+<A name="FILTER_REQUIRE_SCALAR"></A>
+<CODE><BIG><B>FILTER_REQUIRE_SCALAR</B></BIG> = 9</CODE>
+<P>
+
+<A name="FILTER_REQUIRE_ARRAY"></A>
+<CODE><BIG><B>FILTER_REQUIRE_ARRAY</B></BIG> = 10</CODE>
+<P>
+
+<A name="FILTER_FORCE_ARRAY"></A>
+<CODE><BIG><B>FILTER_FORCE_ARRAY</B></BIG> = 11</CODE>
+<P>
+
+<A name="FILTER_NULL_ON_FAILURE"></A>
+<CODE><BIG><B>FILTER_NULL_ON_FAILURE</B></BIG> = 12</CODE>
+<P>
+
+<A name="FILTER_VALIDATE_INT"></A>
+<CODE><BIG><B>FILTER_VALIDATE_INT</B></BIG> = 13</CODE>
+<P>
+
+<A name="FILTER_VALIDATE_BOOLEAN"></A>
+<CODE><BIG><B>FILTER_VALIDATE_BOOLEAN</B></BIG> = 14</CODE>
+<P>
+
+<A name="FILTER_VALIDATE_FLOAT"></A>
+<CODE><BIG><B>FILTER_VALIDATE_FLOAT</B></BIG> = 15</CODE>
+<P>
+
+<A name="FILTER_VALIDATE_REGEXP"></A>
+<CODE><BIG><B>FILTER_VALIDATE_REGEXP</B></BIG> = 16</CODE>
+<P>
+
+<A name="FILTER_VALIDATE_URL"></A>
+<CODE><BIG><B>FILTER_VALIDATE_URL</B></BIG> = 17</CODE>
+<P>
+
+<A name="FILTER_VALIDATE_EMAIL"></A>
+<CODE><BIG><B>FILTER_VALIDATE_EMAIL</B></BIG> = 18</CODE>
+<P>
+
+<A name="FILTER_VALIDATE_IP"></A>
+<CODE><BIG><B>FILTER_VALIDATE_IP</B></BIG> = 19</CODE>
+<P>
+
+<A name="FILTER_DEFAULT"></A>
+<CODE><BIG><B>FILTER_DEFAULT</B></BIG> = 20</CODE>
+<P>
+
+<A name="FILTER_UNSAFE_RAW"></A>
+<CODE><BIG><B>FILTER_UNSAFE_RAW</B></BIG> = 21</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_STRING"></A>
+<CODE><BIG><B>FILTER_SANITIZE_STRING</B></BIG> = 22</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_STRIPPED"></A>
+<CODE><BIG><B>FILTER_SANITIZE_STRIPPED</B></BIG> = 23</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_ENCODED"></A>
+<CODE><BIG><B>FILTER_SANITIZE_ENCODED</B></BIG> = 24</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_SPECIAL_CHARS"></A>
+<CODE><BIG><B>FILTER_SANITIZE_SPECIAL_CHARS</B></BIG> = 25</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_EMAIL"></A>
+<CODE><BIG><B>FILTER_SANITIZE_EMAIL</B></BIG> = 26</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_URL"></A>
+<CODE><BIG><B>FILTER_SANITIZE_URL</B></BIG> = 27</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_NUMBER_INT"></A>
+<CODE><BIG><B>FILTER_SANITIZE_NUMBER_INT</B></BIG> = 28</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_NUMBER_FLOAT"></A>
+<CODE><BIG><B>FILTER_SANITIZE_NUMBER_FLOAT</B></BIG> = 29</CODE>
+<P>
+
+<A name="FILTER_SANITIZE_MAGIC_QUOTES"></A>
+<CODE><BIG><B>FILTER_SANITIZE_MAGIC_QUOTES</B></BIG> = 30</CODE>
+<P>
+
+<A name="FILTER_CALLBACK"></A>
+<CODE><BIG><B>FILTER_CALLBACK</B></BIG> = 31</CODE>
+<P>
+
+<A name="FILTER_FLAG_ALLOW_OCTAL"></A>
+<CODE><BIG><B>FILTER_FLAG_ALLOW_OCTAL</B></BIG> = 32</CODE>
+<P>
+
+<A name="FILTER_FLAG_ALLOW_HEX"></A>
+<CODE><BIG><B>FILTER_FLAG_ALLOW_HEX</B></BIG> = 33</CODE>
+<P>
+
+<A name="FILTER_FLAG_STRIP_LOW"></A>
+<CODE><BIG><B>FILTER_FLAG_STRIP_LOW</B></BIG> = 34</CODE>
+<P>
+
+<A name="FILTER_FLAG_STRIP_HIGH"></A>
+<CODE><BIG><B>FILTER_FLAG_STRIP_HIGH</B></BIG> = 35</CODE>
+<P>
+
+<A name="FILTER_FLAG_ENCODE_LOW"></A>
+<CODE><BIG><B>FILTER_FLAG_ENCODE_LOW</B></BIG> = 36</CODE>
+<P>
+
+<A name="FILTER_FLAG_ENCODE_HIGH"></A>
+<CODE><BIG><B>FILTER_FLAG_ENCODE_HIGH</B></BIG> = 37</CODE>
+<P>
+
+<A name="FILTER_FLAG_ENCODE_AMP"></A>
+<CODE><BIG><B>FILTER_FLAG_ENCODE_AMP</B></BIG> = 38</CODE>
+<P>
+
+<A name="FILTER_FLAG_NO_ENCODE_QUOTES"></A>
+<CODE><BIG><B>FILTER_FLAG_NO_ENCODE_QUOTES</B></BIG> = 39</CODE>
+<P>
+
+<A name="FILTER_FLAG_EMPTY_STRING_NULL"></A>
+<CODE><BIG><B>FILTER_FLAG_EMPTY_STRING_NULL</B></BIG> = 40</CODE>
+<P>
+
+<A name="FILTER_FLAG_ALLOW_FRACTION"></A>
+<CODE><BIG><B>FILTER_FLAG_ALLOW_FRACTION</B></BIG> = 41</CODE>
+<P>
+
+<A name="FILTER_FLAG_ALLOW_THOUSAND"></A>
+<CODE><BIG><B>FILTER_FLAG_ALLOW_THOUSAND</B></BIG> = 42</CODE>
+<P>
+
+<A name="FILTER_FLAG_ALLOW_SCIENTIFIC"></A>
+<CODE><BIG><B>FILTER_FLAG_ALLOW_SCIENTIFIC</B></BIG> = 43</CODE>
+<P>
+
+<A name="FILTER_FLAG_SCHEME_REQUIRED"></A>
+<CODE><BIG><B>FILTER_FLAG_SCHEME_REQUIRED</B></BIG> = 44</CODE>
+<P>
+
+<A name="FILTER_FLAG_HOST_REQUIRED"></A>
+<CODE><BIG><B>FILTER_FLAG_HOST_REQUIRED</B></BIG> = 45</CODE>
+<P>
+
+<A name="FILTER_FLAG_PATH_REQUIRED"></A>
+<CODE><BIG><B>FILTER_FLAG_PATH_REQUIRED</B></BIG> = 46</CODE>
+<P>
+
+<A name="FILTER_FLAG_QUERY_REQUIRED"></A>
+<CODE><BIG><B>FILTER_FLAG_QUERY_REQUIRED</B></BIG> = 47</CODE>
+<P>
+
+<A name="FILTER_FLAG_IPV4"></A>
+<CODE><BIG><B>FILTER_FLAG_IPV4</B></BIG> = 48</CODE>
+<P>
+
+<A name="FILTER_FLAG_IPV6"></A>
+<CODE><BIG><B>FILTER_FLAG_IPV6</B></BIG> = 49</CODE>
+<P>
+
+<A name="FILTER_FLAG_NO_RES_RANGE"></A>
+<CODE><BIG><B>FILTER_FLAG_NO_RES_RANGE</B></BIG> = 50</CODE>
+<P>
+
+<A name="FILTER_FLAG_NO_PRIV_RANGE"></A>
+<CODE><BIG><B>FILTER_FLAG_NO_PRIV_RANGE</B></BIG> = 51</CODE>
+<P>
+
+<A name="FILTER_FLAG_STRIP_BACKTICK"></A>
+<CODE><BIG><B>FILTER_FLAG_STRIP_BACKTICK</B></BIG> = 52</CODE>
+<P>
+
+<A name="filter_has_var()"></A>
+<CODE><I>boolean</I> <BIG><B>filter_has_var</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$variable_name)</CODE>
+<P>
+
+<A name="filter_id()"></A>
+<CODE><I>int</I> <BIG><B>filter_id</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filtername)</CODE>
+<P>
+
+<A name="filter_input_array()"></A>
+<CODE><I>mixed</I> <BIG><B>filter_input_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type, ...)</CODE>
+<P>
+
+<A name="filter_input()"></A>
+<CODE><I>mixed</I> <BIG><B>filter_input</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$variable_name, ...)</CODE>
+<P>
+
+<A name="filter_list()"></A>
+<CODE><I>string[int]</I> <BIG><B>filter_list</B></BIG>()</CODE>
+<P>
+
+<A name="filter_var_array()"></A>
+<CODE><I>mixed</I> <BIG><B>filter_var_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[string]</I>&nbsp;$data, ...)</CODE>
+<P>
+
+<A name="filter_var()"></A>
+<CODE><I>mixed</I> <BIG><B>filter_var</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$variable, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

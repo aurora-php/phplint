@@ -1,0 +1,18 @@
+#!/bin/bash
+# Runs PHPLint with a set of common parameters.
+# You may add more parameters, for example:
+#
+# phpl --no-print-source --no-print-notices --doc myprog.php
+#
+# Try phplint --help for more.
+
+d=$(dirname "$0")
+
+"$d/src/phplint" \
+	--tab-size 8 \
+	--no-print-file-name \
+	--print-path shortest \
+	--modules-path "$d/modules" \
+	--print-source \
+	--print-context \
+	"$@"

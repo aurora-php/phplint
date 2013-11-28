@@ -1,0 +1,441 @@
+<HTML><BODY>
+<H1>xmlwriter</H1>
+<P><b>xmlwriter Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.xmlwriter.php"><code>http://www.php.net/manual/en/ref.xmlwriter.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="xmlwriter_set_indent()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_set_indent</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$indent)</CODE>
+<P>
+
+<A name="xmlwriter_set_indent_string()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_set_indent_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$indentstring)</CODE>
+<P>
+
+<A name="xmlwriter_start_attribute()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="xmlwriter_end_attribute()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_start_attribute_ns()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_attribute_ns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri)</CODE>
+<P>
+
+<A name="xmlwriter_write_attribute()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_write_attribute_ns()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_attribute_ns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_start_element()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_element</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="xmlwriter_start_element_ns()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_element_ns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri)</CODE>
+<P>
+
+<A name="xmlwriter_end_element()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_element</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_full_end_element()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_full_end_element</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_write_element()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_element</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_write_element_ns()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_element_ns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_start_pi()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_pi</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target)</CODE>
+<P>
+
+<A name="xmlwriter_end_pi()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_pi</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_write_pi()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_pi</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_start_cdata()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_cdata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_end_cdata()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_cdata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_write_cdata()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_cdata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_write_raw()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_raw</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_text()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_text</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_start_comment()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_comment</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_end_comment()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_comment</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_write_comment()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_comment</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_start_document()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_document</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$standalone)</CODE>
+<P>
+
+<A name="xmlwriter_end_document()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_document</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_start_dtd()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_dtd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pubid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sysid)</CODE>
+<P>
+
+<A name="xmlwriter_end_dtd()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_dtd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_write_dtd()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_dtd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pubid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sysid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subset)</CODE>
+<P>
+
+<A name="xmlwriter_start_dtd_element()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_dtd_element</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="xmlwriter_end_dtd_element()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_dtd_element</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_write_dtd_element()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_dtd_element</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_start_dtd_attlist()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_dtd_attlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="xmlwriter_end_dtd_attlist()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_dtd_attlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_write_dtd_attlist()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_dtd_attlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_start_dtd_entity()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_start_dtd_entity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$isparam)</CODE>
+<P>
+
+<A name="xmlwriter_end_dtd_entity()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_end_dtd_entity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter)</CODE>
+<P>
+
+<A name="xmlwriter_write_dtd_entity()"></A>
+<CODE><I>boolean</I> <BIG><B>xmlwriter_write_dtd_entity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="xmlwriter_open_uri()"></A>
+<CODE><I>resource</I> <BIG><B>xmlwriter_open_uri</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="xmlwriter_open_memory()"></A>
+<CODE><I>resource</I> <BIG><B>xmlwriter_open_memory</B></BIG>()</CODE>
+<P>
+
+<A name="xmlwriter_output_memory()"></A>
+<CODE><I>string</I> <BIG><B>xmlwriter_output_memory</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter, ...)</CODE>
+<P>
+
+<A name="xmlwriter_flush()"></A>
+<CODE><I>mixed</I> <BIG><B>xmlwriter_flush</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$xmlwriter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$flush = TRUE)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="XMLWriter"></A>
+<pre>class <BIG><B>XMLWriter</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="XMLWriter::setIndent()"></A>
+<CODE><I>boolean</I> <BIG><B>setIndent</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$indent)</CODE>
+<P>
+
+<A name="XMLWriter::setIndentString()"></A>
+<CODE><I>boolean</I> <BIG><B>setIndentString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$indentstring)</CODE>
+<P>
+
+<A name="XMLWriter::startAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>startAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="XMLWriter::endAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>endAttribute</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::startAttributeNs()"></A>
+<CODE><I>boolean</I> <BIG><B>startAttributeNs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri)</CODE>
+<P>
+
+<A name="XMLWriter::writeAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>writeAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::writeAttributeNs()"></A>
+<CODE><I>boolean</I> <BIG><B>writeAttributeNs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::startElement()"></A>
+<CODE><I>boolean</I> <BIG><B>startElement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="XMLWriter::startElementNs()"></A>
+<CODE><I>boolean</I> <BIG><B>startElementNs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri)</CODE>
+<P>
+
+<A name="XMLWriter::endElement()"></A>
+<CODE><I>boolean</I> <BIG><B>endElement</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::fullEndElement()"></A>
+<CODE><I>boolean</I> <BIG><B>fullEndElement</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::writeElement()"></A>
+<CODE><I>boolean</I> <BIG><B>writeElement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::writeElementNs()"></A>
+<CODE><I>boolean</I> <BIG><B>writeElementNs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::startPi()"></A>
+<CODE><I>boolean</I> <BIG><B>startPi</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target)</CODE>
+<P>
+
+<A name="XMLWriter::endPi()"></A>
+<CODE><I>boolean</I> <BIG><B>endPi</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::writePi()"></A>
+<CODE><I>boolean</I> <BIG><B>writePi</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::startCdata()"></A>
+<CODE><I>boolean</I> <BIG><B>startCdata</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::endCdata()"></A>
+<CODE><I>boolean</I> <BIG><B>endCdata</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::writeCdata()"></A>
+<CODE><I>boolean</I> <BIG><B>writeCdata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::writeRaw()"></A>
+<CODE><I>boolean</I> <BIG><B>writeRaw</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::text()"></A>
+<CODE><I>boolean</I> <BIG><B>text</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::startComment()"></A>
+<CODE><I>boolean</I> <BIG><B>startComment</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::endComment()"></A>
+<CODE><I>boolean</I> <BIG><B>endComment</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::writeComment()"></A>
+<CODE><I>boolean</I> <BIG><B>writeComment</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::startDocument()"></A>
+<CODE><I>boolean</I> <BIG><B>startDocument</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version, ...)</CODE>
+<P>
+
+<A name="XMLWriter::endDocument()"></A>
+<CODE><I>boolean</I> <BIG><B>endDocument</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::startDtd()"></A>
+<CODE><I>boolean</I> <BIG><B>startDtd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pubid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sysid)</CODE>
+<P>
+
+<A name="XMLWriter::endDtd()"></A>
+<CODE><I>boolean</I> <BIG><B>endDtd</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::writeDtd()"></A>
+<CODE><I>boolean</I> <BIG><B>writeDtd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pubid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sysid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subset)</CODE>
+<P>
+
+<A name="XMLWriter::startDtdDlement()"></A>
+<CODE><I>boolean</I> <BIG><B>startDtdDlement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="XMLWriter::endDtdElement()"></A>
+<CODE><I>boolean</I> <BIG><B>endDtdElement</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::writeDtdElement()"></A>
+<CODE><I>boolean</I> <BIG><B>writeDtdElement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::startDtdAttlist()"></A>
+<CODE><I>boolean</I> <BIG><B>startDtdAttlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="XMLWriter::endDtdAttlist()"></A>
+<CODE><I>boolean</I> <BIG><B>endDtdAttlist</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::writeDtdAttlist()"></A>
+<CODE><I>boolean</I> <BIG><B>writeDtdAttlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::startDtdEntity()"></A>
+<CODE><I>boolean</I> <BIG><B>startDtdEntity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$isparam)</CODE>
+<P>
+
+<A name="XMLWriter::endDtdEntity()"></A>
+<CODE><I>boolean</I> <BIG><B>endDtdEntity</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::writeDtdEntity()"></A>
+<CODE><I>boolean</I> <BIG><B>writeDtdEntity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="XMLWriter::openUri()"></A>
+<CODE><I>resource</I> <BIG><B>openUri</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="XMLWriter::openMemory()"></A>
+<CODE><I>resource</I> <BIG><B>openMemory</B></BIG>()</CODE>
+<P>
+
+<A name="XMLWriter::outputMemory()"></A>
+<CODE><I>string</I> <BIG><B>outputMemory</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$flush = TRUE)</CODE>
+<P>
+
+<A name="XMLWriter::flush()"></A>
+<CODE><I>mixed</I> <BIG><B>flush</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$empty = TRUE)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

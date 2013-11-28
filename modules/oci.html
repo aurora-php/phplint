@@ -1,0 +1,314 @@
+<HTML><BODY>
+<H1>oci</H1>
+<P><b>Oracle Functions (PDO_OCI)</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.oci.php"><code>http://www.php.net/manual/en/ref.oci.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="oci_define_by_name()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_define_by_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;&amp; $var_, ...)</CODE>
+<P>
+
+<A name="oci_bind_by_name()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_bind_by_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;&amp; $var_, ...)</CODE>
+<P>
+
+<A name="oci_free_descriptor()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_free_descriptor</B></BIG>()</CODE>
+<P>
+
+<A name="oci_lob_save()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_save</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data, ...)</CODE>
+<P>
+
+<A name="oci_lob_import()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_import</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="oci_lob_load()"></A>
+<CODE><I>string</I> <BIG><B>oci_lob_load</B></BIG>()</CODE>
+<P>
+
+<A name="oci_lob_read()"></A>
+<CODE><I>string</I> <BIG><B>oci_lob_read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$length)</CODE>
+<P>
+
+<A name="oci_lob_eof()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_eof</B></BIG>()</CODE>
+<P>
+
+<A name="oci_lob_tell()"></A>
+<CODE><I>int</I> <BIG><B>oci_lob_tell</B></BIG>()</CODE>
+<P>
+
+<A name="oci_lob_rewind()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_rewind</B></BIG>()</CODE>
+<P>
+
+<A name="oci_lob_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset, ...)</CODE>
+<P>
+
+<A name="oci_lob_size()"></A>
+<CODE><I>int</I> <BIG><B>oci_lob_size</B></BIG>()</CODE>
+<P>
+
+<A name="oci_lob_write()"></A>
+<CODE><I>int</I> <BIG><B>oci_lob_write</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_, ...)</CODE>
+<P>
+
+<A name="oci_lob_append()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_append</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$lob)</CODE>
+<P>
+
+<A name="oci_lob_truncate()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_truncate</B></BIG>(...)</CODE>
+<P>
+
+<A name="oci_lob_erase()"></A>
+<CODE><I>int</I> <BIG><B>oci_lob_erase</B></BIG>(...)</CODE>
+<P>
+
+<A name="oci_lob_flush()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_flush</B></BIG>(...)</CODE>
+<P>
+
+<A name="ocisetbufferinglob()"></A>
+<CODE><I>boolean</I> <BIG><B>ocisetbufferinglob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$flag)</CODE>
+<P>
+
+<A name="ocigetbufferinglob()"></A>
+<CODE><I>boolean</I> <BIG><B>ocigetbufferinglob</B></BIG>()</CODE>
+<P>
+
+<A name="oci_lob_copy()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_copy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$lob_to,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$lob_from, ...)</CODE>
+<P>
+
+<A name="oci_lob_is_equal()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_is_equal</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$lob1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$lob2)</CODE>
+<P>
+
+<A name="oci_lob_export()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_export</B></BIG>(...)</CODE>
+<P>
+
+<A name="oci_lob_write_temporary()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_write_temporary</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$var_, ...)</CODE>
+<P>
+
+<A name="oci_lob_close()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_lob_close</B></BIG>()</CODE>
+<P>
+
+<A name="oci_new_descriptor()"></A>
+<CODE><I>object</I> <BIG><B>oci_new_descriptor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection, ...)</CODE>
+<P>
+
+<A name="oci_rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_rollback</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="oci_commit()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_commit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="oci_field_name()"></A>
+<CODE><I>string</I> <BIG><B>oci_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="oci_field_size()"></A>
+<CODE><I>int</I> <BIG><B>oci_field_size</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="oci_field_scale()"></A>
+<CODE><I>int</I> <BIG><B>oci_field_scale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="oci_field_precision()"></A>
+<CODE><I>int</I> <BIG><B>oci_field_precision</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="oci_field_type()"></A>
+<CODE><I>mixed</I> <BIG><B>oci_field_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="oci_field_type_raw()"></A>
+<CODE><I>int</I> <BIG><B>oci_field_type_raw</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="oci_field_is_null()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_field_is_null</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="oci_internal_debug()"></A>
+<CODE><I>void</I> <BIG><B>oci_internal_debug</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$onoff)</CODE>
+<P>
+
+<A name="oci_execute()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_execute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt, ...)</CODE>
+<P>
+
+<A name="oci_cancel()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_cancel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="oci_fetch()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_fetch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="ocifetchinto()"></A>
+<CODE><I>int</I> <BIG><B>ocifetchinto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>mixed[]</I>&nbsp;&amp; $output, ...)</CODE>
+<P>
+
+<A name="oci_fetch_all()"></A>
+<CODE><I>int</I> <BIG><B>oci_fetch_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>mixed[]</I>&nbsp;&amp; $output, ...)</CODE>
+<P>
+
+<A name="oci_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>oci_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="oci_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>oci_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="oci_fetch_assoc()"></A>
+<CODE><I>mixed[]</I> <BIG><B>oci_fetch_assoc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="oci_fetch_array()"></A>
+<CODE><I>mixed[]</I> <BIG><B>oci_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt, ...)</CODE>
+<P>
+
+<A name="oci_free_statement()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_free_statement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="oci_close()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="oci_new_connect()"></A>
+<CODE><I>resource</I> <BIG><B>oci_new_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pass, ...)</CODE>
+<P>
+
+<A name="oci_connect()"></A>
+<CODE><I>resource</I> <BIG><B>oci_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pass, ...)</CODE>
+<P>
+
+<A name="oci_pconnect()"></A>
+<CODE><I>resource</I> <BIG><B>oci_pconnect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pass, ...)</CODE>
+<P>
+
+<A name="oci_error()"></A>
+<CODE><I>mixed[]</I> <BIG><B>oci_error</B></BIG>(...)</CODE>
+<P>
+
+<A name="oci_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>oci_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="oci_parse()"></A>
+<CODE><I>resource</I> <BIG><B>oci_parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="oci_set_prefetch()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_set_prefetch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$prefetch_rows)</CODE>
+<P>
+
+<A name="oci_password_change()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_password_change</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$old_password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$new_password)</CODE>
+<P>
+
+<A name="oci_new_cursor()"></A>
+<CODE><I>resource</I> <BIG><B>oci_new_cursor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="oci_result()"></A>
+<CODE><I>string</I> <BIG><B>oci_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$column)</CODE>
+<P>
+
+<A name="oci_server_version()"></A>
+<CODE><I>string</I> <BIG><B>oci_server_version</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn)</CODE>
+<P>
+
+<A name="oci_statement_type()"></A>
+<CODE><I>string</I> <BIG><B>oci_statement_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="oci_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>oci_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="oci_free_collection()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_free_collection</B></BIG>()</CODE>
+<P>
+
+<A name="oci_collection_append()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_collection_append</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="oci_collection_element_get()"></A>
+<CODE><I>string</I> <BIG><B>oci_collection_element_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ndx)</CODE>
+<P>
+
+<A name="oci_collection_assign()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_collection_assign</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$from)</CODE>
+<P>
+
+<A name="oci_collection_element_assign()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_collection_element_assign</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$val)</CODE>
+<P>
+
+<A name="oci_collection_size()"></A>
+<CODE><I>int</I> <BIG><B>oci_collection_size</B></BIG>()</CODE>
+<P>
+
+<A name="oci_collection_max()"></A>
+<CODE><I>int</I> <BIG><B>oci_collection_max</B></BIG>()</CODE>
+<P>
+
+<A name="oci_collection_trim()"></A>
+<CODE><I>boolean</I> <BIG><B>oci_collection_trim</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$num)</CODE>
+<P>
+
+<A name="oci_new_collection()"></A>
+<CODE><I>object</I> <BIG><B>oci_new_collection</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$tdo, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,582 @@
+<HTML><BODY>
+<H1>pgsql</H1>
+<P><b>PostgreSQL Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.pgsql.php"><code>http://www.php.net/manual/en/ref.pgsql.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="PGSQL_ASSOC"></A>
+<CODE><BIG><B>PGSQL_ASSOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="PGSQL_NUM"></A>
+<CODE><BIG><B>PGSQL_NUM</B></BIG> = 2</CODE>
+<P>
+
+<A name="PGSQL_BOTH"></A>
+<CODE><BIG><B>PGSQL_BOTH</B></BIG> = 3</CODE>
+<P>
+
+<A name="PGSQL_CONNECT_FORCE_NEW"></A>
+<CODE><BIG><B>PGSQL_CONNECT_FORCE_NEW</B></BIG> = 4</CODE>
+<P>
+
+<A name="PGSQL_CONNECTION_BAD"></A>
+<CODE><BIG><B>PGSQL_CONNECTION_BAD</B></BIG> = 5</CODE>
+<P>
+
+<A name="PGSQL_CONNECTION_OK"></A>
+<CODE><BIG><B>PGSQL_CONNECTION_OK</B></BIG> = 6</CODE>
+<P>
+
+<A name="PGSQL_SEEK_SET"></A>
+<CODE><BIG><B>PGSQL_SEEK_SET</B></BIG> = 7</CODE>
+<P>
+
+<A name="PGSQL_SEEK_CUR"></A>
+<CODE><BIG><B>PGSQL_SEEK_CUR</B></BIG> = 8</CODE>
+<P>
+
+<A name="PGSQL_SEEK_END"></A>
+<CODE><BIG><B>PGSQL_SEEK_END</B></BIG> = 9</CODE>
+<P>
+
+<A name="PGSQL_EMPTY_QUERY"></A>
+<CODE><BIG><B>PGSQL_EMPTY_QUERY</B></BIG> = 10</CODE>
+<P>
+
+<A name="PGSQL_COMMAND_OK"></A>
+<CODE><BIG><B>PGSQL_COMMAND_OK</B></BIG> = 11</CODE>
+<P>
+
+<A name="PGSQL_TUPLES_OK"></A>
+<CODE><BIG><B>PGSQL_TUPLES_OK</B></BIG> = 12</CODE>
+<P>
+
+<A name="PGSQL_COPY_OUT"></A>
+<CODE><BIG><B>PGSQL_COPY_OUT</B></BIG> = 13</CODE>
+<P>
+
+<A name="PGSQL_COPY_IN"></A>
+<CODE><BIG><B>PGSQL_COPY_IN</B></BIG> = 14</CODE>
+<P>
+
+<A name="PGSQL_BAD_RESPONSE"></A>
+<CODE><BIG><B>PGSQL_BAD_RESPONSE</B></BIG> = 15</CODE>
+<P>
+
+<A name="PGSQL_NONFATAL_ERROR"></A>
+<CODE><BIG><B>PGSQL_NONFATAL_ERROR</B></BIG> = 16</CODE>
+<P>
+
+<A name="PGSQL_FATAL_ERROR"></A>
+<CODE><BIG><B>PGSQL_FATAL_ERROR</B></BIG> = 17</CODE>
+<P>
+
+<A name="PGSQL_TRANSACTION_IDLE"></A>
+<CODE><BIG><B>PGSQL_TRANSACTION_IDLE</B></BIG> = 18</CODE>
+<P>
+
+<A name="PGSQL_TRANSACTION_ACTIVE"></A>
+<CODE><BIG><B>PGSQL_TRANSACTION_ACTIVE</B></BIG> = 19</CODE>
+<P>
+
+<A name="PGSQL_TRANSACTION_INTRANS"></A>
+<CODE><BIG><B>PGSQL_TRANSACTION_INTRANS</B></BIG> = 20</CODE>
+<P>
+
+<A name="PGSQL_TRANSACTION_INERROR"></A>
+<CODE><BIG><B>PGSQL_TRANSACTION_INERROR</B></BIG> = 21</CODE>
+<P>
+
+<A name="PGSQL_TRANSACTION_UNKNOWN"></A>
+<CODE><BIG><B>PGSQL_TRANSACTION_UNKNOWN</B></BIG> = 22</CODE>
+<P>
+
+<A name="PGSQL_DIAG_SEVERITY"></A>
+<CODE><BIG><B>PGSQL_DIAG_SEVERITY</B></BIG> = 23</CODE>
+<P>
+
+<A name="PGSQL_DIAG_SQLSTATE"></A>
+<CODE><BIG><B>PGSQL_DIAG_SQLSTATE</B></BIG> = 24</CODE>
+<P>
+
+<A name="PGSQL_DIAG_MESSAGE_PRIMARY"></A>
+<CODE><BIG><B>PGSQL_DIAG_MESSAGE_PRIMARY</B></BIG> = 25</CODE>
+<P>
+
+<A name="PGSQL_DIAG_MESSAGE_DETAIL"></A>
+<CODE><BIG><B>PGSQL_DIAG_MESSAGE_DETAIL</B></BIG> = 26</CODE>
+<P>
+
+<A name="PGSQL_DIAG_MESSAGE_HINT"></A>
+<CODE><BIG><B>PGSQL_DIAG_MESSAGE_HINT</B></BIG> = 27</CODE>
+<P>
+
+<A name="PGSQL_DIAG_STATEMENT_POSITION"></A>
+<CODE><BIG><B>PGSQL_DIAG_STATEMENT_POSITION</B></BIG> = 28</CODE>
+<P>
+
+<A name="PGSQL_DIAG_INTERNAL_POSITION"></A>
+<CODE><BIG><B>PGSQL_DIAG_INTERNAL_POSITION</B></BIG> = 29</CODE>
+<P>
+
+<A name="PGSQL_DIAG_INTERNAL_QUERY"></A>
+<CODE><BIG><B>PGSQL_DIAG_INTERNAL_QUERY</B></BIG> = 30</CODE>
+<P>
+
+<A name="PGSQL_DIAG_CONTEXT"></A>
+<CODE><BIG><B>PGSQL_DIAG_CONTEXT</B></BIG> = 31</CODE>
+<P>
+
+<A name="PGSQL_DIAG_SOURCE_FILE"></A>
+<CODE><BIG><B>PGSQL_DIAG_SOURCE_FILE</B></BIG> = 32</CODE>
+<P>
+
+<A name="PGSQL_DIAG_SOURCE_LINE"></A>
+<CODE><BIG><B>PGSQL_DIAG_SOURCE_LINE</B></BIG> = 33</CODE>
+<P>
+
+<A name="PGSQL_DIAG_SOURCE_FUNCTION"></A>
+<CODE><BIG><B>PGSQL_DIAG_SOURCE_FUNCTION</B></BIG> = 34</CODE>
+<P>
+
+<A name="PGSQL_ERRORS_TERSE"></A>
+<CODE><BIG><B>PGSQL_ERRORS_TERSE</B></BIG> = 35</CODE>
+<P>
+
+<A name="PGSQL_ERRORS_DEFAULT"></A>
+<CODE><BIG><B>PGSQL_ERRORS_DEFAULT</B></BIG> = 36</CODE>
+<P>
+
+<A name="PGSQL_ERRORS_VERBOSE"></A>
+<CODE><BIG><B>PGSQL_ERRORS_VERBOSE</B></BIG> = 37</CODE>
+<P>
+
+<A name="PGSQL_STATUS_LONG"></A>
+<CODE><BIG><B>PGSQL_STATUS_LONG</B></BIG> = 38</CODE>
+<P>
+
+<A name="PGSQL_STATUS_STRING"></A>
+<CODE><BIG><B>PGSQL_STATUS_STRING</B></BIG> = 39</CODE>
+<P>
+
+<A name="PGSQL_CONV_IGNORE_DEFAULT"></A>
+<CODE><BIG><B>PGSQL_CONV_IGNORE_DEFAULT</B></BIG> = 40</CODE>
+<P>
+
+<A name="PGSQL_CONV_FORCE_NULL"></A>
+<CODE><BIG><B>PGSQL_CONV_FORCE_NULL</B></BIG> = 41</CODE>
+<P>
+
+<A name="PGSQL_CONV_IGNORE_NOT_NULL"></A>
+<CODE><BIG><B>PGSQL_CONV_IGNORE_NOT_NULL</B></BIG> = 42</CODE>
+<P>
+
+<A name="PGSQL_DML_EXEC"></A>
+<CODE><BIG><B>PGSQL_DML_EXEC</B></BIG> = 0</CODE>
+<P>
+
+<A name="pg_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>pg_affected_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="pg_cancel_query()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_cancel_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="pg_client_encoding()"></A>
+<CODE><I>string</I> <BIG><B>pg_client_encoding</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_close()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_close</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_connect()"></A>
+<CODE><I>resource</I> <BIG><B>pg_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$conn_str, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_connection_busy()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_connection_busy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="pg_connection_reset()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_connection_reset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="pg_connection_status()"></A>
+<CODE><I>int</I> <BIG><B>pg_connection_status</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connnection)</CODE>
+<P>
+
+<A name="pg_convert()"></A>
+<CODE><I>mixed[]</I> <BIG><B>pg_convert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$values, ...)</CODE>
+<P>
+
+<A name="pg_copy_from()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_copy_from</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$rows, ...)</CODE>
+<P>
+
+<A name="pg_copy_to()"></A>
+<CODE><I>mixed[]</I> <BIG><B>pg_copy_to</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table_name, ...)</CODE>
+<P>
+
+<A name="pg_dbname()"></A>
+<CODE><I>string</I> <BIG><B>pg_dbname</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_delete()"></A>
+<CODE><I>mixed</I> <BIG><B>pg_delete</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$ids, ...)</CODE>
+<P>
+
+<A name="pg_end_copy()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_end_copy</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_escape_bytea()"></A>
+<CODE><I>string</I> <BIG><B>pg_escape_bytea</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_escape_identifier()"></A>
+<CODE><I>string</I> <BIG><B>pg_escape_identifier</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_escape_literal()"></A>
+<CODE><I>string</I> <BIG><B>pg_escape_literal</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_escape_string()"></A>
+<CODE><I>string</I> <BIG><B>pg_escape_string</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_execute()"></A>
+<CODE><I>resource</I> <BIG><B>pg_execute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stmtname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[int]</I>&nbsp;$params)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_fetch_all_columns()"></A>
+<CODE><I>string[int]</I> <BIG><B>pg_fetch_all_columns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column = 0)</CODE>
+<P>
+
+<A name="pg_fetch_all()"></A>
+<CODE><I>string[int][string]</I> <BIG><B>pg_fetch_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="pg_fetch_array()"></A>
+<CODE><I>string[]</I> <BIG><B>pg_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res, ...)</CODE>
+<P>
+
+<A name="pg_fetch_assoc()"></A>
+<CODE><I>string[string]</I> <BIG><B>pg_fetch_assoc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res, ...)</CODE>
+<P>
+
+<A name="pg_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>pg_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="pg_fetch_result()"></A>
+<CODE><I>string</I> <BIG><B>pg_fetch_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res, ...)</CODE>
+<P>
+
+<A name="pg_fetch_row()"></A>
+<CODE><I>string[int]</I> <BIG><B>pg_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="pg_field_is_null()"></A>
+<CODE><I>int</I> <BIG><B>pg_field_is_null</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="pg_field_name()"></A>
+<CODE><I>string</I> <BIG><B>pg_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_field_num()"></A>
+<CODE><I>int</I> <BIG><B>pg_field_num</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$field_name)</CODE>
+<P>
+
+<A name="pg_field_prtlen()"></A>
+<CODE><I>int</I> <BIG><B>pg_field_prtlen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row_number,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$field_name_or_number)</CODE>
+<P>
+
+<A name="pg_field_size()"></A>
+<CODE><I>int</I> <BIG><B>pg_field_size</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="pg_field_type()"></A>
+<CODE><I>string</I> <BIG><B>pg_field_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="pg_field_type_oid()"></A>
+<CODE><I>int</I> <BIG><B>pg_field_type_oid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="pg_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res)</CODE>
+<P>
+
+<A name="pg_get_notify()"></A>
+<CODE><I>mixed[]</I> <BIG><B>pg_get_notify</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_get_pid()"></A>
+<CODE><I>int</I> <BIG><B>pg_get_pid</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_get_result()"></A>
+<CODE><I>resource</I> <BIG><B>pg_get_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="pg_host()"></A>
+<CODE><I>string</I> <BIG><B>pg_host</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_insert()"></A>
+<CODE><I>mixed</I> <BIG><B>pg_insert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[string]</I>&nbsp;$values,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="pg_last_error()"></A>
+<CODE><I>string</I> <BIG><B>pg_last_error</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_last_notice()"></A>
+<CODE><I>string</I> <BIG><B>pg_last_notice</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res)</CODE>
+<P>
+
+<A name="pg_last_oid()"></A>
+<CODE><I>string</I> <BIG><B>pg_last_oid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="pg_lo_close()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_lo_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$large_object)</CODE>
+<P>
+
+<A name="pg_lo_create()"></A>
+<CODE><I>int</I> <BIG><B>pg_lo_create</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_lo_export()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_lo_export</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_lo_import()"></A>
+<CODE><I>int</I> <BIG><B>pg_lo_import</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_lo_open()"></A>
+<CODE><I>resource</I> <BIG><B>pg_lo_open</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_lo_read_all()"></A>
+<CODE><I>int</I> <BIG><B>pg_lo_read_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$large_object)</CODE>
+<P>
+
+<A name="pg_lo_read()"></A>
+<CODE><I>string</I> <BIG><B>pg_lo_read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$large_object, ...)</CODE>
+<P>
+
+<A name="pg_lo_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_lo_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$large_object,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset, ...)</CODE>
+<P>
+
+<A name="pg_lo_tell()"></A>
+<CODE><I>int</I> <BIG><B>pg_lo_tell</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$large_object)</CODE>
+<P>
+
+<A name="pg_lo_unlink()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_lo_unlink</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_lo_write()"></A>
+<CODE><I>int</I> <BIG><B>pg_lo_write</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$large_object,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$buf, ...)</CODE>
+<P>
+
+<A name="pg_meta_data()"></A>
+<CODE><I>mixed[string][string]</I> <BIG><B>pg_meta_data</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>pg_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="pg_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>pg_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res)</CODE>
+<P>
+
+<A name="pg_numrows()"></A>
+<CODE><I>int</I> <BIG><B>pg_numrows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res)</CODE>
+<P>
+
+<A name="pg_options()"></A>
+<CODE><I>string</I> <BIG><B>pg_options</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_parameter_status()"></A>
+<CODE><I>string</I> <BIG><B>pg_parameter_status</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_pconnect()"></A>
+<CODE><I>resource</I> <BIG><B>pg_pconnect</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_ping()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_ping</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_port()"></A>
+<CODE><I>int</I> <BIG><B>pg_port</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_prepare()"></A>
+<CODE><I>resource</I> <BIG><B>pg_prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stmtname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_put_line()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_put_line</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_query()"></A>
+<CODE><I>resource</I> <BIG><B>pg_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$conn,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_query_params()"></A>
+<CODE><I>resource</I> <BIG><B>pg_query_params</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[int]</I>&nbsp;$params)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_result_error_field()"></A>
+<CODE><I>string</I> <BIG><B>pg_result_error_field</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res)</CODE>
+<P>
+
+<A name="pg_result_error()"></A>
+<CODE><I>string</I> <BIG><B>pg_result_error</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="pg_result_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_result_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="pg_result_status()"></A>
+<CODE><I>mixed</I> <BIG><B>pg_result_status</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="pg_select()"></A>
+<CODE><I>mixed</I> <BIG><B>pg_select</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$ids, ...)</CODE>
+<P>
+
+<A name="pg_send_execute()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_send_execute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stmtname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[int]</I>&nbsp;$params)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_send_prepare()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_send_prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$stmtname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_send_query()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_send_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qeury)</CODE>
+<P>
+
+<A name="pg_send_query_params()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_send_query_params</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[int]</I>&nbsp;$params)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_set_client_encoding()"></A>
+<CODE><I>int</I> <BIG><B>pg_set_client_encoding</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_set_error_verbosity()"></A>
+<CODE><I>int</I> <BIG><B>pg_set_error_verbosity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$verbosity)</CODE>
+<P>
+
+<A name="pg_trace()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_trace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="pg_transaction_status()"></A>
+<CODE><I>int</I> <BIG><B>pg_transaction_status</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="pg_tty()"></A>
+<CODE><I>string</I> <BIG><B>pg_tty</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_unescape_bytea()"></A>
+<CODE><I>string</I> <BIG><B>pg_unescape_bytea</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="pg_untrace()"></A>
+<CODE><I>boolean</I> <BIG><B>pg_untrace</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_update()"></A>
+<CODE><I>mixed</I> <BIG><B>pg_update</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$fields,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$ids, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="pg_version()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>pg_version</B></BIG>(...)</CODE>
+<P>
+
+<A name="pg_field_table()"></A>
+<CODE><I>mixed</I> <BIG><B>pg_field_table</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

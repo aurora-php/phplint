@@ -1,0 +1,525 @@
+<HTML><BODY>
+<H1>tokenizer</H1>
+<P><b>Tokenizer Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+NOTE. Since PHP 4.3.0, the tokenizer module is effectively
+	built-in by default and can be disabled explicitly with
+	./configure --disable-tokenizer when compiling from the source.
+	<p>
+
+	See: <a href="http://www.php.net/manual/en/ref.tokenizer.php"><code>http://www.php.net/manual/en/ref.tokenizer.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="T_ABSTRACT"></A>
+<CODE><BIG><B>T_ABSTRACT</B></BIG> = 346</CODE>
+<P>
+
+<A name="T_CATCH"></A>
+<CODE><BIG><B>T_CATCH</B></BIG> = 338</CODE>
+<P>
+
+<A name="T_CLASS_C"></A>
+<CODE><BIG><B>T_CLASS_C</B></BIG> = 361</CODE>
+<P>
+
+<A name="T_CLONE"></A>
+<CODE><BIG><B>T_CLONE</B></BIG> = 298</CODE>
+<P>
+
+<A name="T_EXTENDS"></A>
+<CODE><BIG><B>T_EXTENDS</B></BIG> = 355</CODE>
+<P>
+
+<A name="T_FINAL"></A>
+<CODE><BIG><B>T_FINAL</B></BIG> = 345</CODE>
+<P>
+
+<A name="T_FUNC_C"></A>
+<CODE><BIG><B>T_FUNC_C</B></BIG> = 363</CODE>
+<P>
+
+<A name="T_GOTO"></A>
+<CODE><BIG><B>T_GOTO</B></BIG> = 333</CODE>
+<P>
+
+<A name="T_HALT_COMPILER"></A>
+<CODE><BIG><B>T_HALT_COMPILER</B></BIG> = 352</CODE>
+<P>
+
+<A name="T_IMPLEMENTS"></A>
+<CODE><BIG><B>T_IMPLEMENTS</B></BIG> = 356</CODE>
+<P>
+
+<A name="T_INSTANCEOF"></A>
+<CODE><BIG><B>T_INSTANCEOF</B></BIG> = 288</CODE>
+<P>
+
+<A name="T_INTERFACE"></A>
+<CODE><BIG><B>T_INTERFACE</B></BIG> = 354</CODE>
+<P>
+
+<A name="T_NAMESPACE"></A>
+<CODE><BIG><B>T_NAMESPACE</B></BIG> = 377</CODE>
+<P>
+
+<A name="T_NS_C"></A>
+<CODE><BIG><B>T_NS_C</B></BIG> = 378</CODE>
+<P>
+
+<A name="T_NS_SEPARATOR"></A>
+<CODE><BIG><B>T_NS_SEPARATOR</B></BIG> = 380</CODE>
+<P>
+
+<A name="T_PRIVATE"></A>
+<CODE><BIG><B>T_PRIVATE</B></BIG> = 344</CODE>
+<P>
+
+<A name="T_PROTECTED"></A>
+<CODE><BIG><B>T_PROTECTED</B></BIG> = 343</CODE>
+<P>
+
+<A name="T_PUBLIC"></A>
+<CODE><BIG><B>T_PUBLIC</B></BIG> = 342</CODE>
+<P>
+
+<A name="T_THROW"></A>
+<CODE><BIG><B>T_THROW</B></BIG> = 339</CODE>
+<P>
+
+<A name="T_TRY"></A>
+<CODE><BIG><B>T_TRY</B></BIG> = 337</CODE>
+<P>
+
+<A name="T_USE"></A>
+<CODE><BIG><B>T_USE</B></BIG> = 340</CODE>
+<P>
+
+<A name="T_AND_EQUAL"></A>
+<CODE><BIG><B>T_AND_EQUAL</B></BIG> = 271</CODE>
+<P>
+
+<A name="T_ARRAY"></A>
+<CODE><BIG><B>T_ARRAY</B></BIG> = 360</CODE>
+<P>
+
+<A name="T_ARRAY_CAST"></A>
+<CODE><BIG><B>T_ARRAY_CAST</B></BIG> = 292</CODE>
+<P>
+
+<A name="T_AS"></A>
+<CODE><BIG><B>T_AS</B></BIG> = 326</CODE>
+<P>
+
+<A name="T_BAD_CHARACTER"></A>
+<CODE><BIG><B>T_BAD_CHARACTER</B></BIG> = 313</CODE>
+<P>
+
+<A name="T_BOOLEAN_AND"></A>
+<CODE><BIG><B>T_BOOLEAN_AND</B></BIG> = 279</CODE>
+<P>
+
+<A name="T_BOOLEAN_OR"></A>
+<CODE><BIG><B>T_BOOLEAN_OR</B></BIG> = 278</CODE>
+<P>
+
+<A name="T_BOOL_CAST"></A>
+<CODE><BIG><B>T_BOOL_CAST</B></BIG> = 290</CODE>
+<P>
+
+<A name="T_BREAK"></A>
+<CODE><BIG><B>T_BREAK</B></BIG> = 331</CODE>
+<P>
+
+<A name="T_CASE"></A>
+<CODE><BIG><B>T_CASE</B></BIG> = 329</CODE>
+<P>
+
+<A name="T_CHARACTER"></A>
+<CODE><BIG><B>T_CHARACTER</B></BIG> = 312</CODE>
+<P>
+
+<A name="T_CLASS"></A>
+<CODE><BIG><B>T_CLASS</B></BIG> = 353</CODE>
+<P>
+
+<A name="T_CLOSE_TAG"></A>
+<CODE><BIG><B>T_CLOSE_TAG</B></BIG> = 370</CODE>
+<P>
+
+<A name="T_COMMENT"></A>
+<CODE><BIG><B>T_COMMENT</B></BIG> = 366</CODE>
+<P>
+
+<A name="T_CONCAT_EQUAL"></A>
+<CODE><BIG><B>T_CONCAT_EQUAL</B></BIG> = 273</CODE>
+<P>
+
+<A name="T_CONST"></A>
+<CODE><BIG><B>T_CONST</B></BIG> = 335</CODE>
+<P>
+
+<A name="T_CONSTANT_ENCAPSED_STRING"></A>
+<CODE><BIG><B>T_CONSTANT_ENCAPSED_STRING</B></BIG> = 315</CODE>
+<P>
+
+<A name="T_CONTINUE"></A>
+<CODE><BIG><B>T_CONTINUE</B></BIG> = 332</CODE>
+<P>
+
+<A name="T_CURLY_OPEN"></A>
+<CODE><BIG><B>T_CURLY_OPEN</B></BIG> = 375</CODE>
+<P>
+
+<A name="T_DEC"></A>
+<CODE><BIG><B>T_DEC</B></BIG> = 296</CODE>
+<P>
+
+<A name="T_DECLARE"></A>
+<CODE><BIG><B>T_DECLARE</B></BIG> = 324</CODE>
+<P>
+
+<A name="T_DEFAULT"></A>
+<CODE><BIG><B>T_DEFAULT</B></BIG> = 330</CODE>
+<P>
+
+<A name="T_DIR"></A>
+<CODE><BIG><B>T_DIR</B></BIG> = 379</CODE>
+<P>
+
+<A name="T_DIV_EQUAL"></A>
+<CODE><BIG><B>T_DIV_EQUAL</B></BIG> = 274</CODE>
+<P>
+
+<A name="T_DNUMBER"></A>
+<CODE><BIG><B>T_DNUMBER</B></BIG> = 306</CODE>
+<P>
+
+<A name="T_DO"></A>
+<CODE><BIG><B>T_DO</B></BIG> = 317</CODE>
+<P>
+
+<A name="T_DOC_COMMENT"></A>
+<CODE><BIG><B>T_DOC_COMMENT</B></BIG> = 367</CODE>
+<P>
+
+<A name="T_DOLLAR_OPEN_CURLY_BRACES"></A>
+<CODE><BIG><B>T_DOLLAR_OPEN_CURLY_BRACES</B></BIG> = 374</CODE>
+<P>
+
+<A name="T_DOUBLE_ARROW"></A>
+<CODE><BIG><B>T_DOUBLE_ARROW</B></BIG> = 358</CODE>
+<P>
+
+<A name="T_DOUBLE_CAST"></A>
+<CODE><BIG><B>T_DOUBLE_CAST</B></BIG> = 294</CODE>
+<P>
+
+<A name="T_DOUBLE_COLON"></A>
+<CODE><BIG><B>T_DOUBLE_COLON</B></BIG> = 376</CODE>
+<P>
+
+<A name="T_ECHO"></A>
+<CODE><BIG><B>T_ECHO</B></BIG> = 316</CODE>
+<P>
+
+<A name="T_ELSE"></A>
+<CODE><BIG><B>T_ELSE</B></BIG> = 303</CODE>
+<P>
+
+<A name="T_ELSEIF"></A>
+<CODE><BIG><B>T_ELSEIF</B></BIG> = 302</CODE>
+<P>
+
+<A name="T_EMPTY"></A>
+<CODE><BIG><B>T_EMPTY</B></BIG> = 351</CODE>
+<P>
+
+<A name="T_ENCAPSED_AND_WHITESPACE"></A>
+<CODE><BIG><B>T_ENCAPSED_AND_WHITESPACE</B></BIG> = 314</CODE>
+<P>
+
+<A name="T_ENDDECLARE"></A>
+<CODE><BIG><B>T_ENDDECLARE</B></BIG> = 325</CODE>
+<P>
+
+<A name="T_ENDFOR"></A>
+<CODE><BIG><B>T_ENDFOR</B></BIG> = 321</CODE>
+<P>
+
+<A name="T_ENDFOREACH"></A>
+<CODE><BIG><B>T_ENDFOREACH</B></BIG> = 323</CODE>
+<P>
+
+<A name="T_ENDIF"></A>
+<CODE><BIG><B>T_ENDIF</B></BIG> = 304</CODE>
+<P>
+
+<A name="T_ENDSWITCH"></A>
+<CODE><BIG><B>T_ENDSWITCH</B></BIG> = 328</CODE>
+<P>
+
+<A name="T_ENDWHILE"></A>
+<CODE><BIG><B>T_ENDWHILE</B></BIG> = 319</CODE>
+<P>
+
+<A name="T_END_HEREDOC"></A>
+<CODE><BIG><B>T_END_HEREDOC</B></BIG> = 373</CODE>
+<P>
+
+<A name="T_EVAL"></A>
+<CODE><BIG><B>T_EVAL</B></BIG> = 260</CODE>
+<P>
+
+<A name="T_EXIT"></A>
+<CODE><BIG><B>T_EXIT</B></BIG> = 300</CODE>
+<P>
+
+<A name="T_FILE"></A>
+<CODE><BIG><B>T_FILE</B></BIG> = 365</CODE>
+<P>
+
+<A name="T_FOR"></A>
+<CODE><BIG><B>T_FOR</B></BIG> = 320</CODE>
+<P>
+
+<A name="T_FOREACH"></A>
+<CODE><BIG><B>T_FOREACH</B></BIG> = 322</CODE>
+<P>
+
+<A name="T_FUNCTION"></A>
+<CODE><BIG><B>T_FUNCTION</B></BIG> = 334</CODE>
+<P>
+
+<A name="T_GLOBAL"></A>
+<CODE><BIG><B>T_GLOBAL</B></BIG> = 341</CODE>
+<P>
+
+<A name="T_IF"></A>
+<CODE><BIG><B>T_IF</B></BIG> = 301</CODE>
+<P>
+
+<A name="T_INC"></A>
+<CODE><BIG><B>T_INC</B></BIG> = 297</CODE>
+<P>
+
+<A name="T_INCLUDE"></A>
+<CODE><BIG><B>T_INCLUDE</B></BIG> = 262</CODE>
+<P>
+
+<A name="T_INCLUDE_ONCE"></A>
+<CODE><BIG><B>T_INCLUDE_ONCE</B></BIG> = 261</CODE>
+<P>
+
+<A name="T_INLINE_HTML"></A>
+<CODE><BIG><B>T_INLINE_HTML</B></BIG> = 311</CODE>
+<P>
+
+<A name="T_INT_CAST"></A>
+<CODE><BIG><B>T_INT_CAST</B></BIG> = 295</CODE>
+<P>
+
+<A name="T_ISSET"></A>
+<CODE><BIG><B>T_ISSET</B></BIG> = 350</CODE>
+<P>
+
+<A name="T_IS_EQUAL"></A>
+<CODE><BIG><B>T_IS_EQUAL</B></BIG> = 283</CODE>
+<P>
+
+<A name="T_IS_GREATER_OR_EQUAL"></A>
+<CODE><BIG><B>T_IS_GREATER_OR_EQUAL</B></BIG> = 284</CODE>
+<P>
+
+<A name="T_IS_IDENTICAL"></A>
+<CODE><BIG><B>T_IS_IDENTICAL</B></BIG> = 281</CODE>
+<P>
+
+<A name="T_IS_NOT_EQUAL"></A>
+<CODE><BIG><B>T_IS_NOT_EQUAL</B></BIG> = 282</CODE>
+<P>
+
+<A name="T_IS_NOT_IDENTICAL"></A>
+<CODE><BIG><B>T_IS_NOT_IDENTICAL</B></BIG> = 280</CODE>
+<P>
+
+<A name="T_IS_SMALLER_OR_EQUAL"></A>
+<CODE><BIG><B>T_IS_SMALLER_OR_EQUAL</B></BIG> = 285</CODE>
+<P>
+
+<A name="T_LINE"></A>
+<CODE><BIG><B>T_LINE</B></BIG> = 364</CODE>
+<P>
+
+<A name="T_LIST"></A>
+<CODE><BIG><B>T_LIST</B></BIG> = 359</CODE>
+<P>
+
+<A name="T_LNUMBER"></A>
+<CODE><BIG><B>T_LNUMBER</B></BIG> = 305</CODE>
+<P>
+
+<A name="T_LOGICAL_AND"></A>
+<CODE><BIG><B>T_LOGICAL_AND</B></BIG> = 265</CODE>
+<P>
+
+<A name="T_LOGICAL_OR"></A>
+<CODE><BIG><B>T_LOGICAL_OR</B></BIG> = 263</CODE>
+<P>
+
+<A name="T_LOGICAL_XOR"></A>
+<CODE><BIG><B>T_LOGICAL_XOR</B></BIG> = 264</CODE>
+<P>
+
+<A name="T_METHOD_C"></A>
+<CODE><BIG><B>T_METHOD_C</B></BIG> = 362</CODE>
+<P>
+
+<A name="T_MINUS_EQUAL"></A>
+<CODE><BIG><B>T_MINUS_EQUAL</B></BIG> = 276</CODE>
+<P>
+
+<A name="T_MOD_EQUAL"></A>
+<CODE><BIG><B>T_MOD_EQUAL</B></BIG> = 272</CODE>
+<P>
+
+<A name="T_MUL_EQUAL"></A>
+<CODE><BIG><B>T_MUL_EQUAL</B></BIG> = 275</CODE>
+<P>
+
+<A name="T_NEW"></A>
+<CODE><BIG><B>T_NEW</B></BIG> = 299</CODE>
+<P>
+
+<A name="T_NUM_STRING"></A>
+<CODE><BIG><B>T_NUM_STRING</B></BIG> = 310</CODE>
+<P>
+
+<A name="T_OBJECT_CAST"></A>
+<CODE><BIG><B>T_OBJECT_CAST</B></BIG> = 291</CODE>
+<P>
+
+<A name="T_OBJECT_OPERATOR"></A>
+<CODE><BIG><B>T_OBJECT_OPERATOR</B></BIG> = 357</CODE>
+<P>
+
+<A name="T_OPEN_TAG"></A>
+<CODE><BIG><B>T_OPEN_TAG</B></BIG> = 368</CODE>
+<P>
+
+<A name="T_OPEN_TAG_WITH_ECHO"></A>
+<CODE><BIG><B>T_OPEN_TAG_WITH_ECHO</B></BIG> = 369</CODE>
+<P>
+
+<A name="T_OR_EQUAL"></A>
+<CODE><BIG><B>T_OR_EQUAL</B></BIG> = 270</CODE>
+<P>
+
+<A name="T_PAAMAYIM_NEKUDOTAYIM"></A>
+<CODE><BIG><B>T_PAAMAYIM_NEKUDOTAYIM</B></BIG> = 376</CODE>
+<P>
+
+<A name="T_PLUS_EQUAL"></A>
+<CODE><BIG><B>T_PLUS_EQUAL</B></BIG> = 277</CODE>
+<P>
+
+<A name="T_PRINT"></A>
+<CODE><BIG><B>T_PRINT</B></BIG> = 266</CODE>
+<P>
+
+<A name="T_REQUIRE"></A>
+<CODE><BIG><B>T_REQUIRE</B></BIG> = 259</CODE>
+<P>
+
+<A name="T_REQUIRE_ONCE"></A>
+<CODE><BIG><B>T_REQUIRE_ONCE</B></BIG> = 258</CODE>
+<P>
+
+<A name="T_RETURN"></A>
+<CODE><BIG><B>T_RETURN</B></BIG> = 336</CODE>
+<P>
+
+<A name="T_SL"></A>
+<CODE><BIG><B>T_SL</B></BIG> = 287</CODE>
+<P>
+
+<A name="T_SL_EQUAL"></A>
+<CODE><BIG><B>T_SL_EQUAL</B></BIG> = 268</CODE>
+<P>
+
+<A name="T_SR"></A>
+<CODE><BIG><B>T_SR</B></BIG> = 286</CODE>
+<P>
+
+<A name="T_SR_EQUAL"></A>
+<CODE><BIG><B>T_SR_EQUAL</B></BIG> = 267</CODE>
+<P>
+
+<A name="T_START_HEREDOC"></A>
+<CODE><BIG><B>T_START_HEREDOC</B></BIG> = 372</CODE>
+<P>
+
+<A name="T_STATIC"></A>
+<CODE><BIG><B>T_STATIC</B></BIG> = 347</CODE>
+<P>
+
+<A name="T_STRING"></A>
+<CODE><BIG><B>T_STRING</B></BIG> = 307</CODE>
+<P>
+
+<A name="T_STRING_CAST"></A>
+<CODE><BIG><B>T_STRING_CAST</B></BIG> = 293</CODE>
+<P>
+
+<A name="T_STRING_VARNAME"></A>
+<CODE><BIG><B>T_STRING_VARNAME</B></BIG> = 308</CODE>
+<P>
+
+<A name="T_SWITCH"></A>
+<CODE><BIG><B>T_SWITCH</B></BIG> = 327</CODE>
+<P>
+
+<A name="T_UNSET"></A>
+<CODE><BIG><B>T_UNSET</B></BIG> = 349</CODE>
+<P>
+
+<A name="T_UNSET_CAST"></A>
+<CODE><BIG><B>T_UNSET_CAST</B></BIG> = 289</CODE>
+<P>
+
+<A name="T_VAR"></A>
+<CODE><BIG><B>T_VAR</B></BIG> = 348</CODE>
+<P>
+
+<A name="T_VARIABLE"></A>
+<CODE><BIG><B>T_VARIABLE</B></BIG> = 309</CODE>
+<P>
+
+<A name="T_WHILE"></A>
+<CODE><BIG><B>T_WHILE</B></BIG> = 318</CODE>
+<P>
+
+<A name="T_WHITESPACE"></A>
+<CODE><BIG><B>T_WHITESPACE</B></BIG> = 371</CODE>
+<P>
+
+<A name="T_XOR_EQUAL"></A>
+<CODE><BIG><B>T_XOR_EQUAL</B></BIG> = 269</CODE>
+<P>
+
+<A name="token_get_all()"></A>
+<CODE><I>mixed[int]</I> <BIG><B>token_get_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="token_name()"></A>
+<CODE><I>string</I> <BIG><B>token_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

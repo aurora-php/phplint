@@ -1,0 +1,1433 @@
+<HTML><BODY>
+<H1>tidy</H1>
+<P><b>Tidy Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.tidy.php"><code>http://www.php.net/manual/en/ref.tidy.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="TIDY_TAG_UNKNOWN"></A>
+<CODE><BIG><B>TIDY_TAG_UNKNOWN</B></BIG> = 1</CODE>
+<P>
+
+<A name="TIDY_TAG_A"></A>
+<CODE><BIG><B>TIDY_TAG_A</B></BIG> = 2</CODE>
+<P>
+
+<A name="TIDY_TAG_ABBR"></A>
+<CODE><BIG><B>TIDY_TAG_ABBR</B></BIG> = 3</CODE>
+<P>
+
+<A name="TIDY_TAG_ACRONYM"></A>
+<CODE><BIG><B>TIDY_TAG_ACRONYM</B></BIG> = 4</CODE>
+<P>
+
+<A name="TIDY_TAG_ALIGN"></A>
+<CODE><BIG><B>TIDY_TAG_ALIGN</B></BIG> = 5</CODE>
+<P>
+
+<A name="TIDY_TAG_APPLET"></A>
+<CODE><BIG><B>TIDY_TAG_APPLET</B></BIG> = 6</CODE>
+<P>
+
+<A name="TIDY_TAG_AREA"></A>
+<CODE><BIG><B>TIDY_TAG_AREA</B></BIG> = 7</CODE>
+<P>
+
+<A name="TIDY_TAG_B"></A>
+<CODE><BIG><B>TIDY_TAG_B</B></BIG> = 8</CODE>
+<P>
+
+<A name="TIDY_TAG_BASE"></A>
+<CODE><BIG><B>TIDY_TAG_BASE</B></BIG> = 9</CODE>
+<P>
+
+<A name="TIDY_TAG_BASEFONT"></A>
+<CODE><BIG><B>TIDY_TAG_BASEFONT</B></BIG> = 10</CODE>
+<P>
+
+<A name="TIDY_TAG_BDO"></A>
+<CODE><BIG><B>TIDY_TAG_BDO</B></BIG> = 11</CODE>
+<P>
+
+<A name="TIDY_TAG_BGSOUND"></A>
+<CODE><BIG><B>TIDY_TAG_BGSOUND</B></BIG> = 12</CODE>
+<P>
+
+<A name="TIDY_TAG_BIG"></A>
+<CODE><BIG><B>TIDY_TAG_BIG</B></BIG> = 13</CODE>
+<P>
+
+<A name="TIDY_TAG_BLINK"></A>
+<CODE><BIG><B>TIDY_TAG_BLINK</B></BIG> = 14</CODE>
+<P>
+
+<A name="TIDY_TAG_BLOCKQUOTE"></A>
+<CODE><BIG><B>TIDY_TAG_BLOCKQUOTE</B></BIG> = 15</CODE>
+<P>
+
+<A name="TIDY_TAG_BODY"></A>
+<CODE><BIG><B>TIDY_TAG_BODY</B></BIG> = 16</CODE>
+<P>
+
+<A name="TIDY_TAG_BR"></A>
+<CODE><BIG><B>TIDY_TAG_BR</B></BIG> = 17</CODE>
+<P>
+
+<A name="TIDY_TAG_BUTTON"></A>
+<CODE><BIG><B>TIDY_TAG_BUTTON</B></BIG> = 18</CODE>
+<P>
+
+<A name="TIDY_TAG_CAPTION"></A>
+<CODE><BIG><B>TIDY_TAG_CAPTION</B></BIG> = 19</CODE>
+<P>
+
+<A name="TIDY_TAG_CENTER"></A>
+<CODE><BIG><B>TIDY_TAG_CENTER</B></BIG> = 20</CODE>
+<P>
+
+<A name="TIDY_TAG_CITE"></A>
+<CODE><BIG><B>TIDY_TAG_CITE</B></BIG> = 21</CODE>
+<P>
+
+<A name="TIDY_TAG_CODE"></A>
+<CODE><BIG><B>TIDY_TAG_CODE</B></BIG> = 22</CODE>
+<P>
+
+<A name="TIDY_TAG_COL"></A>
+<CODE><BIG><B>TIDY_TAG_COL</B></BIG> = 23</CODE>
+<P>
+
+<A name="TIDY_TAG_COLGROUP"></A>
+<CODE><BIG><B>TIDY_TAG_COLGROUP</B></BIG> = 24</CODE>
+<P>
+
+<A name="TIDY_TAG_COMMENT"></A>
+<CODE><BIG><B>TIDY_TAG_COMMENT</B></BIG> = 25</CODE>
+<P>
+
+<A name="TIDY_TAG_DD"></A>
+<CODE><BIG><B>TIDY_TAG_DD</B></BIG> = 26</CODE>
+<P>
+
+<A name="TIDY_TAG_DEL"></A>
+<CODE><BIG><B>TIDY_TAG_DEL</B></BIG> = 27</CODE>
+<P>
+
+<A name="TIDY_TAG_DFN"></A>
+<CODE><BIG><B>TIDY_TAG_DFN</B></BIG> = 28</CODE>
+<P>
+
+<A name="TIDY_TAG_DIR"></A>
+<CODE><BIG><B>TIDY_TAG_DIR</B></BIG> = 29</CODE>
+<P>
+
+<A name="TIDY_TAG_DIV"></A>
+<CODE><BIG><B>TIDY_TAG_DIV</B></BIG> = 30</CODE>
+<P>
+
+<A name="TIDY_TAG_DL"></A>
+<CODE><BIG><B>TIDY_TAG_DL</B></BIG> = 31</CODE>
+<P>
+
+<A name="TIDY_TAG_DT"></A>
+<CODE><BIG><B>TIDY_TAG_DT</B></BIG> = 32</CODE>
+<P>
+
+<A name="TIDY_TAG_EM"></A>
+<CODE><BIG><B>TIDY_TAG_EM</B></BIG> = 33</CODE>
+<P>
+
+<A name="TIDY_TAG_EMBED"></A>
+<CODE><BIG><B>TIDY_TAG_EMBED</B></BIG> = 34</CODE>
+<P>
+
+<A name="TIDY_TAG_FIELDSET"></A>
+<CODE><BIG><B>TIDY_TAG_FIELDSET</B></BIG> = 35</CODE>
+<P>
+
+<A name="TIDY_TAG_FONT"></A>
+<CODE><BIG><B>TIDY_TAG_FONT</B></BIG> = 36</CODE>
+<P>
+
+<A name="TIDY_TAG_FORM"></A>
+<CODE><BIG><B>TIDY_TAG_FORM</B></BIG> = 37</CODE>
+<P>
+
+<A name="TIDY_TAG_FRAME"></A>
+<CODE><BIG><B>TIDY_TAG_FRAME</B></BIG> = 38</CODE>
+<P>
+
+<A name="TIDY_TAG_FRAMESET"></A>
+<CODE><BIG><B>TIDY_TAG_FRAMESET</B></BIG> = 39</CODE>
+<P>
+
+<A name="TIDY_TAG_H1"></A>
+<CODE><BIG><B>TIDY_TAG_H1</B></BIG> = 40</CODE>
+<P>
+
+<A name="TIDY_TAG_H2"></A>
+<CODE><BIG><B>TIDY_TAG_H2</B></BIG> = 41</CODE>
+<P>
+
+<A name="TIDY_TAG_H3"></A>
+<CODE><BIG><B>TIDY_TAG_H3</B></BIG> = 42</CODE>
+<P>
+
+<A name="TIDY_TAG_H4"></A>
+<CODE><BIG><B>TIDY_TAG_H4</B></BIG> = 43</CODE>
+<P>
+
+<A name="TIDY_TAG_H5"></A>
+<CODE><BIG><B>TIDY_TAG_H5</B></BIG> = 44</CODE>
+<P>
+
+<A name="TIDY_TAG_H6"></A>
+<CODE><BIG><B>TIDY_TAG_H6</B></BIG> = 45</CODE>
+<P>
+
+<A name="TIDY_TAG_HEAD"></A>
+<CODE><BIG><B>TIDY_TAG_HEAD</B></BIG> = 46</CODE>
+<P>
+
+<A name="TIDY_TAG_HR"></A>
+<CODE><BIG><B>TIDY_TAG_HR</B></BIG> = 47</CODE>
+<P>
+
+<A name="TIDY_TAG_HTML"></A>
+<CODE><BIG><B>TIDY_TAG_HTML</B></BIG> = 48</CODE>
+<P>
+
+<A name="TIDY_TAG_I"></A>
+<CODE><BIG><B>TIDY_TAG_I</B></BIG> = 49</CODE>
+<P>
+
+<A name="TIDY_TAG_IFRAME"></A>
+<CODE><BIG><B>TIDY_TAG_IFRAME</B></BIG> = 50</CODE>
+<P>
+
+<A name="TIDY_TAG_ILAYER"></A>
+<CODE><BIG><B>TIDY_TAG_ILAYER</B></BIG> = 51</CODE>
+<P>
+
+<A name="TIDY_TAG_IMG"></A>
+<CODE><BIG><B>TIDY_TAG_IMG</B></BIG> = 52</CODE>
+<P>
+
+<A name="TIDY_TAG_INPUT"></A>
+<CODE><BIG><B>TIDY_TAG_INPUT</B></BIG> = 53</CODE>
+<P>
+
+<A name="TIDY_TAG_INS"></A>
+<CODE><BIG><B>TIDY_TAG_INS</B></BIG> = 54</CODE>
+<P>
+
+<A name="TIDY_TAG_ISINDEX"></A>
+<CODE><BIG><B>TIDY_TAG_ISINDEX</B></BIG> = 55</CODE>
+<P>
+
+<A name="TIDY_TAG_KBD"></A>
+<CODE><BIG><B>TIDY_TAG_KBD</B></BIG> = 56</CODE>
+<P>
+
+<A name="TIDY_TAG_KEYGEN"></A>
+<CODE><BIG><B>TIDY_TAG_KEYGEN</B></BIG> = 57</CODE>
+<P>
+
+<A name="TIDY_TAG_LABEL"></A>
+<CODE><BIG><B>TIDY_TAG_LABEL</B></BIG> = 58</CODE>
+<P>
+
+<A name="TIDY_TAG_LAYER"></A>
+<CODE><BIG><B>TIDY_TAG_LAYER</B></BIG> = 59</CODE>
+<P>
+
+<A name="TIDY_TAG_LEGEND"></A>
+<CODE><BIG><B>TIDY_TAG_LEGEND</B></BIG> = 60</CODE>
+<P>
+
+<A name="TIDY_TAG_LI"></A>
+<CODE><BIG><B>TIDY_TAG_LI</B></BIG> = 61</CODE>
+<P>
+
+<A name="TIDY_TAG_LINK"></A>
+<CODE><BIG><B>TIDY_TAG_LINK</B></BIG> = 62</CODE>
+<P>
+
+<A name="TIDY_TAG_LISTING"></A>
+<CODE><BIG><B>TIDY_TAG_LISTING</B></BIG> = 63</CODE>
+<P>
+
+<A name="TIDY_TAG_MAP"></A>
+<CODE><BIG><B>TIDY_TAG_MAP</B></BIG> = 64</CODE>
+<P>
+
+<A name="TIDY_TAG_MARQUEE"></A>
+<CODE><BIG><B>TIDY_TAG_MARQUEE</B></BIG> = 65</CODE>
+<P>
+
+<A name="TIDY_TAG_MENU"></A>
+<CODE><BIG><B>TIDY_TAG_MENU</B></BIG> = 66</CODE>
+<P>
+
+<A name="TIDY_TAG_META"></A>
+<CODE><BIG><B>TIDY_TAG_META</B></BIG> = 67</CODE>
+<P>
+
+<A name="TIDY_TAG_MULTICOL"></A>
+<CODE><BIG><B>TIDY_TAG_MULTICOL</B></BIG> = 68</CODE>
+<P>
+
+<A name="TIDY_TAG_NOBR"></A>
+<CODE><BIG><B>TIDY_TAG_NOBR</B></BIG> = 69</CODE>
+<P>
+
+<A name="TIDY_TAG_NOEMBED"></A>
+<CODE><BIG><B>TIDY_TAG_NOEMBED</B></BIG> = 70</CODE>
+<P>
+
+<A name="TIDY_TAG_NOFRAMES"></A>
+<CODE><BIG><B>TIDY_TAG_NOFRAMES</B></BIG> = 71</CODE>
+<P>
+
+<A name="TIDY_TAG_NOLAYER"></A>
+<CODE><BIG><B>TIDY_TAG_NOLAYER</B></BIG> = 72</CODE>
+<P>
+
+<A name="TIDY_TAG_NOSAVE"></A>
+<CODE><BIG><B>TIDY_TAG_NOSAVE</B></BIG> = 73</CODE>
+<P>
+
+<A name="TIDY_TAG_NOSCRIPT"></A>
+<CODE><BIG><B>TIDY_TAG_NOSCRIPT</B></BIG> = 74</CODE>
+<P>
+
+<A name="TIDY_TAG_OBJECT"></A>
+<CODE><BIG><B>TIDY_TAG_OBJECT</B></BIG> = 75</CODE>
+<P>
+
+<A name="TIDY_TAG_OL"></A>
+<CODE><BIG><B>TIDY_TAG_OL</B></BIG> = 76</CODE>
+<P>
+
+<A name="TIDY_TAG_OPTGROUP"></A>
+<CODE><BIG><B>TIDY_TAG_OPTGROUP</B></BIG> = 77</CODE>
+<P>
+
+<A name="TIDY_TAG_OPTION"></A>
+<CODE><BIG><B>TIDY_TAG_OPTION</B></BIG> = 78</CODE>
+<P>
+
+<A name="TIDY_TAG_P"></A>
+<CODE><BIG><B>TIDY_TAG_P</B></BIG> = 79</CODE>
+<P>
+
+<A name="TIDY_TAG_PARAM"></A>
+<CODE><BIG><B>TIDY_TAG_PARAM</B></BIG> = 80</CODE>
+<P>
+
+<A name="TIDY_TAG_PLAINTEXT"></A>
+<CODE><BIG><B>TIDY_TAG_PLAINTEXT</B></BIG> = 81</CODE>
+<P>
+
+<A name="TIDY_TAG_PRE"></A>
+<CODE><BIG><B>TIDY_TAG_PRE</B></BIG> = 82</CODE>
+<P>
+
+<A name="TIDY_TAG_Q"></A>
+<CODE><BIG><B>TIDY_TAG_Q</B></BIG> = 83</CODE>
+<P>
+
+<A name="TIDY_TAG_RP"></A>
+<CODE><BIG><B>TIDY_TAG_RP</B></BIG> = 84</CODE>
+<P>
+
+<A name="TIDY_TAG_RT"></A>
+<CODE><BIG><B>TIDY_TAG_RT</B></BIG> = 85</CODE>
+<P>
+
+<A name="TIDY_TAG_RTC"></A>
+<CODE><BIG><B>TIDY_TAG_RTC</B></BIG> = 86</CODE>
+<P>
+
+<A name="TIDY_TAG_RUBY"></A>
+<CODE><BIG><B>TIDY_TAG_RUBY</B></BIG> = 87</CODE>
+<P>
+
+<A name="TIDY_TAG_S"></A>
+<CODE><BIG><B>TIDY_TAG_S</B></BIG> = 88</CODE>
+<P>
+
+<A name="TIDY_TAG_SAMP"></A>
+<CODE><BIG><B>TIDY_TAG_SAMP</B></BIG> = 89</CODE>
+<P>
+
+<A name="TIDY_TAG_SCRIPT"></A>
+<CODE><BIG><B>TIDY_TAG_SCRIPT</B></BIG> = 90</CODE>
+<P>
+
+<A name="TIDY_TAG_SELECT"></A>
+<CODE><BIG><B>TIDY_TAG_SELECT</B></BIG> = 91</CODE>
+<P>
+
+<A name="TIDY_TAG_SERVER"></A>
+<CODE><BIG><B>TIDY_TAG_SERVER</B></BIG> = 92</CODE>
+<P>
+
+<A name="TIDY_TAG_SERVLET"></A>
+<CODE><BIG><B>TIDY_TAG_SERVLET</B></BIG> = 93</CODE>
+<P>
+
+<A name="TIDY_TAG_SMALL"></A>
+<CODE><BIG><B>TIDY_TAG_SMALL</B></BIG> = 94</CODE>
+<P>
+
+<A name="TIDY_TAG_SPACER"></A>
+<CODE><BIG><B>TIDY_TAG_SPACER</B></BIG> = 95</CODE>
+<P>
+
+<A name="TIDY_TAG_SPAN"></A>
+<CODE><BIG><B>TIDY_TAG_SPAN</B></BIG> = 96</CODE>
+<P>
+
+<A name="TIDY_TAG_STRIKE"></A>
+<CODE><BIG><B>TIDY_TAG_STRIKE</B></BIG> = 97</CODE>
+<P>
+
+<A name="TIDY_TAG_STRONG"></A>
+<CODE><BIG><B>TIDY_TAG_STRONG</B></BIG> = 98</CODE>
+<P>
+
+<A name="TIDY_TAG_STYLE"></A>
+<CODE><BIG><B>TIDY_TAG_STYLE</B></BIG> = 99</CODE>
+<P>
+
+<A name="TIDY_TAG_SUB"></A>
+<CODE><BIG><B>TIDY_TAG_SUB</B></BIG> = 100</CODE>
+<P>
+
+<A name="TIDY_TAG_TABLE"></A>
+<CODE><BIG><B>TIDY_TAG_TABLE</B></BIG> = 101</CODE>
+<P>
+
+<A name="TIDY_TAG_TBODY"></A>
+<CODE><BIG><B>TIDY_TAG_TBODY</B></BIG> = 102</CODE>
+<P>
+
+<A name="TIDY_TAG_TD"></A>
+<CODE><BIG><B>TIDY_TAG_TD</B></BIG> = 103</CODE>
+<P>
+
+<A name="TIDY_TAG_TEXTAREA"></A>
+<CODE><BIG><B>TIDY_TAG_TEXTAREA</B></BIG> = 104</CODE>
+<P>
+
+<A name="TIDY_TAG_TFOOT"></A>
+<CODE><BIG><B>TIDY_TAG_TFOOT</B></BIG> = 105</CODE>
+<P>
+
+<A name="TIDY_TAG_TH"></A>
+<CODE><BIG><B>TIDY_TAG_TH</B></BIG> = 106</CODE>
+<P>
+
+<A name="TIDY_TAG_THEAD"></A>
+<CODE><BIG><B>TIDY_TAG_THEAD</B></BIG> = 107</CODE>
+<P>
+
+<A name="TIDY_TAG_TITLE"></A>
+<CODE><BIG><B>TIDY_TAG_TITLE</B></BIG> = 108</CODE>
+<P>
+
+<A name="TIDY_TAG_TR"></A>
+<CODE><BIG><B>TIDY_TAG_TR</B></BIG> = 109</CODE>
+<P>
+
+<A name="TIDY_TAG_TT"></A>
+<CODE><BIG><B>TIDY_TAG_TT</B></BIG> = 110</CODE>
+<P>
+
+<A name="TIDY_TAG_U"></A>
+<CODE><BIG><B>TIDY_TAG_U</B></BIG> = 111</CODE>
+<P>
+
+<A name="TIDY_TAG_UL"></A>
+<CODE><BIG><B>TIDY_TAG_UL</B></BIG> = 112</CODE>
+<P>
+
+<A name="TIDY_TAG_VAR"></A>
+<CODE><BIG><B>TIDY_TAG_VAR</B></BIG> = 113</CODE>
+<P>
+
+<A name="TIDY_TAG_WBR"></A>
+<CODE><BIG><B>TIDY_TAG_WBR</B></BIG> = 114</CODE>
+<P>
+
+<A name="TIDY_TAG_XMP"></A>
+<CODE><BIG><B>TIDY_TAG_XMP</B></BIG> = 115</CODE>
+<P>
+
+<A name="TIDY_ATTR_UNKNOWN"></A>
+<CODE><BIG><B>TIDY_ATTR_UNKNOWN</B></BIG> = 116</CODE>
+<P>
+
+<A name="TIDY_ATTR_ABBR"></A>
+<CODE><BIG><B>TIDY_ATTR_ABBR</B></BIG> = 117</CODE>
+<P>
+
+<A name="TIDY_ATTR_ACCEPT"></A>
+<CODE><BIG><B>TIDY_ATTR_ACCEPT</B></BIG> = 118</CODE>
+<P>
+
+<A name="TIDY_ATTR_ACCEPT_CHARSET"></A>
+<CODE><BIG><B>TIDY_ATTR_ACCEPT_CHARSET</B></BIG> = 119</CODE>
+<P>
+
+<A name="TIDY_ATTR_ACCESSKEY"></A>
+<CODE><BIG><B>TIDY_ATTR_ACCESSKEY</B></BIG> = 120</CODE>
+<P>
+
+<A name="TIDY_ATTR_ACTION"></A>
+<CODE><BIG><B>TIDY_ATTR_ACTION</B></BIG> = 121</CODE>
+<P>
+
+<A name="TIDY_ATTR_ADD_DATE"></A>
+<CODE><BIG><B>TIDY_ATTR_ADD_DATE</B></BIG> = 122</CODE>
+<P>
+
+<A name="TIDY_ATTR_ALIGN"></A>
+<CODE><BIG><B>TIDY_ATTR_ALIGN</B></BIG> = 123</CODE>
+<P>
+
+<A name="TIDY_ATTR_ALINK"></A>
+<CODE><BIG><B>TIDY_ATTR_ALINK</B></BIG> = 124</CODE>
+<P>
+
+<A name="TIDY_ATTR_ALT"></A>
+<CODE><BIG><B>TIDY_ATTR_ALT</B></BIG> = 125</CODE>
+<P>
+
+<A name="TIDY_ATTR_ARCHIVE"></A>
+<CODE><BIG><B>TIDY_ATTR_ARCHIVE</B></BIG> = 126</CODE>
+<P>
+
+<A name="TIDY_ATTR_AXIS"></A>
+<CODE><BIG><B>TIDY_ATTR_AXIS</B></BIG> = 127</CODE>
+<P>
+
+<A name="TIDY_ATTR_BACKGROUND"></A>
+<CODE><BIG><B>TIDY_ATTR_BACKGROUND</B></BIG> = 128</CODE>
+<P>
+
+<A name="TIDY_ATTR_BGCOLOR"></A>
+<CODE><BIG><B>TIDY_ATTR_BGCOLOR</B></BIG> = 129</CODE>
+<P>
+
+<A name="TIDY_ATTR_BGPROPERTIES"></A>
+<CODE><BIG><B>TIDY_ATTR_BGPROPERTIES</B></BIG> = 130</CODE>
+<P>
+
+<A name="TIDY_ATTR_BORDER"></A>
+<CODE><BIG><B>TIDY_ATTR_BORDER</B></BIG> = 131</CODE>
+<P>
+
+<A name="TIDY_ATTR_BORDERCOLOR"></A>
+<CODE><BIG><B>TIDY_ATTR_BORDERCOLOR</B></BIG> = 132</CODE>
+<P>
+
+<A name="TIDY_ATTR_BOTTOMMARGIN"></A>
+<CODE><BIG><B>TIDY_ATTR_BOTTOMMARGIN</B></BIG> = 133</CODE>
+<P>
+
+<A name="TIDY_ATTR_CELLPADDING"></A>
+<CODE><BIG><B>TIDY_ATTR_CELLPADDING</B></BIG> = 134</CODE>
+<P>
+
+<A name="TIDY_ATTR_CELLSPACING"></A>
+<CODE><BIG><B>TIDY_ATTR_CELLSPACING</B></BIG> = 135</CODE>
+<P>
+
+<A name="TIDY_ATTR_CHAR"></A>
+<CODE><BIG><B>TIDY_ATTR_CHAR</B></BIG> = 136</CODE>
+<P>
+
+<A name="TIDY_ATTR_CHAROFF"></A>
+<CODE><BIG><B>TIDY_ATTR_CHAROFF</B></BIG> = 137</CODE>
+<P>
+
+<A name="TIDY_ATTR_CHARSET"></A>
+<CODE><BIG><B>TIDY_ATTR_CHARSET</B></BIG> = 138</CODE>
+<P>
+
+<A name="TIDY_ATTR_CHECKED"></A>
+<CODE><BIG><B>TIDY_ATTR_CHECKED</B></BIG> = 139</CODE>
+<P>
+
+<A name="TIDY_ATTR_CITE"></A>
+<CODE><BIG><B>TIDY_ATTR_CITE</B></BIG> = 140</CODE>
+<P>
+
+<A name="TIDY_ATTR_CLASS"></A>
+<CODE><BIG><B>TIDY_ATTR_CLASS</B></BIG> = 141</CODE>
+<P>
+
+<A name="TIDY_ATTR_CLASSID"></A>
+<CODE><BIG><B>TIDY_ATTR_CLASSID</B></BIG> = 142</CODE>
+<P>
+
+<A name="TIDY_ATTR_CLEAR"></A>
+<CODE><BIG><B>TIDY_ATTR_CLEAR</B></BIG> = 143</CODE>
+<P>
+
+<A name="TIDY_ATTR_CODE"></A>
+<CODE><BIG><B>TIDY_ATTR_CODE</B></BIG> = 144</CODE>
+<P>
+
+<A name="TIDY_ATTR_CODEBASE"></A>
+<CODE><BIG><B>TIDY_ATTR_CODEBASE</B></BIG> = 145</CODE>
+<P>
+
+<A name="TIDY_ATTR_CODETYPE"></A>
+<CODE><BIG><B>TIDY_ATTR_CODETYPE</B></BIG> = 146</CODE>
+<P>
+
+<A name="TIDY_ATTR_COLOR"></A>
+<CODE><BIG><B>TIDY_ATTR_COLOR</B></BIG> = 147</CODE>
+<P>
+
+<A name="TIDY_ATTR_COLS"></A>
+<CODE><BIG><B>TIDY_ATTR_COLS</B></BIG> = 148</CODE>
+<P>
+
+<A name="TIDY_ATTR_COLSPAN"></A>
+<CODE><BIG><B>TIDY_ATTR_COLSPAN</B></BIG> = 149</CODE>
+<P>
+
+<A name="TIDY_ATTR_COMPACT"></A>
+<CODE><BIG><B>TIDY_ATTR_COMPACT</B></BIG> = 150</CODE>
+<P>
+
+<A name="TIDY_ATTR_CONTENT"></A>
+<CODE><BIG><B>TIDY_ATTR_CONTENT</B></BIG> = 151</CODE>
+<P>
+
+<A name="TIDY_ATTR_COORDS"></A>
+<CODE><BIG><B>TIDY_ATTR_COORDS</B></BIG> = 152</CODE>
+<P>
+
+<A name="TIDY_ATTR_DATA"></A>
+<CODE><BIG><B>TIDY_ATTR_DATA</B></BIG> = 153</CODE>
+<P>
+
+<A name="TIDY_ATTR_DATAFLD"></A>
+<CODE><BIG><B>TIDY_ATTR_DATAFLD</B></BIG> = 154</CODE>
+<P>
+
+<A name="TIDY_ATTR_DATAPAGESIZE"></A>
+<CODE><BIG><B>TIDY_ATTR_DATAPAGESIZE</B></BIG> = 155</CODE>
+<P>
+
+<A name="TIDY_ATTR_DATASRC"></A>
+<CODE><BIG><B>TIDY_ATTR_DATASRC</B></BIG> = 156</CODE>
+<P>
+
+<A name="TIDY_ATTR_DATETIME"></A>
+<CODE><BIG><B>TIDY_ATTR_DATETIME</B></BIG> = 157</CODE>
+<P>
+
+<A name="TIDY_ATTR_DECLARE"></A>
+<CODE><BIG><B>TIDY_ATTR_DECLARE</B></BIG> = 158</CODE>
+<P>
+
+<A name="TIDY_ATTR_DEFER"></A>
+<CODE><BIG><B>TIDY_ATTR_DEFER</B></BIG> = 159</CODE>
+<P>
+
+<A name="TIDY_ATTR_DIR"></A>
+<CODE><BIG><B>TIDY_ATTR_DIR</B></BIG> = 160</CODE>
+<P>
+
+<A name="TIDY_ATTR_DISABLED"></A>
+<CODE><BIG><B>TIDY_ATTR_DISABLED</B></BIG> = 161</CODE>
+<P>
+
+<A name="TIDY_ATTR_ENCODING"></A>
+<CODE><BIG><B>TIDY_ATTR_ENCODING</B></BIG> = 162</CODE>
+<P>
+
+<A name="TIDY_ATTR_ENCTYPE"></A>
+<CODE><BIG><B>TIDY_ATTR_ENCTYPE</B></BIG> = 163</CODE>
+<P>
+
+<A name="TIDY_ATTR_FACE"></A>
+<CODE><BIG><B>TIDY_ATTR_FACE</B></BIG> = 164</CODE>
+<P>
+
+<A name="TIDY_ATTR_FOR"></A>
+<CODE><BIG><B>TIDY_ATTR_FOR</B></BIG> = 165</CODE>
+<P>
+
+<A name="TIDY_ATTR_FRAME"></A>
+<CODE><BIG><B>TIDY_ATTR_FRAME</B></BIG> = 166</CODE>
+<P>
+
+<A name="TIDY_ATTR_FRAMEBORDER"></A>
+<CODE><BIG><B>TIDY_ATTR_FRAMEBORDER</B></BIG> = 167</CODE>
+<P>
+
+<A name="TIDY_ATTR_FRAMESPACING"></A>
+<CODE><BIG><B>TIDY_ATTR_FRAMESPACING</B></BIG> = 168</CODE>
+<P>
+
+<A name="TIDY_ATTR_GRIDX"></A>
+<CODE><BIG><B>TIDY_ATTR_GRIDX</B></BIG> = 169</CODE>
+<P>
+
+<A name="TIDY_ATTR_GRIDY"></A>
+<CODE><BIG><B>TIDY_ATTR_GRIDY</B></BIG> = 170</CODE>
+<P>
+
+<A name="TIDY_ATTR_HEADERS"></A>
+<CODE><BIG><B>TIDY_ATTR_HEADERS</B></BIG> = 171</CODE>
+<P>
+
+<A name="TIDY_ATTR_HEIGHT"></A>
+<CODE><BIG><B>TIDY_ATTR_HEIGHT</B></BIG> = 172</CODE>
+<P>
+
+<A name="TIDY_ATTR_HREF"></A>
+<CODE><BIG><B>TIDY_ATTR_HREF</B></BIG> = 173</CODE>
+<P>
+
+<A name="TIDY_ATTR_HREFLANG"></A>
+<CODE><BIG><B>TIDY_ATTR_HREFLANG</B></BIG> = 174</CODE>
+<P>
+
+<A name="TIDY_ATTR_HSPACE"></A>
+<CODE><BIG><B>TIDY_ATTR_HSPACE</B></BIG> = 175</CODE>
+<P>
+
+<A name="TIDY_ATTR_HTTP_EQUIV"></A>
+<CODE><BIG><B>TIDY_ATTR_HTTP_EQUIV</B></BIG> = 176</CODE>
+<P>
+
+<A name="TIDY_ATTR_ID"></A>
+<CODE><BIG><B>TIDY_ATTR_ID</B></BIG> = 177</CODE>
+<P>
+
+<A name="TIDY_ATTR_ISMAP"></A>
+<CODE><BIG><B>TIDY_ATTR_ISMAP</B></BIG> = 178</CODE>
+<P>
+
+<A name="TIDY_ATTR_LABEL"></A>
+<CODE><BIG><B>TIDY_ATTR_LABEL</B></BIG> = 179</CODE>
+<P>
+
+<A name="TIDY_ATTR_LANG"></A>
+<CODE><BIG><B>TIDY_ATTR_LANG</B></BIG> = 180</CODE>
+<P>
+
+<A name="TIDY_ATTR_LANGUAGE"></A>
+<CODE><BIG><B>TIDY_ATTR_LANGUAGE</B></BIG> = 181</CODE>
+<P>
+
+<A name="TIDY_ATTR_LAST_MODIFIED"></A>
+<CODE><BIG><B>TIDY_ATTR_LAST_MODIFIED</B></BIG> = 182</CODE>
+<P>
+
+<A name="TIDY_ATTR_LAST_VISIT"></A>
+<CODE><BIG><B>TIDY_ATTR_LAST_VISIT</B></BIG> = 183</CODE>
+<P>
+
+<A name="TIDY_ATTR_LEFTMARGIN"></A>
+<CODE><BIG><B>TIDY_ATTR_LEFTMARGIN</B></BIG> = 184</CODE>
+<P>
+
+<A name="TIDY_ATTR_LINK"></A>
+<CODE><BIG><B>TIDY_ATTR_LINK</B></BIG> = 185</CODE>
+<P>
+
+<A name="TIDY_ATTR_LONGDESC"></A>
+<CODE><BIG><B>TIDY_ATTR_LONGDESC</B></BIG> = 186</CODE>
+<P>
+
+<A name="TIDY_ATTR_LOWSRC"></A>
+<CODE><BIG><B>TIDY_ATTR_LOWSRC</B></BIG> = 187</CODE>
+<P>
+
+<A name="TIDY_ATTR_MARGINHEIGHT"></A>
+<CODE><BIG><B>TIDY_ATTR_MARGINHEIGHT</B></BIG> = 188</CODE>
+<P>
+
+<A name="TIDY_ATTR_MARGINWIDTH"></A>
+<CODE><BIG><B>TIDY_ATTR_MARGINWIDTH</B></BIG> = 189</CODE>
+<P>
+
+<A name="TIDY_ATTR_MAXLENGTH"></A>
+<CODE><BIG><B>TIDY_ATTR_MAXLENGTH</B></BIG> = 190</CODE>
+<P>
+
+<A name="TIDY_ATTR_MEDIA"></A>
+<CODE><BIG><B>TIDY_ATTR_MEDIA</B></BIG> = 191</CODE>
+<P>
+
+<A name="TIDY_ATTR_METHOD"></A>
+<CODE><BIG><B>TIDY_ATTR_METHOD</B></BIG> = 192</CODE>
+<P>
+
+<A name="TIDY_ATTR_MULTIPLE"></A>
+<CODE><BIG><B>TIDY_ATTR_MULTIPLE</B></BIG> = 193</CODE>
+<P>
+
+<A name="TIDY_ATTR_NAME"></A>
+<CODE><BIG><B>TIDY_ATTR_NAME</B></BIG> = 194</CODE>
+<P>
+
+<A name="TIDY_ATTR_NOHREF"></A>
+<CODE><BIG><B>TIDY_ATTR_NOHREF</B></BIG> = 195</CODE>
+<P>
+
+<A name="TIDY_ATTR_NORESIZE"></A>
+<CODE><BIG><B>TIDY_ATTR_NORESIZE</B></BIG> = 196</CODE>
+<P>
+
+<A name="TIDY_ATTR_NOSHADE"></A>
+<CODE><BIG><B>TIDY_ATTR_NOSHADE</B></BIG> = 197</CODE>
+<P>
+
+<A name="TIDY_ATTR_NOWRAP"></A>
+<CODE><BIG><B>TIDY_ATTR_NOWRAP</B></BIG> = 198</CODE>
+<P>
+
+<A name="TIDY_ATTR_OBJECT"></A>
+<CODE><BIG><B>TIDY_ATTR_OBJECT</B></BIG> = 199</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnAFTERUPDATE"></A>
+<CODE><BIG><B>TIDY_ATTR_OnAFTERUPDATE</B></BIG> = 200</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnBEFOREUNLOAD"></A>
+<CODE><BIG><B>TIDY_ATTR_OnBEFOREUNLOAD</B></BIG> = 201</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnBEFOREUPDATE"></A>
+<CODE><BIG><B>TIDY_ATTR_OnBEFOREUPDATE</B></BIG> = 202</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnBLUR"></A>
+<CODE><BIG><B>TIDY_ATTR_OnBLUR</B></BIG> = 203</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnCHANGE"></A>
+<CODE><BIG><B>TIDY_ATTR_OnCHANGE</B></BIG> = 204</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnCLICK"></A>
+<CODE><BIG><B>TIDY_ATTR_OnCLICK</B></BIG> = 205</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnDATAAVAILABLE"></A>
+<CODE><BIG><B>TIDY_ATTR_OnDATAAVAILABLE</B></BIG> = 206</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnDATASETCHANGED"></A>
+<CODE><BIG><B>TIDY_ATTR_OnDATASETCHANGED</B></BIG> = 207</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnDATASETCOMPLETE"></A>
+<CODE><BIG><B>TIDY_ATTR_OnDATASETCOMPLETE</B></BIG> = 208</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnDBLCLICK"></A>
+<CODE><BIG><B>TIDY_ATTR_OnDBLCLICK</B></BIG> = 209</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnERRORUPDATE"></A>
+<CODE><BIG><B>TIDY_ATTR_OnERRORUPDATE</B></BIG> = 210</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnFOCUS"></A>
+<CODE><BIG><B>TIDY_ATTR_OnFOCUS</B></BIG> = 211</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnKEYDOWN"></A>
+<CODE><BIG><B>TIDY_ATTR_OnKEYDOWN</B></BIG> = 212</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnKEYPRESS"></A>
+<CODE><BIG><B>TIDY_ATTR_OnKEYPRESS</B></BIG> = 213</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnKEYUP"></A>
+<CODE><BIG><B>TIDY_ATTR_OnKEYUP</B></BIG> = 214</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnLOAD"></A>
+<CODE><BIG><B>TIDY_ATTR_OnLOAD</B></BIG> = 215</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnMOUSEDOWN"></A>
+<CODE><BIG><B>TIDY_ATTR_OnMOUSEDOWN</B></BIG> = 216</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnMOUSEMOVE"></A>
+<CODE><BIG><B>TIDY_ATTR_OnMOUSEMOVE</B></BIG> = 217</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnMOUSEOUT"></A>
+<CODE><BIG><B>TIDY_ATTR_OnMOUSEOUT</B></BIG> = 218</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnMOUSEOVER"></A>
+<CODE><BIG><B>TIDY_ATTR_OnMOUSEOVER</B></BIG> = 219</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnMOUSEUP"></A>
+<CODE><BIG><B>TIDY_ATTR_OnMOUSEUP</B></BIG> = 220</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnRESET"></A>
+<CODE><BIG><B>TIDY_ATTR_OnRESET</B></BIG> = 221</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnROWENTER"></A>
+<CODE><BIG><B>TIDY_ATTR_OnROWENTER</B></BIG> = 222</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnROWEXIT"></A>
+<CODE><BIG><B>TIDY_ATTR_OnROWEXIT</B></BIG> = 223</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnSELECT"></A>
+<CODE><BIG><B>TIDY_ATTR_OnSELECT</B></BIG> = 224</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnSUBMIT"></A>
+<CODE><BIG><B>TIDY_ATTR_OnSUBMIT</B></BIG> = 225</CODE>
+<P>
+
+<A name="TIDY_ATTR_OnUNLOAD"></A>
+<CODE><BIG><B>TIDY_ATTR_OnUNLOAD</B></BIG> = 226</CODE>
+<P>
+
+<A name="TIDY_ATTR_PROFILE"></A>
+<CODE><BIG><B>TIDY_ATTR_PROFILE</B></BIG> = 227</CODE>
+<P>
+
+<A name="TIDY_ATTR_PROMPT"></A>
+<CODE><BIG><B>TIDY_ATTR_PROMPT</B></BIG> = 228</CODE>
+<P>
+
+<A name="TIDY_ATTR_RBSPAN"></A>
+<CODE><BIG><B>TIDY_ATTR_RBSPAN</B></BIG> = 229</CODE>
+<P>
+
+<A name="TIDY_ATTR_READONLY"></A>
+<CODE><BIG><B>TIDY_ATTR_READONLY</B></BIG> = 230</CODE>
+<P>
+
+<A name="TIDY_ATTR_REL"></A>
+<CODE><BIG><B>TIDY_ATTR_REL</B></BIG> = 231</CODE>
+<P>
+
+<A name="TIDY_ATTR_REV"></A>
+<CODE><BIG><B>TIDY_ATTR_REV</B></BIG> = 232</CODE>
+<P>
+
+<A name="TIDY_ATTR_RIGHTMARGIN"></A>
+<CODE><BIG><B>TIDY_ATTR_RIGHTMARGIN</B></BIG> = 233</CODE>
+<P>
+
+<A name="TIDY_ATTR_ROWS"></A>
+<CODE><BIG><B>TIDY_ATTR_ROWS</B></BIG> = 234</CODE>
+<P>
+
+<A name="TIDY_ATTR_ROWSPAN"></A>
+<CODE><BIG><B>TIDY_ATTR_ROWSPAN</B></BIG> = 235</CODE>
+<P>
+
+<A name="TIDY_ATTR_RULES"></A>
+<CODE><BIG><B>TIDY_ATTR_RULES</B></BIG> = 236</CODE>
+<P>
+
+<A name="TIDY_ATTR_SCHEME"></A>
+<CODE><BIG><B>TIDY_ATTR_SCHEME</B></BIG> = 237</CODE>
+<P>
+
+<A name="TIDY_ATTR_SCOPE"></A>
+<CODE><BIG><B>TIDY_ATTR_SCOPE</B></BIG> = 238</CODE>
+<P>
+
+<A name="TIDY_ATTR_SCROLLING"></A>
+<CODE><BIG><B>TIDY_ATTR_SCROLLING</B></BIG> = 239</CODE>
+<P>
+
+<A name="TIDY_ATTR_SELECTED"></A>
+<CODE><BIG><B>TIDY_ATTR_SELECTED</B></BIG> = 240</CODE>
+<P>
+
+<A name="TIDY_ATTR_SHAPE"></A>
+<CODE><BIG><B>TIDY_ATTR_SHAPE</B></BIG> = 241</CODE>
+<P>
+
+<A name="TIDY_ATTR_SHOWGRID"></A>
+<CODE><BIG><B>TIDY_ATTR_SHOWGRID</B></BIG> = 242</CODE>
+<P>
+
+<A name="TIDY_ATTR_SHOWGRIDX"></A>
+<CODE><BIG><B>TIDY_ATTR_SHOWGRIDX</B></BIG> = 243</CODE>
+<P>
+
+<A name="TIDY_ATTR_SHOWGRIDY"></A>
+<CODE><BIG><B>TIDY_ATTR_SHOWGRIDY</B></BIG> = 244</CODE>
+<P>
+
+<A name="TIDY_ATTR_SIZE"></A>
+<CODE><BIG><B>TIDY_ATTR_SIZE</B></BIG> = 245</CODE>
+<P>
+
+<A name="TIDY_ATTR_SPAN"></A>
+<CODE><BIG><B>TIDY_ATTR_SPAN</B></BIG> = 246</CODE>
+<P>
+
+<A name="TIDY_ATTR_SRC"></A>
+<CODE><BIG><B>TIDY_ATTR_SRC</B></BIG> = 247</CODE>
+<P>
+
+<A name="TIDY_ATTR_STANDBY"></A>
+<CODE><BIG><B>TIDY_ATTR_STANDBY</B></BIG> = 248</CODE>
+<P>
+
+<A name="TIDY_ATTR_START"></A>
+<CODE><BIG><B>TIDY_ATTR_START</B></BIG> = 249</CODE>
+<P>
+
+<A name="TIDY_ATTR_STYLE"></A>
+<CODE><BIG><B>TIDY_ATTR_STYLE</B></BIG> = 250</CODE>
+<P>
+
+<A name="TIDY_ATTR_SUMMARY"></A>
+<CODE><BIG><B>TIDY_ATTR_SUMMARY</B></BIG> = 251</CODE>
+<P>
+
+<A name="TIDY_ATTR_TABINDEX"></A>
+<CODE><BIG><B>TIDY_ATTR_TABINDEX</B></BIG> = 252</CODE>
+<P>
+
+<A name="TIDY_ATTR_TARGET"></A>
+<CODE><BIG><B>TIDY_ATTR_TARGET</B></BIG> = 253</CODE>
+<P>
+
+<A name="TIDY_ATTR_TEXT"></A>
+<CODE><BIG><B>TIDY_ATTR_TEXT</B></BIG> = 254</CODE>
+<P>
+
+<A name="TIDY_ATTR_TITLE"></A>
+<CODE><BIG><B>TIDY_ATTR_TITLE</B></BIG> = 255</CODE>
+<P>
+
+<A name="TIDY_ATTR_TOPMARGIN"></A>
+<CODE><BIG><B>TIDY_ATTR_TOPMARGIN</B></BIG> = 256</CODE>
+<P>
+
+<A name="TIDY_ATTR_TYPE"></A>
+<CODE><BIG><B>TIDY_ATTR_TYPE</B></BIG> = 257</CODE>
+<P>
+
+<A name="TIDY_ATTR_USEMAP"></A>
+<CODE><BIG><B>TIDY_ATTR_USEMAP</B></BIG> = 258</CODE>
+<P>
+
+<A name="TIDY_ATTR_VALIGN"></A>
+<CODE><BIG><B>TIDY_ATTR_VALIGN</B></BIG> = 259</CODE>
+<P>
+
+<A name="TIDY_ATTR_VALUE"></A>
+<CODE><BIG><B>TIDY_ATTR_VALUE</B></BIG> = 260</CODE>
+<P>
+
+<A name="TIDY_ATTR_VALUETYPE"></A>
+<CODE><BIG><B>TIDY_ATTR_VALUETYPE</B></BIG> = 261</CODE>
+<P>
+
+<A name="TIDY_ATTR_VERSION"></A>
+<CODE><BIG><B>TIDY_ATTR_VERSION</B></BIG> = 262</CODE>
+<P>
+
+<A name="TIDY_ATTR_VLINK"></A>
+<CODE><BIG><B>TIDY_ATTR_VLINK</B></BIG> = 263</CODE>
+<P>
+
+<A name="TIDY_ATTR_VSPACE"></A>
+<CODE><BIG><B>TIDY_ATTR_VSPACE</B></BIG> = 264</CODE>
+<P>
+
+<A name="TIDY_ATTR_WIDTH"></A>
+<CODE><BIG><B>TIDY_ATTR_WIDTH</B></BIG> = 265</CODE>
+<P>
+
+<A name="TIDY_ATTR_WRAP"></A>
+<CODE><BIG><B>TIDY_ATTR_WRAP</B></BIG> = 266</CODE>
+<P>
+
+<A name="TIDY_ATTR_XML_LANG"></A>
+<CODE><BIG><B>TIDY_ATTR_XML_LANG</B></BIG> = 267</CODE>
+<P>
+
+<A name="TIDY_ATTR_XML_SPACE"></A>
+<CODE><BIG><B>TIDY_ATTR_XML_SPACE</B></BIG> = 268</CODE>
+<P>
+
+<A name="TIDY_ATTR_XMLNS"></A>
+<CODE><BIG><B>TIDY_ATTR_XMLNS</B></BIG> = 269</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_ROOT"></A>
+<CODE><BIG><B>TIDY_NODETYPE_ROOT</B></BIG> = 270</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_DOCTYPE"></A>
+<CODE><BIG><B>TIDY_NODETYPE_DOCTYPE</B></BIG> = 271</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_COMMENT"></A>
+<CODE><BIG><B>TIDY_NODETYPE_COMMENT</B></BIG> = 272</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_PROCINS"></A>
+<CODE><BIG><B>TIDY_NODETYPE_PROCINS</B></BIG> = 273</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_TEXT"></A>
+<CODE><BIG><B>TIDY_NODETYPE_TEXT</B></BIG> = 274</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_START"></A>
+<CODE><BIG><B>TIDY_NODETYPE_START</B></BIG> = 275</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_END"></A>
+<CODE><BIG><B>TIDY_NODETYPE_END</B></BIG> = 276</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_STARTEND"></A>
+<CODE><BIG><B>TIDY_NODETYPE_STARTEND</B></BIG> = 277</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_CDATA"></A>
+<CODE><BIG><B>TIDY_NODETYPE_CDATA</B></BIG> = 278</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_SECTION"></A>
+<CODE><BIG><B>TIDY_NODETYPE_SECTION</B></BIG> = 279</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_ASP"></A>
+<CODE><BIG><B>TIDY_NODETYPE_ASP</B></BIG> = 280</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_JSTE"></A>
+<CODE><BIG><B>TIDY_NODETYPE_JSTE</B></BIG> = 281</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_PHP"></A>
+<CODE><BIG><B>TIDY_NODETYPE_PHP</B></BIG> = 282</CODE>
+<P>
+
+<A name="TIDY_NODETYPE_XMLDECL"></A>
+<CODE><BIG><B>TIDY_NODETYPE_XMLDECL</B></BIG> = 283</CODE>
+<P>
+
+<A name="tidy_parse_string()"></A>
+<CODE><I>boolean</I> <BIG><B>tidy_parse_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$input, ...)</CODE>
+<P>
+
+<A name="tidy_get_error_buffer()"></A>
+<CODE><I>string</I> <BIG><B>tidy_get_error_buffer</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Tidy"><code>Tidy</code></a></I>&nbsp;$obj)</CODE>
+<P>
+
+<A name="tidy_get_output()"></A>
+<CODE><I>string</I> <BIG><B>tidy_get_output</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_parse_file()"></A>
+<CODE><I>boolean</I> <BIG><B>tidy_parse_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file, ...)</CODE>
+<P>
+
+<A name="tidy_clean_repair()"></A>
+<CODE><I>boolean</I> <BIG><B>tidy_clean_repair</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_repair_string()"></A>
+<CODE><I>string</I> <BIG><B>tidy_repair_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data, ...)</CODE>
+<P>
+
+<A name="tidy_repair_file()"></A>
+<CODE><I>boolean</I> <BIG><B>tidy_repair_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="tidy_diagnose()"></A>
+<CODE><I>boolean</I> <BIG><B>tidy_diagnose</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_get_release()"></A>
+<CODE><I>string</I> <BIG><B>tidy_get_release</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_get_config()"></A>
+<CODE><I>mixed[]</I> <BIG><B>tidy_get_config</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_get_status()"></A>
+<CODE><I>int</I> <BIG><B>tidy_get_status</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_get_html_ver()"></A>
+<CODE><I>int</I> <BIG><B>tidy_get_html_ver</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_is_xhtml()"></A>
+<CODE><I>boolean</I> <BIG><B>tidy_is_xhtml</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_error_count()"></A>
+<CODE><I>int</I> <BIG><B>tidy_error_count</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_warning_count()"></A>
+<CODE><I>int</I> <BIG><B>tidy_warning_count</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_access_count()"></A>
+<CODE><I>int</I> <BIG><B>tidy_access_count</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_config_count()"></A>
+<CODE><I>int</I> <BIG><B>tidy_config_count</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_getopt()"></A>
+<CODE><I>mixed</I> <BIG><B>tidy_getopt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$option)</CODE>
+<P>
+
+<A name="tidy_get_root()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>tidy_get_root</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_get_html()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>tidy_get_html</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_get_head()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>tidy_get_head</B></BIG>()</CODE>
+<P>
+
+<A name="tidy_get_body()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>tidy_get_body</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$tidy)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="tidyNode"></A>
+<pre>class <BIG><B>tidyNode</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="tidyNode::$value"></A>
+<CODE><I>string</I> <BIG><B>$value</B></BIG></CODE>
+<P>
+
+<A name="tidyNode::$name"></A>
+<CODE><I>string</I> <BIG><B>$name</B></BIG></CODE>
+<P>
+
+<A name="tidyNode::$type"></A>
+<CODE><I>int</I> <BIG><B>$type</B></BIG> = 0</CODE>
+<P>
+
+<A name="tidyNode::$line"></A>
+<CODE><I>int</I> <BIG><B>$line</B></BIG> = 0</CODE>
+<P>
+
+<A name="tidyNode::$column"></A>
+<CODE><I>int</I> <BIG><B>$column</B></BIG> = 0</CODE>
+<P>
+
+<A name="tidyNode::$proprietary"></A>
+<CODE><I>boolean</I> <BIG><B>$proprietary</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="tidyNode::$id"></A>
+<CODE><I>int</I> <BIG><B>$id</B></BIG> = 0</CODE>
+<P>
+
+<A name="tidyNode::$attribute"></A>
+<CODE><I>string[string]</I> <BIG><B>$attribute</B></BIG> = NULL</CODE>
+<P>
+
+<A name="tidyNode::$child"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a>[int]</I> <BIG><B>$child</B></BIG> = NULL</CODE>
+<P>
+
+<A name="tidyNode::hasChildren()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildren</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::hasSiblings()"></A>
+<CODE><I>boolean</I> <BIG><B>hasSiblings</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::isComment()"></A>
+<CODE><I>boolean</I> <BIG><B>isComment</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::isHtml()"></A>
+<CODE><I>boolean</I> <BIG><B>isHtml</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::isXhtml()"></A>
+<CODE><I>boolean</I> <BIG><B>isXhtml</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::isXml()"></A>
+<CODE><I>boolean</I> <BIG><B>isXml</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::isText()"></A>
+<CODE><I>boolean</I> <BIG><B>isText</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::isJste()"></A>
+<CODE><I>boolean</I> <BIG><B>isJste</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::isAsp()"></A>
+<CODE><I>boolean</I> <BIG><B>isAsp</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::isPhp()"></A>
+<CODE><I>boolean</I> <BIG><B>isPhp</B></BIG>()</CODE>
+<P>
+
+<A name="tidyNode::getParent()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>getParent</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Tidy"></A>
+<pre>class <BIG><B>Tidy</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Tidy::$errorBuffer"></A>
+<CODE><I>string</I> <BIG><B>$errorBuffer</B></BIG></CODE>
+<P>
+
+<A name="Tidy::parseString()"></A>
+<CODE><I>boolean</I> <BIG><B>parseString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$input, ...)</CODE>
+<P>
+
+<A name="Tidy::getOutput()"></A>
+<CODE><I>string</I> <BIG><B>getOutput</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::parseFile()"></A>
+<CODE><I>boolean</I> <BIG><B>parseFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file, ...)</CODE>
+<P>
+
+<A name="Tidy::cleanRepair()"></A>
+<CODE><I>boolean</I> <BIG><B>cleanRepair</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::repairString()"></A>
+<CODE><I>string</I> <BIG><B>repairString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data, ...)</CODE>
+<P>
+
+<A name="Tidy::repairFile()"></A>
+<CODE><I>boolean</I> <BIG><B>repairFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="Tidy::diagnose()"></A>
+<CODE><I>boolean</I> <BIG><B>diagnose</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::getRelease()"></A>
+<CODE><I>string</I> <BIG><B>getRelease</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::getConfig()"></A>
+<CODE><I>mixed[]</I> <BIG><B>getConfig</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::getStatus()"></A>
+<CODE><I>int</I> <BIG><B>getStatus</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::getHtmlVer()"></A>
+<CODE><I>int</I> <BIG><B>getHtmlVer</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::isXhtml()"></A>
+<CODE><I>boolean</I> <BIG><B>isXhtml</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::errorCount()"></A>
+<CODE><I>int</I> <BIG><B>errorCount</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::warningCount()"></A>
+<CODE><I>int</I> <BIG><B>warningCount</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::accessCount()"></A>
+<CODE><I>int</I> <BIG><B>accessCount</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::configCount()"></A>
+<CODE><I>int</I> <BIG><B>configCount</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::getOpt()"></A>
+<CODE><I>mixed</I> <BIG><B>getOpt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$option)</CODE>
+<P>
+
+<A name="Tidy::getRoot()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>getRoot</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::getHtml()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>getHtml</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::getHead()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>getHead</B></BIG>()</CODE>
+<P>
+
+<A name="Tidy::getBody()"></A>
+<CODE><I><a href="#tidyNode"><code>tidyNode</code></a></I> <BIG><B>getBody</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

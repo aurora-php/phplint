@@ -1,0 +1,116 @@
+<HTML><BODY>
+<H1>simplexml</H1>
+<P><b>SimpleXML functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="dom.html"><code>dom</code></a>, <a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.simplexml.php"><code>www.php.net/manual/en/ref.simplexml.php</code></a>
+
+<p>
+<b>Deprecated.</b>
+This module cannot be effectively used under PHPLint because the class
+SimpleXMLElement heavily relies on dynamically created properties, which is not
+(and never will be) supported by PHPLint. Use the dom module instead along with
+the cast() magic function to safely convert generic types.
+
+</P>
+<HR>
+<P>
+
+<A name="simplexml_import_dom()"></A>
+<CODE><I><a href="#SimpleXMLElement"><code>SimpleXMLElement</code></a></I> <BIG><B>simplexml_import_dom</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="dom.html#DOMNode"><code>DOMNode</code></a></I>&nbsp;$node, ...)</CODE>
+<P>
+
+<A name="simplexml_load_file()"></A>
+<CODE><I><a href="#SimpleXMLElement"><code>SimpleXMLElement</code></a></I> <BIG><B>simplexml_load_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="simplexml_load_string()"></A>
+<CODE><I><a href="#SimpleXMLElement"><code>SimpleXMLElement</code></a></I> <BIG><B>simplexml_load_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data, ...)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="SimpleXMLElement"></A>
+<pre>class <BIG><B>SimpleXMLElement</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="SimpleXMLElement::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$data_is_url = FALSE,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ns = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$is_prefix = FALSE)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<br>throws <a href="standard.html#Exception"><code>Exception</code></a><P>
+
+<A name="SimpleXMLElement::addAttribute()"></A>
+<CODE><I>void</I> <BIG><B>addAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespace_ = NULL)</CODE>
+<P>
+
+<A name="SimpleXMLElement::addChild()"></A>
+<CODE><I>void</I> <BIG><B>addChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespace_ = NULL)</CODE>
+<P>
+
+<A name="SimpleXMLElement::asXML()"></A>
+<CODE><I>mixed</I> <BIG><B>asXML</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename = NULL)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="SimpleXMLElement::saveXML()"></A>
+<CODE><I>mixed</I> <BIG><B>saveXML</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename = NULL)</CODE>
+<P>
+
+<A name="SimpleXMLElement::attributes()"></A>
+<CODE><I>mixed[]</I> <BIG><B>attributes</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespace_ = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$is_prefix = FALSE)</CODE>
+<P>
+
+<A name="SimpleXMLElement::count()"></A>
+<CODE><I>int</I> <BIG><B>count</B></BIG>()</CODE>
+<P>
+
+<A name="SimpleXMLElement::getDocNamespaces()"></A>
+<CODE><I>string[string]</I> <BIG><B>getDocNamespaces</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$recursive = FALSE)</CODE>
+<P>
+
+<A name="SimpleXMLElement::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<P>
+
+<A name="SimpleXMLElement::getNamespaces()"></A>
+<CODE><I>string[string]</I> <BIG><B>getNamespaces</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$recursive = FALSE)</CODE>
+<P>
+
+<A name="SimpleXMLElement::registerXPathNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>registerXPathNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespace_)</CODE>
+<P>
+
+<A name="SimpleXMLElement::xpath()"></A>
+<CODE><I><a href="#SimpleXMLElement"><code>SimpleXMLElement</code></a>[int]</I> <BIG><B>xpath</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="SimpleXMLElement::children()"></A>
+<CODE><I><a href="#SimpleXMLElement"><code>SimpleXMLElement</code></a></I> <BIG><B>children</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespace_ = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$is_prefix = FALSE)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,412 @@
+<HTML><BODY>
+<H1>HashMap</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="Hashable.html"><code>Hashable.php</code></a>, <a href="Comparable.html"><code>Comparable.php</code></a>, <a href="Hash.html"><code>Hash.php</code></a>, <a href="Equality.html"><code>Equality.php</code></a>, <a href="../utils/Floats.html"><code>Floats.php</code></a>, <a href="../utils/Integers.html"><code>Integers.php</code></a>, <a href="../utils/TestUnit.html"><code>TestUnit.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap"></A>
+<pre>class <BIG><B>it\icosaedro\containers\HashMap</B></BIG>
+      |  
+      +--(<i><a href="../../../../modules/spl.html#Countable"><code>Countable</code></a></i>)
+      +--(<i><a href="../../../../modules/spl.html#Iterator"><code>Iterator</code></a></i>)
+      |    `--(<i><a href="../../../../modules/spl.html#Traversable"><code>Traversable</code></a></i>)
+      +--(<i><a href="Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+      `--(<i><a href="Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Holds a set of (key,element) pairs and allows fast retrieval of one element 	given its key</b></P><P><B>Version:</B> $Date: 2012/04/02 09:11:28 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+Keys are univocal in the map, but elements can be duplicated
+	with different keys.
+<p>
+	Keys and elements can be of any type, but performances are much better if
+	the keys implement the <a href="Hashable.html#it/icosaedro/containers/Hashable"><code>it\icosaedro\containers\Hashable</code></a> interface, so that keys provide the
+	methods getHash() and equals() that allows to quicky lookup the requested
+	(key,element) pair.
+<p>
+	For keys that do not provide the Hashable interface, the generic functions
+	provided by the <a href="Hash.html#it/icosaedro/containers/Hash"><code>it\icosaedro\containers\Hash</code></a> class are applied to calculate the hash, while
+	the function <a href="Equality.html#it/icosaedro/containers/Equality::areEqual()"><code>it\icosaedro\containers\Equality::areEqual()</code></a> provides a quite weak, surrogate
+	concept of equality.
+<p>
+	Example:
+<p>
+	<pre>
+	# Example 1: maps (string,int) pairs:
+	use it\icosaedro\containers\HashMap;
+	$m = new HashMap();
+	$m-&gt;put("one", 1);
+	$m-&gt;put("two", 2);
+	$m-&gt;put("three", 3);
+	$m-&gt;put("four", 4);
+	$k = "three";
+	$e = $m-&gt;get($k);
+	if( $e === NULL )
+		echo "does not contain $k";
+	else
+		echo "found $k:", (int) $e;
+	# ==&gt; found three: 3
+
+	# Example 2: maps (Date,string) pairs:
+	use it\icosaedro\utils\Date;
+	$m = new HashMap();
+	$m-&gt;put(new Date(2012, 1, 1), "year 2012 begins");
+	$m-&gt;put(new Date(2011, 12, 31), "year 2011 ends");
+	$m-&gt;put(new Date(2012, 2, 29), "leap day of the 2012");
+
+	# Displays quote of the day:
+	$quote = $m-&gt;get( Date::today() );
+	if( $quote !== NULL )
+		echo "Quote of the day: ", (string) $quote;
+	# ==&gt; (depends on the current day :-)
+
+	echo "Next notable dates:\n";
+	foreach($m as $k =&gt; $e){
+		$d = cast("it\\icosaedro\\utils\\Date", $k);
+		if( $d-&gt;compareTo( Date::today() ) &gt; 0 ){
+			$quote = (string) $e;
+			echo "$d: $quote\n";
+		}
+	}
+	</pre>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Creates a new empty hash map</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::clear()"></A>
+<CODE><I>void</I> <BIG><B>clear</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Empty the map</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::containsKey()"></A>
+<CODE><I>boolean</I> <BIG><B>containsKey</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$key)</CODE>
+<BLOCKQUOTE>
+<P><b>Tests if a key does exist in the map</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$key&nbsp;&nbsp;</code></b></td> <td valign=top>The key.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the key belongs to this map.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::containsElement()"></A>
+<CODE><I>boolean</I> <BIG><B>containsElement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$element)</CODE>
+<BLOCKQUOTE>
+<P><b>Tests if an element does exist in the map</b></P><P>
+This method performs a
+		linear search over the whole map, so it is very inefficient.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$element&nbsp;&nbsp;</code></b></td> <td valign=top>Element we are looking for.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if at least one (key,element) pair has the an element
+		equal to the given value; equality is tested according to <a href="Equality.html#it/icosaedro/containers/Equality::areEqual()"><code>it\icosaedro\containers\Equality::areEqual()</code></a>.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::get()"></A>
+<CODE><I>mixed</I> <BIG><B>get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$key)</CODE>
+<BLOCKQUOTE>
+<P><b>Retrieves an element given its key</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$key&nbsp;&nbsp;</code></b></td> <td valign=top>Key of the element.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The element, or NULL if not found. Note that the NULL
+		value may be a valid element, so in this case you may want to check
+		with <a href="#it/icosaedro/containers/HashMap::containsKey()"><code>it\icosaedro\containers\HashMap::containsKey($k)</code></a> if the key is there.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::put()"></A>
+<CODE><I>void</I> <BIG><B>put</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$key,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$element)</CODE>
+<BLOCKQUOTE>
+<P><b>Inserts a (key,element) pair in the map</b></P><P>
+If a pair with the same
+		key already exists, the new element replaces the old one.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$key&nbsp;&nbsp;</code></b></td> <td valign=top>The key.</td></tr>
+<tr><td valign=top><b><code>$element&nbsp;&nbsp;</code></b></td> <td valign=top>The element.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#RuntimeException"><code>RuntimeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The key cannot be hashed because it is an
+		unsupported type float, array or resource.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::putMap()"></A>
+<CODE><I>void</I> <BIG><B>putMap</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/containers/HashMap"><code>it\icosaedro\containers\HashMap</code></a></I>&nbsp;$m)</CODE>
+<BLOCKQUOTE>
+<P><b>Add all the (key,element) pairs of another map to this map</b></P><P>
+On key collision, replace the element on this map.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$m&nbsp;&nbsp;</code></b></td> <td valign=top>Map to add to this one.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::remove()"></A>
+<CODE><I>void</I> <BIG><B>remove</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$key)</CODE>
+<BLOCKQUOTE>
+<P><b>Remove a (key,element) pair from the map given its key</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$key&nbsp;&nbsp;</code></b></td> <td valign=top>Key of the pair to remove.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#RuntimeException"><code>RuntimeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The key cannot be hashed because it is an
+		unsupported type float, resource or array.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::count()"></A>
+<CODE><I>int</I> <BIG><B>count</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Countable::count()"><code>Countable</code></a><BLOCKQUOTE>
+<P><b>Returns the number of (key,element) pairs in the map</b></P><P>
+<p><b>Return:</b> Number of (key,element) pairs in the map.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::getKeys()"></A>
+<CODE><I>mixed[int]</I> <BIG><B>getKeys</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns all the keys as an array</b></P><P>
+<p><b>Return:</b> All the keys.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::getElements()"></A>
+<CODE><I>mixed[int]</I> <BIG><B>getElements</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns all the elements as an array</b></P><P>
+<p><b>Return:</b> All the elements. Note that there may be duplicates
+		of equal elements with different keys.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::getPairs()"></A>
+<CODE><I>mixed[int][int]</I> <BIG><B>getPairs</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns all the (key,element) pairs</b></P><P>
+<p><b>Return:</b> All the (key,element) pairs. The first index is
+		the pair, the second index evaluates to 0 for the key and 1 for the
+		element.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::equals()"></A>
+<CODE><I>boolean</I> <BIG><B>equals</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="Comparable.html#it/icosaedro/containers/Comparable::equals()"><code>it\icosaedro\containers\Comparable</code></a><BLOCKQUOTE>
+<P><b>Compare this map with another map for equality</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other map.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the other map is not NULL, belongs to this same
+		exact class (not extended) and the two maps contains the same
+		(key,element) pairs. Elements are compared according to the <a href="Equality.html#it/icosaedro/containers/Equality::areEqual()"><code>it\icosaedro\containers\Equality::areEqual()</code></a> method.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::rewind()"></A>
+<CODE><I>void</I> <BIG><B>rewind</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Iterator::rewind()"><code>Iterator</code></a><BLOCKQUOTE>
+<P><b>Resets the position of the iterator to the first element of the map</b></P><P>
+If valid() returns false, the the map is empty.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::valid()"></A>
+<CODE><I>boolean</I> <BIG><B>valid</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Iterator::valid()"><code>Iterator</code></a><BLOCKQUOTE>
+<P><b>Checks if the iterator is on a valid (key,element) pair</b></P><P>
+If valid, use
+		key() and current() to retrieve the pair.
+
+<p><b>Return:</b> True if the iterator is currently on a pair of the map.
+		Returns false if the map is empty or the internal cursor was already
+		moved past the last pair.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::key()"></A>
+<CODE><I>mixed</I> <BIG><B>key</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Iterator::key()"><code>Iterator</code></a><BLOCKQUOTE>
+<P><b>Returns the key of the pair currently selected by the iterator</b></P><P>
+<p><b>Return:</b> Key or the pair currently under the cursor.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#RuntimeException"><code>RuntimeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;No pair selected: missing call to rewind()
+		or next() or data changed while accessing the iterator, either adding
+		or removing elements.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::current()"></A>
+<CODE><I>mixed</I> <BIG><B>current</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Iterator::current()"><code>Iterator</code></a><BLOCKQUOTE>
+<P><b>Returns the element currently selected by the iterator</b></P><P>
+<p><b>Return:</b> Element currently selected or NULL if no element
+		selected.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#RuntimeException"><code>RuntimeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;No element selected: missing call to rewind()
+		or next() or data changed while accessing the iterator, either adding
+		or removing elements.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/HashMap::next()"></A>
+<CODE><I>void</I> <BIG><B>next</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Iterator::next()"><code>Iterator</code></a><BLOCKQUOTE>
+<P><b>Moves the iterator to the next pair</b></P><P>
+Does nothing if the map is
+		empty or the iterator ran past the last pair.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

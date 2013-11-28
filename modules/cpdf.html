@@ -1,0 +1,462 @@
+<HTML><BODY>
+<H1>cpdf</H1>
+<P><b>ClibPDF Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.cpdf.php"><code>http://www.php.net/manual/en/ref.cpdf.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="CPDF_PM_NONE"></A>
+<CODE><BIG><B>CPDF_PM_NONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="CPDF_PM_OUTLINES"></A>
+<CODE><BIG><B>CPDF_PM_OUTLINES</B></BIG> = 1</CODE>
+<P>
+
+<A name="CPDF_PM_THUMBS"></A>
+<CODE><BIG><B>CPDF_PM_THUMBS</B></BIG> = 1</CODE>
+<P>
+
+<A name="CPDF_PM_FULLSCREEN"></A>
+<CODE><BIG><B>CPDF_PM_FULLSCREEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="CPDF_PL_SINGLE"></A>
+<CODE><BIG><B>CPDF_PL_SINGLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="CPDF_PL_1COLUMN"></A>
+<CODE><BIG><B>CPDF_PL_1COLUMN</B></BIG> = 1</CODE>
+<P>
+
+<A name="CPDF_PL_2LCOLUMN"></A>
+<CODE><BIG><B>CPDF_PL_2LCOLUMN</B></BIG> = 1</CODE>
+<P>
+
+<A name="CPDF_PL_2RCOLUMN"></A>
+<CODE><BIG><B>CPDF_PL_2RCOLUMN</B></BIG> = 1</CODE>
+<P>
+
+<A name="cpdf_global_set_document_limits()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_global_set_document_limits</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$maxPages,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$maxFonts,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$maxImages,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$maxAnnots,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$maxObjects)</CODE>
+<P>
+
+<A name="cpdf_set_creator()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_creator</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$creator)</CODE>
+<P>
+
+<A name="cpdf_set_title()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_title</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfptr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$title)</CODE>
+<P>
+
+<A name="cpdf_set_subject()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_subject</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfptr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subject)</CODE>
+<P>
+
+<A name="cpdf_set_keywords()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_keywords</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfptr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$keywords)</CODE>
+<P>
+
+<A name="cpdf_set_viewer_preferences()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_viewer_preferences</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$preferences)</CODE>
+<P>
+
+<A name="cpdf_open()"></A>
+<CODE><I>int</I> <BIG><B>cpdf_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$compression, ...)</CODE>
+<P>
+
+<A name="cpdf_close()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_page_init()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_page_init</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pagenr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$orientation,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$height,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$width, ...)</CODE>
+<P>
+
+<A name="cpdf_finalize_page()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_finalize_page</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pagenr)</CODE>
+<P>
+
+<A name="cpdf_set_current_page()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_current_page</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pagenr)</CODE>
+<P>
+
+<A name="cpdf_begin_text()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_begin_text</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_end_text()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_end_text</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_show()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_show</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="cpdf_show_xy()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_show_xy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x_koor,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y_koor, ...)</CODE>
+<P>
+
+<A name="cpdf_continue_text()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_continue_text</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="cpdf_text()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_text</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text, ...)</CODE>
+<P>
+
+<A name="cpdf_set_font()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_font</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$font,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding)</CODE>
+<P>
+
+<A name="cpdf_set_font_directories()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_font_directories</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pfmdir,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pfbdir)</CODE>
+<P>
+
+<A name="cpdf_set_font_map_file()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_font_map_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="cpdf_set_leading()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_leading</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$distance)</CODE>
+<P>
+
+<A name="cpdf_set_text_rendering()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_text_rendering</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$rendermode)</CODE>
+<P>
+
+<A name="cpdf_set_horiz_scaling()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_horiz_scaling</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$scale)</CODE>
+<P>
+
+<A name="cpdf_set_text_rise()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_text_rise</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="cpdf_set_text_matrix()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_text_matrix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$matrix)</CODE>
+<P>
+
+<A name="cpdf_set_text_pos()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_text_pos</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y, ...)</CODE>
+<P>
+
+<A name="cpdf_rotate_text()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_rotate_text</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle)</CODE>
+<P>
+
+<A name="cpdf_set_char_spacing()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_char_spacing</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$space)</CODE>
+<P>
+
+<A name="cpdf_set_word_spacing()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_word_spacing</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$space)</CODE>
+<P>
+
+<A name="cpdf_stringwidth()"></A>
+<CODE><I>float</I> <BIG><B>cpdf_stringwidth</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="cpdf_save()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_save</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_restore()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_restore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_translate()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_translate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y)</CODE>
+<P>
+
+<A name="cpdf_scale()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_scale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x_scale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y_scale)</CODE>
+<P>
+
+<A name="cpdf_rotate()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_rotate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle)</CODE>
+<P>
+
+<A name="cpdf_setflat()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setflat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="cpdf_setlinejoin()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setlinejoin</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="cpdf_setlinecap()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setlinecap</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="cpdf_setmiterlimit()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setmiterlimit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="cpdf_setlinewidth()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setlinewidth</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$width)</CODE>
+<P>
+
+<A name="cpdf_setdash()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setdash</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$white,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$black)</CODE>
+<P>
+
+<A name="cpdf_moveto()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_moveto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y, ...)</CODE>
+<P>
+
+<A name="cpdf_rmoveto()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_rmoveto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y, ...)</CODE>
+<P>
+
+<A name="cpdf_curveto()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_curveto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x3,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y3, ...)</CODE>
+<P>
+
+<A name="cpdf_lineto()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_lineto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y, ...)</CODE>
+<P>
+
+<A name="cpdf_rlineto()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_rlineto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y, ...)</CODE>
+<P>
+
+<A name="cpdf_circle()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_circle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$radius, ...)</CODE>
+<P>
+
+<A name="cpdf_arc()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_arc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$radius,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$start,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$end, ...)</CODE>
+<P>
+
+<A name="cpdf_rect()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_rect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$width,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$height, ...)</CODE>
+<P>
+
+<A name="cpdf_newpath()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_newpath</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_closepath()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_closepath</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_closepath_stroke()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_closepath_stroke</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_stroke()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_stroke</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_fill()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_fill</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_fill_stroke()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_fill_stroke</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_closepath_fill_stroke()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_closepath_fill_stroke</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_clip()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_clip</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_setgray_fill()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setgray_fill</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="cpdf_setgray_stroke()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setgray_stroke</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="cpdf_setgray()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setgray</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="cpdf_setrgbcolor_fill()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setrgbcolor_fill</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="cpdf_setrgbcolor_stroke()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setrgbcolor_stroke</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="cpdf_setrgbcolor()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_setrgbcolor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="cpdf_set_page_animation()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_page_animation</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$transition,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$duration,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$direction,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$orientation,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$inout)</CODE>
+<P>
+
+<A name="cpdf_finalize()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_finalize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_output_buffer()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_output_buffer</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc)</CODE>
+<P>
+
+<A name="cpdf_save_to_file()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_save_to_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="cpdf_import_jpeg()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_import_jpeg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$width,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$height,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x_scale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y_scale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$gsave, ...)</CODE>
+<P>
+
+<A name="cpdf_place_inline_image()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_place_inline_image</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$gdimage,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$width,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$height,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$gsave, ...)</CODE>
+<P>
+
+<A name="cpdf_add_annotation()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_add_annotation</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$xll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$yll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$xur,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$yur,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$title,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text, ...)</CODE>
+<P>
+
+<A name="cpdf_set_action_url()"></A>
+<CODE><I>boolean</I> <BIG><B>cpdf_set_action_url</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$xll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$yll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$xur,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$yur,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$url, ...)</CODE>
+<P>
+
+<A name="cpdf_add_outline()"></A>
+<CODE><I>int</I> <BIG><B>cpdf_add_outline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$lastoutline,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sublevel,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$open,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pagenr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$title)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

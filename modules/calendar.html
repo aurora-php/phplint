@@ -1,0 +1,187 @@
+<HTML><BODY>
+<H1>calendar</H1>
+<P><b>Calendar Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.calendar.php"><code>http://www.php.net/manual/en/ref.calendar.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="CAL_GREGORIAN"></A>
+<CODE><BIG><B>CAL_GREGORIAN</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_JULIAN"></A>
+<CODE><BIG><B>CAL_JULIAN</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_JEWISH"></A>
+<CODE><BIG><B>CAL_JEWISH</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_FRENCH"></A>
+<CODE><BIG><B>CAL_FRENCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_NUM_CALS"></A>
+<CODE><BIG><B>CAL_NUM_CALS</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_DOW_DAYNO"></A>
+<CODE><BIG><B>CAL_DOW_DAYNO</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_DOW_SHORT"></A>
+<CODE><BIG><B>CAL_DOW_SHORT</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_DOW_LONG"></A>
+<CODE><BIG><B>CAL_DOW_LONG</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_MONTH_GREGORIAN_SHORT"></A>
+<CODE><BIG><B>CAL_MONTH_GREGORIAN_SHORT</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_MONTH_GREGORIAN_LONG"></A>
+<CODE><BIG><B>CAL_MONTH_GREGORIAN_LONG</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_MONTH_JULIAN_SHORT"></A>
+<CODE><BIG><B>CAL_MONTH_JULIAN_SHORT</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_MONTH_JULIAN_LONG"></A>
+<CODE><BIG><B>CAL_MONTH_JULIAN_LONG</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_MONTH_JEWISH"></A>
+<CODE><BIG><B>CAL_MONTH_JEWISH</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_MONTH_FRENCH"></A>
+<CODE><BIG><B>CAL_MONTH_FRENCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_EASTER_DEFAULT"></A>
+<CODE><BIG><B>CAL_EASTER_DEFAULT</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_EASTER_ROMAN"></A>
+<CODE><BIG><B>CAL_EASTER_ROMAN</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_EASTER_ALWAYS_GREGORIAN"></A>
+<CODE><BIG><B>CAL_EASTER_ALWAYS_GREGORIAN</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_EASTER_ALWAYS_JULIAN"></A>
+<CODE><BIG><B>CAL_EASTER_ALWAYS_JULIAN</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_JEWISH_ADD_ALAFIM_GERESH"></A>
+<CODE><BIG><B>CAL_JEWISH_ADD_ALAFIM_GERESH</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_JEWISH_ADD_ALAFIM"></A>
+<CODE><BIG><B>CAL_JEWISH_ADD_ALAFIM</B></BIG> = 1</CODE>
+<P>
+
+<A name="CAL_JEWISH_ADD_GERESHAYIM"></A>
+<CODE><BIG><B>CAL_JEWISH_ADD_GERESHAYIM</B></BIG> = 1</CODE>
+<P>
+
+<A name="cal_info()"></A>
+<CODE><I>mixed[]</I> <BIG><B>cal_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$calendar)</CODE>
+<P>
+
+<A name="cal_days_in_month()"></A>
+<CODE><I>int</I> <BIG><B>cal_days_in_month</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$calendar,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$month,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$year)</CODE>
+<P>
+
+<A name="cal_to_jd()"></A>
+<CODE><I>int</I> <BIG><B>cal_to_jd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$calendar,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$month,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$day,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$year)</CODE>
+<P>
+
+<A name="cal_from_jd()"></A>
+<CODE><I>mixed[]</I> <BIG><B>cal_from_jd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$jd,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$calendar)</CODE>
+<P>
+
+<A name="easter_date()"></A>
+<CODE><I>int</I> <BIG><B>easter_date</B></BIG>(...)</CODE>
+<P>
+
+<A name="easter_days()"></A>
+<CODE><I>int</I> <BIG><B>easter_days</B></BIG>(...)</CODE>
+<P>
+
+<A name="jdtogregorian()"></A>
+<CODE><I>string</I> <BIG><B>jdtogregorian</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$juliandaycount)</CODE>
+<P>
+
+<A name="gregoriantojd()"></A>
+<CODE><I>int</I> <BIG><B>gregoriantojd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$month,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$day,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$year)</CODE>
+<P>
+
+<A name="jdtojulian()"></A>
+<CODE><I>string</I> <BIG><B>jdtojulian</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$juliandaycount)</CODE>
+<P>
+
+<A name="juliantojd()"></A>
+<CODE><I>int</I> <BIG><B>juliantojd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$month,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$day,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$year)</CODE>
+<P>
+
+<A name="jdtojewish()"></A>
+<CODE><I>string</I> <BIG><B>jdtojewish</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$juliandaycount, ...)</CODE>
+<P>
+
+<A name="jewishtojd()"></A>
+<CODE><I>int</I> <BIG><B>jewishtojd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$month,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$day,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$year)</CODE>
+<P>
+
+<A name="jdtofrench()"></A>
+<CODE><I>string</I> <BIG><B>jdtofrench</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$juliandaycount)</CODE>
+<P>
+
+<A name="frenchtojd()"></A>
+<CODE><I>int</I> <BIG><B>frenchtojd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$month,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$day,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$year)</CODE>
+<P>
+
+<A name="jddayofweek()"></A>
+<CODE><I>mixed</I> <BIG><B>jddayofweek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$juliandaycount, ...)</CODE>
+<P>
+
+<A name="jdmonthname()"></A>
+<CODE><I>string</I> <BIG><B>jdmonthname</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$juliandaycount,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="unixtojd()"></A>
+<CODE><I>int</I> <BIG><B>unixtojd</B></BIG>(...)</CODE>
+<P>
+
+<A name="jdtounix()"></A>
+<CODE><I>int</I> <BIG><B>jdtounix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$jday)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,140 @@
+<HTML><BODY>
+<H1>pcre</H1>
+<P><b>Regular Expression Functions (Perl-Compatible)</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+This module is part of the PHP core since PHP 5.3.0.
+See: <a href="http://www.php.net/manual/en/ref.pcre.php"><code>http://www.php.net/manual/en/ref.pcre.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="PREG_PATTERN_ORDER"></A>
+<CODE><BIG><B>PREG_PATTERN_ORDER</B></BIG> = 1</CODE>
+<P>
+
+<A name="PREG_SET_ORDER"></A>
+<CODE><BIG><B>PREG_SET_ORDER</B></BIG> = 2</CODE>
+<P>
+
+<A name="PREG_OFFSET_CAPTURE"></A>
+<CODE><BIG><B>PREG_OFFSET_CAPTURE</B></BIG> = 256</CODE>
+<P>
+
+<A name="PREG_SPLIT_NO_EMPTY"></A>
+<CODE><BIG><B>PREG_SPLIT_NO_EMPTY</B></BIG> = 1</CODE>
+<P>
+
+<A name="PREG_SPLIT_DELIM_CAPTURE"></A>
+<CODE><BIG><B>PREG_SPLIT_DELIM_CAPTURE</B></BIG> = 2</CODE>
+<P>
+
+<A name="PREG_SPLIT_OFFSET_CAPTURE"></A>
+<CODE><BIG><B>PREG_SPLIT_OFFSET_CAPTURE</B></BIG> = 4</CODE>
+<P>
+
+<A name="PREG_GREP_INVERT"></A>
+<CODE><BIG><B>PREG_GREP_INVERT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PREG_NO_ERROR"></A>
+<CODE><BIG><B>PREG_NO_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PREG_INTERNAL_ERROR"></A>
+<CODE><BIG><B>PREG_INTERNAL_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PREG_BACKTRACK_LIMIT_ERROR"></A>
+<CODE><BIG><B>PREG_BACKTRACK_LIMIT_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PREG_RECURSION_LIMIT_ERROR"></A>
+<CODE><BIG><B>PREG_RECURSION_LIMIT_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PREG_BAD_UTF8_ERROR"></A>
+<CODE><BIG><B>PREG_BAD_UTF8_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PREG_BAD_UTF8_OFFSET_ERROR"></A>
+<CODE><BIG><B>PREG_BAD_UTF8_OFFSET_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PCRE_VERSION"></A>
+<CODE><BIG><B>PCRE_VERSION</B></BIG> = 1</CODE>
+<P>
+
+<A name="preg_match()"></A>
+<CODE><I>int</I> <BIG><B>preg_match</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subject,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>string[int]</I>&nbsp;&amp; $matches = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset = 0)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="preg_match_all()"></A>
+<CODE><I>int</I> <BIG><B>preg_match_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subject,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>string[int][int]</I>&nbsp;&amp; $matches = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset = 0)</CODE>
+<BLOCKQUOTE>
+<P>
+BUG: if the PREG_OFFSET_CAPTURE flag is used then the resulting
+	structure of the $matches array is array[int][int][int]mixed where the
+	elements mixed are strings and integers. PHPLint cannot support such a
+	variability of types, so this prototype only accounts for the most
+	common case in which the PREG_OFFSET_CAPTURE isn't used.
+	<p>
+	Remember that the possible flags combinations are:
+	<p>
+	PREG_PATTERN_ORDER (the default if no flags at all)<br>
+	PREG_PATTERN_ORDER|PREG_OFFSET_CAPTURE<br>
+	PREG_SET_ORDER<br>
+	PREG_SET_ORDER|PREG_OFFSET_CAPTURE
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="preg_replace()"></A>
+<CODE><I>string</I> <BIG><B>preg_replace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$regex,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$replace,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$subject, ...)</CODE>
+<P>
+
+<A name="preg_replace_callback()"></A>
+<CODE><I>string</I> <BIG><B>preg_replace_callback</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$regex,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$string_,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$subject, ...)</CODE>
+<P>
+
+<A name="preg_split()"></A>
+<CODE><I>mixed[]</I> <BIG><B>preg_split</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subject, ...)</CODE>
+<P>
+
+<A name="preg_quote()"></A>
+<CODE><I>string</I> <BIG><B>preg_quote</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$delim_char)</CODE>
+<P>
+
+<A name="preg_grep()"></A>
+<CODE><I>mixed[]</I> <BIG><B>preg_grep</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$regex,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$input)</CODE>
+<P>
+
+<A name="preg_last_error()"></A>
+<CODE><I>int</I> <BIG><B>preg_last_error</B></BIG>()</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

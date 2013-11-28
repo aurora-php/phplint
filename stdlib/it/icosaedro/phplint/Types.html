@@ -1,0 +1,152 @@
+<HTML><BODY>
+<H1>Types</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="BooleanType.html"><code>BooleanType.php</code></a>, <a href="ClassType.html"><code>ClassType.php</code></a>, <a href="FloatType.html"><code>FloatType.php</code></a>, <a href="IntType.html"><code>IntType.php</code></a>, <a href="NullType.html"><code>NullType.php</code></a>, <a href="ObjectType.html"><code>ObjectType.php</code></a>, <a href="ResourceType.html"><code>ResourceType.php</code></a>, <a href="StringType.html"><code>StringType.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/phplint/Types"></A>
+<pre>class <BIG><B>it\icosaedro\phplint\Types</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Utilities to manipulate types</b></P><P><B>Version:</B> $Date: 2012/02/09 10:12:47 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+Mostly intended for being used by the magic
+	cast() function.
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/phplint/Types::parseType()"></A>
+<CODE>static <I><a href="TypeInterface.html#it/icosaedro/phplint/TypeInterface"><code>it\icosaedro\phplint\TypeInterface</code></a></I> <BIG><B>parseType</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type_descr)</CODE>
+<BLOCKQUOTE>
+<P><b>Parses a type descriptor an retrieves a type object that corrensponds to 		it</b></P><P>
+The object result of this compilation implements the <a href="TypeInterface.html#it/icosaedro/phplint/TypeInterface"><code>it\icosaedro\phplint\TypeInterface</code></a> interface, and then provides the check() method that
+		allows to verify the actual type of a generic mixed value.
+<p>
+		Compiled type descriptor expressions are cached for better runtime
+		performances, so for every distinct type descriptor string the
+		relatively expensive parsing process takes place only the first time
+		that string is seen. Classes specified in the descriptor must be
+		already defined or, if the class autoloading feature is enabled,
+		classes are automatically loaded.
+		Example:
+<p>
+	<pre>
+	# Checks if a variable really holds an array of strings:
+	use it\icosaedro\phplint\Types;
+	$type = Types::parseType("string[int]");
+	if( $type-&gt;check($anyvalue) ){
+		die("not an array of strings");
+	}
+	</pre>
+<p>
+		A <b>type descriptor</b> follows a syntax very much similar to that
+		PHPLint uses to indicate a type: null, int, float, string, resource,
+		object, any class type (with fully qualified name if it belongs to a
+		namespace) or T[I] where I is the type of the index (int, string
+		or empty if both) and T is the type of the elements; multidimensional
+		arrays may take several indices, for example float[int][int]. The
+		detailed syntax in EBNF form:
+<p>
+	<pre>
+	type = type_name { index } | array;
+
+	type_name = "boolean" | "bool" | "int"
+	            | "float" | "double" | "real"
+	            | "string" | "resource"
+	            | "object" | FULLY_QUALIFIED_CLASS_NAME;
+
+	array = "array" index { index } type_name;
+
+	index = "[]" | "[int]" | "[string]";
+	</pre>
+<p>
+		White spaces are not allowed. Note that there is not a "mixed" type,
+		and that arrays must always specify the index and the type of the
+		elements.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$type_descr&nbsp;&nbsp;</code></b></td> <td valign=top>Descriptor of the type.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The object that describes this type.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The type descriptor has an invalid
+		syntax. The class or interface is not defined.
+</li>
+<li>unchecked <a href="../../../AutoloadException.html#AutoloadException"><code>AutoloadException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Autoloading is enabled, but the given
+		class or interface cannot be loaded.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/phplint/Types::typeOf()"></A>
+<CODE>static <I><a href="TypeInterface.html#it/icosaedro/phplint/TypeInterface"><code>it\icosaedro\phplint\TypeInterface</code></a></I> <BIG><B>typeOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$v)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the type guessed from a value</b></P><P>
+This function is used by the
+ cast() function to display the actual type that does not match the
+ expected type in order to give a meaningful message to the user.
+ There are still two cases were this function cannot provide a
+ satisfactory result:
+<p>
+ 1. The NULL value may belong to any reference type according to
+ the model of types of PHPLint, so in this case a dummy "null" type
+ is returned.
+<p>
+ 2. An array. Here only the type of the indeces is checked, but
+ not the type of the elements, that may be objects belonging to
+ different classes and related only by some shared implemented or
+ extended class. Moreover, for empty arrays array() nothing can be
+ guessed. So this function always returns a dummy array of objects
+ for any type of array, which may be quite misleading.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$v&nbsp;&nbsp;</code></b></td> <td valign=top>Any value.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Compiled description of the type.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,578 @@
+<HTML><BODY>
+<H1>SMTP</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/streams.html"><code>streams</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../errors.html"><code>errors.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP"></A>
+<pre>class <BIG><B>net\sourceforge\phpmailer\SMTP</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Allows to connect and communicate with any SMTP server</b></P><P><B>Version:</B> 1.02</P>
+<P><B>License:</B> <a href="LICENSE.txt">LGPL</a></P>
+<P><B>Author:</B> Chris Ryan</P>
+<P>
+It implements
+	all the SMTP functions defined in RFC 821 except TURN.
+<p>
+	From: <a href="http://phpmailer.sourceforge.net">http://phpmailer.sourceforge.net</a>
+<p>
+	SMTP is RFC 821 compliant and implements all the RFC 821 SMTP
+	commands except TURN which will always return a not implemented
+	error. SMTP also provides some utility methods for sending mail
+	to an SMTP server.
+<p>
+	Some methods can return exceptions of the class ErrorException
+	indicating something goes wrong talking to the server, or the server
+	did not understand the command. Some others methods.
+<p>
+	2012-02-05 Umberto Salsi:
+	Converted from PHP4 to PHP5.
+	Added PHPLint meta-code.
+	Exceptions support added.
+<p>
+
+
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::$debug"></A>
+<CODE><I>boolean</I> <BIG><B>$debug</B></BIG> = FALSE</CODE>
+<BLOCKQUOTE>
+<P><b>Enable debugging messages</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::$debug_stderr"></A>
+<CODE><I>boolean</I> <BIG><B>$debug_stderr</B></BIG> = FALSE</CODE>
+<BLOCKQUOTE>
+<P><b>Send debugging messages to stderr rather than to stdout</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Initialize the class so that the data is in a known state</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::close()"></A>
+<CODE><I>void</I> <BIG><B>close</B></BIG>()</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Closes the socket and cleans up the state of the class</b></P><P>
+It is not considered good to use this function without
+		first trying to use QUIT.
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to close the socket.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::connected()"></A>
+<CODE><I>boolean</I> <BIG><B>connected</B></BIG>()</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Tells if we are connected to a server</b></P><P>
+<p><b>Return:</b> TRUE if connected to a server otherwise FALSE.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve the status of the socket.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::connect()"></A>
+<CODE><I>void</I> <BIG><B>connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port = 25,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tval = 30)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Connect to the server specified on the port specified</b></P><P>
+<pre>
+		SMTP CODE SUCCESS: 220
+		SMTP CODE FAILURE: 421
+		</pre>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$tval&nbsp;&nbsp;</code></b></td> <td valign=top>Max time to wait for the connection be established
+		with the server, then an exception is raised (seconds).</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Already connected. Connection failed.
+		Timout waiting for the connection.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::authenticate()"></A>
+<CODE><I>void</I> <BIG><B>authenticate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Performs SMTP authentication</b></P><P>
+Must be run after running the
+		<a href="#net/sourceforge/phpmailer/SMTP::hello()"><code>net\sourceforge\phpmailer\SMTP::hello()</code></a> method.
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Still not connected. Login failed.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::data()"></A>
+<CODE><I>void</I> <BIG><B>data</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$msg_data)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Issues a data command and sends the msg_data to the server 		finializing the mail transaction</b></P><P>
+$msg_data is the message
+		that is to be send with the headers. Each header needs to be
+		on a single line followed by a &lt;CRLF&gt; with the message headers
+		and the message body being seperated by and additional &lt;CRLF&gt;.
+<p>
+		Implements RFC 821: DATA &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE INTERMEDIATE: 354
+		[data] &lt;CRLF&gt;
+		.&lt;CRLF&gt;
+		SMTP CODE SUCCESS: 250
+		SMTP CODE FAILURE: 552,554,451,452
+		SMTP CODE FAILURE: 451,554
+		SMTP CODE ERROR	: 500,501,503,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. Dialogue failed with the
+		remote server.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::expand()"></A>
+<CODE><I>string[int]</I> <BIG><B>expand</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Expand takes the name and asks the server to list all the 		people who are members of the _list_</b></P><P>
+Expand will return
+		back and array of the result or FALSE if an error occurs.
+		Each value in the array returned has the format of:
+		[ &lt;full-name&gt; &lt;sp&gt; ] &lt;path&gt;
+		&lt;path&gt; is defined in RFC 821.
+<p>
+		Implements RFC 821: EXPN &lt;SP&gt; &lt;string&gt; &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE FAILURE: 550
+		SMTP CODE ERROR	: 500,501,502,504,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. EXPN command rejected by
+		server. Dialogue failed.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::sendHello()"></A>
+<CODE><I>void</I> <BIG><B>sendHello</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$hello,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Sends a HELO/EHLO command</b></P></BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. Dialogue failed.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::hello()"></A>
+<CODE><I>void</I> <BIG><B>hello</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host = "")</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Sends the HELO command to the smtp server</b></P><P>
+This makes sure that we and the server are in
+		the same known state.
+<p>
+		Implements from RFC 821: HELO &lt;SP&gt; &lt;domain&gt; &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE ERROR	: 500, 501, 504, 421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. Dialogue failed.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::help()"></A>
+<CODE><I>string</I> <BIG><B>help</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$keyword = "")</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Gets help information on the keyword specified</b></P><P>
+If the keyword
+		is not specified then returns generic help, ussually containing
+		a list of keywords that help is available on. This function
+		returns the results back to the user. It is up to the user to
+		handle the returned data.
+<p>
+		Implements RFC 821: HELP [ &lt;SP&gt; &lt;string&gt; ] &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 211,214
+		SMTP CODE ERROR	: 500,501,502,504,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. HELP command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::mail()"></A>
+<CODE><I>void</I> <BIG><B>mail</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$from)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Starts a mail transaction from the email address specified in 		$from and then one or more <a href="#net/sourceforge/phpmailer/SMTP::recipient()"><code>net\sourceforge\phpmailer\SMTP::recipient()</code></a> commands may be 		called followed by a <a href="#net/sourceforge/phpmailer/SMTP::data()"><code>net\sourceforge\phpmailer\SMTP::data()</code></a> command</b></P><P>
+<p>
+<p>
+		Implements RFC 821: MAIL &lt;SP&gt; FROM:&lt;reverse-path&gt; &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE SUCCESS: 552,451,452
+		SMTP CODE SUCCESS: 500,501,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. MAIL command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::noop()"></A>
+<CODE><I>void</I> <BIG><B>noop</B></BIG>()</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Sends the command NOOP to the SMTP server</b></P><P>
+<p>
+		Implements from RFC 821: NOOP &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE ERROR	: 500, 421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. NOOP command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::quit()"></A>
+<CODE><I>void</I> <BIG><B>quit</B></BIG>()</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Sends the quit command to the server and then closes the socket</b></P><P>
+<p>
+		Implements from RFC 821: QUIT &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 221
+		SMTP CODE ERROR	: 500
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;QUIT command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::recipient()"></A>
+<CODE><I>void</I> <BIG><B>recipient</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$to)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Sends the command RCPT to the SMTP server with the TO: argument of $to</b></P><P>
+Returns TRUE if the recipient was accepted FALSE if it was rejected.
+<p>
+		Implements from RFC 821: RCPT &lt;SP&gt; TO:&lt;forward-path&gt; &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250,251
+		SMTP CODE FAILURE: 550,551,552,553,450,451,452
+		SMTP CODE ERROR	: 500,501,503,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. RCPT command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::reset()"></A>
+<CODE><I>void</I> <BIG><B>reset</B></BIG>()</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Sends the RSET command to abort and transaction that is 		currently in progress</b></P><P>
+<p>
+		Implements RFC 821: RSET &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE ERROR	: 500,501,504,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. RSET command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::send()"></A>
+<CODE><I>void</I> <BIG><B>send</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$from)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Starts a mail transaction from the email address specified in 		$from</b></P><P>
+Returns TRUE if successful or FALSE otherwise. If TRUE
+		the mail transaction is started and then one or more <a href="#net/sourceforge/phpmailer/SMTP::recipient()"><code>net\sourceforge\phpmailer\SMTP::recipient()</code></a> commands may be called followed by a <a href="#net/sourceforge/phpmailer/SMTP::data()"><code>net\sourceforge\phpmailer\SMTP::data()</code></a> command. This command will send the message to the
+		users terminal if they are logged in.
+<p>
+		Implements RFC 821: SEND &lt;SP&gt; FROM:&lt;reverse-path&gt; &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE SUCCESS: 552,451,452
+		SMTP CODE SUCCESS: 500,501,502,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. SEND command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::sendAndMail()"></A>
+<CODE><I>void</I> <BIG><B>sendAndMail</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$from)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Starts a mail transaction from the email address specified in $from</b></P><P>
+Returns TRUE if successful or FALSE otherwise. If TRUE the mail
+		transaction is started and then one or more <a href="#net/sourceforge/phpmailer/SMTP::recipient()"><code>net\sourceforge\phpmailer\SMTP::recipient()</code></a>
+		commands may be called followed by a <a href="#net/sourceforge/phpmailer/SMTP::data()"><code>net\sourceforge\phpmailer\SMTP::data()</code></a> command. This
+		command will send the message to the users terminal if they are
+		logged in and send them an email.
+<p>
+		Implements RFC 821: SAML &lt;SP&gt; FROM:&lt;reverse-path&gt; &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE SUCCESS: 552,451,452
+		SMTP CODE SUCCESS: 500,501,502,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. SAML command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::sendOrMail()"></A>
+<CODE><I>void</I> <BIG><B>sendOrMail</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$from)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Starts a mail transaction from the email address specified in 		$from</b></P><P>
+Returns TRUE if successful or FALSE otherwise. If TRUE
+		the mail transaction is started and then one or more <a href="#net/sourceforge/phpmailer/SMTP::recipient()"><code>net\sourceforge\phpmailer\SMTP::recipient()</code></a> commands may be called followed by a <a href="#net/sourceforge/phpmailer/SMTP::data()"><code>net\sourceforge\phpmailer\SMTP::data()</code></a> command. This command will send the message to the users
+		terminal if they are logged in or mail it to them if they are not.
+<p>
+		Implements RFC 821: SOML &lt;SP&gt; FROM:&lt;reverse-path&gt; &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE SUCCESS: 552,451,452
+		SMTP CODE SUCCESS: 500,501,502,421
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected. SOML command rejected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::turn()"></A>
+<CODE><I>void</I> <BIG><B>turn</B></BIG>()</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>This is an optional command for SMTP that this class does not 		support</b></P><P>
+This method is here to make the RFC 821 Definition
+		complete for this class and __may__ be implemented in the future.
+<p>
+		Implements from RFC 821: TURN &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250
+		SMTP CODE FAILURE: 502
+		SMTP CODE ERROR	: 500, 503
+		</pre>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Method not implemented; always throws this.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/SMTP::verify()"></A>
+<CODE><I>int</I> <BIG><B>verify</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Verifies that the name is recognized by the server</b></P><P>
+Returns the result code from the server (see below).
+<p>
+		Implements RFC 821: VRFY &lt;SP&gt; &lt;string&gt; &lt;CRLF&gt;
+<p>
+		<pre>
+		SMTP CODE SUCCESS: 250,251
+		SMTP CODE FAILURE: 550,551,553
+		SMTP CODE ERROR	: 500,501,502,421
+		</pre>
+<p>
+		NOTE. See RFC 2821 for even more result codes.
+
+<p><b>Return:</b> 250 and 251 means the user is recognized. Anything else
+		means error.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Not connected.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

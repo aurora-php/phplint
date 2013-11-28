@@ -1,0 +1,309 @@
+<HTML><BODY>
+<H1>fdf</H1>
+<P><b>Forms Data Format Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+This module now available from PECL.
+See: <a href="http://www.php.net/manual/en/ref.fdf.php"><code>http://www.php.net/manual/en/ref.fdf.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="FDFValue"></A>
+<CODE><BIG><B>FDFValue</B></BIG> = 1</CODE>
+<P>
+
+<A name="FDFStatus"></A>
+<CODE><BIG><B>FDFStatus</B></BIG> = 2</CODE>
+<P>
+
+<A name="FDFFile"></A>
+<CODE><BIG><B>FDFFile</B></BIG> = 3</CODE>
+<P>
+
+<A name="FDFID"></A>
+<CODE><BIG><B>FDFID</B></BIG> = 4</CODE>
+<P>
+
+<A name="FDFFf"></A>
+<CODE><BIG><B>FDFFf</B></BIG> = 5</CODE>
+<P>
+
+<A name="FDFSetFf"></A>
+<CODE><BIG><B>FDFSetFf</B></BIG> = 6</CODE>
+<P>
+
+<A name="FDFClearFf"></A>
+<CODE><BIG><B>FDFClearFf</B></BIG> = 7</CODE>
+<P>
+
+<A name="FDFFlags"></A>
+<CODE><BIG><B>FDFFlags</B></BIG> = 8</CODE>
+<P>
+
+<A name="FDFSetF"></A>
+<CODE><BIG><B>FDFSetF</B></BIG> = 9</CODE>
+<P>
+
+<A name="FDFClrF"></A>
+<CODE><BIG><B>FDFClrF</B></BIG> = 10</CODE>
+<P>
+
+<A name="FDFAP"></A>
+<CODE><BIG><B>FDFAP</B></BIG> = 11</CODE>
+<P>
+
+<A name="FDFAS"></A>
+<CODE><BIG><B>FDFAS</B></BIG> = 12</CODE>
+<P>
+
+<A name="FDFAction"></A>
+<CODE><BIG><B>FDFAction</B></BIG> = 13</CODE>
+<P>
+
+<A name="FDFAA"></A>
+<CODE><BIG><B>FDFAA</B></BIG> = 14</CODE>
+<P>
+
+<A name="FDFAPRef"></A>
+<CODE><BIG><B>FDFAPRef</B></BIG> = 15</CODE>
+<P>
+
+<A name="FDFIF"></A>
+<CODE><BIG><B>FDFIF</B></BIG> = 16</CODE>
+<P>
+
+<A name="FDFEnter"></A>
+<CODE><BIG><B>FDFEnter</B></BIG> = 17</CODE>
+<P>
+
+<A name="FDFExit"></A>
+<CODE><BIG><B>FDFExit</B></BIG> = 18</CODE>
+<P>
+
+<A name="FDFDown"></A>
+<CODE><BIG><B>FDFDown</B></BIG> = 19</CODE>
+<P>
+
+<A name="FDFUp"></A>
+<CODE><BIG><B>FDFUp</B></BIG> = 20</CODE>
+<P>
+
+<A name="FDFFormat"></A>
+<CODE><BIG><B>FDFFormat</B></BIG> = 21</CODE>
+<P>
+
+<A name="FDFValidate"></A>
+<CODE><BIG><B>FDFValidate</B></BIG> = 22</CODE>
+<P>
+
+<A name="FDFKeystroke"></A>
+<CODE><BIG><B>FDFKeystroke</B></BIG> = 23</CODE>
+<P>
+
+<A name="FDFCalculate"></A>
+<CODE><BIG><B>FDFCalculate</B></BIG> = 24</CODE>
+<P>
+
+<A name="FDFNormalAP"></A>
+<CODE><BIG><B>FDFNormalAP</B></BIG> = 25</CODE>
+<P>
+
+<A name="FDFRolloverAP"></A>
+<CODE><BIG><B>FDFRolloverAP</B></BIG> = 26</CODE>
+<P>
+
+<A name="FDFDownAP"></A>
+<CODE><BIG><B>FDFDownAP</B></BIG> = 27</CODE>
+<P>
+
+<A name="fdf_open()"></A>
+<CODE><I>resource</I> <BIG><B>fdf_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="fdf_open_string()"></A>
+<CODE><I>resource</I> <BIG><B>fdf_open_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fdf_data)</CODE>
+<P>
+
+<A name="fdf_create()"></A>
+<CODE><I>resource</I> <BIG><B>fdf_create</B></BIG>()</CODE>
+<P>
+
+<A name="fdf_close()"></A>
+<CODE><I>void</I> <BIG><B>fdf_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc)</CODE>
+<P>
+
+<A name="fdf_get_value()"></A>
+<CODE><I>string</I> <BIG><B>fdf_get_value</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname, ...)</CODE>
+<P>
+
+<A name="fdf_set_value()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_value</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value, ...)</CODE>
+<P>
+
+<A name="fdf_next_field_name()"></A>
+<CODE><I>string</I> <BIG><B>fdf_next_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc, ...)</CODE>
+<P>
+
+<A name="fdf_set_ap()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_ap</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$face,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pagenr)</CODE>
+<P>
+
+<A name="fdf_get_ap()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_get_ap</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$face,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="fdf_get_encoding()"></A>
+<CODE><I>string</I> <BIG><B>fdf_get_encoding</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdf)</CODE>
+<P>
+
+<A name="fdf_set_status()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_status</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$status)</CODE>
+<P>
+
+<A name="fdf_get_status()"></A>
+<CODE><I>string</I> <BIG><B>fdf_get_status</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc)</CODE>
+<P>
+
+<A name="fdf_set_file()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="fdf_get_file()"></A>
+<CODE><I>string</I> <BIG><B>fdf_get_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc)</CODE>
+<P>
+
+<A name="fdf_save()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_save</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc, ...)</CODE>
+<P>
+
+<A name="fdf_save_string()"></A>
+<CODE><I>string</I> <BIG><B>fdf_save_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc)</CODE>
+<P>
+
+<A name="fdf_add_template()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_add_template</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$newpage,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$template,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$rename)</CODE>
+<P>
+
+<A name="fdf_set_flags()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_flags</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$whichflags,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$newflags)</CODE>
+<P>
+
+<A name="fdf_get_flags()"></A>
+<CODE><I>int</I> <BIG><B>fdf_get_flags</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$whichflags)</CODE>
+<P>
+
+<A name="fdf_set_opt()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_opt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$element,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="fdf_get_opt()"></A>
+<CODE><I>mixed</I> <BIG><B>fdf_get_opt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdof,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname, ...)</CODE>
+<P>
+
+<A name="fdf_set_submit_form_action()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_submit_form_action</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$whichtrigger,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$url,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags)</CODE>
+<P>
+
+<A name="fdf_set_javascript_action()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_javascript_action</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$whichtrigger,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$script)</CODE>
+<P>
+
+<A name="fdf_set_encoding()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_encoding</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdf_document,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding)</CODE>
+<P>
+
+<A name="fdf_errno()"></A>
+<CODE><I>int</I> <BIG><B>fdf_errno</B></BIG>()</CODE>
+<P>
+
+<A name="fdf_error()"></A>
+<CODE><I>string</I> <BIG><B>fdf_error</B></BIG>(...)</CODE>
+<P>
+
+<A name="fdf_get_version()"></A>
+<CODE><I>string</I> <BIG><B>fdf_get_version</B></BIG>(...)</CODE>
+<P>
+
+<A name="fdf_set_version()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_version</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="fdf_add_doc_javascript()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_add_doc_javascript</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$scriptname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$script)</CODE>
+<P>
+
+<A name="fdf_set_on_import_javascript()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_on_import_javascript</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$script, ...)</CODE>
+<P>
+
+<A name="fdf_set_target_frame()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_set_target_frame</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target)</CODE>
+<P>
+
+<A name="fdf_remove_item()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_remove_item</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$item)</CODE>
+<P>
+
+<A name="fdf_get_attachment()"></A>
+<CODE><I>mixed[]</I> <BIG><B>fdf_get_attachment</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fieldname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$savepath)</CODE>
+<P>
+
+<A name="fdf_enum_values()"></A>
+<CODE><I>boolean</I> <BIG><B>fdf_enum_values</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fdfdoc,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$function_, ...)</CODE>
+<P>
+
+<A name="fdf_header()"></A>
+<CODE><I>void</I> <BIG><B>fdf_header</B></BIG>()</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

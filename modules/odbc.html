@@ -1,0 +1,504 @@
+<HTML><BODY>
+<H1>odbc</H1>
+<P><b>ODBC Functions (Unified)</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.uodbc.php"><code>http://www.php.net/manual/en/ref.uodbc.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="ODBC_BINMODE_PASSTHRU"></A>
+<CODE><BIG><B>ODBC_BINMODE_PASSTHRU</B></BIG> = 1</CODE>
+<P>
+
+<A name="ODBC_BINMODE_RETURN"></A>
+<CODE><BIG><B>ODBC_BINMODE_RETURN</B></BIG> = 1</CODE>
+<P>
+
+<A name="ODBC_BINMODE_CONVERT"></A>
+<CODE><BIG><B>ODBC_BINMODE_CONVERT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_ODBC_CURSORS"></A>
+<CODE><BIG><B>SQL_ODBC_CURSORS</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CUR_USE_DRIVER"></A>
+<CODE><BIG><B>SQL_CUR_USE_DRIVER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CUR_USE_IF_NEEDED"></A>
+<CODE><BIG><B>SQL_CUR_USE_IF_NEEDED</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CUR_USE_ODBC"></A>
+<CODE><BIG><B>SQL_CUR_USE_ODBC</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CONCURRENCY"></A>
+<CODE><BIG><B>SQL_CONCURRENCY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CONCUR_READ_ONLY"></A>
+<CODE><BIG><B>SQL_CONCUR_READ_ONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CONCUR_LOCK"></A>
+<CODE><BIG><B>SQL_CONCUR_LOCK</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CONCUR_ROWVER"></A>
+<CODE><BIG><B>SQL_CONCUR_ROWVER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CONCUR_VALUES"></A>
+<CODE><BIG><B>SQL_CONCUR_VALUES</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CURSOR_TYPE"></A>
+<CODE><BIG><B>SQL_CURSOR_TYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CURSOR_FORWARD_ONLY"></A>
+<CODE><BIG><B>SQL_CURSOR_FORWARD_ONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CURSOR_KEYSET_DRIVEN"></A>
+<CODE><BIG><B>SQL_CURSOR_KEYSET_DRIVEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CURSOR_DYNAMIC"></A>
+<CODE><BIG><B>SQL_CURSOR_DYNAMIC</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CURSOR_STATIC"></A>
+<CODE><BIG><B>SQL_CURSOR_STATIC</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_KEYSET_SIZE"></A>
+<CODE><BIG><B>SQL_KEYSET_SIZE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_FETCH_FIRST"></A>
+<CODE><BIG><B>SQL_FETCH_FIRST</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_FETCH_NEXT"></A>
+<CODE><BIG><B>SQL_FETCH_NEXT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_CHAR"></A>
+<CODE><BIG><B>SQL_CHAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_VARCHAR"></A>
+<CODE><BIG><B>SQL_VARCHAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_LONGVARCHAR"></A>
+<CODE><BIG><B>SQL_LONGVARCHAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_DECIMAL"></A>
+<CODE><BIG><B>SQL_DECIMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_NUMERIC"></A>
+<CODE><BIG><B>SQL_NUMERIC</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_BIT"></A>
+<CODE><BIG><B>SQL_BIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_TINYINT"></A>
+<CODE><BIG><B>SQL_TINYINT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_SMALLINT"></A>
+<CODE><BIG><B>SQL_SMALLINT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_INTEGER"></A>
+<CODE><BIG><B>SQL_INTEGER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_BIGINT"></A>
+<CODE><BIG><B>SQL_BIGINT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_REAL"></A>
+<CODE><BIG><B>SQL_REAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_FLOAT"></A>
+<CODE><BIG><B>SQL_FLOAT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_DOUBLE"></A>
+<CODE><BIG><B>SQL_DOUBLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_BINARY"></A>
+<CODE><BIG><B>SQL_BINARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_VARBINARY"></A>
+<CODE><BIG><B>SQL_VARBINARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_LONGVARBINARY"></A>
+<CODE><BIG><B>SQL_LONGVARBINARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_DATE"></A>
+<CODE><BIG><B>SQL_DATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_TIME"></A>
+<CODE><BIG><B>SQL_TIME</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_TIMESTAMP"></A>
+<CODE><BIG><B>SQL_TIMESTAMP</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_TYPE_DATE"></A>
+<CODE><BIG><B>SQL_TYPE_DATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_TYPE_TIME"></A>
+<CODE><BIG><B>SQL_TYPE_TIME</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_TYPE_TIMESTAMP"></A>
+<CODE><BIG><B>SQL_TYPE_TIMESTAMP</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_BEST_ROWID"></A>
+<CODE><BIG><B>SQL_BEST_ROWID</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_ROWVER"></A>
+<CODE><BIG><B>SQL_ROWVER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_SCOPE_CURROW"></A>
+<CODE><BIG><B>SQL_SCOPE_CURROW</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_SCOPE_TRANSACTION"></A>
+<CODE><BIG><B>SQL_SCOPE_TRANSACTION</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_SCOPE_SESSION"></A>
+<CODE><BIG><B>SQL_SCOPE_SESSION</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_NO_NULLS"></A>
+<CODE><BIG><B>SQL_NO_NULLS</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_NULLABLE"></A>
+<CODE><BIG><B>SQL_NULLABLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_INDEX_UNIQUE"></A>
+<CODE><BIG><B>SQL_INDEX_UNIQUE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_INDEX_ALL"></A>
+<CODE><BIG><B>SQL_INDEX_ALL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_ENSURE"></A>
+<CODE><BIG><B>SQL_ENSURE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQL_QUICK"></A>
+<CODE><BIG><B>SQL_QUICK</B></BIG> = 1</CODE>
+<P>
+
+<A name="ODBC_TYPE"></A>
+<CODE><BIG><B>ODBC_TYPE</B></BIG> = "?"</CODE>
+<P>
+
+<A name="birdstep_connect()"></A>
+<CODE><I>int</I> <BIG><B>birdstep_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$server,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pass)</CODE>
+<P>
+
+<A name="birdstep_close()"></A>
+<CODE><I>boolean</I> <BIG><B>birdstep_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$id)</CODE>
+<P>
+
+<A name="birdstep_exec()"></A>
+<CODE><I>int</I> <BIG><B>birdstep_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$exec_str)</CODE>
+<P>
+
+<A name="birdstep_fetch()"></A>
+<CODE><I>boolean</I> <BIG><B>birdstep_fetch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="birdstep_result()"></A>
+<CODE><I>mixed</I> <BIG><B>birdstep_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="birdstep_freeresult()"></A>
+<CODE><I>boolean</I> <BIG><B>birdstep_freeresult</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="birdstep_autocommit()"></A>
+<CODE><I>boolean</I> <BIG><B>birdstep_autocommit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="birdstep_off_autocommit()"></A>
+<CODE><I>boolean</I> <BIG><B>birdstep_off_autocommit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="birdstep_commit()"></A>
+<CODE><I>boolean</I> <BIG><B>birdstep_commit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="birdstep_rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>birdstep_rollback</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="birdstep_fieldname()"></A>
+<CODE><I>string</I> <BIG><B>birdstep_fieldname</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="birdstep_fieldnum()"></A>
+<CODE><I>int</I> <BIG><B>birdstep_fieldnum</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="odbc_close_all()"></A>
+<CODE><I>void</I> <BIG><B>odbc_close_all</B></BIG>()</CODE>
+<P>
+
+<A name="odbc_binmode()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_binmode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="odbc_longreadlen()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_longreadlen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$length)</CODE>
+<P>
+
+<A name="odbc_prepare()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="odbc_execute()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_execute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="odbc_cursor()"></A>
+<CODE><I>string</I> <BIG><B>odbc_cursor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="odbc_data_source()"></A>
+<CODE><I>mixed[]</I> <BIG><B>odbc_data_source</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fetch_type)</CODE>
+<P>
+
+<A name="odbc_exec()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="odbc_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>odbc_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="odbc_fetch_array()"></A>
+<CODE><I>mixed[]</I> <BIG><B>odbc_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="odbc_fetch_into()"></A>
+<CODE><I>int</I> <BIG><B>odbc_fetch_into</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$result_array, ...)</CODE>
+<P>
+
+<A name="solid_fetch_prev()"></A>
+<CODE><I>boolean</I> <BIG><B>solid_fetch_prev</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="odbc_fetch_row()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="odbc_result()"></A>
+<CODE><I>mixed</I> <BIG><B>odbc_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$field)</CODE>
+<P>
+
+<A name="odbc_result_all()"></A>
+<CODE><I>int</I> <BIG><B>odbc_result_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="odbc_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="odbc_connect()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$DSN,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password, ...)</CODE>
+<P>
+
+<A name="odbc_pconnect()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_pconnect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$DSN,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password, ...)</CODE>
+<P>
+
+<A name="odbc_close()"></A>
+<CODE><I>void</I> <BIG><B>odbc_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id)</CODE>
+<P>
+
+<A name="odbc_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>odbc_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="odbc_next_result()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_next_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="odbc_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>odbc_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="odbc_field_name()"></A>
+<CODE><I>string</I> <BIG><B>odbc_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="odbc_field_type()"></A>
+<CODE><I>string</I> <BIG><B>odbc_field_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="odbc_field_len()"></A>
+<CODE><I>int</I> <BIG><B>odbc_field_len</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="odbc_field_scale()"></A>
+<CODE><I>int</I> <BIG><B>odbc_field_scale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="odbc_field_num()"></A>
+<CODE><I>int</I> <BIG><B>odbc_field_num</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$field_name)</CODE>
+<P>
+
+<A name="odbc_autocommit()"></A>
+<CODE><I>mixed</I> <BIG><B>odbc_autocommit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id, ...)</CODE>
+<P>
+
+<A name="odbc_commit()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_commit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id)</CODE>
+<P>
+
+<A name="odbc_rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_rollback</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id)</CODE>
+<P>
+
+<A name="odbc_error()"></A>
+<CODE><I>string</I> <BIG><B>odbc_error</B></BIG>(...)</CODE>
+<P>
+
+<A name="odbc_errormsg()"></A>
+<CODE><I>string</I> <BIG><B>odbc_errormsg</B></BIG>(...)</CODE>
+<P>
+
+<A name="odbc_setoption()"></A>
+<CODE><I>boolean</I> <BIG><B>odbc_setoption</B></BIG>(...)</CODE>
+<P>
+
+<A name="odbc_tables()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_tables</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id, ...)</CODE>
+<P>
+
+<A name="odbc_columns()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_columns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id, ...)</CODE>
+<P>
+
+<A name="odbc_columnprivileges()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_columnprivileges</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$catalog,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$schema,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column)</CODE>
+<P>
+
+<A name="odbc_foreignkeys()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_foreignkeys</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pk_qualifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pk_owner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pk_table,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fk_qualifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fk_owner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fk_table)</CODE>
+<P>
+
+<A name="odbc_gettypeinfo()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_gettypeinfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id, ...)</CODE>
+<P>
+
+<A name="odbc_primarykeys()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_primarykeys</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$owner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table)</CODE>
+<P>
+
+<A name="odbc_procedurecolumns()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_procedurecolumns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id, ...)</CODE>
+<P>
+
+<A name="odbc_procedures()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_procedures</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id, ...)</CODE>
+<P>
+
+<A name="odbc_specialcolumns()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_specialcolumns</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$owner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$scope,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$nullable)</CODE>
+<P>
+
+<A name="odbc_statistics()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_statistics</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$owner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$unique,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$accuracy)</CODE>
+<P>
+
+<A name="odbc_tableprivileges()"></A>
+<CODE><I>resource</I> <BIG><B>odbc_tableprivileges</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$owner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,61 @@
+BigNumbers
+==========
+
+A collection of PHP source programs that performs calculations with numbers of
+arbitrary size, suitable to be used with currency calculations and other
+non-intensive tasks that require absolute precision.
+
+BigInt.php
+
+	Provides the BigInt class that deals with integer numbers of arbitrary
+	length.
+
+BigFloat.php
+
+	Provides the BigFloat class that deals with floating-point numbers of
+	arbitrary precision. Requires BigInt.php.
+
+ExprEval.php
+	
+	Provides the class ExprEval that evaluates simple algebraic expressions
+	passed as string of characters, returning back the result as BigFloat
+	number. Requires BigInt.php and BigFloat.php.
+
+test*.php
+
+	Testing programs, executed by "make test".
+
+*.success
+
+	The presence of this file means the test on the corresponding module
+	successfully passed the test program.
+
+Installation
+------------
+Simply copy the *.php source file in its destination directory. Remember that
+BigFloat depends on BigInt, so if you need the former you will need also the
+latter. To save space and for better performances, you may want to strip the
+source, for example
+
+	$ php -w BigInt.php > dest/dir/BigInt.php
+
+Documentation
+-------------
+Every source includes its own documentation that can be extracted with the
+PHPLint validator and documentator program (www.icosaedro.it/phplint). The same
+documents are available also at www.icosaedro.it/bignumbers .
+
+Updates
+-------
+The package is available as stable release at www.icosaedro.it/bignumbers .
+You can also have a look at http://cvs.icosaedro.it for possible last-minute
+updates.
+
+License
+-------
+Please read the LICENSE file.
+
+Enjoy!
+
+Umberto Salsi <salsi@icosaedro.it>
+

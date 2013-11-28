@@ -1,0 +1,160 @@
+<HTML><BODY>
+<H1>ResultSet</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../../modules/mysqli.html"><code>mysqli</code></a>, <a href="../../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../../all.html"><code>all.php</code></a>, <a href="../../../../errors.html"><code>errors.php</code></a>, <a href="../../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../../cast.html"><code>cast.php</code></a>, <a href="../../phplint/Types.html"><code>Types.php</code></a>, <a href="../../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../../containers/Printable.html"><code>Printable.php</code></a>, <a href="../../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../../CastException.html"><code>CastException.php</code></a>, <a href="../ResultSet.html"><code>ResultSet.php</code></a>, <a href="../SQLException.html"><code>SQLException.php</code></a>, <a href="../../utils/Integers.html"><code>Integers.php</code></a>, <a href="../../bignumbers/BigInt.html"><code>BigInt.php</code></a>, <a href="../../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="../../containers/Hash.html"><code>Hash.php</code></a>, <a href="../../bignumbers/BigFloat.html"><code>BigFloat.php</code></a>, <a href="../../utils/Date.html"><code>Date.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/mysql/ResultSet"></A>
+<pre>class <BIG><B>it\icosaedro\sql\mysql\ResultSet</B></BIG>
+      |  
+      `--<a href="../ResultSet.html#it/icosaedro/sql/ResultSet"><code>it\icosaedro\sql\ResultSet</code></a>
+           `--(<i><a href="../../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>MySQL specific implementation of the result set</b></P><P><B>Version:</B> $Date: 2012/01/28 20:27:32 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::$was_null"></A>
+<CODE>protected <I>boolean</I> <BIG><B>$was_null</B></BIG> = FALSE</CODE>
+<BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::$was_null"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../../../../../modules/mysqli.html#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$res)</CODE>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getRowCount()"></A>
+<CODE><I>int</I> <BIG><B>getRowCount</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getRowCount()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::moveToRow()"></A>
+<CODE><I>void</I> <BIG><B>moveToRow</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>implements</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::moveToRow()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getColumnCount()"></A>
+<CODE><I>int</I> <BIG><B>getColumnCount</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getColumnCount()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getColumnName()"></A>
+<CODE><I>string</I> <BIG><B>getColumnName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>implements</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getColumnName()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::nextRow()"></A>
+<CODE><I>boolean</I> <BIG><B>nextRow</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::nextRow()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getStringByIndex()"></A>
+<CODE><I>string</I> <BIG><B>getStringByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>implements</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getStringByIndex()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getStringByName()"></A>
+<CODE><I>string</I> <BIG><B>getStringByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>implements</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getStringByName()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getBytesByIndex()"></A>
+<CODE><I>string</I> <BIG><B>getBytesByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>overrides</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getBytesByIndex()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getBytesByName()"></A>
+<CODE><I>string</I> <BIG><B>getBytesByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>overrides</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getBytesByName()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::close()"></A>
+<CODE><I>void</I> <BIG><B>close</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::close()"><code>it\icosaedro\sql\ResultSet</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getBooleanByIndex()"></A>
+<CODE><I>boolean</I> <BIG><B>getBooleanByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getBooleanByIndex()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getBooleanByName()"></A>
+<CODE><I>boolean</I> <BIG><B>getBooleanByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getBooleanByName()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getIntByIndex()"></A>
+<CODE><I>int</I> <BIG><B>getIntByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getIntByIndex()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getIntByName()"></A>
+<CODE><I>int</I> <BIG><B>getIntByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getIntByName()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getBigIntByIndex()"></A>
+<CODE><I><a href="../../bignumbers/BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>getBigIntByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getBigIntByIndex()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getBigIntByName()"></A>
+<CODE><I><a href="../../bignumbers/BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>getBigIntByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getBigIntByName()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getBigFloatByIndex()"></A>
+<CODE><I><a href="../../bignumbers/BigFloat.html#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>getBigFloatByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getBigFloatByIndex()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getBigFloatByName()"></A>
+<CODE><I><a href="../../bignumbers/BigFloat.html#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>getBigFloatByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getBigFloatByName()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getDateByIndex()"></A>
+<CODE><I><a href="../../utils/Date.html#it/icosaedro/utils/Date"><code>it\icosaedro\utils\Date</code></a></I> <BIG><B>getDateByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getDateByIndex()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::getDateByName()"></A>
+<CODE><I><a href="../../utils/Date.html#it/icosaedro/utils/Date"><code>it\icosaedro\utils\Date</code></a></I> <BIG><B>getDateByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::getDateByName()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::wasNull()"></A>
+<CODE><I>boolean</I> <BIG><B>wasNull</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::wasNull()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/ResultSet::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="../ResultSet.html#it/icosaedro/sql/ResultSet::__toString()"><code>it\icosaedro\sql\ResultSet</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,165 @@
+<HTML><BODY>
+<H1>Hash</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="Hashable.html"><code>Hashable.php</code></a>, <a href="Comparable.html"><code>Comparable.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Hash"></A>
+<pre>class <BIG><B>it\icosaedro\containers\Hash</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Hashing functions</b></P><P><B>Version:</B> $Date: 2012/04/02 09:11:36 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+For every type T on which one may want to calculate an
+	hash, a function named hashOfT() is provided. Classes that implement the
+	<a href="Hashable.html#it/icosaedro/containers/Hashable"><code>it\icosaedro\containers\Hashable</code></a> interface may then easily implement the getHash() method
+	by "xoring" the properties that univocally identify the object:
+	<pre>
+
+	class MyClass implements Hashable {
+		function getHash()
+		{
+			return Hash::hashOfInt($this-&gt;int_property)
+			^ Hash::hashOfString($this-&gt;string_property)
+			^ $this-&gt;hashable_object_propery-&gt;getHash();
+		}
+	}
+	</pre>
+	Note that the same properties should appear in the implementation of the
+	equals() method.
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Hash::hashOfBoolean()"></A>
+<CODE>static <I>int</I> <BIG><B>hashOfBoolean</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Hash of a boolean value</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The value.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Hash of the value. Implementation note: merely returns 1 if
+		true, 0 if false, so you may want to save time simply avoiding to call
+		this function at all :-)</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Hash::hashOfInt()"></A>
+<CODE>static <I>int</I> <BIG><B>hashOfInt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$i)</CODE>
+<BLOCKQUOTE>
+<P><b>Hash of an integer value</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$i&nbsp;&nbsp;</code></b></td> <td valign=top>The value.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Hash of the value. Implementation note: merely returns the
+		value itself, so you may want to save time simply avoiding to call this
+		function at all :-)</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Hash::hashOfString()"></A>
+<CODE>static <I>int</I> <BIG><B>hashOfString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Hash of a string value</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>The value.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Hash of the value, or zero if NULL. Implementation note: if the
+		string is not NULL, returns the CRC32 of its bytes.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Hash::hashOfObject()"></A>
+<CODE>static <I>int</I> <BIG><B>hashOfObject</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$obj)</CODE>
+<BLOCKQUOTE>
+<P><b>Hash of an object</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$obj&nbsp;&nbsp;</code></b></td> <td valign=top>The value.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> If the object implements the <a href="Hashable.html#it/icosaedro/containers/Hashable::getHash()"><code>it\icosaedro\containers\Hashable::getHash()</code></a>
+		method, then returns the value from that method. Otherwise, returns the
+		CRC32 of the has given by the <a href="../../../../modules/spl.html#spl_object_hash()"><code>spl_object_hash()</code></a> function.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Hash::hashOf()"></A>
+<CODE>static <I>int</I> <BIG><B>hashOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$x)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the hash of the expression passed, typically a key</b></P><P>
+The value
+		is calculated applying the methods hashOfT() of this class according to
+		the actual type of the value.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$x&nbsp;&nbsp;</code></b></td> <td valign=top>Any value of type null, boolean, int, string or object.
+		Types float, array and resource are not supported and give exception.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The hash of the value.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#RuntimeException"><code>RuntimeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Type not supported float, array or resource.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,218 @@
+<HTML><BODY>
+<H1>gmp</H1>
+<P><b>GMP Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.gmp.php"><code>http://www.php.net/manual/en/ref.gmp.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="GMP_ROUND_ZERO"></A>
+<CODE><BIG><B>GMP_ROUND_ZERO</B></BIG> = 1</CODE>
+<P>
+
+<A name="GMP_ROUND_PLUSINF"></A>
+<CODE><BIG><B>GMP_ROUND_PLUSINF</B></BIG> = 1</CODE>
+<P>
+
+<A name="GMP_ROUND_MINUSINF"></A>
+<CODE><BIG><B>GMP_ROUND_MINUSINF</B></BIG> = 1</CODE>
+<P>
+
+<A name="GMP_VERSION"></A>
+<CODE><BIG><B>GMP_VERSION</B></BIG> = "0"</CODE>
+<P>
+
+<A name="gmp_init()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_init</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$number_, ...)</CODE>
+<P>
+
+<A name="gmp_intval()"></A>
+<CODE><I>int</I> <BIG><B>gmp_intval</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$gmpnumber)</CODE>
+<P>
+
+<A name="gmp_strval()"></A>
+<CODE><I>string</I> <BIG><B>gmp_strval</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$gmpnumber, ...)</CODE>
+<P>
+
+<A name="gmp_add()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_add</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_sub()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_sub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_mul()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_mul</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_div_qr()"></A>
+<CODE><I>mixed[]</I> <BIG><B>gmp_div_qr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b, ...)</CODE>
+<P>
+
+<A name="gmp_div_r()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_div_r</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b, ...)</CODE>
+<P>
+
+<A name="gmp_div_q()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_div_q</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b, ...)</CODE>
+<P>
+
+<A name="gmp_mod()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_mod</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_divexact()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_divexact</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_neg()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_neg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_abs()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_abs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_fact()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_fact</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_pow()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_pow</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$base,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$exp)</CODE>
+<P>
+
+<A name="gmp_powm()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_powm</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$base,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$exp,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$mod)</CODE>
+<P>
+
+<A name="gmp_sqrt()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_sqrt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_sqrtrem()"></A>
+<CODE><I>mixed[]</I> <BIG><B>gmp_sqrtrem</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_perfect_square()"></A>
+<CODE><I>boolean</I> <BIG><B>gmp_perfect_square</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_prob_prime()"></A>
+<CODE><I>int</I> <BIG><B>gmp_prob_prime</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a, ...)</CODE>
+<P>
+
+<A name="gmp_gcd()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_gcd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_gcdext()"></A>
+<CODE><I>mixed[]</I> <BIG><B>gmp_gcdext</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_invert()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_invert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_jacobi()"></A>
+<CODE><I>int</I> <BIG><B>gmp_jacobi</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_legendre()"></A>
+<CODE><I>int</I> <BIG><B>gmp_legendre</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_cmp()"></A>
+<CODE><I>int</I> <BIG><B>gmp_cmp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_sign()"></A>
+<CODE><I>int</I> <BIG><B>gmp_sign</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_random()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_random</B></BIG>(...)</CODE>
+<P>
+
+<A name="gmp_and()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_and</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_or()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_or</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_com()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_com</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_xor()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_xor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_setbit()"></A>
+<CODE><I>void</I> <BIG><B>gmp_setbit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;&amp; $a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index, ...)</CODE>
+<P>
+
+<A name="gmp_clrbit()"></A>
+<CODE><I>void</I> <BIG><B>gmp_clrbit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;&amp; $a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="gmp_popcount()"></A>
+<CODE><I>int</I> <BIG><B>gmp_popcount</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_hamdist()"></A>
+<CODE><I>int</I> <BIG><B>gmp_hamdist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="gmp_scan0()"></A>
+<CODE><I>int</I> <BIG><B>gmp_scan0</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start)</CODE>
+<P>
+
+<A name="gmp_scan1()"></A>
+<CODE><I>int</I> <BIG><B>gmp_scan1</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start)</CODE>
+<P>
+
+<A name="gmp_nextprime()"></A>
+<CODE><I>resource</I> <BIG><B>gmp_nextprime</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$a)</CODE>
+<P>
+
+<A name="gmp_testbit()"></A>
+<CODE><I>boolean</I> <BIG><B>gmp_testbit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

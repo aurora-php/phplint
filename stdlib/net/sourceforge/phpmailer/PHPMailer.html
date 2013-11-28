@@ -1,0 +1,728 @@
+<HTML><BODY>
+<H1>PHPMailer</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a>, <a href="../../../../modules/hash.html"><code>hash</code></a>, <a href="../../../../modules/streams.html"><code>streams</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="SMTP.html"><code>SMTP.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer"></A>
+<pre>class <BIG><B>net\sourceforge\phpmailer\PHPMailer</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Email composition and transport</b></P><P><B>Version:</B> $Date: 2012/04/02 09:15:29 $</P>
+<P><B>Copyright:</B> 2001 - 2003 Brent R. Matzelle</P>
+<P><B>License:</B> <a href="LICENSE.txt">LGPL</a></P>
+<P><B>Author:</B> Brent R. Matzelle, Umberto Salsi</P>
+<P>
+The structure of the message may include:
+ one textual part; one HTML part, possibly with inline related contents
+ (images, sounds, etc.) and several attachments.
+<p>
+ If both the textual and the HTML readable parts are specified, the
+ remote e-mail client program may display to the user the preferred part
+ (see the multipart/alternative MIME content type).
+<p>
+ If none of these parts is specified, and empty message is sent.
+<p>
+ Messages can be sent via PHP mail() function (the default), via SMTP
+ protocol, or via sendmail/qmail process. Building and sending a message
+ requires three steps:
+<p>
+ 1. Instantiate a new object of this class:
+ <pre>
+	$m = new PHPMailer();
+ </pre>
+<p>
+ 2. Set the properties you need, in any order:
+ <pre>
+	$m-&gt;charset = "UTF-8";
+	$m-&gt;from = "myname@mycompany.it";
+	$m-&gt;from_name = "My Name";
+	$m-&gt;subject = "The subject here";
+	$m-&gt;addAddress("someone@acme.com");
+	$m-&gt;setHtmlMessage("&lt;html&gt;&lt;body&gt;Your message here.&lt;/body&gt;&lt;/html&gt;");
+	$m-&gt;addAttachmentFromFile("report.pdf", "application/pdf");
+	$m-&gt;useSMTP("localhost:25");
+	$m-&gt;send_message_id = TRUE;
+ </pre>
+<p>
+ 3. Send the message:
+ <pre>
+	if( $m-&gt;send() ){
+		echo "Message sent with Message-ID: ", $this-&gt;message_id, "\n";
+	} else {
+		echo "Message NOT sent.\n";
+		# Only if the mailer is SMTP, this info may be available:
+		if( count($m-&gt;bad_rcpt) &gt; 0 ){
+			echo "These recipients were rejected from the SMTP server:\n";
+			foreach($m-&gt;bad_rcpt as $email)
+				echo "$email\n";
+		}
+	}
+ </pre>
+<p>
+ Once sent, you may change any property of the message and send it again to
+ others recipients.
+<p>
+ This version of the PHPMailer class has been converted from PHP 4 to
+ PHP 5 from the original PHPMailer 1.73 version. The result is a class
+ that heavely relies on exceptions to report errors, so the old custom
+ signaling mechanism has been dropped.
+<p>
+ Moreover, when the SMTP mailer is used, the client
+ program can know the list of users that were rejected.
+<p>
+ Support for error messages in custom languages has been dropped.
+<p>
+
+
+
+
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::VERSION"></A>
+<CODE><BIG><B>VERSION</B></BIG> = "ico-$Date:&nbsp;2012/04/02&nbsp;09:15:29&nbsp;$"</CODE>
+<BLOCKQUOTE>
+<P><b>PHPMailer-ico version</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$priority"></A>
+<CODE><I>int</I> <BIG><B>$priority</B></BIG> = 3</CODE>
+<BLOCKQUOTE>
+<P><b>Priority of the message (1 = High, 3 = Normal, 5 = low)</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$charset"></A>
+<CODE><I>string</I> <BIG><B>$charset</B></BIG> = "UTF-8"</CODE>
+<BLOCKQUOTE>
+<P><b>Charset of the message (text and HTML)</b></P><P>
+Will use this charset for any component of the message:
+ header (including subject, email addresses and names),
+ and body (text and HTML).
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$encoding"></A>
+<CODE><I>string</I> <BIG><B>$encoding</B></BIG> = "8bit"</CODE>
+<BLOCKQUOTE>
+<P><b>Encoding of the message (text and HTML)</b></P><P>
+Options for this are "8bit", "7bit", "binary", "base64", and
+	"quoted-printable". See <a href="http://tools.ietf.org/html/rfc2045">RFC2045</a>.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$from"></A>
+<CODE><I>string</I> <BIG><B>$from</B></BIG> = "root@localhost"</CODE>
+<BLOCKQUOTE>
+<P><b>"From" email address of the message</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$from_name"></A>
+<CODE><I>string</I> <BIG><B>$from_name</B></BIG> = "Root&nbsp;User"</CODE>
+<BLOCKQUOTE>
+<P><b>"From" name of the message</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$sender"></A>
+<CODE><I>string</I> <BIG><B>$sender</B></BIG> = ""</CODE>
+<BLOCKQUOTE>
+<P><b>Sets the sender of the message</b></P><P>
+The Return-Path field is set to this
+	address if not empty, otherwise the "from" address is used instead. If not
+	empty, will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$subject"></A>
+<CODE><I>string</I> <BIG><B>$subject</B></BIG> = ""</CODE>
+<BLOCKQUOTE>
+<P><b>Sets the subject of the message</b></P><P>
+The string must be encoded accordingly to
+	the <a href="#net/sourceforge/phpmailer/PHPMailer::$charset"><code>net\sourceforge\phpmailer\PHPMailer::$charset</code></a> variable. The "Subject:" header will be encoded
+	properly to render the given charset.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$word_wrap"></A>
+<CODE><I>int</I> <BIG><B>$word_wrap</B></BIG> = 75</CODE>
+<BLOCKQUOTE>
+<P><b>Sets word wrapping on the body of the message to a given number 	of characters</b></P><P>
+Lines longer than that are splitted. 0 = no word wrap.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$confirm_reading_to"></A>
+<CODE><I>string</I> <BIG><B>$confirm_reading_to</B></BIG> = ""</CODE>
+<BLOCKQUOTE>
+<P><b>Sets the email address for the message disposition notification</b></P><P>
+Ignore if empty.
+	See <a href="http://tools.ietf.org/html/rfc3798">RFC3798</a>.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$host_name"></A>
+<CODE><I>string</I> <BIG><B>$host_name</B></BIG> = NULL</CODE>
+<BLOCKQUOTE>
+<P><b>Hostname to use in Message-Id and Received headers and as default HELO 	string</b></P><P>
+If empty, tries SERVER_NAME, then <a href="../../../../modules/standard.html#php_uname()"><code>php_uname("n")</code></a> and
+	finally uses 'localhost.localdomain'.
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$send_message_id"></A>
+<CODE><I>boolean</I> <BIG><B>$send_message_id</B></BIG> = FALSE</CODE>
+<BLOCKQUOTE>
+<P><b>If the Message-ID header field has to be generated</b></P><P>
+If set to FALSE (default)
+ the Message-ID is generated by the chosen MTA and cannot be retrieved.
+ If set to TRUE the Message-ID is generated by this class for every message
+ sent (with success or not). See the description  of the <a href="#net/sourceforge/phpmailer/PHPMailer::$message_id"><code>net\sourceforge\phpmailer\PHPMailer::$message_id</code></a>
+ property for more details.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$message_id"></A>
+<CODE><I>string</I> <BIG><B>$message_id</B></BIG> = NULL</CODE>
+<BLOCKQUOTE>
+<P><b>Message-ID of the last sent message</b></P><P>
+This field is set only if the
+ <a href="#net/sourceforge/phpmailer/PHPMailer::$send_message_id"><code>net\sourceforge\phpmailer\PHPMailer::$send_message_id</code></a> is set to TRUE, otherwise it is reset to the
+ NULL value after every message sent. The format of the ID is:
+ <pre>
+    &lt;ALPHANUM@HOSTNAME&gt;
+ </pre>
+ where ALFANUM is a string generated as MD5 hash of a mix of informations
+ that should be unique of this message: time (in microseconds), from and
+ sender addresses, subject and at least 5 recipient addresses.
+ HOSTNAME is the host name according to the specifications of the
+ <a href="#net/sourceforge/phpmailer/PHPMailer::$host_name"><code>net\sourceforge\phpmailer\PHPMailer::$host_name</code></a> property.
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$SMTPKeepAlive"></A>
+<CODE><I>boolean</I> <BIG><B>$SMTPKeepAlive</B></BIG> = FALSE</CODE>
+<BLOCKQUOTE>
+<P><b>Prevents the SMTP connection from being closed after each mail sent</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::$bad_rcpt"></A>
+<CODE><I>string[int]</I> <BIG><B>$bad_rcpt</B></BIG> = NULL</CODE>
+<BLOCKQUOTE>
+<P><b>If the mailer is SMTP and <a href="#net/sourceforge/phpmailer/PHPMailer::send()"><code>net\sourceforge\phpmailer\PHPMailer::send()</code></a> failed, this 	property may contain the list of email addresses that were 	rejected by the remote server</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::isValidEmailAddress()"></A>
+<CODE>static <I>boolean</I> <BIG><B>isValidEmailAddress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$email)</CODE>
+<BLOCKQUOTE>
+<P><b>Return TRUE if $email is a (formally) valid email address</b></P><P>
+Valid email address are specified by RFC 2822. This method implements
+	a sub-set of this syntax that can be described as follows.
+	The address has the form user@domain where the user part and the domain
+	part are made of one or more "atoms" separated by a dot. Every atom
+	is a sequence of one or more letters of the US-ASCII charset,
+	digits or any of the following characters:
+	<pre>! # $ % &amp; ' * + - / = ? ^ _ ` { | } ~</pre>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addAddress()"></A>
+<CODE><I>void</I> <BIG><B>addAddress</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$address,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name = "")</CODE>
+<BLOCKQUOTE>
+<P><b>Adds a "To" address</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addCC()"></A>
+<CODE><I>void</I> <BIG><B>addCC</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$address,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name = "")</CODE>
+<BLOCKQUOTE>
+<P><b>Adds a "Cc" address</b></P><P>
+FIXME: this function works with the SMTP mailer on win32,
+	not with the "mail" mailer.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addBCC()"></A>
+<CODE><I>void</I> <BIG><B>addBCC</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$address,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name = "")</CODE>
+<BLOCKQUOTE>
+<P><b>Adds a "Bcc" address</b></P><P>
+FIXME: this function works with the SMTP mailer on win32,
+	not with the "mail" mailer.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addReplyTo()"></A>
+<CODE><I>void</I> <BIG><B>addReplyTo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$address,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name = "")</CODE>
+<BLOCKQUOTE>
+<P><b>Adds a "Reply-To" address</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addCustomHeaderField()"></A>
+<CODE><I>void</I> <BIG><B>addCustomHeaderField</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$field)</CODE>
+<BLOCKQUOTE>
+<P><b>Adds a custom header field</b></P><P>
+This method accept only one field; more fields can be added by calling
+	this method several times.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$field&nbsp;&nbsp;</code></b></td> <td valign=top>Custom field to add to the header. Field name and
+	field body must be separated by a colon.
+	If the field spans over several lines, lines MUST be separated by
+	<code>"\r\n\t"</code> the last tabulator character being the continuation
+	marker.
+	The field MUST NOT be terminated by a new line.
+	Non-ASCII characters are encoded using the default charset
+	<a href="#net/sourceforge/phpmailer/PHPMailer::$charset"><code>net\sourceforge\phpmailer\PHPMailer::$charset</code></a>.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::setTextMessage()"></A>
+<CODE><I>void</I> <BIG><B>setTextMessage</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text_msg)</CODE>
+<BLOCKQUOTE>
+<P><b>Set the textual message</b></P><P>
+Uses the <a href="#net/sourceforge/phpmailer/PHPMailer::$charset"><code>net\sourceforge\phpmailer\PHPMailer::$charset</code></a> charset.
+ If set to NULL, no textual message is sent.
+ If set to the empty string, an empty text message is sent.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::setHtmlMessage()"></A>
+<CODE><I>void</I> <BIG><B>setHtmlMessage</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$html_msg)</CODE>
+<BLOCKQUOTE>
+<P><b>Set the HTML message</b></P><P>
+Uses the <a href="#net/sourceforge/phpmailer/PHPMailer::$charset"><code>net\sourceforge\phpmailer\PHPMailer::$charset</code></a> charset.
+ If set to NULL, no HTML message is sent.
+ If set to the empty string, an empty HTML message is sent.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addAttachmentFromFile()"></A>
+<CODE><I>void</I> <BIG><B>addAttachmentFromFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding = "base64")</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Adds an attachment from a file</b></P><P>
+This example will add an image as an attachment:
+<p>
+	<pre>
+	$m-&gt;addAttachmentFromFile("C:\\images\\photo.jpeg", "image/jpeg");
+	</pre>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$path&nbsp;&nbsp;</code></b></td> <td valign=top>Path where the file is stored.</td></tr>
+<tr><td valign=top><b><code>$type&nbsp;&nbsp;</code></b></td> <td valign=top>MIME type of the file. See
+	<a href="http://www.iana.org/assignments/media-types/index.html">http://www.iana.org/assignments/media-types/index.html</a> for
+	a complete list of the registered media types.</td></tr>
+<tr><td valign=top><b><code>$name&nbsp;&nbsp;</code></b></td> <td valign=top>Name proposed to the remote user whenever he decides
+	to save this file. If empty, uses the basename of the file.</td></tr>
+<tr><td valign=top><b><code>$encoding&nbsp;&nbsp;</code></b></td> <td valign=top>Options for this are "8bit", "7bit", "binary",
+	"base64", and "quoted-printable". See
+	<a href="http://tools.ietf.org/html/rfc2045">RFC2045</a>.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to read the file.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addAttachmentFromString()"></A>
+<CODE><I>void</I> <BIG><B>addAttachmentFromString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding = "base64")</CODE>
+<BLOCKQUOTE>
+<P><b>Adds a string or binary attachment (non-filesystem)</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$content&nbsp;&nbsp;</code></b></td> <td valign=top>Text or binary data to attach.</td></tr>
+<tr><td valign=top><b><code>$type&nbsp;&nbsp;</code></b></td> <td valign=top>MIME type of the data. See
+	<a href="http://www.iana.org/assignments/media-types/index.html">http://www.iana.org/assignments/media-types/index.html</a> for
+	a complete list of the registered media types.</td></tr>
+<tr><td valign=top><b><code>$name&nbsp;&nbsp;</code></b></td> <td valign=top>Name proposed to the remote user whenever he decides
+	to save this content.</td></tr>
+<tr><td valign=top><b><code>$encoding&nbsp;&nbsp;</code></b></td> <td valign=top>Options for this are "8bit", "7bit", "binary",
+	"base64", and "quoted-printable". See
+	<a href="http://tools.ietf.org/html/rfc2045">RFC2045</a>.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addInlineFromFile()"></A>
+<CODE><I>void</I> <BIG><B>addInlineFromFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding = "base64")</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Adds an inline attachment to the HTML message, typically an image</b></P><P>
+Example:
+<p>
+	<pre>
+	$m = new PHPMailer();
+	$cid = "1";
+	$m-&gt;setHtmlMessage("&lt;html&gt;&lt;body&gt;Photo: &lt;img src='cid:$cid'&gt; &lt;/body&gt;&lt;/html&gt;");
+	$m-&gt;addInlineFromFile("C:\\images\\photo.jpg", "image/jpeg", $cid);
+	</pre>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$path&nbsp;&nbsp;</code></b></td> <td valign=top>Pathfile of the attachment.</td></tr>
+<tr><td valign=top><b><code>$type&nbsp;&nbsp;</code></b></td> <td valign=top>MIME type of the file. See
+	<a href="http://www.iana.org/assignments/media-types/index.html">http://www.iana.org/assignments/media-types/index.html</a> for
+	a complete list of the registered media types.</td></tr>
+<tr><td valign=top><b><code>$name&nbsp;&nbsp;</code></b></td> <td valign=top>Name proposed to the remote user whenever he decides
+	to save this content. If empty, uses the basename of the file.</td></tr>
+<tr><td valign=top><b><code>$cid&nbsp;&nbsp;</code></b></td> <td valign=top>Content ID of the attachment to be used in a URL
+	of the type cid:ID. Every embedded attachment must have a different
+	content ID.</td></tr>
+<tr><td valign=top><b><code>$encoding&nbsp;&nbsp;</code></b></td> <td valign=top>Options for this are "8bit", "7bit", "binary",
+	"base64", and "quoted-printable". See
+	<a href="http://tools.ietf.org/html/rfc2045">RFC2045</a>.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to read the file.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::addInlineFromString()"></A>
+<CODE><I>void</I> <BIG><B>addInlineFromString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding = "base64")</CODE>
+<BLOCKQUOTE>
+<P><b>Adds an inline related attachment to the HTML message, typically an image</b></P><P>
+Example:
+<p>
+	<pre>
+	$m = new PHPMailer();
+	$cid = "1";
+	$m-&gt;setHtmlMessage("&lt;html&gt;&lt;body&gt;Photo: &lt;img src='cid:$cid'&gt; &lt;/body&gt;&lt;/html&gt;");
+	$m-&gt;addInlineFromString("photo.jpg", "image/jpeg", $cid);
+	</pre>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$content&nbsp;&nbsp;</code></b></td> <td valign=top>Binary content of the inline related attachment.</td></tr>
+<tr><td valign=top><b><code>$type&nbsp;&nbsp;</code></b></td> <td valign=top>MIME type of the content. See
+	<a href="http://www.iana.org/assignments/media-types/index.html">http://www.iana.org/assignments/media-types/index.html</a> for
+	a complete list of the registered media types.</td></tr>
+<tr><td valign=top><b><code>$cid&nbsp;&nbsp;</code></b></td> <td valign=top>Content ID of the attachment to be used in a URL
+	of the type cid:ID. Every embedded attachment must have a different
+	content ID.</td></tr>
+<tr><td valign=top><b><code>$name&nbsp;&nbsp;</code></b></td> <td valign=top>Name proposed to the remote user whenever he decides
+	to save this content.</td></tr>
+<tr><td valign=top><b><code>$encoding&nbsp;&nbsp;</code></b></td> <td valign=top>Options for this are "8bit", "7bit", "binary",
+	"base64", and "quoted-printable". See
+	<a href="http://tools.ietf.org/html/rfc2045">RFC2045</a>.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::useMail()"></A>
+<CODE><I>void</I> <BIG><B>useMail</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Sets mailer to send message using the PHP <a href="../../../../modules/standard.html#mail()"><code>mail()</code></a> function</b></P><P>
+Also closes any pending SMTP, if any. This mailer is the default one.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::useSMTP()"></A>
+<CODE><I>void</I> <BIG><B>useSMTP</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$hosts,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$timeout = 10,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$helo = "")</CODE>
+<BLOCKQUOTE>
+<P><b>Sets Mailer to send message using the SMTP protocol</b></P><P>
+Also closes any pending SMTP, if any.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$hosts&nbsp;&nbsp;</code></b></td> <td valign=top>SMTP hosts.
+	You can list one or several servers separated by semicolon
+	and possibly with a port number separated with a colon,
+	for example: "host1;host2:25;host3:1025".  The default
+	TCP port is 25.
+	The listed hosts are tried in the order, the first accepting
+	the connection and possibly the authentication login
+	is used.</td></tr>
+<tr><td valign=top><b><code>$timeout&nbsp;&nbsp;</code></b></td> <td valign=top>Connection timeout (s).</td></tr>
+<tr><td valign=top><b><code>$username&nbsp;&nbsp;</code></b></td> <td valign=top>If non-empty, performs user authentication.</td></tr>
+<tr><td valign=top><b><code>$password&nbsp;&nbsp;</code></b></td> <td valign=top>Password for the user authentication.</td></tr>
+<tr><td valign=top><b><code>$helo&nbsp;&nbsp;</code></b></td> <td valign=top>"Helo" message, if required.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::useSendmail()"></A>
+<CODE><I>void</I> <BIG><B>useSendmail</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sendmail = "/usr/sbin/sendmail")</CODE>
+<BLOCKQUOTE>
+<P><b>Sets Mailer to send message using the sendmail, 	qmail or other compatible program</b></P><P>
+Also closes any pending SMTP, if any.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$sendmail&nbsp;&nbsp;</code></b></td> <td valign=top>Path to the sendmail program, typically
+	"/usr/sbin/sendmail" or "/var/qmail/bin/sendmail".</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::send()"></A>
+<CODE><I>boolean</I> <BIG><B>send</B></BIG>()</CODE>
+<br>throws <a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a><BLOCKQUOTE>
+<P><b>Sends the message using the chosen mailer</b></P><P>
+<p><b>Return:</b> True if the message is sent successfully.
+	If it fails, and the mailer is SMTP, then
+	<a href="#net/sourceforge/phpmailer/PHPMailer::$bad_rcpt"><code>net\sourceforge\phpmailer\PHPMailer::$bad_rcpt</code></a> may contain a list of the recipients
+	that were rejected by the remote server causing the failure.
+	If no recipients are specified, does nothing and returns true.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../../../../modules/standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Unrecoverable error from the mailer; the message
+	has not been sent to any recipient.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::clearAddresses()"></A>
+<CODE><I>void</I> <BIG><B>clearAddresses</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all recipients assigned in the TO array</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::clearCCs()"></A>
+<CODE><I>void</I> <BIG><B>clearCCs</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all recipients assigned in the CC array</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::clearBCCs()"></A>
+<CODE><I>void</I> <BIG><B>clearBCCs</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all recipients assigned in the BCC array</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::clearReplyTos()"></A>
+<CODE><I>void</I> <BIG><B>clearReplyTos</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all recipients assigned in the ReplyTo array</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::clearAllRecipients()"></A>
+<CODE><I>void</I> <BIG><B>clearAllRecipients</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all recipients assigned in the TO, CC and BCC array</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::clearAttachments()"></A>
+<CODE><I>void</I> <BIG><B>clearAttachments</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all previously set attachments</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::clearInline()"></A>
+<CODE><I>void</I> <BIG><B>clearInline</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all previously set inline related attachments</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::clearCustomHeaders()"></A>
+<CODE><I>void</I> <BIG><B>clearCustomHeaders</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Clears all custom headers</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="net/sourceforge/phpmailer/PHPMailer::__destruct()"></A>
+<CODE><I>void</I> <BIG><B>__destruct</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Destructs this object</b></P><P>
+Releases the SMTP connection, if any.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+<h2>Private items</h2>
+<blockquote>
+<code>net\sourceforge\phpmailer\MIMEPart</code><br>
+
+</blockquote>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

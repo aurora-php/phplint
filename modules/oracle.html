@@ -1,0 +1,143 @@
+<HTML><BODY>
+<H1>oracle</H1>
+<P><b>Oracle functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P><B>Deprecated:</B> You should use the oci8 extension instead. </P>
+<P>
+
+
+See: <a href="http://www.php.net/manual/en/ref.oracle.php"><code>http://www.php.net/manual/en/ref.oracle.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="ORA_BIND_INOUT"></A>
+<CODE><BIG><B>ORA_BIND_INOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="ORA_BIND_IN"></A>
+<CODE><BIG><B>ORA_BIND_IN</B></BIG> = 1</CODE>
+<P>
+
+<A name="ORA_BIND_OUT"></A>
+<CODE><BIG><B>ORA_BIND_OUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="ORA_FETCHINTO_ASSOC"></A>
+<CODE><BIG><B>ORA_FETCHINTO_ASSOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="ORA_FETCHINTO_NULLS"></A>
+<CODE><BIG><B>ORA_FETCHINTO_NULLS</B></BIG> = 1</CODE>
+<P>
+
+<A name="ora_logon()"></A>
+<CODE><I>resource</I> <BIG><B>ora_logon</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<P>
+
+<A name="ora_plogon()"></A>
+<CODE><I>resource</I> <BIG><B>ora_plogon</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<P>
+
+<A name="ora_logoff()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_logoff</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ora_open()"></A>
+<CODE><I>resource</I> <BIG><B>ora_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ora_close()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor)</CODE>
+<P>
+
+<A name="ora_commitoff()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_commitoff</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ora_commiton()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_commiton</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ora_commit()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_commit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ora_rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_rollback</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ora_parse()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sql_statement, ...)</CODE>
+<P>
+
+<A name="ora_bind()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_bind</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$php_variable_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sql_parameter_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$length, ...)</CODE>
+<P>
+
+<A name="ora_exec()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor)</CODE>
+<P>
+
+<A name="ora_numcols()"></A>
+<CODE><I>int</I> <BIG><B>ora_numcols</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor)</CODE>
+<P>
+
+<A name="ora_numrows()"></A>
+<CODE><I>int</I> <BIG><B>ora_numrows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor)</CODE>
+<P>
+
+<A name="ora_do()"></A>
+<CODE><I>resource</I> <BIG><B>ora_do</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor)</CODE>
+<P>
+
+<A name="ora_fetch()"></A>
+<CODE><I>boolean</I> <BIG><B>ora_fetch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor)</CODE>
+<P>
+
+<A name="ora_fetch_into()"></A>
+<CODE><I>int</I> <BIG><B>ora_fetch_into</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="ora_columnname()"></A>
+<CODE><I>string</I> <BIG><B>ora_columnname</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column)</CODE>
+<P>
+
+<A name="ora_columntype()"></A>
+<CODE><I>string</I> <BIG><B>ora_columntype</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column)</CODE>
+<P>
+
+<A name="ora_columnsize()"></A>
+<CODE><I>int</I> <BIG><B>ora_columnsize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cursor,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column)</CODE>
+<P>
+
+<A name="ora_getcolumn()"></A>
+<CODE><I>mixed</I> <BIG><B>ora_getcolumn</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column)</CODE>
+<P>
+
+<A name="ora_error()"></A>
+<CODE><I>string</I> <BIG><B>ora_error</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor_or_connection)</CODE>
+<P>
+
+<A name="ora_errorcode()"></A>
+<CODE><I>int</I> <BIG><B>ora_errorcode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$cursor_or_connection)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

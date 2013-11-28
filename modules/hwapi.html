@@ -1,0 +1,389 @@
+<HTML><BODY>
+<H1>hwapi</H1>
+<P><b>Hyperwave Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+This module is available from the PECL project.
+<p>
+
+See: <a href="http://www.php.net/manual/en/ref.hw.php"><code>http://www.php.net/manual/en/ref.hw.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="HW_API_REMOVE_NORMAL"></A>
+<CODE><BIG><B>HW_API_REMOVE_NORMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REMOVE_PHYSICAL"></A>
+<CODE><BIG><B>HW_API_REMOVE_PHYSICAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REMOVE_REMOVELINKS"></A>
+<CODE><BIG><B>HW_API_REMOVE_REMOVELINKS</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REMOVE_NONRECURSIVE"></A>
+<CODE><BIG><B>HW_API_REMOVE_NONRECURSIVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REPLACE_NORMAL"></A>
+<CODE><BIG><B>HW_API_REPLACE_NORMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REPLACE_FORCE_VERSION_CONTROL"></A>
+<CODE><BIG><B>HW_API_REPLACE_FORCE_VERSION_CONTROL</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REPLACE_AUTOMATIC_CHECKOUT"></A>
+<CODE><BIG><B>HW_API_REPLACE_AUTOMATIC_CHECKOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REPLACE_AUTOMATIC_CHECKIN"></A>
+<CODE><BIG><B>HW_API_REPLACE_AUTOMATIC_CHECKIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REPLACE_PLAIN"></A>
+<CODE><BIG><B>HW_API_REPLACE_PLAIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REPLACE_REVERT_IF_NOT_CHANGED"></A>
+<CODE><BIG><B>HW_API_REPLACE_REVERT_IF_NOT_CHANGED</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REPLACE_KEEP_TIME_MODIFIED"></A>
+<CODE><BIG><B>HW_API_REPLACE_KEEP_TIME_MODIFIED</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_INSERT_NORMAL"></A>
+<CODE><BIG><B>HW_API_INSERT_NORMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_INSERT_FORCE_VERSION_CONTROL"></A>
+<CODE><BIG><B>HW_API_INSERT_FORCE_VERSION_CONTROL</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_INSERT_AUTOMATIC_CHECKOUT"></A>
+<CODE><BIG><B>HW_API_INSERT_AUTOMATIC_CHECKOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_INSERT_PLAIN"></A>
+<CODE><BIG><B>HW_API_INSERT_PLAIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_INSERT_KEEP_TIME_MODIFIED"></A>
+<CODE><BIG><B>HW_API_INSERT_KEEP_TIME_MODIFIED</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_INSERT_DELAY_INDEXING"></A>
+<CODE><BIG><B>HW_API_INSERT_DELAY_INDEXING</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_LOCK_NORMAL"></A>
+<CODE><BIG><B>HW_API_LOCK_NORMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_LOCK_RECURSIVE"></A>
+<CODE><BIG><B>HW_API_LOCK_RECURSIVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_LOCK_SESSION"></A>
+<CODE><BIG><B>HW_API_LOCK_SESSION</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_CONTENT_ALLLINKS"></A>
+<CODE><BIG><B>HW_API_CONTENT_ALLLINKS</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_CONTENT_REACHABLELINKS"></A>
+<CODE><BIG><B>HW_API_CONTENT_REACHABLELINKS</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_CONTENT_PLAIN"></A>
+<CODE><BIG><B>HW_API_CONTENT_PLAIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REASON_ERROR"></A>
+<CODE><BIG><B>HW_API_REASON_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REASON_WARNING"></A>
+<CODE><BIG><B>HW_API_REASON_WARNING</B></BIG> = 1</CODE>
+<P>
+
+<A name="HW_API_REASON_MESSAGE"></A>
+<CODE><BIG><B>HW_API_REASON_MESSAGE</B></BIG> = 1</CODE>
+<P>
+
+<A name="hwapi_init()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_init</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$hostname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port)</CODE>
+<P>
+
+<A name="hwapi_hgcsp()"></A>
+<CODE><I>string</I> <BIG><B>hwapi_hgcsp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$hostname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port)</CODE>
+<P>
+
+<A name="hwapi_object()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$object_in)</CODE>
+<P>
+
+<A name="hwapi_mychildren()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_mychildren</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_children()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_children</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_parents()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_parents</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_find()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_find</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_identify()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_identify</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_remove()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_remove</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_content()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_content</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_copy()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_copy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_link()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_link</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_move()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_move</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_lock()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_lock</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_unlock()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_unlock</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_replace()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_replace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_insert()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_insert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_insertdocument()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_insertdocument</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_insertcollection()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_insertcollection</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_insertanchor()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_insertanchor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_srcanchors()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_srcanchors</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_dstanchors()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_dstanchors</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_objectbyanchor()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_objectbyanchor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_dstofsrcanchor()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_dstofsrcanchor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_srcsofdst()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_srcsofdst</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_checkin()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_checkin</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_checkout()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_checkout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_setcommittedversion()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_setcommittedversion</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_revert()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_revert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_history()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_history</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_removeversion()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_removeversion</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_freeversion()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_freeversion</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_configurationhistory()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_configurationhistory</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_saveconfiguration()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_saveconfiguration</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_restoreconfiguration()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_restoreconfiguration</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_mergeconfiguration()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_mergeconfiguration</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_removeconfiguration()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_removeconfiguration</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_user()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_user</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_userlist()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_userlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_hwstat()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_hwstat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_dcstat()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_dcstat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_dbstat()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_dbstat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_ftstat()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_ftstat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_info()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$parameters)</CODE>
+<P>
+
+<A name="hwapi_object_new()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_object_new</B></BIG>()</CODE>
+<P>
+
+<A name="hwapi_object_count()"></A>
+<CODE><I>int</I> <BIG><B>hwapi_object_count</B></BIG>()</CODE>
+<P>
+
+<A name="hwapi_object_title()"></A>
+<CODE><I>string</I> <BIG><B>hwapi_object_title</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$language)</CODE>
+<P>
+
+<A name="hwapi_object_attreditable()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_object_attreditable</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$is_system)</CODE>
+<P>
+
+<A name="hwapi_object_assign()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_object_assign</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$object_)</CODE>
+<P>
+
+<A name="hwapi_object_attribute()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_object_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;&amp; $attribute)</CODE>
+<P>
+
+<A name="hwapi_object_insert()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_object_insert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="hwapi_object_remove()"></A>
+<CODE><I>boolean</I> <BIG><B>hwapi_object_remove</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="hwapi_object_value()"></A>
+<CODE><I>string</I> <BIG><B>hwapi_object_value</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="hwapi_attribute_new()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_attribute_new</B></BIG>(...)</CODE>
+<P>
+
+<A name="hwapi_attribute_key()"></A>
+<CODE><I>string</I> <BIG><B>hwapi_attribute_key</B></BIG>()</CODE>
+<P>
+
+<A name="hwapi_attribute_value()"></A>
+<CODE><I>string</I> <BIG><B>hwapi_attribute_value</B></BIG>()</CODE>
+<P>
+
+<A name="hwapi_attribute_values()"></A>
+<CODE><I>mixed[]</I> <BIG><B>hwapi_attribute_values</B></BIG>()</CODE>
+<P>
+
+<A name="hwapi_attribute_langdepvalue()"></A>
+<CODE><I>string</I> <BIG><B>hwapi_attribute_langdepvalue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$language)</CODE>
+<P>
+
+<A name="hwapi_content_new()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_content_new</B></BIG>(...)</CODE>
+<P>
+
+<A name="hwapi_content_read()"></A>
+<CODE><I>int</I> <BIG><B>hwapi_content_read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$buffer,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$length)</CODE>
+<P>
+
+<A name="hwapi_content_mimetype()"></A>
+<CODE><I>string</I> <BIG><B>hwapi_content_mimetype</B></BIG>()</CODE>
+<P>
+
+<A name="hwapi_error_count()"></A>
+<CODE><I>int</I> <BIG><B>hwapi_error_count</B></BIG>()</CODE>
+<P>
+
+<A name="hwapi_error_reason()"></A>
+<CODE><I>object</I> <BIG><B>hwapi_error_reason</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="hwapi_reason_type()"></A>
+<CODE><I>int</I> <BIG><B>hwapi_reason_type</B></BIG>()</CODE>
+<P>
+
+<A name="hwapi_reason_description()"></A>
+<CODE><I>string</I> <BIG><B>hwapi_reason_description</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$language)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

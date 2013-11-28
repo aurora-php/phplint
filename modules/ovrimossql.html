@@ -1,0 +1,117 @@
+<HTML><BODY>
+<H1>ovrimossql</H1>
+<P><b>Ovrimos SQL Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.ovrimos.php"><code>http://www.php.net/manual/en/ref.ovrimos.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="ovrimos_connect()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<P>
+
+<A name="ovrimos_close()"></A>
+<CODE><I>void</I> <BIG><B>ovrimos_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ovrimos_longreadlen()"></A>
+<CODE><I>boolean</I> <BIG><B>ovrimos_longreadlen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$length)</CODE>
+<P>
+
+<A name="ovrimos_prepare()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="ovrimos_execute()"></A>
+<CODE><I>boolean</I> <BIG><B>ovrimos_execute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="ovrimos_cursor()"></A>
+<CODE><I>string</I> <BIG><B>ovrimos_cursor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="ovrimos_exec()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="ovrimos_fetch_into()"></A>
+<CODE><I>boolean</I> <BIG><B>ovrimos_fetch_into</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$result_array, ...)</CODE>
+<P>
+
+<A name="ovrimos_fetch_row()"></A>
+<CODE><I>boolean</I> <BIG><B>ovrimos_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="ovrimos_result()"></A>
+<CODE><I>string</I> <BIG><B>ovrimos_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$field)</CODE>
+<P>
+
+<A name="ovrimos_result_all()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_result_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id, ...)</CODE>
+<P>
+
+<A name="ovrimos_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>ovrimos_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="ovrimos_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="ovrimos_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id)</CODE>
+<P>
+
+<A name="ovrimos_field_name()"></A>
+<CODE><I>string</I> <BIG><B>ovrimos_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="ovrimos_field_type()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_field_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="ovrimos_field_len()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_field_len</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="ovrimos_field_num()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_field_num</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$field_name)</CODE>
+<P>
+
+<A name="ovrimos_autocommit()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_autocommit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$OnOff)</CODE>
+<P>
+
+<A name="ovrimos_commit()"></A>
+<CODE><I>boolean</I> <BIG><B>ovrimos_commit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection_id)</CODE>
+<P>
+
+<A name="ovrimos_rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>ovrimos_rollback</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection_id)</CODE>
+<P>
+
+<A name="ovrimos_setoption()"></A>
+<CODE><I>int</I> <BIG><B>ovrimos_setoption</B></BIG>(...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

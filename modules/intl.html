@@ -1,0 +1,1583 @@
+<HTML><BODY>
+<H1>intl</H1>
+<P><b>Internationalization Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/book.intl.php">http://www.php.net/manual/en/book.intl.php</a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="IDNA_ALLOW_UNASSIGNED"></A>
+<CODE><BIG><B>IDNA_ALLOW_UNASSIGNED</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_CHECK_BIDI"></A>
+<CODE><BIG><B>IDNA_CHECK_BIDI</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_CHECK_CONTEXTJ"></A>
+<CODE><BIG><B>IDNA_CHECK_CONTEXTJ</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_DEFAULT"></A>
+<CODE><BIG><B>IDNA_DEFAULT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_BIDI"></A>
+<CODE><BIG><B>IDNA_ERROR_BIDI</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_CONTEXTJ"></A>
+<CODE><BIG><B>IDNA_ERROR_CONTEXTJ</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_DISALLOWED"></A>
+<CODE><BIG><B>IDNA_ERROR_DISALLOWED</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_DOMAIN_NAME_TOO_LONG"></A>
+<CODE><BIG><B>IDNA_ERROR_DOMAIN_NAME_TOO_LONG</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_EMPTY_LABEL"></A>
+<CODE><BIG><B>IDNA_ERROR_EMPTY_LABEL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_HYPHEN_3_4"></A>
+<CODE><BIG><B>IDNA_ERROR_HYPHEN_3_4</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_INVALID_ACE_LABEL"></A>
+<CODE><BIG><B>IDNA_ERROR_INVALID_ACE_LABEL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_LABEL_HAS_DOT"></A>
+<CODE><BIG><B>IDNA_ERROR_LABEL_HAS_DOT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_LABEL_TOO_LONG"></A>
+<CODE><BIG><B>IDNA_ERROR_LABEL_TOO_LONG</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_LEADING_COMBINING_MARK"></A>
+<CODE><BIG><B>IDNA_ERROR_LEADING_COMBINING_MARK</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_LEADING_HYPHEN"></A>
+<CODE><BIG><B>IDNA_ERROR_LEADING_HYPHEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_PUNYCODE"></A>
+<CODE><BIG><B>IDNA_ERROR_PUNYCODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_ERROR_TRAILING_HYPHEN"></A>
+<CODE><BIG><B>IDNA_ERROR_TRAILING_HYPHEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_NONTRANSITIONAL_TO_ASCII"></A>
+<CODE><BIG><B>IDNA_NONTRANSITIONAL_TO_ASCII</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_NONTRANSITIONAL_TO_UNICODE"></A>
+<CODE><BIG><B>IDNA_NONTRANSITIONAL_TO_UNICODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IDNA_USE_STD3_RULES"></A>
+<CODE><BIG><B>IDNA_USE_STD3_RULES</B></BIG> = 1</CODE>
+<P>
+
+<A name="INTL_IDNA_VARIANT_2003"></A>
+<CODE><BIG><B>INTL_IDNA_VARIANT_2003</B></BIG> = 1</CODE>
+<P>
+
+<A name="INTL_IDNA_VARIANT_UTS46"></A>
+<CODE><BIG><B>INTL_IDNA_VARIANT_UTS46</B></BIG> = 1</CODE>
+<P>
+
+<A name="INTL_MAX_LOCALE_LEN"></A>
+<CODE><BIG><B>INTL_MAX_LOCALE_LEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="GRAPHEME_EXTR_COUNT"></A>
+<CODE><BIG><B>GRAPHEME_EXTR_COUNT</B></BIG> = 1</CODE>
+<P>
+
+<A name="GRAPHEME_EXTR_MAXBYTES"></A>
+<CODE><BIG><B>GRAPHEME_EXTR_MAXBYTES</B></BIG> = 1</CODE>
+<P>
+
+<A name="GRAPHEME_EXTR_MAXCHARS"></A>
+<CODE><BIG><B>GRAPHEME_EXTR_MAXCHARS</B></BIG> = 1</CODE>
+<P>
+
+<A name="accept_from_http()"></A>
+<CODE><I>string</I> <BIG><B>accept_from_http</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$header)</CODE>
+<P>
+
+<A name="locale_compose()"></A>
+<CODE><I>string</I> <BIG><B>locale_compose</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[string]</I>&nbsp;$subtags)</CODE>
+<P>
+
+<A name="locale_filter_matches()"></A>
+<CODE><I>boolean</I> <BIG><B>locale_filter_matches</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$langtag,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$canonicalize = FALSE)</CODE>
+<P>
+
+<A name="locale_get_all_variants()"></A>
+<CODE><I>string[int]</I> <BIG><B>locale_get_all_variants</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="locale_get_default()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_default</B></BIG>()</CODE>
+<P>
+
+<A name="locale_get_display_language()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_display_language</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="locale_get_display_name()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_display_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="locale_get_display_region()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_display_region</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="locale_get_display_script()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_display_script</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="locale_get_display_variant()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_display_variant</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="locale_get_keywords()"></A>
+<CODE><I>string[string]</I> <BIG><B>locale_get_keywords</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="locale_get_primary_language()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_primary_language</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="locale_get_region()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_region</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="locale_get_script()"></A>
+<CODE><I>string</I> <BIG><B>locale_get_script</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="locale_lookup()"></A>
+<CODE><I>string</I> <BIG><B>locale_lookup</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[int]</I>&nbsp;$langtag,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$canonicalize = FALSE,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$default_ = NULL)</CODE>
+<P>
+
+<A name="locale_parse()"></A>
+<CODE><I>string[string]</I> <BIG><B>locale_parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="locale_set_default()"></A>
+<CODE><I>boolean</I> <BIG><B>locale_set_default</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="create()"></A>
+<CODE><I><a href="#Collator"><code>Collator</code></a></I> <BIG><B>create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="collate_asort()"></A>
+<CODE><I>boolean</I> <BIG><B>collate_asort</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $arr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sort_flag = 1)</CODE>
+<P>
+
+<A name="collate_compare()"></A>
+<CODE><I>int</I> <BIG><B>collate_compare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str2)</CODE>
+<P>
+
+<A name="collate_get_attribute()"></A>
+<CODE><I>int</I> <BIG><B>collate_get_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="collate_get_error_code()"></A>
+<CODE><I>int</I> <BIG><B>collate_get_error_code</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll)</CODE>
+<P>
+
+<A name="collate_get_error_message()"></A>
+<CODE><I>string</I> <BIG><B>collate_get_error_message</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll)</CODE>
+<P>
+
+<A name="collate_get_locale()"></A>
+<CODE><I>string</I> <BIG><B>collate_get_locale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 1)</CODE>
+<P>
+
+<A name="collate_get_sort_key()"></A>
+<CODE><I>string</I> <BIG><B>collate_get_sort_key</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str)</CODE>
+<P>
+
+<A name="collate_get_strength()"></A>
+<CODE><I>int</I> <BIG><B>collate_get_strength</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll)</CODE>
+<P>
+
+<A name="collate_set_attribute()"></A>
+<CODE><I>boolean</I> <BIG><B>collate_set_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$val)</CODE>
+<P>
+
+<A name="collate_set_strength()"></A>
+<CODE><I>boolean</I> <BIG><B>collate_set_strength</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$strength)</CODE>
+<P>
+
+<A name="collate_sort_with_sort_keys()"></A>
+<CODE><I>boolean</I> <BIG><B>collate_sort_with_sort_keys</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Collator"><code>Collator</code></a></I>&nbsp;$coll,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $arr)</CODE>
+<P>
+
+<A name="numfmt_create()"></A>
+<CODE><I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I> <BIG><B>numfmt_create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$style,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern = NULL)</CODE>
+<P>
+
+<A name="numfmt_format_currency()"></A>
+<CODE><I>string</I> <BIG><B>numfmt_format_currency</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$currency)</CODE>
+<P>
+
+<A name="numfmt_format()"></A>
+<CODE><I>string</I> <BIG><B>numfmt_format</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 1)</CODE>
+<P>
+
+<A name="numfmt_get_attribute()"></A>
+<CODE><I>int</I> <BIG><B>numfmt_get_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="numfmt_get_error_code()"></A>
+<CODE><I>int</I> <BIG><B>numfmt_get_error_code</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt)</CODE>
+<P>
+
+<A name="numfmt_get_error_message()"></A>
+<CODE><I>string</I> <BIG><B>numfmt_get_error_message</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt)</CODE>
+<P>
+
+<A name="numfmt_get_locale()"></A>
+<CODE><I>string</I> <BIG><B>numfmt_get_locale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 1)</CODE>
+<P>
+
+<A name="numfmt_get_pattern()"></A>
+<CODE><I>string</I> <BIG><B>numfmt_get_pattern</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt)</CODE>
+<P>
+
+<A name="numfmt_get_symbol()"></A>
+<CODE><I>string</I> <BIG><B>numfmt_get_symbol</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="numfmt_get_text_attribute()"></A>
+<CODE><I>string</I> <BIG><B>numfmt_get_text_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="numfmt_parse_currency()"></A>
+<CODE><I>float</I> <BIG><B>numfmt_parse_currency</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;&amp; $currency,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $position = 0)</CODE>
+<P>
+
+<A name="numfmt_parse()"></A>
+<CODE><I>mixed</I> <BIG><B>numfmt_parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $position = 0)</CODE>
+<P>
+
+<A name="numfmt_set_attribute()"></A>
+<CODE><I>boolean</I> <BIG><B>numfmt_set_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="numfmt_set_pattern()"></A>
+<CODE><I>boolean</I> <BIG><B>numfmt_set_pattern</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="numfmt_set_symbol()"></A>
+<CODE><I>boolean</I> <BIG><B>numfmt_set_symbol</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="numfmt_set_text_attribute()"></A>
+<CODE><I>boolean</I> <BIG><B>numfmt_set_text_attribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="normalizer_is_normalized()"></A>
+<CODE><I>boolean</I> <BIG><B>normalizer_is_normalized</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$input,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$form = "")</CODE>
+<P>
+
+<A name="normalizer_normalize()"></A>
+<CODE><I>string</I> <BIG><B>normalizer_normalize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$input,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$form = "")</CODE>
+<P>
+
+<A name="msgfmt_create()"></A>
+<CODE><I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I> <BIG><B>msgfmt_create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="msgfmt_format_message()"></A>
+<CODE><I>string</I> <BIG><B>msgfmt_format_message</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$args_)</CODE>
+<P>
+
+<A name="msgfmt_format()"></A>
+<CODE><I>string</I> <BIG><B>msgfmt_format</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$args_)</CODE>
+<P>
+
+<A name="msgfmt_get_error_code()"></A>
+<CODE><I>int</I> <BIG><B>msgfmt_get_error_code</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I>&nbsp;$fmt)</CODE>
+<P>
+
+<A name="msgfmt_get_error_message()"></A>
+<CODE><I>string</I> <BIG><B>msgfmt_get_error_message</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I>&nbsp;$fmt)</CODE>
+<P>
+
+<A name="msgfmt_get_locale()"></A>
+<CODE><I>string</I> <BIG><B>msgfmt_get_locale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I>&nbsp;$fmt)</CODE>
+<P>
+
+<A name="msgfmt_get_pattern()"></A>
+<CODE><I>string</I> <BIG><B>msgfmt_get_pattern</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I>&nbsp;$fmt)</CODE>
+<P>
+
+<A name="msgfmt_parse_message()"></A>
+<CODE><I>mixed[int]</I> <BIG><B>msgfmt_parse_message</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="msgfmt_parse()"></A>
+<CODE><I>mixed[int]</I> <BIG><B>msgfmt_parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="msgfmt_set_pattern()"></A>
+<CODE><I>boolean</I> <BIG><B>msgfmt_set_pattern</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I>&nbsp;$fmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="grapheme_extract()"></A>
+<CODE><I>string</I> <BIG><B>grapheme_extract</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$extract_type = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $next = 0)</CODE>
+<P>
+
+<A name="grapheme_stripos()"></A>
+<CODE><I>string</I> <BIG><B>grapheme_stripos</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset = 0)</CODE>
+<P>
+
+<A name="grapheme_stristr()"></A>
+<CODE><I>string</I> <BIG><B>grapheme_stristr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$before_needle = FALSE)</CODE>
+<P>
+
+<A name="grapheme_strlen()"></A>
+<CODE><I>string</I> <BIG><B>grapheme_strlen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$input)</CODE>
+<P>
+
+<A name="grapheme_strpos()"></A>
+<CODE><I>int</I> <BIG><B>grapheme_strpos</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset = 0)</CODE>
+<P>
+
+<A name="grapheme_strripos()"></A>
+<CODE><I>int</I> <BIG><B>grapheme_strripos</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset = 0)</CODE>
+<P>
+
+<A name="grapheme_strrpos()"></A>
+<CODE><I>int</I> <BIG><B>grapheme_strrpos</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset = 0)</CODE>
+<P>
+
+<A name="grapheme_strstr()"></A>
+<CODE><I>string</I> <BIG><B>grapheme_strstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$before_needle = FALSE)</CODE>
+<P>
+
+<A name="grapheme_substr()"></A>
+<CODE><I>string</I> <BIG><B>grapheme_substr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$lengthi = 0)</CODE>
+<P>
+
+<A name="idn_to_ascii()"></A>
+<CODE><I>string</I> <BIG><B>idn_to_ascii</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$domain,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$variant = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $idna_info = NULL)</CODE>
+<P>
+
+<A name="idn_to_unicode()"></A>
+<CODE><I>string</I> <BIG><B>idn_to_unicode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$domain,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$variant = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $idna_info = NULL)</CODE>
+<P>
+
+<A name="idn_to_utf8()"></A>
+<CODE><I>string</I> <BIG><B>idn_to_utf8</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$domain,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$variant = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $idna_info = NULL)</CODE>
+<P>
+
+<A name="intl_error_name()"></A>
+<CODE><I>string</I> <BIG><B>intl_error_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$error_code)</CODE>
+<P>
+
+<A name="intl_get_error_code()"></A>
+<CODE><I>int</I> <BIG><B>intl_get_error_code</B></BIG>()</CODE>
+<P>
+
+<A name="intl_get_error_message()"></A>
+<CODE><I>string</I> <BIG><B>intl_get_error_message</B></BIG>()</CODE>
+<P>
+
+<A name="intl_is_failure()"></A>
+<CODE><I>boolean</I> <BIG><B>intl_is_failure</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$error_code)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Locale"></A>
+<pre>class <BIG><B>Locale</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Locale::ACTUAL_LOCALE"></A>
+<CODE><BIG><B>ACTUAL_LOCALE</B></BIG> = 1</CODE>
+<P>
+
+<A name="Locale::DEFAULT_LOCALE"></A>
+<CODE><BIG><B>DEFAULT_LOCALE</B></BIG> = NULL</CODE>
+<P>
+
+<A name="Locale::EXTLANG_TAG"></A>
+<CODE><BIG><B>EXTLANG_TAG</B></BIG> = "?"</CODE>
+<P>
+
+<A name="Locale::GRANDFATHERED_LANG_TAG"></A>
+<CODE><BIG><B>GRANDFATHERED_LANG_TAG</B></BIG> = "?"</CODE>
+<P>
+
+<A name="Locale::LANG_TAG"></A>
+<CODE><BIG><B>LANG_TAG</B></BIG> = "?"</CODE>
+<P>
+
+<A name="Locale::PRIVATE_TAG"></A>
+<CODE><BIG><B>PRIVATE_TAG</B></BIG> = "?"</CODE>
+<P>
+
+<A name="Locale::REGION_TAG"></A>
+<CODE><BIG><B>REGION_TAG</B></BIG> = "?"</CODE>
+<P>
+
+<A name="Locale::SCRIPT_TAG"></A>
+<CODE><BIG><B>SCRIPT_TAG</B></BIG> = "?"</CODE>
+<P>
+
+<A name="Locale::VALID_LOCALE"></A>
+<CODE><BIG><B>VALID_LOCALE</B></BIG> = 1</CODE>
+<P>
+
+<A name="Locale::VARIANT_TAG"></A>
+<CODE><BIG><B>VARIANT_TAG</B></BIG> = "?"</CODE>
+<P>
+
+<A name="Locale::acceptFromHttp()"></A>
+<CODE>static <I>string</I> <BIG><B>acceptFromHttp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$header)</CODE>
+<P>
+
+<A name="Locale::composeLocale()"></A>
+<CODE>static <I>string</I> <BIG><B>composeLocale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[string]</I>&nbsp;$subtags)</CODE>
+<P>
+
+<A name="Locale::filterMatches()"></A>
+<CODE>static <I>boolean</I> <BIG><B>filterMatches</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$langtag,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$canonicalize = FALSE)</CODE>
+<P>
+
+<A name="Locale::getAllVariants()"></A>
+<CODE>static <I>string[int]</I> <BIG><B>getAllVariants</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="Locale::getDefault()"></A>
+<CODE>static <I>string</I> <BIG><B>getDefault</B></BIG>()</CODE>
+<P>
+
+<A name="Locale::getDisplayLanguage()"></A>
+<CODE>static <I>string</I> <BIG><B>getDisplayLanguage</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="Locale::getDisplayName()"></A>
+<CODE>static <I>string</I> <BIG><B>getDisplayName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="Locale::getDisplayRegion()"></A>
+<CODE>static <I>string</I> <BIG><B>getDisplayRegion</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="Locale::getDisplayScript()"></A>
+<CODE>static <I>string</I> <BIG><B>getDisplayScript</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="Locale::getDisplayVariant()"></A>
+<CODE>static <I>string</I> <BIG><B>getDisplayVariant</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$in_locale = NULL)</CODE>
+<P>
+
+<A name="Locale::getKeywords()"></A>
+<CODE>static <I>string[string]</I> <BIG><B>getKeywords</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="Locale::getPrimaryLanguage()"></A>
+<CODE>static <I>string</I> <BIG><B>getPrimaryLanguage</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="Locale::getRegion()"></A>
+<CODE>static <I>string</I> <BIG><B>getRegion</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="Locale::getScript()"></A>
+<CODE>static <I>string</I> <BIG><B>getScript</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="Locale::lookup()"></A>
+<CODE>static <I>string</I> <BIG><B>lookup</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[int]</I>&nbsp;$langtag,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$canonicalize = FALSE,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$default_ = NULL)</CODE>
+<P>
+
+<A name="Locale::parseLocale()"></A>
+<CODE>static <I>string[string]</I> <BIG><B>parseLocale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="Locale::setDefault()"></A>
+<CODE>static <I>boolean</I> <BIG><B>setDefault</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Collator"></A>
+<pre>class <BIG><B>Collator</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Collator::ALTERNATE_HANDLING"></A>
+<CODE><BIG><B>ALTERNATE_HANDLING</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::CASE_FIRST"></A>
+<CODE><BIG><B>CASE_FIRST</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::CASE_LEVEL"></A>
+<CODE><BIG><B>CASE_LEVEL</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::DEFAULT_VALUE"></A>
+<CODE><BIG><B>DEFAULT_VALUE</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::FRENCH_COLLATION"></A>
+<CODE><BIG><B>FRENCH_COLLATION</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::HIRAGANA_QUATERNARY_MODE"></A>
+<CODE><BIG><B>HIRAGANA_QUATERNARY_MODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::IDENTICAL"></A>
+<CODE><BIG><B>IDENTICAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::LOWER_FIRST"></A>
+<CODE><BIG><B>LOWER_FIRST</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::NON_IGNORABLE"></A>
+<CODE><BIG><B>NON_IGNORABLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::NORMALIZATION_MODE"></A>
+<CODE><BIG><B>NORMALIZATION_MODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::NUMERIC_COLLATION"></A>
+<CODE><BIG><B>NUMERIC_COLLATION</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::OFF"></A>
+<CODE><BIG><B>OFF</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::ON"></A>
+<CODE><BIG><B>ON</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::PRIMARY"></A>
+<CODE><BIG><B>PRIMARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::QUATERNARY"></A>
+<CODE><BIG><B>QUATERNARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::SECONDARY"></A>
+<CODE><BIG><B>SECONDARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::SHIFTED"></A>
+<CODE><BIG><B>SHIFTED</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::SORT_NUMERIC"></A>
+<CODE><BIG><B>SORT_NUMERIC</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::SORT_REGULAR"></A>
+<CODE><BIG><B>SORT_REGULAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::SORT_STRING"></A>
+<CODE><BIG><B>SORT_STRING</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::STRENGTH"></A>
+<CODE><BIG><B>STRENGTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::TERTIARY"></A>
+<CODE><BIG><B>TERTIARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::UPPER_FIRST"></A>
+<CODE><BIG><B>UPPER_FIRST</B></BIG> = 1</CODE>
+<P>
+
+<A name="Collator::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="Collator::asort()"></A>
+<CODE><I>boolean</I> <BIG><B>asort</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $arr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sort_flag = 1)</CODE>
+<P>
+
+<A name="Collator::compare()"></A>
+<CODE><I>int</I> <BIG><B>compare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str2)</CODE>
+<P>
+
+<A name="Collator::create()"></A>
+<CODE>static <I><a href="#Collator"><code>Collator</code></a></I> <BIG><B>create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale)</CODE>
+<P>
+
+<A name="Collator::getAttribute()"></A>
+<CODE><I>int</I> <BIG><B>getAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="Collator::getErrorCode()"></A>
+<CODE><I>int</I> <BIG><B>getErrorCode</B></BIG>()</CODE>
+<P>
+
+<A name="Collator::getErrorMessage()"></A>
+<CODE><I>string</I> <BIG><B>getErrorMessage</B></BIG>()</CODE>
+<P>
+
+<A name="Collator::getLocale()"></A>
+<CODE><I>string</I> <BIG><B>getLocale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 1)</CODE>
+<P>
+
+<A name="Collator::getSortKey()"></A>
+<CODE><I>string</I> <BIG><B>getSortKey</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str)</CODE>
+<P>
+
+<A name="Collator::getStrength()"></A>
+<CODE><I>int</I> <BIG><B>getStrength</B></BIG>()</CODE>
+<P>
+
+<A name="Collator::setAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>setAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$val)</CODE>
+<P>
+
+<A name="Collator::setStrength()"></A>
+<CODE><I>boolean</I> <BIG><B>setStrength</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$strength)</CODE>
+<P>
+
+<A name="Collator::sortWithSortKeys()"></A>
+<CODE><I>boolean</I> <BIG><B>sortWithSortKeys</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $arr)</CODE>
+<P>
+
+<A name="Collator::sort()"></A>
+<CODE><I>boolean</I> <BIG><B>sort</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $arr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sort_flag = 1)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="NumberFormatter"></A>
+<pre>class <BIG><B>NumberFormatter</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="NumberFormatter::CURRENCY"></A>
+<CODE><BIG><B>CURRENCY</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::CURRENCY_CODE"></A>
+<CODE><BIG><B>CURRENCY_CODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::CURRENCY_SYMBOL"></A>
+<CODE><BIG><B>CURRENCY_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::DECIMAL"></A>
+<CODE><BIG><B>DECIMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::DECIMAL_ALWAYS_SHOWN"></A>
+<CODE><BIG><B>DECIMAL_ALWAYS_SHOWN</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::DECIMAL_SEPARATOR_SYMBOL"></A>
+<CODE><BIG><B>DECIMAL_SEPARATOR_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::DEFAULT_RULESET"></A>
+<CODE><BIG><B>DEFAULT_RULESET</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::DEFAULT_STYLE"></A>
+<CODE><BIG><B>DEFAULT_STYLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::DIGIT_SYMBOL"></A>
+<CODE><BIG><B>DIGIT_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::DURATION"></A>
+<CODE><BIG><B>DURATION</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::EXPONENTIAL_SYMBOL"></A>
+<CODE><BIG><B>EXPONENTIAL_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::FORMAT_WIDTH"></A>
+<CODE><BIG><B>FORMAT_WIDTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::FRACTION_DIGITS"></A>
+<CODE><BIG><B>FRACTION_DIGITS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::GROUPING_SEPARATOR_SYMBOL"></A>
+<CODE><BIG><B>GROUPING_SEPARATOR_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::GROUPING_SIZE"></A>
+<CODE><BIG><B>GROUPING_SIZE</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::GROUPING_USED"></A>
+<CODE><BIG><B>GROUPING_USED</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::IGNORE"></A>
+<CODE><BIG><B>IGNORE</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::INFINITY_SYMBOL"></A>
+<CODE><BIG><B>INFINITY_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::INTEGER_DIGITS"></A>
+<CODE><BIG><B>INTEGER_DIGITS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::INTL_CURRENCY_SYMBOL"></A>
+<CODE><BIG><B>INTL_CURRENCY_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::LENIENT_PARSE"></A>
+<CODE><BIG><B>LENIENT_PARSE</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MAX_FRACTION_DIGITS"></A>
+<CODE><BIG><B>MAX_FRACTION_DIGITS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MAX_INTEGER_DIGITS"></A>
+<CODE><BIG><B>MAX_INTEGER_DIGITS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MAX_SIGNIFICANT_DIGITS"></A>
+<CODE><BIG><B>MAX_SIGNIFICANT_DIGITS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MINUS_SIGN_SYMBOL"></A>
+<CODE><BIG><B>MINUS_SIGN_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MIN_FRACTION_DIGITS"></A>
+<CODE><BIG><B>MIN_FRACTION_DIGITS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MIN_INTEGER_DIGITS"></A>
+<CODE><BIG><B>MIN_INTEGER_DIGITS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MIN_SIGNIFICANT_DIGITS"></A>
+<CODE><BIG><B>MIN_SIGNIFICANT_DIGITS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MONETARY_GROUPING_SEPARATOR_SYMBOL"></A>
+<CODE><BIG><B>MONETARY_GROUPING_SEPARATOR_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MONETARY_SEPARATOR_SYMBOL"></A>
+<CODE><BIG><B>MONETARY_SEPARATOR_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::MULTIPLIER"></A>
+<CODE><BIG><B>MULTIPLIER</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::NAN_SYMBOL"></A>
+<CODE><BIG><B>NAN_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::NEGATIVE_PREFIX"></A>
+<CODE><BIG><B>NEGATIVE_PREFIX</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::NEGATIVE_SUFFIX"></A>
+<CODE><BIG><B>NEGATIVE_SUFFIX</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ORDINAL"></A>
+<CODE><BIG><B>ORDINAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PADDING_CHARACTER"></A>
+<CODE><BIG><B>PADDING_CHARACTER</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PADDING_POSITION"></A>
+<CODE><BIG><B>PADDING_POSITION</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PAD_AFTER_PREFIX"></A>
+<CODE><BIG><B>PAD_AFTER_PREFIX</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PAD_AFTER_SUFFIX"></A>
+<CODE><BIG><B>PAD_AFTER_SUFFIX</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PAD_BEFORE_PREFIX"></A>
+<CODE><BIG><B>PAD_BEFORE_PREFIX</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PAD_BEFORE_SUFFIX"></A>
+<CODE><BIG><B>PAD_BEFORE_SUFFIX</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PAD_ESCAPE_SYMBOL"></A>
+<CODE><BIG><B>PAD_ESCAPE_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PARSE_INT_ONLY"></A>
+<CODE><BIG><B>PARSE_INT_ONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PATTERN_DECIMAL"></A>
+<CODE><BIG><B>PATTERN_DECIMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PATTERN_RULEBASED"></A>
+<CODE><BIG><B>PATTERN_RULEBASED</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PATTERN_SEPARATOR_SYMBOL"></A>
+<CODE><BIG><B>PATTERN_SEPARATOR_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PERCENT"></A>
+<CODE><BIG><B>PERCENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PERCENT_SYMBOL"></A>
+<CODE><BIG><B>PERCENT_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PERMILL_SYMBOL"></A>
+<CODE><BIG><B>PERMILL_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PLUS_SIGN_SYMBOL"></A>
+<CODE><BIG><B>PLUS_SIGN_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::POSITIVE_PREFIX"></A>
+<CODE><BIG><B>POSITIVE_PREFIX</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::POSITIVE_SUFFIX"></A>
+<CODE><BIG><B>POSITIVE_SUFFIX</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::PUBLIC_RULESETS"></A>
+<CODE><BIG><B>PUBLIC_RULESETS</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUNDING_INCREMENT"></A>
+<CODE><BIG><B>ROUNDING_INCREMENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUNDING_MODE"></A>
+<CODE><BIG><B>ROUNDING_MODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUND_CEILING"></A>
+<CODE><BIG><B>ROUND_CEILING</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUND_DOWN"></A>
+<CODE><BIG><B>ROUND_DOWN</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUND_FLOOR"></A>
+<CODE><BIG><B>ROUND_FLOOR</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUND_HALFDOWN"></A>
+<CODE><BIG><B>ROUND_HALFDOWN</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUND_HALFEVEN"></A>
+<CODE><BIG><B>ROUND_HALFEVEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUND_HALFUP"></A>
+<CODE><BIG><B>ROUND_HALFUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ROUND_UP"></A>
+<CODE><BIG><B>ROUND_UP</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::SCIENTIFIC"></A>
+<CODE><BIG><B>SCIENTIFIC</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::SECONDARY_GROUPING_SIZE"></A>
+<CODE><BIG><B>SECONDARY_GROUPING_SIZE</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::SIGNIFICANT_DIGITS_USED"></A>
+<CODE><BIG><B>SIGNIFICANT_DIGITS_USED</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::SIGNIFICANT_DIGIT_SYMBOL"></A>
+<CODE><BIG><B>SIGNIFICANT_DIGIT_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::SPELLOUT"></A>
+<CODE><BIG><B>SPELLOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::TYPE_CURRENCY"></A>
+<CODE><BIG><B>TYPE_CURRENCY</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::TYPE_DEFAULT"></A>
+<CODE><BIG><B>TYPE_DEFAULT</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::TYPE_DOUBLE"></A>
+<CODE><BIG><B>TYPE_DOUBLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::TYPE_INT32"></A>
+<CODE><BIG><B>TYPE_INT32</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::TYPE_INT64"></A>
+<CODE><BIG><B>TYPE_INT64</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::ZERO_DIGIT_SYMBOL"></A>
+<CODE><BIG><B>ZERO_DIGIT_SYMBOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="NumberFormatter::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$style,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern = NULL)</CODE>
+<P>
+
+<A name="NumberFormatter::create()"></A>
+<CODE>static <I><a href="#NumberFormatter"><code>NumberFormatter</code></a></I> <BIG><B>create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$style,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern = NULL)</CODE>
+<P>
+
+<A name="NumberFormatter::formatCurrency()"></A>
+<CODE><I>string</I> <BIG><B>formatCurrency</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$currency)</CODE>
+<P>
+
+<A name="NumberFormatter::format()"></A>
+<CODE><I>string</I> <BIG><B>format</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 1)</CODE>
+<P>
+
+<A name="NumberFormatter::getAttribute()"></A>
+<CODE><I>int</I> <BIG><B>getAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="NumberFormatter::getErrorCode()"></A>
+<CODE><I>int</I> <BIG><B>getErrorCode</B></BIG>()</CODE>
+<P>
+
+<A name="NumberFormatter::getErrorMessage()"></A>
+<CODE><I>string</I> <BIG><B>getErrorMessage</B></BIG>()</CODE>
+<P>
+
+<A name="NumberFormatter::getLocale()"></A>
+<CODE><I>string</I> <BIG><B>getLocale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 1)</CODE>
+<P>
+
+<A name="NumberFormatter::getPattern()"></A>
+<CODE><I>string</I> <BIG><B>getPattern</B></BIG>()</CODE>
+<P>
+
+<A name="NumberFormatter::getSymbol()"></A>
+<CODE><I>string</I> <BIG><B>getSymbol</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="NumberFormatter::getTextAttribute()"></A>
+<CODE><I>string</I> <BIG><B>getTextAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="NumberFormatter::parseCurrency()"></A>
+<CODE><I>float</I> <BIG><B>parseCurrency</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;&amp; $currency,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $position = 0)</CODE>
+<P>
+
+<A name="NumberFormatter::parse()"></A>
+<CODE><I>mixed</I> <BIG><B>parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $position = 0)</CODE>
+<P>
+
+<A name="NumberFormatter::setAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>setAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="NumberFormatter::setPattern()"></A>
+<CODE><I>boolean</I> <BIG><B>setPattern</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="NumberFormatter::setSymbol()"></A>
+<CODE><I>boolean</I> <BIG><B>setSymbol</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="NumberFormatter::setTextAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>setTextAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Normalizer"></A>
+<pre>class <BIG><B>Normalizer</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Normalizer::FORM_C"></A>
+<CODE><BIG><B>FORM_C</B></BIG> = ""</CODE>
+<P>
+
+<A name="Normalizer::FORM_D"></A>
+<CODE><BIG><B>FORM_D</B></BIG> = ""</CODE>
+<P>
+
+<A name="Normalizer::FORM_KC"></A>
+<CODE><BIG><B>FORM_KC</B></BIG> = ""</CODE>
+<P>
+
+<A name="Normalizer::FORM_KD"></A>
+<CODE><BIG><B>FORM_KD</B></BIG> = ""</CODE>
+<P>
+
+<A name="Normalizer::NONE"></A>
+<CODE><BIG><B>NONE</B></BIG> = ""</CODE>
+<P>
+
+<A name="Normalizer::OPTION_DEFAULT"></A>
+<CODE><BIG><B>OPTION_DEFAULT</B></BIG> = ""</CODE>
+<P>
+
+<A name="Normalizer::isNormalized()"></A>
+<CODE>static <I>boolean</I> <BIG><B>isNormalized</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$input,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$form = "")</CODE>
+<P>
+
+<A name="Normalizer::normalize()"></A>
+<CODE>static <I>string</I> <BIG><B>normalize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$input,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$form = "")</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="MessageFormatter"></A>
+<pre>class <BIG><B>MessageFormatter</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="MessageFormatter::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="MessageFormatter::create()"></A>
+<CODE>static <I><a href="#MessageFormatter"><code>MessageFormatter</code></a></I> <BIG><B>create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="MessageFormatter::formatMessage()"></A>
+<CODE>static <I>string</I> <BIG><B>formatMessage</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$args_)</CODE>
+<P>
+
+<A name="MessageFormatter::format()"></A>
+<CODE><I>string</I> <BIG><B>format</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$args_)</CODE>
+<P>
+
+<A name="MessageFormatter::getErrorCode()"></A>
+<CODE><I>int</I> <BIG><B>getErrorCode</B></BIG>()</CODE>
+<P>
+
+<A name="MessageFormatter::getErrorMessage()"></A>
+<CODE><I>string</I> <BIG><B>getErrorMessage</B></BIG>()</CODE>
+<P>
+
+<A name="MessageFormatter::getLocale()"></A>
+<CODE><I>string</I> <BIG><B>getLocale</B></BIG>()</CODE>
+<P>
+
+<A name="MessageFormatter::getPattern()"></A>
+<CODE><I>string</I> <BIG><B>getPattern</B></BIG>()</CODE>
+<P>
+
+<A name="MessageFormatter::parseMessage()"></A>
+<CODE>static <I>mixed[int]</I> <BIG><B>parseMessage</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="MessageFormatter::parse()"></A>
+<CODE><I>mixed[int]</I> <BIG><B>parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="MessageFormatter::setPattern()"></A>
+<CODE><I>boolean</I> <BIG><B>setPattern</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="IntlDateFormatter"></A>
+<pre>class <BIG><B>IntlDateFormatter</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="IntlDateFormatter::NONE"></A>
+<CODE><BIG><B>NONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IntlDateFormatter::FULL"></A>
+<CODE><BIG><B>FULL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IntlDateFormatter::LONG"></A>
+<CODE><BIG><B>LONG</B></BIG> = 1</CODE>
+<P>
+
+<A name="IntlDateFormatter::MEDIUM"></A>
+<CODE><BIG><B>MEDIUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="IntlDateFormatter::SHORT"></A>
+<CODE><BIG><B>SHORT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IntlDateFormatter::TRADITIONAL"></A>
+<CODE><BIG><B>TRADITIONAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IntlDateFormatter::GREGORIAN"></A>
+<CODE><BIG><B>GREGORIAN</B></BIG> = 1</CODE>
+<P>
+
+<A name="IntlDateFormatter::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$datetype,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$timetype,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$timezone = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$calendar = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern = "")</CODE>
+<P>
+
+<A name="IntlDateFormatter::create()"></A>
+<CODE>static <I><a href="#IntlDateFormatter"><code>IntlDateFormatter</code></a></I> <BIG><B>create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$datetype,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$timetype,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$timezone = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$calendar = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern = "")</CODE>
+<P>
+
+<A name="IntlDateFormatter::format()"></A>
+<CODE><I>string</I> <BIG><B>format</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="IntlDateFormatter::getCalendar()"></A>
+<CODE><I>int</I> <BIG><B>getCalendar</B></BIG>()</CODE>
+<P>
+
+<A name="IntlDateFormatter::getDateType()"></A>
+<CODE><I>int</I> <BIG><B>getDateType</B></BIG>()</CODE>
+<P>
+
+<A name="IntlDateFormatter::getErrorCode()"></A>
+<CODE><I>int</I> <BIG><B>getErrorCode</B></BIG>()</CODE>
+<P>
+
+<A name="IntlDateFormatter::getErrorMessage()"></A>
+<CODE><I>string</I> <BIG><B>getErrorMessage</B></BIG>()</CODE>
+<P>
+
+<A name="IntlDateFormatter::getLocale()"></A>
+<CODE><I>string</I> <BIG><B>getLocale</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$which = 1)</CODE>
+<P>
+
+<A name="IntlDateFormatter::getPattern()"></A>
+<CODE><I>string</I> <BIG><B>getPattern</B></BIG>()</CODE>
+<P>
+
+<A name="IntlDateFormatter::getTimeType()"></A>
+<CODE><I>int</I> <BIG><B>getTimeType</B></BIG>()</CODE>
+<P>
+
+<A name="IntlDateFormatter::getTimeZoneId()"></A>
+<CODE><I>string</I> <BIG><B>getTimeZoneId</B></BIG>()</CODE>
+<P>
+
+<A name="IntlDateFormatter::isLenient()"></A>
+<CODE><I>boolean</I> <BIG><B>isLenient</B></BIG>()</CODE>
+<P>
+
+<A name="IntlDateFormatter::localtime()"></A>
+<CODE><I>int[string]</I> <BIG><B>localtime</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $position = 0)</CODE>
+<P>
+
+<A name="IntlDateFormatter::parse()"></A>
+<CODE><I>int</I> <BIG><B>parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $position = 0)</CODE>
+<P>
+
+<A name="IntlDateFormatter::setCalendar()"></A>
+<CODE><I>boolean</I> <BIG><B>setCalendar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$which)</CODE>
+<P>
+
+<A name="IntlDateFormatter::setLenient()"></A>
+<CODE><I>boolean</I> <BIG><B>setLenient</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$lenient)</CODE>
+<P>
+
+<A name="IntlDateFormatter::setPattern()"></A>
+<CODE><I>boolean</I> <BIG><B>setPattern</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="IntlDateFormatter::setTimeZoneId()"></A>
+<CODE><I>boolean</I> <BIG><B>setTimeZoneId</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$zone)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ResourceBundle"></A>
+<pre>class <BIG><B>ResourceBundle</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ResourceBundle::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$bundlename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$fallback = FALSE)</CODE>
+<P>
+
+<A name="ResourceBundle::count()"></A>
+<CODE><I>int</I> <BIG><B>count</B></BIG>()</CODE>
+<P>
+
+<A name="ResourceBundle::create()"></A>
+<CODE>static <I><a href="#ResourceBundle"><code>ResourceBundle</code></a></I> <BIG><B>create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$bundlename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$fallback = FALSE)</CODE>
+<P>
+
+<A name="ResourceBundle::getErrorCode()"></A>
+<CODE><I>int</I> <BIG><B>getErrorCode</B></BIG>()</CODE>
+<P>
+
+<A name="ResourceBundle::getErrorMessage()"></A>
+<CODE><I>string</I> <BIG><B>getErrorMessage</B></BIG>()</CODE>
+<P>
+
+<A name="ResourceBundle::get()"></A>
+<CODE><I>mixed</I> <BIG><B>get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="ResourceBundle::getLocales()"></A>
+<CODE><I>string[int]</I> <BIG><B>getLocales</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$bundlename)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Spoofchecker"></A>
+<pre>class <BIG><B>Spoofchecker</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Spoofchecker::SINGLE_SCRIPT_CONFUSABLE"></A>
+<CODE><BIG><B>SINGLE_SCRIPT_CONFUSABLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="Spoofchecker::MIXED_SCRIPT_CONFUSABLE"></A>
+<CODE><BIG><B>MIXED_SCRIPT_CONFUSABLE</B></BIG> = 2</CODE>
+<P>
+
+<A name="Spoofchecker::WHOLE_SCRIPT_CONFUSABLE"></A>
+<CODE><BIG><B>WHOLE_SCRIPT_CONFUSABLE</B></BIG> = 4</CODE>
+<P>
+
+<A name="Spoofchecker::ANY_CASE"></A>
+<CODE><BIG><B>ANY_CASE</B></BIG> = 8</CODE>
+<P>
+
+<A name="Spoofchecker::SINGLE_SCRIPT"></A>
+<CODE><BIG><B>SINGLE_SCRIPT</B></BIG> = 16</CODE>
+<P>
+
+<A name="Spoofchecker::INVISIBLE"></A>
+<CODE><BIG><B>INVISIBLE</B></BIG> = 32</CODE>
+<P>
+
+<A name="Spoofchecker::CHAR_LIMIT"></A>
+<CODE><BIG><B>CHAR_LIMIT</B></BIG> = 64</CODE>
+<P>
+
+<A name="Spoofchecker::areConfusable()"></A>
+<CODE><I>boolean</I> <BIG><B>areConfusable</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>string</I>&nbsp;&amp; $error = "")</CODE>
+<P>
+
+<A name="Spoofchecker::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>()</CODE>
+<P>
+
+<A name="Spoofchecker::isSuspicious()"></A>
+<CODE><I>boolean</I> <BIG><B>isSuspicious</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>string</I>&nbsp;&amp; $error = "")</CODE>
+<P>
+
+<A name="Spoofchecker::setAllowedLocales()"></A>
+<CODE><I>void</I> <BIG><B>setAllowedLocales</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$locale_list)</CODE>
+<P>
+
+<A name="Spoofchecker::setChecks()"></A>
+<CODE><I>void</I> <BIG><B>setChecks</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$checks)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Transliterator"></A>
+<pre>class <BIG><B>Transliterator</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Transliterator::FORWARD_FIXME"></A>
+<CODE><BIG><B>FORWARD_FIXME</B></BIG> = 0</CODE>
+<P>
+
+<A name="Transliterator::REVERSE"></A>
+<CODE><BIG><B>REVERSE</B></BIG> = 1</CODE>
+<P>
+
+<A name="Transliterator::$id"></A>
+<CODE><I>string</I> <BIG><B>$id</B></BIG></CODE>
+<P>
+
+<A name="Transliterator::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>()</CODE>
+<P>
+
+<A name="Transliterator::create()"></A>
+<CODE>static <I><a href="#Transliterator"><code>Transliterator</code></a></I> <BIG><B>create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$direction = 0)</CODE>
+<P>
+
+<A name="Transliterator::createFromRules()"></A>
+<CODE>static <I><a href="#Transliterator"><code>Transliterator</code></a></I> <BIG><B>createFromRules</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$rules,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$direction = 0)</CODE>
+<P>
+
+<A name="Transliterator::createInverse()"></A>
+<CODE><I><a href="#Transliterator"><code>Transliterator</code></a></I> <BIG><B>createInverse</B></BIG>()</CODE>
+<P>
+
+<A name="Transliterator::getErrorCode()"></A>
+<CODE><I>int</I> <BIG><B>getErrorCode</B></BIG>()</CODE>
+<P>
+
+<A name="Transliterator::getErrorMessage()"></A>
+<CODE><I>string</I> <BIG><B>getErrorMessage</B></BIG>()</CODE>
+<P>
+
+<A name="Transliterator::listIDs()"></A>
+<CODE>static <I>string[int]</I> <BIG><B>listIDs</B></BIG>()</CODE>
+<P>
+
+<A name="Transliterator::transliterate()"></A>
+<CODE><I>string</I> <BIG><B>transliterate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subject,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$end = 999999999)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

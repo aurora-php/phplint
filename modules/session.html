@@ -1,0 +1,243 @@
+<HTML><BODY>
+<H1>session</H1>
+<P><b>Session Handling Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.session.php"><code>http://www.php.net/manual/en/ref.session.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="SID"></A>
+<CODE><BIG><B>SID</B></BIG> = "?"</CODE>
+<P>
+
+<A name="PHP_SESSION_DISABLED"></A>
+<CODE><BIG><B>PHP_SESSION_DISABLED</B></BIG> = 1</CODE>
+<P>
+
+<A name="PHP_SESSION_NONE"></A>
+<CODE><BIG><B>PHP_SESSION_NONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PHP_SESSION_ACTIVE"></A>
+<CODE><BIG><B>PHP_SESSION_ACTIVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="session_name()"></A>
+<CODE><I>string</I> <BIG><B>session_name</B></BIG>(...)</CODE>
+<P>
+
+<A name="session_module_name()"></A>
+<CODE><I>string</I> <BIG><B>session_module_name</B></BIG>(...)</CODE>
+<P>
+
+<A name="session_save_path()"></A>
+<CODE><I>string</I> <BIG><B>session_save_path</B></BIG>(...)</CODE>
+<P>
+
+<A name="session_id()"></A>
+<CODE><I>string</I> <BIG><B>session_id</B></BIG>(...)</CODE>
+<P>
+
+<A name="session_regenerate_id()"></A>
+<CODE><I>boolean</I> <BIG><B>session_regenerate_id</B></BIG>()</CODE>
+<P>
+
+<A name="session_decode()"></A>
+<CODE><I>boolean</I> <BIG><B>session_decode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="session_register()"></A>
+<CODE><I>boolean</I> <BIG><B>session_register</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$var_names, ...)</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> This function has been DEPRECATED as of PHP 5.3.0 and REMOVED as of PHP 5.4.0.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="session_unregister()"></A>
+<CODE><I>boolean</I> <BIG><B>session_unregister</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$varname)</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> This function has been DEPRECATED as of PHP 5.3.0 and REMOVED as of PHP 5.4.0.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="session_is_registered()"></A>
+<CODE><I>boolean</I> <BIG><B>session_is_registered</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$varname)</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> This function has been DEPRECATED as of PHP 5.3.0 and REMOVED as of PHP 5.4.0.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="session_encode()"></A>
+<CODE><I>string</I> <BIG><B>session_encode</B></BIG>()</CODE>
+<P>
+
+<A name="session_start()"></A>
+<CODE><I>boolean</I> <BIG><B>session_start</B></BIG>()</CODE>
+<P>
+
+<A name="session_destroy()"></A>
+<CODE><I>boolean</I> <BIG><B>session_destroy</B></BIG>()</CODE>
+<P>
+
+<A name="session_unset()"></A>
+<CODE><I>void</I> <BIG><B>session_unset</B></BIG>()</CODE>
+<P>
+
+<A name="session_set_save_handler()"></A>
+<CODE><I>void</I> <BIG><B>session_set_save_handler</B></BIG>(...)</CODE>
+<P>
+
+<A name="session_cache_limiter()"></A>
+<CODE><I>string</I> <BIG><B>session_cache_limiter</B></BIG>(...)</CODE>
+<P>
+
+<A name="session_cache_expire()"></A>
+<CODE><I>int</I> <BIG><B>session_cache_expire</B></BIG>(...)</CODE>
+<P>
+
+<A name="session_set_cookie_params()"></A>
+<CODE><I>void</I> <BIG><B>session_set_cookie_params</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$lifetime, ...)</CODE>
+<P>
+
+<A name="session_get_cookie_params()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>session_get_cookie_params</B></BIG>()</CODE>
+<P>
+
+<A name="session_write_close()"></A>
+<CODE><I>void</I> <BIG><B>session_write_close</B></BIG>()</CODE>
+<P>
+
+<A name="session_commit()"></A>
+<CODE><I>void</I> <BIG><B>session_commit</B></BIG>()</CODE>
+<P>
+
+<A name="session_status()"></A>
+<CODE><I>int</I> <BIG><B>session_status</B></BIG>()</CODE>
+<P>
+
+<A name="session_register_shutdown()"></A>
+<CODE><I>void</I> <BIG><B>session_register_shutdown</B></BIG>()</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<PRE>
+
+</PRE>
+
+<A name="SessionHandlerInterface"></A>
+<pre>interface <BIG><B>SessionHandlerInterface</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>FIXME: it seems that all these methods may trigger error, and  this should be declared in some way in the interface; can't do  this in PHPLint</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="SessionHandlerInterface::close()"></A>
+<CODE><I>boolean</I> <BIG><B>close</B></BIG>()</CODE>
+<P>
+
+<A name="SessionHandlerInterface::destroy()"></A>
+<CODE><I>boolean</I> <BIG><B>destroy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_id)</CODE>
+<P>
+
+<A name="SessionHandlerInterface::gc()"></A>
+<CODE><I>boolean</I> <BIG><B>gc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$maxlifetime)</CODE>
+<P>
+
+<A name="SessionHandlerInterface::open()"></A>
+<CODE><I>boolean</I> <BIG><B>open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$save_path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="SessionHandlerInterface::read()"></A>
+<CODE><I>string</I> <BIG><B>read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_id)</CODE>
+<P>
+
+<A name="SessionHandlerInterface::write()"></A>
+<CODE><I>boolean</I> <BIG><B>write</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_data)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="SessionHandler"></A>
+<pre>class <BIG><B>SessionHandler</B></BIG>
+      |  
+      `--(<i><a href="#SessionHandlerInterface"><code>SessionHandlerInterface</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="SessionHandler::close()"></A>
+<CODE><I>boolean</I> <BIG><B>close</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#SessionHandlerInterface::close()"><code>SessionHandlerInterface</code></a><P>
+
+<A name="SessionHandler::destroy()"></A>
+<CODE><I>boolean</I> <BIG><B>destroy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_id)</CODE>
+
+<BR><I>implements</i> <a href="#SessionHandlerInterface::destroy()"><code>SessionHandlerInterface</code></a><P>
+
+<A name="SessionHandler::gc()"></A>
+<CODE><I>boolean</I> <BIG><B>gc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$maxlifetime)</CODE>
+
+<BR><I>implements</i> <a href="#SessionHandlerInterface::gc()"><code>SessionHandlerInterface</code></a><P>
+
+<A name="SessionHandler::open()"></A>
+<CODE><I>boolean</I> <BIG><B>open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$save_path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_id)</CODE>
+
+<BR><I>implements</i> <a href="#SessionHandlerInterface::open()"><code>SessionHandlerInterface</code></a><P>
+
+<A name="SessionHandler::read()"></A>
+<CODE><I>string</I> <BIG><B>read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_id)</CODE>
+
+<BR><I>implements</i> <a href="#SessionHandlerInterface::read()"><code>SessionHandlerInterface</code></a><P>
+
+<A name="SessionHandler::write()"></A>
+<CODE><I>boolean</I> <BIG><B>write</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$session_data)</CODE>
+
+<BR><I>implements</i> <a href="#SessionHandlerInterface::write()"><code>SessionHandlerInterface</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

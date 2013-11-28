@@ -1,0 +1,142 @@
+<HTML><BODY>
+<H1>fileinfo</H1>
+<P><b>File Information</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/book.fileinfo.php"><code>www.php.net/manual/en/book.fileinfo.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="FILEINFO_NONE"></A>
+<CODE><BIG><B>FILEINFO_NONE</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_SYMLINK"></A>
+<CODE><BIG><B>FILEINFO_SYMLINK</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_MIME_TYPE"></A>
+<CODE><BIG><B>FILEINFO_MIME_TYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_MIME_ENCODING"></A>
+<CODE><BIG><B>FILEINFO_MIME_ENCODING</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_MIME"></A>
+<CODE><BIG><B>FILEINFO_MIME</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_COMPRESS"></A>
+<CODE><BIG><B>FILEINFO_COMPRESS</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_DEVICES"></A>
+<CODE><BIG><B>FILEINFO_DEVICES</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_CONTINUE"></A>
+<CODE><BIG><B>FILEINFO_CONTINUE</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_PRESERVE_ATIME"></A>
+<CODE><BIG><B>FILEINFO_PRESERVE_ATIME</B></BIG> = 1</CODE>
+<P>
+
+<A name="FILEINFO_RAW"></A>
+<CODE><BIG><B>FILEINFO_RAW</B></BIG> = 1</CODE>
+<P>
+
+<A name="finfo_buffer()"></A>
+<CODE><I>string</I> <BIG><B>finfo_buffer</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$finfo,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_ = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$context = NULL)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="finfo_close()"></A>
+<CODE><I>boolean</I> <BIG><B>finfo_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$finfo)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="finfo_file()"></A>
+<CODE><I>string</I> <BIG><B>finfo_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$finfo,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file_name = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$context = NULL)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="finfo_open()"></A>
+<CODE><I>resource</I> <BIG><B>finfo_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$magic_file = NULL)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="finfo_set_flags()"></A>
+<CODE><I>boolean</I> <BIG><B>finfo_set_flags</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$finfo,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mime_content_type()"></A>
+<CODE><I>string</I> <BIG><B>mime_content_type</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<BLOCKQUOTE>
+<P>
+* @deprecated This function has been deprecated as the PECL extension Fileinfo provides the same functionality (and more) in a much cleaner way. 
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="finfo"></A>
+<pre>class <BIG><B>finfo</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="finfo::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$magic_file = NULL)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="finfo::buffer()"></A>
+<CODE><I>string</I> <BIG><B>buffer</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_ = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$context = NULL)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="finfo::file()"></A>
+<CODE><I>string</I> <BIG><B>file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file_name = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$context = NULL)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="finfo::set_flags()"></A>
+<CODE><I>boolean</I> <BIG><B>set_flags</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

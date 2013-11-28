@@ -1,0 +1,353 @@
+<HTML><BODY>
+<H1>BitSet</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="Hashable.html"><code>Hashable.php</code></a>, <a href="Comparable.html"><code>Comparable.php</code></a>, <a href="../utils/Integers.html"><code>Integers.php</code></a>, <a href="../utils/Strings.html"><code>Strings.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet"></A>
+<pre>class <BIG><B>it\icosaedro\containers\BitSet</B></BIG>
+      |  
+      +--(<i><a href="Hashable.html#it/icosaedro/containers/Hashable"><code>it\icosaedro\containers\Hashable</code></a></i>)
+      |    `--(<i><a href="Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      `--(<i><a href="Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Set of non-negative integer numbers</b></P><P><B>Version:</B> $Date: 2012/02/22 10:41:48 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+The size of the set grows dynamically
+ as more elements are entered. Bits have a position given by an index
+ that starts from 0 (the first bit). The set is open to the right, and
+ bits above the last bit set or cleared are assumed zero.  Example:
+<p>
+ <pre>
+     /&#42;*
+      * Eratosthenes sieve algorithm.
+      * @param int $n Search prime numbers up to this limit.
+      * @return BitSet Found prime numbers.
+      &#42;/
+     function primes($n)
+     {
+         $b = new BitSet();
+         for($i = 2; $i &lt;= $n; $i++)
+             $b-&gt;set($i);
+         $i = 2;
+         while( $i * $i &lt;= $n ){
+             if( $b-&gt;get($i) ){
+                 $k = 2 * $i;
+                 while( $k &lt;= $n ){
+                     $b-&gt;clear($k);
+                     $k += $i;
+                 }
+             }
+             $i++;
+         }
+         return $b;
+     }
+
+     echo primes(100);
+     ==&gt; {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+     59, 61, 67, 71, 73, 79, 83, 89, 97}
+ </pre>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Initializes a new empty set of bits</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::set()"></A>
+<CODE><I>void</I> <BIG><B>set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bit)</CODE>
+<BLOCKQUOTE>
+<P><b>Sets a bit in the set to 1</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$bit&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the bit. If the current size of the set
+ is too small to hold a bit at this offset, the size of the set is
+ increased so that the final size of the set will be exactly ($bit+1);
+ the new bits added are set to zero.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The argument is negative.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::clear()"></A>
+<CODE><I>void</I> <BIG><B>clear</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bit)</CODE>
+<BLOCKQUOTE>
+<P><b>Resets a bit in the set</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$bit&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the bit. If the current size of the set
+ is too small to hold a bit at this offset, the size of the set is
+ increased so that the final size of the set will be exactly ($bit+1);
+ the new bits added are set to zero.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The argument is negative.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::get()"></A>
+<CODE><I>boolean</I> <BIG><B>get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bit)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the status of a bit in the set</b></P><P>
+The set has only a limited
+ size that depends on the highest index of the bit set or cleared;
+ if the status of a bit above the size of the set is requested,
+ FALSE is returned.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$bit&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the bit.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Status of the bit, that is FALSE for 0 or TRUE for 1.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The argument is negative.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::magnitude()"></A>
+<CODE><I>int</I> <BIG><B>magnitude</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Index of the highest bit set to true + 1</b></P><P>
+If the set
+ is empty or there are not bits set to 1, zero is returned.
+
+<p><b>Return:</b> Magnitude of the set.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::cardinality()"></A>
+<CODE><I>int</I> <BIG><B>cardinality</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Number of bits set to true in this set</b></P><P>
+<p><b>Return:</b> Number of bits set to true in this set.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::size()"></A>
+<CODE><I>int</I> <BIG><B>size</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Size of the bit set used</b></P><P>
+<p><b>Return:</b> Size of the bit set. This is the highest bit index set
+ or cleared + 1.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::intersection()"></A>
+<CODE><I>void</I> <BIG><B>intersection</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/containers/BitSet"><code>it\icosaedro\containers\BitSet</code></a></I>&nbsp;$other)</CODE>
+<BLOCKQUOTE>
+<P><b>This becomes the logical AND between $this and $other</b></P><P>
+The size of this set does not change.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::union()"></A>
+<CODE><I>void</I> <BIG><B>union</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/containers/BitSet"><code>it\icosaedro\containers\BitSet</code></a></I>&nbsp;$other)</CODE>
+<BLOCKQUOTE>
+<P><b>This becomes the logical OR between $this and $other</b></P><P>
+The size of this set becomes the maximum of the sizes of the
+ two sets.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::reverse()"></A>
+<CODE><I>void</I> <BIG><B>reverse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/containers/BitSet"><code>it\icosaedro\containers\BitSet</code></a></I>&nbsp;$other)</CODE>
+<BLOCKQUOTE>
+<P><b>This becomes the logical XOR between $this and $other</b></P><P>
+The operation performed is also known as "Symmetric difference".
+ The size of this set becomes the maximum of the sizes of the
+ two sets.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::difference()"></A>
+<CODE><I>void</I> <BIG><B>difference</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/containers/BitSet"><code>it\icosaedro\containers\BitSet</code></a></I>&nbsp;$other)</CODE>
+<BLOCKQUOTE>
+<P><b>This becomes the logical AND NOT between $this and $other</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::getHash()"></A>
+<CODE><I>int</I> <BIG><B>getHash</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="Hashable.html#it/icosaedro/containers/Hashable::getHash()"><code>it\icosaedro\containers\Hashable</code></a><BLOCKQUOTE>
+<P><b>Returns the hash code for this set</b></P><P>
+<p><b>Return:</b> Hash code.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::equals()"></A>
+<CODE><I>boolean</I> <BIG><B>equals</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="Comparable.html#it/icosaedro/containers/Comparable::equals()"><code>it\icosaedro\containers\Comparable</code></a><BLOCKQUOTE>
+<P><b>Compares this bit set with another bit set for equality</b></P><P>
+You may
+ think at the result of the comparison as if the string representations
+ of the two set as the <a href="#it/icosaedro/containers/BitSet::__toString()"><code>it\icosaedro\containers\BitSet::__toString()</code></a> method yields were
+ compared.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other bit set.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the other object is a BitSet and contains the
+ same 1 bits in the same positions. The sizes of the two sets are
+ not compared.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns the string representation of the bit set</b></P><P>
+See also the
+ <a href="#it/icosaedro/containers/BitSet::parse()"><code>it\icosaedro\containers\BitSet::parse()</code></a> method that perform the inverse conversion.
+
+<p><b>Return:</b> List of integer numbers that give the indeces of the
+ bits that are set; indeces are separated by commas and the list is
+ enclosed between braces.  Example: <code>{0, 7, 34}</code>.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/BitSet::parse()"></A>
+<CODE>static <I><a href="#it/icosaedro/containers/BitSet"><code>it\icosaedro\containers\BitSet</code></a></I> <BIG><B>parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Parses a bit set as generated by <a href="#it/icosaedro/containers/BitSet::__toString()"><code>it\icosaedro\containers\BitSet::__toString()</code></a></b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>Bit set as generated by <a href="#it/icosaedro/containers/BitSet::__toString()"><code>it\icosaedro\containers\BitSet::__toString()</code></a>,
+ for example "{1, 2, 7}". Spaces and horizontal tabulators are ignored.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The parsed bit set.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid syntax. Integer value too
+ big to be represented as int under this platform.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

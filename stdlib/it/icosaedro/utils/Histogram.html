@@ -1,0 +1,158 @@
+<HTML><BODY>
+<H1>Histogram</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a><P>
+<P><B>Required packages:</B>
+<a href="Statistics1D.html"><code>Statistics1D.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Histogram"></A>
+<pre>class <BIG><B>it\icosaedro\utils\Histogram</B></BIG>
+      |  
+      `--<a href="Statistics1D.html#it/icosaedro/utils/Statistics1D"><code>it\icosaedro\utils\Statistics1D</code></a>
+           `--(<i><a href="../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Generates an histogram of a set of samples</b></P><P><B>Version:</B> $Date: 2012/02/09 10:14:09 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+No fancy graphics, only
+ ASCII-art: this is only a tool to test other algorithms, for example
+ random number generators, hash key generators, etc.  Example:
+<p>
+ <pre>
+ # Test random generator in [0,100[:
+ $h = new Histogram(0.0, 100.0, 10);
+ srand(0);
+ for($i = 0; $i &lt; 1000; $i++){
+     $h-&gt;put(rand() % 100);
+ }
+ echo $h;
+ </pre>
+ displays:
+ <pre>
+            n=1000 min=0 max=99 mean=50.295 dev=29.084289072812
+       &lt; 0 || 0 (0.0%)
+      &lt; 10 |****************************| 88 (8.8%)
+      &lt; 20 |*****************************| 94 (9.4%)
+      &lt; 30 |****************************************| 127 (12.7%)
+      &lt; 40 |********************************| 101 (10.1%)
+      &lt; 50 |**************************| 83 (8.3%)
+      &lt; 60 |********************************| 103 (10.3%)
+      &lt; 70 |***************************| 87 (8.7%)
+      &lt; 80 |******************************| 95 (9.5%)
+      &lt; 90 |**********************************| 108 (10.8%)
+     &lt; 100 |************************************| 114 (11.4%)
+    &gt;= 100 || 0 (0.0%)
+ </pre>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Histogram::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$min,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$max,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$intervals)</CODE>
+<BLOCKQUOTE>
+<P><b>Creates a new histogram</b></P><P>
+The set of data is initially empty.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$min&nbsp;&nbsp;</code></b></td> <td valign=top>Beginning of the range.</td></tr>
+<tr><td valign=top><b><code>$max&nbsp;&nbsp;</code></b></td> <td valign=top>End of the range.</td></tr>
+<tr><td valign=top><b><code>$intervals&nbsp;&nbsp;</code></b></td> <td valign=top>Number of discrete intervals in the range
+ [$min,$max]. Every interval is then $dx=($max-$min)/$intervals wide.
+ The first interval holds values in the range [$min,$min+$dx[; the second
+ interval holds values in the range [$min+$dx,$min+2*$dx[ and so on. Two
+ more intervals are added, one at the beginning of the histogram that
+ holds values &lt; $min, and another at the end of the histogram that holds
+ values &gt;= $max.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Histogram::put()"></A>
+<CODE><I>void</I> <BIG><B>put</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$v)</CODE>
+
+<BR><I>overrides</i> <a href="Statistics1D.html#it/icosaedro/utils/Statistics1D::put()"><code>it\icosaedro\utils\Statistics1D</code></a><BLOCKQUOTE>
+<P><b>Adds a sample to the set</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$v&nbsp;&nbsp;</code></b></td> <td valign=top>Sample to add.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Histogram::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>overrides</i> <a href="Statistics1D.html#it/icosaedro/utils/Statistics1D::__toString()"><code>it\icosaedro\utils\Statistics1D</code></a>
+<BR><I>implements</i> <a href="../containers/Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns a textual messages with the histogram drawn as ASCII-art</b></P><P>
+Includes the basic statistical data: number of samples, mean, standard
+ deviation.  The total width of the histogram fits the standard width of
+ a terminal screen, that is 80 columns.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Histogram::count()"></A>
+<CODE><I>int</I> <BIG><B>count</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="Statistics1D.html#it/icosaedro/utils/Statistics1D::count()"><code>it\icosaedro\utils\Statistics1D</code></a>
+<P>
+
+<A name="it/icosaedro/utils/Histogram::min()"></A>
+<CODE><I>float</I> <BIG><B>min</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="Statistics1D.html#it/icosaedro/utils/Statistics1D::min()"><code>it\icosaedro\utils\Statistics1D</code></a>
+<P>
+
+<A name="it/icosaedro/utils/Histogram::max()"></A>
+<CODE><I>float</I> <BIG><B>max</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="Statistics1D.html#it/icosaedro/utils/Statistics1D::max()"><code>it\icosaedro\utils\Statistics1D</code></a>
+<P>
+
+<A name="it/icosaedro/utils/Histogram::mean()"></A>
+<CODE><I>float</I> <BIG><B>mean</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="Statistics1D.html#it/icosaedro/utils/Statistics1D::mean()"><code>it\icosaedro\utils\Statistics1D</code></a>
+<P>
+
+<A name="it/icosaedro/utils/Histogram::deviation()"></A>
+<CODE><I>float</I> <BIG><B>deviation</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="Statistics1D.html#it/icosaedro/utils/Statistics1D::deviation()"><code>it\icosaedro\utils\Statistics1D</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

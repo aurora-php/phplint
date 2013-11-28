@@ -1,0 +1,606 @@
+<HTML><BODY>
+<H1>BigInt</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="../containers/Hash.html"><code>Hash.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt"></A>
+<pre>class <BIG><B>it\icosaedro\bignumbers\BigInt</B></BIG>
+      |  
+      +--(<i><a href="../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+      +--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      +--(<i><a href="../containers/Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a></i>)
+      |    `--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      `--(<i><a href="../containers/Hashable.html#it/icosaedro/containers/Hashable"><code>it\icosaedro\containers\Hashable</code></a></i>)
+           `--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Implements integer numbers of arbitrary length</b></P><P><B>Version:</B> $Date: 2013/05/30 16:01:15 $</P>
+<P><B>Copyright:</B> 2007 by icosaedro.it di Umberto Salsi</P>
+<P><B>License:</B> <a href="http://www.icosaedro.it/license/bsd-style.html">www.icosaedro.it/license/bsd-style.html BSD-style.</a></P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+BigInt are integer numbers with sign and arbitrary length suitable
+  for monetary calculations and other numerical non-intensive tasks. For
+  currencies allowing fractional parts (as USD and EUR) calculations can
+  be done using cents as unit, or even smaller fractions if required for
+  higher precision.
+<p>
+  With ordinary values that may be involved in typical business
+  applications, BigInt performs several thousands of operations per second
+  on a common PC. Moreover, the source is short, fast to be parsed and
+  included, simple to use and maintain. If you need a faster implementation
+  of big numbers, look for the BCMath or the GMP extensions of PHP.
+<p>
+  A note about the interface provided by this class. Every object of
+  the class holds a big number, so most of the methods have this value as
+  implicit argument, here represented with the word "<code>$this</code>".
+  Methods that require two or more big numbers take <code>$this</code>
+  as the first argument. Once created, an object is never changed, i.e. it
+  is immutable.
+<p>
+  Example:
+<p>
+  <pre>
+  $n = new BigInt("123456789");
+  echo $n-&gt;pow(3), "\n";          # displays 1881676371789154860897069
+
+  $price = new BigInt("123456");  # 1,234.56 EUR
+  $VAT = $price-&gt;mul( new BigInt(20) )     # apply VAT 20%
+               -&gt;add( new BigInt(50) )     # rounding
+               -&gt;div( new BigInt(100) );   # rescale
+  $total = $price-&gt;add($VAT);
+  echo "You are going to spend ",
+  $total-&gt;format(2);   # displays 1,481.40
+  </pre>
+<p>
+  <b>See also:</b> <a href="./BigFloat.html">BigFloat</a> is a class
+  that performs calculations with floating point numbers and arbitrary
+  precision.
+<p>
+
+
+
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="it/icosaedro/bignumbers/BigInt::VERSION"></A>
+<CODE><BIG><B>VERSION</B></BIG> = "$Date:&nbsp;2013/05/30&nbsp;16:01:15&nbsp;$"</CODE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::$optimize"></A>
+<CODE>static <I>boolean</I> <BIG><B>$optimize</B></BIG> = TRUE</CODE>
+<BLOCKQUOTE>
+<P><b>Calculations on small numbers are performed using int</b></P><P>
+When only small numbers are involved and there is no risk of
+  overflow, calculations are made using <code>int</code> numbers for
+  better performances.  It can be set to FALSE for testing purposes
+  of the class, but should be left to TRUE for common usage.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::isValid()"></A>
+<CODE>static <I>boolean</I> <BIG><B>isValid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$n)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns TRUE if the string represents a valid BigInt</b></P><P>
+Valid BigInt numbers may have a sign +/- followed by one or more
+  decimal digits.  Spaces and any other character are not allowed,
+  so you should apply the <a href="../../../../modules/standard.html#trim()"><code>trim()</code></a> function to user submitted
+  strings:
+  <pre>
+  $n = trim( $_POST['n'] );
+  if( BigInt::isValid($n) ) ...
+  </pre>
+  Examples of valid numbers: <code>"0"  "-1"  "+12345"</code>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$n&nbsp;&nbsp;</code></b></td> <td valign=top>The string to be evaluated as BigInt.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> TRUE if the string represents a valid BigInt.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$x)</CODE>
+<BLOCKQUOTE>
+<P><b>Builds a BigInt</b></P><P>
+The arguments can be int, float or string, otherwise an exception
+  is thrown. <b>int</b> numbers can always be converted exactly
+  into BigInt numbers.
+<p>
+  If $x is a <b>string</b>, always use <a href="#it/icosaedro/bignumbers/BigInt::isValid()"><code>it\icosaedro\bignumbers\BigInt::isValid()</code></a> before
+  passing arbitrary strings, i.e. user submitted input. Spaces
+  are not allowed, so use <a href="../../../../modules/standard.html#trim()"><code>trim()</code></a>.
+<p>
+  If $x is a <b>float</b> it gets truncated, so 1.9 evaluates as 1 and
+  -1.9 evaluates as -1. INF and NAN yield exception as they cannot
+  be represented internally. WARNING: avoid to use floating-point
+  numbers as they may give unexpected results. For example on my PC
+  the function printf("%.0F", 1e23) prints "99999999999999991611392"
+  rather than the expected "1" followed by 23 zeroes because that
+  is the best internal binary representation assigned by the PHP
+  interpreter when the instruction was parsed; in other words it
+  is not an issue of printf() nor an issue of the BigInt class
+  but one of the several limitation of the floating-point numbers.
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$x&nbsp;&nbsp;</code></b></td> <td valign=top>The value to be converted to BigInt. It may be:
+         int, float, string.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The argument passed is of the
+          wrong type, or it is a non-finite float (NAN, INF or -INF),
+          or the string does not represent a valid number.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns the number represented as string</b></P><P>
+<p><b>Return:</b> The string that represents the BigInt:
+          a possible "<code>-</code>" sign is followed by one or more
+          digits.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::format()"></A>
+<CODE><I>string</I> <BIG><B>format</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$decimals = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dec_point = ".",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$thousands_sep = ",")</CODE>
+<BLOCKQUOTE>
+<P><b>Formats the big number</b></P><P>
+$decimals is the number of trailing digits to be considered as
+  decimal part. $thousands_sep is the symbol to insert every three
+  digits of the integer part. Examples:
+<p>
+  <pre>
+  $n = new BigInt("1234567890");
+  echo $n-&gt;format();  # 1,234,567,890
+  echo $n-&gt;format(2);  # 12,345,678.90
+  </pre>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$decimals&nbsp;&nbsp;</code></b></td> <td valign=top>Number of rightmost digits to be considered
+         as fractional part.</td></tr>
+<tr><td valign=top><b><code>$dec_point&nbsp;&nbsp;</code></b></td> <td valign=top>Separator string between integral part
+         and fractional part.</td></tr>
+<tr><td valign=top><b><code>$thousands_sep&nbsp;&nbsp;</code></b></td> <td valign=top>Separator string between thousands.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The BigInt formatted.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::sign()"></A>
+<CODE><I>int</I> <BIG><B>sign</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the sign of the number</b></P><P>
+<p>
+
+<p><b>Return:</b> +1 if the number is positive, -1 if negative, 0 if zero.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::scale()"></A>
+<CODE><I>int</I> <BIG><B>scale</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the scale factor</b></P><P>
+<p>
+
+<p><b>Return:</b> The number of digits minus one. The scale factor
+          of 1 is zero, the scale factor of 10 is 2.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::cmp()"></A>
+<CODE><I>int</I> <BIG><B>cmp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Compare $this with $b</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The number to be compared.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Negative if $this is less than $b, positive if
+          $this is greater than $b, zero if they are equal.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::compareTo()"></A>
+<CODE><I>int</I> <BIG><B>compareTo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="../containers/Sortable.html#it/icosaedro/containers/Sortable::compareTo()"><code>it\icosaedro\containers\Sortable</code></a><BLOCKQUOTE>
+<P><b>Implements the Comparable interface</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>Another BigInt number to compare.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Negative if $this &lt; $other, positive if
+  $this &gt; $other, zero if they are equal.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../CastException.html#CastException"><code>CastException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the object passed is NULL or is not an exact
+  instance of this class.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::abs()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>abs</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the number without the sign</b></P><P>
+<p>
+
+<p><b>Return:</b> The number without the sign.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::minus()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>minus</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the number with the sign reversed</b></P><P>
+<p>
+
+<p><b>Return:</b> The number with the sign reversed.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::add()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>add</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Addition</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The second term to add.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The sum $this+$b.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::sub()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>sub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Subtraction</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The term to subtract.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The difference $this-$b.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::mul()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>mul</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Multiplication</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The second factor.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The product $this*$b.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::div_rem()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>div_rem</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$b,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;&amp; $rem)</CODE>
+<BLOCKQUOTE>
+<P><b>Calculate quotient and remainder of the division</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The divisor.</td></tr>
+<tr><td valign=top><b><code>$rem&nbsp;&nbsp;</code></b></td> <td valign=top>Here returns the resulting remainder.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The quotient, that is a number $q so that
+          $this = $q * $b + $rem, being $rem a number of module
+          minor than $q.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if $b is zero.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::div()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>div</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Calculate the quotient of the division</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The divisor.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The quotient.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if $b is zero.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::rem()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>rem</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Calculate the remainder of the division</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>The divisor.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The remainder.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if $b is zero.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::pow()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>pow</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$e)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the base $this raised to the power $e</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$e&nbsp;&nbsp;</code></b></td> <td valign=top>The exponent of $this.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> $this raised to the power $e. Please note that
+          $e is a simple int number, not a BigInt.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::shift()"></A>
+<CODE><I><a href="#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>shift</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$p)</CODE>
+<BLOCKQUOTE>
+<P><b>Scale to a given power of ten</b></P><P>
+<p>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$p&nbsp;&nbsp;</code></b></td> <td valign=top>The exponent of 10.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> $this * 10^$p.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::toInt()"></A>
+<CODE><I>int</I> <BIG><B>toInt</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the BigInt as int</b></P><P>
+<p>
+  PHP provides the constant <a href="../../../../modules/standard.html#PHP_INT_MAX"><code>PHP_INT_MAX</code></a> that contains the
+  maximum positive <b>int</b> number, typically 2^32-1 =
+  2147483647. Since the 2-complement representation is used, the
+  minimum negative number then is -PHP_INT_MAX-1. This function
+  returns the equivalent <b>int</b> number, or throws an
+  exception if the BigInt number is too big to be
+  represented as <b>int</b>.
+<p>
+
+<p><b>Return:</b> The int that represents $this.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if $this is too big to fit int.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::toFloat()"></A>
+<CODE><I>float</I> <BIG><B>toFloat</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the BigInt as float without loss of precision</b></P><P>
+A floating point number can store exactly an integer number
+  larger than <b>int</b>. On most platforms, <b>int</b> is a
+  32-bit, 2-complement value, whereas <b>float</b> is a 53-bit,
+  signed value in the IEEE 754, double precision, representation,
+  that can store an integer number of modulus up to 2^53-1 =
+  9007199254740991. This function determinates dynamically the
+  size of the mantissa of the underlying platform, so that an
+  exception is thrown if the BigInt is too big and
+  cannot be represented with a <b>float</b> without loss of
+  precision.
+<p>
+
+<p><b>Return:</b> The float that represents $this.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;if $this is too big to fit float
+          without loss of precision.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::getHash()"></A>
+<CODE><I>int</I> <BIG><B>getHash</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Hashable.html#it/icosaedro/containers/Hashable::getHash()"><code>it\icosaedro\containers\Hashable</code></a><PRE>
+
+</PRE>
+
+<A name="it/icosaedro/bignumbers/BigInt::equals()"></A>
+<CODE><I>boolean</I> <BIG><B>equals</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="../containers/Comparable.html#it/icosaedro/containers/Comparable::equals()"><code>it\icosaedro\containers\Comparable</code></a><BLOCKQUOTE>
+<P><b>Compares this number with another for equality</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other BigInt.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True only if the other number is not NULL, is exactly
+ instance of this class (not an extended one) and carries the same
+ value.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

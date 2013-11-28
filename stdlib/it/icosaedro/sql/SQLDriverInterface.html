@@ -1,0 +1,144 @@
+<HTML><BODY>
+<H1>SQLDriverInterface</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="SQLException.html"><code>SQLException.php</code></a>, <a href="ResultSet.html"><code>ResultSet.php</code></a>, <a href="../utils/Integers.html"><code>Integers.php</code></a>, <a href="../bignumbers/BigInt.html"><code>BigInt.php</code></a>, <a href="../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="../containers/Hash.html"><code>Hash.php</code></a>, <a href="../bignumbers/BigFloat.html"><code>BigFloat.php</code></a>, <a href="../utils/Date.html"><code>Date.php</code></a>, <a href="PreparedStatement.html"><code>PreparedStatement.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/SQLDriverInterface"></A>
+<pre>interface <BIG><B>it\icosaedro\sql\SQLDriverInterface</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Minimalistic, generic SQL driver interface</b></P><P><B>Version:</B> $Date: 2012/02/20 18:17:52 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+Every implementation should
+	specify how strings of characters are encoded (for example, UTF-8) and then
+	all the strings that appear in this class and its implementations are
+	assumed to work with that same encoding. Example:
+<p>
+	<pre>
+	$db = new \it\icosaedro\sql\mysql\Driver( array("localhost", "myname", "mypass", "test") );
+	$rs = $db-&gt;query("select current_date");
+	$rs-&gt;moveToRow(0);
+	echo "Date: ", $rs-&gt;getDateByIndex(0), "\n";
+	</pre>
+<p>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/SQLDriverInterface::escape()"></A>
+<CODE><I>string</I> <BIG><B>escape</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str)</CODE>
+<BLOCKQUOTE>
+<P><b>Escapes special characters in literal strings</b></P><P>
+Does not add
+		quotes.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$str&nbsp;&nbsp;</code></b></td> <td valign=top>The string to escape.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The quoted string, suitable to be inserted in a
+		SQL quoted string. Quotes are not added. The NULL string generates
+		the empty string.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/SQLDriverInterface::update()"></A>
+<CODE><I>int</I> <BIG><B>update</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Submits an SQL update command, typically UPDATE</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$cmd&nbsp;&nbsp;</code></b></td> <td valign=top>The SQL command.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Number of rows affected.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/SQLDriverInterface::query()"></A>
+<CODE><I><a href="ResultSet.html#it/icosaedro/sql/ResultSet"><code>it\icosaedro\sql\ResultSet</code></a></I> <BIG><B>query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Submits an SQL query command, typically SELECT</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$cmd&nbsp;&nbsp;</code></b></td> <td valign=top>The SQL command.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The table that results from the query.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/SQLDriverInterface::prepareStatement()"></A>
+<CODE><I><a href="PreparedStatement.html#it/icosaedro/sql/PreparedStatement"><code>it\icosaedro\sql\PreparedStatement</code></a></I> <BIG><B>prepareStatement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+<BLOCKQUOTE>
+<P><b>Generates a new SQL prepared statement</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$cmd&nbsp;&nbsp;</code></b></td> <td valign=top>The SQL command. See comments about the
+		class <a href="PreparedStatement.html#it/icosaedro/sql/PreparedStatement"><code>it\icosaedro\sql\PreparedStatement</code></a> for further details.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Use this object to set the parameters
+		and to perform queries and updates.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/SQLDriverInterface::close()"></A>
+<CODE><I>void</I> <BIG><B>close</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Closes the data base client connection</b></P><P>
+Once closed, this object
+		cannot be reused.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

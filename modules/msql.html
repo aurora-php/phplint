@@ -1,0 +1,150 @@
+<HTML><BODY>
+<H1>msql</H1>
+<P><b>mSQL Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.msql.php"><code>http://www.php.net/manual/en/ref.msql.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="MSQL_ASSOC"></A>
+<CODE><BIG><B>MSQL_ASSOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MSQL_NUM"></A>
+<CODE><BIG><B>MSQL_NUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MSQL_BOTH"></A>
+<CODE><BIG><B>MSQL_BOTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="msql_connect()"></A>
+<CODE><I>int</I> <BIG><B>msql_connect</B></BIG>(...)</CODE>
+<P>
+
+<A name="msql_pconnect()"></A>
+<CODE><I>int</I> <BIG><B>msql_pconnect</B></BIG>(...)</CODE>
+<P>
+
+<A name="msql_close()"></A>
+<CODE><I>boolean</I> <BIG><B>msql_close</B></BIG>(...)</CODE>
+<P>
+
+<A name="msql_select_db()"></A>
+<CODE><I>boolean</I> <BIG><B>msql_select_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="msql_create_db()"></A>
+<CODE><I>boolean</I> <BIG><B>msql_create_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="msql_drop_db()"></A>
+<CODE><I>boolean</I> <BIG><B>msql_drop_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="msql_query()"></A>
+<CODE><I>resource</I> <BIG><B>msql_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="msql_db_query()"></A>
+<CODE><I>resource</I> <BIG><B>msql_db_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="msql_list_dbs()"></A>
+<CODE><I>resource</I> <BIG><B>msql_list_dbs</B></BIG>(...)</CODE>
+<P>
+
+<A name="msql_list_tables()"></A>
+<CODE><I>resource</I> <BIG><B>msql_list_tables</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="msql_list_fields()"></A>
+<CODE><I>resource</I> <BIG><B>msql_list_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table_name, ...)</CODE>
+<P>
+
+<A name="msql_error()"></A>
+<CODE><I>string</I> <BIG><B>msql_error</B></BIG>()</CODE>
+<P>
+
+<A name="msql_result()"></A>
+<CODE><I>string</I> <BIG><B>msql_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row, ...)</CODE>
+<P>
+
+<A name="msql_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>msql_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="msql_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>msql_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="msql_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>msql_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="msql_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>msql_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="msql_fetch_array()"></A>
+<CODE><I>mixed[]</I> <BIG><B>msql_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="msql_data_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>msql_data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row_number)</CODE>
+<P>
+
+<A name="msql_fetch_field()"></A>
+<CODE><I>object</I> <BIG><B>msql_fetch_field</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="msql_field_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>msql_field_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<P>
+
+<A name="msql_field_name()"></A>
+<CODE><I>string</I> <BIG><B>msql_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_index)</CODE>
+<P>
+
+<A name="msql_field_table()"></A>
+<CODE><I>string</I> <BIG><B>msql_field_table</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<P>
+
+<A name="msql_field_len()"></A>
+<CODE><I>int</I> <BIG><B>msql_field_len</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offet)</CODE>
+<P>
+
+<A name="msql_field_type()"></A>
+<CODE><I>string</I> <BIG><B>msql_field_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<P>
+
+<A name="msql_field_flags()"></A>
+<CODE><I>string</I> <BIG><B>msql_field_flags</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<P>
+
+<A name="msql_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>msql_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="msql_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>msql_affected_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

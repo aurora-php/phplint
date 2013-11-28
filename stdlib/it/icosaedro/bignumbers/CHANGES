@@ -1,0 +1,4 @@
+Release date: 2009-08-02:
+========================
++ Now uses phpDoc.
++ Thrown exceptions are now unchecked (requires PHPLint 0.9-200908-02)..

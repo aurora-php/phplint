@@ -1,0 +1,313 @@
+<HTML><BODY>
+<H1>UTF8</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8"></A>
+<pre>class <BIG><B>it\icosaedro\utils\UTF8</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Utility functions for UTF-8 BPM string encoding</b></P><P><B>Version:</B> $Date: 2012/04/02 09:13:24 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+This class only provides
+ very basic functions mostly intended to be used in others, higher level
+ packages.
+<p>
+ WARNING. These functions do not check for the actual encoding of the
+ passed strings and always assume blindly these strings are properly
+ UTF-8 encoded strings.  If arbitrary data are passed, unexpected results
+ may arise.
+<p>
+ ATTENTION. In this document the term <i>byte</i> always refers to a
+ single byte of a generic string; the term <i>character</i> refers to
+ a single Unicode character, that may be encoded as a sequence of 1,
+ 2 or 3 bytes; the term <i>codepoint</i> refers to the numerical code of
+ a single Unicode character in the range [0,65535].
+<p>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::sanitize()"></A>
+<CODE>static <I>string</I> <BIG><B>sanitize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Sanitizes the string removing invalid bytes</b></P><P>
+Invalid bytes, incomplete
+ UTF-8 sequences, non-minimal sequences and invalid BMP codepoints
+ are removed.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>The string to sanitize, possibly NULL.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Properly encoded UTF-8 BMP string. If the subject string
+ is NULL, NULL is returned as well.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::chr()"></A>
+<CODE>static <I>string</I> <BIG><B>chr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$code)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the codepoint as UTF-8 string of bytes</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$code&nbsp;&nbsp;</code></b></td> <td valign=top>Codepoint [0,65535].</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> String of bytes that represents the given codepoint.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the codepoint is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::isCont()"></A>
+<CODE>static <I>boolean</I> <BIG><B>isCont</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Return true if the passed byte is the continuation byte of a 		UTF-8 sequence</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>Subject byte.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the subject byte is the continuation byte
+		of a UTF-8 sequence.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::sequenceLength()"></A>
+<CODE>static <I>int</I> <BIG><B>sequenceLength</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Return the length of the UTF-8 sequence given its starting byte</b></P><P>
+Byte code ranges are as follows (by increasing code):
+ <pre>
+ [0x00,0x7f]  1 byte sequence (ASCII) returns 1
+ [0x80,0xbf]  continuation byte -- returns 0
+ [0xc0,0xc1]  unused byte codes -- returns 0
+ [0xc2,0xdf]  2 bytes seq. starts -- returns 2
+ [0xe0,0xef]  3 bytes seq. starts -- returns 3
+ [0xf0,0xff]  unused byte codes -- returns 0
+ </pre>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>First byte of the sequence in [0,255].</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Length of the sequence in bytes, that is 1, 2 or 3.
+ Returns 0 if the byte code is invalid or out of the range [0,255].</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::codepointAtByteIndex()"></A>
+<CODE>static <I>int</I> <BIG><B>codepointAtByteIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$byte_index)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the codepoint at a given position in a string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>UTF-8 encoded string.</td></tr>
+<tr><td valign=top><b><code>$byte_index&nbsp;&nbsp;</code></b></td> <td valign=top>Byte index of the sequence.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The code of the codepoint.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::byteIndex()"></A>
+<CODE>static <I>int</I> <BIG><B>byteIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$codepoint_index)</CODE>
+<BLOCKQUOTE>
+<P><b>Return the byte index given the UTF-8 sequence index</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>UTF-8 encoded string.</td></tr>
+<tr><td valign=top><b><code>$codepoint_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the UTF-8 sequence, ranging from
+ 0 (the first sequence) up to the length in characters of the
+ string. Note that this last sequence does not exist because
+ its byte index is just one byte above the last sequence so the
+ index returned points to the byte just next to the end of the
+ string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Byte index of the UTF-8 sequence.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the parameter is out of the
+ range from 0 up to the length in characters of the string.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::codepointIndex()"></A>
+<CODE>static <I>int</I> <BIG><B>codepointIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$byte_index)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the codepoint index given its byte index</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>UTF-8 encoded string.</td></tr>
+<tr><td valign=top><b><code>$byte_index&nbsp;&nbsp;</code></b></td> <td valign=top>Byte index of the codepoint, in
+ [0,strlen($this-&gt;s)].  Note that if $byte_index is exactly equal
+ to strlen($this-&gt;s), then the result is the length of the string
+ in codepoints.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Byte index of this codepoint, that is the number of UTF-8
+ sequences from the beginning of the string up there.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If $byte_index is out of the range
+ [0,strlen($this-&gt;s)].
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::codepointAt()"></A>
+<CODE><I>int</I> <BIG><B>codepointAt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$codepoint_index)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the code of the codepoint at the given index</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>UTF-8 encoded string.</td></tr>
+<tr><td valign=top><b><code>$codepoint_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the codepoint, in the range from 0
+ up to the length of the string minus one. Note that for an
+ empty string there is no valid range.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Code of the codepoint.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::length()"></A>
+<CODE>static <I>int</I> <BIG><B>length</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Return the length of the string as number of characters</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>UTF-8 encoded string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Length of the string as number of characters.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UTF8::charAt()"></A>
+<CODE><I>string</I> <BIG><B>charAt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$i)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the character at the given index</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>UTF-8 encoded string.</td></tr>
+<tr><td valign=top><b><code>$i&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the character in the range from 0 up to
+ UTF8::length($s)-1.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The character as a UTF-8 string. The returned string
+ may contain from 1 up to 3 bytes.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

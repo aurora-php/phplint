@@ -1,0 +1,851 @@
+<HTML><BODY>
+<H1>UString</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="UTF8.html"><code>UTF8.php</code></a>, <a href="Strings.html"><code>Strings.php</code></a>, <a href="Codepoints.html"><code>Codepoints.php</code></a>, <a href="../containers/Hash.html"><code>Hash.php</code></a>, <a href="TestUnit.html"><code>TestUnit.php</code></a>, <a href="../containers/Equality.html"><code>Equality.php</code></a>, <a href="Floats.html"><code>Floats.php</code></a>, <a href="Integers.html"><code>Integers.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString"></A>
+<pre>final class <BIG><B>it\icosaedro\utils\UString</B></BIG>
+      |  
+      +--(<i><a href="../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+      +--(<i><a href="../containers/Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a></i>)
+      |    `--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      +--(<i><a href="../containers/Hashable.html#it/icosaedro/containers/Hashable"><code>it\icosaedro\containers\Hashable</code></a></i>)
+      |    `--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      `--(<i><a href="../../../../modules/spl.html#Serializable"><code>Serializable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Immutable, Unicode strings with encoding conversion utilities</b></P><P><B>Version:</B> $Date: 2012/05/06 16:08:24 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+<p>
+	An instance of this class holds an immutable string of Unicode codepoints,
+	and provides a set of manipulation functions.
+<p>
+	The client application can build Unicode strings calling the appropriate
+	factory method "fromXxx($u)" where Xxx is the encoding of the passed string
+	$u. Then, the methods "toXxx()" allows to retrieve the internal string with
+	the desired encoding.
+<p>
+	Currently, the internal encoding is UTF-8 to allows for faster conversion
+	from and to this encoding, so common in WEB applications. Obviously this
+	choice causes some penalty performing heavy low-level string processing,
+	but in my experience most WEB applications do not suffer from that, and can
+	work effectively anyway.
+<p>
+	Alternative but still compatible implementations might use another
+	encoding, for example with wide characters.
+<p>
+	<b>Charset encoding conversions.</b>
+	You may use this class to convert strings from one encoding XXX to another
+	encoding:
+	<pre>
+	echo UString::fromXXX("abcdefg")-&gt;toYYY();
+	</pre>
+<p>
+	where XXX is the source encoding and YYY is the resulting final encoding.
+<p>
+	<b>BOM in text files.</b>
+	Remember that text files may start with a BOM that allows to recognize the
+	exact encoding used in that file. The BOM is a sequence of bytes that
+	encodes the codepoint 0x0000feff and allows to detect the exact encoding
+	of the file, including the byte ordering Big Endian or Little Endian:
+<p>
+	<pre>
+	"\xfe\xff": UCS2 BE, use fromUCS2BE() and toUCS2BE()
+	"\xff\xfe": UCS2 LE, use fromUCS2LE() and toUCS2LE()
+	"\xef\xbb\xbf": UTF-8, use fromUTF8() and toUTF8()
+	"\x00\x00\xfe\xff": UTF-32 BE, not supported by this implementation
+	"\xff\xfe\x00\x00": UTF-32 LE, not supported by this implementation
+	</pre>
+<p>
+	So if you are going to read a text file, you must check for any of these
+	sequences of bytes and then use the functions indicated to correcly read
+	and write to that file.
+<p>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::chr()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>chr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$code)</CODE>
+<BLOCKQUOTE>
+<P><b>Return a single codepoint, given its code</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$code&nbsp;&nbsp;</code></b></td> <td valign=top>Codepoint in the range [0,65535]. Note that also
+		undefined and forbidden codepoints can be generated.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> A string containing the codepoint.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the codepoint is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::length()"></A>
+<CODE><I>int</I> <BIG><B>length</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the length of the string</b></P><P>
+<p><b>Return:</b> Length of the string as number of codepoints.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::codepointAt()"></A>
+<CODE><I>int</I> <BIG><B>codepointAt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$i)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the code of the codepoint at the given index</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$i&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the codepoint, in the range from 0
+		up to the length of the string minus one. Note that for an
+		empty string there is no valid range.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Code of the codepoint.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::charAt()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>charAt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$i)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the character at the given index</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$i&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the character in the range from 0 up to
+ $s-&gt;length()-1.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The character at the given index.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::append()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>append</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$other)</CODE>
+<BLOCKQUOTE>
+<P><b>Appends another string to this</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>String to append.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string with the other appended.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::substring()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>substring</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns a substring</b></P><P>
+You must indicate the range [$a,$b] of
+		delimiting tick marks between codepoints, so that ($b-$a) is
+		the resulting length of the substring.
+		<center><img src="./UString-substring.gif"></center>
+		<pre>
+		$s = UString-&gt;fromASCII("ABCDEFG");
+		echo $s-&gt;substring(0,4);
+		# ==&gt; "ABCD"
+		echo $s-&gt;substring(3,3);
+		# ==&gt; ""
+		</pre>
+		Note that the empty range generates the empty string and that
+		it must be 0 &lt;= $a &lt;= $b &lt;= length().
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the first codepoint.</td></tr>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the last codepoint (excluded).</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The substring, exactly ($b-$a) codepoints long.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid range: must be 0 &lt;= $a &lt;= $b &lt;=
+		length of the string.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::remove()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>remove</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Removes a range of codepoints from this string</b></P><P>
+For example, if
+ this string is "ABCD", removing the range (1,3) yields "AD".
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Beginning of the range.</td></tr>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>End of the range.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string with the substring removed. The resulting
+ string is ($b-$a) codepoints shorter than this. Note that the string
+ removed is just $this-&gt;substring($a,$b).</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid range: must be 0 &lt;= $a &lt;= $b &lt;=
+ length of the string.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::insert()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>insert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$at)</CODE>
+<BLOCKQUOTE>
+<P><b>Inserts a string in this string at a given position</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>String to insert.</td></tr>
+<tr><td valign=top><b><code>$at&nbsp;&nbsp;</code></b></td> <td valign=top>Index position.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string with the given string inserted at the
+ given position.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid range: must be 0 &lt;= $at &lt;=
+ $this-&gt;length().
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::startsWith()"></A>
+<CODE><I>boolean</I> <BIG><B>startsWith</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$head)</CODE>
+<BLOCKQUOTE>
+<P><b>Check if this string begins with the given other string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$head&nbsp;&nbsp;</code></b></td> <td valign=top>The beginning.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True the this string begins with $head.
+		The empty string is the beginning of any string.
+		Every string starts with itself.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::endsWith()"></A>
+<CODE><I>boolean</I> <BIG><B>endsWith</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$tail)</CODE>
+<BLOCKQUOTE>
+<P><b>Check if this string ends with the given other string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$tail&nbsp;&nbsp;</code></b></td> <td valign=top>The ending.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True the this string ends with $tail.
+		The empty string is the end of any string.
+		Every string ends with itself.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::indexOf()"></A>
+<CODE><I>int</I> <BIG><B>indexOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$from = 0)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the starting position of the first occurrence of the target  string in this string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Target substring to search. The empty string can
+ always be found at the very beginning of the search, so $from is
+ returned.</td></tr>
+<tr><td valign=top><b><code>$from&nbsp;&nbsp;</code></b></td> <td valign=top>Search target in the range [$from,$this-&gt;length()]
+ of this string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Index of the beginning first matching target, or -1 if
+ not found.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If $from outside [0,$this-&gt;length()].
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::lastIndexOf()"></A>
+<CODE><I>int</I> <BIG><B>lastIndexOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$from)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the starting position of the last occurrence of the target  string in this string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Target substring to search. The empty string
+ can always be found at the beginning of the search, so the length
+ of $this string is returned.</td></tr>
+<tr><td valign=top><b><code>$from&nbsp;&nbsp;</code></b></td> <td valign=top>Search target in the range [0,$from] of this string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Index of the beginning of the first matching target,
+ or -1 if not found.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If $from outside [0,$this-&gt;length()].
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::compileCodepointSet()"></A>
+<CODE><I>int[int]</I> <BIG><B>compileCodepointSet</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$codes)</CODE>
+<BLOCKQUOTE>
+<P><b>Generates a compiled version of a set of codepoints</b></P><P>
+Compiled strings
+ are cached for later reuse.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$codes&nbsp;&nbsp;</code></b></td> <td valign=top>Codepoints to be included in the set.  Ranges of
+ codepoints can be indicated as "A..B".</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Compiled version of the set. The array contains an
+ even number of paired entries; in each pair, the first number is the
+ first codepoint of a range, the second number is the last element in
+ the range. If, for example, the codes are "0..9,." then the result
+ is array(48, 57, 44, 44, 46, 46).</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::codepointInSet()"></A>
+<CODE><I>boolean</I> <BIG><B>codepointInSet</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$c,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int[int]</I>&nbsp;$set)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns true if the codepoint belongs to the set</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$c&nbsp;&nbsp;</code></b></td> <td valign=top>Codepoint code.</td></tr>
+<tr><td valign=top><b><code>$set&nbsp;&nbsp;</code></b></td> <td valign=top>Set of codepoints generated by <a href="#it/icosaedro/utils/UString::compileCodepointSet()"><code>it\icosaedro\utils\UString::compileCodepointSet()</code></a>.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the codepoint code belongs to the set.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::trim()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>trim</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$blacklist = NULL)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns a copy of this string with leading and trailing codepoints  specified removed</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$blacklist&nbsp;&nbsp;</code></b></td> <td valign=top>List of the codepoints to remove. The special
+ sequence "A..B" specifies the range from "A" to "B".  If NULL or
+ not specified, the default value includes: whitespace, HT, NL, CR,
+ NUL, VT.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string but with all the leading and trailing
+ codepoints specified removed.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::replace()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>replace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$replacement)</CODE>
+<BLOCKQUOTE>
+<P><b>Replaces any occurrence of the target string with the replacement  string</b></P><P>
+Search and replacement is performed scanning this string
+ from left to right.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Any occurrence of this string is replaced.</td></tr>
+<tr><td valign=top><b><code>$replacement&nbsp;&nbsp;</code></b></td> <td valign=top>Replacement string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string but with any occurrence of the target
+ string replaced.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the target is the empty string.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::equalsIgnoreCase()"></A>
+<CODE><I>boolean</I> <BIG><B>equalsIgnoreCase</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$other)</CODE>
+<BLOCKQUOTE>
+<P><b>Compares this string with the other ignoring case</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other string to compare with.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the two strings are equal ignoring
+ case differences.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::toUpperCase()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>toUpperCase</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns this string in upper-case letters</b></P><P>
+<p><b>Return:</b> This string in upper-case letters.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::toLowerCase()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>toLowerCase</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns this string in lower-case letters</b></P><P>
+<p><b>Return:</b> This string in lower-case letters.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::explode()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a>[int]</I> <BIG><B>explode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$separator)</CODE>
+<BLOCKQUOTE>
+<P><b>Explode this string in pieces</b></P><P>
+This string is scanned from left to right.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$separator&nbsp;&nbsp;</code></b></td> <td valign=top>Any non-empty string that separates pieces.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Pieces of this string that were separated by the
+ given separator.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Separator is empty.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::implode()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>implode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a>[int]</I>&nbsp;$pieces,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I>&nbsp;$separator)</CODE>
+<BLOCKQUOTE>
+<P><b>Implode the array of strings</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$pieces&nbsp;&nbsp;</code></b></td> <td valign=top>Strings to be joined.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::compareTo()"></A>
+<CODE><I>int</I> <BIG><B>compareTo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="../containers/Sortable.html#it/icosaedro/containers/Sortable::compareTo()"><code>it\icosaedro\containers\Sortable</code></a><BLOCKQUOTE>
+<P><b>Compare strings</b></P><P>
+Implements the <a href="../containers/Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a> interface.
+		Strings are compared left to right based on their codepoints.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The second string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> An integer number whose sign depends on the
+		alphabetical order of this string compared with the other.
+		The comparison is made over the codepoint values.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../CastException.html#CastException"><code>CastException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the object passed is not <a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a>.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::getHash()"></A>
+<CODE><I>int</I> <BIG><B>getHash</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Hashable.html#it/icosaedro/containers/Hashable::getHash()"><code>it\icosaedro\containers\Hashable</code></a><PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::equals()"></A>
+<CODE><I>boolean</I> <BIG><B>equals</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="../containers/Comparable.html#it/icosaedro/containers/Comparable::equals()"><code>it\icosaedro\containers\Comparable</code></a><BLOCKQUOTE>
+<P><b>Return true if the two strings are equal</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the other string is not NULL, belongs to this same
+		class (not extended) and contains the same string of codepoints.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::fromUTF8()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>fromUTF8</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$u)</CODE>
+<BLOCKQUOTE>
+<P><b>Factory method that takes an UTF-8 string as input</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$u&nbsp;&nbsp;</code></b></td> <td valign=top>Array of bytes that represents an UTF-8 well formed
+ string, possibly NULL.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The resulting Unicode string. Invalid sequences, trunked
+ sequences and non-minimal sequences are silently replaced with a
+ question mark "?". If the argument is NULL, NULL is returned.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::toUTF8()"></A>
+<CODE><I>string</I> <BIG><B>toUTF8</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns this string in UTF-8 encoding</b></P><P>
+<p><b>Return:</b> This string in UTF-8 encoding.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::fromASCII()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>fromASCII</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$u)</CODE>
+<BLOCKQUOTE>
+<P><b>Factory method that takes an ASCII string as input</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$u&nbsp;&nbsp;</code></b></td> <td valign=top>Array of bytes that represents an ASCII string,
+		possibly NULL.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The resulting Unicode string. Invalid non-ASCII bytes are
+		silently replaced with a question mark "?". If the argument is NULL,
+		NULL is returned.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::toASCII()"></A>
+<CODE><I>string</I> <BIG><B>toASCII</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the string as ASCII</b></P><P>
+<p><b>Return:</b> Array of bytes, ASCII encoding. Non-ASCII
+		codes are rendered as question mark "?".</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::fromISO88591()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>fromISO88591</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$u)</CODE>
+<BLOCKQUOTE>
+<P><b>Factory method that takes an ISO-8859-1 string as input</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$u&nbsp;&nbsp;</code></b></td> <td valign=top>Array of bytes that represents an ISO-8859-1
+		string, possibly NULL.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The resulting Unicode string. If the argument is NULL,
+		NULL is returned.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::toISO88591()"></A>
+<CODE><I>string</I> <BIG><B>toISO88591</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Return the string as ISO-8859-1</b></P><P>
+<p><b>Return:</b> Array of bytes, ISO-8859-1 encoding. Non-ISO-8859-1
+		codes are rendered as question mark "?".</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::fromUCS2LE()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>fromUCS2LE</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$u)</CODE>
+<BLOCKQUOTE>
+<P><b>Factory method that takes an UCS2 little endian string as input</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$u&nbsp;&nbsp;</code></b></td> <td valign=top>Array of bytes that represents an UCS2 little endian
+		string, possibly NULL. The length of the array of bytes should be even,
+		otherwise the last odd byte is ignored and a question mark "?" is
+		appended to the resulting string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The resulting Unicode string. If the argument is NULL,
+		NULL is returned.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::toUCS2LE()"></A>
+<CODE><I>string</I> <BIG><B>toUCS2LE</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the string as UCS2 LE</b></P><P>
+<p><b>Return:</b> Array of bytes, UCS2 LE encoding.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::fromUCS2BE()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>fromUCS2BE</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$u)</CODE>
+<BLOCKQUOTE>
+<P><b>Factory method that takes an UCS2 big endian string as input</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$u&nbsp;&nbsp;</code></b></td> <td valign=top>Array of bytes that represents an UCS2 big endian
+		string, possibly NULL. The length of the array of bytes should be even,
+		otherwise the last odd byte is ignored and a question mark "?" is
+		appended to the resulting string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The resulting Unicode string. If the argument is NULL,
+		NULL is returned.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::toUCS2BE()"></A>
+<CODE><I>string</I> <BIG><B>toUCS2BE</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the string as UCS2 BE</b></P><P>
+<p><b>Return:</b> Array of bytes, UCS2 BE encoding.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns the internal representation of the string</b></P><P>
+<p><b>Return:</b> Array of bytes encoded as a PHP ASCII string with
+ double quotes.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::toLiteral()"></A>
+<CODE><I><a href="#it/icosaedro/utils/UString"><code>it\icosaedro\utils\UString</code></a></I> <BIG><B>toLiteral</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns this string as a PHP-compliant literal string in double-quotes</b></P><P>
+Useful to display arbitrary strings that may contain control
+ characters.
+ All the ASCII control characters 0-31,127 and the <code>$ \ "</code> characters
+ are converted to the form \xxx, where xxx is the octal code of the
+ byte, with the exception of the usual control characters as LF, CR etc.
+ that are rendered as escape sequences "\n", "\r" etc.
+ Example:<p>
+ <code>UString::fromUTF8("abcè\n")->toLiteral() ==> "\"abcè\\n\""</code>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/UString::serialize()"></A>
+<CODE><I>string</I> <BIG><B>serialize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Serializable::serialize()"><code>Serializable</code></a><P>
+
+<A name="it/icosaedro/utils/UString::unserialize()"></A>
+<CODE><I>void</I> <BIG><B>unserialize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$serialized)</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Serializable::unserialize()"><code>Serializable</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

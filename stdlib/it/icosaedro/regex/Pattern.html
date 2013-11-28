@@ -1,0 +1,499 @@
+<HTML><BODY>
+<H1>Pattern</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="Group.html"><code>Group.php</code></a>, <a href="Element.html"><code>Element.php</code></a>, <a href="../utils/Strings.html"><code>Strings.php</code></a>, <a href="../utils/UTF8.html"><code>UTF8.php</code></a>, <a href="../utils/Integers.html"><code>Integers.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/regex/Pattern"></A>
+<pre>class <BIG><B>it\icosaedro\regex\Pattern</B></BIG>
+      |  
+      +--(<i><a href="Element.html#it/icosaedro/regex/Element"><code>it\icosaedro\regex\Element</code></a></i>)
+      `--(<i><a href="../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Parses a subject string of bytes or an UTF-8 encoded string according to  a pattern given by a regular expression</b></P><P><B>Version:</B> $Date: 2012/05/06 16:07:01 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+Basically this implementation
+ operates at byte level, so any string that appear in this class has to be
+ considered as an array of bytes, but an option of the constructor enables
+ the parsing of UTF-8 encoded strings.  An instance of this class compiles
+ and holds an internal representation of the regular expression that may
+ be used several times to match against different subject strings. After
+ every successful match, designated matching sub-parts, the elements, can be
+ extracted.  The subject string may or may not match the pattern; only if
+ it match, the parts of the subject we are interested on can be extracted.
+<p>
+ <b>Syntax of the pattern.</b> The pattern is the logical OR of one or more terms
+ separated by vertical bar. Using the EBNF formalism, this statement can be
+ expressed as follows:
+<p>
+ <pre>
+ 	expression = term {"|" term};
+ </pre>
+<p>
+ The matching between the expression and the subject string always starts from the
+ beginning of the subject string trying every term one by one, in the order, searching
+ for a matching term. If no term matches, the whole matching fails.
+<p>
+ A term is a sequence of one or more factors:
+<p>
+ <pre>
+ 	term = factor {factor};
+ </pre>
+<p>
+ The term matches if all the factors match, in the order. Factors have several forms
+ that may represent a single byte, a set of bytes, a sub-expression and some other
+ special symbols, and may include a repetition quantifier:
+<p>
+ <pre>
+ 	factor = "^" | "$"
+ 		| "." [quantifier]
+ 		| "(" expression ")"
+ 		| "{" set "}"
+ 		| byte [quantifier];
+ </pre>
+<p>
+ where:
+<p>
+ <blockquote>
+ <code>.</code> (dot) matches a single byte or, it the UTF-8 parsing is
+ enabled, a single character.
+<p>
+ <code>^</code> matches the beginning of the subject.
+<p>
+ <code>$</code> matches the ending of the subject.
+<p>
+ <code>(E)</code> is a sub-expression, also named <b>element</b> through
+ this document.  Elements can be introduced to alter the order of the
+ evaluation between terms an factors or to group a sequence of factors
+ to which a quantifier has to be applied.  Any part of the subject string
+ that matches an element, at any nesting level, can be extracted from the
+ result of the parsing through the <a href="Element.html#it/icosaedro/regex/Element"><code>it\icosaedro\regex\Element</code></a> and the <a href="Group.html#it/icosaedro/regex/Group"><code>it\icosaedro\regex\Group</code></a>
+ interfaces, as will be explained later.
+<p>
+ <code>set</code> is a list of bytes (or a list of UTF-8 encoded characters
+ if UTF-8 encoding is enabled) that may match a single byte (or character)
+ of the subject.  Ranges can be expressed as <code>a-b</code>. A leading
+ exclamation character <code>!</code> yields the complementar set of the
+ set that follows. If the hyphen character has to be included literally,
+ it can be inserted either as the first character or in the last position
+ in the set; if the exclamation mark has to be included literally, it cannot
+ appear as the first character. The empty set <code>[]</code> always fails.
+ The complement of the empty set <code>[!]</code> matches any byte (or character
+ in UTF-8 mode).
+<p>
+ </blockquote>
+<p>
+ Normally every factor matches exactly once or it fails. If
+ a <b>quantifier</b> is added then the factor may match the desired
+ number of times, possibly with several attempts performed with different
+ number of matching factors.  The most general quantifier is the interval
+ <code>[min,max]</code> where min and max are two non-negative integer numbers
+ that give the minimum and the maximum number of times the factor must
+ match. Both these numbers can be omitted: if min is omitted it defaults
+ to 0; if max is omitted it defaults to PHP_INT_MAX which is also the
+ maximum allowed number. Some common abbreviations are also allowed:
+<p>
+ <blockquote>
+ <code>F?</code> is the same as <code>F[0,1]</code> (optional factor F)
+<p>
+ <code>F*</code> is the same as <code>F[0,]</code> (zero or more)
+<p>
+ <code>F+</code> is the same as <code>F[1,]</code> (one or more)
+ </blockquote>
+<p>
+ If the quantifier is present, the matching algorithm operates
+ in <b>possessive</b> mode, where the maximum number of matches is
+ attempted and no further attempts are made.  For example, the pattern
+ <code>.*</code> consumes all the remaining subject string, then the
+ matching either succeeds or fails without further attempts.
+<p>
+ Two modifiers can follow the quantifier to select two more alternative
+ algorithms:
+<p>
+ <blockquote>
+<p>
+ <code>?</code> performs the <b>reluctant</b> algorithm, where the
+ minimum number of matches is attempted first, then (min+1), (min+2),
+ ..., max attempts are made until the expression succeeds. For example,
+ the expression <code>.*?</code> first tries with the empty string (that
+ always succeeds), then consumes 1 byte and retries, and so on.
+<p>
+ <code>*</code> performs the <b>greedy</b> algorithm, first trying to
+ consume up to max factors (but not less than min) and continuing with
+ the rest of the expression; if the rest of the expression does not match,
+ then performs backtracking and retries to consume as much factors as it
+ can generating more attempts and continues the evaluation of the rest of
+ the expression; the evaluation of the factor stops when less than min
+ matching are possible.  Then, for example, the pattern <code>.**</code>
+ first tries to consume the whole remaining subject string and, if the rest
+ of the expression fails, further attempts are made consuming less bytes.
+<p>
+ </blockquote>
+<p>
+<p>
+ <b>Encoding of the special characters.</b> The following characters
+ have a special meaning and can match their literal value only if escaped
+ by back-slash:
+<p>
+ <pre>
+ 	\  .  |  (  )  [  ]  {  }  ?  *  +  ^  $
+ </pre>
+<p>
+ Characters that are special under PHP requires to be furtherly escaped
+ so that, for example, the literal back-slash becomes a double back-slash
+ to meet the requirements of this class, so ending with 4 back-slashes in the
+ final PHP string "\\\\" just to match a single literal back-slash.
+ Escaping non-special characters is forbidden to leave space for future
+ enhancements of this specification.
+<p>
+ <b>Example 1 - Matching an integer number.</b> An integer number can
+ have a sign followed by one or more digits. In the chunk of code below,
+ we compile the regular expression first and then we test if a given
+ string does match it:
+<p>
+ <pre>
+ 	$p = new Pattern("{-\\+}{0-9}+\$");
+ 	$s = "1234";
+ 	if( $p-&gt;match($s) )
+		echo "ok";
+ </pre>
+<p>
+ The same compiled pattern can be applied several times. Note how the special
+ characters must be escaped. Also note that a leading <code>^</code> is not required
+ because expressions are always applied starting from the beginning of the
+ subject string.
+<p>
+ <b>Enumerating and extracting groups and elements.</b> Sub-expressions enclosed
+ between round parentheses are <b>elements</b>. The element along with its
+ quantifier is a <b>group</b> of elements that match zero, one or several times.
+ For example, the group
+<p>
+ <center><code>(X)[1,3]</code></center>
+<p>
+ may match the element <code>(X)</code> from 1 up to 3 times.  Since the
+ body of the element, <code>X</code>, may in turn contain others groups,
+ this class provides an interface to retrieve also these sub-groups as
+ detailed below.
+<p>
+ The whole pattern must be considered as the element number 0, as if it
+ where enclosed between parentheses. This zero element may contain several
+ sub-groups that are numbered starting from 0, so that the first group
+ may be identified with the sequence of numbers 0.0 and continuing with
+ 0.1 for the second group, 0.2 for the third group and so on. Even these
+ sub-groups may contain other sub-sub-groups that are numbered starting
+ from 0 and so on:
+<p>
+ <center><code>
+ <sup>0.0</sup>(<sup>0.0.0</sup>(A)B<sup>0.0.1</sup>(C))<sup>0.1</sup>(<sup>0.1.0</sup>(D)E)
+ </code></center>
+<p>
+ The Pattern class provides the <a href="Element.html#it/icosaedro/regex/Element"><code>it\icosaedro\regex\Element</code></a> interface that allows
+ to access the outermost element number 0: the <a href="Element.html#it/icosaedro/regex/Element::start()"><code>it\icosaedro\regex\Element::start()</code></a>
+ method returns the offset of the beginning of the subject string that
+ matches the whole pattern; the <a href="Element.html#it/icosaedro/regex/Element::end()"><code>it\icosaedro\regex\Element::end()</code></a> method returns
+ the ending of the portion that matched the pattern; finally, the <a href="Element.html#it/icosaedro/regex/Element::value()"><code>it\icosaedro\regex\Element::value()</code></a> method returns this portion of the subject string:
+<p>
+ <pre>
+ 	$p-&gt;start() =&gt; start offset of the matching
+ 	$p-&gt;end()   =&gt; end offset of the matching
+ 	$p-&gt;value() =&gt; portion of the subject string that matches
+ </pre>
+<p>
+ The Element interface also provides the <a href="Element.html#it/icosaedro/regex/Element::group()"><code>it\icosaedro\regex\Element::group($g)</code></a>
+ that retrieves the specified group as instance of the <a href="Group.html#it/icosaedro/regex/Group"><code>it\icosaedro\regex\Group</code></a>
+ interface. Looking at the example above, $g can be only 0 or 1. The
+ Group::count() method retrieves the number of matches for the given
+ element, and <a href="Group.html#it/icosaedro/regex/Group::elem()"><code>it\icosaedro\regex\Group::elem($i)</code></a> retrieves the element number $i with
+ 0 &lt;= $i &lt; count().
+<p>
+ Always referring to the example above, since there are no quantifiers,
+ every element must match exactly once for every group and then the
+ argument of the <code>elem($i)</code> method is elways 0 in this case:
+<p>
+ <pre>
+ 	$p-&gt;value() =&gt; "ABCDE"
+ 	$p-&gt;group(0)-&gt;elem(0)-&gt;value() =&gt; "ABC"
+ 	$p-&gt;group(0)-&gt;elem(0)-&gt;group(0)-&gt;elem(0)-&gt;value() =&gt; "A"
+ 	$p-&gt;group(0)-&gt;elem(0)-&gt;group(1)-&gt;elem(0)-&gt;value() =&gt; "C"
+ 	$p-&gt;group(1)-&gt;elem(0)-&gt;value() =&gt; "DE"
+ 	$p-&gt;group(1)-&gt;elem(0)-&gt;group(0)-&gt;elem(0)-&gt;value() =&gt; "D"
+ </pre>
+<p>
+ Note that for every element retrieved, the list of the <code>group($g)</code>
+ arguments exactly matches the path that brings from the outermost element 0
+ to the requested group, so for example 0.1.0 is the group <code>(E)</code>.
+<p>
+ <b>Example 2 - Parsing a string of key=value pairs.</b> Supposing a sequence
+ of lines of the form
+<p>
+ <pre>
+ 	$line = "alpha = 1, beta = 2, gamma = 3";
+ </pre>
+<p>
+ be given, we start compiling the pattern:
+<p>
+ <pre>
+ 	# A key is a sequence of letters and digits:
+ 	$K = "{a-zA-Z_}{a-zA-Z_0-9}*+";
+ 	# A value is an integer number:
+ 	$V = "{-\\+}{0-9}++";
+ 	# White space:
+ 	$SP = "{ \t}*+";
+ 	$p = new Pattern("$SP($K)$SP=$SP($V)$SP(,$SP($K)$SP=$SP($V))++$SP\\$");
+ </pre>
+<p>
+ For each line of input, we test if it matches the pattern and we extract groups
+ and elements:
+<p>
+ <pre>
+ 	if( $p-&gt;match($line) ){
+ 		echo $p-&gt;group(0)-&gt;elem(0)-&gt;value(); # =&gt; "alpha"
+ 		echo $p-&gt;group(1)-&gt;elem(0)-&gt;value(); # =&gt; "1"
+ 		$group2 = $p-&gt;group(2);
+ 		for($i = 0; $i &lt; $group2-&gt;count(); $i++){
+ 			echo $group2-&gt;elem($i)-&gt;group(0)-&gt;elem(0)-&gt;value(); # =&gt; "beta" and "gamma"
+ 			echo $group2-&gt;elem($i)-&gt;group(1)-&gt;elem(0)-&gt;value(); # =&gt; "2" and "3"
+ 		}
+ 	}
+ </pre>
+<p>
+ Note that more complex results can be easily explored by a recursive algoritm.
+<p>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/regex/Pattern::escape()"></A>
+<CODE>static <I>string</I> <BIG><B>escape</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Generates a literal representation of the string that matches itself</b></P><P>
+Characters that have special meaning in the regular expression are
+ properly escaped, so that dynamically generated patterns can be built.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>The string intended to be matched literally.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Escaped string that may be inserted in a regular
+ expression to match itself literally.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/regex/Pattern::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$re,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$utf8 = FALSE)</CODE>
+<BLOCKQUOTE>
+<P><b>Compiles the specified regular expression for later usage</b></P><P>
+Once compiled, the same pattern can be applied several times to
+ different subject strings.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$re&nbsp;&nbsp;</code></b></td> <td valign=top>The regular expression to compile.</td></tr>
+<tr><td valign=top><b><code>$utf8&nbsp;&nbsp;</code></b></td> <td valign=top>True if the regular expression and the string to
+ be matched are to be assumed UTF-8 BMP encoded.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid regular expression syntax.
+ The message also reporsts the exact offset in the $re where parsing
+ stopped as byte index in the $re string.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/regex/Pattern::match()"></A>
+<CODE><I>boolean</I> <BIG><B>match</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start = 0)</CODE>
+<BLOCKQUOTE>
+<P><b>Tells if the subject string matches this pattern</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>The subject string of bytes. The NULL value
+ behaves just like the empty string.</td></tr>
+<tr><td valign=top><b><code>$start&nbsp;&nbsp;</code></b></td> <td valign=top>Matching of the subject string starts from this
+ offset.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the subject string matches this pattern.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/regex/Pattern::start()"></A>
+<CODE><I>int</I> <BIG><B>start</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="Element.html#it/icosaedro/regex/Element::start()"><code>it\icosaedro\regex\Element</code></a><P>
+
+<A name="it/icosaedro/regex/Pattern::end()"></A>
+<CODE><I>int</I> <BIG><B>end</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="Element.html#it/icosaedro/regex/Element::end()"><code>it\icosaedro\regex\Element</code></a><P>
+
+<A name="it/icosaedro/regex/Pattern::value()"></A>
+<CODE><I>string</I> <BIG><B>value</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="Element.html#it/icosaedro/regex/Element::value()"><code>it\icosaedro\regex\Element</code></a><P>
+
+<A name="it/icosaedro/regex/Pattern::count()"></A>
+<CODE><I>int</I> <BIG><B>count</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="Element.html#it/icosaedro/regex/Element::count()"><code>it\icosaedro\regex\Element</code></a><P>
+
+<A name="it/icosaedro/regex/Pattern::group()"></A>
+<CODE><I><a href="Group.html#it/icosaedro/regex/Group"><code>it\icosaedro\regex\Group</code></a></I> <BIG><B>group</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$g)</CODE>
+
+<BR><I>implements</i> <a href="Element.html#it/icosaedro/regex/Element::group()"><code>it\icosaedro\regex\Element</code></a><PRE>
+
+</PRE>
+
+<A name="it/icosaedro/regex/Pattern::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns this pattern in canonicized, ASCII form</b></P><P>
+<p><b>Return:</b> This pattern in canonicized, ASCII form.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/regex/Pattern::resultAsString()"></A>
+<CODE><I>string</I> <BIG><B>resultAsString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$separator = "\n")</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the result of the last successful match as a structured  string</b></P><P>
+Mostly useful for testing. The returned string may have a form
+ similar to this one, although it might vary in future implementations:
+ <pre>
+ 0 "alpha = 1, beta = 2, gamma = 3"
+ 0.0 "alpha"
+ 0.1 "1"
+ 0.2 ", beta = 2"
+ 0.2.0 "beta"
+ 0.2.1 "2"
+ 0.2 ", gamma = 3"
+ 0.2.0 "gamma"
+ 0.2.1 "3"
+ </pre>
+ Every line is an element; the numbers separated by dot are paths
+ of groups; the literal string between double quotes is the ASCII
+ representation of the matching string.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$separator&nbsp;&nbsp;</code></b></td> <td valign=top>Separator string between elements.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Readable representation of all the matched groups and
+ elements.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#LogicException"><code>LogicException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Matching failed or no match performed yet.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/regex/Pattern::matches()"></A>
+<CODE>static <I>boolean</I> <BIG><B>matches</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$re,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start = 0)</CODE>
+<BLOCKQUOTE>
+<P><b>Tells if the regular expression matches a given subject string</b></P><P>
+Convenience method for simple one-shot tests.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$re&nbsp;&nbsp;</code></b></td> <td valign=top>Regular expression.</td></tr>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>Subject string. NULL behaves just like the empty string.</td></tr>
+<tr><td valign=top><b><code>$start&nbsp;&nbsp;</code></b></td> <td valign=top>Matching of the subject string starts from this
+ offset.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the subject string matches the regular expression.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid regular expression syntax.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+<h2>Private items</h2>
+<blockquote>
+<code>it\icosaedro\regex\MatchResult</code><br>
+<code>it\icosaedro\regex\EmptyGroup</code><br>
+<code>it\icosaedro\regex\MatchedGroup</code><br>
+<code>it\icosaedro\regex\MatchedElement</code><br>
+<code>it\icosaedro\regex\MatcherOperator</code><br>
+<code>it\icosaedro\regex\BeginningMatcher</code><br>
+<code>it\icosaedro\regex\EndingMatcher</code><br>
+<code>it\icosaedro\regex\LiteralMatcher</code><br>
+<code>it\icosaedro\regex\AnyMatcher</code><br>
+<code>it\icosaedro\regex\AnyUTF8Matcher</code><br>
+<code>it\icosaedro\regex\SetMatcher</code><br>
+<code>it\icosaedro\regex\UTF8SetMatcher</code><br>
+<code>it\icosaedro\regex\OrMatcher</code><br>
+<code>it\icosaedro\regex\AndMatcher</code><br>
+<code>it\icosaedro\regex\ElementMatcher</code><br>
+<code>it\icosaedro\regex\GroupMatcherReluctant</code><br>
+<code>it\icosaedro\regex\GroupMatcherGreedy</code><br>
+<code>it\icosaedro\regex\GroupMatcherPossessive</code><br>
+
+</blockquote>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,195 @@
+<HTML><BODY>
+<H1>Floats</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a><P>
+<P><B>Required packages:</B>
+<a href="Integers.html"><code>Integers.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Floats"></A>
+<pre>class <BIG><B>it\icosaedro\utils\Floats</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Utility functions to handle floating point numbers</b></P><P><B>Version:</B> $Date: 2012/05/06 16:07:51 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Floats::compare()"></A>
+<CODE>static <I>int</I> <BIG><B>compare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Compares two floating point numbers</b></P><P>
+Imposes a total ordering that
+		overrides the comparison made by the IEEE 754 and by PHP, assuming NAN
+		greater than any other value (including +INF); NAN, +INF and -INF are
+		each one equal to itself. Then we have:
+		<pre>-INF &lt; -0.0 &lt; 0.0 &lt; +INF &lt; NAN</pre>
+
+<p><b>Return:</b> Negative value, zero or positive value if $a is less, equal
+		or greater then $b respectively, according to the comparison rules
+		stated above.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Floats::toHex()"></A>
+<CODE>static <I>string</I> <BIG><B>toHex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$f)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the floating point number in its hexadecimal representation</b></P><P>
+The string may start with a minus sign, followed by an integral part
+ (in hexadecimal base with leadin <code>"0x"</code>), possibly followed
+ by a fractional part with at least a digit, then possibly followed
+ by a "p" and the power of 2 (in decimal base). So for example:
+ <pre>
+ -0x3.ap4
+ </pre>
+ is the number -(3+10/16)*2^4 = 58 with -0x3.a being the mantissa and
+ 4 being the exponent of 2.
+ Note that the exponent part is the power of 2, NOT the power of 16.
+ Note that any possible value of a floating point number can be expressed
+ exactly with this hexadecimal representation.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$f&nbsp;&nbsp;</code></b></td> <td valign=top>The floating point number to convert in hexadecimal
+ representation, possibly NAN, INF or -INF.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The floating point number in hexadecimal representation.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Floats::fromHex()"></A>
+<CODE>static <I>float</I> <BIG><B>fromHex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Parses a floating point number from its hexadecimal representation</b></P><P>
+The mantissa is expressend with hexadecimal digits with a leading "0x"
+ and possibly a fractional part. An exponent of 2 part may also be present.
+ Valid hexadecimal representations can be expressed in EBNF form:
+ <blockquote>
+ <pre>
+ hex_float = "NAN" | "INF" | "-INF"
+             | [sign] "0x" inthex [ "." inthex ] ["p" [sign] intdec];
+ sign = "+" | "-";
+ inthex = hexdigit {hexdigit};
+ intdec = "0".."9" {"0".."9"};
+ hexdigit = "0".."9" | "a".."f" | "A".."F";
+ </pre>
+ </blockquote>
+ Examples:
+ <blockquote>
+ <pre>
+ 0x0   -0x1.23ab   0xabc.dep-5
+ </pre>
+ </blockquote>
+ Parsing is made case-insensitive, so "p" and "P" or "INF" and "inf" are
+ the same.
+ Note that the integral part always contains at least one digit.
+ Note that the fractional part, if present, must contain at least one digit.
+ Note that the power part gives the power of 2, NOT the power of 16.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>The floating point number is hexadecimal representation.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The string does not contain a valid
+ hexadecimal representation of a floating point number.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Floats::toLiteral()"></A>
+<CODE>static <I>string</I> <BIG><B>toLiteral</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$f)</CODE>
+<BLOCKQUOTE>
+<P><b>Return the literal, exact, decimal representation of the binary  internal representation of the floating point number</b></P><P>
+"Exact" means that the decimal result can be converted back into
+ the same exact value again without loss of precision, that is
+ (float)Floats::toLiteral($f) === $f for any float $f.
+ In fact the
+ conversion from the internal binary representation to the decimal
+ representation can always be performed exactly, although the result
+ may require a very big number of digits. For example
+ toLiteral(0.1) gives
+ "0.1000000000000000055511151231257827021181583404541015625"
+ which is the actual best internal approximation of 0.1 using
+ the IEEE 754 double-precision format common to all the "PC".
+ The vice-versa is not true: even the simplest decimal number may
+ require an infinite number of binary digits and then requires
+ trunkink or rounding to fit the size of a IEEE 754 register.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Floats::parseFloat()"></A>
+<CODE>static <I>float</I> <BIG><B>parseFloat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Parse the given string as floating point number</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>String that represents a floating point number.
+ Spaces are not allowed, so apply trim() if required.
+ The given string is evaluated case-insensitive.
+ The special values "NAN", "INF" and "-INF" are parsed correctly.
+ At least one digit before and after the decimal point, if present,
+ is required; so ".5" and "1." are not valid syntaxes.
+ Huge numbers may give INF or -INF.
+ Bare integer numbers are also allowed, then "123" becomes 123.0.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the syntax of the number is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

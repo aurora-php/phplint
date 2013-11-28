@@ -1,0 +1,1342 @@
+<HTML><BODY>
+<H1>mysqli</H1>
+<P><b>MySQL Improved Extension</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a>, <a href="spl.html"><code>spl</code></a>, <a href="simplexml.html"><code>simplexml</code></a>, <a href="dom.html"><code>dom</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.mysqli.php"><code>http://www.php.net/manual/en/ref.mysqli.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="MYSQLI_READ_DEFAULT_GROUP"></A>
+<CODE><BIG><B>MYSQLI_READ_DEFAULT_GROUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_READ_DEFAULT_FILE"></A>
+<CODE><BIG><B>MYSQLI_READ_DEFAULT_FILE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_OPT_CONNECT_TIMEOUT"></A>
+<CODE><BIG><B>MYSQLI_OPT_CONNECT_TIMEOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_OPT_LOCAL_INFILE"></A>
+<CODE><BIG><B>MYSQLI_OPT_LOCAL_INFILE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_INIT_COMMAND"></A>
+<CODE><BIG><B>MYSQLI_INIT_COMMAND</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CLIENT_SSL"></A>
+<CODE><BIG><B>MYSQLI_CLIENT_SSL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CLIENT_COMPRESS"></A>
+<CODE><BIG><B>MYSQLI_CLIENT_COMPRESS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CLIENT_INTERACTIVE"></A>
+<CODE><BIG><B>MYSQLI_CLIENT_INTERACTIVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CLIENT_IGNORE_SPACE"></A>
+<CODE><BIG><B>MYSQLI_CLIENT_IGNORE_SPACE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CLIENT_NO_SCHEMA"></A>
+<CODE><BIG><B>MYSQLI_CLIENT_NO_SCHEMA</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CLIENT_FOUND_ROWS"></A>
+<CODE><BIG><B>MYSQLI_CLIENT_FOUND_ROWS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_STORE_RESULT"></A>
+<CODE><BIG><B>MYSQLI_STORE_RESULT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_USE_RESULT"></A>
+<CODE><BIG><B>MYSQLI_USE_RESULT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_ASSOC"></A>
+<CODE><BIG><B>MYSQLI_ASSOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_NUM"></A>
+<CODE><BIG><B>MYSQLI_NUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_BOTH"></A>
+<CODE><BIG><B>MYSQLI_BOTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_STMT_ATTR_UPDATE_MAX_LENGTH"></A>
+<CODE><BIG><B>MYSQLI_STMT_ATTR_UPDATE_MAX_LENGTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_STMT_ATTR_CURSOR_TYPE"></A>
+<CODE><BIG><B>MYSQLI_STMT_ATTR_CURSOR_TYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CURSOR_TYPE_NO_CURSOR"></A>
+<CODE><BIG><B>MYSQLI_CURSOR_TYPE_NO_CURSOR</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CURSOR_TYPE_READ_ONLY"></A>
+<CODE><BIG><B>MYSQLI_CURSOR_TYPE_READ_ONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CURSOR_TYPE_FOR_UPDATE"></A>
+<CODE><BIG><B>MYSQLI_CURSOR_TYPE_FOR_UPDATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_CURSOR_TYPE_SCROLLABLE"></A>
+<CODE><BIG><B>MYSQLI_CURSOR_TYPE_SCROLLABLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_NOT_NULL_FLAG"></A>
+<CODE><BIG><B>MYSQLI_NOT_NULL_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_PRI_KEY_FLAG"></A>
+<CODE><BIG><B>MYSQLI_PRI_KEY_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_UNIQUE_KEY_FLAG"></A>
+<CODE><BIG><B>MYSQLI_UNIQUE_KEY_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_MULTIPLE_KEY_FLAG"></A>
+<CODE><BIG><B>MYSQLI_MULTIPLE_KEY_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_BLOB_FLAG"></A>
+<CODE><BIG><B>MYSQLI_BLOB_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_UNSIGNED_FLAG"></A>
+<CODE><BIG><B>MYSQLI_UNSIGNED_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_ZEROFILL_FLAG"></A>
+<CODE><BIG><B>MYSQLI_ZEROFILL_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_AUTO_INCREMENT_FLAG"></A>
+<CODE><BIG><B>MYSQLI_AUTO_INCREMENT_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TIMESTAMP_FLAG"></A>
+<CODE><BIG><B>MYSQLI_TIMESTAMP_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_SET_FLAG"></A>
+<CODE><BIG><B>MYSQLI_SET_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_NUM_FLAG"></A>
+<CODE><BIG><B>MYSQLI_NUM_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_PART_KEY_FLAG"></A>
+<CODE><BIG><B>MYSQLI_PART_KEY_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_GROUP_FLAG"></A>
+<CODE><BIG><B>MYSQLI_GROUP_FLAG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_DECIMAL"></A>
+<CODE><BIG><B>MYSQLI_TYPE_DECIMAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_TINY"></A>
+<CODE><BIG><B>MYSQLI_TYPE_TINY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_SHORT"></A>
+<CODE><BIG><B>MYSQLI_TYPE_SHORT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_LONG"></A>
+<CODE><BIG><B>MYSQLI_TYPE_LONG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_FLOAT"></A>
+<CODE><BIG><B>MYSQLI_TYPE_FLOAT</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_DOUBLE"></A>
+<CODE><BIG><B>MYSQLI_TYPE_DOUBLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_NULL"></A>
+<CODE><BIG><B>MYSQLI_TYPE_NULL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_TIMESTAMP"></A>
+<CODE><BIG><B>MYSQLI_TYPE_TIMESTAMP</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_LONGLONG"></A>
+<CODE><BIG><B>MYSQLI_TYPE_LONGLONG</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_INT24"></A>
+<CODE><BIG><B>MYSQLI_TYPE_INT24</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_DATE"></A>
+<CODE><BIG><B>MYSQLI_TYPE_DATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_TIME"></A>
+<CODE><BIG><B>MYSQLI_TYPE_TIME</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_DATETIME"></A>
+<CODE><BIG><B>MYSQLI_TYPE_DATETIME</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_YEAR"></A>
+<CODE><BIG><B>MYSQLI_TYPE_YEAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_NEWDATE"></A>
+<CODE><BIG><B>MYSQLI_TYPE_NEWDATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_ENUM"></A>
+<CODE><BIG><B>MYSQLI_TYPE_ENUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_SET"></A>
+<CODE><BIG><B>MYSQLI_TYPE_SET</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_TINY_BLOB"></A>
+<CODE><BIG><B>MYSQLI_TYPE_TINY_BLOB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_MEDIUM_BLOB"></A>
+<CODE><BIG><B>MYSQLI_TYPE_MEDIUM_BLOB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_LONG_BLOB"></A>
+<CODE><BIG><B>MYSQLI_TYPE_LONG_BLOB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_BLOB"></A>
+<CODE><BIG><B>MYSQLI_TYPE_BLOB</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_VAR_STRING"></A>
+<CODE><BIG><B>MYSQLI_TYPE_VAR_STRING</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_STRING"></A>
+<CODE><BIG><B>MYSQLI_TYPE_STRING</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_CHAR"></A>
+<CODE><BIG><B>MYSQLI_TYPE_CHAR</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_INTERVAL"></A>
+<CODE><BIG><B>MYSQLI_TYPE_INTERVAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_TYPE_GEOMETRY"></A>
+<CODE><BIG><B>MYSQLI_TYPE_GEOMETRY</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_RPL_MASTER"></A>
+<CODE><BIG><B>MYSQLI_RPL_MASTER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_RPL_SLAVE"></A>
+<CODE><BIG><B>MYSQLI_RPL_SLAVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_RPL_ADMIN"></A>
+<CODE><BIG><B>MYSQLI_RPL_ADMIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_NO_DATA"></A>
+<CODE><BIG><B>MYSQLI_NO_DATA</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_REPORT_INDEX"></A>
+<CODE><BIG><B>MYSQLI_REPORT_INDEX</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_REPORT_ERROR"></A>
+<CODE><BIG><B>MYSQLI_REPORT_ERROR</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_REPORT_ALL"></A>
+<CODE><BIG><B>MYSQLI_REPORT_ALL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQLI_REPORT_OFF"></A>
+<CODE><BIG><B>MYSQLI_REPORT_OFF</B></BIG> = 1</CODE>
+<P>
+
+<A name="mysqli_connect()"></A>
+<CODE><I><a href="#mysqli"><code>mysqli</code></a></I> <BIG><B>mysqli_connect</B></BIG>(...)</CODE>
+<P>
+
+<A name="mysqli_embedded_connect()"></A>
+<CODE><I><a href="#mysqli"><code>mysqli</code></a></I> <BIG><B>mysqli_embedded_connect</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_connect_errno()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_connect_errno</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_connect_error()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_connect_error</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_fetch_array()"></A>
+<CODE><I>string[]</I> <BIG><B>mysqli_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="mysqli_fetch_assoc()"></A>
+<CODE><I>string[string]</I> <BIG><B>mysqli_fetch_assoc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>mysqli_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_multi_query()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_multi_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli_query()"></A>
+<CODE><I>mixed</I> <BIG><B>mysqli_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="mysqli_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_affected_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_autocommit()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_autocommit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="mysqli_stmt_attr_get()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_stmt_attr_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="mysqli_stmt_attr_set()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_stmt_attr_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="mysqli_stmt_get_result()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>mysqli_stmt_get_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_bind_param()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_stmt_bind_param</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$types,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$variable, ...)</CODE>
+<P>
+
+<A name="mysqli_stmt_bind_result()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_stmt_bind_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$var_, ...)</CODE>
+<P>
+
+<A name="mysqli_change_user()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_change_user</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database)</CODE>
+<P>
+
+<A name="mysqli_character_set_name()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_character_set_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_close()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_commit()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_commit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_data_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="mysqli_debug()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_debug</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$debug)</CODE>
+<P>
+
+<A name="mysqli_dump_debug_info()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_dump_debug_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_errno()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_errno</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_error()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_error</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_stmt_execute()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_stmt_execute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_fetch()"></A>
+<CODE><I>mixed</I> <BIG><B>mysqli_stmt_fetch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_fetch_field()"></A>
+<CODE><I><a href="#mysqli_field"><code>mysqli_field</code></a></I> <BIG><B>mysqli_fetch_field</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_fetch_fields()"></A>
+<CODE><I><a href="#mysqli_field"><code>mysqli_field</code></a>[int]</I> <BIG><B>mysqli_fetch_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_fetch_field_direct()"></A>
+<CODE><I><a href="#mysqli_field"><code>mysqli_field</code></a></I> <BIG><B>mysqli_fetch_field_direct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysqli_fetch_lengths()"></A>
+<CODE><I>int[int]</I> <BIG><B>mysqli_fetch_lengths</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mysqli_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_field_count()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_field_count</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_field_seek()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_field_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fieldnr)</CODE>
+<P>
+
+<A name="mysqli_field_tell()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_field_tell</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_free_result()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_get_client_info()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_get_client_info</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_get_client_version()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_get_client_version</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_get_host_info()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_get_host_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_get_proto_info()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_get_proto_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_get_server_info()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_get_server_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_get_server_version()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_get_server_version</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_info()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_init()"></A>
+<CODE><I>resource</I> <BIG><B>mysqli_init</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_insert_id()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_insert_id</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_kill()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_kill</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$processid)</CODE>
+<P>
+
+<A name="mysqli_set_local_infile_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_set_local_infile_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$read_func)</CODE>
+<P>
+
+<A name="mysqli_more_results()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_more_results</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_next_result()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_next_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysqli_options()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_options</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$values)</CODE>
+<P>
+
+<A name="mysqli_ping()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_ping</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_prepare()"></A>
+<CODE><I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I> <BIG><B>mysqli_prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli_real_connect()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_real_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link, ...)</CODE>
+<P>
+
+<A name="mysqli_real_query()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_real_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli_real_escape_string()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_real_escape_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$escapestr)</CODE>
+<P>
+
+<A name="mysqli_rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_rollback</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_server_init()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_server_init</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_server_end()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_server_end</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_stmt_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_stmt_affected_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_close()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_stmt_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_data_seek()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_stmt_data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="mysqli_stmt_field_count()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_stmt_field_count</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_free_result()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_stmt_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_insert_id()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_stmt_insert_id</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_param_count()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_stmt_param_count</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_reset()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_stmt_reset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_stmt_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_select_db()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_select_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dbname)</CODE>
+<P>
+
+<A name="mysqli_sqlstate()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_sqlstate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_ssl_set()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_ssl_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cert,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ca,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$capath,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cipher)</CODE>
+<P>
+
+<A name="mysqli_stat()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_stat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_stmt_errno()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_stmt_errno</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_error()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_stmt_error</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_init()"></A>
+<CODE><I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I> <BIG><B>mysqli_stmt_init</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_stmt_prepare()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_stmt_prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli_stmt_result_metadata()"></A>
+<CODE><I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I> <BIG><B>mysqli_stmt_result_metadata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_store_result()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_stmt_store_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_stmt_sqlstate()"></A>
+<CODE><I>string</I> <BIG><B>mysqli_stmt_sqlstate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I>&nbsp;$stmt)</CODE>
+<P>
+
+<A name="mysqli_store_result()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>mysqli_store_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_thread_id()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_thread_id</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_thread_safe()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_thread_safe</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_use_result()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>mysqli_use_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli_warning_count()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_warning_count</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_disable_reads_from_master()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_disable_reads_from_master</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_disable_rpl_parse()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_disable_rpl_parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_enable_reads_from_master()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_enable_reads_from_master</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_enable_rpl_parse()"></A>
+<CODE><I>void</I> <BIG><B>mysqli_enable_rpl_parse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_master_query()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_master_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_rpl_parse_enabled()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_rpl_parse_enabled</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_rpl_probe()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_rpl_probe</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_rpl_query_type()"></A>
+<CODE><I>int</I> <BIG><B>mysqli_rpl_query_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_send_query()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_send_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_slave_query()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_slave_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> Removed.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_set_charset()"></A>
+<CODE><I>boolean</I> <BIG><B>mysqli_set_charset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$charset)</CODE>
+<P>
+
+<A name="mysqli_fetch_all()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mysqli_fetch_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli_result"><code>mysqli_result</code></a></I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="mysqli_get_connection_stats()"></A>
+<CODE><I>int[string]</I> <BIG><B>mysqli_get_connection_stats</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_field"></A>
+<pre>class <BIG><B>mysqli_field</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="mysqli_field::$name"></A>
+<CODE><I>string</I> <BIG><B>$name</B></BIG></CODE>
+<P>
+
+<A name="mysqli_field::$orgname"></A>
+<CODE><I>string</I> <BIG><B>$orgname</B></BIG></CODE>
+<P>
+
+<A name="mysqli_field::$table"></A>
+<CODE><I>string</I> <BIG><B>$table</B></BIG></CODE>
+<P>
+
+<A name="mysqli_field::$orgtable"></A>
+<CODE><I>string</I> <BIG><B>$orgtable</B></BIG></CODE>
+<P>
+
+<A name="mysqli_field::$def"></A>
+<CODE><I>string</I> <BIG><B>$def</B></BIG></CODE>
+<P>
+
+<A name="mysqli_field::$max_length"></A>
+<CODE><I>int</I> <BIG><B>$max_length</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_field::$length"></A>
+<CODE><I>int</I> <BIG><B>$length</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_field::$charsetnr"></A>
+<CODE><I>int</I> <BIG><B>$charsetnr</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_field::$flags"></A>
+<CODE><I>int</I> <BIG><B>$flags</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_field::$type"></A>
+<CODE><I>string</I> <BIG><B>$type</B></BIG></CODE>
+<P>
+
+<A name="mysqli_field::$decimals"></A>
+<CODE><I>int</I> <BIG><B>$decimals</B></BIG> = 0</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_result"></A>
+<pre>class <BIG><B>mysqli_result</B></BIG>
+      |  
+      `--(<i><a href="spl.html#Iterator"><code>Iterator</code></a></i>)
+           `--(<i><a href="spl.html#Traversable"><code>Traversable</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="mysqli_result::$current_field"></A>
+<CODE><I>int</I> <BIG><B>$current_field</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_result::$field_count"></A>
+<CODE><I>int</I> <BIG><B>$field_count</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_result::$lengths"></A>
+<CODE><I>int[int]</I> <BIG><B>$lengths</B></BIG></CODE>
+<P>
+
+<A name="mysqli_result::$num_rows"></A>
+<CODE><I>int</I> <BIG><B>$num_rows</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_result::$type"></A>
+<CODE><I>int</I> <BIG><B>$type</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_result::close()"></A>
+<CODE><I>void</I> <BIG><B>close</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_result::data_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="mysqli_result::fetch_array()"></A>
+<CODE><I>string[string]</I> <BIG><B>fetch_array</B></BIG>(...)</CODE>
+<P>
+
+<A name="mysqli_result::fetch_assoc()"></A>
+<CODE><I>string[]</I> <BIG><B>fetch_assoc</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_result::fetch_field()"></A>
+<CODE><I><a href="#mysqli_field"><code>mysqli_field</code></a></I> <BIG><B>fetch_field</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_result::fetch_fields()"></A>
+<CODE><I><a href="#mysqli_field"><code>mysqli_field</code></a>[int]</I> <BIG><B>fetch_fields</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_result::fetch_field_direct()"></A>
+<CODE><I><a href="#mysqli_field"><code>mysqli_field</code></a></I> <BIG><B>fetch_field_direct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="mysqli_result::fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>fetch_object</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_result::fetch_row()"></A>
+<CODE><I>string[int]</I> <BIG><B>fetch_row</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_result::field_seek()"></A>
+<CODE><I>int</I> <BIG><B>field_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fieldnr)</CODE>
+<P>
+
+<A name="mysqli_result::free_result()"></A>
+<CODE><I>void</I> <BIG><B>free_result</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_result::fetch_all()"></A>
+<CODE><I>mixed[]</I> <BIG><B>fetch_all</B></BIG>(...)</CODE>
+<P>
+
+<A name="mysqli_result::rewind()"></A>
+<CODE><I>void</I> <BIG><B>rewind</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="spl.html#Iterator::rewind()"><code>Iterator</code></a><P>
+
+<A name="mysqli_result::valid()"></A>
+<CODE><I>boolean</I> <BIG><B>valid</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="spl.html#Iterator::valid()"><code>Iterator</code></a><P>
+
+<A name="mysqli_result::key()"></A>
+<CODE><I>mixed</I> <BIG><B>key</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="spl.html#Iterator::key()"><code>Iterator</code></a><P>
+
+<A name="mysqli_result::current()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>current</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="spl.html#Iterator::current()"><code>Iterator</code></a><P>
+
+<A name="mysqli_result::next()"></A>
+<CODE><I>void</I> <BIG><B>next</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="spl.html#Iterator::next()"><code>Iterator</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_stmt"></A>
+<pre>class <BIG><B>mysqli_stmt</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="mysqli_stmt::$affected_rows"></A>
+<CODE><I>int</I> <BIG><B>$affected_rows</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_stmt::$errno"></A>
+<CODE><I>int</I> <BIG><B>$errno</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_stmt::$error_list"></A>
+<CODE><I>mixed[string]</I> <BIG><B>$error_list</B></BIG></CODE>
+<P>
+
+<A name="mysqli_stmt::$error"></A>
+<CODE><I>string</I> <BIG><B>$error</B></BIG></CODE>
+<P>
+
+<A name="mysqli_stmt::$field_count"></A>
+<CODE><I>int</I> <BIG><B>$field_count</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_stmt::$insert_id"></A>
+<CODE><I>int</I> <BIG><B>$insert_id</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_stmt::$num_rows"></A>
+<CODE><I>int</I> <BIG><B>$num_rows</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_stmt::$param_count"></A>
+<CODE><I>int</I> <BIG><B>$param_count</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_stmt::$sqlstate"></A>
+<CODE><I>string</I> <BIG><B>$sqlstate</B></BIG></CODE>
+<P>
+
+<A name="mysqli_stmt::attr_get()"></A>
+<CODE><I>int</I> <BIG><B>attr_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr)</CODE>
+<P>
+
+<A name="mysqli_stmt::attr_set()"></A>
+<CODE><I>boolean</I> <BIG><B>attr_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="mysqli_stmt::bind_param()"></A>
+<CODE><I>boolean</I> <BIG><B>bind_param</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$types,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$variable, ...)</CODE>
+<P>
+
+<A name="mysqli_stmt::bind_result()"></A>
+<CODE><I>boolean</I> <BIG><B>bind_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$var_, ...)</CODE>
+<P>
+
+<A name="mysqli_stmt::close()"></A>
+<CODE><I>boolean</I> <BIG><B>close</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_stmt::data_seek()"></A>
+<CODE><I>void</I> <BIG><B>data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="mysqli_stmt::execute()"></A>
+<CODE><I>boolean</I> <BIG><B>execute</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_stmt::fetch()"></A>
+<CODE><I>boolean</I> <BIG><B>fetch</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_stmt::free_result()"></A>
+<CODE><I>void</I> <BIG><B>free_result</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_stmt::get_result()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>get_result</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_stmt::prepare()"></A>
+<CODE><I>boolean</I> <BIG><B>prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli_stmt::reset()"></A>
+<CODE><I>boolean</I> <BIG><B>reset</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_stmt::result_metadata()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>result_metadata</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli_stmt::send_long_data()"></A>
+<CODE><I>boolean</I> <BIG><B>send_long_data</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$param_nr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="mysqli_stmt::store_result()"></A>
+<CODE><I>boolean</I> <BIG><B>store_result</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli_warning"></A>
+<pre>class <BIG><B>mysqli_warning</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="mysqli_warning::$message"></A>
+<CODE><I>string</I> <BIG><B>$message</B></BIG></CODE>
+<P>
+
+<A name="mysqli_warning::$sqlstate"></A>
+<CODE><I>string</I> <BIG><B>$sqlstate</B></BIG></CODE>
+<P>
+
+<A name="mysqli_warning::$errno"></A>
+<CODE><I>int</I> <BIG><B>$errno</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli_warning::next()"></A>
+<CODE><I>void</I> <BIG><B>next</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysqli"></A>
+<pre>class <BIG><B>mysqli</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="mysqli::$affected_rows"></A>
+<CODE><I>int</I> <BIG><B>$affected_rows</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli::$client_info"></A>
+<CODE><I>string</I> <BIG><B>$client_info</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$client_version"></A>
+<CODE><I>int</I> <BIG><B>$client_version</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli::$connect_errno"></A>
+<CODE><I>string</I> <BIG><B>$connect_errno</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$connect_error"></A>
+<CODE><I>string</I> <BIG><B>$connect_error</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$errno"></A>
+<CODE><I>int</I> <BIG><B>$errno</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli::$error_list"></A>
+<CODE><I>mixed[string]</I> <BIG><B>$error_list</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$error"></A>
+<CODE><I>string</I> <BIG><B>$error</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$field_count"></A>
+<CODE><I>int</I> <BIG><B>$field_count</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli::$host_info"></A>
+<CODE><I>string</I> <BIG><B>$host_info</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$info"></A>
+<CODE><I>string</I> <BIG><B>$info</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$insert_id"></A>
+<CODE><I>int</I> <BIG><B>$insert_id</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli::$protocol_version"></A>
+<CODE><I>string</I> <BIG><B>$protocol_version</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$server_info"></A>
+<CODE><I>string</I> <BIG><B>$server_info</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$server_version"></A>
+<CODE><I>int</I> <BIG><B>$server_version</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli::$sqlstate"></A>
+<CODE><I>string</I> <BIG><B>$sqlstate</B></BIG></CODE>
+<P>
+
+<A name="mysqli::$thread_id"></A>
+<CODE><I>int</I> <BIG><B>$thread_id</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli::$warning_count"></A>
+<CODE><I>int</I> <BIG><B>$warning_count</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqli::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host = "ini_get('mysqli.default_host')",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username = "ini_get('mysqli.default_user')",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$passwd = "ini_get('mysqli.default_pw')",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dbname = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$socket = "ini_get('mysqli.default_socket')")</CODE>
+<P>
+
+<A name="mysqli::autocommit()"></A>
+<CODE><I>boolean</I> <BIG><B>autocommit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="mysqli::change_user()"></A>
+<CODE><I>boolean</I> <BIG><B>change_user</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database)</CODE>
+<P>
+
+<A name="mysqli::character_set_name()"></A>
+<CODE><I>string</I> <BIG><B>character_set_name</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::close()"></A>
+<CODE><I>boolean</I> <BIG><B>close</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::commit()"></A>
+<CODE><I>boolean</I> <BIG><B>commit</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::debug()"></A>
+<CODE><I>void</I> <BIG><B>debug</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$debug)</CODE>
+<P>
+
+<A name="mysqli::dump_debug_info()"></A>
+<CODE><I>boolean</I> <BIG><B>dump_debug_info</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::get_charset()"></A>
+<CODE><I>object</I> <BIG><B>get_charset</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::get_client_info()"></A>
+<CODE><I>string</I> <BIG><B>get_client_info</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::get_warnings()"></A>
+<CODE><I><a href="#mysqli_warning"><code>mysqli_warning</code></a></I> <BIG><B>get_warnings</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::get_host_info()"></A>
+<CODE><I>string</I> <BIG><B>get_host_info</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::get_server_info()"></A>
+<CODE><I>string</I> <BIG><B>get_server_info</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::get_server_version()"></A>
+<CODE><I>int</I> <BIG><B>get_server_version</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::init()"></A>
+<CODE><I><a href="#mysqli"><code>mysqli</code></a></I> <BIG><B>init</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::info()"></A>
+<CODE><I>string</I> <BIG><B>info</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::kill()"></A>
+<CODE><I>boolean</I> <BIG><B>kill</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$processid)</CODE>
+<P>
+
+<A name="mysqli::multi_query()"></A>
+<CODE><I>boolean</I> <BIG><B>multi_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli::more_results()"></A>
+<CODE><I>boolean</I> <BIG><B>more_results</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::next_result()"></A>
+<CODE><I>boolean</I> <BIG><B>next_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#mysqli"><code>mysqli</code></a></I>&nbsp;$link)</CODE>
+<P>
+
+<A name="mysqli::options()"></A>
+<CODE><I>boolean</I> <BIG><B>options</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$values)</CODE>
+<P>
+
+<A name="mysqli::ping()"></A>
+<CODE><I>boolean</I> <BIG><B>ping</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::prepare()"></A>
+<CODE><I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I> <BIG><B>prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli::query()"></A>
+<CODE><I>mixed</I> <BIG><B>query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="mysqli::real_connect()"></A>
+<CODE><I>boolean</I> <BIG><B>real_connect</B></BIG>(...)</CODE>
+<P>
+
+<A name="mysqli::escape_string()"></A>
+<CODE><I>string</I> <BIG><B>escape_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$escapestr)</CODE>
+<P>
+
+<A name="mysqli::real_query()"></A>
+<CODE><I>boolean</I> <BIG><B>real_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli::reap_async_query()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>reap_async_query</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::refresh()"></A>
+<CODE><I>boolean</I> <BIG><B>refresh</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options)</CODE>
+<P>
+
+<A name="mysqli::rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>rollback</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::rpl_query_type()"></A>
+<CODE><I>int</I> <BIG><B>rpl_query_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli::select_db()"></A>
+<CODE><I>boolean</I> <BIG><B>select_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dbname)</CODE>
+<P>
+
+<A name="mysqli::send_query()"></A>
+<CODE><I>boolean</I> <BIG><B>send_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="mysqli::set_charset()"></A>
+<CODE><I>boolean</I> <BIG><B>set_charset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$charset)</CODE>
+<P>
+
+<A name="mysqli::ssl_set()"></A>
+<CODE><I>boolean</I> <BIG><B>ssl_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cert,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ca,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$capath,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cipher)</CODE>
+<P>
+
+<A name="mysqli::stat()"></A>
+<CODE><I>string</I> <BIG><B>stat</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::stmt_init()"></A>
+<CODE><I><a href="#mysqli_stmt"><code>mysqli_stmt</code></a></I> <BIG><B>stmt_init</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::store_result()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>store_result</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::thread_safe()"></A>
+<CODE><I>boolean</I> <BIG><B>thread_safe</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::use_result()"></A>
+<CODE><I><a href="#mysqli_result"><code>mysqli_result</code></a></I> <BIG><B>use_result</B></BIG>()</CODE>
+<P>
+
+<A name="mysqli::get_connection_stats()"></A>
+<CODE><I>int[string]</I> <BIG><B>get_connection_stats</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

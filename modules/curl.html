@@ -1,0 +1,957 @@
+<HTML><BODY>
+<H1>curl</H1>
+<P><b>CURL, Client URL Library Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.curl.php"><code>http://www.php.net/manual/en/ref.curl.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="CURLOPT_DNS_USE_GLOBAL_CACHE"></A>
+<CODE><BIG><B>CURLOPT_DNS_USE_GLOBAL_CACHE</B></BIG> = 1</CODE>
+<P>
+
+<A name="CURLOPT_DNS_CACHE_TIMEOUT"></A>
+<CODE><BIG><B>CURLOPT_DNS_CACHE_TIMEOUT</B></BIG> = 2</CODE>
+<P>
+
+<A name="CURLOPT_PORT"></A>
+<CODE><BIG><B>CURLOPT_PORT</B></BIG> = 3</CODE>
+<P>
+
+<A name="CURLOPT_FILE"></A>
+<CODE><BIG><B>CURLOPT_FILE</B></BIG> = 4</CODE>
+<P>
+
+<A name="CURLOPT_READDATA"></A>
+<CODE><BIG><B>CURLOPT_READDATA</B></BIG> = 5</CODE>
+<P>
+
+<A name="CURLOPT_INFILE"></A>
+<CODE><BIG><B>CURLOPT_INFILE</B></BIG> = 6</CODE>
+<P>
+
+<A name="CURLOPT_INFILESIZE"></A>
+<CODE><BIG><B>CURLOPT_INFILESIZE</B></BIG> = 7</CODE>
+<P>
+
+<A name="CURLOPT_URL"></A>
+<CODE><BIG><B>CURLOPT_URL</B></BIG> = 8</CODE>
+<P>
+
+<A name="CURLOPT_PRIVATE"></A>
+<CODE><BIG><B>CURLOPT_PRIVATE</B></BIG> = 9</CODE>
+<P>
+
+<A name="CURLOPT_PROXY"></A>
+<CODE><BIG><B>CURLOPT_PROXY</B></BIG> = 10</CODE>
+<P>
+
+<A name="CURLOPT_VERBOSE"></A>
+<CODE><BIG><B>CURLOPT_VERBOSE</B></BIG> = 11</CODE>
+<P>
+
+<A name="CURLOPT_HEADER"></A>
+<CODE><BIG><B>CURLOPT_HEADER</B></BIG> = 12</CODE>
+<P>
+
+<A name="CURLOPT_HTTPHEADER"></A>
+<CODE><BIG><B>CURLOPT_HTTPHEADER</B></BIG> = 13</CODE>
+<P>
+
+<A name="CURLOPT_NOPROGRESS"></A>
+<CODE><BIG><B>CURLOPT_NOPROGRESS</B></BIG> = 14</CODE>
+<P>
+
+<A name="CURLOPT_NOBODY"></A>
+<CODE><BIG><B>CURLOPT_NOBODY</B></BIG> = 15</CODE>
+<P>
+
+<A name="CURLOPT_FAILONERROR"></A>
+<CODE><BIG><B>CURLOPT_FAILONERROR</B></BIG> = 16</CODE>
+<P>
+
+<A name="CURLOPT_UPLOAD"></A>
+<CODE><BIG><B>CURLOPT_UPLOAD</B></BIG> = 17</CODE>
+<P>
+
+<A name="CURLOPT_POST"></A>
+<CODE><BIG><B>CURLOPT_POST</B></BIG> = 18</CODE>
+<P>
+
+<A name="CURLOPT_FTPLISTONLY"></A>
+<CODE><BIG><B>CURLOPT_FTPLISTONLY</B></BIG> = 19</CODE>
+<P>
+
+<A name="CURLOPT_FTPAPPEND"></A>
+<CODE><BIG><B>CURLOPT_FTPAPPEND</B></BIG> = 20</CODE>
+<P>
+
+<A name="CURLOPT_NETRC"></A>
+<CODE><BIG><B>CURLOPT_NETRC</B></BIG> = 21</CODE>
+<P>
+
+<A name="CURLOPT_FOLLOWLOCATION"></A>
+<CODE><BIG><B>CURLOPT_FOLLOWLOCATION</B></BIG> = 22</CODE>
+<P>
+
+<A name="CURLOPT_FTPASCII"></A>
+<CODE><BIG><B>CURLOPT_FTPASCII</B></BIG> = 23</CODE>
+<P>
+
+<A name="CURLOPT_PUT"></A>
+<CODE><BIG><B>CURLOPT_PUT</B></BIG> = 24</CODE>
+<P>
+
+<A name="CURLOPT_MUTE"></A>
+<CODE><BIG><B>CURLOPT_MUTE</B></BIG> = 25</CODE>
+<P>
+
+<A name="CURLOPT_USERPWD"></A>
+<CODE><BIG><B>CURLOPT_USERPWD</B></BIG> = 26</CODE>
+<P>
+
+<A name="CURLOPT_PROXYUSERPWD"></A>
+<CODE><BIG><B>CURLOPT_PROXYUSERPWD</B></BIG> = 27</CODE>
+<P>
+
+<A name="CURLOPT_RANGE"></A>
+<CODE><BIG><B>CURLOPT_RANGE</B></BIG> = 28</CODE>
+<P>
+
+<A name="CURLOPT_TIMEOUT"></A>
+<CODE><BIG><B>CURLOPT_TIMEOUT</B></BIG> = 29</CODE>
+<P>
+
+<A name="CURLOPT_POSTFIELDS"></A>
+<CODE><BIG><B>CURLOPT_POSTFIELDS</B></BIG> = 30</CODE>
+<P>
+
+<A name="CURLOPT_REFERER"></A>
+<CODE><BIG><B>CURLOPT_REFERER</B></BIG> = 31</CODE>
+<P>
+
+<A name="CURLOPT_USERAGENT"></A>
+<CODE><BIG><B>CURLOPT_USERAGENT</B></BIG> = 32</CODE>
+<P>
+
+<A name="CURLOPT_FTPPORT"></A>
+<CODE><BIG><B>CURLOPT_FTPPORT</B></BIG> = 33</CODE>
+<P>
+
+<A name="CURLOPT_FTP_USE_EPSV"></A>
+<CODE><BIG><B>CURLOPT_FTP_USE_EPSV</B></BIG> = 34</CODE>
+<P>
+
+<A name="CURLOPT_LOW_SPEED_LIMIT"></A>
+<CODE><BIG><B>CURLOPT_LOW_SPEED_LIMIT</B></BIG> = 35</CODE>
+<P>
+
+<A name="CURLOPT_LOW_SPEED_TIME"></A>
+<CODE><BIG><B>CURLOPT_LOW_SPEED_TIME</B></BIG> = 36</CODE>
+<P>
+
+<A name="CURLOPT_RESUME_FROM"></A>
+<CODE><BIG><B>CURLOPT_RESUME_FROM</B></BIG> = 37</CODE>
+<P>
+
+<A name="CURLOPT_COOKIE"></A>
+<CODE><BIG><B>CURLOPT_COOKIE</B></BIG> = 38</CODE>
+<P>
+
+<A name="CURLOPT_SSLCERT"></A>
+<CODE><BIG><B>CURLOPT_SSLCERT</B></BIG> = 39</CODE>
+<P>
+
+<A name="CURLOPT_SSLCERTPASSWD"></A>
+<CODE><BIG><B>CURLOPT_SSLCERTPASSWD</B></BIG> = 40</CODE>
+<P>
+
+<A name="CURLOPT_WRITEHEADER"></A>
+<CODE><BIG><B>CURLOPT_WRITEHEADER</B></BIG> = 41</CODE>
+<P>
+
+<A name="CURLOPT_SSL_VERIFYHOST"></A>
+<CODE><BIG><B>CURLOPT_SSL_VERIFYHOST</B></BIG> = 42</CODE>
+<P>
+
+<A name="CURLOPT_COOKIEFILE"></A>
+<CODE><BIG><B>CURLOPT_COOKIEFILE</B></BIG> = 43</CODE>
+<P>
+
+<A name="CURLOPT_SSLVERSION"></A>
+<CODE><BIG><B>CURLOPT_SSLVERSION</B></BIG> = 44</CODE>
+<P>
+
+<A name="CURLOPT_TIMECONDITION"></A>
+<CODE><BIG><B>CURLOPT_TIMECONDITION</B></BIG> = 45</CODE>
+<P>
+
+<A name="CURLOPT_TIMEVALUE"></A>
+<CODE><BIG><B>CURLOPT_TIMEVALUE</B></BIG> = 46</CODE>
+<P>
+
+<A name="CURLOPT_CUSTOMREQUEST"></A>
+<CODE><BIG><B>CURLOPT_CUSTOMREQUEST</B></BIG> = 47</CODE>
+<P>
+
+<A name="CURLOPT_STDERR"></A>
+<CODE><BIG><B>CURLOPT_STDERR</B></BIG> = 48</CODE>
+<P>
+
+<A name="CURLOPT_TRANSFERTEXT"></A>
+<CODE><BIG><B>CURLOPT_TRANSFERTEXT</B></BIG> = 49</CODE>
+<P>
+
+<A name="CURLOPT_RETURNTRANSFER"></A>
+<CODE><BIG><B>CURLOPT_RETURNTRANSFER</B></BIG> = 50</CODE>
+<P>
+
+<A name="CURLOPT_QUOTE"></A>
+<CODE><BIG><B>CURLOPT_QUOTE</B></BIG> = 51</CODE>
+<P>
+
+<A name="CURLOPT_POSTQUOTE"></A>
+<CODE><BIG><B>CURLOPT_POSTQUOTE</B></BIG> = 52</CODE>
+<P>
+
+<A name="CURLOPT_INTERFACE"></A>
+<CODE><BIG><B>CURLOPT_INTERFACE</B></BIG> = 53</CODE>
+<P>
+
+<A name="CURLOPT_KRB4LEVEL"></A>
+<CODE><BIG><B>CURLOPT_KRB4LEVEL</B></BIG> = 54</CODE>
+<P>
+
+<A name="CURLOPT_HTTPPROXYTUNNEL"></A>
+<CODE><BIG><B>CURLOPT_HTTPPROXYTUNNEL</B></BIG> = 55</CODE>
+<P>
+
+<A name="CURLOPT_FILETIME"></A>
+<CODE><BIG><B>CURLOPT_FILETIME</B></BIG> = 56</CODE>
+<P>
+
+<A name="CURLOPT_WRITEFUNCTION"></A>
+<CODE><BIG><B>CURLOPT_WRITEFUNCTION</B></BIG> = 57</CODE>
+<P>
+
+<A name="CURLOPT_READFUNCTION"></A>
+<CODE><BIG><B>CURLOPT_READFUNCTION</B></BIG> = 58</CODE>
+<P>
+
+<A name="CURLOPT_PASSWDFUNCTION"></A>
+<CODE><BIG><B>CURLOPT_PASSWDFUNCTION</B></BIG> = 59</CODE>
+<P>
+
+<A name="CURLOPT_HEADERFUNCTION"></A>
+<CODE><BIG><B>CURLOPT_HEADERFUNCTION</B></BIG> = 60</CODE>
+<P>
+
+<A name="CURLOPT_MAXREDIRS"></A>
+<CODE><BIG><B>CURLOPT_MAXREDIRS</B></BIG> = 61</CODE>
+<P>
+
+<A name="CURLOPT_MAXCONNECTS"></A>
+<CODE><BIG><B>CURLOPT_MAXCONNECTS</B></BIG> = 62</CODE>
+<P>
+
+<A name="CURLOPT_CLOSEPOLICY"></A>
+<CODE><BIG><B>CURLOPT_CLOSEPOLICY</B></BIG> = 63</CODE>
+<P>
+
+<A name="CURLOPT_FRESH_CONNECT"></A>
+<CODE><BIG><B>CURLOPT_FRESH_CONNECT</B></BIG> = 64</CODE>
+<P>
+
+<A name="CURLOPT_FORBID_REUSE"></A>
+<CODE><BIG><B>CURLOPT_FORBID_REUSE</B></BIG> = 65</CODE>
+<P>
+
+<A name="CURLOPT_RANDOM_FILE"></A>
+<CODE><BIG><B>CURLOPT_RANDOM_FILE</B></BIG> = 66</CODE>
+<P>
+
+<A name="CURLOPT_EGDSOCKET"></A>
+<CODE><BIG><B>CURLOPT_EGDSOCKET</B></BIG> = 67</CODE>
+<P>
+
+<A name="CURLOPT_CONNECTTIMEOUT"></A>
+<CODE><BIG><B>CURLOPT_CONNECTTIMEOUT</B></BIG> = 68</CODE>
+<P>
+
+<A name="CURLOPT_SSL_VERIFYPEER"></A>
+<CODE><BIG><B>CURLOPT_SSL_VERIFYPEER</B></BIG> = 69</CODE>
+<P>
+
+<A name="CURLOPT_CAINFO"></A>
+<CODE><BIG><B>CURLOPT_CAINFO</B></BIG> = 70</CODE>
+<P>
+
+<A name="CURLOPT_CAPATH"></A>
+<CODE><BIG><B>CURLOPT_CAPATH</B></BIG> = 71</CODE>
+<P>
+
+<A name="CURLOPT_COOKIEJAR"></A>
+<CODE><BIG><B>CURLOPT_COOKIEJAR</B></BIG> = 72</CODE>
+<P>
+
+<A name="CURLOPT_SSL_CIPHER_LIST"></A>
+<CODE><BIG><B>CURLOPT_SSL_CIPHER_LIST</B></BIG> = 73</CODE>
+<P>
+
+<A name="CURLOPT_BINARYTRANSFER"></A>
+<CODE><BIG><B>CURLOPT_BINARYTRANSFER</B></BIG> = 74</CODE>
+<P>
+
+<A name="CURLOPT_NOSIGNAL"></A>
+<CODE><BIG><B>CURLOPT_NOSIGNAL</B></BIG> = 75</CODE>
+<P>
+
+<A name="CURLOPT_PROXYTYPE"></A>
+<CODE><BIG><B>CURLOPT_PROXYTYPE</B></BIG> = 76</CODE>
+<P>
+
+<A name="CURLOPT_BUFFERSIZE"></A>
+<CODE><BIG><B>CURLOPT_BUFFERSIZE</B></BIG> = 77</CODE>
+<P>
+
+<A name="CURLOPT_HTTPGET"></A>
+<CODE><BIG><B>CURLOPT_HTTPGET</B></BIG> = 78</CODE>
+<P>
+
+<A name="CURLOPT_HTTP_VERSION"></A>
+<CODE><BIG><B>CURLOPT_HTTP_VERSION</B></BIG> = 79</CODE>
+<P>
+
+<A name="CURLOPT_SSLKEY"></A>
+<CODE><BIG><B>CURLOPT_SSLKEY</B></BIG> = 80</CODE>
+<P>
+
+<A name="CURLOPT_SSLKEYTYPE"></A>
+<CODE><BIG><B>CURLOPT_SSLKEYTYPE</B></BIG> = 81</CODE>
+<P>
+
+<A name="CURLOPT_SSLKEYPASSWD"></A>
+<CODE><BIG><B>CURLOPT_SSLKEYPASSWD</B></BIG> = 82</CODE>
+<P>
+
+<A name="CURLOPT_SSLENGINE"></A>
+<CODE><BIG><B>CURLOPT_SSLENGINE</B></BIG> = 83</CODE>
+<P>
+
+<A name="CURLOPT_SSLENGINE_DEFAULT"></A>
+<CODE><BIG><B>CURLOPT_SSLENGINE_DEFAULT</B></BIG> = 84</CODE>
+<P>
+
+<A name="CURLOPT_SSLCERTTYPE"></A>
+<CODE><BIG><B>CURLOPT_SSLCERTTYPE</B></BIG> = 85</CODE>
+<P>
+
+<A name="CURLOPT_CRLF"></A>
+<CODE><BIG><B>CURLOPT_CRLF</B></BIG> = 86</CODE>
+<P>
+
+<A name="CURLOPT_ENCODING"></A>
+<CODE><BIG><B>CURLOPT_ENCODING</B></BIG> = 87</CODE>
+<P>
+
+<A name="CURLOPT_PROXYPORT"></A>
+<CODE><BIG><B>CURLOPT_PROXYPORT</B></BIG> = 88</CODE>
+<P>
+
+<A name="CURLOPT_UNRESTRICTED_AUTH"></A>
+<CODE><BIG><B>CURLOPT_UNRESTRICTED_AUTH</B></BIG> = 89</CODE>
+<P>
+
+<A name="CURLOPT_FTP_USE_EPRT"></A>
+<CODE><BIG><B>CURLOPT_FTP_USE_EPRT</B></BIG> = 90</CODE>
+<P>
+
+<A name="CURLOPT_HTTP200ALIASES"></A>
+<CODE><BIG><B>CURLOPT_HTTP200ALIASES</B></BIG> = 91</CODE>
+<P>
+
+<A name="CURLOPT_TCP_NODELAY"></A>
+<CODE><BIG><B>CURLOPT_TCP_NODELAY</B></BIG> = 92</CODE>
+<P>
+
+<A name="CURLOPT_TIMEOUT_MS"></A>
+<CODE><BIG><B>CURLOPT_TIMEOUT_MS</B></BIG> = 93</CODE>
+<P>
+
+<A name="CURLOPT_CONNECTTIMEOUT_MS"></A>
+<CODE><BIG><B>CURLOPT_CONNECTTIMEOUT_MS</B></BIG> = 94</CODE>
+<P>
+
+<A name="CURL_TIMECOND_IFMODSINCE"></A>
+<CODE><BIG><B>CURL_TIMECOND_IFMODSINCE</B></BIG> = 95</CODE>
+<P>
+
+<A name="CURL_TIMECOND_IFUNMODSINCE"></A>
+<CODE><BIG><B>CURL_TIMECOND_IFUNMODSINCE</B></BIG> = 96</CODE>
+<P>
+
+<A name="CURL_TIMECOND_LASTMOD"></A>
+<CODE><BIG><B>CURL_TIMECOND_LASTMOD</B></BIG> = 97</CODE>
+<P>
+
+<A name="CURL_WRAPPERS_ENABLED"></A>
+<CODE><BIG><B>CURL_WRAPPERS_ENABLED</B></BIG> = 1</CODE>
+<P>
+
+<A name="CURLOPT_HTTPAUTH"></A>
+<CODE><BIG><B>CURLOPT_HTTPAUTH</B></BIG> = 98</CODE>
+<P>
+
+<A name="CURLAUTH_BASIC"></A>
+<CODE><BIG><B>CURLAUTH_BASIC</B></BIG> = 99</CODE>
+<P>
+
+<A name="CURLAUTH_DIGEST"></A>
+<CODE><BIG><B>CURLAUTH_DIGEST</B></BIG> = 100</CODE>
+<P>
+
+<A name="CURLAUTH_GSSNEGOTIATE"></A>
+<CODE><BIG><B>CURLAUTH_GSSNEGOTIATE</B></BIG> = 101</CODE>
+<P>
+
+<A name="CURLAUTH_NTLM"></A>
+<CODE><BIG><B>CURLAUTH_NTLM</B></BIG> = 102</CODE>
+<P>
+
+<A name="CURLAUTH_ANY"></A>
+<CODE><BIG><B>CURLAUTH_ANY</B></BIG> = 103</CODE>
+<P>
+
+<A name="CURLAUTH_ANYSAFE"></A>
+<CODE><BIG><B>CURLAUTH_ANYSAFE</B></BIG> = 104</CODE>
+<P>
+
+<A name="CURLOPT_PROXYAUTH"></A>
+<CODE><BIG><B>CURLOPT_PROXYAUTH</B></BIG> = 105</CODE>
+<P>
+
+<A name="CURLCLOSEPOLICY_LEAST_RECENTLY_USED"></A>
+<CODE><BIG><B>CURLCLOSEPOLICY_LEAST_RECENTLY_USED</B></BIG> = 106</CODE>
+<P>
+
+<A name="CURLCLOSEPOLICY_LEAST_TRAFFIC"></A>
+<CODE><BIG><B>CURLCLOSEPOLICY_LEAST_TRAFFIC</B></BIG> = 107</CODE>
+<P>
+
+<A name="CURLCLOSEPOLICY_SLOWEST"></A>
+<CODE><BIG><B>CURLCLOSEPOLICY_SLOWEST</B></BIG> = 108</CODE>
+<P>
+
+<A name="CURLCLOSEPOLICY_CALLBACK"></A>
+<CODE><BIG><B>CURLCLOSEPOLICY_CALLBACK</B></BIG> = 109</CODE>
+<P>
+
+<A name="CURLCLOSEPOLICY_OLDEST"></A>
+<CODE><BIG><B>CURLCLOSEPOLICY_OLDEST</B></BIG> = 110</CODE>
+<P>
+
+<A name="CURLINFO_EFFECTIVE_URL"></A>
+<CODE><BIG><B>CURLINFO_EFFECTIVE_URL</B></BIG> = 111</CODE>
+<P>
+
+<A name="CURLINFO_HTTP_CODE"></A>
+<CODE><BIG><B>CURLINFO_HTTP_CODE</B></BIG> = 112</CODE>
+<P>
+
+<A name="CURLINFO_HEADER_SIZE"></A>
+<CODE><BIG><B>CURLINFO_HEADER_SIZE</B></BIG> = 113</CODE>
+<P>
+
+<A name="CURLINFO_REQUEST_SIZE"></A>
+<CODE><BIG><B>CURLINFO_REQUEST_SIZE</B></BIG> = 114</CODE>
+<P>
+
+<A name="CURLINFO_TOTAL_TIME"></A>
+<CODE><BIG><B>CURLINFO_TOTAL_TIME</B></BIG> = 115</CODE>
+<P>
+
+<A name="CURLINFO_NAMELOOKUP_TIME"></A>
+<CODE><BIG><B>CURLINFO_NAMELOOKUP_TIME</B></BIG> = 116</CODE>
+<P>
+
+<A name="CURLINFO_CONNECT_TIME"></A>
+<CODE><BIG><B>CURLINFO_CONNECT_TIME</B></BIG> = 117</CODE>
+<P>
+
+<A name="CURLINFO_PRETRANSFER_TIME"></A>
+<CODE><BIG><B>CURLINFO_PRETRANSFER_TIME</B></BIG> = 118</CODE>
+<P>
+
+<A name="CURLINFO_SIZE_UPLOAD"></A>
+<CODE><BIG><B>CURLINFO_SIZE_UPLOAD</B></BIG> = 119</CODE>
+<P>
+
+<A name="CURLINFO_SIZE_DOWNLOAD"></A>
+<CODE><BIG><B>CURLINFO_SIZE_DOWNLOAD</B></BIG> = 120</CODE>
+<P>
+
+<A name="CURLINFO_SPEED_DOWNLOAD"></A>
+<CODE><BIG><B>CURLINFO_SPEED_DOWNLOAD</B></BIG> = 121</CODE>
+<P>
+
+<A name="CURLINFO_SPEED_UPLOAD"></A>
+<CODE><BIG><B>CURLINFO_SPEED_UPLOAD</B></BIG> = 122</CODE>
+<P>
+
+<A name="CURLINFO_FILETIME"></A>
+<CODE><BIG><B>CURLINFO_FILETIME</B></BIG> = 123</CODE>
+<P>
+
+<A name="CURLINFO_SSL_VERIFYRESULT"></A>
+<CODE><BIG><B>CURLINFO_SSL_VERIFYRESULT</B></BIG> = 124</CODE>
+<P>
+
+<A name="CURLINFO_CONTENT_LENGTH_DOWNLOAD"></A>
+<CODE><BIG><B>CURLINFO_CONTENT_LENGTH_DOWNLOAD</B></BIG> = 125</CODE>
+<P>
+
+<A name="CURLINFO_CONTENT_LENGTH_UPLOAD"></A>
+<CODE><BIG><B>CURLINFO_CONTENT_LENGTH_UPLOAD</B></BIG> = 126</CODE>
+<P>
+
+<A name="CURLINFO_STARTTRANSFER_TIME"></A>
+<CODE><BIG><B>CURLINFO_STARTTRANSFER_TIME</B></BIG> = 127</CODE>
+<P>
+
+<A name="CURLINFO_CONTENT_TYPE"></A>
+<CODE><BIG><B>CURLINFO_CONTENT_TYPE</B></BIG> = 128</CODE>
+<P>
+
+<A name="CURLINFO_REDIRECT_TIME"></A>
+<CODE><BIG><B>CURLINFO_REDIRECT_TIME</B></BIG> = 129</CODE>
+<P>
+
+<A name="CURLINFO_REDIRECT_COUNT"></A>
+<CODE><BIG><B>CURLINFO_REDIRECT_COUNT</B></BIG> = 130</CODE>
+<P>
+
+<A name="CURLINFO_PRIVATE"></A>
+<CODE><BIG><B>CURLINFO_PRIVATE</B></BIG> = 131</CODE>
+<P>
+
+<A name="CURL_VERSION_IPV6"></A>
+<CODE><BIG><B>CURL_VERSION_IPV6</B></BIG> = 132</CODE>
+<P>
+
+<A name="CURL_VERSION_KERBEROS4"></A>
+<CODE><BIG><B>CURL_VERSION_KERBEROS4</B></BIG> = 133</CODE>
+<P>
+
+<A name="CURL_VERSION_SSL"></A>
+<CODE><BIG><B>CURL_VERSION_SSL</B></BIG> = 134</CODE>
+<P>
+
+<A name="CURL_VERSION_LIBZ"></A>
+<CODE><BIG><B>CURL_VERSION_LIBZ</B></BIG> = 135</CODE>
+<P>
+
+<A name="CURLVERSION_NOW"></A>
+<CODE><BIG><B>CURLVERSION_NOW</B></BIG> = 136</CODE>
+<P>
+
+<A name="CURLE_OK"></A>
+<CODE><BIG><B>CURLE_OK</B></BIG> = 137</CODE>
+<P>
+
+<A name="CURLE_UNSUPPORTED_PROTOCOL"></A>
+<CODE><BIG><B>CURLE_UNSUPPORTED_PROTOCOL</B></BIG> = 138</CODE>
+<P>
+
+<A name="CURLE_FAILED_INIT"></A>
+<CODE><BIG><B>CURLE_FAILED_INIT</B></BIG> = 139</CODE>
+<P>
+
+<A name="CURLE_URL_MALFORMAT"></A>
+<CODE><BIG><B>CURLE_URL_MALFORMAT</B></BIG> = 140</CODE>
+<P>
+
+<A name="CURLE_URL_MALFORMAT_USER"></A>
+<CODE><BIG><B>CURLE_URL_MALFORMAT_USER</B></BIG> = 141</CODE>
+<P>
+
+<A name="CURLE_COULDNT_RESOLVE_PROXY"></A>
+<CODE><BIG><B>CURLE_COULDNT_RESOLVE_PROXY</B></BIG> = 142</CODE>
+<P>
+
+<A name="CURLE_COULDNT_RESOLVE_HOST"></A>
+<CODE><BIG><B>CURLE_COULDNT_RESOLVE_HOST</B></BIG> = 143</CODE>
+<P>
+
+<A name="CURLE_COULDNT_CONNECT"></A>
+<CODE><BIG><B>CURLE_COULDNT_CONNECT</B></BIG> = 144</CODE>
+<P>
+
+<A name="CURLE_FTP_WEIRD_SERVER_REPLY"></A>
+<CODE><BIG><B>CURLE_FTP_WEIRD_SERVER_REPLY</B></BIG> = 145</CODE>
+<P>
+
+<A name="CURLE_FTP_ACCESS_DENIED"></A>
+<CODE><BIG><B>CURLE_FTP_ACCESS_DENIED</B></BIG> = 146</CODE>
+<P>
+
+<A name="CURLE_FTP_USER_PASSWORD_INCORRECT"></A>
+<CODE><BIG><B>CURLE_FTP_USER_PASSWORD_INCORRECT</B></BIG> = 147</CODE>
+<P>
+
+<A name="CURLE_FTP_WEIRD_PASS_REPLY"></A>
+<CODE><BIG><B>CURLE_FTP_WEIRD_PASS_REPLY</B></BIG> = 148</CODE>
+<P>
+
+<A name="CURLE_FTP_WEIRD_USER_REPLY"></A>
+<CODE><BIG><B>CURLE_FTP_WEIRD_USER_REPLY</B></BIG> = 149</CODE>
+<P>
+
+<A name="CURLE_FTP_WEIRD_PASV_REPLY"></A>
+<CODE><BIG><B>CURLE_FTP_WEIRD_PASV_REPLY</B></BIG> = 150</CODE>
+<P>
+
+<A name="CURLE_FTP_WEIRD_227_FORMAT"></A>
+<CODE><BIG><B>CURLE_FTP_WEIRD_227_FORMAT</B></BIG> = 151</CODE>
+<P>
+
+<A name="CURLE_FTP_CANT_GET_HOST"></A>
+<CODE><BIG><B>CURLE_FTP_CANT_GET_HOST</B></BIG> = 152</CODE>
+<P>
+
+<A name="CURLE_FTP_CANT_RECONNECT"></A>
+<CODE><BIG><B>CURLE_FTP_CANT_RECONNECT</B></BIG> = 153</CODE>
+<P>
+
+<A name="CURLE_FTP_COULDNT_SET_BINARY"></A>
+<CODE><BIG><B>CURLE_FTP_COULDNT_SET_BINARY</B></BIG> = 154</CODE>
+<P>
+
+<A name="CURLE_PARTIAL_FILE"></A>
+<CODE><BIG><B>CURLE_PARTIAL_FILE</B></BIG> = 155</CODE>
+<P>
+
+<A name="CURLE_FTP_COULDNT_RETR_FILE"></A>
+<CODE><BIG><B>CURLE_FTP_COULDNT_RETR_FILE</B></BIG> = 156</CODE>
+<P>
+
+<A name="CURLE_FTP_WRITE_ERROR"></A>
+<CODE><BIG><B>CURLE_FTP_WRITE_ERROR</B></BIG> = 157</CODE>
+<P>
+
+<A name="CURLE_FTP_QUOTE_ERROR"></A>
+<CODE><BIG><B>CURLE_FTP_QUOTE_ERROR</B></BIG> = 158</CODE>
+<P>
+
+<A name="CURLE_HTTP_NOT_FOUND"></A>
+<CODE><BIG><B>CURLE_HTTP_NOT_FOUND</B></BIG> = 159</CODE>
+<P>
+
+<A name="CURLE_WRITE_ERROR"></A>
+<CODE><BIG><B>CURLE_WRITE_ERROR</B></BIG> = 160</CODE>
+<P>
+
+<A name="CURLE_MALFORMAT_USER"></A>
+<CODE><BIG><B>CURLE_MALFORMAT_USER</B></BIG> = 161</CODE>
+<P>
+
+<A name="CURLE_FTP_COULDNT_STOR_FILE"></A>
+<CODE><BIG><B>CURLE_FTP_COULDNT_STOR_FILE</B></BIG> = 162</CODE>
+<P>
+
+<A name="CURLE_READ_ERROR"></A>
+<CODE><BIG><B>CURLE_READ_ERROR</B></BIG> = 163</CODE>
+<P>
+
+<A name="CURLE_OUT_OF_MEMORY"></A>
+<CODE><BIG><B>CURLE_OUT_OF_MEMORY</B></BIG> = 164</CODE>
+<P>
+
+<A name="CURLE_OPERATION_TIMEOUTED"></A>
+<CODE><BIG><B>CURLE_OPERATION_TIMEOUTED</B></BIG> = 165</CODE>
+<P>
+
+<A name="CURLE_FTP_COULDNT_SET_ASCII"></A>
+<CODE><BIG><B>CURLE_FTP_COULDNT_SET_ASCII</B></BIG> = 166</CODE>
+<P>
+
+<A name="CURLE_FTP_PORT_FAILED"></A>
+<CODE><BIG><B>CURLE_FTP_PORT_FAILED</B></BIG> = 167</CODE>
+<P>
+
+<A name="CURLE_FTP_COULDNT_USE_REST"></A>
+<CODE><BIG><B>CURLE_FTP_COULDNT_USE_REST</B></BIG> = 168</CODE>
+<P>
+
+<A name="CURLE_FTP_COULDNT_GET_SIZE"></A>
+<CODE><BIG><B>CURLE_FTP_COULDNT_GET_SIZE</B></BIG> = 169</CODE>
+<P>
+
+<A name="CURLE_HTTP_RANGE_ERROR"></A>
+<CODE><BIG><B>CURLE_HTTP_RANGE_ERROR</B></BIG> = 170</CODE>
+<P>
+
+<A name="CURLE_HTTP_POST_ERROR"></A>
+<CODE><BIG><B>CURLE_HTTP_POST_ERROR</B></BIG> = 171</CODE>
+<P>
+
+<A name="CURLE_SSL_CONNECT_ERROR"></A>
+<CODE><BIG><B>CURLE_SSL_CONNECT_ERROR</B></BIG> = 172</CODE>
+<P>
+
+<A name="CURLE_FTP_BAD_DOWNLOAD_RESUME"></A>
+<CODE><BIG><B>CURLE_FTP_BAD_DOWNLOAD_RESUME</B></BIG> = 173</CODE>
+<P>
+
+<A name="CURLE_FILE_COULDNT_READ_FILE"></A>
+<CODE><BIG><B>CURLE_FILE_COULDNT_READ_FILE</B></BIG> = 174</CODE>
+<P>
+
+<A name="CURLE_LDAP_CANNOT_BIND"></A>
+<CODE><BIG><B>CURLE_LDAP_CANNOT_BIND</B></BIG> = 175</CODE>
+<P>
+
+<A name="CURLE_LDAP_SEARCH_FAILED"></A>
+<CODE><BIG><B>CURLE_LDAP_SEARCH_FAILED</B></BIG> = 176</CODE>
+<P>
+
+<A name="CURLE_LIBRARY_NOT_FOUND"></A>
+<CODE><BIG><B>CURLE_LIBRARY_NOT_FOUND</B></BIG> = 177</CODE>
+<P>
+
+<A name="CURLE_FUNCTION_NOT_FOUND"></A>
+<CODE><BIG><B>CURLE_FUNCTION_NOT_FOUND</B></BIG> = 178</CODE>
+<P>
+
+<A name="CURLE_ABORTED_BY_CALLBACK"></A>
+<CODE><BIG><B>CURLE_ABORTED_BY_CALLBACK</B></BIG> = 179</CODE>
+<P>
+
+<A name="CURLE_BAD_FUNCTION_ARGUMENT"></A>
+<CODE><BIG><B>CURLE_BAD_FUNCTION_ARGUMENT</B></BIG> = 180</CODE>
+<P>
+
+<A name="CURLE_BAD_CALLING_ORDER"></A>
+<CODE><BIG><B>CURLE_BAD_CALLING_ORDER</B></BIG> = 181</CODE>
+<P>
+
+<A name="CURLE_HTTP_PORT_FAILED"></A>
+<CODE><BIG><B>CURLE_HTTP_PORT_FAILED</B></BIG> = 182</CODE>
+<P>
+
+<A name="CURLE_BAD_PASSWORD_ENTERED"></A>
+<CODE><BIG><B>CURLE_BAD_PASSWORD_ENTERED</B></BIG> = 183</CODE>
+<P>
+
+<A name="CURLE_TOO_MANY_REDIRECTS"></A>
+<CODE><BIG><B>CURLE_TOO_MANY_REDIRECTS</B></BIG> = 184</CODE>
+<P>
+
+<A name="CURLE_UNKNOWN_TELNET_OPTION"></A>
+<CODE><BIG><B>CURLE_UNKNOWN_TELNET_OPTION</B></BIG> = 185</CODE>
+<P>
+
+<A name="CURLE_TELNET_OPTION_SYNTAX"></A>
+<CODE><BIG><B>CURLE_TELNET_OPTION_SYNTAX</B></BIG> = 186</CODE>
+<P>
+
+<A name="CURLE_OBSOLETE"></A>
+<CODE><BIG><B>CURLE_OBSOLETE</B></BIG> = 187</CODE>
+<P>
+
+<A name="CURLE_SSL_PEER_CERTIFICATE"></A>
+<CODE><BIG><B>CURLE_SSL_PEER_CERTIFICATE</B></BIG> = 188</CODE>
+<P>
+
+<A name="CURLE_GOT_NOTHING"></A>
+<CODE><BIG><B>CURLE_GOT_NOTHING</B></BIG> = 189</CODE>
+<P>
+
+<A name="CURLE_SSL_ENGINE_NOTFOUND"></A>
+<CODE><BIG><B>CURLE_SSL_ENGINE_NOTFOUND</B></BIG> = 190</CODE>
+<P>
+
+<A name="CURLE_SSL_ENGINE_SETFAILED"></A>
+<CODE><BIG><B>CURLE_SSL_ENGINE_SETFAILED</B></BIG> = 191</CODE>
+<P>
+
+<A name="CURLE_SEND_ERROR"></A>
+<CODE><BIG><B>CURLE_SEND_ERROR</B></BIG> = 192</CODE>
+<P>
+
+<A name="CURLE_RECV_ERROR"></A>
+<CODE><BIG><B>CURLE_RECV_ERROR</B></BIG> = 193</CODE>
+<P>
+
+<A name="CURLE_SHARE_IN_USE"></A>
+<CODE><BIG><B>CURLE_SHARE_IN_USE</B></BIG> = 194</CODE>
+<P>
+
+<A name="CURLE_SSL_CERTPROBLEM"></A>
+<CODE><BIG><B>CURLE_SSL_CERTPROBLEM</B></BIG> = 195</CODE>
+<P>
+
+<A name="CURLE_SSL_CIPHER"></A>
+<CODE><BIG><B>CURLE_SSL_CIPHER</B></BIG> = 196</CODE>
+<P>
+
+<A name="CURLE_SSL_CACERT"></A>
+<CODE><BIG><B>CURLE_SSL_CACERT</B></BIG> = 197</CODE>
+<P>
+
+<A name="CURLE_BAD_CONTENT_ENCODING"></A>
+<CODE><BIG><B>CURLE_BAD_CONTENT_ENCODING</B></BIG> = 198</CODE>
+<P>
+
+<A name="CURLE_LDAP_INVALID_URL"></A>
+<CODE><BIG><B>CURLE_LDAP_INVALID_URL</B></BIG> = 199</CODE>
+<P>
+
+<A name="CURLE_FILESIZE_EXCEEDED"></A>
+<CODE><BIG><B>CURLE_FILESIZE_EXCEEDED</B></BIG> = 200</CODE>
+<P>
+
+<A name="CURLE_FTP_SSL_FAILED"></A>
+<CODE><BIG><B>CURLE_FTP_SSL_FAILED</B></BIG> = 201</CODE>
+<P>
+
+<A name="CURLPROXY_HTTP"></A>
+<CODE><BIG><B>CURLPROXY_HTTP</B></BIG> = 202</CODE>
+<P>
+
+<A name="CURLPROXY_SOCKS5"></A>
+<CODE><BIG><B>CURLPROXY_SOCKS5</B></BIG> = 203</CODE>
+<P>
+
+<A name="CURL_NETRC_OPTIONAL"></A>
+<CODE><BIG><B>CURL_NETRC_OPTIONAL</B></BIG> = 204</CODE>
+<P>
+
+<A name="CURL_NETRC_IGNORED"></A>
+<CODE><BIG><B>CURL_NETRC_IGNORED</B></BIG> = 205</CODE>
+<P>
+
+<A name="CURL_NETRC_REQUIRED"></A>
+<CODE><BIG><B>CURL_NETRC_REQUIRED</B></BIG> = 206</CODE>
+<P>
+
+<A name="CURL_HTTP_VERSION_NONE"></A>
+<CODE><BIG><B>CURL_HTTP_VERSION_NONE</B></BIG> = 207</CODE>
+<P>
+
+<A name="CURL_HTTP_VERSION_1_0"></A>
+<CODE><BIG><B>CURL_HTTP_VERSION_1_0</B></BIG> = 208</CODE>
+<P>
+
+<A name="CURL_HTTP_VERSION_1_1"></A>
+<CODE><BIG><B>CURL_HTTP_VERSION_1_1</B></BIG> = 209</CODE>
+<P>
+
+<A name="CURLM_CALL_MULTI_PERFORM"></A>
+<CODE><BIG><B>CURLM_CALL_MULTI_PERFORM</B></BIG> = 210</CODE>
+<P>
+
+<A name="CURLM_OK"></A>
+<CODE><BIG><B>CURLM_OK</B></BIG> = 211</CODE>
+<P>
+
+<A name="CURLM_BAD_HANDLE"></A>
+<CODE><BIG><B>CURLM_BAD_HANDLE</B></BIG> = 212</CODE>
+<P>
+
+<A name="CURLM_BAD_EASY_HANDLE"></A>
+<CODE><BIG><B>CURLM_BAD_EASY_HANDLE</B></BIG> = 213</CODE>
+<P>
+
+<A name="CURLM_OUT_OF_MEMORY"></A>
+<CODE><BIG><B>CURLM_OUT_OF_MEMORY</B></BIG> = 214</CODE>
+<P>
+
+<A name="CURLM_INTERNAL_ERROR"></A>
+<CODE><BIG><B>CURLM_INTERNAL_ERROR</B></BIG> = 215</CODE>
+<P>
+
+<A name="CURLMSG_DONE"></A>
+<CODE><BIG><B>CURLMSG_DONE</B></BIG> = 216</CODE>
+<P>
+
+<A name="curl_version()"></A>
+<CODE><I>mixed[]</I> <BIG><B>curl_version</B></BIG>(...)</CODE>
+<P>
+
+<A name="curl_init()"></A>
+<CODE><I>resource</I> <BIG><B>curl_init</B></BIG>(...)</CODE>
+<P>
+
+<A name="curl_copy_handle()"></A>
+<CODE><I>resource</I> <BIG><B>curl_copy_handle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="curl_setopt()"></A>
+<CODE><I>boolean</I> <BIG><B>curl_setopt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$option,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="curl_exec()"></A>
+<CODE><I>mixed</I> <BIG><B>curl_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="curl_getinfo()"></A>
+<CODE><I>mixed</I> <BIG><B>curl_getinfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch, ...)</CODE>
+<P>
+
+<A name="curl_error()"></A>
+<CODE><I>string</I> <BIG><B>curl_error</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="curl_errno()"></A>
+<CODE><I>int</I> <BIG><B>curl_errno</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="curl_close()"></A>
+<CODE><I>void</I> <BIG><B>curl_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="curl_multi_init()"></A>
+<CODE><I>resource</I> <BIG><B>curl_multi_init</B></BIG>()</CODE>
+<P>
+
+<A name="curl_multi_add_handle()"></A>
+<CODE><I>int</I> <BIG><B>curl_multi_add_handle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$multi,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="curl_multi_remove_handle()"></A>
+<CODE><I>int</I> <BIG><B>curl_multi_remove_handle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$mh,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="curl_multi_select()"></A>
+<CODE><I>int</I> <BIG><B>curl_multi_select</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$mh, ...)</CODE>
+<P>
+
+<A name="curl_multi_exec()"></A>
+<CODE><I>int</I> <BIG><B>curl_multi_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$mh,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $still_running)</CODE>
+<P>
+
+<A name="curl_multi_getcontent()"></A>
+<CODE><I>string</I> <BIG><B>curl_multi_getcontent</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="curl_multi_info_read()"></A>
+<CODE><I>mixed[]</I> <BIG><B>curl_multi_info_read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$mh, ...)</CODE>
+<P>
+
+<A name="curl_multi_close()"></A>
+<CODE><I>void</I> <BIG><B>curl_multi_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$mh)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

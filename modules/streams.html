@@ -1,0 +1,501 @@
+<HTML><BODY>
+<H1>streams</H1>
+<P><b>Stream Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.stream.php"><code>http://www.php.net/manual/en/ref.stream.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="STREAM_NOTIFY_CONNECT"></A>
+<CODE><BIG><B>STREAM_NOTIFY_CONNECT</B></BIG> = 2</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_AUTH_REQUIRED"></A>
+<CODE><BIG><B>STREAM_NOTIFY_AUTH_REQUIRED</B></BIG> = 3</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_AUTH_RESULT"></A>
+<CODE><BIG><B>STREAM_NOTIFY_AUTH_RESULT</B></BIG> = 10</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_MIME_TYPE_IS"></A>
+<CODE><BIG><B>STREAM_NOTIFY_MIME_TYPE_IS</B></BIG> = 4</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_FILE_SIZE_IS"></A>
+<CODE><BIG><B>STREAM_NOTIFY_FILE_SIZE_IS</B></BIG> = 5</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_REDIRECTED"></A>
+<CODE><BIG><B>STREAM_NOTIFY_REDIRECTED</B></BIG> = 6</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_PROGRESS"></A>
+<CODE><BIG><B>STREAM_NOTIFY_PROGRESS</B></BIG> = 7</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_FAILURE"></A>
+<CODE><BIG><B>STREAM_NOTIFY_FAILURE</B></BIG> = 9</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_COMPLETED"></A>
+<CODE><BIG><B>STREAM_NOTIFY_COMPLETED</B></BIG> = 8</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_RESOLVE"></A>
+<CODE><BIG><B>STREAM_NOTIFY_RESOLVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_SEVERITY_INFO"></A>
+<CODE><BIG><B>STREAM_NOTIFY_SEVERITY_INFO</B></BIG> = 0</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_SEVERITY_WARN"></A>
+<CODE><BIG><B>STREAM_NOTIFY_SEVERITY_WARN</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_NOTIFY_SEVERITY_ERR"></A>
+<CODE><BIG><B>STREAM_NOTIFY_SEVERITY_ERR</B></BIG> = 2</CODE>
+<P>
+
+<A name="STREAM_FILTER_READ"></A>
+<CODE><BIG><B>STREAM_FILTER_READ</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_FILTER_WRITE"></A>
+<CODE><BIG><B>STREAM_FILTER_WRITE</B></BIG> = 2</CODE>
+<P>
+
+<A name="STREAM_FILTER_ALL"></A>
+<CODE><BIG><B>STREAM_FILTER_ALL</B></BIG> = 3</CODE>
+<P>
+
+<A name="STREAM_CLIENT_PERSISTENT"></A>
+<CODE><BIG><B>STREAM_CLIENT_PERSISTENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CLIENT_ASYNC_CONNECT"></A>
+<CODE><BIG><B>STREAM_CLIENT_ASYNC_CONNECT</B></BIG> = 2</CODE>
+<P>
+
+<A name="STREAM_CLIENT_CONNECT"></A>
+<CODE><BIG><B>STREAM_CLIENT_CONNECT</B></BIG> = 4</CODE>
+<P>
+
+<A name="STREAM_PEEK"></A>
+<CODE><BIG><B>STREAM_PEEK</B></BIG> = 2</CODE>
+<P>
+
+<A name="STREAM_OOB"></A>
+<CODE><BIG><B>STREAM_OOB</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_SERVER_BIND"></A>
+<CODE><BIG><B>STREAM_SERVER_BIND</B></BIG> = 4</CODE>
+<P>
+
+<A name="STREAM_SERVER_LISTEN"></A>
+<CODE><BIG><B>STREAM_SERVER_LISTEN</B></BIG> = 8</CODE>
+<P>
+
+<A name="STREAM_USE_PATH"></A>
+<CODE><BIG><B>STREAM_USE_PATH</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_IGNORE_URL"></A>
+<CODE><BIG><B>STREAM_IGNORE_URL</B></BIG> = 2</CODE>
+<P>
+
+<A name="STREAM_ENFORCE_SAFE_MODE"></A>
+<CODE><BIG><B>STREAM_ENFORCE_SAFE_MODE</B></BIG> = 4</CODE>
+<P>
+
+<A name="STREAM_REPORT_ERRORS"></A>
+<CODE><BIG><B>STREAM_REPORT_ERRORS</B></BIG> = 8</CODE>
+<P>
+
+<A name="STREAM_MUST_SEEK"></A>
+<CODE><BIG><B>STREAM_MUST_SEEK</B></BIG> = 16</CODE>
+<P>
+
+<A name="STREAM_URL_STAT_LINK"></A>
+<CODE><BIG><B>STREAM_URL_STAT_LINK</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_URL_STAT_QUIET"></A>
+<CODE><BIG><B>STREAM_URL_STAT_QUIET</B></BIG> = 2</CODE>
+<P>
+
+<A name="STREAM_MKDIR_RECURSIVE"></A>
+<CODE><BIG><B>STREAM_MKDIR_RECURSIVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CRYPTO_METHOD_SSLv2_CLIENT"></A>
+<CODE><BIG><B>STREAM_CRYPTO_METHOD_SSLv2_CLIENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CRYPTO_METHOD_SSLv3_CLIENT"></A>
+<CODE><BIG><B>STREAM_CRYPTO_METHOD_SSLv3_CLIENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CRYPTO_METHOD_SSLv23_CLIENT"></A>
+<CODE><BIG><B>STREAM_CRYPTO_METHOD_SSLv23_CLIENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CRYPTO_METHOD_TLS_CLIENT"></A>
+<CODE><BIG><B>STREAM_CRYPTO_METHOD_TLS_CLIENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CRYPTO_METHOD_SSLv2_SERVER"></A>
+<CODE><BIG><B>STREAM_CRYPTO_METHOD_SSLv2_SERVER</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CRYPTO_METHOD_SSLv3_SERVER"></A>
+<CODE><BIG><B>STREAM_CRYPTO_METHOD_SSLv3_SERVER</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CRYPTO_METHOD_SSLv23_SERVER"></A>
+<CODE><BIG><B>STREAM_CRYPTO_METHOD_SSLv23_SERVER</B></BIG> = 1</CODE>
+<P>
+
+<A name="STREAM_CRYPTO_METHOD_TLS_SERVER"></A>
+<CODE><BIG><B>STREAM_CRYPTO_METHOD_TLS_SERVER</B></BIG> = 1</CODE>
+<P>
+
+<A name="stream_select()"></A>
+<CODE><I>int</I> <BIG><B>stream_select</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $read_streams,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $write_streams,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $except_streams,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tv_sec,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tv_usec = 0)</CODE>
+<P>
+
+<A name="stream_context_create()"></A>
+<CODE><I>resource</I> <BIG><B>stream_context_create</B></BIG>(...)</CODE>
+<P>
+
+<A name="stream_context_set_params()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_context_set_params</B></BIG>(...)</CODE>
+<P>
+
+<A name="stream_context_set_option()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_context_set_option</B></BIG>(...)</CODE>
+<P>
+
+<A name="stream_context_get_options()"></A>
+<CODE><I>mixed[string][string]</I> <BIG><B>stream_context_get_options</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream_or_context)</CODE>
+<P>
+
+<A name="stream_filter_prepend()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_filter_prepend</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filtername, ...)</CODE>
+<P>
+
+<A name="stream_filter_append()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_filter_append</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filtername, ...)</CODE>
+<P>
+
+<A name="stream_socket_client()"></A>
+<CODE><I>resource</I> <BIG><B>stream_socket_client</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remoteaddress, ...)</CODE>
+<P>
+
+<A name="stream_socket_server()"></A>
+<CODE><I>resource</I> <BIG><B>stream_socket_server</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localaddress, ...)</CODE>
+<P>
+
+<A name="stream_socket_accept()"></A>
+<CODE><I>resource</I> <BIG><B>stream_socket_accept</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$serverstream, ...)</CODE>
+<P>
+
+<A name="stream_socket_get_name()"></A>
+<CODE><I>string</I> <BIG><B>stream_socket_get_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$want_peer)</CODE>
+<P>
+
+<A name="stream_socket_recvfrom()"></A>
+<CODE><I>string</I> <BIG><B>stream_socket_recvfrom</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$amount, ...)</CODE>
+<P>
+
+<A name="stream_socket_sendto()"></A>
+<CODE><I>int</I> <BIG><B>stream_socket_sendto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data, ...)</CODE>
+<P>
+
+<A name="stream_copy_to_stream()"></A>
+<CODE><I>int</I> <BIG><B>stream_copy_to_stream</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$source,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$dest, ...)</CODE>
+<P>
+
+<A name="stream_get_contents()"></A>
+<CODE><I>int</I> <BIG><B>stream_get_contents</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$source, ...)</CODE>
+<P>
+
+<A name="stream_set_write_buffer()"></A>
+<CODE><I>int</I> <BIG><B>stream_set_write_buffer</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$buffer)</CODE>
+<P>
+
+<A name="stream_set_blocking()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_set_blocking</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="stream_get_meta_data()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>stream_get_meta_data</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream)</CODE>
+<P>
+
+<A name="stream_get_line()"></A>
+<CODE><I>string</I> <BIG><B>stream_get_line</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$length, ...)</CODE>
+<P>
+
+<A name="stream_wrapper_register()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_wrapper_register</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$classname)</CODE>
+<P>
+
+<A name="stream_register_wrapper()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_register_wrapper</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$classname)</CODE>
+<P>
+
+<A name="stream_get_wrappers()"></A>
+<CODE><I>string[int]</I> <BIG><B>stream_get_wrappers</B></BIG>()</CODE>
+<P>
+
+<A name="stream_get_transports()"></A>
+<CODE><I>string[int]</I> <BIG><B>stream_get_transports</B></BIG>()</CODE>
+<P>
+
+<A name="stream_set_timeout()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_set_timeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$seconds, ...)</CODE>
+<P>
+
+<A name="stream_get_filters()"></A>
+<CODE><I>mixed[]</I> <BIG><B>stream_get_filters</B></BIG>()</CODE>
+<P>
+
+<A name="stream_filter_register()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_filter_register</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filtername,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$classname)</CODE>
+<P>
+
+<A name="stream_bucket_make_writeable()"></A>
+<CODE><I>object</I> <BIG><B>stream_bucket_make_writeable</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$brigade)</CODE>
+<P>
+
+<A name="stream_bucket_prepend()"></A>
+<CODE><I>void</I> <BIG><B>stream_bucket_prepend</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$brigade,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$bucket)</CODE>
+<P>
+
+<A name="stream_bucket_append()"></A>
+<CODE><I>void</I> <BIG><B>stream_bucket_append</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$brigade,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$bucket)</CODE>
+<P>
+
+<A name="stream_bucket_new()"></A>
+<CODE><I>resource</I> <BIG><B>stream_bucket_new</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$buffer)</CODE>
+<P>
+
+<A name="socket_set_blocking()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_set_blocking</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="socket_set_timeout()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_set_timeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$seconds, ...)</CODE>
+<P>
+
+<A name="socket_get_status()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>socket_get_status</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stram)</CODE>
+<P>
+
+<A name="stream_socket_shutdown()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_socket_shutdown</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$how)</CODE>
+<P>
+
+<A name="stream_socket_enable_crypto()"></A>
+<CODE><I>mixed</I> <BIG><B>stream_socket_enable_crypto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$enable, ...)</CODE>
+<P>
+
+<A name="stream_context_get_default()"></A>
+<CODE><I>resource</I> <BIG><B>stream_context_get_default</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[string][string]</I>&nbsp;$options)</CODE>
+<P>
+
+<A name="stream_context_get_params()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>stream_context_get_params</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream_or_context)</CODE>
+<P>
+
+<A name="stream_context_set_default()"></A>
+<CODE><I>resource</I> <BIG><B>stream_context_set_default</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[string][string]</I>&nbsp;$options)</CODE>
+<P>
+
+<A name="stream_socket_pair()"></A>
+<CODE><I>mixed</I> <BIG><B>stream_socket_pair</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$domain,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$protocol)</CODE>
+<P>
+
+<A name="stream_supports_lock()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_supports_lock</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream)</CODE>
+<P>
+
+<A name="stream_wrapper_restore()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_wrapper_restore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$protocol)</CODE>
+<P>
+
+<A name="stream_wrapper_unregister()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_wrapper_unregister</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$protocol)</CODE>
+<P>
+
+<A name="stream_resolve_include_path()"></A>
+<CODE><I>mixed</I> <BIG><B>stream_resolve_include_path</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$context = NULL)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="StreamWrapper"></A>
+<pre>class <BIG><B>StreamWrapper</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="StreamWrapper::$context"></A>
+<CODE><I>resource</I> <BIG><B>$context</B></BIG></CODE>
+<P>
+
+<A name="StreamWrapper::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::__destruct()"></A>
+<CODE><I>void</I> <BIG><B>__destruct</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::dir_closedir()"></A>
+<CODE><I>boolean</I> <BIG><B>dir_closedir</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::dir_opendir()"></A>
+<CODE><I>boolean</I> <BIG><B>dir_opendir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options)</CODE>
+<P>
+
+<A name="StreamWrapper::dir_readdir()"></A>
+<CODE><I>string</I> <BIG><B>dir_readdir</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::dir_rewinddir()"></A>
+<CODE><I>boolean</I> <BIG><B>dir_rewinddir</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::mkdir()"></A>
+<CODE><I>boolean</I> <BIG><B>mkdir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options)</CODE>
+<P>
+
+<A name="StreamWrapper::rename()"></A>
+<CODE><I>boolean</I> <BIG><B>rename</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path_from,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path_to)</CODE>
+<P>
+
+<A name="StreamWrapper::rmdir()"></A>
+<CODE><I>boolean</I> <BIG><B>rmdir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options)</CODE>
+<P>
+
+<A name="StreamWrapper::stream_cast()"></A>
+<CODE><I>resource</I> <BIG><B>stream_cast</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cast_as)</CODE>
+<P>
+
+<A name="StreamWrapper::stream_close()"></A>
+<CODE><I>void</I> <BIG><B>stream_close</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::stream_eof()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_eof</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::stream_flush()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_flush</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::stream_lock()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_lock</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$operation)</CODE>
+<P>
+
+<A name="StreamWrapper::stream_metadata()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_metadata</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$option,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$var_)</CODE>
+<P>
+
+<A name="StreamWrapper::stream_open()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mode,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;&amp; $opened_path)</CODE>
+<P>
+
+<A name="StreamWrapper::stream_read()"></A>
+<CODE><I>string</I> <BIG><B>stream_read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<P>
+
+<A name="StreamWrapper::stream_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$whence = 0)</CODE>
+<P>
+
+<A name="StreamWrapper::stream_set_option()"></A>
+<CODE><I>boolean</I> <BIG><B>stream_set_option</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$option,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$arg1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$arg2)</CODE>
+<P>
+
+<A name="StreamWrapper::stream_stat()"></A>
+<CODE><I>int[]</I> <BIG><B>stream_stat</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::stream_tell()"></A>
+<CODE><I>int</I> <BIG><B>stream_tell</B></BIG>()</CODE>
+<P>
+
+<A name="StreamWrapper::stream_write()"></A>
+<CODE><I>int</I> <BIG><B>stream_write</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="StreamWrapper::unlink()"></A>
+<CODE><I>boolean</I> <BIG><B>unlink</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path)</CODE>
+<P>
+
+<A name="StreamWrapper::url_stat()"></A>
+<CODE><I>int[]</I> <BIG><B>url_stat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

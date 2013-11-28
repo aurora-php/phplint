@@ -1,0 +1,143 @@
+<HTML><BODY>
+<H1>apache</H1>
+<P><b>Apache-specific Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.apache.php"><code>http://www.php.net/manual/en/ref.apache.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="apache_child_terminate()"></A>
+<CODE><I>boolean</I> <BIG><B>apache_child_terminate</B></BIG>()</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="apache_note()"></A>
+<CODE><I>string</I> <BIG><B>apache_note</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$note_name, ...)</CODE>
+<P>
+
+<A name="virtual()"></A>
+<CODE><I>boolean</I> <BIG><B>virtual</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="getallheaders()"></A>
+<CODE><I>mixed[]</I> <BIG><B>getallheaders</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_headers()"></A>
+<CODE><I>mixed[]</I> <BIG><B>apache_request_headers</B></BIG>()</CODE>
+<P>
+
+<A name="apache_response_headers()"></A>
+<CODE><I>mixed[]</I> <BIG><B>apache_response_headers</B></BIG>()</CODE>
+<P>
+
+<A name="apache_setenv()"></A>
+<CODE><I>boolean</I> <BIG><B>apache_setenv</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$variable,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value, ...)</CODE>
+<P>
+
+<A name="apache_lookup_uri()"></A>
+<CODE><I>object</I> <BIG><B>apache_lookup_uri</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$URI)</CODE>
+<P>
+
+<A name="apache_get_version()"></A>
+<CODE><I>string</I> <BIG><B>apache_get_version</B></BIG>()</CODE>
+<P>
+
+<A name="apache_get_modules()"></A>
+<CODE><I>mixed[]</I> <BIG><B>apache_get_modules</B></BIG>()</CODE>
+<P>
+
+<A name="apache_getenv()"></A>
+<CODE><I>boolean</I> <BIG><B>apache_getenv</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$variable, ...)</CODE>
+<P>
+
+<A name="apache_request_headers_in()"></A>
+<CODE><I>mixed[]</I> <BIG><B>apache_request_headers_in</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_headers_out()"></A>
+<CODE><I>mixed[]</I> <BIG><B>apache_request_headers_out</B></BIG>(...)</CODE>
+<P>
+
+<A name="apache_request_err_headers_out()"></A>
+<CODE><I>mixed[]</I> <BIG><B>apache_request_err_headers_out</B></BIG>(...)</CODE>
+<P>
+
+<A name="apache_request_server_port()"></A>
+<CODE><I>int</I> <BIG><B>apache_request_server_port</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_remote_host()"></A>
+<CODE><I>int</I> <BIG><B>apache_request_remote_host</B></BIG>(...)</CODE>
+<P>
+
+<A name="apache_request_update_mtime()"></A>
+<CODE><I>int</I> <BIG><B>apache_request_update_mtime</B></BIG>(...)</CODE>
+<P>
+
+<A name="apache_request_set_etag()"></A>
+<CODE><I>void</I> <BIG><B>apache_request_set_etag</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_set_last_modified()"></A>
+<CODE><I>void</I> <BIG><B>apache_request_set_last_modified</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_meets_conditions()"></A>
+<CODE><I>int</I> <BIG><B>apache_request_meets_conditions</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_discard_request_body()"></A>
+<CODE><I>int</I> <BIG><B>apache_request_discard_request_body</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_satisfies()"></A>
+<CODE><I>int</I> <BIG><B>apache_request_satisfies</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_is_initial_req()"></A>
+<CODE><I>boolean</I> <BIG><B>apache_request_is_initial_req</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_some_auth_required()"></A>
+<CODE><I>boolean</I> <BIG><B>apache_request_some_auth_required</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_auth_type()"></A>
+<CODE><I>string</I> <BIG><B>apache_request_auth_type</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_auth_name()"></A>
+<CODE><I>string</I> <BIG><B>apache_request_auth_name</B></BIG>()</CODE>
+<P>
+
+<A name="apache_request_log_error()"></A>
+<CODE><I>boolean</I> <BIG><B>apache_request_log_error</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$message, ...)</CODE>
+<P>
+
+<A name="apache_request_sub_req_lookup_uri()"></A>
+<CODE><I>object</I> <BIG><B>apache_request_sub_req_lookup_uri</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri)</CODE>
+<P>
+
+<A name="apache_request_sub_req_lookup_file()"></A>
+<CODE><I>object</I> <BIG><B>apache_request_sub_req_lookup_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file)</CODE>
+<P>
+
+<A name="apache_request_sub_req_method_uri()"></A>
+<CODE><I>object</I> <BIG><B>apache_request_sub_req_method_uri</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$method,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri)</CODE>
+<P>
+
+<A name="apache_request_run()"></A>
+<CODE><I>int</I> <BIG><B>apache_request_run</B></BIG>()</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

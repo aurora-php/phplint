@@ -1,0 +1,299 @@
+<HTML><BODY>
+<H1>sqlite</H1>
+<P><b>SQLite Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.sqlite.php"><code>http://www.php.net/manual/en/ref.sqlite.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="SQLITE_BOTH"></A>
+<CODE><BIG><B>SQLITE_BOTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLITE_NUM"></A>
+<CODE><BIG><B>SQLITE_NUM</B></BIG> = 2</CODE>
+<P>
+
+<A name="SQLITE_ASSOC"></A>
+<CODE><BIG><B>SQLITE_ASSOC</B></BIG> = 3</CODE>
+<P>
+
+<A name="SQLITE_OK"></A>
+<CODE><BIG><B>SQLITE_OK</B></BIG> = 4</CODE>
+<P>
+
+<A name="SQLITE_ERROR"></A>
+<CODE><BIG><B>SQLITE_ERROR</B></BIG> = 5</CODE>
+<P>
+
+<A name="SQLITE_INTERNAL"></A>
+<CODE><BIG><B>SQLITE_INTERNAL</B></BIG> = 6</CODE>
+<P>
+
+<A name="SQLITE_PERM"></A>
+<CODE><BIG><B>SQLITE_PERM</B></BIG> = 7</CODE>
+<P>
+
+<A name="SQLITE_ABORT"></A>
+<CODE><BIG><B>SQLITE_ABORT</B></BIG> = 8</CODE>
+<P>
+
+<A name="SQLITE_BUSY"></A>
+<CODE><BIG><B>SQLITE_BUSY</B></BIG> = 9</CODE>
+<P>
+
+<A name="SQLITE_LOCKED"></A>
+<CODE><BIG><B>SQLITE_LOCKED</B></BIG> = 10</CODE>
+<P>
+
+<A name="SQLITE_NOMEM"></A>
+<CODE><BIG><B>SQLITE_NOMEM</B></BIG> = 11</CODE>
+<P>
+
+<A name="SQLITE_READONLY"></A>
+<CODE><BIG><B>SQLITE_READONLY</B></BIG> = 12</CODE>
+<P>
+
+<A name="SQLITE_INTERRUPT"></A>
+<CODE><BIG><B>SQLITE_INTERRUPT</B></BIG> = 13</CODE>
+<P>
+
+<A name="SQLITE_IOERR"></A>
+<CODE><BIG><B>SQLITE_IOERR</B></BIG> = 14</CODE>
+<P>
+
+<A name="SQLITE_CORRUPT"></A>
+<CODE><BIG><B>SQLITE_CORRUPT</B></BIG> = 15</CODE>
+<P>
+
+<A name="SQLITE_NOTFOUND"></A>
+<CODE><BIG><B>SQLITE_NOTFOUND</B></BIG> = 16</CODE>
+<P>
+
+<A name="SQLITE_FULL"></A>
+<CODE><BIG><B>SQLITE_FULL</B></BIG> = 17</CODE>
+<P>
+
+<A name="SQLITE_CANTOPEN"></A>
+<CODE><BIG><B>SQLITE_CANTOPEN</B></BIG> = 18</CODE>
+<P>
+
+<A name="SQLITE_PROTOCOL"></A>
+<CODE><BIG><B>SQLITE_PROTOCOL</B></BIG> = 19</CODE>
+<P>
+
+<A name="SQLITE_EMPTY"></A>
+<CODE><BIG><B>SQLITE_EMPTY</B></BIG> = 20</CODE>
+<P>
+
+<A name="SQLITE_SCHEMA"></A>
+<CODE><BIG><B>SQLITE_SCHEMA</B></BIG> = 21</CODE>
+<P>
+
+<A name="SQLITE_TOOBIG"></A>
+<CODE><BIG><B>SQLITE_TOOBIG</B></BIG> = 22</CODE>
+<P>
+
+<A name="SQLITE_CONSTRAINT"></A>
+<CODE><BIG><B>SQLITE_CONSTRAINT</B></BIG> = 23</CODE>
+<P>
+
+<A name="SQLITE_MISMATCH"></A>
+<CODE><BIG><B>SQLITE_MISMATCH</B></BIG> = 24</CODE>
+<P>
+
+<A name="SQLITE_MISUSE"></A>
+<CODE><BIG><B>SQLITE_MISUSE</B></BIG> = 25</CODE>
+<P>
+
+<A name="SQLITE_NOLFS"></A>
+<CODE><BIG><B>SQLITE_NOLFS</B></BIG> = 26</CODE>
+<P>
+
+<A name="SQLITE_AUTH"></A>
+<CODE><BIG><B>SQLITE_AUTH</B></BIG> = 27</CODE>
+<P>
+
+<A name="SQLITE_FORMAT"></A>
+<CODE><BIG><B>SQLITE_FORMAT</B></BIG> = 28</CODE>
+<P>
+
+<A name="SQLITE_ROW"></A>
+<CODE><BIG><B>SQLITE_ROW</B></BIG> = 29</CODE>
+<P>
+
+<A name="SQLITE_DONE"></A>
+<CODE><BIG><B>SQLITE_DONE</B></BIG> = 30</CODE>
+<P>
+
+<A name="sqlite_popen()"></A>
+<CODE><I>resource</I> <BIG><B>sqlite_popen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="sqlite_open()"></A>
+<CODE><I>resource</I> <BIG><B>sqlite_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="sqlite_factory()"></A>
+<CODE><I>object</I> <BIG><B>sqlite_factory</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="sqlite_busy_timeout()"></A>
+<CODE><I>void</I> <BIG><B>sqlite_busy_timeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ms)</CODE>
+<P>
+
+<A name="sqlite_close()"></A>
+<CODE><I>void</I> <BIG><B>sqlite_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db)</CODE>
+<P>
+
+<A name="sqlite_unbuffered_query()"></A>
+<CODE><I>resource</I> <BIG><B>sqlite_unbuffered_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db, ...)</CODE>
+<P>
+
+<A name="sqlite_fetch_column_types()"></A>
+<CODE><I>resource</I> <BIG><B>sqlite_fetch_column_types</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db)</CODE>
+<P>
+
+<A name="sqlite_query()"></A>
+<CODE><I>resource</I> <BIG><B>sqlite_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db, ...)</CODE>
+<P>
+
+<A name="sqlite_exec()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db)</CODE>
+<P>
+
+<A name="sqlite_fetch_all()"></A>
+<CODE><I>mixed[]</I> <BIG><B>sqlite_fetch_all</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="sqlite_fetch_array()"></A>
+<CODE><I>mixed[]</I> <BIG><B>sqlite_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="sqlite_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>sqlite_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="sqlite_array_query()"></A>
+<CODE><I>mixed[]</I> <BIG><B>sqlite_array_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="sqlite_single_query()"></A>
+<CODE><I>mixed[]</I> <BIG><B>sqlite_single_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="sqlite_fetch_single()"></A>
+<CODE><I>string</I> <BIG><B>sqlite_fetch_single</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="sqlite_current()"></A>
+<CODE><I>mixed[]</I> <BIG><B>sqlite_current</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="sqlite_column()"></A>
+<CODE><I>mixed</I> <BIG><B>sqlite_column</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$index_or_name, ...)</CODE>
+<P>
+
+<A name="sqlite_libversion()"></A>
+<CODE><I>string</I> <BIG><B>sqlite_libversion</B></BIG>()</CODE>
+<P>
+
+<A name="sqlite_libencoding()"></A>
+<CODE><I>string</I> <BIG><B>sqlite_libencoding</B></BIG>()</CODE>
+<P>
+
+<A name="sqlite_changes()"></A>
+<CODE><I>int</I> <BIG><B>sqlite_changes</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db)</CODE>
+<P>
+
+<A name="sqlite_last_insert_rowid()"></A>
+<CODE><I>int</I> <BIG><B>sqlite_last_insert_rowid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db)</CODE>
+<P>
+
+<A name="sqlite_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>sqlite_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sqlite_valid()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_valid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sqlite_has_prev()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_has_prev</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sqlite_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>sqlite_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sqlite_field_name()"></A>
+<CODE><I>string</I> <BIG><B>sqlite_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_index)</CODE>
+<P>
+
+<A name="sqlite_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row)</CODE>
+<P>
+
+<A name="sqlite_rewind()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_rewind</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sqlite_next()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_next</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sqlite_prev()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_prev</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sqlite_escape_string()"></A>
+<CODE><I>string</I> <BIG><B>sqlite_escape_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$item)</CODE>
+<P>
+
+<A name="sqlite_last_error()"></A>
+<CODE><I>int</I> <BIG><B>sqlite_last_error</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db)</CODE>
+<P>
+
+<A name="sqlite_error_string()"></A>
+<CODE><I>string</I> <BIG><B>sqlite_error_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$error_code)</CODE>
+<P>
+
+<A name="sqlite_create_aggregate()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_create_aggregate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$funcname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$step_func,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$finalize_func, ...)</CODE>
+<P>
+
+<A name="sqlite_create_function()"></A>
+<CODE><I>boolean</I> <BIG><B>sqlite_create_function</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$funcname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$string_, ...)</CODE>
+<P>
+
+<A name="sqlite_udf_encode_binary()"></A>
+<CODE><I>string</I> <BIG><B>sqlite_udf_encode_binary</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="sqlite_udf_decode_binary()"></A>
+<CODE><I>string</I> <BIG><B>sqlite_udf_decode_binary</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

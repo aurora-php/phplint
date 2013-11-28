@@ -1,0 +1,436 @@
+<HTML><BODY>
+<H1>pcntl</H1>
+<P><b>Process Control Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.pcntl.php"><code>http://www.php.net/manual/en/ref.pcntl.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="WNOHANG"></A>
+<CODE><BIG><B>WNOHANG</B></BIG> = 1</CODE>
+<P>
+
+<A name="WUNTRACED"></A>
+<CODE><BIG><B>WUNTRACED</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIG_IGN"></A>
+<CODE><BIG><B>SIG_IGN</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIG_DFL"></A>
+<CODE><BIG><B>SIG_DFL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIG_ERR"></A>
+<CODE><BIG><B>SIG_ERR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGHUP"></A>
+<CODE><BIG><B>SIGHUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGINT"></A>
+<CODE><BIG><B>SIGINT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGQUIT"></A>
+<CODE><BIG><B>SIGQUIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGILL"></A>
+<CODE><BIG><B>SIGILL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGTRAP"></A>
+<CODE><BIG><B>SIGTRAP</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGABRT"></A>
+<CODE><BIG><B>SIGABRT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGIOT"></A>
+<CODE><BIG><B>SIGIOT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGBUS"></A>
+<CODE><BIG><B>SIGBUS</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGFPE"></A>
+<CODE><BIG><B>SIGFPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGKILL"></A>
+<CODE><BIG><B>SIGKILL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGUSR1"></A>
+<CODE><BIG><B>SIGUSR1</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGSEGV"></A>
+<CODE><BIG><B>SIGSEGV</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGUSR2"></A>
+<CODE><BIG><B>SIGUSR2</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGPIPE"></A>
+<CODE><BIG><B>SIGPIPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGALRM"></A>
+<CODE><BIG><B>SIGALRM</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGTERM"></A>
+<CODE><BIG><B>SIGTERM</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGSTKFLT"></A>
+<CODE><BIG><B>SIGSTKFLT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGCLD"></A>
+<CODE><BIG><B>SIGCLD</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGCHLD"></A>
+<CODE><BIG><B>SIGCHLD</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGCONT"></A>
+<CODE><BIG><B>SIGCONT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGSTOP"></A>
+<CODE><BIG><B>SIGSTOP</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGTSTP"></A>
+<CODE><BIG><B>SIGTSTP</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGTTIN"></A>
+<CODE><BIG><B>SIGTTIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGTTOU"></A>
+<CODE><BIG><B>SIGTTOU</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGURG"></A>
+<CODE><BIG><B>SIGURG</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGXCPU"></A>
+<CODE><BIG><B>SIGXCPU</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGXFSZ"></A>
+<CODE><BIG><B>SIGXFSZ</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGVTALRM"></A>
+<CODE><BIG><B>SIGVTALRM</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGPROF"></A>
+<CODE><BIG><B>SIGPROF</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGWINCH"></A>
+<CODE><BIG><B>SIGWINCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGPOLL"></A>
+<CODE><BIG><B>SIGPOLL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGIO"></A>
+<CODE><BIG><B>SIGIO</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGPWR"></A>
+<CODE><BIG><B>SIGPWR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGSYS"></A>
+<CODE><BIG><B>SIGSYS</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIGBABY"></A>
+<CODE><BIG><B>SIGBABY</B></BIG> = 1</CODE>
+<P>
+
+<A name="PRIO_PGRP"></A>
+<CODE><BIG><B>PRIO_PGRP</B></BIG> = 1</CODE>
+<P>
+
+<A name="PRIO_USER"></A>
+<CODE><BIG><B>PRIO_USER</B></BIG> = 1</CODE>
+<P>
+
+<A name="PRIO_PROCESS"></A>
+<CODE><BIG><B>PRIO_PROCESS</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIG_BLOCK"></A>
+<CODE><BIG><B>SIG_BLOCK</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIG_UNBLOCK"></A>
+<CODE><BIG><B>SIG_UNBLOCK</B></BIG> = 1</CODE>
+<P>
+
+<A name="SIG_SETMASK"></A>
+<CODE><BIG><B>SIG_SETMASK</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_USER"></A>
+<CODE><BIG><B>SI_USER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_NOINFO"></A>
+<CODE><BIG><B>SI_NOINFO</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_KERNEL"></A>
+<CODE><BIG><B>SI_KERNEL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_QUEUE"></A>
+<CODE><BIG><B>SI_QUEUE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_TIMER"></A>
+<CODE><BIG><B>SI_TIMER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_MESGQ"></A>
+<CODE><BIG><B>SI_MESGQ</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_ASYNCIO"></A>
+<CODE><BIG><B>SI_ASYNCIO</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_SIGIO"></A>
+<CODE><BIG><B>SI_SIGIO</B></BIG> = 1</CODE>
+<P>
+
+<A name="SI_TKILL"></A>
+<CODE><BIG><B>SI_TKILL</B></BIG> = 1</CODE>
+<P>
+
+<A name="CLD_EXITED"></A>
+<CODE><BIG><B>CLD_EXITED</B></BIG> = 1</CODE>
+<P>
+
+<A name="CLD_KILLED"></A>
+<CODE><BIG><B>CLD_KILLED</B></BIG> = 1</CODE>
+<P>
+
+<A name="CLD_DUMPED"></A>
+<CODE><BIG><B>CLD_DUMPED</B></BIG> = 1</CODE>
+<P>
+
+<A name="CLD_TRAPPED"></A>
+<CODE><BIG><B>CLD_TRAPPED</B></BIG> = 1</CODE>
+<P>
+
+<A name="CLD_STOPPED"></A>
+<CODE><BIG><B>CLD_STOPPED</B></BIG> = 1</CODE>
+<P>
+
+<A name="CLD_CONTINUED"></A>
+<CODE><BIG><B>CLD_CONTINUED</B></BIG> = 1</CODE>
+<P>
+
+<A name="TRAP_BRKPT"></A>
+<CODE><BIG><B>TRAP_BRKPT</B></BIG> = 1</CODE>
+<P>
+
+<A name="TRAP_TRACE"></A>
+<CODE><BIG><B>TRAP_TRACE</B></BIG> = 1</CODE>
+<P>
+
+<A name="POLL_IN"></A>
+<CODE><BIG><B>POLL_IN</B></BIG> = 1</CODE>
+<P>
+
+<A name="POLL_OUT"></A>
+<CODE><BIG><B>POLL_OUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="POLL_MSG"></A>
+<CODE><BIG><B>POLL_MSG</B></BIG> = 1</CODE>
+<P>
+
+<A name="POLL_ERR"></A>
+<CODE><BIG><B>POLL_ERR</B></BIG> = 1</CODE>
+<P>
+
+<A name="POLL_PRI"></A>
+<CODE><BIG><B>POLL_PRI</B></BIG> = 1</CODE>
+<P>
+
+<A name="POLL_HUP"></A>
+<CODE><BIG><B>POLL_HUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="ILL_ILLOPC"></A>
+<CODE><BIG><B>ILL_ILLOPC</B></BIG> = 1</CODE>
+<P>
+
+<A name="ILL_ILLOPN"></A>
+<CODE><BIG><B>ILL_ILLOPN</B></BIG> = 1</CODE>
+<P>
+
+<A name="ILL_ILLADR"></A>
+<CODE><BIG><B>ILL_ILLADR</B></BIG> = 1</CODE>
+<P>
+
+<A name="ILL_ILLTRP"></A>
+<CODE><BIG><B>ILL_ILLTRP</B></BIG> = 1</CODE>
+<P>
+
+<A name="ILL_PRVOPC"></A>
+<CODE><BIG><B>ILL_PRVOPC</B></BIG> = 1</CODE>
+<P>
+
+<A name="ILL_PRVREG"></A>
+<CODE><BIG><B>ILL_PRVREG</B></BIG> = 1</CODE>
+<P>
+
+<A name="ILL_COPROC"></A>
+<CODE><BIG><B>ILL_COPROC</B></BIG> = 1</CODE>
+<P>
+
+<A name="ILL_BADSTK"></A>
+<CODE><BIG><B>ILL_BADSTK</B></BIG> = 1</CODE>
+<P>
+
+<A name="FPE_INTDIV"></A>
+<CODE><BIG><B>FPE_INTDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="FPE_INTOVF"></A>
+<CODE><BIG><B>FPE_INTOVF</B></BIG> = 1</CODE>
+<P>
+
+<A name="FPE_FLTDIV"></A>
+<CODE><BIG><B>FPE_FLTDIV</B></BIG> = 1</CODE>
+<P>
+
+<A name="FPE_FLTOVF"></A>
+<CODE><BIG><B>FPE_FLTOVF</B></BIG> = 1</CODE>
+<P>
+
+<A name="FPE_FLTUND"></A>
+<CODE><BIG><B>FPE_FLTUND</B></BIG> = 1</CODE>
+<P>
+
+<A name="FPE_FLTRES"></A>
+<CODE><BIG><B>FPE_FLTRES</B></BIG> = 1</CODE>
+<P>
+
+<A name="FPE_FLTINV"></A>
+<CODE><BIG><B>FPE_FLTINV</B></BIG> = 1</CODE>
+<P>
+
+<A name="FPE_FLTSUB"></A>
+<CODE><BIG><B>FPE_FLTSUB</B></BIG> = 1</CODE>
+<P>
+
+<A name="SEGV_MAPERR"></A>
+<CODE><BIG><B>SEGV_MAPERR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SEGV_ACCERR"></A>
+<CODE><BIG><B>SEGV_ACCERR</B></BIG> = 1</CODE>
+<P>
+
+<A name="BUS_ADRALN"></A>
+<CODE><BIG><B>BUS_ADRALN</B></BIG> = 1</CODE>
+<P>
+
+<A name="BUS_ADRERR"></A>
+<CODE><BIG><B>BUS_ADRERR</B></BIG> = 1</CODE>
+<P>
+
+<A name="BUS_OBJERR"></A>
+<CODE><BIG><B>BUS_OBJERR</B></BIG> = 1</CODE>
+<P>
+
+<A name="pcntl_fork()"></A>
+<CODE><I>int</I> <BIG><B>pcntl_fork</B></BIG>()</CODE>
+<P>
+
+<A name="pcntl_alarm()"></A>
+<CODE><I>int</I> <BIG><B>pcntl_alarm</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$seconds)</CODE>
+<P>
+
+<A name="pcntl_waitpid()"></A>
+<CODE><I>int</I> <BIG><B>pcntl_waitpid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $status,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options)</CODE>
+<P>
+
+<A name="pcntl_wait()"></A>
+<CODE><I>int</I> <BIG><B>pcntl_wait</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $status)</CODE>
+<P>
+
+<A name="pcntl_wifexited()"></A>
+<CODE><I>boolean</I> <BIG><B>pcntl_wifexited</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$status)</CODE>
+<P>
+
+<A name="pcntl_wifstopped()"></A>
+<CODE><I>boolean</I> <BIG><B>pcntl_wifstopped</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$status)</CODE>
+<P>
+
+<A name="pcntl_wifsignaled()"></A>
+<CODE><I>boolean</I> <BIG><B>pcntl_wifsignaled</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$status)</CODE>
+<P>
+
+<A name="pcntl_wexitstatus()"></A>
+<CODE><I>int</I> <BIG><B>pcntl_wexitstatus</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$status)</CODE>
+<P>
+
+<A name="pcntl_wtermsig()"></A>
+<CODE><I>int</I> <BIG><B>pcntl_wtermsig</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$status)</CODE>
+<P>
+
+<A name="pcntl_wstopsig()"></A>
+<CODE><I>int</I> <BIG><B>pcntl_wstopsig</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$status)</CODE>
+<P>
+
+<A name="pcntl_exec()"></A>
+<CODE><I>boolean</I> <BIG><B>pcntl_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path, ...)</CODE>
+<P>
+
+<A name="pcntl_signal()"></A>
+<CODE><I>boolean</I> <BIG><B>pcntl_signal</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$signo,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$restart_syscalls = TRUE)</CODE>
+<P>
+
+<A name="pcntl_getpriority()"></A>
+<CODE><I>int</I> <BIG><B>pcntl_getpriority</B></BIG>(...)</CODE>
+<P>
+
+<A name="pcntl_setpriority()"></A>
+<CODE><I>boolean</I> <BIG><B>pcntl_setpriority</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$priority, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

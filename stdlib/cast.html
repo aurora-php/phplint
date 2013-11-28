@@ -1,0 +1,112 @@
+<HTML><BODY>
+<H1>cast</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../modules/spl.html"><code>spl</code></a>, <a href="../modules/simplexml.html"><code>simplexml</code></a>, <a href="../modules/dom.html"><code>dom</code></a>, <a href="../modules/standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<a href="it/icosaedro/phplint/Types.html"><code>Types.php</code></a>, <a href="AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="it/icosaedro/phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="it/icosaedro/phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="it/icosaedro/containers/Printable.html"><code>Printable.php</code></a>, <a href="it/icosaedro/phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="it/icosaedro/phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="it/icosaedro/phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="it/icosaedro/phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="it/icosaedro/phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="it/icosaedro/phplint/IntType.html"><code>IntType.php</code></a>, <a href="it/icosaedro/phplint/NullType.html"><code>NullType.php</code></a>, <a href="it/icosaedro/phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="it/icosaedro/phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="it/icosaedro/phplint/StringType.html"><code>StringType.php</code></a>, <a href="CastException.html"><code>CastException.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="cast()"></A>
+<CODE><I>mixed</I> <BIG><B>cast</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type_descr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<BLOCKQUOTE>
+<P><b>Checks if a given expression matches the expected type</b></P><P><B>Version:</B> $Date: 2012/04/02 09:09:44 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+Does not perform any
+	value convertion, but instead either returns the same value, or fails with
+	exception if the value does not match the expected type. This function is
+	"magic" in the sense that PHPLint is aware of its special meaning, so that
+	the type it returns is not that declared here (mixed), but the type
+	specified in the first argument. So, for example:
+<p>
+	<pre>$date = cast("DateTime", unserialize($somevar));</pre>
+<p>
+	retrieves the variable <code>$date</code> as an object of the class DateTime,
+	or it fails throwing an exception if the data passed in the second argument
+	does not represent an instance of that class. Another example slightly more
+	complicated where we try to recover an array of objects from a generic
+	"mixed" variable:
+<p>
+	<pre>$cars = cast("array[int]com\\automotive\\MyCar", $anothervar);</pre>
+<p>
+	In this latter example, note how the name of the class has to be specified
+	with its fully qualified name (reason: cast() is anaware of the context
+	from which it is called, so the function cannot resolve incomplete class
+	names agaist the 'use' statements declared in the client code.)
+<p>
+	A <b>type descriptor</b> follows a syntax very much similar to that PHPLint
+	uses to indicate a type: null, int, float, string, resource, object, any
+	class type (with fully qualified name if it belongs to a namespace) or
+	array[I]T where I is the type of the index (int, string or empty if both)
+	and T is the type of the elements; multidimensional arrays may take several
+	indices, for example float[int][int]. For arrays both the old syntax
+	array[]T and the new syntax T[] are allowed. The detailed syntax in EBNF
+	form:
+<p>
+	<pre>
+	type = type_name { index } | array;
+
+	type_name = "boolean" | "int" | "float" | "string" | "resource"
+		| "object" | FULLY_QUALIFIED_CLASS_NAME;
+
+	array = "array" [ index { index } ] type_name;
+
+	index = "[]" | "[int]" | "[string]";
+	</pre>
+<p>
+	White spaces are not allowed. Note that there is not a "mixed" type,
+	and that arrays must always specify the index and the type of the
+	elements.
+<p>
+	Classes specified in the descriptor must be already defined or, if the
+	class autoloading feature is enabled, classes are automatically loaded.
+<p>
+	Type descriptors strings are parsed by the <a href="it/icosaedro/phplint/Types.html#it/icosaedro/phplint/Types::parseType()"><code>it\icosaedro\phplint\Types::parseType()</code></a>
+	method, and the result is cached for better runtime performances. While the
+	test over single values may be quite fast, testing arrays may require much
+	more time, as all the indeces and elements must by scanned and compared
+	with the expected type. Read the documentation about that method for
+	further details.
+<p>
+
+
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$type_descr&nbsp;&nbsp;</code></b></td> <td valign=top>Descriptor of the expected type.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Any expression. Note that the NULL value matches any
+	reference type, that is string, array, resource and object of any class.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Merely returns the $value passed, but only if it matches the
+	specified type. The type returned according to PHPLint is that specified in
+	the type descriptor, which must be a literal string or an expression
+	statically evaluable, and do not really return the dummy mixed type
+	indicated here.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="CastException.html#CastException"><code>CastException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The value does not match the expected type descriptor.
+</li>
+<li>unchecked <a href="../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The type descriptor has an invalid syntax.
+	The class or interface is not defined.
+</li>
+<li>unchecked <a href="AutoloadException.html#AutoloadException"><code>AutoloadException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The given class is not defined, class autoloading
+	is enabled but the class or interface cannot be loaded.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

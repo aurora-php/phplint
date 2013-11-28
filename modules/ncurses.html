@@ -1,0 +1,765 @@
+<HTML><BODY>
+<H1>ncurses</H1>
+<P><b>Ncurses Terminal Screen Control Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+This module now available from PECL.
+See: <a href="http://www.php.net/manual/en/ref.ncurses.php"><code>http://www.php.net/manual/en/ref.ncurses.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="NCURSES_"></A>
+<CODE><BIG><B>NCURSES_</B></BIG> = 1</CODE>
+<P>
+
+<A name="NCURSES_KEY_F"></A>
+<CODE><BIG><B>NCURSES_KEY_F</B></BIG> = 1</CODE>
+<P>
+
+<A name="ncurses_addch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_addch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="ncurses_waddch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_waddch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="ncurses_color_set()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_color_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pair)</CODE>
+<P>
+
+<A name="ncurses_delwin()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_delwin</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_end()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_end</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_getch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_getch</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_has_colors()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_has_colors</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_init()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_init</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_init_pair()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_init_pair</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pair,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fg,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bg)</CODE>
+<P>
+
+<A name="ncurses_move()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_move</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x)</CODE>
+<P>
+
+<A name="ncurses_newpad()"></A>
+<CODE><I>resource</I> <BIG><B>ncurses_newpad</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$rows,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cols)</CODE>
+<P>
+
+<A name="ncurses_prefresh()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_prefresh</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$pad,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pminrow,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pmincol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sminrow,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$smincol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$smaxrow,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$smaxcol)</CODE>
+<P>
+
+<A name="ncurses_pnoutrefresh()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_pnoutrefresh</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$pad,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pminrow,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pmincol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sminrow,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$smincol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$smaxrow,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$smaxcol)</CODE>
+<P>
+
+<A name="ncurses_newwin()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_newwin</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$rows,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cols,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x)</CODE>
+<P>
+
+<A name="ncurses_refresh()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_refresh</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ch)</CODE>
+<P>
+
+<A name="ncurses_start_color()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_start_color</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_standout()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_standout</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_standend()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_standend</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_baudrate()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_baudrate</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_beep()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_beep</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_can_change_color()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_can_change_color</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_cbreak()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_cbreak</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_clear()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_clear</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_clrtobot()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_clrtobot</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_clrtoeol()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_clrtoeol</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_reset_prog_mode()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_reset_prog_mode</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_reset_shell_mode()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_reset_shell_mode</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_def_prog_mode()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_def_prog_mode</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_def_shell_mode()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_def_shell_mode</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_delch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_delch</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_deleteln()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_deleteln</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_doupdate()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_doupdate</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_echo()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_echo</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_erase()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_erase</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_erasechar()"></A>
+<CODE><I>string</I> <BIG><B>ncurses_erasechar</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_flash()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_flash</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_flushinp()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_flushinp</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_has_ic()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_has_ic</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_has_il()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_has_il</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_inch()"></A>
+<CODE><I>string</I> <BIG><B>ncurses_inch</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_insertln()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_insertln</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_isendwin()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_isendwin</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_killchar()"></A>
+<CODE><I>string</I> <BIG><B>ncurses_killchar</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_nl()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_nl</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_nocbreak()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_nocbreak</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_noecho()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_noecho</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_nonl()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_nonl</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_noraw()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_noraw</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_raw()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_raw</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_werase()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_werase</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_resetty()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_resetty</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_savetty()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_savetty</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_termattrs()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_termattrs</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_use_default_colors()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_use_default_colors</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_slk_attr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_attr</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_slk_clear()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_clear</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_slk_noutrefresh()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_noutrefresh</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_slk_refresh()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_refresh</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_slk_restore()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_restore</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_slk_touch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_touch</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_slk_set()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_slk_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$labelnr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$label,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$format)</CODE>
+<P>
+
+<A name="ncurses_attroff()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_attroff</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attributes)</CODE>
+<P>
+
+<A name="ncurses_attron()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_attron</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attributes)</CODE>
+<P>
+
+<A name="ncurses_attrset()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_attrset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attributes)</CODE>
+<P>
+
+<A name="ncurses_bkgd()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_bkgd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attrchar)</CODE>
+<P>
+
+<A name="ncurses_curs_set()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_curs_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$visibility)</CODE>
+<P>
+
+<A name="ncurses_delay_output()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_delay_output</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$milliseconds)</CODE>
+<P>
+
+<A name="ncurses_echochar()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_echochar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$character)</CODE>
+<P>
+
+<A name="ncurses_halfdelay()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_halfdelay</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tenth)</CODE>
+<P>
+
+<A name="ncurses_has_key()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_has_key</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$keycode)</CODE>
+<P>
+
+<A name="ncurses_insch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_insch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$character)</CODE>
+<P>
+
+<A name="ncurses_insdelln()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_insdelln</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<P>
+
+<A name="ncurses_mouseinterval()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mouseinterval</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$milliseconds)</CODE>
+<P>
+
+<A name="ncurses_napms()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_napms</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$milliseconds)</CODE>
+<P>
+
+<A name="ncurses_scrl()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_scrl</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<P>
+
+<A name="ncurses_slk_attroff()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_attroff</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$intarg)</CODE>
+<P>
+
+<A name="ncurses_slk_attron()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_attron</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$intarg)</CODE>
+<P>
+
+<A name="ncurses_slk_attrset()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_attrset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$intarg)</CODE>
+<P>
+
+<A name="ncurses_slk_color()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_color</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$intarg)</CODE>
+<P>
+
+<A name="ncurses_slk_init()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_slk_init</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$intarg)</CODE>
+<P>
+
+<A name="ncurses_typeahead()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_typeahead</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fd)</CODE>
+<P>
+
+<A name="ncurses_ungetch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_ungetch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$keycode)</CODE>
+<P>
+
+<A name="ncurses_vidattr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_vidattr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$intarg)</CODE>
+<P>
+
+<A name="ncurses_use_extended_names()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_use_extended_names</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$flag)</CODE>
+<P>
+
+<A name="ncurses_bkgdset()"></A>
+<CODE><I>void</I> <BIG><B>ncurses_bkgdset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attrchar)</CODE>
+<P>
+
+<A name="ncurses_filter()"></A>
+<CODE><I>void</I> <BIG><B>ncurses_filter</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_noqiflush()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_noqiflush</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_qiflush()"></A>
+<CODE><I>void</I> <BIG><B>ncurses_qiflush</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_timeout()"></A>
+<CODE><I>void</I> <BIG><B>ncurses_timeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$millisec)</CODE>
+<P>
+
+<A name="ncurses_use_env()"></A>
+<CODE><I>void</I> <BIG><B>ncurses_use_env</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flag)</CODE>
+<P>
+
+<A name="ncurses_addstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_addstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="ncurses_putp()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_putp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="ncurses_scr_dump()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_scr_dump</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="ncurses_scr_init()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_scr_init</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="ncurses_scr_restore()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_scr_restore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="ncurses_scr_set()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_scr_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="ncurses_mvaddch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvaddch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$c)</CODE>
+<P>
+
+<A name="ncurses_mvaddchnstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvaddchnstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_addchnstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_addchnstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_mvaddchstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvaddchstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<P>
+
+<A name="ncurses_addchstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_addchstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<P>
+
+<A name="ncurses_mvaddnstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvaddnstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_addnstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_addnstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_mvaddstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvaddstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<P>
+
+<A name="ncurses_mvdelch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvdelch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x)</CODE>
+<P>
+
+<A name="ncurses_mvgetch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvgetch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x)</CODE>
+<P>
+
+<A name="ncurses_mvinch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvinch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x)</CODE>
+<P>
+
+<A name="ncurses_insstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_insstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="ncurses_instr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_instr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>string</I>&nbsp;&amp; $buffer)</CODE>
+<P>
+
+<A name="ncurses_mvhline()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvhline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attrchar,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_mvvline()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvvline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attrchar,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_mvcur()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvcur</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$old_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$old_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$new_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$new_x)</CODE>
+<P>
+
+<A name="ncurses_init_color()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_init_color</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$color,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$r,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$g,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$b)</CODE>
+<P>
+
+<A name="ncurses_color_content()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_color_content</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$color,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $r,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $g,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $b)</CODE>
+<P>
+
+<A name="ncurses_pair_content()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_pair_content</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pair,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $f,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $b)</CODE>
+<P>
+
+<A name="ncurses_border()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_border</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$left,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$right,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$top,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bottom,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tl_corner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tr_corner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bl_corner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$br_corner)</CODE>
+<P>
+
+<A name="ncurses_wborder()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wborder</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$left,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$right,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$top,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bottom,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tl_corner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tr_corner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bl_corner,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$br_corner)</CODE>
+<P>
+
+<A name="ncurses_assume_default_colors()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_assume_default_colors</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fg,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bg)</CODE>
+<P>
+
+<A name="ncurses_define_key()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_define_key</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$definition,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$keycode)</CODE>
+<P>
+
+<A name="ncurses_hline()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_hline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$charattr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_vline()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_vline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$charattr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_whline()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_whline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$charattr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_wvline()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wvline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$charattr,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n)</CODE>
+<P>
+
+<A name="ncurses_keyok()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_keyok</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$keycode,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$enable)</CODE>
+<P>
+
+<A name="ncurses_mvwaddstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mvwaddstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="ncurses_wrefresh()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wrefresh</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_termname()"></A>
+<CODE><I>string</I> <BIG><B>ncurses_termname</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_longname()"></A>
+<CODE><I>string</I> <BIG><B>ncurses_longname</B></BIG>()</CODE>
+<P>
+
+<A name="ncurses_mousemask()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_mousemask</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$newmask,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $oldmask)</CODE>
+<P>
+
+<A name="ncurses_getmouse()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_getmouse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>mixed[]</I>&nbsp;&amp; $mevent)</CODE>
+<P>
+
+<A name="ncurses_ungetmouse()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_ungetmouse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$mevent)</CODE>
+<P>
+
+<A name="ncurses_mouse_trafo()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_mouse_trafo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$toscreen)</CODE>
+<P>
+
+<A name="ncurses_wmouse_trafo()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_wmouse_trafo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;&amp; $x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$toscreen)</CODE>
+<P>
+
+<A name="ncurses_getyx()"></A>
+<CODE><I>void</I> <BIG><B>ncurses_getyx</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $x)</CODE>
+<P>
+
+<A name="ncurses_getmaxyx()"></A>
+<CODE><I>void</I> <BIG><B>ncurses_getmaxyx</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>int</I>&nbsp;&amp; $x)</CODE>
+<P>
+
+<A name="ncurses_wmove()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wmove</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x)</CODE>
+<P>
+
+<A name="ncurses_keypad()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_keypad</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$bf)</CODE>
+<P>
+
+<A name="ncurses_wcolor_set()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wcolor_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$color_pair)</CODE>
+<P>
+
+<A name="ncurses_wclear()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wclear</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_wnoutrefresh()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wnoutrefresh</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_waddstr()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_waddstr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str, ...)</CODE>
+<P>
+
+<A name="ncurses_wgetch()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wgetch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_wattroff()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wattroff</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attrs)</CODE>
+<P>
+
+<A name="ncurses_wattron()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wattron</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attrs)</CODE>
+<P>
+
+<A name="ncurses_wattrset()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wattrset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attrs)</CODE>
+<P>
+
+<A name="ncurses_wstandend()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wstandend</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_wstandout()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_wstandout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_new_panel()"></A>
+<CODE><I>resource</I> <BIG><B>ncurses_new_panel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_del_panel()"></A>
+<CODE><I>boolean</I> <BIG><B>ncurses_del_panel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel)</CODE>
+<P>
+
+<A name="ncurses_hide_panel()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_hide_panel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel)</CODE>
+<P>
+
+<A name="ncurses_show_panel()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_show_panel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel)</CODE>
+<P>
+
+<A name="ncurses_top_panel()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_top_panel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel)</CODE>
+<P>
+
+<A name="ncurses_bottom_panel()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_bottom_panel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel)</CODE>
+<P>
+
+<A name="ncurses_move_panel()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_move_panel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$startx,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$starty)</CODE>
+<P>
+
+<A name="ncurses_replace_panel()"></A>
+<CODE><I>int</I> <BIG><B>ncurses_replace_panel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$window)</CODE>
+<P>
+
+<A name="ncurses_panel_above()"></A>
+<CODE><I>resource</I> <BIG><B>ncurses_panel_above</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel)</CODE>
+<P>
+
+<A name="ncurses_panel_below()"></A>
+<CODE><I>resource</I> <BIG><B>ncurses_panel_below</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel)</CODE>
+<P>
+
+<A name="ncurses_panel_window()"></A>
+<CODE><I>resource</I> <BIG><B>ncurses_panel_window</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$panel)</CODE>
+<P>
+
+<A name="ncurses_update_panels()"></A>
+<CODE><I>void</I> <BIG><B>ncurses_update_panels</B></BIG>()</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

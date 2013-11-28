@@ -1,0 +1,251 @@
+<HTML><BODY>
+<H1>mbstring</H1>
+<P><b>Multibyte String Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.mbstring.php"><code>http://www.php.net/manual/en/ref.mbstring.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="MB_OVERLOAD_MAIL"></A>
+<CODE><BIG><B>MB_OVERLOAD_MAIL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MB_OVERLOAD_STRING"></A>
+<CODE><BIG><B>MB_OVERLOAD_STRING</B></BIG> = 2</CODE>
+<P>
+
+<A name="MB_OVERLOAD_REGEX"></A>
+<CODE><BIG><B>MB_OVERLOAD_REGEX</B></BIG> = 4</CODE>
+<P>
+
+<A name="MB_CASE_UPPER"></A>
+<CODE><BIG><B>MB_CASE_UPPER</B></BIG> = 0</CODE>
+<P>
+
+<A name="MB_CASE_LOWER"></A>
+<CODE><BIG><B>MB_CASE_LOWER</B></BIG> = 1</CODE>
+<P>
+
+<A name="MB_CASE_TITLE"></A>
+<CODE><BIG><B>MB_CASE_TITLE</B></BIG> = 2</CODE>
+<P>
+
+<A name="mb_check_encoding()"></A>
+<CODE><I>boolean</I> <BIG><B>mb_check_encoding</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_convert_case()"></A>
+<CODE><I>string</I> <BIG><B>mb_convert_case</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sourcestring,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="mb_strtoupper()"></A>
+<CODE><I>string</I> <BIG><B>mb_strtoupper</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sourcestring, ...)</CODE>
+<P>
+
+<A name="mb_strtolower()"></A>
+<CODE><I>string</I> <BIG><B>mb_strtolower</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sourcestring, ...)</CODE>
+<P>
+
+<A name="mb_language()"></A>
+<CODE><I>string</I> <BIG><B>mb_language</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_internal_encoding()"></A>
+<CODE><I>string</I> <BIG><B>mb_internal_encoding</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_http_input()"></A>
+<CODE><I>mixed</I> <BIG><B>mb_http_input</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_http_output()"></A>
+<CODE><I>string</I> <BIG><B>mb_http_output</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_detect_order()"></A>
+<CODE><I>mixed</I> <BIG><B>mb_detect_order</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_substitute_character()"></A>
+<CODE><I>mixed</I> <BIG><B>mb_substitute_character</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_parse_str()"></A>
+<CODE><I>boolean</I> <BIG><B>mb_parse_str</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoded_string, ...)</CODE>
+<P>
+
+<A name="mb_output_handler()"></A>
+<CODE><I>string</I> <BIG><B>mb_output_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$contents,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$status)</CODE>
+<P>
+
+<A name="mb_preferred_mime_name()"></A>
+<CODE><I>string</I> <BIG><B>mb_preferred_mime_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding)</CODE>
+<P>
+
+<A name="mb_strlen()"></A>
+<CODE><I>int</I> <BIG><B>mb_strlen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str, ...)</CODE>
+<P>
+
+<A name="mb_strpos()"></A>
+<CODE><I>int</I> <BIG><B>mb_strpos</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle, ...)</CODE>
+<P>
+
+<A name="mb_strrpos()"></A>
+<CODE><I>int</I> <BIG><B>mb_strrpos</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle, ...)</CODE>
+<P>
+
+<A name="mb_substr_count()"></A>
+<CODE><I>int</I> <BIG><B>mb_substr_count</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$haystack,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$needle, ...)</CODE>
+<P>
+
+<A name="mb_substr()"></A>
+<CODE><I>string</I> <BIG><B>mb_substr</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start, ...)</CODE>
+<P>
+
+<A name="mb_strcut()"></A>
+<CODE><I>string</I> <BIG><B>mb_strcut</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start, ...)</CODE>
+<P>
+
+<A name="mb_strwidth()"></A>
+<CODE><I>int</I> <BIG><B>mb_strwidth</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str, ...)</CODE>
+<P>
+
+<A name="mb_strimwidth()"></A>
+<CODE><I>string</I> <BIG><B>mb_strimwidth</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$width, ...)</CODE>
+<P>
+
+<A name="mb_convert_encoding()"></A>
+<CODE><I>string</I> <BIG><B>mb_convert_encoding</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$to_encoding, ...)</CODE>
+<P>
+
+<A name="mb_detect_encoding()"></A>
+<CODE><I>string</I> <BIG><B>mb_detect_encoding</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str, ...)</CODE>
+<P>
+
+<A name="mb_list_encodings()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mb_list_encodings</B></BIG>()</CODE>
+<P>
+
+<A name="mb_convert_kana()"></A>
+<CODE><I>string</I> <BIG><B>mb_convert_kana</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str, ...)</CODE>
+<P>
+
+<A name="mb_encode_mimeheader()"></A>
+<CODE><I>string</I> <BIG><B>mb_encode_mimeheader</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str, ...)</CODE>
+<P>
+
+<A name="mb_decode_mimeheader()"></A>
+<CODE><I>string</I> <BIG><B>mb_decode_mimeheader</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_)</CODE>
+<P>
+
+<A name="mb_convert_variables()"></A>
+<CODE><I>string</I> <BIG><B>mb_convert_variables</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$to_encoding,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$from_encoding, ...)</CODE>
+<P>
+
+<A name="mb_encode_numericentity()"></A>
+<CODE><I>string</I> <BIG><B>mb_encode_numericentity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$convmap, ...)</CODE>
+<P>
+
+<A name="mb_decode_numericentity()"></A>
+<CODE><I>string</I> <BIG><B>mb_decode_numericentity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$convmap, ...)</CODE>
+<P>
+
+<A name="mb_send_mail()"></A>
+<CODE><I>int</I> <BIG><B>mb_send_mail</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$to,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subject,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$message, ...)</CODE>
+<P>
+
+<A name="mb_get_info()"></A>
+<CODE><I>string</I> <BIG><B>mb_get_info</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_regex_encoding()"></A>
+<CODE><I>string</I> <BIG><B>mb_regex_encoding</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_regex_set_options()"></A>
+<CODE><I>string</I> <BIG><B>mb_regex_set_options</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_ereg()"></A>
+<CODE><I>int</I> <BIG><B>mb_ereg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_, ...)</CODE>
+<P>
+
+<A name="mb_eregi()"></A>
+<CODE><I>int</I> <BIG><B>mb_eregi</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_, ...)</CODE>
+<P>
+
+<A name="mb_ereg_replace()"></A>
+<CODE><I>string</I> <BIG><B>mb_ereg_replace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$replacement,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_, ...)</CODE>
+<P>
+
+<A name="mb_eregi_replace()"></A>
+<CODE><I>string</I> <BIG><B>mb_eregi_replace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$replacement,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_)</CODE>
+<P>
+
+<A name="mb_split()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mb_split</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_, ...)</CODE>
+<P>
+
+<A name="mb_ereg_match()"></A>
+<CODE><I>boolean</I> <BIG><B>mb_ereg_match</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_, ...)</CODE>
+<P>
+
+<A name="mb_ereg_search()"></A>
+<CODE><I>boolean</I> <BIG><B>mb_ereg_search</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_ereg_search_pos()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mb_ereg_search_pos</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_ereg_search_regs()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mb_ereg_search_regs</B></BIG>(...)</CODE>
+<P>
+
+<A name="mb_ereg_search_init()"></A>
+<CODE><I>boolean</I> <BIG><B>mb_ereg_search_init</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$string_, ...)</CODE>
+<P>
+
+<A name="mb_ereg_search_getregs()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mb_ereg_search_getregs</B></BIG>()</CODE>
+<P>
+
+<A name="mb_ereg_search_getpos()"></A>
+<CODE><I>int</I> <BIG><B>mb_ereg_search_getpos</B></BIG>()</CODE>
+<P>
+
+<A name="mb_ereg_search_setpos()"></A>
+<CODE><I>boolean</I> <BIG><B>mb_ereg_search_setpos</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$position)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

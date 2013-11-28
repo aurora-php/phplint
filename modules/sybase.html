@@ -1,0 +1,120 @@
+<HTML><BODY>
+<H1>sybase</H1>
+<P><b>Sybase Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.sybase.php"><code>http://www.php.net/manual/en/ref.sybase.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="sybase_connect()"></A>
+<CODE><I>int</I> <BIG><B>sybase_connect</B></BIG>(...)</CODE>
+<P>
+
+<A name="sybase_pconnect()"></A>
+<CODE><I>int</I> <BIG><B>sybase_pconnect</B></BIG>(...)</CODE>
+<P>
+
+<A name="sybase_close()"></A>
+<CODE><I>boolean</I> <BIG><B>sybase_close</B></BIG>(...)</CODE>
+<P>
+
+<A name="sybase_select_db()"></A>
+<CODE><I>boolean</I> <BIG><B>sybase_select_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database, ...)</CODE>
+<P>
+
+<A name="sybase_query()"></A>
+<CODE><I>int</I> <BIG><B>sybase_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="sybase_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>sybase_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sybase_get_last_message()"></A>
+<CODE><I>string</I> <BIG><B>sybase_get_last_message</B></BIG>()</CODE>
+<P>
+
+<A name="sybase_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>sybase_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sybase_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>sybase_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sybase_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>sybase_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sybase_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>sybase_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sybase_fetch_array()"></A>
+<CODE><I>mixed[]</I> <BIG><B>sybase_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sybase_data_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>sybase_data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="sybase_fetch_field()"></A>
+<CODE><I>object</I> <BIG><B>sybase_fetch_field</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="sybase_field_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>sybase_field_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="sybase_result()"></A>
+<CODE><I>string</I> <BIG><B>sybase_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$field)</CODE>
+<P>
+
+<A name="sybase_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>sybase_affected_rows</B></BIG>(...)</CODE>
+<P>
+
+<A name="sybase_min_error_severity()"></A>
+<CODE><I>void</I> <BIG><B>sybase_min_error_severity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$severity)</CODE>
+<P>
+
+<A name="sybase_min_message_severity()"></A>
+<CODE><I>void</I> <BIG><B>sybase_min_message_severity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$severity)</CODE>
+<P>
+
+<A name="sybase_unbuffered_query()"></A>
+<CODE><I>int</I> <BIG><B>sybase_unbuffered_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="sybase_fetch_assoc()"></A>
+<CODE><I>mixed[]</I> <BIG><B>sybase_fetch_assoc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="sybase_min_client_severity()"></A>
+<CODE><I>void</I> <BIG><B>sybase_min_client_severity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$severity)</CODE>
+<P>
+
+<A name="sybase_min_server_severity()"></A>
+<CODE><I>void</I> <BIG><B>sybase_min_server_severity</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$severity)</CODE>
+<P>
+
+<A name="sybase_deadlock_retry_count()"></A>
+<CODE><I>void</I> <BIG><B>sybase_deadlock_retry_count</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$retry_count)</CODE>
+<P>
+
+<A name="sybase_set_message_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>sybase_set_message_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$error_func, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

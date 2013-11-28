@@ -1,0 +1,294 @@
+<HTML><BODY>
+<H1>Strings</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings"></A>
+<pre>class <BIG><B>it\icosaedro\utils\Strings</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Utility functions to handle strings intended as arrays of bytes</b></P><P><B>Version:</B> $Date: 2012/03/17 17:19:00 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::toLiteral()"></A>
+<CODE>static <I>string</I> <BIG><B>toLiteral</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns a PHP-compliant, pure ASCII, literal string in double-quotes</b></P><P>
+Useful to display arbitrary strings that may contain control
+ characters or invalid encoding.
+ All the ASCII control characters and the <code>$ \ "</code> characters
+ are converted to the form \xxx, where xxx is the octal code of the
+ byte, with the exception of the usual control characters as LF, CR etc.
+ that are rendered as escape sequences "\n", "\r" etc.
+ Examples:<p>
+ <code>toLiteral(NULL) ==> "NULL"</code><br>
+ <code>toLiteral("abc\n") ==> "\"abc\\n\""</code>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::compare()"></A>
+<CODE>static <I>int</I> <BIG><B>compare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Compares two strings</b></P><P>
+Then $a&lt;$b becomes Strings::compare($a, $b) &lt; 0.
+ The NULL value is allowed and it is "less" than any other string,
+ and the empty string is less than any other string with al least
+ a character: NULL &lt; "" &lt; "abc".
+
+<p><b>Return:</b> Less that 0 if $a&lt;$b, greather than zero if $a&gt;$b,
+ zero if the two strings are equal. Note that NULL is equal to itself,
+ instead NULL and the empty string differ.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::substring()"></A>
+<CODE>static <I>string</I> <BIG><B>substring</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$start,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$end)</CODE>
+<BLOCKQUOTE>
+<P><b>Return a subrange of a string</b></P><P>
+The NULL string has no subranges.
+ The valid range of the indexes is:
+ <code>0 &lt;= $start &lt;= $end &lt;= strlen($s)</code> Example:
+ <p><center><img src="./Strings-substring.gif"></center><p>
+ <pre>
+     substring("ABCDEFG", 0, 4) ==&gt; "ABCD"
+ </pre>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$start&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the first char to consider.</td></tr>
+<tr><td valign=top><b><code>$end&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the char <b>past</b> the last char to
+ consider.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The substring, whose length is exactly ($end-$start)
+ bytes. Note that if $start==$end, then the empty string is returned.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfBoundsException"><code>OutOfBoundsException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If $s is NULL or the range is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::startsWith()"></A>
+<CODE>static <I>boolean</I> <BIG><B>startsWith</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$head)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns TRUE if $s starts with $head</b></P><P>
+Edge cases: 1) The NULL string starts only with a NULL string.
+ 2) The empty string starts with either NULL and empty string.
+ 3) A NULL $head returns TRUE for any $s string.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::endsWith()"></A>
+<CODE>static <I>boolean</I> <BIG><B>endsWith</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$tail)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns TRUE if $s ends with $head</b></P><P>
+Edge cases: 1) The NULL string ends only with a NULL string.
+ 2) The empty string ends with either NULL and empty string.
+ 3) NULL is the tail of any string.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::indexOf()"></A>
+<CODE>static <I>int</I> <BIG><B>indexOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$from = 0)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the starting position of the first occurrence of the target  string in the given subject string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>The subject string.</td></tr>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Target substring to search. The empty string can
+ always be found at the very beginning of the search, so $from is
+ returned.</td></tr>
+<tr><td valign=top><b><code>$from&nbsp;&nbsp;</code></b></td> <td valign=top>Search target in the range [$from,strlen($s)]
+ of the subject string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Index of the beginning first matching target, or -1 if
+ not found.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If $from outside [0,strlen($s)].
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::lastIndexOf()"></A>
+<CODE>static <I>int</I> <BIG><B>lastIndexOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$from)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the starting position of the last occurrence of the target  string in the given subject string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>Subject string.</td></tr>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Target substring to search. The NULL and the
+ empty string can always be found at the beginning of the search,
+ so the length of $s string is returned.</td></tr>
+<tr><td valign=top><b><code>$from&nbsp;&nbsp;</code></b></td> <td valign=top>Search target in the range [0,$from] of $s.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Index of the beginning of the first matching target,
+ or -1 if not found.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If $from outside [0,strlen($s)].
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::replace()"></A>
+<CODE>static <I>string</I> <BIG><B>replace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$replacement)</CODE>
+<BLOCKQUOTE>
+<P><b>Replaces any occurrence of the target string with the replacement  string</b></P><P>
+Search and replacement is performed scanning the subject string
+ from left to right.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>The subject string.</td></tr>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Any occurrence of this string is replaced.</td></tr>
+<tr><td valign=top><b><code>$replacement&nbsp;&nbsp;</code></b></td> <td valign=top>Replacement string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string but with any occurrence of the target
+ string replaced.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the target is the empty string.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::codepointToUTF8()"></A>
+<CODE>static <I>string</I> <BIG><B>codepointToUTF8</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$codepoint,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$invalid = NULL)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the UTF-8 character of the given codepoint</b></P><P>
+Only the Unicode BMP subset is supported, see
+ <a href="http://www.unicode.org">www.unicode.org</a> and RFC 3629 for
+ more details.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$codepoint&nbsp;&nbsp;</code></b></td> <td valign=top>The allowed range of Unicode codes is 0x0000-0xD7FF, 0xE000-0xFFFF,
+ so a sequence up to 3 bytes is generated.</td></tr>
+<tr><td valign=top><b><code>$invalid&nbsp;&nbsp;</code></b></td> <td valign=top>Value returned if an invalid codepoint is given.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The UTF-8 sequences of bytes that represents the codepoint.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Strings::UTF8Filter()"></A>
+<CODE>static <I>string</I> <BIG><B>UTF8Filter</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns a proper UTF-8 BMP string</b></P><P>
+Invalid UTF-8 BMP sequences and bytes are dropped, so the resulting
+ string contains only characters from the BMP encoded as per the RFC
+ 3629 par. 4.
+ Only the Unicode BMP subset is supported, see
+ <a href="http://www.unicode.org">www.unicode.org</a> and RFC 3629 for
+ more details.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>An arbitrary string, possibly with invalid UTF-8 sequences and
+ invalid BMP codepoints. If NULL is passed, then NULL is returned.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Cleaned string in strict UTF8/BMP encoding, with invalid sequences and
+ invalid BMP codepoints removed.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,291 @@
+<HTML><BODY>
+<H1>xmlreader</H1>
+<P><b>XMLReader functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="libxml.html"><code>libxml</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.xmlreader.php"><code>http://www.php.net/manual/en/ref.xmlreader.php</code></a>
+
+<p>
+An useful quote from the manual:
+<p>
+The XMLReader extension is available in PECL for PHP 5.0 and is included
+and enabled in PHP 5.1 by default. It can be enabled by adding the argument
+--enable-xmlreader	 (or --with-xmlreader before 5.1) to your configure
+line. The libxml extension is required.
+
+
+</P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="XMLReader"></A>
+<pre>class <BIG><B>XMLReader</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="XMLReader::NONE"></A>
+<CODE><BIG><B>NONE</B></BIG> = 0</CODE>
+<P>
+
+<A name="XMLReader::ELEMENT"></A>
+<CODE><BIG><B>ELEMENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="XMLReader::ATTRIBUTE"></A>
+<CODE><BIG><B>ATTRIBUTE</B></BIG> = 2</CODE>
+<P>
+
+<A name="XMLReader::TEXT"></A>
+<CODE><BIG><B>TEXT</B></BIG> = 3</CODE>
+<P>
+
+<A name="XMLReader::CDATA"></A>
+<CODE><BIG><B>CDATA</B></BIG> = 4</CODE>
+<P>
+
+<A name="XMLReader::ENTITY_REF"></A>
+<CODE><BIG><B>ENTITY_REF</B></BIG> = 5</CODE>
+<P>
+
+<A name="XMLReader::ENTITY"></A>
+<CODE><BIG><B>ENTITY</B></BIG> = 6</CODE>
+<P>
+
+<A name="XMLReader::PI"></A>
+<CODE><BIG><B>PI</B></BIG> = 7</CODE>
+<P>
+
+<A name="XMLReader::COMMENT"></A>
+<CODE><BIG><B>COMMENT</B></BIG> = 8</CODE>
+<P>
+
+<A name="XMLReader::DOC"></A>
+<CODE><BIG><B>DOC</B></BIG> = 9</CODE>
+<P>
+
+<A name="XMLReader::DOC_TYPE"></A>
+<CODE><BIG><B>DOC_TYPE</B></BIG> = 10</CODE>
+<P>
+
+<A name="XMLReader::DOC_FRAGMENT"></A>
+<CODE><BIG><B>DOC_FRAGMENT</B></BIG> = 11</CODE>
+<P>
+
+<A name="XMLReader::NOTATION"></A>
+<CODE><BIG><B>NOTATION</B></BIG> = 12</CODE>
+<P>
+
+<A name="XMLReader::WHITESPACE"></A>
+<CODE><BIG><B>WHITESPACE</B></BIG> = 13</CODE>
+<P>
+
+<A name="XMLReader::SIGNIFICANT_WHITESPACE"></A>
+<CODE><BIG><B>SIGNIFICANT_WHITESPACE</B></BIG> = 14</CODE>
+<P>
+
+<A name="XMLReader::END_ELEMENT"></A>
+<CODE><BIG><B>END_ELEMENT</B></BIG> = 15</CODE>
+<P>
+
+<A name="XMLReader::END_ENTITY"></A>
+<CODE><BIG><B>END_ENTITY</B></BIG> = 16</CODE>
+<P>
+
+<A name="XMLReader::XML_DECLARATION"></A>
+<CODE><BIG><B>XML_DECLARATION</B></BIG> = 17</CODE>
+<P>
+
+<A name="XMLReader::LOADDTD"></A>
+<CODE><BIG><B>LOADDTD</B></BIG> = 1</CODE>
+<P>
+
+<A name="XMLReader::DEFAULTATTRS"></A>
+<CODE><BIG><B>DEFAULTATTRS</B></BIG> = 2</CODE>
+<P>
+
+<A name="XMLReader::VALIDATE"></A>
+<CODE><BIG><B>VALIDATE</B></BIG> = 3</CODE>
+<P>
+
+<A name="XMLReader::SUBST_ENTITIES"></A>
+<CODE><BIG><B>SUBST_ENTITIES</B></BIG> = 4</CODE>
+<P>
+
+<A name="XMLReader::$attributeCount"></A>
+<CODE><I>int</I> <BIG><B>$attributeCount</B></BIG> = 0</CODE>
+<P>
+
+<A name="XMLReader::$depth"></A>
+<CODE><I>int</I> <BIG><B>$depth</B></BIG> = 0</CODE>
+<P>
+
+<A name="XMLReader::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<P>
+
+<A name="XMLReader::$hasAttributes"></A>
+<CODE><I>boolean</I> <BIG><B>$hasAttributes</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="XMLReader::$hasValue"></A>
+<CODE><I>boolean</I> <BIG><B>$hasValue</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="XMLReader::$isDefault"></A>
+<CODE><I>boolean</I> <BIG><B>$isDefault</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="XMLReader::$isEmptyElement"></A>
+<CODE><I>boolean</I> <BIG><B>$isEmptyElement</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="XMLReader::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<P>
+
+<A name="XMLReader::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<P>
+
+<A name="XMLReader::$name"></A>
+<CODE><I>string</I> <BIG><B>$name</B></BIG></CODE>
+<P>
+
+<A name="XMLReader::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<P>
+
+<A name="XMLReader::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<P>
+
+<A name="XMLReader::$value"></A>
+<CODE><I>string</I> <BIG><B>$value</B></BIG></CODE>
+<P>
+
+<A name="XMLReader::$xmlLang"></A>
+<CODE><I>string</I> <BIG><B>$xmlLang</B></BIG></CODE>
+<P>
+
+<A name="XMLReader::close()"></A>
+<CODE><I>boolean</I> <BIG><B>close</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::getAttribute()"></A>
+<CODE><I>string</I> <BIG><B>getAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="XMLReader::getAttributeNo()"></A>
+<CODE><I>string</I> <BIG><B>getAttributeNo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="XMLReader::getAttributeNs()"></A>
+<CODE><I>string</I> <BIG><B>getAttributeNs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="XMLReader::getParserProperty()"></A>
+<CODE><I>boolean</I> <BIG><B>getParserProperty</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$property)</CODE>
+<P>
+
+<A name="XMLReader::isValid()"></A>
+<CODE><I>boolean</I> <BIG><B>isValid</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::lookupNamespace()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+<P>
+
+<A name="XMLReader::moveToAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>moveToAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="XMLReader::moveToAttributeNo()"></A>
+<CODE><I>boolean</I> <BIG><B>moveToAttributeNo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="XMLReader::moveToAttributeNs()"></A>
+<CODE><I>boolean</I> <BIG><B>moveToAttributeNs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="XMLReader::moveToElement()"></A>
+<CODE><I>boolean</I> <BIG><B>moveToElement</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::moveToFirstAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>moveToFirstAttribute</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::moveToNextAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>moveToNextAttribute</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::read()"></A>
+<CODE><I>boolean</I> <BIG><B>read</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::next()"></A>
+<CODE><I>boolean</I> <BIG><B>next</B></BIG>(...)</CODE>
+<P>
+
+<A name="XMLReader::open()"></A>
+<CODE><I>boolean</I> <BIG><B>open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$URI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="XMLReader::readInnerXml()"></A>
+<CODE><I>boolean</I> <BIG><B>readInnerXml</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::readOuterXml()"></A>
+<CODE><I>boolean</I> <BIG><B>readOuterXml</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::readString()"></A>
+<CODE><I>boolean</I> <BIG><B>readString</B></BIG>()</CODE>
+<P>
+
+<A name="XMLReader::setSchema()"></A>
+<CODE><I>boolean</I> <BIG><B>setSchema</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="XMLReader::setParserProperty()"></A>
+<CODE><I>boolean</I> <BIG><B>setParserProperty</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$property,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="XMLReader::setRelaxNGSchema()"></A>
+<CODE><I>boolean</I> <BIG><B>setRelaxNGSchema</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="XMLReader::setRelaxNGSchemaSource()"></A>
+<CODE><I>boolean</I> <BIG><B>setRelaxNGSchemaSource</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="XMLReader::xml()"></A>
+<CODE><I>boolean</I> <BIG><B>xml</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="XMLReader::expand()"></A>
+<CODE><I>boolean</I> <BIG><B>expand</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

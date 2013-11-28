@@ -1,0 +1,3407 @@
+<HTML><BODY>
+<H1>dom</H1>
+<P><b>DOM Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+The DOM extension is the replacement for the DOM XML extension from PHP 4. The
+extension still contains many old functions, but they should no longer be
+used. In particular, functions that are not object-oriented should be avoided.
+<p>
+
+The extension allows you to operate on an XML document with the DOM API.
+<p>
+
+See: <a href="http://www.php.net/manual/en/ref.dom.php"><code>http://www.php.net/manual/en/ref.dom.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="DOMSTRING_SIZE_ERR"></A>
+<CODE><BIG><B>DOMSTRING_SIZE_ERR</B></BIG> = 2</CODE>
+<P>
+
+<A name="DOM_HIERARCHY_REQUEST_ERR"></A>
+<CODE><BIG><B>DOM_HIERARCHY_REQUEST_ERR</B></BIG> = 3</CODE>
+<P>
+
+<A name="DOM_INDEX_SIZE_ERR"></A>
+<CODE><BIG><B>DOM_INDEX_SIZE_ERR</B></BIG> = 1</CODE>
+<P>
+
+<A name="DOM_INUSE_ATTRIBUTE_ERR"></A>
+<CODE><BIG><B>DOM_INUSE_ATTRIBUTE_ERR</B></BIG> = 10</CODE>
+<P>
+
+<A name="DOM_INVALID_ACCESS_ERR"></A>
+<CODE><BIG><B>DOM_INVALID_ACCESS_ERR</B></BIG> = 15</CODE>
+<P>
+
+<A name="DOM_INVALID_CHARACTER_ERR"></A>
+<CODE><BIG><B>DOM_INVALID_CHARACTER_ERR</B></BIG> = 5</CODE>
+<P>
+
+<A name="DOM_INVALID_MODIFICATION_ERR"></A>
+<CODE><BIG><B>DOM_INVALID_MODIFICATION_ERR</B></BIG> = 13</CODE>
+<P>
+
+<A name="DOM_INVALID_STATE_ERR"></A>
+<CODE><BIG><B>DOM_INVALID_STATE_ERR</B></BIG> = 11</CODE>
+<P>
+
+<A name="DOM_NAMESPACE_ERR"></A>
+<CODE><BIG><B>DOM_NAMESPACE_ERR</B></BIG> = 14</CODE>
+<P>
+
+<A name="DOM_NOT_FOUND_ERR"></A>
+<CODE><BIG><B>DOM_NOT_FOUND_ERR</B></BIG> = 8</CODE>
+<P>
+
+<A name="DOM_NOT_SUPPORTED_ERR"></A>
+<CODE><BIG><B>DOM_NOT_SUPPORTED_ERR</B></BIG> = 9</CODE>
+<P>
+
+<A name="DOM_NO_DATA_ALLOWED_ERR"></A>
+<CODE><BIG><B>DOM_NO_DATA_ALLOWED_ERR</B></BIG> = 6</CODE>
+<P>
+
+<A name="DOM_NO_MODIFICATION_ALLOWED_ERR"></A>
+<CODE><BIG><B>DOM_NO_MODIFICATION_ALLOWED_ERR</B></BIG> = 7</CODE>
+<P>
+
+<A name="DOM_PHP_ERR"></A>
+<CODE><BIG><B>DOM_PHP_ERR</B></BIG> = 0</CODE>
+<P>
+
+<A name="DOM_SYNTAX_ERR"></A>
+<CODE><BIG><B>DOM_SYNTAX_ERR</B></BIG> = 12</CODE>
+<P>
+
+<A name="DOM_VALIDATION_ERR"></A>
+<CODE><BIG><B>DOM_VALIDATION_ERR</B></BIG> = 16</CODE>
+<P>
+
+<A name="DOM_WRONG_DOCUMENT_ERR"></A>
+<CODE><BIG><B>DOM_WRONG_DOCUMENT_ERR</B></BIG> = 4</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_CDATA"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_CDATA</B></BIG> = 1</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_DECL_NODE"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_DECL_NODE</B></BIG> = 16</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_ENTITY"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_ENTITY</B></BIG> = 6</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_ENUMERATION"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_ENUMERATION</B></BIG> = 9</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_ID"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_ID</B></BIG> = 2</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_IDREF"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_IDREF</B></BIG> = 3</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_IDREFS"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_IDREFS</B></BIG> = 4</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_NMTOKEN"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_NMTOKEN</B></BIG> = 7</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_NMTOKENS"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_NMTOKENS</B></BIG> = 8</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_NODE"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_NODE</B></BIG> = 2</CODE>
+<P>
+
+<A name="XML_ATTRIBUTE_NOTATION"></A>
+<CODE><BIG><B>XML_ATTRIBUTE_NOTATION</B></BIG> = 10</CODE>
+<P>
+
+<A name="XML_CDATA_SECTION_NODE"></A>
+<CODE><BIG><B>XML_CDATA_SECTION_NODE</B></BIG> = 4</CODE>
+<P>
+
+<A name="XML_COMMENT_NODE"></A>
+<CODE><BIG><B>XML_COMMENT_NODE</B></BIG> = 8</CODE>
+<P>
+
+<A name="XML_DOCUMENT_FRAG_NODE"></A>
+<CODE><BIG><B>XML_DOCUMENT_FRAG_NODE</B></BIG> = 11</CODE>
+<P>
+
+<A name="XML_DOCUMENT_NODE"></A>
+<CODE><BIG><B>XML_DOCUMENT_NODE</B></BIG> = 9</CODE>
+<P>
+
+<A name="XML_DOCUMENT_TYPE_NODE"></A>
+<CODE><BIG><B>XML_DOCUMENT_TYPE_NODE</B></BIG> = 10</CODE>
+<P>
+
+<A name="XML_DTD_NODE"></A>
+<CODE><BIG><B>XML_DTD_NODE</B></BIG> = 14</CODE>
+<P>
+
+<A name="XML_ELEMENT_DECL_NODE"></A>
+<CODE><BIG><B>XML_ELEMENT_DECL_NODE</B></BIG> = 15</CODE>
+<P>
+
+<A name="XML_ELEMENT_NODE"></A>
+<CODE><BIG><B>XML_ELEMENT_NODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="XML_ENTITY_DECL_NODE"></A>
+<CODE><BIG><B>XML_ENTITY_DECL_NODE</B></BIG> = 17</CODE>
+<P>
+
+<A name="XML_ENTITY_NODE"></A>
+<CODE><BIG><B>XML_ENTITY_NODE</B></BIG> = 6</CODE>
+<P>
+
+<A name="XML_ENTITY_REF_NODE"></A>
+<CODE><BIG><B>XML_ENTITY_REF_NODE</B></BIG> = 5</CODE>
+<P>
+
+<A name="XML_HTML_DOCUMENT_NODE"></A>
+<CODE><BIG><B>XML_HTML_DOCUMENT_NODE</B></BIG> = 13</CODE>
+<P>
+
+<A name="XML_LOCAL_NAMESPACE"></A>
+<CODE><BIG><B>XML_LOCAL_NAMESPACE</B></BIG> = 18</CODE>
+<P>
+
+<A name="XML_NAMESPACE_DECL_NODE"></A>
+<CODE><BIG><B>XML_NAMESPACE_DECL_NODE</B></BIG> = 18</CODE>
+<P>
+
+<A name="XML_NOTATION_NODE"></A>
+<CODE><BIG><B>XML_NOTATION_NODE</B></BIG> = 12</CODE>
+<P>
+
+<A name="XML_PI_NODE"></A>
+<CODE><BIG><B>XML_PI_NODE</B></BIG> = 7</CODE>
+<P>
+
+<A name="XML_TEXT_NODE"></A>
+<CODE><BIG><B>XML_TEXT_NODE</B></BIG> = 3</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMNode"></A>
+<pre>abstract class <BIG><B>DOMNode</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Interface Node</b></P><P>
+Note that the DOM specifications requires this class be an interface.
+	However, PHP 5 does not allow to define properties inside interfaces,
+	so an abstract class is the closest approximation to the standard.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMNode::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<P>
+
+<A name="DOMNode::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<P>
+
+<A name="DOMNode::appendChild()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+<P>
+
+<A name="DOMNode::cloneNode()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+<P>
+
+<A name="DOMNode::getLineNo()"></A>
+<CODE>abstract <I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+<P>
+
+<A name="DOMNode::hasAttributes()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+<P>
+
+<A name="DOMNode::hasChildNodes()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+<P>
+
+<A name="DOMNode::insertBefore()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+<P>
+
+<A name="DOMNode::isDefaultNamespace()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMNode::isSameNode()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMNode::isSupported()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMNode::lookupNamespaceURI()"></A>
+<CODE>abstract <I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+<P>
+
+<A name="DOMNode::lookupPrefix()"></A>
+<CODE>abstract <I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMNode::normalize()"></A>
+<CODE>abstract <I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+<P>
+
+<A name="DOMNode::removeChild()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+<P>
+
+<A name="DOMNode::replaceChild()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMCharacterData"></A>
+<pre>class <BIG><B>DOMCharacterData</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMCharacterData::$data"></A>
+<CODE><I>string</I> <BIG><B>$data</B></BIG></CODE>
+<P>
+
+<A name="DOMCharacterData::$length"></A>
+<CODE><I>int</I> <BIG><B>$length</B></BIG> = 0</CODE>
+<P>
+
+<A name="DOMCharacterData::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMCharacterData::substringData()"></A>
+<CODE><I>string</I> <BIG><B>substringData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<P>
+
+<A name="DOMCharacterData::appendData()"></A>
+<CODE><I>void</I> <BIG><B>appendData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMCharacterData::insertData()"></A>
+<CODE><I>void</I> <BIG><B>insertData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMCharacterData::deleteData()"></A>
+<CODE><I>void</I> <BIG><B>deleteData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<P>
+
+<A name="DOMCharacterData::replaceData()"></A>
+<CODE><I>void</I> <BIG><B>replaceData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMCharacterData::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMCharacterData::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMCharacterData::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMCharacterData::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMCharacterData::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMCharacterData::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMCharacterData::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMCharacterData::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMConfiguration"></A>
+<pre>class <BIG><B>DOMConfiguration</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>FIXME: this class undefined in the official manual </b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMDocument"></A>
+<pre>class <BIG><B>DOMDocument</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMDocument::$actualEncoding"></A>
+<CODE><I>string</I> <BIG><B>$actualEncoding</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$config"></A>
+<CODE><I><a href="#DOMConfiguration"><code>DOMConfiguration</code></a></I> <BIG><B>$config</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$doctype"></A>
+<CODE><I><a href="#DOMDocumentType"><code>DOMDocumentType</code></a></I> <BIG><B>$doctype</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$documentElement"></A>
+<CODE><I><a href="#DOMElement"><code>DOMElement</code></a></I> <BIG><B>$documentElement</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$documentURI"></A>
+<CODE><I>string</I> <BIG><B>$documentURI</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$encoding"></A>
+<CODE><I>string</I> <BIG><B>$encoding</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$formatOutput"></A>
+<CODE><I>boolean</I> <BIG><B>$formatOutput</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$implementation"></A>
+<CODE><I><a href="#DOMImplementation"><code>DOMImplementation</code></a></I> <BIG><B>$implementation</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$preserveWhiteSpace"></A>
+<CODE><I>boolean</I> <BIG><B>$preserveWhiteSpace</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$recover"></A>
+<CODE><I>boolean</I> <BIG><B>$recover</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$resolveExternals"></A>
+<CODE><I>boolean</I> <BIG><B>$resolveExternals</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$standalone"></A>
+<CODE><I>boolean</I> <BIG><B>$standalone</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$strictErrorChecking"></A>
+<CODE><I>boolean</I> <BIG><B>$strictErrorChecking</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$substituteEntities"></A>
+<CODE><I>boolean</I> <BIG><B>$substituteEntities</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$validateOnParse"></A>
+<CODE><I>boolean</I> <BIG><B>$validateOnParse</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$version"></A>
+<CODE><I>string</I> <BIG><B>$version</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$xmlEncoding"></A>
+<CODE><I>string</I> <BIG><B>$xmlEncoding</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$xmlStandalone"></A>
+<CODE><I>boolean</I> <BIG><B>$xmlStandalone</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMDocument::$xmlVersion"></A>
+<CODE><I>string</I> <BIG><B>$xmlVersion</B></BIG></CODE>
+<P>
+
+<A name="DOMDocument::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocument::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(...)</CODE>
+<P>
+
+<A name="DOMDocument::createElement()"></A>
+<CODE><I><a href="#DOMElement"><code>DOMElement</code></a></I> <BIG><B>createElement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$tagName, ...)</CODE>
+<P>
+
+<A name="DOMDocument::createDocumentFragment()"></A>
+<CODE><I><a href="#DOMDocumentFragment"><code>DOMDocumentFragment</code></a></I> <BIG><B>createDocumentFragment</B></BIG>()</CODE>
+<P>
+
+<A name="DOMDocument::createTextNode()"></A>
+<CODE><I><a href="#DOMText"><code>DOMText</code></a></I> <BIG><B>createTextNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="DOMDocument::createComment()"></A>
+<CODE><I><a href="#DOMComment"><code>DOMComment</code></a></I> <BIG><B>createComment</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="DOMDocument::createCDATASection()"></A>
+<CODE><I><a href="#DOMCdataSection"><code>DOMCdataSection</code></a></I> <BIG><B>createCDATASection</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="DOMDocument::createProcessingInstruction()"></A>
+<CODE><I><a href="#DOMProcessingInstruction"><code>DOMProcessingInstruction</code></a></I> <BIG><B>createProcessingInstruction</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="DOMDocument::createAttribute()"></A>
+<CODE><I><a href="#DOMAttr"><code>DOMAttr</code></a></I> <BIG><B>createAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMDocument::createEntityReference()"></A>
+<CODE><I><a href="#DOMEntityReference"><code>DOMEntityReference</code></a></I> <BIG><B>createEntityReference</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMDocument::getElementsByTagName()"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>getElementsByTagName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$tagname)</CODE>
+<P>
+
+<A name="DOMDocument::importNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>importNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$importedNode,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+<br>throws <a href="#DOMException"><code>DOMException</code></a><P>
+
+<A name="DOMDocument::createElementNS()"></A>
+<CODE><I><a href="#DOMElement"><code>DOMElement</code></a></I> <BIG><B>createElementNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifiedName, ...)</CODE>
+<P>
+
+<A name="DOMDocument::createAttributeNS()"></A>
+<CODE><I><a href="#DOMAttr"><code>DOMAttr</code></a></I> <BIG><B>createAttributeNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifiedName)</CODE>
+<P>
+
+<A name="DOMDocument::getElementsByTagNameNS()"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>getElementsByTagNameNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localName)</CODE>
+<P>
+
+<A name="DOMDocument::getElementByID()"></A>
+<CODE><I><a href="#DOMElement"><code>DOMElement</code></a></I> <BIG><B>getElementByID</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$elementId)</CODE>
+<P>
+
+<A name="DOMDocument::adoptNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>adoptNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$source)</CODE>
+<P>
+
+<A name="DOMDocument::normalizeDocument()"></A>
+<CODE><I>void</I> <BIG><B>normalizeDocument</B></BIG>()</CODE>
+<P>
+
+<A name="DOMDocument::load()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>load</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="DOMDocument::loadXML()"></A>
+<CODE><I>boolean</I> <BIG><B>loadXML</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="DOMDocument::save()"></A>
+<CODE><I>int</I> <BIG><B>save</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file)</CODE>
+<P>
+
+<A name="DOMDocument::saveXML()"></A>
+<CODE><I>string</I> <BIG><B>saveXML</B></BIG>(...)</CODE>
+<P>
+
+<A name="DOMDocument::xinclude()"></A>
+<CODE><I>int</I> <BIG><B>xinclude</B></BIG>()</CODE>
+<P>
+
+<A name="DOMDocument::validate()"></A>
+<CODE><I>boolean</I> <BIG><B>validate</B></BIG>()</CODE>
+<P>
+
+<A name="DOMDocument::schemaValidateFile()"></A>
+<CODE><I>boolean</I> <BIG><B>schemaValidateFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="DOMDocument::schemaValidate()"></A>
+<CODE><I>boolean</I> <BIG><B>schemaValidate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="DOMDocument::relaxNGValidateFile()"></A>
+<CODE><I>boolean</I> <BIG><B>relaxNGValidateFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="DOMDocument::relaxNGValidateXML()"></A>
+<CODE><I>boolean</I> <BIG><B>relaxNGValidateXML</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="DOMDocument::loadHTMLFile()"></A>
+<CODE><I>boolean</I> <BIG><B>loadHTMLFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="DOMDocument::loadHTML()"></A>
+<CODE><I>boolean</I> <BIG><B>loadHTML</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source)</CODE>
+<P>
+
+<A name="DOMDocument::saveHTMLFile()"></A>
+<CODE><I>int</I> <BIG><B>saveHTMLFile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file)</CODE>
+<P>
+
+<A name="DOMDocument::saveHTML()"></A>
+<CODE><I>string</I> <BIG><B>saveHTML</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$node = NULL)</CODE>
+<P>
+
+<A name="DOMDocument::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMDocument::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMDocument::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMDocument::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMDocument::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMDocument::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMDocument::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocument::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMDocumentType"></A>
+<pre>class <BIG><B>DOMDocumentType</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMDocumentType::$publicId"></A>
+<CODE><I>string</I> <BIG><B>$publicId</B></BIG></CODE>
+<P>
+
+<A name="DOMDocumentType::$systemId"></A>
+<CODE><I>string</I> <BIG><B>$systemId</B></BIG></CODE>
+<P>
+
+<A name="DOMDocumentType::$name"></A>
+<CODE><I>string</I> <BIG><B>$name</B></BIG></CODE>
+<P>
+
+<A name="DOMDocumentType::$entities"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$entities</B></BIG></CODE>
+<P>
+
+<A name="DOMDocumentType::$notations"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$notations</B></BIG></CODE>
+<P>
+
+<A name="DOMDocumentType::$internalSubset"></A>
+<CODE><I>string</I> <BIG><B>$internalSubset</B></BIG></CODE>
+<P>
+
+<A name="DOMDocumentType::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentType::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMDocumentType::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMDocumentType::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMDocumentType::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMDocumentType::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMDocumentType::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMDocumentType::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentType::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMElement"></A>
+<pre>class <BIG><B>DOMElement</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="DOMElement::$schemaTypeInfo"></A>
+<CODE><I>boolean</I> <BIG><B>$schemaTypeInfo</B></BIG> = FALSE</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> This property not implemented yet, always return NULL.</P>
+<P>
+
+	
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="DOMElement::$tagName"></A>
+<CODE><I>string</I> <BIG><B>$tagName</B></BIG></CODE>
+<P>
+
+<A name="DOMElement::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMElement::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name, ...)</CODE>
+<P>
+
+<A name="DOMElement::getAttribute()"></A>
+<CODE><I>string</I> <BIG><B>getAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMElement::setAttribute()"></A>
+<CODE><I>void</I> <BIG><B>setAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="DOMElement::removeAttribute()"></A>
+<CODE><I>void</I> <BIG><B>removeAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMElement::getAttributeNode()"></A>
+<CODE><I><a href="#DOMAttr"><code>DOMAttr</code></a></I> <BIG><B>getAttributeNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMElement::setAttributeNode()"></A>
+<CODE><I><a href="#DOMAttr"><code>DOMAttr</code></a></I> <BIG><B>setAttributeNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMAttr"><code>DOMAttr</code></a></I>&nbsp;$newAttr)</CODE>
+<P>
+
+<A name="DOMElement::removeAttributeNode()"></A>
+<CODE><I><a href="#DOMAttr"><code>DOMAttr</code></a></I> <BIG><B>removeAttributeNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMAttr"><code>DOMAttr</code></a></I>&nbsp;$oldAttr)</CODE>
+<P>
+
+<A name="DOMElement::getElementsByTagName()"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>getElementsByTagName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMElement::getAttributeNS()"></A>
+<CODE><I>string</I> <BIG><B>getAttributeNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localName)</CODE>
+<P>
+
+<A name="DOMElement::setAttributeNS()"></A>
+<CODE><I>void</I> <BIG><B>setAttributeNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifiedName,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="DOMElement::removeAttributeNS()"></A>
+<CODE><I>void</I> <BIG><B>removeAttributeNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localName)</CODE>
+<P>
+
+<A name="DOMElement::getAttributeNodeNS()"></A>
+<CODE><I><a href="#DOMAttr"><code>DOMAttr</code></a></I> <BIG><B>getAttributeNodeNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localName)</CODE>
+<P>
+
+<A name="DOMElement::setAttributeNodeNS()"></A>
+<CODE><I><a href="#DOMAttr"><code>DOMAttr</code></a></I> <BIG><B>setAttributeNodeNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMAttr"><code>DOMAttr</code></a></I>&nbsp;$newAttr)</CODE>
+<P>
+
+<A name="DOMElement::getElementsByTagNameNS()"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>getElementsByTagNameNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localName)</CODE>
+<P>
+
+<A name="DOMElement::hasAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMElement::hasAttributeNS()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributeNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localName)</CODE>
+<P>
+
+<A name="DOMElement::setIDAttribute()"></A>
+<CODE><I>void</I> <BIG><B>setIDAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$isId)</CODE>
+<P>
+
+<A name="DOMElement::setIDAttributeNS()"></A>
+<CODE><I>void</I> <BIG><B>setIDAttributeNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localName,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$isId)</CODE>
+<P>
+
+<A name="DOMElement::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMElement::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMElement::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMElement::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMElement::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMElement::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMElement::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMElement::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMNamedNodeMap"></A>
+<pre>class <BIG><B>DOMNamedNodeMap</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMNamedNodeMap::getNamedItem()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getNamedItem</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMNamedNodeMap::getNamedItemNS()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getNamedItemNS</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$localName)</CODE>
+<P>
+
+<A name="DOMNamedNodeMap::item()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>item</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMNodeList"></A>
+<pre>class <BIG><B>DOMNodeList</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMNodeList::$length"></A>
+<CODE><I>int</I> <BIG><B>$length</B></BIG> = 0</CODE>
+<P>
+
+<A name="DOMNodeList::item()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>item</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMUserData"></A>
+<pre>class <BIG><B>DOMUserData</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMException"></A>
+<pre>class <BIG><B>DOMException</B></BIG>
+      |  
+      `--<a href="standard.html#Exception"><code>Exception</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<i>This class merely extends another class and does not add any new member. Please see the extended class for details.</i><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMProcessingInstruction"></A>
+<pre>class <BIG><B>DOMProcessingInstruction</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMProcessingInstruction::$target"></A>
+<CODE><I>string</I> <BIG><B>$target</B></BIG></CODE>
+<P>
+
+<A name="DOMProcessingInstruction::$data"></A>
+<CODE><I>string</I> <BIG><B>$data</B></BIG></CODE>
+<P>
+
+<A name="DOMProcessingInstruction::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMProcessingInstruction::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name, ...)</CODE>
+<P>
+
+<A name="DOMProcessingInstruction::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMProcessingInstruction::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMProcessingInstruction::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMProcessingInstruction::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMProcessingInstruction::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMProcessingInstruction::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMProcessingInstruction::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMProcessingInstruction::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMText"></A>
+<pre>class <BIG><B>DOMText</B></BIG>
+      |  
+      `--<a href="#DOMCharacterData"><code>DOMCharacterData</code></a>
+           `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMText::$wholeText"></A>
+<CODE><I>string</I> <BIG><B>$wholeText</B></BIG></CODE>
+<P>
+
+<A name="DOMText::$data"></A>
+<CODE><I>string</I> <BIG><B>$data</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::$data"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::$length"></A>
+<CODE><I>int</I> <BIG><B>$length</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::$length"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMText::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(...)</CODE>
+<P>
+
+<A name="DOMText::splitText()"></A>
+<CODE><I><a href="#DOMText"><code>DOMText</code></a></I> <BIG><B>splitText</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset)</CODE>
+<P>
+
+<A name="DOMText::isWhitespaceInElementContent()"></A>
+<CODE><I>boolean</I> <BIG><B>isWhitespaceInElementContent</B></BIG>()</CODE>
+<P>
+
+<A name="DOMText::replaceWholeText()"></A>
+<CODE><I><a href="#DOMText"><code>DOMText</code></a></I> <BIG><B>replaceWholeText</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="DOMText::substringData()"></A>
+<CODE><I>string</I> <BIG><B>substringData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::substringData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::appendData()"></A>
+<CODE><I>void</I> <BIG><B>appendData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::appendData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::insertData()"></A>
+<CODE><I>void</I> <BIG><B>insertData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::insertData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::deleteData()"></A>
+<CODE><I>void</I> <BIG><B>deleteData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::deleteData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::replaceData()"></A>
+<CODE><I>void</I> <BIG><B>replaceData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::replaceData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::insertBefore()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::replaceChild()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::removeChild()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::appendChild()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::hasChildNodes()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::cloneNode()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::normalize()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::isSupported()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::hasAttributes()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::compareDocumentPosition()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::isSameNode()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::lookup_prefix()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::isDefaultNamespace()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::lookupNamespaceURI()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::isEqualNode()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::getFeature()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::getUserData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::getNodePath()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::getLineNo()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMText::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::lookupPrefix()"><code>DOMCharacterData</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMImplementation"></A>
+<pre>interface <BIG><B>DOMImplementation</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMImplementation::hasFeature()"></A>
+<CODE><I>boolean</I> <BIG><B>hasFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMImplementation::createDocumentType()"></A>
+<CODE><I><a href="#DOMDocumentType"><code>DOMDocumentType</code></a></I> <BIG><B>createDocumentType</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifiedName,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$publicId,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$systemId)</CODE>
+<P>
+
+<A name="DOMImplementation::createDocument()"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>createDocument</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$qualifiedName,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMDocumentType"><code>DOMDocumentType</code></a></I>&nbsp;$doctype)</CODE>
+<P>
+
+<A name="DOMImplementation::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMAttr"></A>
+<pre>class <BIG><B>DOMAttr</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMAttr::$name"></A>
+<CODE><I>string</I> <BIG><B>$name</B></BIG></CODE>
+<P>
+
+<A name="DOMAttr::$ownerElement"></A>
+<CODE><I><a href="#DOMElement"><code>DOMElement</code></a></I> <BIG><B>$ownerElement</B></BIG></CODE>
+<P>
+
+<A name="DOMAttr::$schemaTypeInfo"></A>
+<CODE><I>boolean</I> <BIG><B>$schemaTypeInfo</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMAttr::$specified"></A>
+<CODE><I>boolean</I> <BIG><B>$specified</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="DOMAttr::$value"></A>
+<CODE><I>string</I> <BIG><B>$value</B></BIG></CODE>
+<P>
+
+<A name="DOMAttr::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMAttr::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name, ...)</CODE>
+<P>
+
+<A name="DOMAttr::isId()"></A>
+<CODE><I>boolean</I> <BIG><B>isId</B></BIG>()</CODE>
+<P>
+
+<A name="DOMAttr::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMAttr::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMAttr::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMAttr::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMAttr::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMAttr::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMAttr::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMAttr::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMCdataSection"></A>
+<pre>class <BIG><B>DOMCdataSection</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMDocumentFragment"></A>
+<pre>class <BIG><B>DOMDocumentFragment</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMDocumentFragment::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMDocumentFragment::appendXML()"></A>
+<CODE><I>boolean</I> <BIG><B>appendXML</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="DOMDocumentFragment::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMDocumentFragment::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMDocumentFragment::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMDocumentFragment::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMDocumentFragment::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMDocumentFragment::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMDocumentFragment::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMDocumentFragment::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMComment"></A>
+<pre>class <BIG><B>DOMComment</B></BIG>
+      |  
+      `--<a href="#DOMCharacterData"><code>DOMCharacterData</code></a>
+           `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMComment::$data"></A>
+<CODE><I>string</I> <BIG><B>$data</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::$data"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::$length"></A>
+<CODE><I>int</I> <BIG><B>$length</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::$length"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMComment::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(...)</CODE>
+<P>
+
+<A name="DOMComment::substringData()"></A>
+<CODE><I>string</I> <BIG><B>substringData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::substringData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::appendData()"></A>
+<CODE><I>void</I> <BIG><B>appendData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::appendData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::insertData()"></A>
+<CODE><I>void</I> <BIG><B>insertData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::insertData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::deleteData()"></A>
+<CODE><I>void</I> <BIG><B>deleteData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::deleteData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::replaceData()"></A>
+<CODE><I>void</I> <BIG><B>replaceData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$offset,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$count,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$arg)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::replaceData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::insertBefore()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::replaceChild()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::removeChild()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::appendChild()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::hasChildNodes()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::cloneNode()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::normalize()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::isSupported()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::hasAttributes()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::compareDocumentPosition()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::isSameNode()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::lookup_prefix()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::isDefaultNamespace()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::lookupNamespaceURI()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::isEqualNode()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::getFeature()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::getUserData()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::getNodePath()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::getLineNo()"><code>DOMCharacterData</code></a>
+<P>
+
+<A name="DOMComment::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<BR><I>inherited from</i> <a href="#DOMCharacterData::lookupPrefix()"><code>DOMCharacterData</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMEntityReference"></A>
+<pre>class <BIG><B>DOMEntityReference</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMEntityReference::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntityReference::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="DOMEntityReference::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMEntityReference::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMEntityReference::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMEntityReference::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMEntityReference::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMEntityReference::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMEntityReference::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMEntityReference::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMString"></A>
+<pre>class <BIG><B>DOMString</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMObject"></A>
+<pre>class <BIG><B>DOMObject</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMEntity"></A>
+<pre>abstract class <BIG><B>DOMEntity</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMEntity::$publicId"></A>
+<CODE><I>string</I> <BIG><B>$publicId</B></BIG></CODE>
+<P>
+
+<A name="DOMEntity::$systemId"></A>
+<CODE><I>string</I> <BIG><B>$systemId</B></BIG></CODE>
+<P>
+
+<A name="DOMEntity::$notationName"></A>
+<CODE><I>string</I> <BIG><B>$notationName</B></BIG></CODE>
+<P>
+
+<A name="DOMEntity::$actualEncoding"></A>
+<CODE><I>string</I> <BIG><B>$actualEncoding</B></BIG></CODE>
+<P>
+
+<A name="DOMEntity::$encoding"></A>
+<CODE><I>string</I> <BIG><B>$encoding</B></BIG></CODE>
+<P>
+
+<A name="DOMEntity::$version"></A>
+<CODE><I>string</I> <BIG><B>$version</B></BIG></CODE>
+<P>
+
+<A name="DOMEntity::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::appendChild()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::cloneNode()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::getLineNo()"></A>
+<CODE>abstract <I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::hasAttributes()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::hasChildNodes()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::insertBefore()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::isDefaultNamespace()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::isSameNode()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::isSupported()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::lookupNamespaceURI()"></A>
+<CODE>abstract <I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::lookupPrefix()"></A>
+<CODE>abstract <I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::normalize()"></A>
+<CODE>abstract <I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::removeChild()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMEntity::replaceChild()"></A>
+<CODE>abstract <I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMNotation"></A>
+<pre>class <BIG><B>DOMNotation</B></BIG>
+      |  
+      `--<a href="#DOMNode"><code>DOMNode</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMNotation::$publicId"></A>
+<CODE><I>string</I> <BIG><B>$publicId</B></BIG></CODE>
+<P>
+
+<A name="DOMNotation::$systemId"></A>
+<CODE><I>string</I> <BIG><B>$systemId</B></BIG></CODE>
+<P>
+
+<A name="DOMNotation::$nodeName"></A>
+<CODE><I>string</I> <BIG><B>$nodeName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$nodeValue"></A>
+<CODE><I>string</I> <BIG><B>$nodeValue</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeValue"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$nodeType"></A>
+<CODE><I>int</I> <BIG><B>$nodeType</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nodeType"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$parentNode"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$parentNode</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$parentNode"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$childNodes"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>$childNodes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$childNodes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$firstChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$firstChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$firstChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$lastChild"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$lastChild</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$lastChild"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$previousSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$previousSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$previousSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$nextSibling"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>$nextSibling</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$nextSibling"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$attributes"></A>
+<CODE><I><a href="#DOMNamedNodeMap"><code>DOMNamedNodeMap</code></a></I> <BIG><B>$attributes</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$attributes"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$ownerDocument"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$ownerDocument</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$ownerDocument"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$namespaceURI"></A>
+<CODE><I>string</I> <BIG><B>$namespaceURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$namespaceURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$prefix"></A>
+<CODE><I>string</I> <BIG><B>$prefix</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$prefix"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$localName"></A>
+<CODE><I>string</I> <BIG><B>$localName</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$localName"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$baseURI"></A>
+<CODE><I>string</I> <BIG><B>$baseURI</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$baseURI"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::$textContent"></A>
+<CODE><I>string</I> <BIG><B>$textContent</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="#DOMNode::$textContent"><code>DOMNode</code></a>
+<P>
+
+<A name="DOMNotation::insertBefore()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>insertBefore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$refChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::insertBefore()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::replaceChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>replaceChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::replaceChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::removeChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>removeChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$oldChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::removeChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::appendChild()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>appendChild</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$newChild)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::appendChild()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::hasChildNodes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasChildNodes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasChildNodes()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::cloneNode()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>cloneNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$deep)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::cloneNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::normalize()"></A>
+<CODE><I>void</I> <BIG><B>normalize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::normalize()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::isSupported()"></A>
+<CODE><I>boolean</I> <BIG><B>isSupported</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSupported()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::hasAttributes()"></A>
+<CODE><I>boolean</I> <BIG><B>hasAttributes</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::hasAttributes()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::compareDocumentPosition()"></A>
+<CODE><I>int</I> <BIG><B>compareDocumentPosition</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+<P>
+
+<A name="DOMNotation::isSameNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isSameNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isSameNode()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::lookup_prefix()"></A>
+<CODE><I>string</I> <BIG><B>lookup_prefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+<P>
+
+<A name="DOMNotation::isDefaultNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::isDefaultNamespace()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::lookupNamespaceURI()"></A>
+<CODE><I>string</I> <BIG><B>lookupNamespaceURI</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupNamespaceURI()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::isEqualNode()"></A>
+<CODE><I>boolean</I> <BIG><B>isEqualNode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMNode"><code>DOMNode</code></a></I>&nbsp;$arg)</CODE>
+<P>
+
+<A name="DOMNotation::getFeature()"></A>
+<CODE><I><a href="#DOMNode"><code>DOMNode</code></a></I> <BIG><B>getFeature</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$feature,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$version)</CODE>
+<P>
+
+<A name="DOMNotation::getUserData()"></A>
+<CODE><I><a href="#DOMUserData"><code>DOMUserData</code></a></I> <BIG><B>getUserData</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$key)</CODE>
+<P>
+
+<A name="DOMNotation::getNodePath()"></A>
+<CODE><I>int</I> <BIG><B>getNodePath</B></BIG>()</CODE>
+<P>
+
+<A name="DOMNotation::getLineNo()"></A>
+<CODE><I>int</I> <BIG><B>getLineNo</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::getLineNo()"><code>DOMNode</code></a><P>
+
+<A name="DOMNotation::lookupPrefix()"></A>
+<CODE><I>string</I> <BIG><B>lookupPrefix</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$namespaceURI)</CODE>
+
+<BR><I>implements</i> <a href="#DOMNode::lookupPrefix()"><code>DOMNode</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="DOMXPath"></A>
+<pre>class <BIG><B>DOMXPath</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="DOMXPath::$document"></A>
+<CODE><I><a href="#DOMDocument"><code>DOMDocument</code></a></I> <BIG><B>$document</B></BIG></CODE>
+<P>
+
+<A name="DOMXPath::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#DOMDocument"><code>DOMDocument</code></a></I>&nbsp;$doc)</CODE>
+<P>
+
+<A name="DOMXPath::registerNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>registerNamespace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$prefix,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$uri)</CODE>
+<P>
+
+<A name="DOMXPath::evaluate()"></A>
+<CODE><I>mixed</I> <BIG><B>evaluate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$expr, ...)</CODE>
+<P>
+
+<A name="DOMXPath::query()"></A>
+<CODE><I><a href="#DOMNodeList"><code>DOMNodeList</code></a></I> <BIG><B>query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$expr, ...)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

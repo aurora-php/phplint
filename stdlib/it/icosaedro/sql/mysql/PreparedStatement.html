@@ -1,0 +1,159 @@
+<HTML><BODY>
+<H1>PreparedStatement</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../../modules/pcre.html"><code>pcre</code></a>, <a href="../../../../../modules/mysqli.html"><code>mysqli</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../../all.html"><code>all.php</code></a>, <a href="../../../../errors.html"><code>errors.php</code></a>, <a href="../../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../../cast.html"><code>cast.php</code></a>, <a href="../../phplint/Types.html"><code>Types.php</code></a>, <a href="../../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../../containers/Printable.html"><code>Printable.php</code></a>, <a href="../../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../../CastException.html"><code>CastException.php</code></a>, <a href="../PreparedStatement.html"><code>PreparedStatement.php</code></a>, <a href="../SQLDriverInterface.html"><code>SQLDriverInterface.php</code></a>, <a href="../SQLException.html"><code>SQLException.php</code></a>, <a href="../ResultSet.html"><code>ResultSet.php</code></a>, <a href="../../utils/Integers.html"><code>Integers.php</code></a>, <a href="../../bignumbers/BigInt.html"><code>BigInt.php</code></a>, <a href="../../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="../../containers/Hash.html"><code>Hash.php</code></a>, <a href="../../bignumbers/BigFloat.html"><code>BigFloat.php</code></a>, <a href="../../utils/Date.html"><code>Date.php</code></a>, <a href="Driver.html"><code>Driver.php</code></a>, <a href="ResultSet.html"><code>ResultSet.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement"></A>
+<pre>class <BIG><B>it\icosaedro\sql\mysql\PreparedStatement</B></BIG>
+      |  
+      `--<a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement"><code>it\icosaedro\sql\PreparedStatement</code></a>
+           `--(<i><a href="../../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>MySQL specific implementation of the prepared statement</b></P><P><B>Version:</B> $Date: 2012/01/22 19:34:11 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="Driver.html#it/icosaedro/sql/mysql/Driver"><code>it\icosaedro\sql\mysql\Driver</code></a></I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setBytes()"></A>
+<CODE><I>void</I> <BIG><B>setBytes</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>overrides</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setBytes()"><code>it\icosaedro\sql\PreparedStatement</code></a><BLOCKQUOTE>
+<P><b>Sets a parameter of type binary (for example, an image)</b></P><P>
+This implementation is specific of MySQL and assumes a field
+		of type VARBINARY. Please note that the BINARY type should not
+		be used because the fields of this type are automatically
+		right-padded with spaces or NUL bytes depending on the version of
+		MySQL, which normally is not what you want.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the parameter to set, the first question
+		mark is the number 0.</td></tr>
+<tr><td valign=top><b><code>$value&nbsp;&nbsp;</code></b></td> <td valign=top>Value of the parameter as an array of bytes.
+		If NULL, then the SQL NULL value is set.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the index is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setParameter()"></A>
+<CODE>protected <I>void</I> <BIG><B>setParameter</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setParameter()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setNull()"></A>
+<CODE><I>void</I> <BIG><B>setNull</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setNull()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setString()"></A>
+<CODE><I>void</I> <BIG><B>setString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setString()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setBoolean()"></A>
+<CODE><I>void</I> <BIG><B>setBoolean</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setBoolean()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setInt()"></A>
+<CODE><I>void</I> <BIG><B>setInt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setInt()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setBigInt()"></A>
+<CODE><I>void</I> <BIG><B>setBigInt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../../bignumbers/BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setBigInt()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setBigFloat()"></A>
+<CODE><I>void</I> <BIG><B>setBigFloat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../../bignumbers/BigFloat.html#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setBigFloat()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setDate()"></A>
+<CODE><I>void</I> <BIG><B>setDate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../../utils/Date.html#it/icosaedro/utils/Date"><code>it\icosaedro\utils\Date</code></a></I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setDate()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::setDateTime()"></A>
+<CODE><I>void</I> <BIG><B>setDateTime</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="../../../../../modules/standard.html#DateTime"><code>DateTime</code></a></I>&nbsp;$value)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::setDateTime()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::getSQLStatement()"></A>
+<CODE><I>string</I> <BIG><B>getSQLStatement</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::getSQLStatement()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::update()"></A>
+<CODE><I>int</I> <BIG><B>update</B></BIG>()</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::update()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::query()"></A>
+<CODE><I><a href="../ResultSet.html#it/icosaedro/sql/ResultSet"><code>it\icosaedro\sql\ResultSet</code></a></I> <BIG><B>query</B></BIG>()</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::query()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::clearParameters()"></A>
+<CODE><I>void</I> <BIG><B>clearParameters</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::clearParameters()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+
+<A name="it/icosaedro/sql/mysql/PreparedStatement::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement::__toString()"><code>it\icosaedro\sql\PreparedStatement</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

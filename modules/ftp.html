@@ -1,0 +1,237 @@
+<HTML><BODY>
+<H1>ftp</H1>
+<P><b>FTP Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.ftp.php"><code>http://www.php.net/manual/en/ref.ftp.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="FTP_ASCII"></A>
+<CODE><BIG><B>FTP_ASCII</B></BIG> = 1</CODE>
+<P>
+
+<A name="FTP_TEXT"></A>
+<CODE><BIG><B>FTP_TEXT</B></BIG> = 2</CODE>
+<P>
+
+<A name="FTP_BINARY"></A>
+<CODE><BIG><B>FTP_BINARY</B></BIG> = 3</CODE>
+<P>
+
+<A name="FTP_IMAGE"></A>
+<CODE><BIG><B>FTP_IMAGE</B></BIG> = 4</CODE>
+<P>
+
+<A name="FTP_AUTORESUME"></A>
+<CODE><BIG><B>FTP_AUTORESUME</B></BIG> = 5</CODE>
+<P>
+
+<A name="FTP_TIMEOUT_SEC"></A>
+<CODE><BIG><B>FTP_TIMEOUT_SEC</B></BIG> = 6</CODE>
+<P>
+
+<A name="FTP_AUTOSEEK"></A>
+<CODE><BIG><B>FTP_AUTOSEEK</B></BIG> = 7</CODE>
+<P>
+
+<A name="FTP_FAILED"></A>
+<CODE><BIG><B>FTP_FAILED</B></BIG> = 8</CODE>
+<P>
+
+<A name="FTP_FINISHED"></A>
+<CODE><BIG><B>FTP_FINISHED</B></BIG> = 9</CODE>
+<P>
+
+<A name="FTP_MOREDATA"></A>
+<CODE><BIG><B>FTP_MOREDATA</B></BIG> = 10</CODE>
+<P>
+
+<A name="ftp_connect()"></A>
+<CODE><I>resource</I> <BIG><B>ftp_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host, ...)</CODE>
+<P>
+
+<A name="ftp_ssl_connect()"></A>
+<CODE><I>resource</I> <BIG><B>ftp_ssl_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host, ...)</CODE>
+<P>
+
+<A name="ftp_login()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_login</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="ftp_pwd()"></A>
+<CODE><I>string</I> <BIG><B>ftp_pwd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream)</CODE>
+<P>
+
+<A name="ftp_cdup()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_cdup</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream)</CODE>
+<P>
+
+<A name="ftp_chdir()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_chdir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$directory)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="ftp_exec()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$command)</CODE>
+<P>
+
+<A name="ftp_raw()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ftp_raw</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$command)</CODE>
+<P>
+
+<A name="ftp_mkdir()"></A>
+<CODE><I>string</I> <BIG><B>ftp_mkdir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$directory)</CODE>
+<P>
+
+<A name="ftp_rmdir()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_rmdir</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$directory)</CODE>
+<P>
+
+<A name="ftp_chmod()"></A>
+<CODE><I>int</I> <BIG><B>ftp_chmod</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="ftp_alloc()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_alloc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$size, ...)</CODE>
+<P>
+
+<A name="ftp_nlist()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ftp_nlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$directory)</CODE>
+<P>
+
+<A name="ftp_rawlist()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ftp_rawlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$directory, ...)</CODE>
+<P>
+
+<A name="ftp_systype()"></A>
+<CODE><I>string</I> <BIG><B>ftp_systype</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream)</CODE>
+<P>
+
+<A name="ftp_fget()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_fget</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fp,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remote_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="ftp_nb_fget()"></A>
+<CODE><I>int</I> <BIG><B>ftp_nb_fget</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fp,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remote_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="ftp_pasv()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_pasv</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$pasv)</CODE>
+<P>
+
+<A name="ftp_get()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$local_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remote_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="ftp_nb_get()"></A>
+<CODE><I>int</I> <BIG><B>ftp_nb_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$local_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remote_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="ftp_nb_continue()"></A>
+<CODE><I>int</I> <BIG><B>ftp_nb_continue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream)</CODE>
+<P>
+
+<A name="ftp_fput()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_fput</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remote_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fp,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="ftp_nb_fput()"></A>
+<CODE><I>int</I> <BIG><B>ftp_nb_fput</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remote_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$fp,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="ftp_put()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_put</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remote_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$local_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="ftp_nb_put()"></A>
+<CODE><I>int</I> <BIG><B>ftp_nb_put</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$remote_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$local_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode, ...)</CODE>
+<P>
+
+<A name="ftp_size()"></A>
+<CODE><I>int</I> <BIG><B>ftp_size</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="ftp_mdtm()"></A>
+<CODE><I>int</I> <BIG><B>ftp_mdtm</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="ftp_rename()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_rename</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$src,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dest)</CODE>
+<P>
+
+<A name="ftp_delete()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_delete</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$file)</CODE>
+<P>
+
+<A name="ftp_site()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_site</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+<P>
+
+<A name="ftp_close()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream)</CODE>
+<P>
+
+<A name="ftp_set_option()"></A>
+<CODE><I>boolean</I> <BIG><B>ftp_set_option</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$option,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="ftp_get_option()"></A>
+<CODE><I>mixed</I> <BIG><B>ftp_get_option</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$option)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

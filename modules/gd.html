@@ -1,0 +1,895 @@
+<HTML><BODY>
+<H1>gd</H1>
+<P><b>Image Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.image.php"><code>http://www.php.net/manual/en/ref.image.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="GD_VERSION"></A>
+<CODE><BIG><B>GD_VERSION</B></BIG> = "?"</CODE>
+<P>
+
+<A name="GD_MAJOR_VERSION"></A>
+<CODE><BIG><B>GD_MAJOR_VERSION</B></BIG> = 2</CODE>
+<P>
+
+<A name="GD_MINOR_VERSION"></A>
+<CODE><BIG><B>GD_MINOR_VERSION</B></BIG> = 3</CODE>
+<P>
+
+<A name="GD_RELEASE_VERSION"></A>
+<CODE><BIG><B>GD_RELEASE_VERSION</B></BIG> = 4</CODE>
+<P>
+
+<A name="GD_EXTRA_VERSION"></A>
+<CODE><BIG><B>GD_EXTRA_VERSION</B></BIG> = "?"</CODE>
+<P>
+
+<A name="GD_BUNDLED"></A>
+<CODE><BIG><B>GD_BUNDLED</B></BIG> = 6</CODE>
+<P>
+
+<A name="IMG_GIF"></A>
+<CODE><BIG><B>IMG_GIF</B></BIG> = 7</CODE>
+<P>
+
+<A name="IMG_JPG"></A>
+<CODE><BIG><B>IMG_JPG</B></BIG> = 8</CODE>
+<P>
+
+<A name="IMG_JPEG"></A>
+<CODE><BIG><B>IMG_JPEG</B></BIG> = 9</CODE>
+<P>
+
+<A name="IMG_PNG"></A>
+<CODE><BIG><B>IMG_PNG</B></BIG> = 10</CODE>
+<P>
+
+<A name="IMG_WBMP"></A>
+<CODE><BIG><B>IMG_WBMP</B></BIG> = 11</CODE>
+<P>
+
+<A name="IMG_XPM"></A>
+<CODE><BIG><B>IMG_XPM</B></BIG> = 12</CODE>
+<P>
+
+<A name="IMG_COLOR_TILED"></A>
+<CODE><BIG><B>IMG_COLOR_TILED</B></BIG> = 13</CODE>
+<P>
+
+<A name="IMG_COLOR_STYLED"></A>
+<CODE><BIG><B>IMG_COLOR_STYLED</B></BIG> = 14</CODE>
+<P>
+
+<A name="IMG_COLOR_BRUSHED"></A>
+<CODE><BIG><B>IMG_COLOR_BRUSHED</B></BIG> = 15</CODE>
+<P>
+
+<A name="IMG_COLOR_STYLEDBRUSHED"></A>
+<CODE><BIG><B>IMG_COLOR_STYLEDBRUSHED</B></BIG> = 16</CODE>
+<P>
+
+<A name="IMG_COLOR_TRANSPARENT"></A>
+<CODE><BIG><B>IMG_COLOR_TRANSPARENT</B></BIG> = 17</CODE>
+<P>
+
+<A name="IMG_ARC_ROUNDED"></A>
+<CODE><BIG><B>IMG_ARC_ROUNDED</B></BIG> = 18</CODE>
+<P>
+
+<A name="IMG_ARC_PIE"></A>
+<CODE><BIG><B>IMG_ARC_PIE</B></BIG> = 19</CODE>
+<P>
+
+<A name="IMG_ARC_CHORD"></A>
+<CODE><BIG><B>IMG_ARC_CHORD</B></BIG> = 20</CODE>
+<P>
+
+<A name="IMG_ARC_NOFILL"></A>
+<CODE><BIG><B>IMG_ARC_NOFILL</B></BIG> = 21</CODE>
+<P>
+
+<A name="IMG_ARC_EDGED"></A>
+<CODE><BIG><B>IMG_ARC_EDGED</B></BIG> = 22</CODE>
+<P>
+
+<A name="IMG_GD2_RAW"></A>
+<CODE><BIG><B>IMG_GD2_RAW</B></BIG> = 23</CODE>
+<P>
+
+<A name="IMG_GD2_COMPRESSED"></A>
+<CODE><BIG><B>IMG_GD2_COMPRESSED</B></BIG> = 24</CODE>
+<P>
+
+<A name="IMG_EFFECT_REPLACE"></A>
+<CODE><BIG><B>IMG_EFFECT_REPLACE</B></BIG> = 25</CODE>
+<P>
+
+<A name="IMG_EFFECT_ALPHABLEND"></A>
+<CODE><BIG><B>IMG_EFFECT_ALPHABLEND</B></BIG> = 26</CODE>
+<P>
+
+<A name="IMG_EFFECT_NORMAL"></A>
+<CODE><BIG><B>IMG_EFFECT_NORMAL</B></BIG> = 27</CODE>
+<P>
+
+<A name="IMG_EFFECT_OVERLAY"></A>
+<CODE><BIG><B>IMG_EFFECT_OVERLAY</B></BIG> = 28</CODE>
+<P>
+
+<A name="IMG_FILTER_NEGATE"></A>
+<CODE><BIG><B>IMG_FILTER_NEGATE</B></BIG> = 29</CODE>
+<P>
+
+<A name="IMG_FILTER_GRAYSCALE"></A>
+<CODE><BIG><B>IMG_FILTER_GRAYSCALE</B></BIG> = 30</CODE>
+<P>
+
+<A name="IMG_FILTER_BRIGHTNESS"></A>
+<CODE><BIG><B>IMG_FILTER_BRIGHTNESS</B></BIG> = 31</CODE>
+<P>
+
+<A name="IMG_FILTER_CONTRAST"></A>
+<CODE><BIG><B>IMG_FILTER_CONTRAST</B></BIG> = 32</CODE>
+<P>
+
+<A name="IMG_FILTER_COLORIZE"></A>
+<CODE><BIG><B>IMG_FILTER_COLORIZE</B></BIG> = 33</CODE>
+<P>
+
+<A name="IMG_FILTER_EDGEDETECT"></A>
+<CODE><BIG><B>IMG_FILTER_EDGEDETECT</B></BIG> = 34</CODE>
+<P>
+
+<A name="IMG_FILTER_GAUSSIAN_BLUR"></A>
+<CODE><BIG><B>IMG_FILTER_GAUSSIAN_BLUR</B></BIG> = 35</CODE>
+<P>
+
+<A name="IMG_FILTER_SELECTIVE_BLUR"></A>
+<CODE><BIG><B>IMG_FILTER_SELECTIVE_BLUR</B></BIG> = 36</CODE>
+<P>
+
+<A name="IMG_FILTER_EMBOSS"></A>
+<CODE><BIG><B>IMG_FILTER_EMBOSS</B></BIG> = 37</CODE>
+<P>
+
+<A name="IMG_FILTER_MEAN_REMOVAL"></A>
+<CODE><BIG><B>IMG_FILTER_MEAN_REMOVAL</B></BIG> = 38</CODE>
+<P>
+
+<A name="IMG_FILTER_SMOOTH"></A>
+<CODE><BIG><B>IMG_FILTER_SMOOTH</B></BIG> = 39</CODE>
+<P>
+
+<A name="IMAGETYPE_GIF"></A>
+<CODE><BIG><B>IMAGETYPE_GIF</B></BIG> = 40</CODE>
+<P>
+
+<A name="IMAGETYPE_JPEG"></A>
+<CODE><BIG><B>IMAGETYPE_JPEG</B></BIG> = 41</CODE>
+<P>
+
+<A name="IMAGETYPE_PNG"></A>
+<CODE><BIG><B>IMAGETYPE_PNG</B></BIG> = 42</CODE>
+<P>
+
+<A name="IMAGETYPE_SWF"></A>
+<CODE><BIG><B>IMAGETYPE_SWF</B></BIG> = 43</CODE>
+<P>
+
+<A name="IMAGETYPE_PSD"></A>
+<CODE><BIG><B>IMAGETYPE_PSD</B></BIG> = 44</CODE>
+<P>
+
+<A name="IMAGETYPE_BMP"></A>
+<CODE><BIG><B>IMAGETYPE_BMP</B></BIG> = 45</CODE>
+<P>
+
+<A name="IMAGETYPE_WBMP"></A>
+<CODE><BIG><B>IMAGETYPE_WBMP</B></BIG> = 46</CODE>
+<P>
+
+<A name="IMAGETYPE_XBM"></A>
+<CODE><BIG><B>IMAGETYPE_XBM</B></BIG> = 47</CODE>
+<P>
+
+<A name="IMAGETYPE_TIFF_II"></A>
+<CODE><BIG><B>IMAGETYPE_TIFF_II</B></BIG> = 48</CODE>
+<P>
+
+<A name="IMAGETYPE_TIFF_MM"></A>
+<CODE><BIG><B>IMAGETYPE_TIFF_MM</B></BIG> = 49</CODE>
+<P>
+
+<A name="IMAGETYPE_IFF"></A>
+<CODE><BIG><B>IMAGETYPE_IFF</B></BIG> = 50</CODE>
+<P>
+
+<A name="IMAGETYPE_JB2"></A>
+<CODE><BIG><B>IMAGETYPE_JB2</B></BIG> = 51</CODE>
+<P>
+
+<A name="IMAGETYPE_JPC"></A>
+<CODE><BIG><B>IMAGETYPE_JPC</B></BIG> = 52</CODE>
+<P>
+
+<A name="IMAGETYPE_JP2"></A>
+<CODE><BIG><B>IMAGETYPE_JP2</B></BIG> = 53</CODE>
+<P>
+
+<A name="IMAGETYPE_JPX"></A>
+<CODE><BIG><B>IMAGETYPE_JPX</B></BIG> = 54</CODE>
+<P>
+
+<A name="IMAGETYPE_SWC"></A>
+<CODE><BIG><B>IMAGETYPE_SWC</B></BIG> = 55</CODE>
+<P>
+
+<A name="IMAGETYPE_ICO"></A>
+<CODE><BIG><B>IMAGETYPE_ICO</B></BIG> = 56</CODE>
+<P>
+
+<A name="PNG_NO_FILTER"></A>
+<CODE><BIG><B>PNG_NO_FILTER</B></BIG> = 57</CODE>
+<P>
+
+<A name="PNG_FILTER_NONE"></A>
+<CODE><BIG><B>PNG_FILTER_NONE</B></BIG> = 58</CODE>
+<P>
+
+<A name="PNG_FILTER_SUB"></A>
+<CODE><BIG><B>PNG_FILTER_SUB</B></BIG> = 59</CODE>
+<P>
+
+<A name="PNG_FILTER_UP"></A>
+<CODE><BIG><B>PNG_FILTER_UP</B></BIG> = 60</CODE>
+<P>
+
+<A name="PNG_FILTER_AVG"></A>
+<CODE><BIG><B>PNG_FILTER_AVG</B></BIG> = 61</CODE>
+<P>
+
+<A name="PNG_FILTER_PAETH"></A>
+<CODE><BIG><B>PNG_FILTER_PAETH</B></BIG> = 62</CODE>
+<P>
+
+<A name="PNG_ALL_FILTERS"></A>
+<CODE><BIG><B>PNG_ALL_FILTERS</B></BIG> = 63</CODE>
+<P>
+
+<A name="gd_info()"></A>
+<CODE><I>mixed[]</I> <BIG><B>gd_info</B></BIG>()</CODE>
+<P>
+
+<A name="getimagesize()"></A>
+<CODE><I>mixed[]</I> <BIG><B>getimagesize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$fn, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="imageloadfont()"></A>
+<CODE><I>int</I> <BIG><B>imageloadfont</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagesetstyle()"></A>
+<CODE><I>boolean</I> <BIG><B>imagesetstyle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$styles)</CODE>
+<P>
+
+<A name="imagecreatetruecolor()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatetruecolor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x_size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y_size)</CODE>
+<P>
+
+<A name="imageistruecolor()"></A>
+<CODE><I>boolean</I> <BIG><B>imageistruecolor</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im)</CODE>
+<P>
+
+<A name="imagetruecolortopalette()"></A>
+<CODE><I>void</I> <BIG><B>imagetruecolortopalette</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$ditherFlag,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$colorsWanted)</CODE>
+<P>
+
+<A name="imagecolormatch()"></A>
+<CODE><I>boolean</I> <BIG><B>imagecolormatch</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im2)</CODE>
+<P>
+
+<A name="imagesetthickness()"></A>
+<CODE><I>boolean</I> <BIG><B>imagesetthickness</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$thickness)</CODE>
+<P>
+
+<A name="imagefilledellipse()"></A>
+<CODE><I>boolean</I> <BIG><B>imagefilledellipse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cx,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cy,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$h,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$color)</CODE>
+<P>
+
+<A name="imagefilledarc()"></A>
+<CODE><I>boolean</I> <BIG><B>imagefilledarc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cx,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cy,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$h,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$e,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$style)</CODE>
+<P>
+
+<A name="imagealphablending()"></A>
+<CODE><I>boolean</I> <BIG><B>imagealphablending</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$on)</CODE>
+<P>
+
+<A name="imagesavealpha()"></A>
+<CODE><I>boolean</I> <BIG><B>imagesavealpha</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$on)</CODE>
+<P>
+
+<A name="imagelayereffect()"></A>
+<CODE><I>boolean</I> <BIG><B>imagelayereffect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$effect)</CODE>
+<P>
+
+<A name="imagecolorallocatealpha()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorallocatealpha</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$alpha)</CODE>
+<P>
+
+<A name="imagecolorresolvealpha()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorresolvealpha</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$alpha)</CODE>
+<P>
+
+<A name="imagecolorclosestalpha()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorclosestalpha</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$alpha)</CODE>
+<P>
+
+<A name="imagecolorexactalpha()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorexactalpha</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$alpha)</CODE>
+<P>
+
+<A name="imagecopyresampled()"></A>
+<CODE><I>boolean</I> <BIG><B>imagecopyresampled</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$dst_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$src_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_h,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_h)</CODE>
+<P>
+
+<A name="imagerotate()"></A>
+<CODE><I>resource</I> <BIG><B>imagerotate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$src_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$bgdcolor)</CODE>
+<P>
+
+<A name="imagesettile()"></A>
+<CODE><I>boolean</I> <BIG><B>imagesettile</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$image,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$tile)</CODE>
+<P>
+
+<A name="imagesetbrush()"></A>
+<CODE><I>boolean</I> <BIG><B>imagesetbrush</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$image,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$brush)</CODE>
+<P>
+
+<A name="imagecreate()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x_size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y_size)</CODE>
+<P>
+
+<A name="imagetypes()"></A>
+<CODE><I>int</I> <BIG><B>imagetypes</B></BIG>()</CODE>
+<P>
+
+<A name="imagecreatefromstring()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromstring</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$image)</CODE>
+<P>
+
+<A name="imagecreatefromgif()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromgif</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagecreatefromjpeg()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromjpeg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagecreatefrompng()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefrompng</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagecreatefromxbm()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromxbm</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagecreatefromxpm()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromxpm</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagecreatefromwbmp()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromwbmp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagecreatefromgd()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromgd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagecreatefromgd2()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromgd2</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagecreatefromgd2part()"></A>
+<CODE><I>resource</I> <BIG><B>imagecreatefromgd2part</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$srcX,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$srcY,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$width,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$height)</CODE>
+<P>
+
+<A name="imagexbm()"></A>
+<CODE><I>int</I> <BIG><B>imagexbm</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename, ...)</CODE>
+<P>
+
+<A name="imagegif()"></A>
+<CODE><I>boolean</I> <BIG><B>imagegif</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="imagepng()"></A>
+<CODE><I>boolean</I> <BIG><B>imagepng</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="imagejpeg()"></A>
+<CODE><I>boolean</I> <BIG><B>imagejpeg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="imagewbmp()"></A>
+<CODE><I>boolean</I> <BIG><B>imagewbmp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="imagegd()"></A>
+<CODE><I>boolean</I> <BIG><B>imagegd</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="imagegd2()"></A>
+<CODE><I>boolean</I> <BIG><B>imagegd2</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="imagedestroy()"></A>
+<CODE><I>boolean</I> <BIG><B>imagedestroy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im)</CODE>
+<P>
+
+<A name="imagecolorallocate()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorallocate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="imagepalettecopy()"></A>
+<CODE><I>void</I> <BIG><B>imagepalettecopy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$dst,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$src)</CODE>
+<P>
+
+<A name="imagecolorat()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y)</CODE>
+<P>
+
+<A name="imagecolorclosest()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorclosest</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="imagecolorclosesthwb()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorclosesthwb</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="imagecolordeallocate()"></A>
+<CODE><I>boolean</I> <BIG><B>imagecolordeallocate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="imagecolorresolve()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorresolve</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="imagecolorexact()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorexact</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="imagecolorset()"></A>
+<CODE><I>void</I> <BIG><B>imagecolorset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$red,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$green,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$blue)</CODE>
+<P>
+
+<A name="imagecolorsforindex()"></A>
+<CODE><I>mixed[]</I> <BIG><B>imagecolorsforindex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagegammacorrect()"></A>
+<CODE><I>boolean</I> <BIG><B>imagegammacorrect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$inputgamma,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$outputgamma)</CODE>
+<P>
+
+<A name="imagesetpixel()"></A>
+<CODE><I>boolean</I> <BIG><B>imagesetpixel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imageline()"></A>
+<CODE><I>boolean</I> <BIG><B>imageline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imagedashedline()"></A>
+<CODE><I>boolean</I> <BIG><B>imagedashedline</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> Use combination of <a href="#imagesetstyle()"><code>imagesetstyle()</code></a> and <a href="#imageline()"><code>imageline()</code></a> instead.</P>
+<P>
+ 
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="imagerectangle()"></A>
+<CODE><I>boolean</I> <BIG><B>imagerectangle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagefilledrectangle()"></A>
+<CODE><I>boolean</I> <BIG><B>imagefilledrectangle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y2,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagearc()"></A>
+<CODE><I>boolean</I> <BIG><B>imagearc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cx,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cy,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$h,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$e,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imageellipse()"></A>
+<CODE><I>boolean</I> <BIG><B>imageellipse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cx,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$cy,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$h,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$color)</CODE>
+<P>
+
+<A name="imagefilltoborder()"></A>
+<CODE><I>boolean</I> <BIG><B>imagefilltoborder</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$border,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagefill()"></A>
+<CODE><I>boolean</I> <BIG><B>imagefill</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagecolorstotal()"></A>
+<CODE><I>int</I> <BIG><B>imagecolorstotal</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im)</CODE>
+<P>
+
+<A name="imagecolortransparent()"></A>
+<CODE><I>int</I> <BIG><B>imagecolortransparent</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="imageinterlace()"></A>
+<CODE><I>int</I> <BIG><B>imageinterlace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="imagepolygon()"></A>
+<CODE><I>boolean</I> <BIG><B>imagepolygon</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$point,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$num_points,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagefilledpolygon()"></A>
+<CODE><I>boolean</I> <BIG><B>imagefilledpolygon</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$point,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$num_points,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagefontwidth()"></A>
+<CODE><I>int</I> <BIG><B>imagefontwidth</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$font)</CODE>
+<P>
+
+<A name="imagefontheight()"></A>
+<CODE><I>int</I> <BIG><B>imagefontheight</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$font)</CODE>
+<P>
+
+<A name="imagechar()"></A>
+<CODE><I>boolean</I> <BIG><B>imagechar</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$font,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$c,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagecharup()"></A>
+<CODE><I>boolean</I> <BIG><B>imagecharup</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$font,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$c,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagestring()"></A>
+<CODE><I>boolean</I> <BIG><B>imagestring</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$font,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagestringup()"></A>
+<CODE><I>boolean</I> <BIG><B>imagestringup</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$font,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col)</CODE>
+<P>
+
+<A name="imagecopy()"></A>
+<CODE><I>boolean</I> <BIG><B>imagecopy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$dst_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$src_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_h)</CODE>
+<P>
+
+<A name="imagecopymerge()"></A>
+<CODE><I>boolean</I> <BIG><B>imagecopymerge</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$src_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$dst_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_h,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pct)</CODE>
+<P>
+
+<A name="imagecopymergegray()"></A>
+<CODE><I>boolean</I> <BIG><B>imagecopymergegray</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$src_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$dst_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_h,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pct)</CODE>
+<P>
+
+<A name="imagecopyresized()"></A>
+<CODE><I>boolean</I> <BIG><B>imagecopyresized</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$dst_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$src_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$dst_h,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_w,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$src_h)</CODE>
+<P>
+
+<A name="imagesx()"></A>
+<CODE><I>int</I> <BIG><B>imagesx</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im)</CODE>
+<P>
+
+<A name="imagesy()"></A>
+<CODE><I>int</I> <BIG><B>imagesy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im)</CODE>
+<P>
+
+<A name="imageftbbox()"></A>
+<CODE><I>mixed[]</I> <BIG><B>imageftbbox</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$font_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text, ...)</CODE>
+<P>
+
+<A name="imagefttext()"></A>
+<CODE><I>mixed[]</I> <BIG><B>imagefttext</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$font_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text, ...)</CODE>
+<P>
+
+<A name="imagettfbbox()"></A>
+<CODE><I>mixed[]</I> <BIG><B>imagettfbbox</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$font_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="imagettftext()"></A>
+<CODE><I>mixed[]</I> <BIG><B>imagettftext</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$angle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$x,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$y,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$col,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$font_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="imagepsloadfont()"></A>
+<CODE><I>resource</I> <BIG><B>imagepsloadfont</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pathname)</CODE>
+<P>
+
+<A name="imagepscopyfont()"></A>
+<CODE><I>int</I> <BIG><B>imagepscopyfont</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$font_index)</CODE>
+<P>
+
+<A name="imagepsfreefont()"></A>
+<CODE><I>boolean</I> <BIG><B>imagepsfreefont</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$font_index)</CODE>
+<P>
+
+<A name="imagepsencodefont()"></A>
+<CODE><I>boolean</I> <BIG><B>imagepsencodefont</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$font_index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="imagepsextendfont()"></A>
+<CODE><I>boolean</I> <BIG><B>imagepsextendfont</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$font_index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$extend)</CODE>
+<P>
+
+<A name="imagepsslantfont()"></A>
+<CODE><I>boolean</I> <BIG><B>imagepsslantfont</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$font_index,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float</I>&nbsp;$slant)</CODE>
+<P>
+
+<A name="imagepstext()"></A>
+<CODE><I>mixed[]</I> <BIG><B>imagepstext</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$image,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$font,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$size,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$xcoord,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$ycoord, ...)</CODE>
+<P>
+
+<A name="imagepsbbox()"></A>
+<CODE><I>mixed[]</I> <BIG><B>imagepsbbox</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$font,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$size, ...)</CODE>
+<P>
+
+<A name="image2wbmp()"></A>
+<CODE><I>boolean</I> <BIG><B>image2wbmp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im, ...)</CODE>
+<P>
+
+<A name="jpeg2wbmp()"></A>
+<CODE><I>boolean</I> <BIG><B>jpeg2wbmp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$f_org,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$f_dest,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$d_height,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$d_width,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$threshold)</CODE>
+<P>
+
+<A name="png2wbmp()"></A>
+<CODE><I>boolean</I> <BIG><B>png2wbmp</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$f_org,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$f_dest,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$d_height,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$d_width,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$threshold)</CODE>
+<P>
+
+<A name="imagefilter()"></A>
+<CODE><I>boolean</I> <BIG><B>imagefilter</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$src_im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$filtertype, ...)</CODE>
+<P>
+
+<A name="imageantialias()"></A>
+<CODE><I>boolean</I> <BIG><B>imageantialias</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$im,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$on)</CODE>
+<P>
+
+<A name="iptcparse()"></A>
+<CODE><I>mixed[]</I> <BIG><B>iptcparse</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$iptcblock)</CODE>
+<P>
+
+<A name="iptcembed()"></A>
+<CODE><I>mixed</I> <BIG><B>iptcembed</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$iptcdata,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$jpeg_file_name, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

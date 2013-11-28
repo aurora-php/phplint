@@ -1,0 +1,576 @@
+<HTML><BODY>
+<H1>pdo</H1>
+<P><b>PHP Data Objects (PDO)</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="spl.html"><code>spl</code></a>, <a href="simplexml.html"><code>simplexml</code></a>, <a href="dom.html"><code>dom</code></a>, <a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/book.pdo.php"><code>http://www.php.net/manual/en/book.pdo.php</code></a>
+
+
+</P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="PDOException"></A>
+<pre>class <BIG><B>PDOException</B></BIG>
+      |  
+      `--<a href="standard.html#Exception"><code>Exception</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="PDOException::$errorInfo"></A>
+<CODE><I>mixed[int]</I> <BIG><B>$errorInfo</B></BIG> = NULL</CODE>
+<BLOCKQUOTE>
+<P><b>Corresponds to <a href="#PDO::errorInfo()"><code>PDO::errorInfo()</code></a> or <a href="#PDOStatement::errorInfo()"><code>PDOStatement::errorInfo()</code></a> </b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="PDOException::$message"></A>
+<CODE>protected <I>string</I> <BIG><B>$message</B></BIG> = ""</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::$message"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::$code"></A>
+<CODE>protected <I>int</I> <BIG><B>$code</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::$code"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::$file"></A>
+<CODE>protected <I>string</I> <BIG><B>$file</B></BIG></CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::$file"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::$line"></A>
+<CODE>protected <I>int</I> <BIG><B>$line</B></BIG> = 0</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::$line"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$message = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$code = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="standard.html#Exception"><code>Exception</code></a></I>&nbsp;$previous = NULL)</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::__construct()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::getMessage()"></A>
+<CODE>final <I>string</I> <BIG><B>getMessage</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::getMessage()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::getPrevious()"></A>
+<CODE>final <I><a href="standard.html#Exception"><code>Exception</code></a></I> <BIG><B>getPrevious</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::getPrevious()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::getCode()"></A>
+<CODE>final <I>int</I> <BIG><B>getCode</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::getCode()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::getFile()"></A>
+<CODE>final <I>string</I> <BIG><B>getFile</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::getFile()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::getLine()"></A>
+<CODE>final <I>int</I> <BIG><B>getLine</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::getLine()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::getTrace()"></A>
+<CODE>final <I>mixed[int][string]</I> <BIG><B>getTrace</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::getTrace()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::getTraceAsString()"></A>
+<CODE>final <I>string</I> <BIG><B>getTraceAsString</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::getTraceAsString()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::__toString()"><code>Exception</code></a>
+<P>
+
+<A name="PDOException::__clone()"></A>
+<CODE>final <I>void</I> <BIG><B>__clone</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="standard.html#Exception::__clone()"><code>Exception</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="PDOStatement"></A>
+<pre>class <BIG><B>PDOStatement</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="PDOStatement::$queryString"></A>
+<CODE><I>string</I> <BIG><B>$queryString</B></BIG></CODE>
+<P>
+
+<A name="PDOStatement::bindColumn()"></A>
+<CODE><I>boolean</I> <BIG><B>bindColumn</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$column,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>mixed</I>&nbsp;&amp; $param, ...)</CODE>
+<P>
+
+<A name="PDOStatement::bindParam()"></A>
+<CODE><I>boolean</I> <BIG><B>bindParam</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$parameter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>mixed</I>&nbsp;&amp; $variable, ...)</CODE>
+<P>
+
+<A name="PDOStatement::bindValue()"></A>
+<CODE><I>boolean</I> <BIG><B>bindValue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$parameter,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value, ...)</CODE>
+<P>
+
+<A name="PDOStatement::closeCursor()"></A>
+<CODE><I>boolean</I> <BIG><B>closeCursor</B></BIG>()</CODE>
+<P>
+
+<A name="PDOStatement::columnCount()"></A>
+<CODE><I>int</I> <BIG><B>columnCount</B></BIG>()</CODE>
+<P>
+
+<A name="PDOStatement::errorCode()"></A>
+<CODE><I>string</I> <BIG><B>errorCode</B></BIG>()</CODE>
+<P>
+
+<A name="PDOStatement::errorInfo()"></A>
+<CODE><I>mixed[int]</I> <BIG><B>errorInfo</B></BIG>()</CODE>
+<P>
+
+<A name="PDOStatement::execute()"></A>
+<CODE><I>boolean</I> <BIG><B>execute</B></BIG>(...)</CODE>
+<P>
+
+<A name="PDOStatement::fetch()"></A>
+<CODE><I>mixed</I> <BIG><B>fetch</B></BIG>(...)</CODE>
+<P>
+
+<A name="PDOStatement::fetchAll()"></A>
+<CODE><I>mixed[int]</I> <BIG><B>fetchAll</B></BIG>(...)</CODE>
+<P>
+
+<A name="PDOStatement::fetchColumn()"></A>
+<CODE><I>string</I> <BIG><B>fetchColumn</B></BIG>(...)</CODE>
+<P>
+
+<A name="PDOStatement::getAttribute()"></A>
+<CODE><I>mixed</I> <BIG><B>getAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attribute)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="PDOStatement::getColumnMeta()"></A>
+<CODE><I>mixed</I> <BIG><B>getColumnMeta</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column)</CODE>
+<BLOCKQUOTE>
+<P><b>EXPERIMENTAL: please read the manual </b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="PDOStatement::nextRowset()"></A>
+<CODE><I>boolean</I> <BIG><B>nextRowset</B></BIG>()</CODE>
+<P>
+
+<A name="PDOStatement::rowCount()"></A>
+<CODE><I>int</I> <BIG><B>rowCount</B></BIG>()</CODE>
+<P>
+
+<A name="PDOStatement::setAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>setAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attribute,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="PDOStatement::setFetchMode()"></A>
+<CODE><I>boolean</I> <BIG><B>setFetchMode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$_see__manual_, ...)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="PDO"></A>
+<pre>class <BIG><B>PDO</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P>
+WARNING: all the constants are dummy values
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="PDO::PARAM_BOOL"></A>
+<CODE><BIG><B>PARAM_BOOL</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_NULL"></A>
+<CODE><BIG><B>PARAM_NULL</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_INT"></A>
+<CODE><BIG><B>PARAM_INT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_STR"></A>
+<CODE><BIG><B>PARAM_STR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_LOB"></A>
+<CODE><BIG><B>PARAM_LOB</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_STMT"></A>
+<CODE><BIG><B>PARAM_STMT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_INPUT_OUTPUT"></A>
+<CODE><BIG><B>PARAM_INPUT_OUTPUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_LAZY"></A>
+<CODE><BIG><B>FETCH_LAZY</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_ASSOC"></A>
+<CODE><BIG><B>FETCH_ASSOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_NAMED"></A>
+<CODE><BIG><B>FETCH_NAMED</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_NUM"></A>
+<CODE><BIG><B>FETCH_NUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_BOTH"></A>
+<CODE><BIG><B>FETCH_BOTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_OBJ"></A>
+<CODE><BIG><B>FETCH_OBJ</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_BOUND"></A>
+<CODE><BIG><B>FETCH_BOUND</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_COLUMN"></A>
+<CODE><BIG><B>FETCH_COLUMN</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_CLASS"></A>
+<CODE><BIG><B>FETCH_CLASS</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_INTO"></A>
+<CODE><BIG><B>FETCH_INTO</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_FUNC"></A>
+<CODE><BIG><B>FETCH_FUNC</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_GROUP"></A>
+<CODE><BIG><B>FETCH_GROUP</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_UNIQUE"></A>
+<CODE><BIG><B>FETCH_UNIQUE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_CLASSTYPE"></A>
+<CODE><BIG><B>FETCH_CLASSTYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_SERIALIZE"></A>
+<CODE><BIG><B>FETCH_SERIALIZE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_PROPS_LATE"></A>
+<CODE><BIG><B>FETCH_PROPS_LATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_KEY_PAIR"></A>
+<CODE><BIG><B>FETCH_KEY_PAIR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_AUTOCOMMIT"></A>
+<CODE><BIG><B>ATTR_AUTOCOMMIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_PREFETCH"></A>
+<CODE><BIG><B>ATTR_PREFETCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_TIMEOUT"></A>
+<CODE><BIG><B>ATTR_TIMEOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_ERRMODE"></A>
+<CODE><BIG><B>ATTR_ERRMODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_SERVER_VERSION"></A>
+<CODE><BIG><B>ATTR_SERVER_VERSION</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_CLIENT_VERSION"></A>
+<CODE><BIG><B>ATTR_CLIENT_VERSION</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_SERVER_INFO"></A>
+<CODE><BIG><B>ATTR_SERVER_INFO</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_CONNECTION_STATUS"></A>
+<CODE><BIG><B>ATTR_CONNECTION_STATUS</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_CASE"></A>
+<CODE><BIG><B>ATTR_CASE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_CURSOR_NAME"></A>
+<CODE><BIG><B>ATTR_CURSOR_NAME</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_CURSOR"></A>
+<CODE><BIG><B>ATTR_CURSOR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_DRIVER_NAME"></A>
+<CODE><BIG><B>ATTR_DRIVER_NAME</B></BIG> = ""</CODE>
+<P>
+
+<A name="PDO::ATTR_ORACLE_NULLS"></A>
+<CODE><BIG><B>ATTR_ORACLE_NULLS</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_PERSISTENT"></A>
+<CODE><BIG><B>ATTR_PERSISTENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_STATEMENT_CLASS"></A>
+<CODE><BIG><B>ATTR_STATEMENT_CLASS</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_FETCH_CATALOG_NAMES"></A>
+<CODE><BIG><B>ATTR_FETCH_CATALOG_NAMES</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_FETCH_TABLE_NAMES"></A>
+<CODE><BIG><B>ATTR_FETCH_TABLE_NAMES</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_STRINGIFY_FETCHES"></A>
+<CODE><BIG><B>ATTR_STRINGIFY_FETCHES</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_MAX_COLUMN_LEN"></A>
+<CODE><BIG><B>ATTR_MAX_COLUMN_LEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_DEFAULT_FETCH_MODE"></A>
+<CODE><BIG><B>ATTR_DEFAULT_FETCH_MODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ATTR_EMULATE_PREPARES"></A>
+<CODE><BIG><B>ATTR_EMULATE_PREPARES</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ERRMODE_SILENT"></A>
+<CODE><BIG><B>ERRMODE_SILENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ERRMODE_WARNING"></A>
+<CODE><BIG><B>ERRMODE_WARNING</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ERRMODE_EXCEPTION"></A>
+<CODE><BIG><B>ERRMODE_EXCEPTION</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::CASE_NATURAL"></A>
+<CODE><BIG><B>CASE_NATURAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::CASE_LOWER"></A>
+<CODE><BIG><B>CASE_LOWER</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::CASE_UPPER"></A>
+<CODE><BIG><B>CASE_UPPER</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::NULL_NATURAL"></A>
+<CODE><BIG><B>NULL_NATURAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::NULL_EMPTY_STRING"></A>
+<CODE><BIG><B>NULL_EMPTY_STRING</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::NULL_TO_STRING"></A>
+<CODE><BIG><B>NULL_TO_STRING</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_ORI_NEXT"></A>
+<CODE><BIG><B>FETCH_ORI_NEXT</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_ORI_PRIOR"></A>
+<CODE><BIG><B>FETCH_ORI_PRIOR</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_ORI_FIRST"></A>
+<CODE><BIG><B>FETCH_ORI_FIRST</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_ORI_LAST"></A>
+<CODE><BIG><B>FETCH_ORI_LAST</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_ORI_ABS"></A>
+<CODE><BIG><B>FETCH_ORI_ABS</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::FETCH_ORI_REL"></A>
+<CODE><BIG><B>FETCH_ORI_REL</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::CURSOR_FWDONLY"></A>
+<CODE><BIG><B>CURSOR_FWDONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::CURSOR_SCROLL"></A>
+<CODE><BIG><B>CURSOR_SCROLL</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::ERR_NONE"></A>
+<CODE><BIG><B>ERR_NONE</B></BIG> = ""</CODE>
+<P>
+
+<A name="PDO::PARAM_EVT_ALLOC"></A>
+<CODE><BIG><B>PARAM_EVT_ALLOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_EVT_FREE"></A>
+<CODE><BIG><B>PARAM_EVT_FREE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_EVT_EXEC_PRE"></A>
+<CODE><BIG><B>PARAM_EVT_EXEC_PRE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_EVT_EXEC_POST"></A>
+<CODE><BIG><B>PARAM_EVT_EXEC_POST</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_EVT_FETCH_PRE"></A>
+<CODE><BIG><B>PARAM_EVT_FETCH_PRE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_EVT_FETCH_POST"></A>
+<CODE><BIG><B>PARAM_EVT_FETCH_POST</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::PARAM_EVT_NORMALIZE"></A>
+<CODE><BIG><B>PARAM_EVT_NORMALIZE</B></BIG> = 1</CODE>
+<P>
+
+<A name="PDO::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dsn, ...)</CODE>
+<br>throws <a href="#PDOException"><code>PDOException</code></a><P>
+
+<A name="PDO::beginTransaction()"></A>
+<CODE><I>boolean</I> <BIG><B>beginTransaction</B></BIG>()</CODE>
+<P>
+
+<A name="PDO::commit()"></A>
+<CODE><I>boolean</I> <BIG><B>commit</B></BIG>()</CODE>
+<P>
+
+<A name="PDO::errorCode()"></A>
+<CODE><I>string</I> <BIG><B>errorCode</B></BIG>()</CODE>
+<P>
+
+<A name="PDO::errorInfo()"></A>
+<CODE><I>string[int]</I> <BIG><B>errorInfo</B></BIG>()</CODE>
+<P>
+
+<A name="PDO::exec()"></A>
+<CODE><I>mixed</I> <BIG><B>exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$statement)</CODE>
+<P>
+
+<A name="PDO::getAttribute()"></A>
+<CODE><I>mixed</I> <BIG><B>getAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attribute)</CODE>
+<P>
+
+<A name="PDO::lastInsertId()"></A>
+<CODE><I>string</I> <BIG><B>lastInsertId</B></BIG>(...)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="PDO::prepare()"></A>
+<CODE><I><a href="#PDOStatement"><code>PDOStatement</code></a></I> <BIG><B>prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$statement, ...)</CODE>
+<BLOCKQUOTE>
+<P><b>WARNING: it returns FALSE on error </b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="PDO::query()"></A>
+<CODE><I><a href="#PDOStatement"><code>PDOStatement</code></a></I> <BIG><B>query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$statement, ...)</CODE>
+<BLOCKQUOTE>
+<P><b>WARNING: read the manual for more arguments and return values </b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="PDO::quote()"></A>
+<CODE><I>string</I> <BIG><B>quote</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str, ...)</CODE>
+<P>
+
+<A name="PDO::rollBack()"></A>
+<CODE><I>boolean</I> <BIG><B>rollBack</B></BIG>()</CODE>
+<P>
+
+<A name="PDO::setAttribute()"></A>
+<CODE><I>boolean</I> <BIG><B>setAttribute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$attribute,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

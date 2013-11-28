@@ -1,0 +1,1529 @@
+<HTML><BODY>
+<H1>standard_reflection</H1>
+<P><b>Reflection</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+Actually this module should be part of the standard module, and
+	it is available on any PHP 5 installation. I made a separated one
+	for performance reasons, since it is seldom used.
+	<p>
+
+	See: <a href="http://www.php.net/manual/en/book.reflection.php"><code>www.php.net/manual/en/book.reflection.php</code></a>
+
+</P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionClass"></A>
+<pre>class <BIG><B>ReflectionClass</B></BIG>
+      |  
+      `--(<i><a href="#Reflector"><code>Reflector</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ReflectionClass::IS_IMPLICIT_ABSTRACT"></A>
+<CODE><BIG><B>IS_IMPLICIT_ABSTRACT</B></BIG> = 16</CODE>
+<P>
+
+<A name="ReflectionClass::IS_EXPLICIT_ABSTRACT"></A>
+<CODE><BIG><B>IS_EXPLICIT_ABSTRACT</B></BIG> = 32</CODE>
+<P>
+
+<A name="ReflectionClass::IS_FINAL"></A>
+<CODE><BIG><B>IS_FINAL</B></BIG> = 64</CODE>
+<P>
+
+<A name="ReflectionClass::__clone()"></A>
+<CODE><I>void</I> <BIG><B>__clone</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ReflectionClass::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#Reflector::__toString()"><code>Reflector</code></a><P>
+
+<A name="ReflectionClass::export()"></A>
+<CODE>static <I>string</I> <BIG><B>export</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$class_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$return_ = FALSE)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><P>
+
+<A name="ReflectionClass::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isInternal()"></A>
+<CODE><I>boolean</I> <BIG><B>isInternal</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isUserDefined()"></A>
+<CODE><I>boolean</I> <BIG><B>isUserDefined</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isInstantiable()"></A>
+<CODE><I>boolean</I> <BIG><B>isInstantiable</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::hasConstant()"></A>
+<CODE><I>boolean</I> <BIG><B>hasConstant</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ReflectionClass::hasMethod()"></A>
+<CODE><I>boolean</I> <BIG><B>hasMethod</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ReflectionClass::hasProperty()"></A>
+<CODE><I>boolean</I> <BIG><B>hasProperty</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ReflectionClass::getFileName()"></A>
+<CODE><I>string</I> <BIG><B>getFileName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getStartLine()"></A>
+<CODE><I>int</I> <BIG><B>getStartLine</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getEndLine()"></A>
+<CODE><I>int</I> <BIG><B>getEndLine</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getDocComment()"></A>
+<CODE><I>string</I> <BIG><B>getDocComment</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getConstructor()"></A>
+<CODE><I><a href="#ReflectionMethod"><code>ReflectionMethod</code></a></I> <BIG><B>getConstructor</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getMethod()"></A>
+<CODE><I><a href="#ReflectionMethod"><code>ReflectionMethod</code></a></I> <BIG><B>getMethod</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><P>
+
+<A name="ReflectionClass::getMethods()"></A>
+<CODE><I><a href="#ReflectionMethod"><code>ReflectionMethod</code></a>[int]</I> <BIG><B>getMethods</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getProperty()"></A>
+<CODE><I><a href="#ReflectionProperty"><code>ReflectionProperty</code></a></I> <BIG><B>getProperty</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><P>
+
+<A name="ReflectionClass::getProperties()"></A>
+<CODE><I><a href="#ReflectionProperty"><code>ReflectionProperty</code></a>[int]</I> <BIG><B>getProperties</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$filter = 0)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionClass::getConstants()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getConstants</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the list of class constants</b></P><P>
+The key is the constants' name, the value is its value.
+	
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionClass::getConstant()"></A>
+<CODE><I>mixed</I> <BIG><B>getConstant</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ReflectionClass::getInterfaces()"></A>
+<CODE><I><a href="#ReflectionClass"><code>ReflectionClass</code></a>[int]</I> <BIG><B>getInterfaces</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isInterface()"></A>
+<CODE><I>boolean</I> <BIG><B>isInterface</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isAbstract()"></A>
+<CODE><I>boolean</I> <BIG><B>isAbstract</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isFinal()"></A>
+<CODE><I>boolean</I> <BIG><B>isFinal</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getModifiers()"></A>
+<CODE><I>int</I> <BIG><B>getModifiers</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isInstance()"></A>
+<CODE><I>boolean</I> <BIG><B>isInstance</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$obj)</CODE>
+<P>
+
+<A name="ReflectionClass::newInstance()"></A>
+<CODE><I>object</I> <BIG><B>newInstance</B></BIG>(...)</CODE>
+<P>
+
+<A name="ReflectionClass::newInstanceArgs()"></A>
+<CODE><I>object</I> <BIG><B>newInstanceArgs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[int]</I>&nbsp;$args_)</CODE>
+<P>
+
+<A name="ReflectionClass::getParentClass()"></A>
+<CODE><I><a href="#ReflectionClass"><code>ReflectionClass</code></a></I> <BIG><B>getParentClass</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isSubclassOf()"></A>
+<CODE><I>boolean</I> <BIG><B>isSubclassOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#ReflectionClass"><code>ReflectionClass</code></a></I>&nbsp;$class_)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionClass::getStaticProperties()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getStaticProperties</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns static properties</b></P><P>
+Static properties that lack an initial value explicitly defined
+		are set to NULL.
+	
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionClass::getStaticPropertyValue()"></A>
+<CODE><I>mixed</I> <BIG><B>getStaticPropertyValue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name, ...)</CODE>
+<P>
+
+<A name="ReflectionClass::setStaticPropertyValue()"></A>
+<CODE><I>void</I> <BIG><B>setStaticPropertyValue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="ReflectionClass::getDefaultProperties()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getDefaultProperties</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::isIterateable()"></A>
+<CODE><I>boolean</I> <BIG><B>isIterateable</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::implementsInterface()"></A>
+<CODE><I>boolean</I> <BIG><B>implementsInterface</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ReflectionClass::getExtension()"></A>
+<CODE><I><a href="#ReflectionExtension"><code>ReflectionExtension</code></a></I> <BIG><B>getExtension</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getExtensionName()"></A>
+<CODE><I>string</I> <BIG><B>getExtensionName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getNamespaceName()"></A>
+<CODE><I>string</I> <BIG><B>getNamespaceName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getShortName()"></A>
+<CODE><I>string</I> <BIG><B>getShortName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::inNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>inNamespace</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionClass::getInterfaceNames()"></A>
+<CODE><I>string[int]</I> <BIG><B>getInterfaceNames</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionFunction"></A>
+<pre>class <BIG><B>ReflectionFunction</B></BIG>
+      |  
+      `--<a href="#ReflectionFunctionAbstract"><code>ReflectionFunctionAbstract</code></a>
+           `--(<i><a href="#Reflector"><code>Reflector</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ReflectionFunction::IS_DEPRECATED"></A>
+<CODE><BIG><B>IS_DEPRECATED</B></BIG> = 262144</CODE>
+<P>
+
+<A name="ReflectionFunction::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ReflectionFunction::export()"></A>
+<CODE>static <I>string</I> <BIG><B>export</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$func_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$return_ = FALSE)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><P>
+
+<A name="ReflectionFunction::invoke()"></A>
+<CODE><I>mixed</I> <BIG><B>invoke</B></BIG>(...)</CODE>
+<P>
+
+<A name="ReflectionFunction::invokeArgs()"></A>
+<CODE><I>mixed</I> <BIG><B>invokeArgs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[int]</I>&nbsp;$args_)</CODE>
+<P>
+
+<A name="ReflectionFunction::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#Reflector::__toString()"><code>Reflector</code></a><P>
+
+<A name="ReflectionFunction::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::isInternal()"></A>
+<CODE><I>boolean</I> <BIG><B>isInternal</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::isInternal()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::isUserDefined()"></A>
+<CODE><I>boolean</I> <BIG><B>isUserDefined</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::isUserDefined()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getFileName()"></A>
+<CODE><I>string</I> <BIG><B>getFileName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getFileName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getStartLine()"></A>
+<CODE><I>int</I> <BIG><B>getStartLine</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getStartLine()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getEndLine()"></A>
+<CODE><I>int</I> <BIG><B>getEndLine</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getEndLine()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getDocComment()"></A>
+<CODE><I>string</I> <BIG><B>getDocComment</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getDocComment()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getStaticVariables()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getStaticVariables</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getStaticVariables()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::returnsReference()"></A>
+<CODE><I>boolean</I> <BIG><B>returnsReference</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::returnsReference()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getParameters()"></A>
+<CODE><I><a href="#ReflectionParameter"><code>ReflectionParameter</code></a>[int]</I> <BIG><B>getParameters</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getParameters()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getNumberOfParameters()"></A>
+<CODE><I>int</I> <BIG><B>getNumberOfParameters</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getNumberOfParameters()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getNumberOfRequiredParameters()"></A>
+<CODE><I>int</I> <BIG><B>getNumberOfRequiredParameters</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getNumberOfRequiredParameters()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getExtension()"></A>
+<CODE><I><a href="#ReflectionExtension"><code>ReflectionExtension</code></a></I> <BIG><B>getExtension</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getExtension()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getExtensionName()"></A>
+<CODE><I>string</I> <BIG><B>getExtensionName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getExtensionName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getNamespaceName()"></A>
+<CODE><I>string</I> <BIG><B>getNamespaceName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getNamespaceName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::getShortName()"></A>
+<CODE><I>string</I> <BIG><B>getShortName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getShortName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::inNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>inNamespace</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::inNamespace()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::isClosure()"></A>
+<CODE><I>boolean</I> <BIG><B>isClosure</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::isClosure()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionFunction::isDeprecated()"></A>
+<CODE><I>boolean</I> <BIG><B>isDeprecated</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::isDeprecated()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionExtension"></A>
+<pre>class <BIG><B>ReflectionExtension</B></BIG>
+      |  
+      `--(<i><a href="#Reflector"><code>Reflector</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ReflectionExtension::__clone()"></A>
+<CODE><I>void</I> <BIG><B>__clone</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><P>
+
+<A name="ReflectionExtension::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#Reflector::__toString()"><code>Reflector</code></a><P>
+
+<A name="ReflectionExtension::export()"></A>
+<CODE>static <I>string</I> <BIG><B>export</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$extension_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$return_ = FALSE)</CODE>
+<P>
+
+<A name="ReflectionExtension::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::getVersion()"></A>
+<CODE><I>string</I> <BIG><B>getVersion</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::getFunctions()"></A>
+<CODE><I><a href="#ReflectionFunction"><code>ReflectionFunction</code></a>[int]</I> <BIG><B>getFunctions</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::getConstants()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getConstants</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::getINIEntries()"></A>
+<CODE><I>string[string]</I> <BIG><B>getINIEntries</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::getClasses()"></A>
+<CODE><I><a href="#ReflectionClass"><code>ReflectionClass</code></a>[int]</I> <BIG><B>getClasses</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::getClassNames()"></A>
+<CODE><I>string[int]</I> <BIG><B>getClassNames</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::info()"></A>
+<CODE><I>string</I> <BIG><B>info</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionExtension::getDependencies()"></A>
+<CODE><I>string[string]</I> <BIG><B>getDependencies</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionException"></A>
+<pre>class <BIG><B>ReflectionException</B></BIG>
+      |  
+      `--<a href="standard.html#Exception"><code>Exception</code></a>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<i>This class merely extends another class and does not add any new member. Please see the extended class for details.</i><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Reflector"></A>
+<pre>interface <BIG><B>Reflector</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Reflector::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter"></A>
+<pre>class <BIG><B>ReflectionParameter</B></BIG>
+      |  
+      `--(<i><a href="#Reflector"><code>Reflector</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$function_or_method,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$parameter_name)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Creates an object that represents a parameter</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$function_or_method&nbsp;&nbsp;</code></b></td> <td valign=top>A string giving the name of a
+ function, or an array[int]string giving the name of the class and the
+ name of the method in this order, example: array("MyClass", "myMethod").</td></tr>
+<tr><td valign=top><b><code>$parameter_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the parameter.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the function, class method or
+ parameter does not exist.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#Reflector::__toString()"><code>Reflector</code></a><PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::export()"></A>
+<CODE>static <I>string</I> <BIG><B>export</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$function_or_method,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$parameter_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$return_ = FALSE)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Returns a short description of a parameter</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$function_or_method&nbsp;&nbsp;</code></b></td> <td valign=top>A string giving the name of a
+ function, or an array[int]string giving the name of the class and the
+ name of the method, example: array("MyClass", "myMethod").</td></tr>
+<tr><td valign=top><b><code>$parameter_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the parameter.</td></tr>
+<tr><td valign=top><b><code>$return_&nbsp;&nbsp;</code></b></td> <td valign=top>If TRUE return a string, otherwise the string
+ is emitted on standard output and return NULL.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The description of the parameter if $return_ is TRUE,
+ or NULL if $return_ is FALSE.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the function, class method or
+ parameter does not exist.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::getDeclaringFunction()"></A>
+<CODE><I>mixed</I> <BIG><B>getDeclaringFunction</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the function to which this parameter belongs</b></P><P>
+<p><b>Return:</b> Returns an instance of <a href="#ReflectionFunction"><code>ReflectionFunction</code></a> if the
+ parameter belongs to a function, and returns an associative array
+ array("name"=&gt;"MethodName", "class"=&gt;"ClassName") if the parameter
+ belongs to a method.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::getDeclaringClass()"></A>
+<CODE><I><a href="#ReflectionClass"><code>ReflectionClass</code></a></I> <BIG><B>getDeclaringClass</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the class to which the method of this parameter belongs</b></P><P>
+<p><b>Return:</b> The class to which the method of this
+ parameter belongs, or NULL if the parameter refers to a function.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::getClass()"></A>
+<CODE><I>mixed</I> <BIG><B>getClass</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>This method always return NULL</b></P><P>
+<p><b>Return:</b> Always returns NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::isArray()"></A>
+<CODE><I>boolean</I> <BIG><B>isArray</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionParameter::allowsNull()"></A>
+<CODE><I>boolean</I> <BIG><B>allowsNull</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionParameter::isPassedByReference()"></A>
+<CODE><I>boolean</I> <BIG><B>isPassedByReference</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionParameter::isOptional()"></A>
+<CODE><I>boolean</I> <BIG><B>isOptional</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionParameter::isDefaultValueAvailable()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefaultValueAvailable</B></BIG>()</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::getDefaultValue()"></A>
+<CODE><I>mixed</I> <BIG><B>getDefaultValue</B></BIG>()</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Returns the default value of this parameter</b></P><P>
+<p><b>Return:</b> The default value of the parameter.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the parameter does not has a default
+ value.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionParameter::getPosition()"></A>
+<CODE><I>int</I> <BIG><B>getPosition</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the ordinal position occupied by this parameter</b></P><P>
+<p><b>Return:</b> Ordinal position occupied by this parameter, the first
+ parameter being the number 0.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionFunctionAbstract"></A>
+<pre>abstract class <BIG><B>ReflectionFunctionAbstract</B></BIG>
+      |  
+      `--(<i><a href="#Reflector"><code>Reflector</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::isInternal()"></A>
+<CODE><I>boolean</I> <BIG><B>isInternal</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::isUserDefined()"></A>
+<CODE><I>boolean</I> <BIG><B>isUserDefined</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getFileName()"></A>
+<CODE><I>string</I> <BIG><B>getFileName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getStartLine()"></A>
+<CODE><I>int</I> <BIG><B>getStartLine</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getEndLine()"></A>
+<CODE><I>int</I> <BIG><B>getEndLine</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getDocComment()"></A>
+<CODE><I>string</I> <BIG><B>getDocComment</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getStaticVariables()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getStaticVariables</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::returnsReference()"></A>
+<CODE><I>boolean</I> <BIG><B>returnsReference</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getParameters()"></A>
+<CODE><I><a href="#ReflectionParameter"><code>ReflectionParameter</code></a>[int]</I> <BIG><B>getParameters</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getNumberOfParameters()"></A>
+<CODE><I>int</I> <BIG><B>getNumberOfParameters</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getNumberOfRequiredParameters()"></A>
+<CODE><I>int</I> <BIG><B>getNumberOfRequiredParameters</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getExtension()"></A>
+<CODE><I><a href="#ReflectionExtension"><code>ReflectionExtension</code></a></I> <BIG><B>getExtension</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getExtensionName()"></A>
+<CODE><I>string</I> <BIG><B>getExtensionName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getNamespaceName()"></A>
+<CODE><I>string</I> <BIG><B>getNamespaceName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::getShortName()"></A>
+<CODE><I>string</I> <BIG><B>getShortName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::inNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>inNamespace</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::isClosure()"></A>
+<CODE><I>boolean</I> <BIG><B>isClosure</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::isDeprecated()"></A>
+<CODE><I>boolean</I> <BIG><B>isDeprecated</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionFunctionAbstract::__toString()"></A>
+<CODE>abstract <I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#Reflector::__toString()"><code>Reflector</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionMethod"></A>
+<pre>class <BIG><B>ReflectionMethod</B></BIG>
+      |  
+      `--<a href="#ReflectionFunctionAbstract"><code>ReflectionFunctionAbstract</code></a>
+           `--(<i><a href="#Reflector"><code>Reflector</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ReflectionMethod::IS_STATIC"></A>
+<CODE><BIG><B>IS_STATIC</B></BIG> = 1</CODE>
+<P>
+
+<A name="ReflectionMethod::IS_PUBLIC"></A>
+<CODE><BIG><B>IS_PUBLIC</B></BIG> = 256</CODE>
+<P>
+
+<A name="ReflectionMethod::IS_PROTECTED"></A>
+<CODE><BIG><B>IS_PROTECTED</B></BIG> = 512</CODE>
+<P>
+
+<A name="ReflectionMethod::IS_PRIVATE"></A>
+<CODE><BIG><B>IS_PRIVATE</B></BIG> = 1024</CODE>
+<P>
+
+<A name="ReflectionMethod::IS_ABSTRACT"></A>
+<CODE><BIG><B>IS_ABSTRACT</B></BIG> = 2</CODE>
+<P>
+
+<A name="ReflectionMethod::IS_FINAL"></A>
+<CODE><BIG><B>IS_FINAL</B></BIG> = 4</CODE>
+<P>
+
+<A name="ReflectionMethod::$name"></A>
+<CODE><I>string</I> <BIG><B>$name</B></BIG></CODE>
+<P>
+
+<A name="ReflectionMethod::$class_"></A>
+<CODE><I>string</I> <BIG><B>$class_</B></BIG></CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionMethod::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$method_name)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Creates a new ReflectionMethod object</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$class_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the class.</td></tr>
+<tr><td valign=top><b><code>$method_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the method.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the class or the method does not
+ exist.  Note that class autoloading is performed in order to try
+ resolving undefined classes.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionMethod::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#Reflector::__toString()"><code>Reflector</code></a><P>
+
+<A name="ReflectionMethod::export()"></A>
+<CODE>static <I>string</I> <BIG><B>export</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$class_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$method_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$return_ = FALSE)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><PRE>
+
+</PRE>
+
+<A name="ReflectionMethod::invoke()"></A>
+<CODE><I>mixed</I> <BIG><B>invoke</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$object_, ...)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Invoke the method</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$object_&nbsp;&nbsp;</code></b></td> <td valign=top>The instance of the class to which the
+ method belongs. If the method is static this parameter is ignored
+ and NULL can be passed instead.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Return value from the method.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the method is non-static and
+ the object passed isn't instance of the class this method was
+ declared in.  If the number of parameters passed does not match
+ the signature of the method. If the method is private or protected and
+ cannot be invoked from the current context.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionMethod::invokeArgs()"></A>
+<CODE><I>mixed</I> <BIG><B>invokeArgs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$object_,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[int]</I>&nbsp;$args_)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Invoke the method</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$object_&nbsp;&nbsp;</code></b></td> <td valign=top>The instance of the class to which the
+ method belongs. If the method is static this parameter is ignored
+ and NULL can be passed instead.</td></tr>
+<tr><td valign=top><b><code>$args_&nbsp;&nbsp;</code></b></td> <td valign=top>Arguments to be passed.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Return value from the method.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the method is non-static and
+ the object passed isn't instance of the class this method was
+ declared in.  If the number of parameters passed does not match
+ the signature of the method. If the method is private or protected and
+ cannot be invoked from the current context.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionMethod::isFinal()"></A>
+<CODE><I>boolean</I> <BIG><B>isFinal</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::isAbstract()"></A>
+<CODE><I>boolean</I> <BIG><B>isAbstract</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::isPublic()"></A>
+<CODE><I>boolean</I> <BIG><B>isPublic</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::isPrivate()"></A>
+<CODE><I>boolean</I> <BIG><B>isPrivate</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::isProtected()"></A>
+<CODE><I>boolean</I> <BIG><B>isProtected</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::isStatic()"></A>
+<CODE><I>boolean</I> <BIG><B>isStatic</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::isConstructor()"></A>
+<CODE><I>boolean</I> <BIG><B>isConstructor</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::isDestructor()"></A>
+<CODE><I>boolean</I> <BIG><B>isDestructor</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::getModifiers()"></A>
+<CODE><I>int</I> <BIG><B>getModifiers</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::getDeclaringClass()"></A>
+<CODE><I><a href="#ReflectionClass"><code>ReflectionClass</code></a></I> <BIG><B>getDeclaringClass</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionMethod::setAccessible()"></A>
+<CODE><I>void</I> <BIG><B>setAccessible</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$accessible)</CODE>
+<P>
+
+<A name="ReflectionMethod::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::isInternal()"></A>
+<CODE><I>boolean</I> <BIG><B>isInternal</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::isInternal()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::isUserDefined()"></A>
+<CODE><I>boolean</I> <BIG><B>isUserDefined</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::isUserDefined()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getFileName()"></A>
+<CODE><I>string</I> <BIG><B>getFileName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getFileName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getStartLine()"></A>
+<CODE><I>int</I> <BIG><B>getStartLine</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getStartLine()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getEndLine()"></A>
+<CODE><I>int</I> <BIG><B>getEndLine</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getEndLine()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getDocComment()"></A>
+<CODE><I>string</I> <BIG><B>getDocComment</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getDocComment()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getStaticVariables()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getStaticVariables</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getStaticVariables()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::returnsReference()"></A>
+<CODE><I>boolean</I> <BIG><B>returnsReference</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::returnsReference()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getParameters()"></A>
+<CODE><I><a href="#ReflectionParameter"><code>ReflectionParameter</code></a>[int]</I> <BIG><B>getParameters</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getParameters()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getNumberOfParameters()"></A>
+<CODE><I>int</I> <BIG><B>getNumberOfParameters</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getNumberOfParameters()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getNumberOfRequiredParameters()"></A>
+<CODE><I>int</I> <BIG><B>getNumberOfRequiredParameters</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getNumberOfRequiredParameters()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getExtension()"></A>
+<CODE><I><a href="#ReflectionExtension"><code>ReflectionExtension</code></a></I> <BIG><B>getExtension</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getExtension()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getExtensionName()"></A>
+<CODE><I>string</I> <BIG><B>getExtensionName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getExtensionName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getNamespaceName()"></A>
+<CODE><I>string</I> <BIG><B>getNamespaceName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getNamespaceName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::getShortName()"></A>
+<CODE><I>string</I> <BIG><B>getShortName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::getShortName()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::inNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>inNamespace</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::inNamespace()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::isClosure()"></A>
+<CODE><I>boolean</I> <BIG><B>isClosure</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::isClosure()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+
+<A name="ReflectionMethod::isDeprecated()"></A>
+<CODE><I>boolean</I> <BIG><B>isDeprecated</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionFunctionAbstract::isDeprecated()"><code>ReflectionFunctionAbstract</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionProperty"></A>
+<pre>class <BIG><B>ReflectionProperty</B></BIG>
+      |  
+      `--(<i><a href="#Reflector"><code>Reflector</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ReflectionProperty::IS_STATIC"></A>
+<CODE><BIG><B>IS_STATIC</B></BIG> = 1</CODE>
+<P>
+
+<A name="ReflectionProperty::IS_PUBLIC"></A>
+<CODE><BIG><B>IS_PUBLIC</B></BIG> = 256</CODE>
+<P>
+
+<A name="ReflectionProperty::IS_PROTECTED"></A>
+<CODE><BIG><B>IS_PROTECTED</B></BIG> = 512</CODE>
+<P>
+
+<A name="ReflectionProperty::IS_PRIVATE"></A>
+<CODE><BIG><B>IS_PRIVATE</B></BIG> = 1024</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionProperty::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$class_or_instance,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$property_name)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Creates an instance of a property</b></P><P>
+This property is intended not
+ bound to any particular instance of the class; instead, it refers
+ to the property as defined in the source code.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$class_or_instance&nbsp;&nbsp;</code></b></td> <td valign=top>String giving the name of the class,
+ or object instance of the class.</td></tr>
+<tr><td valign=top><b><code>$property_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the property.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionProperty::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="#Reflector::__toString()"><code>Reflector</code></a><PRE>
+
+</PRE>
+
+<A name="ReflectionProperty::export()"></A>
+<CODE>static <I>string</I> <BIG><B>export</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$class_or_instance,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$property_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$return_ = FALSE)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Returns a short description of a class' parameter</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$class_or_instance&nbsp;&nbsp;</code></b></td> <td valign=top>A string giving the name of a
+ class, or any instance of that class.</td></tr>
+<tr><td valign=top><b><code>$property_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the property.</td></tr>
+<tr><td valign=top><b><code>$return_&nbsp;&nbsp;</code></b></td> <td valign=top>If TRUE return a string, otherwise the string
+ is emitted on standard output and return NULL.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The description of the property if $return_ is TRUE,
+ or NULL if $return_ is FALSE.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the class does not exit, or the
+ property does not exist in that class or instance.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionProperty::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionProperty::isPublic()"></A>
+<CODE><I>boolean</I> <BIG><B>isPublic</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionProperty::isPrivate()"></A>
+<CODE><I>boolean</I> <BIG><B>isPrivate</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionProperty::isProtected()"></A>
+<CODE><I>boolean</I> <BIG><B>isProtected</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionProperty::isStatic()"></A>
+<CODE><I>boolean</I> <BIG><B>isStatic</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionProperty::isDefault()"></A>
+<CODE><I>boolean</I> <BIG><B>isDefault</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionProperty::getModifiers()"></A>
+<CODE><I>int</I> <BIG><B>getModifiers</B></BIG>()</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionProperty::getValue()"></A>
+<CODE><I>mixed</I> <BIG><B>getValue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$obj = NULL)</CODE>
+<br>throws <a href="standard.html#ErrorException"><code>ErrorException</code></a>, <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Returns the value of the property</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$obj&nbsp;&nbsp;</code></b></td> <td valign=top>If the property is non-static, this is the instance
+ from which the value is retrieved. If the property is static this
+ argument is ignored and NULL can be passed instead.
+ <br><b>Warning.</b> No check is performed on the class to which the
+ passed object belongs, then blindly returns any property with the
+ same name or NULL if that property does not exist in the object.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="standard.html#ErrorException"><code>ErrorException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;NULL passed as argument for non-static property.
+</li>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The property is private or protected and
+ cannot be accessed from the current context.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionProperty::setValue()"></A>
+<CODE><I>void</I> <BIG><B>setValue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$obj,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BLOCKQUOTE>
+<P><b>Sets the value of the property</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$obj&nbsp;&nbsp;</code></b></td> <td valign=top>If the property is non-static, this is the instance
+ from which the property is retrieved. If the property is static this
+ argument is ignored and NULL can be passed instead.
+ <br><b>Warning.</b> No check is performed on the class to which the
+ passed object belongs, then blindly creates a property with the same
+ name if it does not currently exist.
+ <br><b>Warning.</b> PHPLint cannot control the type of the value
+ assigned to the property be compatible with its declaration, so you
+ must be very careful when using this function.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="#ReflectionException"><code>ReflectionException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The property is private or protected and
+ cannot be accessed from the current context.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionProperty::setAccessible()"></A>
+<CODE><I>void</I> <BIG><B>setAccessible</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionProperty::getDeclaringClass()"></A>
+<CODE><I><a href="#ReflectionClass"><code>ReflectionClass</code></a></I> <BIG><B>getDeclaringClass</B></BIG>()</CODE>
+<P>
+
+<A name="ReflectionProperty::getDocComment()"></A>
+<CODE><I>string</I> <BIG><B>getDocComment</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="Reflection"></A>
+<pre>class <BIG><B>Reflection</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="Reflection::export()"></A>
+<CODE>static <I>string</I> <BIG><B>export</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#Reflector"><code>Reflector</code></a></I>&nbsp;$reflector,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$return_ = FALSE)</CODE>
+<P>
+
+<A name="Reflection::getModifierNames()"></A>
+<CODE>static <I>string[int]</I> <BIG><B>getModifierNames</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$modifiers)</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="ReflectionObject"></A>
+<pre>class <BIG><B>ReflectionObject</B></BIG>
+      |  
+      `--<a href="#ReflectionClass"><code>ReflectionClass</code></a>
+           `--(<i><a href="#Reflector"><code>Reflector</code></a></i>)
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="ReflectionObject::IS_IMPLICIT_ABSTRACT"></A>
+<CODE><BIG><B>IS_IMPLICIT_ABSTRACT</B></BIG> = 16</CODE>
+<P>
+
+<A name="ReflectionObject::IS_EXPLICIT_ABSTRACT"></A>
+<CODE><BIG><B>IS_EXPLICIT_ABSTRACT</B></BIG> = 32</CODE>
+<P>
+
+<A name="ReflectionObject::IS_FINAL"></A>
+<CODE><BIG><B>IS_FINAL</B></BIG> = 64</CODE>
+<P>
+
+<A name="ReflectionObject::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$object_)</CODE>
+<P>
+
+<A name="ReflectionObject::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>overrides</i> <a href="#ReflectionClass::__toString()"><code>ReflectionClass</code></a>
+<BR><I>implements</i> <a href="#Reflector::__toString()"><code>Reflector</code></a><P>
+
+<A name="ReflectionObject::export()"></A>
+<CODE>static <I>string</I> <BIG><B>export</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$object_,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$return_ = FALSE)</CODE>
+
+<BR><I>overrides</i> <a href="#ReflectionClass::export()"><code>ReflectionClass</code></a><P>
+
+<A name="ReflectionObject::__clone()"></A>
+<CODE><I>void</I> <BIG><B>__clone</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::__clone()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getName()"></A>
+<CODE><I>string</I> <BIG><B>getName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getName()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isInternal()"></A>
+<CODE><I>boolean</I> <BIG><B>isInternal</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isInternal()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isUserDefined()"></A>
+<CODE><I>boolean</I> <BIG><B>isUserDefined</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isUserDefined()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isInstantiable()"></A>
+<CODE><I>boolean</I> <BIG><B>isInstantiable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isInstantiable()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::hasConstant()"></A>
+<CODE><I>boolean</I> <BIG><B>hasConstant</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::hasConstant()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::hasMethod()"></A>
+<CODE><I>boolean</I> <BIG><B>hasMethod</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::hasMethod()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::hasProperty()"></A>
+<CODE><I>boolean</I> <BIG><B>hasProperty</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::hasProperty()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getFileName()"></A>
+<CODE><I>string</I> <BIG><B>getFileName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getFileName()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getStartLine()"></A>
+<CODE><I>int</I> <BIG><B>getStartLine</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getStartLine()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getEndLine()"></A>
+<CODE><I>int</I> <BIG><B>getEndLine</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getEndLine()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getDocComment()"></A>
+<CODE><I>string</I> <BIG><B>getDocComment</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getDocComment()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getConstructor()"></A>
+<CODE><I><a href="#ReflectionMethod"><code>ReflectionMethod</code></a></I> <BIG><B>getConstructor</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getConstructor()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getMethod()"></A>
+<CODE><I><a href="#ReflectionMethod"><code>ReflectionMethod</code></a></I> <BIG><B>getMethod</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BR><I>inherited from</i> <a href="#ReflectionClass::getMethod()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getMethods()"></A>
+<CODE><I><a href="#ReflectionMethod"><code>ReflectionMethod</code></a>[int]</I> <BIG><B>getMethods</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getMethods()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getProperty()"></A>
+<CODE><I><a href="#ReflectionProperty"><code>ReflectionProperty</code></a></I> <BIG><B>getProperty</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<br>throws <a href="#ReflectionException"><code>ReflectionException</code></a><BR><I>inherited from</i> <a href="#ReflectionClass::getProperty()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getProperties()"></A>
+<CODE><I><a href="#ReflectionProperty"><code>ReflectionProperty</code></a>[int]</I> <BIG><B>getProperties</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$filter = 0)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getProperties()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getConstants()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getConstants</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getConstants()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getConstant()"></A>
+<CODE><I>mixed</I> <BIG><B>getConstant</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getConstant()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getInterfaces()"></A>
+<CODE><I><a href="#ReflectionClass"><code>ReflectionClass</code></a>[int]</I> <BIG><B>getInterfaces</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getInterfaces()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isInterface()"></A>
+<CODE><I>boolean</I> <BIG><B>isInterface</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isInterface()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isAbstract()"></A>
+<CODE><I>boolean</I> <BIG><B>isAbstract</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isAbstract()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isFinal()"></A>
+<CODE><I>boolean</I> <BIG><B>isFinal</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isFinal()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getModifiers()"></A>
+<CODE><I>int</I> <BIG><B>getModifiers</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getModifiers()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isInstance()"></A>
+<CODE><I>boolean</I> <BIG><B>isInstance</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$obj)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isInstance()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::newInstance()"></A>
+<CODE><I>object</I> <BIG><B>newInstance</B></BIG>(...)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::newInstance()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::newInstanceArgs()"></A>
+<CODE><I>object</I> <BIG><B>newInstanceArgs</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[int]</I>&nbsp;$args_)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::newInstanceArgs()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getParentClass()"></A>
+<CODE><I><a href="#ReflectionClass"><code>ReflectionClass</code></a></I> <BIG><B>getParentClass</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getParentClass()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isSubclassOf()"></A>
+<CODE><I>boolean</I> <BIG><B>isSubclassOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#ReflectionClass"><code>ReflectionClass</code></a></I>&nbsp;$class_)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isSubclassOf()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getStaticProperties()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getStaticProperties</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getStaticProperties()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getStaticPropertyValue()"></A>
+<CODE><I>mixed</I> <BIG><B>getStaticPropertyValue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name, ...)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getStaticPropertyValue()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::setStaticPropertyValue()"></A>
+<CODE><I>void</I> <BIG><B>setStaticPropertyValue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::setStaticPropertyValue()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getDefaultProperties()"></A>
+<CODE><I>mixed[string]</I> <BIG><B>getDefaultProperties</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getDefaultProperties()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::isIterateable()"></A>
+<CODE><I>boolean</I> <BIG><B>isIterateable</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::isIterateable()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::implementsInterface()"></A>
+<CODE><I>boolean</I> <BIG><B>implementsInterface</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::implementsInterface()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getExtension()"></A>
+<CODE><I><a href="#ReflectionExtension"><code>ReflectionExtension</code></a></I> <BIG><B>getExtension</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getExtension()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getExtensionName()"></A>
+<CODE><I>string</I> <BIG><B>getExtensionName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getExtensionName()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getNamespaceName()"></A>
+<CODE><I>string</I> <BIG><B>getNamespaceName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getNamespaceName()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getShortName()"></A>
+<CODE><I>string</I> <BIG><B>getShortName</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getShortName()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::inNamespace()"></A>
+<CODE><I>boolean</I> <BIG><B>inNamespace</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::inNamespace()"><code>ReflectionClass</code></a>
+<P>
+
+<A name="ReflectionObject::getInterfaceNames()"></A>
+<CODE><I>string[int]</I> <BIG><B>getInterfaceNames</B></BIG>()</CODE>
+<BR><I>inherited from</i> <a href="#ReflectionClass::getInterfaceNames()"><code>ReflectionClass</code></a>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

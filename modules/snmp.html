@@ -1,0 +1,237 @@
+<HTML><BODY>
+<H1>snmp</H1>
+<P><b>SNMP Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.snmp.php"><code>http://www.php.net/manual/en/ref.snmp.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="SNMP_VALUE_LIBRARY"></A>
+<CODE><BIG><B>SNMP_VALUE_LIBRARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_VALUE_PLAIN"></A>
+<CODE><BIG><B>SNMP_VALUE_PLAIN</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_VALUE_OBJECT"></A>
+<CODE><BIG><B>SNMP_VALUE_OBJECT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_BIT_STR"></A>
+<CODE><BIG><B>SNMP_BIT_STR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_OCTET_STR"></A>
+<CODE><BIG><B>SNMP_OCTET_STR</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_OPAQUE"></A>
+<CODE><BIG><B>SNMP_OPAQUE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_NULL"></A>
+<CODE><BIG><B>SNMP_NULL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_OBJECT_ID"></A>
+<CODE><BIG><B>SNMP_OBJECT_ID</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_IPADDRESS"></A>
+<CODE><BIG><B>SNMP_IPADDRESS</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_COUNTER"></A>
+<CODE><BIG><B>SNMP_COUNTER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_UNSIGNED"></A>
+<CODE><BIG><B>SNMP_UNSIGNED</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_TIMETICKS"></A>
+<CODE><BIG><B>SNMP_TIMETICKS</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_UINTEGER"></A>
+<CODE><BIG><B>SNMP_UINTEGER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_INTEGER"></A>
+<CODE><BIG><B>SNMP_INTEGER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_COUNTER64"></A>
+<CODE><BIG><B>SNMP_COUNTER64</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_OID_OUTPUT_FULL"></A>
+<CODE><BIG><B>SNMP_OID_OUTPUT_FULL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SNMP_OID_OUTPUT_NUMERIC"></A>
+<CODE><BIG><B>SNMP_OID_OUTPUT_NUMERIC</B></BIG> = 1</CODE>
+<P>
+
+<A name="snmpget()"></A>
+<CODE><I>string</I> <BIG><B>snmpget</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmpgetnext()"></A>
+<CODE><I>string</I> <BIG><B>snmpgetnext</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmpwalk()"></A>
+<CODE><I>mixed[]</I> <BIG><B>snmpwalk</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmprealwalk()"></A>
+<CODE><I>mixed[]</I> <BIG><B>snmprealwalk</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp_get_quick_print()"></A>
+<CODE><I>boolean</I> <BIG><B>snmp_get_quick_print</B></BIG>()</CODE>
+<P>
+
+<A name="snmp_set_quick_print()"></A>
+<CODE><I>void</I> <BIG><B>snmp_set_quick_print</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$quick_print)</CODE>
+<P>
+
+<A name="snmp_set_enum_print()"></A>
+<CODE><I>void</I> <BIG><B>snmp_set_enum_print</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$enum_print)</CODE>
+<P>
+
+<A name="snmp_set_oid_numeric_print()"></A>
+<CODE><I>void</I> <BIG><B>snmp_set_oid_numeric_print</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$oid_numeric_print)</CODE>
+<P>
+
+<A name="snmpset()"></A>
+<CODE><I>int</I> <BIG><B>snmpset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value, ...)</CODE>
+<P>
+
+<A name="snmp2_get()"></A>
+<CODE><I>string</I> <BIG><B>snmp2_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp2_getnext()"></A>
+<CODE><I>string</I> <BIG><B>snmp2_getnext</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp2_walk()"></A>
+<CODE><I>mixed[]</I> <BIG><B>snmp2_walk</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp2_real_walk()"></A>
+<CODE><I>mixed[]</I> <BIG><B>snmp2_real_walk</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp2_set()"></A>
+<CODE><I>int</I> <BIG><B>snmp2_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$community,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value, ...)</CODE>
+<P>
+
+<A name="snmp3_get()"></A>
+<CODE><I>int</I> <BIG><B>snmp3_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_level,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp3_getnext()"></A>
+<CODE><I>int</I> <BIG><B>snmp3_getnext</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_level,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp3_walk()"></A>
+<CODE><I>int</I> <BIG><B>snmp3_walk</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_level,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp3_real_walk()"></A>
+<CODE><I>int</I> <BIG><B>snmp3_real_walk</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_level,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id, ...)</CODE>
+<P>
+
+<A name="snmp3_set()"></A>
+<CODE><I>int</I> <BIG><B>snmp3_set</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sec_level,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$auth_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$priv_passphrase,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$object_id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value, ...)</CODE>
+<P>
+
+<A name="snmp_set_valueretrieval()"></A>
+<CODE><I>int</I> <BIG><B>snmp_set_valueretrieval</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$method)</CODE>
+<P>
+
+<A name="snmp_get_valueretrieval()"></A>
+<CODE><I>int</I> <BIG><B>snmp_get_valueretrieval</B></BIG>()</CODE>
+<P>
+
+<A name="snmp_read_mib()"></A>
+<CODE><I>int</I> <BIG><B>snmp_read_mib</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename)</CODE>
+<P>
+
+<A name="snmp_set_oid_output_format()"></A>
+<CODE><I>void</I> <BIG><B>snmp_set_oid_output_format</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$oid_format)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

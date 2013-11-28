@@ -1,0 +1,236 @@
+<HTML><BODY>
+<H1>sqlite3</H1>
+<P><b>SQLite3 Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/book.sqlite3.php"><code>http://www.php.net/manual/en/book.sqlite3.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="SQLITE3_ASSOC"></A>
+<CODE><BIG><B>SQLITE3_ASSOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLITE3_NUM"></A>
+<CODE><BIG><B>SQLITE3_NUM</B></BIG> = 2</CODE>
+<P>
+
+<A name="SQLITE3_BOTH"></A>
+<CODE><BIG><B>SQLITE3_BOTH</B></BIG> = 3</CODE>
+<P>
+
+<A name="SQLITE3_INTEGER"></A>
+<CODE><BIG><B>SQLITE3_INTEGER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLITE3_FLOAT"></A>
+<CODE><BIG><B>SQLITE3_FLOAT</B></BIG> = 2</CODE>
+<P>
+
+<A name="SQLITE3_TEXT"></A>
+<CODE><BIG><B>SQLITE3_TEXT</B></BIG> = 3</CODE>
+<P>
+
+<A name="SQLITE3_BLOB"></A>
+<CODE><BIG><B>SQLITE3_BLOB</B></BIG> = 4</CODE>
+<P>
+
+<A name="SQLITE3_NULL"></A>
+<CODE><BIG><B>SQLITE3_NULL</B></BIG> = 5</CODE>
+<P>
+
+<A name="SQLITE3_OPEN_READONLY"></A>
+<CODE><BIG><B>SQLITE3_OPEN_READONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SQLITE3_OPEN_READWRITE"></A>
+<CODE><BIG><B>SQLITE3_OPEN_READWRITE</B></BIG> = 2</CODE>
+<P>
+
+<A name="SQLITE3_OPEN_CREATE"></A>
+<CODE><BIG><B>SQLITE3_OPEN_CREATE</B></BIG> = 4</CODE>
+<PRE>
+
+</PRE>
+
+<A name="SQLite3Result"></A>
+<pre>class <BIG><B>SQLite3Result</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="SQLite3Result::columnName()"></A>
+<CODE><I>string</I> <BIG><B>columnName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_number)</CODE>
+<P>
+
+<A name="SQLite3Result::columnType()"></A>
+<CODE><I>int</I> <BIG><B>columnType</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_number)</CODE>
+<P>
+
+<A name="SQLite3Result::fetchArray()"></A>
+<CODE><I>mixed[]</I> <BIG><B>fetchArray</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode = 3)</CODE>
+<P>
+
+<A name="SQLite3Result::finalize()"></A>
+<CODE><I>boolean</I> <BIG><B>finalize</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3Result::numColumns()"></A>
+<CODE><I>int</I> <BIG><B>numColumns</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3Result::reset()"></A>
+<CODE><I>boolean</I> <BIG><B>reset</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="SQLite3Stmt"></A>
+<pre>class <BIG><B>SQLite3Stmt</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="SQLite3Stmt::bindParam()"></A>
+<CODE><I>boolean</I> <BIG><B>bindParam</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sql_param,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$param,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 0)</CODE>
+<P>
+
+<A name="SQLite3Stmt::bindValue()"></A>
+<CODE><I>boolean</I> <BIG><B>bindValue</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sql_param,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$value,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type = 0)</CODE>
+<P>
+
+<A name="SQLite3Stmt::clear()"></A>
+<CODE><I>boolean</I> <BIG><B>clear</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3Stmt::close()"></A>
+<CODE><I>boolean</I> <BIG><B>close</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3Stmt::execute()"></A>
+<CODE><I><a href="#SQLite3Result"><code>SQLite3Result</code></a></I> <BIG><B>execute</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3Stmt::paramCount()"></A>
+<CODE><I>int</I> <BIG><B>paramCount</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3Stmt::reset()"></A>
+<CODE><I>boolean</I> <BIG><B>reset</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="SQLite3"></A>
+<pre>class <BIG><B>SQLite3</B></BIG>
+</pre>
+<P>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="SQLite3::busyTimeout()"></A>
+<CODE><I>boolean</I> <BIG><B>busyTimeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msecs)</CODE>
+<P>
+
+<A name="SQLite3::changes()"></A>
+<CODE><I>int</I> <BIG><B>changes</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3::close()"></A>
+<CODE><I>boolean</I> <BIG><B>close</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags = 6,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encryption_key = "")</CODE>
+<P>
+
+<A name="SQLite3::createAggregate()"></A>
+<CODE><I>boolean</I> <BIG><B>createAggregate</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$step_callback,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$final_callback,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$argument_count = -1)</CODE>
+<P>
+
+<A name="SQLite3::createFunction()"></A>
+<CODE><I>boolean</I> <BIG><B>createFunction</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$callback,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$argument_count = -1)</CODE>
+<P>
+
+<A name="SQLite3::escapeString()"></A>
+<CODE><I>string</I> <BIG><B>escapeString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$value)</CODE>
+<P>
+
+<A name="SQLite3::exec()"></A>
+<CODE><I>boolean</I> <BIG><B>exec</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="SQLite3::lastErrorCode()"></A>
+<CODE><I>int</I> <BIG><B>lastErrorCode</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3::lastErrorMsg()"></A>
+<CODE><I>string</I> <BIG><B>lastErrorMsg</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3::lastInsertRowID()"></A>
+<CODE><I>int</I> <BIG><B>lastInsertRowID</B></BIG>()</CODE>
+<P>
+
+<A name="SQLite3::loadExtension()"></A>
+<CODE><I>boolean</I> <BIG><B>loadExtension</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$shared_library)</CODE>
+<P>
+
+<A name="SQLite3::open()"></A>
+<CODE><I>boolean</I> <BIG><B>open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$filename,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags = 6,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encryption_key = "")</CODE>
+<P>
+
+<A name="SQLite3::prepare()"></A>
+<CODE><I><a href="#SQLite3Stmt"><code>SQLite3Stmt</code></a></I> <BIG><B>prepare</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="SQLite3::query()"></A>
+<CODE><I><a href="#SQLite3Result"><code>SQLite3Result</code></a></I> <BIG><B>query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="SQLite3::querySingle()"></A>
+<CODE><I>mixed</I> <BIG><B>querySingle</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>boolean</I>&nbsp;$entire_row = FALSE)</CODE>
+<P>
+
+<A name="SQLite3::version()"></A>
+<CODE><I>mixed[]</I> <BIG><B>version</B></BIG>()</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

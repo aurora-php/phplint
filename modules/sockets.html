@@ -1,0 +1,735 @@
+<HTML><BODY>
+<H1>sockets</H1>
+<P><b>Socket Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.sockets.php"><code>http://www.php.net/manual/en/ref.sockets.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="AF_INET"></A>
+<CODE><BIG><B>AF_INET</B></BIG> = 1</CODE>
+<P>
+
+<A name="AF_INET6"></A>
+<CODE><BIG><B>AF_INET6</B></BIG> = 2</CODE>
+<P>
+
+<A name="AF_UNIX"></A>
+<CODE><BIG><B>AF_UNIX</B></BIG> = 3</CODE>
+<P>
+
+<A name="MSG_DONTROUTE"></A>
+<CODE><BIG><B>MSG_DONTROUTE</B></BIG> = 4</CODE>
+<P>
+
+<A name="MSG_EOF"></A>
+<CODE><BIG><B>MSG_EOF</B></BIG> = 5</CODE>
+<P>
+
+<A name="MSG_EOR"></A>
+<CODE><BIG><B>MSG_EOR</B></BIG> = 6</CODE>
+<P>
+
+<A name="MSG_OOB"></A>
+<CODE><BIG><B>MSG_OOB</B></BIG> = 7</CODE>
+<P>
+
+<A name="MSG_PEEK"></A>
+<CODE><BIG><B>MSG_PEEK</B></BIG> = 8</CODE>
+<P>
+
+<A name="MSG_WAITALL"></A>
+<CODE><BIG><B>MSG_WAITALL</B></BIG> = 9</CODE>
+<P>
+
+<A name="PHP_BINARY_READ"></A>
+<CODE><BIG><B>PHP_BINARY_READ</B></BIG> = 10</CODE>
+<P>
+
+<A name="PHP_NORMAL_READ"></A>
+<CODE><BIG><B>PHP_NORMAL_READ</B></BIG> = 11</CODE>
+<P>
+
+<A name="SOCKET_E2BIG"></A>
+<CODE><BIG><B>SOCKET_E2BIG</B></BIG> = 12</CODE>
+<P>
+
+<A name="SOCKET_EACCES"></A>
+<CODE><BIG><B>SOCKET_EACCES</B></BIG> = 13</CODE>
+<P>
+
+<A name="SOCKET_EADDRINUSE"></A>
+<CODE><BIG><B>SOCKET_EADDRINUSE</B></BIG> = 14</CODE>
+<P>
+
+<A name="SOCKET_EADDRNOTAVAIL"></A>
+<CODE><BIG><B>SOCKET_EADDRNOTAVAIL</B></BIG> = 15</CODE>
+<P>
+
+<A name="SOCKET_EADV"></A>
+<CODE><BIG><B>SOCKET_EADV</B></BIG> = 16</CODE>
+<P>
+
+<A name="SOCKET_EAFNOSUPPORT"></A>
+<CODE><BIG><B>SOCKET_EAFNOSUPPORT</B></BIG> = 17</CODE>
+<P>
+
+<A name="SOCKET_EAGAIN"></A>
+<CODE><BIG><B>SOCKET_EAGAIN</B></BIG> = 18</CODE>
+<P>
+
+<A name="SOCKET_EALREADY"></A>
+<CODE><BIG><B>SOCKET_EALREADY</B></BIG> = 19</CODE>
+<P>
+
+<A name="SOCKET_EBADE"></A>
+<CODE><BIG><B>SOCKET_EBADE</B></BIG> = 20</CODE>
+<P>
+
+<A name="SOCKET_EBADF"></A>
+<CODE><BIG><B>SOCKET_EBADF</B></BIG> = 21</CODE>
+<P>
+
+<A name="SOCKET_EBADFD"></A>
+<CODE><BIG><B>SOCKET_EBADFD</B></BIG> = 22</CODE>
+<P>
+
+<A name="SOCKET_EBADMSG"></A>
+<CODE><BIG><B>SOCKET_EBADMSG</B></BIG> = 23</CODE>
+<P>
+
+<A name="SOCKET_EBADR"></A>
+<CODE><BIG><B>SOCKET_EBADR</B></BIG> = 24</CODE>
+<P>
+
+<A name="SOCKET_EBADRQC"></A>
+<CODE><BIG><B>SOCKET_EBADRQC</B></BIG> = 25</CODE>
+<P>
+
+<A name="SOCKET_EBADSLT"></A>
+<CODE><BIG><B>SOCKET_EBADSLT</B></BIG> = 26</CODE>
+<P>
+
+<A name="SOCKET_EBUSY"></A>
+<CODE><BIG><B>SOCKET_EBUSY</B></BIG> = 27</CODE>
+<P>
+
+<A name="SOCKET_ECHRNG"></A>
+<CODE><BIG><B>SOCKET_ECHRNG</B></BIG> = 28</CODE>
+<P>
+
+<A name="SOCKET_ECOMM"></A>
+<CODE><BIG><B>SOCKET_ECOMM</B></BIG> = 29</CODE>
+<P>
+
+<A name="SOCKET_ECONNABORTED"></A>
+<CODE><BIG><B>SOCKET_ECONNABORTED</B></BIG> = 30</CODE>
+<P>
+
+<A name="SOCKET_ECONNREFUSED"></A>
+<CODE><BIG><B>SOCKET_ECONNREFUSED</B></BIG> = 31</CODE>
+<P>
+
+<A name="SOCKET_ECONNRESET"></A>
+<CODE><BIG><B>SOCKET_ECONNRESET</B></BIG> = 32</CODE>
+<P>
+
+<A name="SOCKET_EDESTADDRREQ"></A>
+<CODE><BIG><B>SOCKET_EDESTADDRREQ</B></BIG> = 33</CODE>
+<P>
+
+<A name="SOCKET_EDISCON"></A>
+<CODE><BIG><B>SOCKET_EDISCON</B></BIG> = 34</CODE>
+<P>
+
+<A name="SOCKET_EDQUOT"></A>
+<CODE><BIG><B>SOCKET_EDQUOT</B></BIG> = 35</CODE>
+<P>
+
+<A name="SOCKET_EEXIST"></A>
+<CODE><BIG><B>SOCKET_EEXIST</B></BIG> = 36</CODE>
+<P>
+
+<A name="SOCKET_EFAULT"></A>
+<CODE><BIG><B>SOCKET_EFAULT</B></BIG> = 37</CODE>
+<P>
+
+<A name="SOCKET_EHOSTDOWN"></A>
+<CODE><BIG><B>SOCKET_EHOSTDOWN</B></BIG> = 38</CODE>
+<P>
+
+<A name="SOCKET_EHOSTUNREACH"></A>
+<CODE><BIG><B>SOCKET_EHOSTUNREACH</B></BIG> = 39</CODE>
+<P>
+
+<A name="SOCKET_EIDRM"></A>
+<CODE><BIG><B>SOCKET_EIDRM</B></BIG> = 40</CODE>
+<P>
+
+<A name="SOCKET_EINPROGRESS"></A>
+<CODE><BIG><B>SOCKET_EINPROGRESS</B></BIG> = 41</CODE>
+<P>
+
+<A name="SOCKET_EINTR"></A>
+<CODE><BIG><B>SOCKET_EINTR</B></BIG> = 42</CODE>
+<P>
+
+<A name="SOCKET_EINVAL"></A>
+<CODE><BIG><B>SOCKET_EINVAL</B></BIG> = 43</CODE>
+<P>
+
+<A name="SOCKET_EIO"></A>
+<CODE><BIG><B>SOCKET_EIO</B></BIG> = 44</CODE>
+<P>
+
+<A name="SOCKET_EISCONN"></A>
+<CODE><BIG><B>SOCKET_EISCONN</B></BIG> = 45</CODE>
+<P>
+
+<A name="SOCKET_EISDIR"></A>
+<CODE><BIG><B>SOCKET_EISDIR</B></BIG> = 46</CODE>
+<P>
+
+<A name="SOCKET_EISNAM"></A>
+<CODE><BIG><B>SOCKET_EISNAM</B></BIG> = 47</CODE>
+<P>
+
+<A name="SOCKET_EL2HLT"></A>
+<CODE><BIG><B>SOCKET_EL2HLT</B></BIG> = 48</CODE>
+<P>
+
+<A name="SOCKET_EL2NSYNC"></A>
+<CODE><BIG><B>SOCKET_EL2NSYNC</B></BIG> = 49</CODE>
+<P>
+
+<A name="SOCKET_EL3HLT"></A>
+<CODE><BIG><B>SOCKET_EL3HLT</B></BIG> = 50</CODE>
+<P>
+
+<A name="SOCKET_EL3RST"></A>
+<CODE><BIG><B>SOCKET_EL3RST</B></BIG> = 51</CODE>
+<P>
+
+<A name="SOCKET_ELNRNG"></A>
+<CODE><BIG><B>SOCKET_ELNRNG</B></BIG> = 52</CODE>
+<P>
+
+<A name="SOCKET_ELOOP"></A>
+<CODE><BIG><B>SOCKET_ELOOP</B></BIG> = 53</CODE>
+<P>
+
+<A name="SOCKET_EMEDIUMTYPE"></A>
+<CODE><BIG><B>SOCKET_EMEDIUMTYPE</B></BIG> = 54</CODE>
+<P>
+
+<A name="SOCKET_EMFILE"></A>
+<CODE><BIG><B>SOCKET_EMFILE</B></BIG> = 55</CODE>
+<P>
+
+<A name="SOCKET_EMLINK"></A>
+<CODE><BIG><B>SOCKET_EMLINK</B></BIG> = 56</CODE>
+<P>
+
+<A name="SOCKET_EMSGSIZE"></A>
+<CODE><BIG><B>SOCKET_EMSGSIZE</B></BIG> = 57</CODE>
+<P>
+
+<A name="SOCKET_EMULTIHOP"></A>
+<CODE><BIG><B>SOCKET_EMULTIHOP</B></BIG> = 58</CODE>
+<P>
+
+<A name="SOCKET_ENAMETOOLONG"></A>
+<CODE><BIG><B>SOCKET_ENAMETOOLONG</B></BIG> = 59</CODE>
+<P>
+
+<A name="SOCKET_ENETDOWN"></A>
+<CODE><BIG><B>SOCKET_ENETDOWN</B></BIG> = 60</CODE>
+<P>
+
+<A name="SOCKET_ENETRESET"></A>
+<CODE><BIG><B>SOCKET_ENETRESET</B></BIG> = 61</CODE>
+<P>
+
+<A name="SOCKET_ENETUNREACH"></A>
+<CODE><BIG><B>SOCKET_ENETUNREACH</B></BIG> = 62</CODE>
+<P>
+
+<A name="SOCKET_ENFILE"></A>
+<CODE><BIG><B>SOCKET_ENFILE</B></BIG> = 63</CODE>
+<P>
+
+<A name="SOCKET_ENOANO"></A>
+<CODE><BIG><B>SOCKET_ENOANO</B></BIG> = 64</CODE>
+<P>
+
+<A name="SOCKET_ENOBUFS"></A>
+<CODE><BIG><B>SOCKET_ENOBUFS</B></BIG> = 65</CODE>
+<P>
+
+<A name="SOCKET_ENOCSI"></A>
+<CODE><BIG><B>SOCKET_ENOCSI</B></BIG> = 66</CODE>
+<P>
+
+<A name="SOCKET_ENODATA"></A>
+<CODE><BIG><B>SOCKET_ENODATA</B></BIG> = 67</CODE>
+<P>
+
+<A name="SOCKET_ENODEV"></A>
+<CODE><BIG><B>SOCKET_ENODEV</B></BIG> = 68</CODE>
+<P>
+
+<A name="SOCKET_ENOENT"></A>
+<CODE><BIG><B>SOCKET_ENOENT</B></BIG> = 69</CODE>
+<P>
+
+<A name="SOCKET_ENOLCK"></A>
+<CODE><BIG><B>SOCKET_ENOLCK</B></BIG> = 70</CODE>
+<P>
+
+<A name="SOCKET_ENOLINK"></A>
+<CODE><BIG><B>SOCKET_ENOLINK</B></BIG> = 71</CODE>
+<P>
+
+<A name="SOCKET_ENOMEDIUM"></A>
+<CODE><BIG><B>SOCKET_ENOMEDIUM</B></BIG> = 72</CODE>
+<P>
+
+<A name="SOCKET_ENOMEM"></A>
+<CODE><BIG><B>SOCKET_ENOMEM</B></BIG> = 73</CODE>
+<P>
+
+<A name="SOCKET_ENOMSG"></A>
+<CODE><BIG><B>SOCKET_ENOMSG</B></BIG> = 74</CODE>
+<P>
+
+<A name="SOCKET_ENONET"></A>
+<CODE><BIG><B>SOCKET_ENONET</B></BIG> = 75</CODE>
+<P>
+
+<A name="SOCKET_ENOPROTOOPT"></A>
+<CODE><BIG><B>SOCKET_ENOPROTOOPT</B></BIG> = 76</CODE>
+<P>
+
+<A name="SOCKET_ENOSPC"></A>
+<CODE><BIG><B>SOCKET_ENOSPC</B></BIG> = 77</CODE>
+<P>
+
+<A name="SOCKET_ENOSR"></A>
+<CODE><BIG><B>SOCKET_ENOSR</B></BIG> = 78</CODE>
+<P>
+
+<A name="SOCKET_ENOSTR"></A>
+<CODE><BIG><B>SOCKET_ENOSTR</B></BIG> = 79</CODE>
+<P>
+
+<A name="SOCKET_ENOSYS"></A>
+<CODE><BIG><B>SOCKET_ENOSYS</B></BIG> = 80</CODE>
+<P>
+
+<A name="SOCKET_ENOTBLK"></A>
+<CODE><BIG><B>SOCKET_ENOTBLK</B></BIG> = 81</CODE>
+<P>
+
+<A name="SOCKET_ENOTCONN"></A>
+<CODE><BIG><B>SOCKET_ENOTCONN</B></BIG> = 82</CODE>
+<P>
+
+<A name="SOCKET_ENOTDIR"></A>
+<CODE><BIG><B>SOCKET_ENOTDIR</B></BIG> = 83</CODE>
+<P>
+
+<A name="SOCKET_ENOTEMPTY"></A>
+<CODE><BIG><B>SOCKET_ENOTEMPTY</B></BIG> = 84</CODE>
+<P>
+
+<A name="SOCKET_ENOTSOCK"></A>
+<CODE><BIG><B>SOCKET_ENOTSOCK</B></BIG> = 85</CODE>
+<P>
+
+<A name="SOCKET_ENOTTY"></A>
+<CODE><BIG><B>SOCKET_ENOTTY</B></BIG> = 86</CODE>
+<P>
+
+<A name="SOCKET_ENOTUNIQ"></A>
+<CODE><BIG><B>SOCKET_ENOTUNIQ</B></BIG> = 87</CODE>
+<P>
+
+<A name="SOCKET_ENXIO"></A>
+<CODE><BIG><B>SOCKET_ENXIO</B></BIG> = 88</CODE>
+<P>
+
+<A name="SOCKET_EOPNOTSUPP"></A>
+<CODE><BIG><B>SOCKET_EOPNOTSUPP</B></BIG> = 89</CODE>
+<P>
+
+<A name="SOCKET_EPERM"></A>
+<CODE><BIG><B>SOCKET_EPERM</B></BIG> = 90</CODE>
+<P>
+
+<A name="SOCKET_EPFNOSUPPORT"></A>
+<CODE><BIG><B>SOCKET_EPFNOSUPPORT</B></BIG> = 91</CODE>
+<P>
+
+<A name="SOCKET_EPIPE"></A>
+<CODE><BIG><B>SOCKET_EPIPE</B></BIG> = 92</CODE>
+<P>
+
+<A name="SOCKET_EPROCLIM"></A>
+<CODE><BIG><B>SOCKET_EPROCLIM</B></BIG> = 93</CODE>
+<P>
+
+<A name="SOCKET_EPROTO"></A>
+<CODE><BIG><B>SOCKET_EPROTO</B></BIG> = 94</CODE>
+<P>
+
+<A name="SOCKET_EPROTONOSUPPORT"></A>
+<CODE><BIG><B>SOCKET_EPROTONOSUPPORT</B></BIG> = 95</CODE>
+<P>
+
+<A name="SOCKET_EPROTOTYPE"></A>
+<CODE><BIG><B>SOCKET_EPROTOTYPE</B></BIG> = 96</CODE>
+<P>
+
+<A name="SOCKET_EREMCHG"></A>
+<CODE><BIG><B>SOCKET_EREMCHG</B></BIG> = 97</CODE>
+<P>
+
+<A name="SOCKET_EREMOTE"></A>
+<CODE><BIG><B>SOCKET_EREMOTE</B></BIG> = 98</CODE>
+<P>
+
+<A name="SOCKET_EREMOTEIO"></A>
+<CODE><BIG><B>SOCKET_EREMOTEIO</B></BIG> = 99</CODE>
+<P>
+
+<A name="SOCKET_ERESTART"></A>
+<CODE><BIG><B>SOCKET_ERESTART</B></BIG> = 100</CODE>
+<P>
+
+<A name="SOCKET_EROFS"></A>
+<CODE><BIG><B>SOCKET_EROFS</B></BIG> = 101</CODE>
+<P>
+
+<A name="SOCKET_ESHUTDOWN"></A>
+<CODE><BIG><B>SOCKET_ESHUTDOWN</B></BIG> = 102</CODE>
+<P>
+
+<A name="SOCKET_ESOCKTNOSUPPORT"></A>
+<CODE><BIG><B>SOCKET_ESOCKTNOSUPPORT</B></BIG> = 103</CODE>
+<P>
+
+<A name="SOCKET_ESPIPE"></A>
+<CODE><BIG><B>SOCKET_ESPIPE</B></BIG> = 104</CODE>
+<P>
+
+<A name="SOCKET_ESRMNT"></A>
+<CODE><BIG><B>SOCKET_ESRMNT</B></BIG> = 105</CODE>
+<P>
+
+<A name="SOCKET_ESTALE"></A>
+<CODE><BIG><B>SOCKET_ESTALE</B></BIG> = 106</CODE>
+<P>
+
+<A name="SOCKET_ESTRPIPE"></A>
+<CODE><BIG><B>SOCKET_ESTRPIPE</B></BIG> = 107</CODE>
+<P>
+
+<A name="SOCKET_ETIME"></A>
+<CODE><BIG><B>SOCKET_ETIME</B></BIG> = 108</CODE>
+<P>
+
+<A name="SOCKET_ETIMEDOUT"></A>
+<CODE><BIG><B>SOCKET_ETIMEDOUT</B></BIG> = 109</CODE>
+<P>
+
+<A name="SOCKET_ETOOMANYREFS"></A>
+<CODE><BIG><B>SOCKET_ETOOMANYREFS</B></BIG> = 110</CODE>
+<P>
+
+<A name="SOCKET_EUNATCH"></A>
+<CODE><BIG><B>SOCKET_EUNATCH</B></BIG> = 111</CODE>
+<P>
+
+<A name="SOCKET_EUSERS"></A>
+<CODE><BIG><B>SOCKET_EUSERS</B></BIG> = 112</CODE>
+<P>
+
+<A name="SOCKET_EWOULDBLOCK"></A>
+<CODE><BIG><B>SOCKET_EWOULDBLOCK</B></BIG> = 113</CODE>
+<P>
+
+<A name="SOCKET_EXDEV"></A>
+<CODE><BIG><B>SOCKET_EXDEV</B></BIG> = 114</CODE>
+<P>
+
+<A name="SOCKET_EXFULL"></A>
+<CODE><BIG><B>SOCKET_EXFULL</B></BIG> = 115</CODE>
+<P>
+
+<A name="SOCKET_HOST_NOT_FOUND"></A>
+<CODE><BIG><B>SOCKET_HOST_NOT_FOUND</B></BIG> = 116</CODE>
+<P>
+
+<A name="SOCKET_NOTINITIALISED"></A>
+<CODE><BIG><B>SOCKET_NOTINITIALISED</B></BIG> = 117</CODE>
+<P>
+
+<A name="SOCKET_NO_ADDRESS"></A>
+<CODE><BIG><B>SOCKET_NO_ADDRESS</B></BIG> = 118</CODE>
+<P>
+
+<A name="SOCKET_NO_DATA"></A>
+<CODE><BIG><B>SOCKET_NO_DATA</B></BIG> = 119</CODE>
+<P>
+
+<A name="SOCKET_NO_RECOVERY"></A>
+<CODE><BIG><B>SOCKET_NO_RECOVERY</B></BIG> = 120</CODE>
+<P>
+
+<A name="SOCKET_SYSNOTREADY"></A>
+<CODE><BIG><B>SOCKET_SYSNOTREADY</B></BIG> = 121</CODE>
+<P>
+
+<A name="SOCKET_TRY_AGAIN"></A>
+<CODE><BIG><B>SOCKET_TRY_AGAIN</B></BIG> = 122</CODE>
+<P>
+
+<A name="SOCKET_VERNOTSUPPORTED"></A>
+<CODE><BIG><B>SOCKET_VERNOTSUPPORTED</B></BIG> = 123</CODE>
+<P>
+
+<A name="SOCK_DGRAM"></A>
+<CODE><BIG><B>SOCK_DGRAM</B></BIG> = 124</CODE>
+<P>
+
+<A name="SOCK_RAW"></A>
+<CODE><BIG><B>SOCK_RAW</B></BIG> = 125</CODE>
+<P>
+
+<A name="SOCK_RDM"></A>
+<CODE><BIG><B>SOCK_RDM</B></BIG> = 126</CODE>
+<P>
+
+<A name="SOCK_SEQPACKET"></A>
+<CODE><BIG><B>SOCK_SEQPACKET</B></BIG> = 127</CODE>
+<P>
+
+<A name="SOCK_STREAM"></A>
+<CODE><BIG><B>SOCK_STREAM</B></BIG> = 128</CODE>
+<P>
+
+<A name="SOL_SOCKET"></A>
+<CODE><BIG><B>SOL_SOCKET</B></BIG> = 129</CODE>
+<P>
+
+<A name="SOL_TCP"></A>
+<CODE><BIG><B>SOL_TCP</B></BIG> = 130</CODE>
+<P>
+
+<A name="SOL_UDP"></A>
+<CODE><BIG><B>SOL_UDP</B></BIG> = 131</CODE>
+<P>
+
+<A name="SOMAXCONN"></A>
+<CODE><BIG><B>SOMAXCONN</B></BIG> = 132</CODE>
+<P>
+
+<A name="SO_BROADCAST"></A>
+<CODE><BIG><B>SO_BROADCAST</B></BIG> = 133</CODE>
+<P>
+
+<A name="SO_DEBUG"></A>
+<CODE><BIG><B>SO_DEBUG</B></BIG> = 134</CODE>
+<P>
+
+<A name="SO_DONTROUTE"></A>
+<CODE><BIG><B>SO_DONTROUTE</B></BIG> = 135</CODE>
+<P>
+
+<A name="SO_ERROR"></A>
+<CODE><BIG><B>SO_ERROR</B></BIG> = 136</CODE>
+<P>
+
+<A name="SO_KEEPALIVE"></A>
+<CODE><BIG><B>SO_KEEPALIVE</B></BIG> = 137</CODE>
+<P>
+
+<A name="SO_LINGER"></A>
+<CODE><BIG><B>SO_LINGER</B></BIG> = 138</CODE>
+<P>
+
+<A name="SO_OOBINLINE"></A>
+<CODE><BIG><B>SO_OOBINLINE</B></BIG> = 139</CODE>
+<P>
+
+<A name="SO_RCVBUF"></A>
+<CODE><BIG><B>SO_RCVBUF</B></BIG> = 140</CODE>
+<P>
+
+<A name="SO_RCVLOWAT"></A>
+<CODE><BIG><B>SO_RCVLOWAT</B></BIG> = 141</CODE>
+<P>
+
+<A name="SO_RCVTIMEO"></A>
+<CODE><BIG><B>SO_RCVTIMEO</B></BIG> = 142</CODE>
+<P>
+
+<A name="SO_REUSEADDR"></A>
+<CODE><BIG><B>SO_REUSEADDR</B></BIG> = 143</CODE>
+<P>
+
+<A name="SO_SNDBUF"></A>
+<CODE><BIG><B>SO_SNDBUF</B></BIG> = 144</CODE>
+<P>
+
+<A name="SO_SNDLOWAT"></A>
+<CODE><BIG><B>SO_SNDLOWAT</B></BIG> = 145</CODE>
+<P>
+
+<A name="SO_SNDTIMEO"></A>
+<CODE><BIG><B>SO_SNDTIMEO</B></BIG> = 146</CODE>
+<P>
+
+<A name="SO_TYPE"></A>
+<CODE><BIG><B>SO_TYPE</B></BIG> = 147</CODE>
+<P>
+
+<A name="socket_select()"></A>
+<CODE><I>int</I> <BIG><B>socket_select</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $read_fds,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $write_fds,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;&amp; $except_fds,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$tv_sec, ...)</CODE>
+<P>
+
+<A name="socket_create_listen()"></A>
+<CODE><I>resource</I> <BIG><B>socket_create_listen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port, ...)</CODE>
+<P>
+
+<A name="socket_accept()"></A>
+<CODE><I>resource</I> <BIG><B>socket_accept</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket)</CODE>
+<P>
+
+<A name="socket_set_nonblock()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_set_nonblock</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket)</CODE>
+<P>
+
+<A name="socket_set_block()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_set_block</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket)</CODE>
+<P>
+
+<A name="socket_listen()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_listen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket, ...)</CODE>
+<P>
+
+<A name="socket_close()"></A>
+<CODE><I>void</I> <BIG><B>socket_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket)</CODE>
+<P>
+
+<A name="socket_write()"></A>
+<CODE><I>int</I> <BIG><B>socket_write</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$buf, ...)</CODE>
+<P>
+
+<A name="socket_read()"></A>
+<CODE><I>string</I> <BIG><B>socket_read</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$length, ...)</CODE>
+<P>
+
+<A name="socket_getsockname()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_getsockname</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>string</I>&nbsp;&amp; $addr, ...)</CODE>
+<P>
+
+<A name="socket_getpeername()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_getpeername</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>string</I>&nbsp;&amp; $addr, ...)</CODE>
+<P>
+
+<A name="socket_create()"></A>
+<CODE><I>resource</I> <BIG><B>socket_create</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$domain,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$protocol)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="socket_connect()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$addr, ...)</CODE>
+<P>
+
+<A name="socket_strerror()"></A>
+<CODE><I>string</I> <BIG><B>socket_strerror</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$errno)</CODE>
+<P>
+
+<A name="socket_bind()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_bind</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$addr, ...)</CODE>
+<P>
+
+<A name="socket_recv()"></A>
+<CODE><I>int</I> <BIG><B>socket_recv</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;&amp; $buf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$len,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags)</CODE>
+<P>
+
+<A name="socket_send()"></A>
+<CODE><I>int</I> <BIG><B>socket_send</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$buf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$len,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags)</CODE>
+<P>
+
+<A name="socket_recvfrom()"></A>
+<CODE><I>int</I> <BIG><B>socket_recvfrom</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;&amp; $buf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$len,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;&amp; $name, ...)</CODE>
+<P>
+
+<A name="socket_sendto()"></A>
+<CODE><I>int</I> <BIG><B>socket_sendto</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$buf,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$len,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$addr, ...)</CODE>
+<P>
+
+<A name="socket_get_option()"></A>
+<CODE><I>mixed</I> <BIG><B>socket_get_option</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$level,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$optname)</CODE>
+<P>
+
+<A name="socket_set_option()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_set_option</B></BIG>(...)</CODE>
+<P>
+
+<A name="socket_create_pair()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_create_pair</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$domain,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$protocol,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <I>mixed[]</I>&nbsp;&amp; $fd)</CODE>
+<P>
+
+<A name="socket_shutdown()"></A>
+<CODE><I>boolean</I> <BIG><B>socket_shutdown</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$socket, ...)</CODE>
+<P>
+
+<A name="socket_last_error()"></A>
+<CODE><I>int</I> <BIG><B>socket_last_error</B></BIG>(...)</CODE>
+<P>
+
+<A name="socket_clear_error()"></A>
+<CODE><I>void</I> <BIG><B>socket_clear_error</B></BIG>(...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

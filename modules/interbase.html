@@ -1,0 +1,498 @@
+<HTML><BODY>
+<H1>interbase</H1>
+<P><b>Firebird/InterBase Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.ibase.php"><code>http://www.php.net/manual/en/ref.ibase.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="IBASE_BKP_IGNORE_CHECKSUMS"></A>
+<CODE><BIG><B>IBASE_BKP_IGNORE_CHECKSUMS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_BKP_IGNORE_LIMBO"></A>
+<CODE><BIG><B>IBASE_BKP_IGNORE_LIMBO</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_BKP_METADATA_ONLY"></A>
+<CODE><BIG><B>IBASE_BKP_METADATA_ONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_BKP_NO_GARBAGE_COLLECT"></A>
+<CODE><BIG><B>IBASE_BKP_NO_GARBAGE_COLLECT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_BKP_OLD_DESCRIPTIONS"></A>
+<CODE><BIG><B>IBASE_BKP_OLD_DESCRIPTIONS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_BKP_NON_TRANSPORTABLE"></A>
+<CODE><BIG><B>IBASE_BKP_NON_TRANSPORTABLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_BKP_CONVERT"></A>
+<CODE><BIG><B>IBASE_BKP_CONVERT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RES_DEACTIVATE_IDX"></A>
+<CODE><BIG><B>IBASE_RES_DEACTIVATE_IDX</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RES_NO_SHADOW"></A>
+<CODE><BIG><B>IBASE_RES_NO_SHADOW</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RES_NO_VALIDITY"></A>
+<CODE><BIG><B>IBASE_RES_NO_VALIDITY</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RES_ONE_AT_A_TIME"></A>
+<CODE><BIG><B>IBASE_RES_ONE_AT_A_TIME</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RES_REPLACE"></A>
+<CODE><BIG><B>IBASE_RES_REPLACE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RES_CREATE"></A>
+<CODE><BIG><B>IBASE_RES_CREATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RES_USE_ALL_SPACE"></A>
+<CODE><BIG><B>IBASE_RES_USE_ALL_SPACE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_PAGE_BUFFERS"></A>
+<CODE><BIG><B>IBASE_PRP_PAGE_BUFFERS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_SWEEP_INTERVAL"></A>
+<CODE><BIG><B>IBASE_PRP_SWEEP_INTERVAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_SHUTDOWN_DB"></A>
+<CODE><BIG><B>IBASE_PRP_SHUTDOWN_DB</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_DENY_NEW_TRANSACTIONS"></A>
+<CODE><BIG><B>IBASE_PRP_DENY_NEW_TRANSACTIONS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_DENY_NEW_ATTACHMENTS"></A>
+<CODE><BIG><B>IBASE_PRP_DENY_NEW_ATTACHMENTS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_RESERVE_SPACE"></A>
+<CODE><BIG><B>IBASE_PRP_RESERVE_SPACE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_RES_USE_FULL"></A>
+<CODE><BIG><B>IBASE_PRP_RES_USE_FULL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_RES"></A>
+<CODE><BIG><B>IBASE_PRP_RES</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_WRITE_MODE"></A>
+<CODE><BIG><B>IBASE_PRP_WRITE_MODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_WM_ASYNC"></A>
+<CODE><BIG><B>IBASE_PRP_WM_ASYNC</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_WM_SYNC"></A>
+<CODE><BIG><B>IBASE_PRP_WM_SYNC</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_ACCESS_MODE"></A>
+<CODE><BIG><B>IBASE_PRP_ACCESS_MODE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_AM_READONLY"></A>
+<CODE><BIG><B>IBASE_PRP_AM_READONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_AM_READWRITE"></A>
+<CODE><BIG><B>IBASE_PRP_AM_READWRITE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_SET_SQL_DIALECT"></A>
+<CODE><BIG><B>IBASE_PRP_SET_SQL_DIALECT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_ACTIVATE"></A>
+<CODE><BIG><B>IBASE_PRP_ACTIVATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_PRP_DB_ONLINE"></A>
+<CODE><BIG><B>IBASE_PRP_DB_ONLINE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RPR_CHECK_DB"></A>
+<CODE><BIG><B>IBASE_RPR_CHECK_DB</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RPR_IGNORE_CHECKSUM"></A>
+<CODE><BIG><B>IBASE_RPR_IGNORE_CHECKSUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RPR_KILL_SHADOWS"></A>
+<CODE><BIG><B>IBASE_RPR_KILL_SHADOWS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RPR_MEND_DB"></A>
+<CODE><BIG><B>IBASE_RPR_MEND_DB</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RPR_VALIDATE_DB"></A>
+<CODE><BIG><B>IBASE_RPR_VALIDATE_DB</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RPR_FULL"></A>
+<CODE><BIG><B>IBASE_RPR_FULL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_RPR_SWEEP_DB"></A>
+<CODE><BIG><B>IBASE_RPR_SWEEP_DB</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_STS_DATA_PAGES"></A>
+<CODE><BIG><B>IBASE_STS_DATA_PAGES</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_STS_DB_LOG"></A>
+<CODE><BIG><B>IBASE_STS_DB_LOG</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_STS_HDR_PAGES"></A>
+<CODE><BIG><B>IBASE_STS_HDR_PAGES</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_STS_IDX_PAGES"></A>
+<CODE><BIG><B>IBASE_STS_IDX_PAGES</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_STS_SYS_RELATIONS"></A>
+<CODE><BIG><B>IBASE_STS_SYS_RELATIONS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_SVC_SERVER_VERSION"></A>
+<CODE><BIG><B>IBASE_SVC_SERVER_VERSION</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_SVC_IMPLEMENTATION"></A>
+<CODE><BIG><B>IBASE_SVC_IMPLEMENTATION</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_SVC_GET_ENV"></A>
+<CODE><BIG><B>IBASE_SVC_GET_ENV</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_SVC_GET_ENV_LOCK"></A>
+<CODE><BIG><B>IBASE_SVC_GET_ENV_LOCK</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_SVC_GET_ENV_MSG"></A>
+<CODE><BIG><B>IBASE_SVC_GET_ENV_MSG</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_SVC_USER_DBPATH"></A>
+<CODE><BIG><B>IBASE_SVC_USER_DBPATH</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_SVC_SVR_DB_INFO"></A>
+<CODE><BIG><B>IBASE_SVC_SVR_DB_INFO</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_SVC_GET_USERS"></A>
+<CODE><BIG><B>IBASE_SVC_GET_USERS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_DEFAULT"></A>
+<CODE><BIG><B>IBASE_DEFAULT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_CREATE"></A>
+<CODE><BIG><B>IBASE_CREATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_TEXT"></A>
+<CODE><BIG><B>IBASE_TEXT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_FETCH_BLOBS"></A>
+<CODE><BIG><B>IBASE_FETCH_BLOBS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_FETCH_ARRAYS"></A>
+<CODE><BIG><B>IBASE_FETCH_ARRAYS</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_UNIXTIME"></A>
+<CODE><BIG><B>IBASE_UNIXTIME</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_WRITE"></A>
+<CODE><BIG><B>IBASE_WRITE</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_READ"></A>
+<CODE><BIG><B>IBASE_READ</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_COMMITTED"></A>
+<CODE><BIG><B>IBASE_COMMITTED</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_CONSISTENCY"></A>
+<CODE><BIG><B>IBASE_CONSISTENCY</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_CONCURRENCY"></A>
+<CODE><BIG><B>IBASE_CONCURRENCY</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_REC_VERSION"></A>
+<CODE><BIG><B>IBASE_REC_VERSION</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_REC_NO_VERSION"></A>
+<CODE><BIG><B>IBASE_REC_NO_VERSION</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_NOWAIT"></A>
+<CODE><BIG><B>IBASE_NOWAIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IBASE_WAIT"></A>
+<CODE><BIG><B>IBASE_WAIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="ibase_blob_create()"></A>
+<CODE><I>resource</I> <BIG><B>ibase_blob_create</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_blob_open()"></A>
+<CODE><I>resource</I> <BIG><B>ibase_blob_open</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_blob_add()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_blob_add</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$blob_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="ibase_blob_get()"></A>
+<CODE><I>string</I> <BIG><B>ibase_blob_get</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$blob_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$len)</CODE>
+<P>
+
+<A name="ibase_blob_close()"></A>
+<CODE><I>string</I> <BIG><B>ibase_blob_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$blob_handle)</CODE>
+<P>
+
+<A name="ibase_blob_cancel()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_blob_cancel</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$blob_handle)</CODE>
+<P>
+
+<A name="ibase_blob_info()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ibase_blob_info</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_blob_echo()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_blob_echo</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_blob_import()"></A>
+<CODE><I>string</I> <BIG><B>ibase_blob_import</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_add_user()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_add_user</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password, ...)</CODE>
+<P>
+
+<A name="ibase_modify_user()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_modify_user</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password, ...)</CODE>
+<P>
+
+<A name="ibase_delete_user()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_delete_user</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password, ...)</CODE>
+<P>
+
+<A name="ibase_service_attach()"></A>
+<CODE><I>resource</I> <BIG><B>ibase_service_attach</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dba_username,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dba_password)</CODE>
+<P>
+
+<A name="ibase_service_detach()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_service_detach</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle)</CODE>
+<P>
+
+<A name="ibase_backup()"></A>
+<CODE><I>mixed</I> <BIG><B>ibase_backup</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source_db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dest_file, ...)</CODE>
+<P>
+
+<A name="ibase_restore()"></A>
+<CODE><I>mixed</I> <BIG><B>ibase_restore</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$source_file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$dest_db, ...)</CODE>
+<P>
+
+<A name="ibase_maintain_db()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_maintain_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$action, ...)</CODE>
+<P>
+
+<A name="ibase_db_info()"></A>
+<CODE><I>string</I> <BIG><B>ibase_db_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$action, ...)</CODE>
+<P>
+
+<A name="ibase_server_info()"></A>
+<CODE><I>string</I> <BIG><B>ibase_server_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$service_handle,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$action)</CODE>
+<P>
+
+<A name="ibase_query()"></A>
+<CODE><I>mixed</I> <BIG><B>ibase_query</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>ibase_affected_rows</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>ibase_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result_identifier)</CODE>
+<P>
+
+<A name="ibase_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ibase_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="ibase_fetch_assoc()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ibase_fetch_assoc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="ibase_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>ibase_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="ibase_name_result()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_name_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ibase_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="ibase_prepare()"></A>
+<CODE><I>resource</I> <BIG><B>ibase_prepare</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_execute()"></A>
+<CODE><I>mixed</I> <BIG><B>ibase_execute</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="ibase_free_query()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_free_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="ibase_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>ibase_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query_result)</CODE>
+<P>
+
+<A name="ibase_field_info()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ibase_field_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query_result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="ibase_num_params()"></A>
+<CODE><I>int</I> <BIG><B>ibase_num_params</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query)</CODE>
+<P>
+
+<A name="ibase_param_info()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ibase_param_info</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$query,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_number)</CODE>
+<P>
+
+<A name="ibase_wait_event()"></A>
+<CODE><I>string</I> <BIG><B>ibase_wait_event</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_set_event_handler()"></A>
+<CODE><I>resource</I> <BIG><B>ibase_set_event_handler</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_free_event_handler()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_free_event_handler</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$event)</CODE>
+<P>
+
+<A name="ibase_errmsg()"></A>
+<CODE><I>string</I> <BIG><B>ibase_errmsg</B></BIG>()</CODE>
+<P>
+
+<A name="ibase_errcode()"></A>
+<CODE><I>int</I> <BIG><B>ibase_errcode</B></BIG>()</CODE>
+<P>
+
+<A name="ibase_connect()"></A>
+<CODE><I>resource</I> <BIG><B>ibase_connect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database, ...)</CODE>
+<P>
+
+<A name="ibase_pconnect()"></A>
+<CODE><I>resource</I> <BIG><B>ibase_pconnect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database, ...)</CODE>
+<P>
+
+<A name="ibase_close()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_close</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_drop_db()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_drop_db</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_trans()"></A>
+<CODE><I>resource</I> <BIG><B>ibase_trans</B></BIG>(...)</CODE>
+<P>
+
+<A name="ibase_commit()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_commit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier)</CODE>
+<P>
+
+<A name="ibase_rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_rollback</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier)</CODE>
+<P>
+
+<A name="ibase_commit_ret()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_commit_ret</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier)</CODE>
+<P>
+
+<A name="ibase_rollback_ret()"></A>
+<CODE><I>boolean</I> <BIG><B>ibase_rollback_ret</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier)</CODE>
+<P>
+
+<A name="ibase_gen_id()"></A>
+<CODE><I>int</I> <BIG><B>ibase_gen_id</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$generator, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

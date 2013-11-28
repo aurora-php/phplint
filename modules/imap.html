@@ -1,0 +1,1240 @@
+<HTML><BODY>
+<H1>imap</H1>
+<P><b>IMAP, POP3 and NNTP Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.imap.php"><code>http://www.php.net/manual/en/ref.imap.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="NIL"></A>
+<CODE><BIG><B>NIL</B></BIG> = 1</CODE>
+<P>
+
+<A name="IMAP_OPENTIMEOUT"></A>
+<CODE><BIG><B>IMAP_OPENTIMEOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IMAP_READTIMEOUT"></A>
+<CODE><BIG><B>IMAP_READTIMEOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IMAP_WRITETIMEOUT"></A>
+<CODE><BIG><B>IMAP_WRITETIMEOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="IMAP_CLOSETIMEOUT"></A>
+<CODE><BIG><B>IMAP_CLOSETIMEOUT</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_DEBUG"></A>
+<CODE><BIG><B>OP_DEBUG</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_READONLY"></A>
+<CODE><BIG><B>OP_READONLY</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_ANONYMOUS"></A>
+<CODE><BIG><B>OP_ANONYMOUS</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_SHORTCACHE"></A>
+<CODE><BIG><B>OP_SHORTCACHE</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_SILENT"></A>
+<CODE><BIG><B>OP_SILENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_PROTOTYPE"></A>
+<CODE><BIG><B>OP_PROTOTYPE</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_HALFOPEN"></A>
+<CODE><BIG><B>OP_HALFOPEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_EXPUNGE"></A>
+<CODE><BIG><B>OP_EXPUNGE</B></BIG> = 1</CODE>
+<P>
+
+<A name="OP_SECURE"></A>
+<CODE><BIG><B>OP_SECURE</B></BIG> = 1</CODE>
+<P>
+
+<A name="CL_EXPUNGE"></A>
+<CODE><BIG><B>CL_EXPUNGE</B></BIG> = 1</CODE>
+<P>
+
+<A name="FT_UID"></A>
+<CODE><BIG><B>FT_UID</B></BIG> = 1</CODE>
+<P>
+
+<A name="FT_PEEK"></A>
+<CODE><BIG><B>FT_PEEK</B></BIG> = 1</CODE>
+<P>
+
+<A name="FT_NOT"></A>
+<CODE><BIG><B>FT_NOT</B></BIG> = 1</CODE>
+<P>
+
+<A name="FT_INTERNAL"></A>
+<CODE><BIG><B>FT_INTERNAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="FT_PREFETCHTEXT"></A>
+<CODE><BIG><B>FT_PREFETCHTEXT</B></BIG> = 1</CODE>
+<P>
+
+<A name="ST_UID"></A>
+<CODE><BIG><B>ST_UID</B></BIG> = 1</CODE>
+<P>
+
+<A name="ST_SILENT"></A>
+<CODE><BIG><B>ST_SILENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="ST_SET"></A>
+<CODE><BIG><B>ST_SET</B></BIG> = 1</CODE>
+<P>
+
+<A name="CP_UID"></A>
+<CODE><BIG><B>CP_UID</B></BIG> = 1</CODE>
+<P>
+
+<A name="CP_MOVE"></A>
+<CODE><BIG><B>CP_MOVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SE_UID"></A>
+<CODE><BIG><B>SE_UID</B></BIG> = 1</CODE>
+<P>
+
+<A name="SE_FREE"></A>
+<CODE><BIG><B>SE_FREE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SE_NOPREFETCH"></A>
+<CODE><BIG><B>SE_NOPREFETCH</B></BIG> = 1</CODE>
+<P>
+
+<A name="SO_FREE"></A>
+<CODE><BIG><B>SO_FREE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SO_NOSERVER"></A>
+<CODE><BIG><B>SO_NOSERVER</B></BIG> = 1</CODE>
+<P>
+
+<A name="SA_MESSAGES"></A>
+<CODE><BIG><B>SA_MESSAGES</B></BIG> = 1</CODE>
+<P>
+
+<A name="SA_RECENT"></A>
+<CODE><BIG><B>SA_RECENT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SA_UNSEEN"></A>
+<CODE><BIG><B>SA_UNSEEN</B></BIG> = 1</CODE>
+<P>
+
+<A name="SA_UIDNEXT"></A>
+<CODE><BIG><B>SA_UIDNEXT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SA_UIDVALIDITY"></A>
+<CODE><BIG><B>SA_UIDVALIDITY</B></BIG> = 1</CODE>
+<P>
+
+<A name="SA_ALL"></A>
+<CODE><BIG><B>SA_ALL</B></BIG> = 1</CODE>
+<P>
+
+<A name="LATT_NOINFERIORS"></A>
+<CODE><BIG><B>LATT_NOINFERIORS</B></BIG> = 1</CODE>
+<P>
+
+<A name="LATT_NOSELECT"></A>
+<CODE><BIG><B>LATT_NOSELECT</B></BIG> = 1</CODE>
+<P>
+
+<A name="LATT_MARKED"></A>
+<CODE><BIG><B>LATT_MARKED</B></BIG> = 1</CODE>
+<P>
+
+<A name="LATT_UNMARKED"></A>
+<CODE><BIG><B>LATT_UNMARKED</B></BIG> = 1</CODE>
+<P>
+
+<A name="LATT_REFERRAL"></A>
+<CODE><BIG><B>LATT_REFERRAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="LATT_HASCHILDREN"></A>
+<CODE><BIG><B>LATT_HASCHILDREN</B></BIG> = 1</CODE>
+<P>
+
+<A name="LATT_HASNOCHILDREN"></A>
+<CODE><BIG><B>LATT_HASNOCHILDREN</B></BIG> = 1</CODE>
+<P>
+
+<A name="SORTDATE"></A>
+<CODE><BIG><B>SORTDATE</B></BIG> = 1</CODE>
+<P>
+
+<A name="SORTARRIVAL"></A>
+<CODE><BIG><B>SORTARRIVAL</B></BIG> = 1</CODE>
+<P>
+
+<A name="SORTFROM"></A>
+<CODE><BIG><B>SORTFROM</B></BIG> = 1</CODE>
+<P>
+
+<A name="SORTSUBJECT"></A>
+<CODE><BIG><B>SORTSUBJECT</B></BIG> = 1</CODE>
+<P>
+
+<A name="SORTTO"></A>
+<CODE><BIG><B>SORTTO</B></BIG> = 1</CODE>
+<P>
+
+<A name="SORTCC"></A>
+<CODE><BIG><B>SORTCC</B></BIG> = 1</CODE>
+<P>
+
+<A name="SORTSIZE"></A>
+<CODE><BIG><B>SORTSIZE</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPETEXT"></A>
+<CODE><BIG><B>TYPETEXT</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPEMULTIPART"></A>
+<CODE><BIG><B>TYPEMULTIPART</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPEMESSAGE"></A>
+<CODE><BIG><B>TYPEMESSAGE</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPEAPPLICATION"></A>
+<CODE><BIG><B>TYPEAPPLICATION</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPEAUDIO"></A>
+<CODE><BIG><B>TYPEAUDIO</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPEIMAGE"></A>
+<CODE><BIG><B>TYPEIMAGE</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPEVIDEO"></A>
+<CODE><BIG><B>TYPEVIDEO</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPEMODEL"></A>
+<CODE><BIG><B>TYPEMODEL</B></BIG> = 1</CODE>
+<P>
+
+<A name="TYPEOTHER"></A>
+<CODE><BIG><B>TYPEOTHER</B></BIG> = 1</CODE>
+<P>
+
+<A name="ENC7BIT"></A>
+<CODE><BIG><B>ENC7BIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="ENC8BIT"></A>
+<CODE><BIG><B>ENC8BIT</B></BIG> = 1</CODE>
+<P>
+
+<A name="ENCBINARY"></A>
+<CODE><BIG><B>ENCBINARY</B></BIG> = 1</CODE>
+<P>
+
+<A name="ENCBASE64"></A>
+<CODE><BIG><B>ENCBASE64</B></BIG> = 1</CODE>
+<P>
+
+<A name="ENCQUOTEDPRINTABLE"></A>
+<CODE><BIG><B>ENCQUOTEDPRINTABLE</B></BIG> = 1</CODE>
+<P>
+
+<A name="ENCOTHER"></A>
+<CODE><BIG><B>ENCOTHER</B></BIG> = 1</CODE>
+<P>
+
+<A name="imap_open()"></A>
+<CODE><I>resource</I> <BIG><B>imap_open</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n_retries = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$params = array())</CODE>
+<P>
+
+<A name="imap_reopen()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_reopen</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$n_retries = 0)</CODE>
+<P>
+
+<A name="imap_append()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_append</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$folder,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$message,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$options = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$internal_date = NULL)</CODE>
+<P>
+
+<A name="imap_num_msg()"></A>
+<CODE><I>int</I> <BIG><B>imap_num_msg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream)</CODE>
+<P>
+
+<A name="imap_ping()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_ping</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream)</CODE>
+<P>
+
+<A name="imap_num_recent()"></A>
+<CODE><I>int</I> <BIG><B>imap_num_recent</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream)</CODE>
+<P>
+
+<A name="imap_get_quota()"></A>
+<CODE><I>mixed</I> <BIG><B>imap_get_quota</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$quota_root)</CODE>
+<P>
+
+<A name="imap_get_quotaroot()"></A>
+<CODE><I>mixed</I> <BIG><B>imap_get_quotaroot</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$quota_root)</CODE>
+<P>
+
+<A name="imap_set_quota()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_set_quota</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$quota_root,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$quota_limit)</CODE>
+<P>
+
+<A name="imap_setacl()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_setacl</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$id,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$rights)</CODE>
+<P>
+
+<A name="imap_getacl()"></A>
+<CODE><I>string[string]</I> <BIG><B>imap_getacl</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox)</CODE>
+<P>
+
+<A name="imap_expunge()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_expunge</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream)</CODE>
+<P>
+
+<A name="imap_close()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_close</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream, ...)</CODE>
+<P>
+
+<A name="imap_headers()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_headers</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream)</CODE>
+<P>
+
+<A name="imap_body()"></A>
+<CODE><I>string</I> <BIG><B>imap_body</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no, ...)</CODE>
+<P>
+
+<A name="imap_mail_copy()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_mail_copy</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$msglist,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_mail_move()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_mail_move</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$msglist,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_createmailbox()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_createmailbox</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox)</CODE>
+<P>
+
+<A name="imap_renamemailbox()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_renamemailbox</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$old_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$new_name)</CODE>
+<P>
+
+<A name="imap_deletemailbox()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_deletemailbox</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox)</CODE>
+<P>
+
+<A name="imap_list()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_list</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="imap_listmailbox()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_listmailbox</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="imap_getmailboxes()"></A>
+<CODE><I><a href="#imap_anonymous_class_1"><code>imap_anonymous_class_1</code></a>[int]</I> <BIG><B>imap_getmailboxes</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="imap_scan()"></A>
+<CODE><I>mixed[]</I> <BIG><B>imap_scan</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="imap_check()"></A>
+<CODE><I><a href="#imap_anonymous_class_2"><code>imap_anonymous_class_2</code></a></I> <BIG><B>imap_check</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream)</CODE>
+<P>
+
+<A name="imap_delete()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_delete</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_undelete()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_undelete</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$flags = 0)</CODE>
+<P>
+
+<A name="imap_header()"></A>
+<CODE><I><a href="#imap_anonymous_class_4"><code>imap_anonymous_class_4</code></a></I> <BIG><B>imap_header</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fromlength = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$subjectlength = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$defaulthost = NULL)</CODE>
+<P>
+
+<A name="imap_headerinfo()"></A>
+<CODE><I><a href="#imap_anonymous_class_4"><code>imap_anonymous_class_4</code></a></I> <BIG><B>imap_headerinfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fromlength = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$subjectlength = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$defaulthost = NULL)</CODE>
+<P>
+
+<A name="imap_rfc822_parse_headers()"></A>
+<CODE><I><a href="#imap_anonymous_class_4"><code>imap_anonymous_class_4</code></a></I> <BIG><B>imap_rfc822_parse_headers</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$headers,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$defaulthost = "UNKNOWN")</CODE>
+<P>
+
+<A name="imap_lsub()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_lsub</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="imap_listsubscribed()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_listsubscribed</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="imap_getsubscribed()"></A>
+<CODE><I><a href="#imap_anonymous_class_1"><code>imap_anonymous_class_1</code></a>[int]</I> <BIG><B>imap_getsubscribed</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern)</CODE>
+<P>
+
+<A name="imap_subscribe()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_subscribe</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox)</CODE>
+<P>
+
+<A name="imap_unsubscribe()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_unsubscribe</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox)</CODE>
+<P>
+
+<A name="imap_fetchstructure()"></A>
+<CODE><I><a href="#imap_anonymous_class_6"><code>imap_anonymous_class_6</code></a></I> <BIG><B>imap_fetchstructure</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_fetchbody()"></A>
+<CODE><I>string</I> <BIG><B>imap_fetchbody</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$section,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_base64()"></A>
+<CODE><I>string</I> <BIG><B>imap_base64</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="imap_qprint()"></A>
+<CODE><I>string</I> <BIG><B>imap_qprint</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="imap_8bit()"></A>
+<CODE><I>string</I> <BIG><B>imap_8bit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="imap_binary()"></A>
+<CODE><I>string</I> <BIG><B>imap_binary</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="imap_mailboxmsginfo()"></A>
+<CODE><I><a href="#imap_anonymous_class_7"><code>imap_anonymous_class_7</code></a></I> <BIG><B>imap_mailboxmsginfo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream)</CODE>
+<P>
+
+<A name="imap_rfc822_write_address()"></A>
+<CODE><I>string</I> <BIG><B>imap_rfc822_write_address</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$personal)</CODE>
+<P>
+
+<A name="imap_rfc822_parse_adrlist()"></A>
+<CODE><I><a href="#imap_anonymous_class_3"><code>imap_anonymous_class_3</code></a>[int]</I> <BIG><B>imap_rfc822_parse_adrlist</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$address,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$default_host)</CODE>
+<P>
+
+<A name="imap_utf8()"></A>
+<CODE><I>string</I> <BIG><B>imap_utf8</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mime_encoded_text)</CODE>
+<P>
+
+<A name="imap_utf7_decode()"></A>
+<CODE><I>string</I> <BIG><B>imap_utf7_decode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$text)</CODE>
+<P>
+
+<A name="imap_utf7_encode()"></A>
+<CODE><I>string</I> <BIG><B>imap_utf7_encode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="imap_setflag_full()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_setflag_full</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sequence,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$flag,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_clearflag_full()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_clearflag_full</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sequence,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$flag, ...)</CODE>
+<P>
+
+<A name="imap_sort()"></A>
+<CODE><I>int[int]</I> <BIG><B>imap_sort</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$criteria,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$reverse,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$search_criteria = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$charset = NULL)</CODE>
+<P>
+
+<A name="imap_fetchheader()"></A>
+<CODE><I>string</I> <BIG><B>imap_fetchheader</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_uid()"></A>
+<CODE><I>int</I> <BIG><B>imap_uid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no)</CODE>
+<P>
+
+<A name="imap_msgno()"></A>
+<CODE><I>int</I> <BIG><B>imap_msgno</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$uid)</CODE>
+<P>
+
+<A name="imap_status()"></A>
+<CODE><I><a href="#imap_anonymous_class_8"><code>imap_anonymous_class_8</code></a></I> <BIG><B>imap_status</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mailbox,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options)</CODE>
+<P>
+
+<A name="imap_bodystruct()"></A>
+<CODE><I><a href="#imap_anonymous_class_6"><code>imap_anonymous_class_6</code></a></I> <BIG><B>imap_bodystruct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_no,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$section)</CODE>
+<P>
+
+<A name="imap_fetch_()"></A>
+<CODE><I><a href="#imap_anonymous_class_9"><code>imap_anonymous_class_9</code></a>[int]</I> <BIG><B>imap_fetch_</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$sequence,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_mail_compose()"></A>
+<CODE><I>string</I> <BIG><B>imap_mail_compose</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$envelope,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$body)</CODE>
+<P>
+
+<A name="imap_mail()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_mail</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$to,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$subject,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$message,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$additional_headers = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cc = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$bcc = NULL,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$rpath = NULL)</CODE>
+<P>
+
+<A name="imap_search()"></A>
+<CODE><I>int[int]</I> <BIG><B>imap_search</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$criteria,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$charset = NULL)</CODE>
+<P>
+
+<A name="imap_alerts()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_alerts</B></BIG>()</CODE>
+<P>
+
+<A name="imap_errors()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_errors</B></BIG>()</CODE>
+<P>
+
+<A name="imap_last_error()"></A>
+<CODE><I>mixed</I> <BIG><B>imap_last_error</B></BIG>()</CODE>
+<P>
+
+<A name="imap_mime_header_decode()"></A>
+<CODE><I><a href="#imap_anonymous_class_10"><code>imap_anonymous_class_10</code></a>[int]</I> <BIG><B>imap_mime_header_decode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str)</CODE>
+<P>
+
+<A name="imap_thread()"></A>
+<CODE><I>int[string]</I> <BIG><B>imap_thread</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 1)</CODE>
+<P>
+
+<A name="imap_timeout()"></A>
+<CODE><I>mixed</I> <BIG><B>imap_timeout</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$timeout_type,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$timeout = -1)</CODE>
+<P>
+
+<A name="imap_gc()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_gc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$caches)</CODE>
+<P>
+
+<A name="imap_listscan()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_listscan</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="imap_scanmailbox()"></A>
+<CODE><I>string[int]</I> <BIG><B>imap_scanmailbox</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$ref,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pattern,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$content)</CODE>
+<P>
+
+<A name="imap_savebody()"></A>
+<CODE><I>boolean</I> <BIG><B>imap_savebody</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed</I>&nbsp;$file,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_number,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$part_number = "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<P>
+
+<A name="imap_fetchmime()"></A>
+<CODE><I>string</I> <BIG><B>imap_fetchmime</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$imap_stream,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$msg_number,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$section,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$options = 0)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_1"></A>
+<pre>class <BIG><B>imap_anonymous_class_1</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_1::$name"></A>
+<CODE><I>string</I> <BIG><B>$name</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_1::$delimiter"></A>
+<CODE><I>string</I> <BIG><B>$delimiter</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_1::$attributes"></A>
+<CODE><I>int</I> <BIG><B>$attributes</B></BIG> = 0</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_2"></A>
+<pre>class <BIG><B>imap_anonymous_class_2</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declares this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_2::$Date"></A>
+<CODE><I>string</I> <BIG><B>$Date</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_2::$Driver"></A>
+<CODE><I>string</I> <BIG><B>$Driver</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_2::$Mailbox"></A>
+<CODE><I>string</I> <BIG><B>$Mailbox</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_2::$Nmsgs"></A>
+<CODE><I>int</I> <BIG><B>$Nmsgs</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_2::$Recent"></A>
+<CODE><I>int</I> <BIG><B>$Recent</B></BIG> = 0</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_3"></A>
+<pre>class <BIG><B>imap_anonymous_class_3</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_3::$personal"></A>
+<CODE><I>string</I> <BIG><B>$personal</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_3::$adl"></A>
+<CODE><I>string</I> <BIG><B>$adl</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_3::$mailbox"></A>
+<CODE><I>string</I> <BIG><B>$mailbox</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_3::$host"></A>
+<CODE><I>string</I> <BIG><B>$host</B></BIG></CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_4"></A>
+<pre>class <BIG><B>imap_anonymous_class_4</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_4::$toaddress"></A>
+<CODE><I>string</I> <BIG><B>$toaddress</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$to"></A>
+<CODE><I><a href="#imap_anonymous_class_3"><code>imap_anonymous_class_3</code></a>[int]</I> <BIG><B>$to</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$fromaddress"></A>
+<CODE><I>string</I> <BIG><B>$fromaddress</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$from"></A>
+<CODE><I><a href="#imap_anonymous_class_3"><code>imap_anonymous_class_3</code></a>[int]</I> <BIG><B>$from</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$ccaddress"></A>
+<CODE><I>string</I> <BIG><B>$ccaddress</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$cc"></A>
+<CODE><I><a href="#imap_anonymous_class_3"><code>imap_anonymous_class_3</code></a>[int]</I> <BIG><B>$cc</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$bccaddress"></A>
+<CODE><I>string</I> <BIG><B>$bccaddress</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$bcc"></A>
+<CODE><I><a href="#imap_anonymous_class_3"><code>imap_anonymous_class_3</code></a>[int]</I> <BIG><B>$bcc</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$reply_toaddress"></A>
+<CODE><I>string</I> <BIG><B>$reply_toaddress</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$reply_to"></A>
+<CODE><I><a href="#imap_anonymous_class_3"><code>imap_anonymous_class_3</code></a>[int]</I> <BIG><B>$reply_to</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$senderaddress"></A>
+<CODE><I>string</I> <BIG><B>$senderaddress</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$sender"></A>
+<CODE><I><a href="#imap_anonymous_class_3"><code>imap_anonymous_class_3</code></a>[int]</I> <BIG><B>$sender</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$return_pathaddress"></A>
+<CODE><I>string</I> <BIG><B>$return_pathaddress</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$return_path"></A>
+<CODE><I><a href="#imap_anonymous_class_3"><code>imap_anonymous_class_3</code></a>[int]</I> <BIG><B>$return_path</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$remail"></A>
+<CODE><I>string</I> <BIG><B>$remail</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$date"></A>
+<CODE><I>string</I> <BIG><B>$date</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Date"></A>
+<CODE><I>string</I> <BIG><B>$Date</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$subject"></A>
+<CODE><I>string</I> <BIG><B>$subject</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Subject"></A>
+<CODE><I>string</I> <BIG><B>$Subject</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$in_reply_to"></A>
+<CODE><I>string</I> <BIG><B>$in_reply_to</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$message_id"></A>
+<CODE><I>string</I> <BIG><B>$message_id</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$newsgroups"></A>
+<CODE><I>string</I> <BIG><B>$newsgroups</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$followup_to"></A>
+<CODE><I>string</I> <BIG><B>$followup_to</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$references"></A>
+<CODE><I>string</I> <BIG><B>$references</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Recent"></A>
+<CODE><I>string</I> <BIG><B>$Recent</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Unseen"></A>
+<CODE><I>string</I> <BIG><B>$Unseen</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Flagged"></A>
+<CODE><I>string</I> <BIG><B>$Flagged</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Answered"></A>
+<CODE><I>string</I> <BIG><B>$Answered</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Deleted"></A>
+<CODE><I>string</I> <BIG><B>$Deleted</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Draft"></A>
+<CODE><I>string</I> <BIG><B>$Draft</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Msgno"></A>
+<CODE><I>int</I> <BIG><B>$Msgno</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$MailDate"></A>
+<CODE><I>string</I> <BIG><B>$MailDate</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$Size"></A>
+<CODE><I>int</I> <BIG><B>$Size</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$udate"></A>
+<CODE><I>int</I> <BIG><B>$udate</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$fetchfrom"></A>
+<CODE><I>string</I> <BIG><B>$fetchfrom</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_4::$fetchsubject"></A>
+<CODE><I>string</I> <BIG><B>$fetchsubject</B></BIG></CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_5"></A>
+<pre>class <BIG><B>imap_anonymous_class_5</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_5::$attribute"></A>
+<CODE><I>string</I> <BIG><B>$attribute</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_5::$value"></A>
+<CODE><I>string</I> <BIG><B>$value</B></BIG></CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_6"></A>
+<pre>class <BIG><B>imap_anonymous_class_6</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_6::$type"></A>
+<CODE><I>int</I> <BIG><B>$type</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$encoding"></A>
+<CODE><I>int</I> <BIG><B>$encoding</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$ifsubtype"></A>
+<CODE><I>boolean</I> <BIG><B>$ifsubtype</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$subtype"></A>
+<CODE><I>string</I> <BIG><B>$subtype</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$ifdescription"></A>
+<CODE><I>boolean</I> <BIG><B>$ifdescription</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$description"></A>
+<CODE><I>string</I> <BIG><B>$description</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$ifid"></A>
+<CODE><I>boolean</I> <BIG><B>$ifid</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$id"></A>
+<CODE><I>string</I> <BIG><B>$id</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$lines"></A>
+<CODE><I>int</I> <BIG><B>$lines</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$bytes"></A>
+<CODE><I>int</I> <BIG><B>$bytes</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$ifdisposition"></A>
+<CODE><I>boolean</I> <BIG><B>$ifdisposition</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$disposition"></A>
+<CODE><I>string</I> <BIG><B>$disposition</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$ifdparameters"></A>
+<CODE><I>boolean</I> <BIG><B>$ifdparameters</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$dparameters"></A>
+<CODE><I><a href="#imap_anonymous_class_5"><code>imap_anonymous_class_5</code></a>[int]</I> <BIG><B>$dparameters</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$ifparameters"></A>
+<CODE><I>boolean</I> <BIG><B>$ifparameters</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$parameters"></A>
+<CODE><I><a href="#imap_anonymous_class_5"><code>imap_anonymous_class_5</code></a>[int]</I> <BIG><B>$parameters</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_6::$parts"></A>
+<CODE><I><a href="#imap_anonymous_class_6"><code>imap_anonymous_class_6</code></a>[int]</I> <BIG><B>$parts</B></BIG></CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_7"></A>
+<pre>class <BIG><B>imap_anonymous_class_7</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_7::$Date"></A>
+<CODE><I>string</I> <BIG><B>$Date</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_7::$Driver"></A>
+<CODE><I>string</I> <BIG><B>$Driver</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_7::$Mailbox"></A>
+<CODE><I>string</I> <BIG><B>$Mailbox</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_7::$Nmsgs"></A>
+<CODE><I>int</I> <BIG><B>$Nmsgs</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_7::$Recent"></A>
+<CODE><I>int</I> <BIG><B>$Recent</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_7::$Unread"></A>
+<CODE><I>int</I> <BIG><B>$Unread</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_7::$Deleted"></A>
+<CODE><I>int</I> <BIG><B>$Deleted</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_7::$Size"></A>
+<CODE><I>int</I> <BIG><B>$Size</B></BIG> = 0</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_8"></A>
+<pre>class <BIG><B>imap_anonymous_class_8</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_8::$messages"></A>
+<CODE><I>int</I> <BIG><B>$messages</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_8::$recent"></A>
+<CODE><I>int</I> <BIG><B>$recent</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_8::$unseen"></A>
+<CODE><I>int</I> <BIG><B>$unseen</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_8::$uidnext"></A>
+<CODE><I>int</I> <BIG><B>$uidnext</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_8::$uidvalidity"></A>
+<CODE><I>int</I> <BIG><B>$uidvalidity</B></BIG> = 0</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_9"></A>
+<pre>class <BIG><B>imap_anonymous_class_9</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_9::$subject"></A>
+<CODE><I>string</I> <BIG><B>$subject</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$from"></A>
+<CODE><I>string</I> <BIG><B>$from</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$to"></A>
+<CODE><I>string</I> <BIG><B>$to</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$date"></A>
+<CODE><I>string</I> <BIG><B>$date</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$message_id"></A>
+<CODE><I>string</I> <BIG><B>$message_id</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$references"></A>
+<CODE><I>string</I> <BIG><B>$references</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$in_reply_to"></A>
+<CODE><I>string</I> <BIG><B>$in_reply_to</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$size"></A>
+<CODE><I>int</I> <BIG><B>$size</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$uid"></A>
+<CODE><I>int</I> <BIG><B>$uid</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$msgno"></A>
+<CODE><I>int</I> <BIG><B>$msgno</B></BIG> = 0</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$recent"></A>
+<CODE><I>boolean</I> <BIG><B>$recent</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$flagged"></A>
+<CODE><I>boolean</I> <BIG><B>$flagged</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$answered"></A>
+<CODE><I>boolean</I> <BIG><B>$answered</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$deleted"></A>
+<CODE><I>boolean</I> <BIG><B>$deleted</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$seen"></A>
+<CODE><I>boolean</I> <BIG><B>$seen</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$draft"></A>
+<CODE><I>boolean</I> <BIG><B>$draft</B></BIG> = FALSE</CODE>
+<P>
+
+<A name="imap_anonymous_class_9::$udate"></A>
+<CODE><I>int</I> <BIG><B>$udate</B></BIG> = 0</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<A name="imap_anonymous_class_10"></A>
+<pre>class <BIG><B>imap_anonymous_class_10</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>PHP does not declare this class explicitly, but it is required by   PHPLint in order to access object's fields</b></P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="imap_anonymous_class_10::$charset"></A>
+<CODE><I>string</I> <BIG><B>$charset</B></BIG></CODE>
+<P>
+
+<A name="imap_anonymous_class_10::$text"></A>
+<CODE><I>string</I> <BIG><B>$text</B></BIG></CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

@@ -1,0 +1,241 @@
+<HTML><BODY>
+<H1>Arrays</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="Sortable.html"><code>Sortable.php</code></a>, <a href="Comparable.html"><code>Comparable.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="Sorter.html"><code>Sorter.php</code></a>, <a href="../utils/Floats.html"><code>Floats.php</code></a>, <a href="../utils/Integers.html"><code>Integers.php</code></a>, <a href="StringSorter.html"><code>StringSorter.php</code></a>, <a href="Printable.html"><code>Printable.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Arrays"></A>
+<pre>class <BIG><B>it\icosaedro\containers\Arrays</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Utility functions to manipulate arrays</b></P><P><B>Version:</B> $Date: 2012/02/14 07:44:33 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+Arrays must have int indeces
+	T[int], with T that may be int, float, string or object of any class.
+	If T is an object that implements <a href="Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a>, a specific sorting
+	function is provided, otherwise a custom <a href="Sorter.html#it/icosaedro/containers/Sorter"><code>it\icosaedro\containers\Sorter</code></a> object may be
+	provided. Example where sortable objects get sorted:
+<p>
+	<pre>
+	require_once __DIR__ . "/all.php";
+	use it\icosaedro\containers\Arrays;
+	use it\icosaedro\containers\Sortable;
+	class MyClass implements Sortable { ... }
+	$a = array(new MyClass(...), new MyClass(...), ...);
+	$sorted = cast("MyClass[int]", Arrays::sort($a));
+	</pre>
+<p>
+	Note that the magic cast() function is required to retrieve the expected
+	type of the resulting array. Specialized sorter objects can be used as well:
+<p>
+	<pre>
+	use it\icosaedro\containers\Sorter;
+	class MyClassSomefieldSorter implements Sorter { ... }
+	$sorted = cast("MyClass[int]", Arrays::sortBySorter(
+		$a, new MyClassSomefieldSorter() );
+	</pre>
+<p>
+	Specialized methods are also provided to sort arrays of the basic PHP
+	types. Their names follow the schema sortArrayOfT(), where T is the
+	specific type of the elements of the T[int]. For strings, there is
+	also sortArrayOfStringBySorter() where a custom sorter object may be
+	provided. For objects, the sort() method assumes the objects implement the
+	<a href="Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a> interface, while the sortBySorter() allows to
+	specify a custom sorter object. Example where an array of strings get sorted:
+<p>
+	<pre>
+	$a = array("one", "two", "three");
+	$sorted = Arrays::sortArrayOfString($a);
+	</pre>
+<p>
+	Sorting methods use the Quicksort algorithm, that requires time
+	t=k*n*log(n) where n is the number of elements in the array and k depends
+	on the speed of the processor. On a Pentium 4 at 1,6 GHz the generic object
+	sorting method performs k=5e-5 seconds, that is 0.34 seconds for n=1000
+	and about 11 minutes for n=1e6.
+<p>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Arrays::sort()"></A>
+<CODE>static <I><a href="Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a>[int]</I> <BIG><B>sort</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a>[int]</I>&nbsp;$a)</CODE>
+<BLOCKQUOTE>
+<P><b>Sorts an array of Sortable objects</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Array to be sorted. The array can be
+		empty, but not NULL.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Sorted array. The indeces, all of type
+		int, start from 0. The passed array is not modified.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../CastException.html#CastException"><code>CastException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If objects cannot be compared because belong
+		to incompatible classes.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Arrays::sortBySorter()"></A>
+<CODE>static <I>object[int]</I> <BIG><B>sortBySorter</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object[int]</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="Sorter.html#it/icosaedro/containers/Sorter"><code>it\icosaedro\containers\Sorter</code></a></I>&nbsp;$c)</CODE>
+<BLOCKQUOTE>
+<P><b>Sorts array of objects with custom sorter object</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Array to be sorted.</td></tr>
+<tr><td valign=top><b><code>$c&nbsp;&nbsp;</code></b></td> <td valign=top>The sorter defining the order of the elements.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Sorted array. The indeces, all of type
+		int, start from 0. The passed array is not modified.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../CastException.html#CastException"><code>CastException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the elements of the array does not belong
+		to the class expected by the sorter.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Arrays::sortArrayOfInt()"></A>
+<CODE>static <I>int[int]</I> <BIG><B>sortArrayOfInt</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int[int]</I>&nbsp;$a)</CODE>
+<BLOCKQUOTE>
+<P><b>Sort array of int numbers in ascending order</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Array to be sorted.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Sorted array. The indeces, all of type
+		int, start from 0. The passed array is not modified.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Arrays::sortArrayOfFloat()"></A>
+<CODE>static <I>float[int]</I> <BIG><B>sortArrayOfFloat</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>float[int]</I>&nbsp;$a)</CODE>
+<BLOCKQUOTE>
+<P><b>Sort array of float numbers in ascending order</b></P><P>
+Applies the total ordering imposed by <a href="../utils/Floats.html#it/icosaedro/utils/Floats::compare()"><code>it\icosaedro\utils\Floats::compare()</code></a>.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Array to be sorted.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Sorted array. The indeces, all of type
+		int, start from 0. The passed array is not modified.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Arrays::sortArrayOfString()"></A>
+<CODE>static <I>string[int]</I> <BIG><B>sortArrayOfString</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[int]</I>&nbsp;$a)</CODE>
+<BLOCKQUOTE>
+<P><b>Sort array of strings in ascending order</b></P><P>
+Strings are compared with the standard function <a href="../../../../modules/standard.html#strcmp()"><code>strcmp()</code></a>.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Array to be sorted.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Sorted array. The indeces, all of type
+		int, start from 0. The passed array is not modified.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Arrays::sortArrayOfStringBySorter()"></A>
+<CODE>static <I>string[int]</I> <BIG><B>sortArrayOfStringBySorter</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string[int]</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="StringSorter.html#it/icosaedro/containers/StringSorter"><code>it\icosaedro\containers\StringSorter</code></a></I>&nbsp;$c)</CODE>
+<BLOCKQUOTE>
+<P><b>Sort array of strings according to the specific sorter</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Array to be sorted.</td></tr>
+<tr><td valign=top><b><code>$c&nbsp;&nbsp;</code></b></td> <td valign=top>Custom string sorter.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Sorted array. The indeces, all of type
+		int, start from 0. The passed array is not modified.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/containers/Arrays::implode()"></A>
+<CODE>static <I>string</I> <BIG><B>implode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a>[int]</I>&nbsp;$objects,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$separator)</CODE>
+<BLOCKQUOTE>
+<P><b>Joins an array of printable objects in a single string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$objects&nbsp;&nbsp;</code></b></td> <td valign=top>Array of printable objects.</td></tr>
+<tr><td valign=top><b><code>$separator&nbsp;&nbsp;</code></b></td> <td valign=top>Separator string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Result of the joining.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

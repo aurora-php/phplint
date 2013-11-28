@@ -1,0 +1,561 @@
+<HTML><BODY>
+<H1>Bytes</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="Strings.html"><code>Strings.php</code></a>, <a href="../containers/Hash.html"><code>Hash.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes"></A>
+<pre>class <BIG><B>it\icosaedro\utils\Bytes</B></BIG>
+      |  
+      +--(<i><a href="../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+      +--(<i><a href="../containers/Sortable.html#it/icosaedro/containers/Sortable"><code>it\icosaedro\containers\Sortable</code></a></i>)
+      |    `--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      +--(<i><a href="../containers/Hashable.html#it/icosaedro/containers/Hashable"><code>it\icosaedro\containers\Hashable</code></a></i>)
+      |    `--(<i><a href="../containers/Comparable.html#it/icosaedro/containers/Comparable"><code>it\icosaedro\containers\Comparable</code></a></i>)
+      `--(<i><a href="../../../../modules/spl.html#Serializable"><code>Serializable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Immutable array of bytes that wraps a PHP string</b></P><P><B>Version:</B> $Date: 2012/02/14 07:44:33 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+The main difference
+	between an oject of this class and an ordinary PHP string is that this
+	object calculates and stores once for all its own hash value. Moreover,
+	several methods are simply wrappers over the str*() set of PHP standard
+	functions, but with a more consistent, intuitive and safer interface.
+<p>
+	The name of this class is a generic "Bytes" because a more appropriate
+	"String" cannot be used (it is a keyword) and, anyway, PHP strings are much
+	more bare arrays of bytes without any specific encoding than real strings
+	of characters. In this document the terms "string" and "array of bytes"
+	or even simply "bytes" are then assumed synonim terms.
+<p>
+	New instances must be created through the factory method:
+<p>
+	<pre>
+	use it\icosaedro\utils\Bytes;
+
+	/&#42;. Bytes .&#42;/ function BF(/&#42;. string .&#42;/ $s) {
+		return Bytes::factory($s);
+	}
+
+	$msg = BF("Bye world!");
+	$bye = BF("Bye");
+	$hello = BF("Hello");
+	if( $msg-&gt;startsWith($bye) )
+		$msg = $msg -&gt;remove(0, $bye-&gt;length()) -&gt;insert($hello, 0);
+	echo $msg;
+	# ==&gt; Hello world!
+	</pre>
+<p>
+	The factory method takes care to do some useful obtimizations saving memory
+	by caching shorter strings.
+<p>
+	Missing features: toUpper(), toLower(), regular expressions.
+	Search, replace and comparison case-insensitive.
+<p>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::factory()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I> <BIG><B>factory</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<BLOCKQUOTE>
+<P><b>Builds a new Bytes object out of a string</b></P><P>
+Shorter strings (currently
+		those of length 0 or 1 bytes) are cached internally to save memory
+		space. Allows "fluid interface" programming Bytes::factory("abc")-&gt;...
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>The string to wrap inside an object.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Object that wraps this string. If the string is NULL, NULL
+		is returned.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::length()"></A>
+<CODE><I>int</I> <BIG><B>length</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the number of bytes in this array</b></P><P>
+<p><b>Return:</b> Number of bytes in this array.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::getByte()"></A>
+<CODE><I>int</I> <BIG><B>getByte</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$i)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the byte at a specified index</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$i&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the byte. The first byte has index 0.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Number in [0,255].</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The index is either &lt; 0 or
+ &gt; $this-&gt;length().
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::toLiteral()"></A>
+<CODE><I>string</I> <BIG><B>toLiteral</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns a PHP-compliant, pure ASCII, literal string in double-quotes</b></P><P>
+Useful to display arbitrary strings that may contain control
+ characters or invalid encoding.
+ All the ASCII control characters and the <code>$ \ "</code> characters
+ are converted to the form \xxx, where xxx is the octal code of the
+ byte, with the exception of the usual control characters as LF, CR etc.
+ that are rendered as escape sequences "\n", "\r" etc.
+ Example:
+ <pre>
+ echo Bytes::factory("abc\n")-&gt;toLiteral();
+ # ==&gt; "abc\n"
+ </pre>
+
+<p><b>Return:</b> PHP, pure ASCII, literal string.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns the bytes as a PHP string</b></P><P>
+<p><b>Return:</b> The bytes. Since this is an arbitrary sequence
+ of bytes without any particular encoding, consider to call <a href="#it/icosaedro/utils/Bytes::toLiteral()"><code>it\icosaedro\utils\Bytes::toLiteral()</code></a> instead in order to get a readable result whatever
+ the binary content might be.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::compareTo()"></A>
+<CODE><I>int</I> <BIG><B>compareTo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="../containers/Sortable.html#it/icosaedro/containers/Sortable::compareTo()"><code>it\icosaedro\containers\Sortable</code></a><BLOCKQUOTE>
+<P><b>Compares two strings based on their binary content</b></P><P>
+Non locale-aware: bytes are compared left to right according
+ to their value in [0..255].
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>The other array of bytes to compare with.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Less that 0 if $a&lt;$b, greather than zero if $a&gt;$b,
+ zero if the two strings are equal.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../CastException.html#CastException"><code>CastException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;The other object is NULL or is not exactly
+ instance of this class.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::append()"></A>
+<CODE><I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I> <BIG><B>append</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$other)</CODE>
+<BLOCKQUOTE>
+<P><b>Appends bytes to the end of these bytes</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>Another array of bytes.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The array of bytes resulting appending the other to this.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::substring()"></A>
+<CODE><I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I> <BIG><B>substring</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Return a subrange of this string</b></P><P>
+The NULL string has no subranges.
+ The valid range of the indexes is:
+ <code>0 &lt;= $a &lt;= $b &lt;= strlen($s)</code> Example:
+ <p><center><img src="./Bytes-substring.gif"></center><p>
+ <pre>
+     $s = new Bytes("ABCDEFG");
+     $s-&gt;substring(0, 4) ==&gt; "ABCD"
+     $s-&gt;substring(2, 2) ==&gt; ""
+ </pre>
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Beginning of the range.</td></tr>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>End of the range.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> The substring, whose length is exactly ($b-$a)
+ bytes. Note that if $a==$b, then the empty string is returned.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the range is invalid.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::remove()"></A>
+<CODE><I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I> <BIG><B>remove</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$a,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$b)</CODE>
+<BLOCKQUOTE>
+<P><b>Removes a range of bytes from this string</b></P><P>
+For example, if
+ this string is "ABCD", removing the range (1,3) yields "AD";
+ instead, remove($i,$i+1) removes one byte at index $i.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$a&nbsp;&nbsp;</code></b></td> <td valign=top>Beginning of the range.</td></tr>
+<tr><td valign=top><b><code>$b&nbsp;&nbsp;</code></b></td> <td valign=top>End of the range.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string with the substring removed. The resulting
+ string is ($b-$a) bytes shorter than this. Note that the string
+ removed is just $this-&gt;substring($a,$b).</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid range: must be 0 &lt;= $a &lt;= $b &lt;=
+ $this-&gt;length().
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::insert()"></A>
+<CODE><I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I> <BIG><B>insert</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$s,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$at)</CODE>
+<BLOCKQUOTE>
+<P><b>Inserts a string in this string at a given position</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$s&nbsp;&nbsp;</code></b></td> <td valign=top>String to insert.</td></tr>
+<tr><td valign=top><b><code>$at&nbsp;&nbsp;</code></b></td> <td valign=top>Index position.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string with the given string inserted at the
+ given position. The resulting string is exactly $this-&gt;length()
+ + $s-&gt;length() bytes long.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid range: must be 0 &lt;= $at &lt;=
+ $this-&gt;length().
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::startsWith()"></A>
+<CODE><I>boolean</I> <BIG><B>startsWith</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$head)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns TRUE if $this starts with $head</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$head&nbsp;&nbsp;</code></b></td> <td valign=top>The expected beginning of this.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if $this starts with $head. The empty string is
+ the beginning of any string. Any string starts with itself.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::endsWith()"></A>
+<CODE><I>boolean</I> <BIG><B>endsWith</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$tail)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns TRUE if $this ends with $tail</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$tail&nbsp;&nbsp;</code></b></td> <td valign=top>The expected tail of this.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if $this ends with $tail. The empty string is
+ the end of any string. Any string ends with itself.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::indexOf()"></A>
+<CODE><I>int</I> <BIG><B>indexOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$from = 0)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the starting position of the first occurrence of the target  string in this string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Target substring to search. The empty string can
+ always be found at the very beginning of the search, so $from is
+ returned.</td></tr>
+<tr><td valign=top><b><code>$from&nbsp;&nbsp;</code></b></td> <td valign=top>Search target in the range [$from,$this-&gt;length()]
+ of this string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Index of the beginning first matching target, or -1 if
+ not found.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If $from outside [0,$this-&gt;length()].
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::lastIndexOf()"></A>
+<CODE><I>int</I> <BIG><B>lastIndexOf</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$from)</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the starting position of the last occurrence of the target  string in this string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Target substring to search. The empty string
+ can always be found at the beginning of the search, so the length
+ of $this string is returned.</td></tr>
+<tr><td valign=top><b><code>$from&nbsp;&nbsp;</code></b></td> <td valign=top>Search target in the range [0,$from] of this string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Index of the beginning of the first matching target,
+ or -1 if not found.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#OutOfRangeException"><code>OutOfRangeException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If $from outside [0,$this-&gt;length()].
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::trim()"></A>
+<CODE><I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I> <BIG><B>trim</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$bytelist = "&nbsp;\t\n\r\x00\x0B")</CODE>
+<BLOCKQUOTE>
+<P><b>Returns a copy of this string with leading and trailing bytes  specified removed</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$bytelist&nbsp;&nbsp;</code></b></td> <td valign=top>List of the bytes to remove. The special
+ sequence "A..B" specifies the range from "A" to "B".  The default
+ value lists the space characters as they may be appear to be encoded
+ in the ASCII charset and in some other extended ASCII charsets,
+ including ISO-8859-* and UTF-8.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string but with all the leading and trailing
+ bytes specified removed.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::replace()"></A>
+<CODE><I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I> <BIG><B>replace</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$target,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$replacement)</CODE>
+<BLOCKQUOTE>
+<P><b>Replaces any occurrence of the target string with the replacement  string</b></P><P>
+Search and replacement is performed scanning this string
+ from left to right.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$target&nbsp;&nbsp;</code></b></td> <td valign=top>Any occurrence of this string is replaced.</td></tr>
+<tr><td valign=top><b><code>$replacement&nbsp;&nbsp;</code></b></td> <td valign=top>Replacement string.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> This string but with any occurrence of the target
+ string replaced.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;If the target is the empty string.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::explode()"></A>
+<CODE><I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a>[int]</I> <BIG><B>explode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$separator)</CODE>
+<BLOCKQUOTE>
+<P><b>Explode this string in pieces</b></P><P>
+This string is scanned from left to right.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$separator&nbsp;&nbsp;</code></b></td> <td valign=top>Any non-empty string that separates pieces.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Pieces of this string that were separated by the
+ given separator.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li>unchecked <a href="../../../../modules/spl.html#InvalidArgumentException"><code>InvalidArgumentException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Separator is empty.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::implode()"></A>
+<CODE>static <I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I> <BIG><B>implode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a>[int]</I>&nbsp;$pieces,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I><a href="#it/icosaedro/utils/Bytes"><code>it\icosaedro\utils\Bytes</code></a></I>&nbsp;$separator)</CODE>
+<BLOCKQUOTE>
+<P><b>Implode the array of strings</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$pieces&nbsp;&nbsp;</code></b></td> <td valign=top>Strings to be joined.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::getHash()"></A>
+<CODE><I>int</I> <BIG><B>getHash</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Hashable.html#it/icosaedro/containers/Hashable::getHash()"><code>it\icosaedro\containers\Hashable</code></a><PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::equals()"></A>
+<CODE><I>boolean</I> <BIG><B>equals</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>object</I>&nbsp;$other)</CODE>
+
+<BR><I>implements</i> <a href="../containers/Comparable.html#it/icosaedro/containers/Comparable::equals()"><code>it\icosaedro\containers\Comparable</code></a><BLOCKQUOTE>
+<P><b>Compares these bytes with others bytes for equality</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$other&nbsp;&nbsp;</code></b></td> <td valign=top>Bytes to compare with.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> True if the other is not NULL, belongs to the
+ exact same class of this (not extended), and it contains
+ the same array of bytes.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/utils/Bytes::serialize()"></A>
+<CODE><I>string</I> <BIG><B>serialize</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Serializable::serialize()"><code>Serializable</code></a><P>
+
+<A name="it/icosaedro/utils/Bytes::unserialize()"></A>
+<CODE><I>void</I> <BIG><B>unserialize</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$serialized)</CODE>
+
+<BR><I>implements</i> <a href="../../../../modules/spl.html#Serializable::unserialize()"><code>Serializable</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

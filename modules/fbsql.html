@@ -1,0 +1,255 @@
+<HTML><BODY>
+<H1>fbsql</H1>
+<P><b>FrontBase Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.fbsql.php"><code>http://www.php.net/manual/en/ref.fbsql.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="fbsql_connect()"></A>
+<CODE><I>resource</I> <BIG><B>fbsql_connect</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_pconnect()"></A>
+<CODE><I>resource</I> <BIG><B>fbsql_pconnect</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_close()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_close</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_set_transaction()"></A>
+<CODE><I>void</I> <BIG><B>fbsql_set_transaction</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$locking,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$isolation)</CODE>
+<P>
+
+<A name="fbsql_autocommit()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_autocommit</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier, ...)</CODE>
+<P>
+
+<A name="fbsql_commit()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_commit</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_rollback()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_rollback</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_create_blob()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_create_blob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$blob_data, ...)</CODE>
+<P>
+
+<A name="fbsql_create_clob()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_create_clob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clob_data, ...)</CODE>
+<P>
+
+<A name="fbsql_set_lob_mode()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_set_lob_mode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$lob_mode)</CODE>
+<P>
+
+<A name="fbsql_read_blob()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_read_blob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$blob_handle, ...)</CODE>
+<P>
+
+<A name="fbsql_read_clob()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_read_clob</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clob_handle, ...)</CODE>
+<P>
+
+<A name="fbsql_blob_size()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_blob_size</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$blob_handle, ...)</CODE>
+<P>
+
+<A name="fbsql_clob_size()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_clob_size</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$clob_handle, ...)</CODE>
+<P>
+
+<A name="fbsql_hostname()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_hostname</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier, ...)</CODE>
+<P>
+
+<A name="fbsql_database()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_database</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier, ...)</CODE>
+<P>
+
+<A name="fbsql_database_password()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_database_password</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier, ...)</CODE>
+<P>
+
+<A name="fbsql_username()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_username</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier, ...)</CODE>
+<P>
+
+<A name="fbsql_password()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_password</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier, ...)</CODE>
+<P>
+
+<A name="fbsql_set_password()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_set_password</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$link_identifier,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$old_password)</CODE>
+<P>
+
+<A name="fbsql_select_db()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_select_db</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_change_user()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_change_user</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password, ...)</CODE>
+<P>
+
+<A name="fbsql_create_db()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_create_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="fbsql_drop_db()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_drop_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="fbsql_start_db()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_start_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="fbsql_stop_db()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_stop_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="fbsql_db_status()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_db_status</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<P>
+
+<A name="fbsql_query()"></A>
+<CODE><I>resource</I> <BIG><B>fbsql_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="fbsql_db_query()"></A>
+<CODE><I>resource</I> <BIG><B>fbsql_db_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<P>
+
+<A name="fbsql_list_dbs()"></A>
+<CODE><I>resource</I> <BIG><B>fbsql_list_dbs</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_list_tables()"></A>
+<CODE><I>resource</I> <BIG><B>fbsql_list_tables</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database, ...)</CODE>
+<P>
+
+<A name="fbsql_list_fields()"></A>
+<CODE><I>resource</I> <BIG><B>fbsql_list_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table_name, ...)</CODE>
+<P>
+
+<A name="fbsql_error()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_error</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_errno()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_errno</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_warnings()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_warnings</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_affected_rows</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_insert_id()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_insert_id</B></BIG>(...)</CODE>
+<P>
+
+<A name="fbsql_result()"></A>
+<CODE><I>mixed</I> <BIG><B>fbsql_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_next_result()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_next_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="fbsql_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="fbsql_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>fbsql_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="fbsql_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>fbsql_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="fbsql_fetch_assoc()"></A>
+<CODE><I>object</I> <BIG><B>fbsql_fetch_assoc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="fbsql_fetch_object()"></A>
+<CODE><I>object</I> <BIG><B>fbsql_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_fetch_array()"></A>
+<CODE><I>mixed[]</I> <BIG><B>fbsql_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_data_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row_number)</CODE>
+<P>
+
+<A name="fbsql_fetch_lengths()"></A>
+<CODE><I>mixed[]</I> <BIG><B>fbsql_fetch_lengths</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="fbsql_fetch_field()"></A>
+<CODE><I>object</I> <BIG><B>fbsql_fetch_field</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_field_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_field_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_field_name()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_field_table()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_field_table</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_field_len()"></A>
+<CODE><I>mixed</I> <BIG><B>fbsql_field_len</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_field_type()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_field_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_field_flags()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_field_flags</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result, ...)</CODE>
+<P>
+
+<A name="fbsql_table_name()"></A>
+<CODE><I>string</I> <BIG><B>fbsql_table_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$index)</CODE>
+<P>
+
+<A name="fbsql_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>fbsql_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="fbsql_get_autostart_info()"></A>
+<CODE><I>mixed[]</I> <BIG><B>fbsql_get_autostart_info</B></BIG>(...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

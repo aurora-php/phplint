@@ -1,0 +1,432 @@
+<HTML><BODY>
+<H1>mysql</H1>
+<P><b>MySQL Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="standard.html"><code>standard</code></a><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.mysql.php"><code>http://www.php.net/manual/en/ref.mysql.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="MYSQL_ASSOC"></A>
+<CODE><BIG><B>MYSQL_ASSOC</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQL_NUM"></A>
+<CODE><BIG><B>MYSQL_NUM</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQL_BOTH"></A>
+<CODE><BIG><B>MYSQL_BOTH</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQL_CLIENT_COMPRESS"></A>
+<CODE><BIG><B>MYSQL_CLIENT_COMPRESS</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQL_CLIENT_SSL"></A>
+<CODE><BIG><B>MYSQL_CLIENT_SSL</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQL_CLIENT_INTERACTIVE"></A>
+<CODE><BIG><B>MYSQL_CLIENT_INTERACTIVE</B></BIG> = 1</CODE>
+<P>
+
+<A name="MYSQL_CLIENT_IGNORE_SPACE"></A>
+<CODE><BIG><B>MYSQL_CLIENT_IGNORE_SPACE</B></BIG> = 1</CODE>
+<P>
+
+<A name="mysql_affected_rows()"></A>
+<CODE><I>int</I> <BIG><B>mysql_affected_rows</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_client_encoding()"></A>
+<CODE><I>string</I> <BIG><B>mysql_client_encoding</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_close()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_close</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_connect()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_connect</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_create_db()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_create_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> It is preferable to use <a href="#mysql_query()"><code>mysql_query()</code></a> to issue a
+	sql CREATE DATABASE statement instead.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_data_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_data_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row_number)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_db_query()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_db_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$db,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<br><i>triggers</i> <CODE>E_DEPRECATED</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> Use <a href="#mysql_select_db()"><code>mysql_select_db()</code></a> and <a href="#mysql_query()"><code>mysql_query()</code></a>
+	instead.
+	Be aware that this function does NOT switch back to the database you
+	were connected before. In other words, you can't use this function
+	to temporarily run a sql query on another database, you would have
+	to manually switch back. Users are strongly encouraged to use the
+	database.table syntax in their sql queries or <a href="#mysql_select_db()"><code>mysql_select_db()</code></a>
+	instead of this function.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_drop_db()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_drop_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> This function is deprecated, it is preferable to use <a href="#mysql_query()"><code>mysql_query()</code></a> to issue a sql DROP DATABASE statement instead.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_errno()"></A>
+<CODE><I>int</I> <BIG><B>mysql_errno</B></BIG>(...)</CODE>
+<P>
+
+<A name="mysql_error()"></A>
+<CODE><I>string</I> <BIG><B>mysql_error</B></BIG>(...)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_escape_string()"></A>
+<CODE><I>string</I> <BIG><B>mysql_escape_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$s)</CODE>
+<br><i>triggers</i> <CODE>E_DEPRECATED</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> Use <a href="#mysql_real_escape_string()"><code>mysql_real_escape_string()</code></a>.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_fetch_array()"></A>
+<CODE><I>string[]</I> <BIG><B>mysql_fetch_array</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$result_type = 1)</CODE>
+<P>
+
+<A name="mysql_fetch_assoc()"></A>
+<CODE><I>string[string]</I> <BIG><B>mysql_fetch_assoc</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res)</CODE>
+<P>
+
+<A name="mysql_fetch_field()"></A>
+<CODE><I><a href="#mysqlFieldDataDummyClass"><code>mysqlFieldDataDummyClass</code></a></I> <BIG><B>mysql_fetch_field</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res, ...)</CODE>
+<P>
+
+<A name="mysql_fetch_lengths()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mysql_fetch_lengths</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysql_fetch_object()"></A>
+<CODE><I>mixed</I> <BIG><B>mysql_fetch_object</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res, ...)</CODE>
+<P>
+
+<A name="mysql_fetch_row()"></A>
+<CODE><I>mixed[]</I> <BIG><B>mysql_fetch_row</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysql_field_flags()"></A>
+<CODE><I>string</I> <BIG><B>mysql_field_flags</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_field_len()"></A>
+<CODE><I>int</I> <BIG><B>mysql_field_len</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_field_name()"></A>
+<CODE><I>string</I> <BIG><B>mysql_field_name</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_index)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_field_seek()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_field_seek</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_field_table()"></A>
+<CODE><I>string</I> <BIG><B>mysql_field_table</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_field_type()"></A>
+<CODE><I>string</I> <BIG><B>mysql_field_type</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$field_offset)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_free_result()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_free_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_get_client_info()"></A>
+<CODE><I>string</I> <BIG><B>mysql_get_client_info</B></BIG>()</CODE>
+<P>
+
+<A name="mysql_get_host_info()"></A>
+<CODE><I>string</I> <BIG><B>mysql_get_host_info</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_get_proto_info()"></A>
+<CODE><I>int</I> <BIG><B>mysql_get_proto_info</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_get_server_info()"></A>
+<CODE><I>string</I> <BIG><B>mysql_get_server_info</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_info()"></A>
+<CODE><I>string</I> <BIG><B>mysql_info</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_insert_id()"></A>
+<CODE><I>int</I> <BIG><B>mysql_insert_id</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_list_dbs()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_list_dbs</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_list_fields()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_list_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$table_name, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> It is preferable to use <a href="#mysql_query()"><code>mysql_query()</code></a> to issue a
+	SQL SHOW COLUMNS FROM table [LIKE 'name'] statement instead.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_list_processes()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_list_processes</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_list_tables()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_list_tables</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$database_name, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<BLOCKQUOTE>
+<P><B>Deprecated:</B> It is preferable to use <a href="#mysql_query()"><code>mysql_query()</code></a> to issue a
+	SQL SHOW TABLES [FROM db_name] [LIKE 'pattern'] statement instead.</P>
+<P>
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_num_fields()"></A>
+<CODE><I>int</I> <BIG><B>mysql_num_fields</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result)</CODE>
+<P>
+
+<A name="mysql_num_rows()"></A>
+<CODE><I>int</I> <BIG><B>mysql_num_rows</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$res)</CODE>
+<P>
+
+<A name="mysql_pconnect()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_pconnect</B></BIG>(...)</CODE>
+<P>
+
+<A name="mysql_ping()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_ping</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_query()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_real_escape_string()"></A>
+<CODE><I>string</I> <BIG><B>mysql_real_escape_string</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$to_be_escaped, ...)</CODE>
+<P>
+
+<A name="mysql_result()"></A>
+<CODE><I>mixed</I> <BIG><B>mysql_result</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$result,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row, ...)</CODE>
+<P>
+
+<A name="mysql_select_db()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_select_db</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$db, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_stat()"></A>
+<CODE><I>string</I> <BIG><B>mysql_stat</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_thread_id()"></A>
+<CODE><I>int</I> <BIG><B>mysql_thread_id</B></BIG>(...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<P>
+
+<A name="mysql_unbuffered_query()"></A>
+<CODE><I>resource</I> <BIG><B>mysql_unbuffered_query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$query, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_change_user()"></A>
+<CODE><I>int</I> <BIG><B>mysql_change_user</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$user,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password, ...)</CODE>
+<br><i>triggers</i> <CODE>E_WARNING</CODE>
+<BLOCKQUOTE>
+<P><b> </b></P><P><B>Deprecated:</B> This function does no longer exists in PHP.</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="mysql_set_charset()"></A>
+<CODE><I>boolean</I> <BIG><B>mysql_set_charset</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$charset, ...)</CODE>
+<PRE>
+
+</PRE>
+
+<A name="mysqlFieldDataDummyClass"></A>
+<pre>class <BIG><B>mysqlFieldDataDummyClass</B></BIG>
+</pre>
+<BLOCKQUOTE>
+<P><b>Info about a field</b></P><P>
+Actually this class is anonymous, but PHPLint requires a name.
+	
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$name"></A>
+<CODE><I>string</I> <BIG><B>$name</B></BIG></CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$table"></A>
+<CODE><I>string</I> <BIG><B>$table</B></BIG></CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$def"></A>
+<CODE><I>string</I> <BIG><B>$def</B></BIG></CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$max_length"></A>
+<CODE><I>int</I> <BIG><B>$max_length</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$not_null"></A>
+<CODE><I>int</I> <BIG><B>$not_null</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$primary_key"></A>
+<CODE><I>int</I> <BIG><B>$primary_key</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$multiple_key"></A>
+<CODE><I>int</I> <BIG><B>$multiple_key</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$unique_key"></A>
+<CODE><I>int</I> <BIG><B>$unique_key</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$numeric"></A>
+<CODE><I>int</I> <BIG><B>$numeric</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$blob"></A>
+<CODE><I>int</I> <BIG><B>$blob</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$type"></A>
+<CODE><I>string</I> <BIG><B>$type</B></BIG></CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$unsigned"></A>
+<CODE><I>int</I> <BIG><B>$unsigned</B></BIG> = 0</CODE>
+<P>
+
+<A name="mysqlFieldDataDummyClass::$zerofill"></A>
+<CODE><I>int</I> <BIG><B>$zerofill</B></BIG> = 0</CODE>
+<P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

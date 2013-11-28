@@ -1,0 +1,1051 @@
+<HTML>
+<HEAD>
+<TITLE>PHPLint Documentator</TITLE>
+<META name=description content="PHPLint Documentator">
+<META name=author      content="icosaedro.it di Umberto Salsi">
+<META name=owner       content="icosaedro.it di Umberto Salsi">
+<META HTTP-EQUIV="Content-Language"    content="en">
+<LINK rel='SHORTCUT ICON' HREF='/favicon.ico'>
+<LINK rel=stylesheet type='text/css' href='/styles.css'>
+</HEAD><BODY>
+<table width="100%" cellspacing=2 cellpadding=0 border=0><tr><td><a href="/en-index.html" title='Go to the main page of this WEB site'><b>Home</b></a>&nbsp;/&nbsp;<a href="/phplint/index.html"><b>Section&nbsp;index</b></a></td>
+<td  width='100%'><hr width='100%' noshade></td>
+<td>&nbsp;<b>www.icosaedro.it</b>&nbsp;</td><td><img src="icosaedro-16x16.png"></td>
+</tr></table>
+<H1><IMG src="phplint.png">&nbsp;PHPLint Documentator</H1>
+
+<p align=right>
+Latest updated: 2009-08-02
+</p>
+
+
+<h2>Index</h2>
+<blockquote>
+<a href="#introduction">Introduction</a><br>
+<a href="#whatwillbereported">What will be reported</a><br>
+<a href="#thedescription">The description</a><br>
+<a href="#documentingthepackage">Documenting the package</a><br>
+<a href="#documentingconstants">Documenting constants</a><br>
+<a href="#documentingvariables">Documenting variables</a><br>
+<a href="#documentingfunctions">Documenting functions</a><br>
+<a href="#documentingclasses">Documenting classes</a><br>
+<a href="#specialtags">Special tags</a><br>
+<a href="#specifyingitems">Specifying items</a><br>
+<a href="#handlingtheprojectlayout">Handling the project layout</a><br>
+<a href="#supportforinternationalization">Support for internationalization</a><br>
+<a href="#generatingthedocumentation">Generating the documentation</a><br>
+<a href="#examples">Examples</a><br>
+</blockquote>
+
+
+
+<a name=introduction></a>
+<h2>Introduction</h2>
+
+<p>
+PHPLint support a "documentator" facility, a tool that automatically
+generates the documentation about a PHP source. Basically, the programmer
+adds some comments, appropriately formatted, and PHPLint merges them with the
+informations it gathered from the parsing stage. All these informations are
+formatted and saved in a file in HTML format.
+PHPLint supports either the phpDocumentor commenting style and its own
+commenting style. This latter, named "PHPLint Documentor" is described here.
+</p>
+
+<p>
+For example, take this source:
+</p>
+
+<pre>
+
+&lt;?php
+
+/*. DOC Sample package.
+
+    &lt;@package DoNothing&gt;
+    This package does nothing, it's only an example.
+    Items internal to the package, as &lt;@item HowManyEmptyElems()&gt;,
+    and external to the package, can be referenced.
+.*/
+
+/*. require_module 'standard';
+    require_module 'mysql';
+.*/
+
+$myData = array("one", "two", "");
+/*. DOC  No much to say about this array... .*/
+
+
+/*. int .*/ function HowManyEmptyElems(/*. array .*/ $a)
+/*.
+    DOC  Returns the number of empty elements
+
+    The array is scanned, element by element. All the elements that
+    result to be &lt;@item empty()&gt; are counted, and the result is
+    returned.
+
+    &lt;@see count()&gt;
+    &lt;@see array_count_values()&gt;
+.*/
+{
+    if( $a === NULL )  return 0;
+    $n = 0;
+    foreach($a as $v)
+        if( empty($v) )  $n++;
+    return $n;
+}
+?&gt;
+
+</pre>
+
+
+<p>
+The generated output for this package will look similar to this:
+</p>
+
+<pre>
+
+</pre>
+
+<table cellspacing=0 cellpadding=10 border=1><tr><td bgcolor="#dddddd">
+<H1>DoNothing</H1>
+<P>Sample package.</P>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B> <u>standard</u>, <u>mysql</u><P>
+<P><B>Required packages:</B>
+
+<I>none</I><P>
+<P>
+
+    This package does nothing, it's only an example.
+    Items internal to the package, as <A href="#HowManyEmptyElems()">HowManyEmptyElems()</A>,
+    and external to the package, can be referenced.
+</P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="$myData"></A>
+<CODE><I>array[int]string</I> <B>$myData</B></CODE>
+
+<BLOCKQUOTE>
+<P>No much to say about this array...</P></BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="HowManyEmptyElems()"></A>
+<CODE><I>int</I> <B>HowManyEmptyElems</B>(<I>array</I>&nbsp;$a)</CODE>
+<BLOCKQUOTE>
+<P>Returns the number of empty elements</P><P>
+
+The array is scanned, element by element. All the elements that
+    result to be <u>empty()</u> are counted, and the result is
+    returned.
+
+    
+    
+</P>
+<P><b>See also:</b> <u>count()</u>, <u>array_count_values()</u>
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</td></tr></table>
+<pre>
+
+</pre>
+
+
+
+<a name=whatwillbereported></a>
+<h2>What will be reported</h2>
+
+<p>
+These items <b>are reported</b>:
+</p>
+
+<ul>
+<li>Constants (if not private).</li>
+<li>Global variables (if not private).</li>
+<li>Functions (if not private).</li>
+<li>Classes (if not private).
+    <ul>
+    <li>Class constants (PHP 5) (if not private).</li>
+    <li>Public and protected properties.</li>
+    <li>Public and protected methods.</li>
+    </ul></li>
+</ul>
+
+
+<p>
+PHP 4 lacks the visibility attribute "private", but PHPLint provides a
+meta-code alternative.  See the section about PHP 4 classes in the PHPLint
+manual for more details.
+</p>
+
+<p>
+PHP 5 lacks the visibility attribute "private" for constants, functions,
+classes and class constants, but PHPLint provides a meta-code alternative.
+See the section about PHP 5 classes in the PHPLint manual for more details.
+</p>
+
+<p>
+For functions and methods also the thrown exceptions are listed. Thrown
+exceptions are are collected by PHPLint from several sources:
+</p>
+
+<ul>
+
+<li>
+Parsing the uncought <code>throw</code> statements the function or method
+directly invokes or acquires from functions or methods it calls.
+</li>
+
+<li>
+Parsing the <code>throws</code> PHPLint meta-code statement.
+</li>
+
+<li>
+Parsing the <b>@throws</b> DocBlock line tags.
+</li>
+
+<li>
+Inheriting exceptions from the implemented or overridden method.
+</li>
+
+</ul>
+
+<p>
+All the exceptions generated, inherited and declared are collected by PHPLint
+and then listed in the generated documentation in the order from more
+specialized ones, to less specialized ones; then exceptions are listed just in
+the same recommended order them should be handled a chain of
+<code>catch()</code> branches.
+</p>
+
+<p>
+These are the items <b>not documented</b> that are listed inside the section
+"<b>Private items</b>" of the generated document:
+</p>
+
+<ul>
+
+<li>Private constants. Example:
+<blockquote><code>
+/*. private .*/ define("SecretFile", "/home/someone/data");
+</code></blockquote>
+</li>
+
+<li>Private global variables. Example:
+<blockquote><code>
+/*. private .*/ $Mypkg_counter = 0;
+</code></blockquote>
+</li>
+
+<li>Private functions. Example:
+<blockquote><pre>
+/*. private void .*/ function MyPkg_IncCounter(/*. int .*/ $delta)
+{
+    $GLOBALS['Mypkg_counter'] += $delta;
+}
+</pre></blockquote>
+</li>
+
+<li>Private classes. For example:
+<blockquote><code>
+/*. private .*/ class MyInternalCLass { ... }
+</code></blockquote>
+</li>
+
+<li>Private properties (PHP 4). For example:
+<blockquote><pre>
+class SomeClass
+{
+    /*. private int .*/ var $cnt = 0;
+}
+</pre></blockquote>
+</li>
+
+<li>Private methods (PHP 4).
+<blockquote><pre>
+class SomeClass
+{
+    /*. private array[int]string .*/ function GetUsersList() { ... }
+}
+</pre></blockquote>
+</li>
+
+</ul>
+
+
+<p>
+These items are <b>not reported at all</b>:
+</p>
+
+<ul>
+<li>Local variables of a function.</li>
+<li>Local variables of a method.</li>
+<li>Private class constants (PHP 5). For example:
+<blockquote><pre>
+class SomeClass
+{
+    /*. private .*/ const MaxData = 1000;
+}
+</pre></blockquote>
+<li>Private properties (PHP 5).
+<li>Private methods (PHP 5).
+</ul>
+
+
+<a name=thedescription></a>
+<h2>The description</h2>
+
+<p>
+At the base of the PHPLint Documentator is the <i>description</i>,
+a special formatted multi-line comment. This comment contains a
+short description and a long description. After the starting symbol
+"<code>/*.</code>" there must be the word "<code>DOC</code>" that
+marks this comment to be a description (rather than a chunk of PHPLint
+meta-code). The <b>short description</b> is the string that continue
+from this word up-to the end of the line or the end of the comment. The
+<b>long description</b> is all the text remaining from the short description
+up-to the end of the comment. For example:
+</p>
+
+<blockquote>
+<pre>
+/*. DOC This is the short description
+    This is the long description. This is the long
+    description. This is the long description. .*/
+</pre>
+</blockquote>
+
+<p>
+The spaces before the word "DOC" are ignored. After the DOC word,
+the linear spaces "<code>&nbsp;</code>" and "<code>\t</code>" are
+skipped. Another valid form, perfectly equivalent but more readable:
+</p>
+
+<blockquote>
+<pre>
+/*.
+    DOC    This is the short description
+
+    This is the long description. This is the long
+    description. This is the long description.
+.*/
+</pre>
+</blockquote>
+
+<p>
+The format of a description is the HTML code. Note that the special
+sequences "<code>?&gt;</code>" and "<code>*/</code>" cannot be inserted
+directly inside a description, since them would confuse either
+PHP and PHPLint. These sequences can be inserted respectively as
+"<code>?&amp;gt;</code>" and "<code>&amp;#42;/</code>".
+</p>
+
+
+
+<a name=documentingthepackage></a>
+<h2>Documenting the package</h2>
+
+<p>
+A "package" in the sense of PHPLint, is simply the file from which the
+documentation has to be extracted. For example:
+</p>
+
+<blockquote>
+<pre>
+/*.
+    DOC  General data manipulation and utilities
+
+    &lt;@package MyPackage&gt;
+    &lt;@version 1.0 revision 2&gt;
+    &lt;@author Umberto Salsi&gt;
+    This package can handle nearly any thing: numbers, strings,
+    books, paintings, songs, humans and animals. Amazing and
+    simple to use. Really!
+.*/
+</pre>
+</blockquote>
+
+<p>
+Note the special sequences of the form <code>&lt;@...&gt;</code>:
+we will describe them below.
+</p>
+
+<p>
+Typically the description of the package is placed at the top of the
+source and before any declaration, but this is not mandatory. If two or
+more package descriptions are present, their contents are concatenated
+to the first description.
+</p>
+
+<p>
+Since a package is a generic PHP program, it might declare several constants,
+variables, functions and classes, in any order. Only the variables that
+are global are reported: variables that are local to the functions are not
+considered. Items imported from other included packages are not reported.
+</p>
+
+
+<a name=documentingconstants></a>
+<h2>Documenting constants</h2>
+
+<p>
+The description of a constant must follow immediately its definition,
+and before any other PHP instruction or PHPLint meta-code:
+</p>
+
+<blockquote>
+<pre>
+define('PI', 3.14);
+/*.
+    DOC  Popular value of the greek "pee" constant
+
+    The value is approximated to two decimals, but for some
+    applications it might be required a more accurate value, for
+    example 3.141592.  The &lt;code&gt;standard&lt;/code&gt; module provides the
+    constant &lt;code&gt;M_PI&lt;/code&gt; that is far more accurate.
+.*/
+</pre>
+</blockquote>
+
+
+
+<a name=documentingvariables></a>
+<h2>Documenting variables</h2>
+
+<p>
+The description of a global variable must follow immediately its first
+assignment, and before any other PHP instruction or PHPLint meta-code:
+</p>
+
+<blockquote>
+<pre>
+$logged_users = /*. (array[int]string) .*/ array();
+/*. DOC List of the logged users, initially empty .*/
+</pre>
+</blockquote>
+
+<p>
+In this example we have omitted the long description, since the short
+description seems to be enough. Note that we don't need to specify the
+type of the variable, since this information is already available to the
+parser and it will be reported into the documentation. The initial value
+assigned to the variable, however, is not gathered by the parser and,
+if required, it must be specified along the description.
+</p>
+
+
+<a name=documentingfunctions></a>
+<h2>Documenting functions</h2>
+
+<p>
+The description of a function must follow the list of the formal
+arguments, just before the open curly brace:
+</p>
+
+<blockquote>
+<pre>
+/*. void .*/ function logIt(/*.resource.*/ $fd, /*.string.*/ $msg /*., args .*/)
+/*.
+    DOC   Write the message to the file
+
+    Write the message $msg to the opened file $fd, adding
+    a terminating "\n". If $msg is NULL or empty, raises a
+    E_USER_WARNING and the argument is ignored. If $msg is
+    longer than 100 bytes it is shortened to 100 bytes. If
+    more arguments are passed to the function, they are
+    expected to be strings and are treated exactly as $msg.
+.*/
+{
+    ...code here...
+}
+</pre>
+</blockquote>
+
+<p>
+The type of the formal arguments and the type of the returned value are
+already gathered by PHPLint, so they don't need to be specified again inside
+the description.
+</p>
+
+
+<a name=documentingclasses></a>
+<h2>Documenting classes</h2>
+
+<p>
+In the paragraphs above we familiarized with the basic principles of
+the PHPLint Documentator: first the declaration, then the description.
+Since the declaration alone already carries so much informations, the
+description may concentrate on the other details, without repeating what
+PHPLint already knows. Similar concepts applies to the classes as well:
+</p>
+
+<pre>
+
+class ChildClass extends ParentClass
+/*.
+    DOC  Implements some beautiful/specialized features
+
+    Long description of the class here. It might include a survey of
+    all the public and protected items, along with some examples of
+    code and &lt;a href="http://www.xyz.com/"&gt;external&lt;/a&gt; references
+    for insights.
+.*/
+{
+    const A_CLASS_CONST = 'ssss';
+    /*. DOC  Description of a class constant .*/
+
+
+    protected static /*. mixed .*/ $my_data = NULL;
+    /*. DOC  Description of a property .*/
+
+
+    public /*. void .*/ function __construct()
+    /*.
+        DOC  Description of the class constructor
+
+        You might want to provide more information about this
+        special method inside the long description section of
+        the DOC.  Note that the description of a method must
+        follow the list of the formal arguments and must precede
+        the open curly brace {.
+    .*/
+    { }
+
+
+    public /*. void .*/ function set(/*. mixed .*/ $value)
+    /*.
+        DOC  Sets the internal state of this object
+
+        Guess what: this method just sets the protected variable
+        &lt;@item ::my_data&gt;.  No much to say about this method -
+        it's really simple.
+        &lt;@see ::Get()&gt;
+    .*/
+    {
+        $this->my_data = $value;
+    }
+
+
+    public /*. mixed .*/ function get()
+    /*.
+        DOC  Returns the internal state of this object
+
+        Please, note that if you haven't set before the state of
+        this object, the value returned will be NULL.
+        &lt;@see ::Set()&gt;
+    .*/
+    {
+        return $this->my_data;
+    }
+
+}
+
+interface Tree
+/*. DOC  Example of interface class .*/
+{
+    /*. void .*/ function left();
+    /*. DOC  Move to the left branch .*/
+
+    /*. void .*/ function right();
+    /*. DOC  Move to the right branch .*/
+}
+
+abstract class File implements Tree
+/*. DOC  Example of abstract class .*/
+{
+    public /*. File .*/ $current = NULL;
+    /*. DOC  Current node of the file system tree .*/
+
+    abstract /*. void .*/ function left();
+    /*. DOC  Move to the left file (whatever this might mean...) .*/
+
+    abstract /*. void .*/ function right();
+    /*. DOC  Move to the right file (whatever this might mean...) .*/
+
+    public /*. void .*/ function create(/*. string .*/ $name)
+    /*. DOC  Create a new file in the current node .*/
+    { }
+}
+
+</pre>
+
+<p>
+This example is for PHP 5, but the same apply to PHP 4, with the
+only difference that there are not class constants and the visibility
+qualifiers and the "final" and "static" attributes are implemented via
+PHPLint meta-code.  Private items are not reported, so that they don't
+need to be documented.
+</p>
+
+
+<a name=specialtags></a>
+<h2>Special tags</h2>
+
+<p>
+Maybe you noticed some strange sequences of
+characters inside the descriptions having the form
+"<code>&lt;@</code><i>tag</i><code>&nbsp;</code><i>arg</i><code>&gt;</code>".
+These special tags are parsed by the documentator. Some of these special
+tags are substituted by another string; others provide some informations
+to the documentator and are removed from the description.
+</p>
+
+<p>
+The "arg" part of the tag is a text of arbitrary length that can
+span several lines and must be in the HTML format. At least a space
+between the "tag" part and the "arg" part is required to separate the
+two elements.  The "arg" part may include other special tags, typically
+the <code>&lt;@item&gt;</code> tags.
+</p>
+
+<p>
+Here is the list of the available tags:
+</p>
+
+<dl>
+
+<dt><code>&lt;@package </code><i>canonical_name_of_the_package</i><code>&gt;</code></dt>
+<dd>By default, the name of the package is its file name, with the
+path part and the extension removed.  For example, if the file
+is <code>/home/user/myclass.php</code> the default name will be
+<code>myclass</code>.  This special tag lets the programmer to assign a
+different name to the package. For example, writing "<code>&lt;@package
+MyClass&gt;</code>" inside the description of the package, the name of
+the package reported into the documentation will be "MyClass".
+<p>
+</p></dd>
+
+<dt><code>&lt;@version </code><i>html_text</i><code>&gt;</code></dt>
+<dd>Sets the version of the documented item. The argument may be any valid
+HTML text. Typically this tag appears inside the package description
+or the class description, but you can provide a version to any item.<p>
+</p></dd>
+
+<dt><code>&lt;@copyright </code><i>html_text</i><code>&gt;</code></dt>
+<dd>Sets the copyright of the documented item, typically the package.
+<p>
+</p></dd>
+
+<dt><code>&lt;@license </code><i>html_text</i><code>&gt;</code></dt>
+<dd>Sets the license of the documented item, typically the package.
+<p>
+</p></dd>
+
+<dt><code>&lt;@author </code><i>html_text</i><code>&gt;</code></dt>
+<dd>The author of the item. Typically this tag is part of the package
+description, but in bigger packages you might have many classes or
+functions, each one with its author. Two or more <code>&lt;@author&gt;</code>
+tags inside a description are combined in a comma-separated list, with the
+ordering of the authors preserved, and reported under the label "<b>Author:</b>"
+into the description of the item documented.<p>
+</p></dd>
+
+<dt><code>&lt;@since </code><i>html_text</i><code>&gt;</code></dt>
+<dd>Sets since which version the item is available. The "version" we are
+referring to depends on the type of the item: normally it is the version
+of the package, but for items inside a class that provide its own version,
+this latter is the version we are referring to.
+<p>
+</p></dd>
+
+<dt><code>&lt;@item </code><i>item</i><code>&gt;</code></dt> <dd>Inserts the
+HTML anchor to the given item: a constant, a global variable, a function,
+a class, a class constant, a property or a method. The item to which we are
+referring to might be either in the same package or in another package. For
+example, <code>&lt;@item&nbsp;ChildClass::set()&gt;</code> sets a "click-able"
+reference to the method set() of the class ChildClass.  The format of the
+<i>item</i> specifier is described in the next paragraph "Specifying items".
+<p>
+</p></dd>
+
+<dt><code>&lt;@see </code><i>item</i><code>&gt;</code></dt>
+<dd>Syntactically similar to the &lt;@item&gt; tag, with the difference
+that it is removed from the description.  The format of the <i>item</i>
+specifier is describe in the next paragraph "Specifying items".  All the
+items referred inside a description are summarized in a comma separated
+list and displayed at the end of the description under the label "<b>See
+also:</b>" of the generated document.
+<blockquote><pre>
+&lt;@see strlen()&gt;
+&lt;@see MyClass::strSize()&gt;
+</pre></blockquote>
+</dd>
+
+<dt><code>&lt;@deprecated </code><i>html_text</i><code>&gt;</code></dt>
+<dd>This tag marks the documented item as "deprecated". The text
+provided will be rendered under the label "<b>Deprecated:</b>" of the generated
+document.
+PHPLint also raises a warning message every time a deprecated item is used:
+
+<blockquote>
+- require_module of a deprecated extension module<br>
+- require_once of a deprecated package<br>
+- usage of deprecated constant/ variable/ function/ class<br>
+- usage of deprecated class constant/ property/ method<br>
+- usage of non-deprecated class constant/ static property/ static method
+  exported by a deprecated class<br>
+</blockquote>
+
+Typically, deprecated items are modules, packages, functions, classes, class constants, properties, and methods
+that should not be used anymore, and the text should explain why. Possible
+reasons might be: the item is no more supported; it is bugged; there is
+a better alternative; might be removed in future release of the package;
+it is still available for compatibility with older applications. Example:
+<blockquote><pre>
+&lt;@deprecated  &lt;@item ::oldMethod()&gt; should not be used
+anymore because it does not handle the new format of the data (it
+raises an error).  Use &lt;@item ::newMethod()&gt; instead or, even better,
+the new extended class &lt;@item NewClass&gt; &gt;
+</pre></blockquote>
+</dd>
+
+</dl>
+
+<p>
+PHPLint raises an error if a non-private class (<code>PublicChild</code>)
+tries to extend a private one (<code>PrivateParent</code>), since the
+program can't sets the HTML anchor pointing to this private parent class,
+like in this example:
+</p>
+
+<blockquote><pre>
+/*. private .*/ class PrivateParent { }
+
+class PublicChild extends PrivateParent { }
+</pre></blockquote>
+
+
+<a name=specifyingitems></a>
+<h2>Specifying items</h2>
+
+<p>
+The special tags <code>&lt;@items&gt;</code> and <code>&lt;@see&gt;</code>
+allows to specify an item exported by any package parsed by PHPLint,
+including the standard modules.  An item may be a constant, a variable,
+a function, a class, e class constant (PHP 5), a property or a method.
+</p>
+
+<p>
+<b>Note.</b> Private properties and private methods cannot be referenced
+inside the descriptions since they does not exit at all for the client
+packages so do not require to be documented.
+</p>
+
+<pre>
+
+</pre>
+
+<table align=center cellpadding=5 cellspacing=0 border=1>
+<tr><th>Item specifier</th><th>Item referred</th></tr>
+<tr><td valign=top><code>CONST</code></td><td>A constant.</td></tr>
+<tr><td valign=top><code>$variable</code></td><td>A global variable. Local variables and function parameters cannot be referred.</td></tr>
+<tr><td valign=top><code>Func()</code></td><td>A function. Note that the parentheses are required. You might want to add some text inside the parentheses, for example the values of the arguments.</td></tr>
+<tr><td valign=top><code>Class</code></td><td>A class.</td></tr>
+<tr><td valign=top><code>Class::CONST</code></td><td>A class constant (PHP 5).</td></tr>
+<tr><td valign=top><code>Class::$property</code></td><td>A property.</td></tr>
+<tr><td valign=top><code>Class::method()</code></td><td>A method. Note that the parentheses are required. You might want to add some text inside the
+parentheses, for example the values of the arguments.</td></tr>
+</table>
+
+<pre>
+
+</pre>
+
+<p>
+Commenting a class and the items exported by that class, the class name
+may be omitted for brevity when referring to items inside the same class
+the current description belongs.
+For example, <code>&lt;@item&nbsp;::$prop&gt;</code> refers to the
+property $prop of the current class.
+</p>
+
+<p>
+PHPLint Documentator raises an error if the item specified is misspelled or do
+not exist in the source just parsed.
+Items outside the set of sources parsed in the current run may be referenced
+by a hand-written HTML anchor, for example:
+</p>
+
+<blockquote><code>
+&lt;a href="modules/pcre.html#preg_match()"&gt;preg_match()&lt;/a&gt;</code>
+</blockquote>
+
+
+<a name=handlingtheprojectlayout></a>
+<h2>Handling the project layout</h2>
+
+<p>
+A <i>project</i> might consist of several files, spread over a variety
+of directories and sub-directories. The Documentator generates the
+documentation trying to preserve the original layout of the project,
+but some fine tuning might still be required. The features described here are
+intended just to this purpose.
+</p>
+
+<p>
+<b>Relative references.</b>
+Since the source of a package and its documentation might be stored in
+different locations, or different computers, the Documentator has
+special provisions to handle the specific layout of your development system.
+</p>
+
+<p>
+Internally, PHPLint store the path of every file as absolute paths.
+Then the Documentator always try to build relative path-files
+while composing the URLs of the references, so that the
+documents generated might be moved preserving the hypertextual
+links. For example, if the document located in the file
+<blockquote> <code>/home/MyName/php-src/MyWebApp.html</code> </blockquote>
+needs to reference the item
+<blockquote> <code>/home/MyName/php-libs/MyLib.html#$aVar</code> </blockquote>
+then the Documentator will guess the URL as
+<blockquote> <code>../php-libs/MyLib.html#$aVar</code> </blockquote>
+</p>
+
+
+
+<p>
+<b>References remapping.</b>
+As said, the Documentator always try to build HTML anchors as relative
+paths.	This process begins first taking the absolute path of the file, then
+comparing this absolute path with the absolute path of the source currently
+being parsed. If a leading part of the two paths match, a relative path is
+made. For example:
+</p>
+
+<table cellspacing=5>
+<tr>
+<td>Current source:</td>
+<td><code><b>/home/MyName/libs/</b>utils/formatter.php</code></td>
+</tr>
+<tr>
+<td>External file to be referenced:</td>
+<td><code><b>/home/MyName/libs/</b>bignum/BigInt.php</code></td>
+</tr>
+<tr>
+<td>Resulting relative path:</td>
+<td><code>../../bignum/BigInt.php</code></td>
+</tr>
+</table>
+
+<p>
+Sometimes relative references aren't enough: if the destination of the
+generated documentation has a different layout, the documentation cannot
+be moved to that final destination without breaking the links. So,
+the Documentator provides another even more general mechanism: the
+reference remapping.  A reference remap is set by the command line option
+<code>--doc-ref-remap A B</code>. This option says that if the absolute
+path of a reference begins with the string "A", then that string must be
+replaced by "B".
+</p>
+
+<p>
+Suppose, for example, that both <code>formatter.html</code> and the
+<code>BigInt.html</code> files generated from the example above have to
+be moved into the same destination directory <code>/usr/www/lib/</code>
+so breaking the relative path form <code>formatter.html</code>
+to <code>../../BigInt.html</code>.  In this case we may re-map
+<code>/home/MyName/lib/bignum/</code> to <code>/home/MyName/lib/</code>:
+</p>
+
+<blockquote><pre>
+phplint --php-version 4 --doc \
+        --doc-ref-remap  /home/MyName/lib/bignum/  /home/MyName/lib/ \
+        formatter.php
+</pre></blockquote>
+
+will map any reference to items defined inside
+
+<p>
+Several <code>--doc-ref-remap</code> options can be provided, and these are
+applied in the order to every link until a match is found. If no match is
+found, no replacement take place.
+</p>
+
+<p>
+<b>Trick.</b>
+Set a reference remapping to a WEB application, giving the name of the
+the document as a parameter:
+</p>
+
+<blockquote><pre>
+--doc-ref-remap  /home/MyName/lib/ \
+                 http://www.mydomain.com/browse.php?lib=
+</pre></blockquote>
+
+<p>
+Every reference to your library will be remapped to an URL having the
+form <code>http://www.mydomain.com/browse.php?lib=xxxx</code>.
+</p>
+
+<p>
+<b>Trick.</b>
+Set a reference remapping to a label that is simple to parse later for
+string substitutions:
+</p>
+
+<blockquote><pre>
+--doc-ref-remap  /home/MyName/lib/ \
+                 /__THE_DIR__/
+</pre></blockquote>
+
+<p>
+Any character between <code>__THE_DIR__</code> and the following double-quote
+<code>"</code> if the item being referenced. 
+</p>
+
+
+<p>
+<b>Order of the transformations.</b>
+For every reference inside the documentation, the Documentator applies
+these transformations, in this order:
+</p>
+
+<ol>
+
+<li><b>Relative path-files are converted to absolute path-files.</b>
+As said, PHPLint internally always store the paths as absolute paths:
+"." and ".." are resolved, multiple directory separators "//" are resolved to
+single directory separator "/", symbolic links are preserved
+(the Documentator operates only on strings and does not check for the
+actual existence of the path-files it found). For example, if the
+directory of the file being parsed is "<code>/home/MyName/php-src/</code>"
+then:
+<blockquote>
+<code>MyAppl.php</code> becomes<br>
+<code>/usr/MyName/php-src/MyAppl.php</code>
+</blockquote>
+
+<li><b>Then the extension is dropped and the defined extension is added.</b>
+The default extension is "<code>.html</code>" but the option
+<code>--doc-extension</code>" lets to change it.  For example:
+<blockquote>
+<code>/usr/MyName/php-src/MyAppl.php</code> becomes<br>
+<code>/usr/MyName/php-src/MyAppl.html</code>
+</blockquote>
+
+<li><b>The reference remappings are applied.</b> Only the first
+remap that match is applied. If none match, no remapping is done. For
+example, if the remapping from "<code>/home/MyName/php-src/</code>" to
+"<code>/var/www/doc/</code>" has been defined, then:
+<blockquote>
+<code>/usr/MyName/php-src/MyAppl.html</code> becomes<br>
+<code>/var/www/doc/MyAppl.html</code>
+</blockquote>
+
+<li><b>Relative references are generated.</b>
+The resulting reference is compared with the path-file of the current
+document (this latter already converted to absolute path-file and already
+remapped), and the Documentator try to set a relative path-file. For example,
+if the document of our examples needs to reference the class "<code>Forms</code>"
+declared inside the source file
+"<code>/home/MyName/php-src/libs/Forms.php</code>" through the
+special tag "<code>&lt;@item&nbsp;Forms&gt;</code>", then:
+<blockquote>
+<code>/var/www/doc/libs/Utils.html#Forms</code>
+</blockquote>
+becomes
+<blockquote>
+<code>libs/Utils.html#Forms</code>
+</blockquote>
+
+</ol>
+
+
+
+<a name=supportforinternationalization></a>
+<h2>Support for internationalization</h2>
+
+<p>
+Well, no support is currently provided by PHPLint... By default PHPLint raises
+a warning message if any ID or literal string contains non-ASCII caracters
+(i.e. bytes in the range from \0x80-\0xFF).  These warning messages can be
+disabled with the option <code>--no-ascii-ext-check</code>. IDs containing
+non-ASCII chars and the text inside DOC blocks are printed verbatim into
+the generated HTML document, while literal strings are always encoded as
+ASCII strings using proper escaped sequences. For example, a PHP source,
+UTF-8 encoded, and containing this declaration
+</p>
+
+<blockquote><pre>
+define("aaaà", "aaaà");
+</pre></blockquote>
+
+<p>
+get documented as follows:
+</p>
+
+<blockquote><pre>
+<code>aaaà = "aaa\xC3\xA0"</code>
+</pre></blockquote>
+
+<p>
+That is because PHPLint is unaware of which actually is the encoding of the
+strings (PHP 6, some day, will allow the programmer to
+specify which literal strings are actual text, and which binary
+strings, so that PHPLint will distinguish the two cases, printing
+the first as human-readable and properly encoded strings, and the
+latter as escaped sequences.)
+</p>
+
+
+<p>
+Solutions and workarounds. If you are not interested into internationalization
+or your PHP sources contains only ASCII characters (but still your program
+can be i18n-aware and have support for encoded strings, etc.), simply
+left enabled the option <code>--ascii-ext-check</code> (it is on by default).
+</p>
+
+<p>
+Instead, if your source contains non-ASCII characters, you should first
+check it is properly encoded (for example UTF-8) then the option
+<code>--no-ascii-ext-check</code> should be given. The generated HTML
+documents will have the same encoding of the source, with the only
+exception of the literal strings that will be always ASCII.
+</p>
+
+
+
+
+<a name=generatingthedocumentation></a>
+<h2>Generating the documentation</h2>
+
+<blockquote>
+<code>phplint --doc MyPackage.php</code>
+</blockquote>
+
+<p>
+will produce the file <code>MyPackage.html</code> containing the
+declarations and the respective descriptions. The exact format of this
+file is currently under development. Some examples are available from
+the on-line version of the PHPLint program when the check-box "Generate
+document" is enabled. You might want to thy the examples shown in this
+chapter to see how the generated document would look like.
+</p>
+
+
+<pre>
+
+</pre>
+<table width='100%' cellspacing=2 cellpadding=0 border=0><tr>
+<td><a href="mailto:salsi@icosaedro.it" title="Send an email to the author of this WEB page"><b>Umberto&nbsp;Salsi</b></a></td>
+<td><hr width=20 noshade></td>
+<td><SCRIPT><!--
+document.write("<a target=blank hr" + "ef=/comments/rh.cgi?path=%2Fphplint%2Fdocumentator.html&cod=e842494f2ca316c408eaa5d8 title='Add/read comments about this WEB page'><b>Comments</b></a>");
+// -->
+</SCRIPT></td>
+<td><hr width=20 noshade></td>
+<td><a href="/me/index.html?lang=en" title="Send a comment to the author of this WEB page"><b>Contact</b></a></td>
+<td  width='100%'><hr noshade></td>
+<td><a href="/mappa.html" title='List of all the pages of this WEB site'><b>Site&nbsp;map</b></a></td>
+<td><hr width=20 noshade></td>
+<td width='5%'><a href="/en-index.html" title='Go to the main page of this WEB site'><b>Home</b></a>&nbsp;/&nbsp;<a href="/phplint/index.html"><b>Section&nbsp;index</b></a></td></tr></table></p>
+</BODY></HTML>

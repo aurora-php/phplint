@@ -1,0 +1,575 @@
+<HTML><BODY>
+<H1>ResultSet</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../all.html"><code>all.php</code></a>, <a href="../../../errors.html"><code>errors.php</code></a>, <a href="../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../cast.html"><code>cast.php</code></a>, <a href="../phplint/Types.html"><code>Types.php</code></a>, <a href="../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../containers/Printable.html"><code>Printable.php</code></a>, <a href="../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../CastException.html"><code>CastException.php</code></a>, <a href="SQLException.html"><code>SQLException.php</code></a>, <a href="../utils/Integers.html"><code>Integers.php</code></a>, <a href="../bignumbers/BigInt.html"><code>BigInt.php</code></a>, <a href="../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="../containers/Hash.html"><code>Hash.php</code></a>, <a href="../bignumbers/BigFloat.html"><code>BigFloat.php</code></a>, <a href="../utils/Date.html"><code>Date.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet"></A>
+<pre>abstract class <BIG><B>it\icosaedro\sql\ResultSet</B></BIG>
+      |  
+      `--(<i><a href="../containers/Printable.html#it/icosaedro/containers/Printable"><code>it\icosaedro\containers\Printable</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>Table resulting from a SQL data base query</b></P><P><B>Version:</B> $Date: 2012/02/01 08:12:30 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+An object of this class allows
+	to retrieve the result of a single SQL query, consisting in a table of
+	values. The table is organized as a matrix of rows and columns. Every
+	column may have a name, and there may be 0 or more rows of data.
+<p>
+	The encoding of the strings of characters submitted to, or retrieved from
+	these functions are intended to be encoded as specified in the client
+	connection that generated this result set. So, for example, if the client
+	connection with the remote data base server uses UTF-8, then all the
+	strings must use this same encoding. See the details about each specific
+	implementation for more details.
+<p>
+	For semplicity, most of the methods return <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a> for both
+	actual errors related to the client/server communication and for invalid
+	parameters submitted as well.
+<p>
+	"Getters" for fields values are available in two forms: getTypeByIndex()
+	takes the index of the column, while getTypeByName() takes the name of the
+	column.
+<p>
+	Example:
+	<pre>
+	$db = new it\icosaedro\sql\mysql\Driver(array(...));
+	# Retrieves the result set from a query:
+	$rs = $db-&gt;query("SELECT * FROM users");
+	# Displays records, field names and values:
+	echo $rs;
+	</pre>
+<p>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::$was_null"></A>
+<CODE>protected <I>boolean</I> <BIG><B>$was_null</B></BIG> = FALSE</CODE>
+<BLOCKQUOTE>
+<P><b>If the last field retrieved was NULL</b></P><P>
+Classes that implement this
+	interface must set this flag for every field retrieved. 
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getRowCount()"></A>
+<CODE>abstract <I>int</I> <BIG><B>getRowCount</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the number of rows of data in the table</b></P><P>
+<p><b>Return:</b> Number of rows of data in the result.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::moveToRow()"></A>
+<CODE>abstract <I>void</I> <BIG><B>moveToRow</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$row_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Moves the internal pointer to the specified row</b></P><P>
+Most of the functions
+		of this class uses the selected row as the current row you are
+		interested to. The initial position of the internal pointer is -1, that
+		is no row selected and not value can be retrieved until a valid row is
+		selected.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$row_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the row to select, in the range from -1
+		(no row selected) up to <a href="#it/icosaedro/sql/ResultSet::getRowCount()"><code>it\icosaedro\sql\ResultSet::getRowCount()</code></a>-1. The first
+		row is the number 0.</td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid index. Failed to retrieve row from the
+		remote data base server.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getColumnCount()"></A>
+<CODE>abstract <I>int</I> <BIG><B>getColumnCount</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Returns the number of columns</b></P><P>
+The value is defined also if the
+		resulting number of rows is zero.
+
+<p><b>Return:</b> Number of columns.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getColumnName()"></A>
+<CODE>abstract <I>string</I> <BIG><B>getColumnName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns the name of the specified column</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the column, starting from zero.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Name of the column, typically the name of a field.
+		Columns evaluated at runtime (for example "<code>SELECT 123</code>")
+		may not have a defined name, so either a dummy name or an SQLException
+		may be thrown.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Invalid column index. Failed to retrieve
+		the column name from the remote server.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::nextRow()"></A>
+<CODE>abstract <I>boolean</I> <BIG><B>nextRow</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Move internal pointer to the next row of data</b></P><P>
+Initially the internal
+		pointer is set to -1, which means no row selected, so the first call to
+		this function moves the pointer to the row number 0.
+
+<p><b>Return:</b> If the internal pointer was succesfully moved to the
+		next row; false if already at the last available row.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getStringByIndex()"></A>
+<CODE>abstract <I>string</I> <BIG><B>getStringByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the column, starting from 0.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getStringByName()"></A>
+<CODE>abstract <I>string</I> <BIG><B>getStringByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a string</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the column.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getBooleanByIndex()"></A>
+<CODE><I>boolean</I> <BIG><B>getBooleanByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a boolean</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the column, starting from 0.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP FALSE for SQL NULL:
+		you may use the wasNull() method to check for this latter case.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the boolean value.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getBooleanByName()"></A>
+<CODE><I>boolean</I> <BIG><B>getBooleanByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a boolean</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the column.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP FALSE for SQL NULL:
+		you may use the wasNull() method to check for this latter case.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the boolean value.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getIntByIndex()"></A>
+<CODE><I>int</I> <BIG><B>getIntByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a int</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the column, starting from 0.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP 0 for SQL NULL:
+		you may use the wasNull() method to check for this latter case.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the integer number, or value out of the allowed
+		range for int numbers.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getIntByName()"></A>
+<CODE><I>int</I> <BIG><B>getIntByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a int</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the column.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP 0 for SQL NULL:
+		you may use the wasNull() method to check for this latter case.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the integer number, or value out of the allowed
+		range for int numbers.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getBigIntByIndex()"></A>
+<CODE><I><a href="../bignumbers/BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>getBigIntByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a BigInt</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the column, starting from 0.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the big integer number.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getBigIntByName()"></A>
+<CODE><I><a href="../bignumbers/BigInt.html#it/icosaedro/bignumbers/BigInt"><code>it\icosaedro\bignumbers\BigInt</code></a></I> <BIG><B>getBigIntByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a BigInt</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the column.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the big integer number.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getBigFloatByIndex()"></A>
+<CODE><I><a href="../bignumbers/BigFloat.html#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>getBigFloatByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a BigFloat</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the column, starting from 0.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the big float number.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getBigFloatByName()"></A>
+<CODE><I><a href="../bignumbers/BigFloat.html#it/icosaedro/bignumbers/BigFloat"><code>it\icosaedro\bignumbers\BigFloat</code></a></I> <BIG><B>getBigFloatByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a BigFloat</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the column.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the big float number.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getDateByIndex()"></A>
+<CODE><I><a href="../utils/Date.html#it/icosaedro/utils/Date"><code>it\icosaedro\utils\Date</code></a></I> <BIG><B>getDateByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a gregorian date</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the column, starting from 0.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the date.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getDateByName()"></A>
+<CODE><I><a href="../utils/Date.html#it/icosaedro/utils/Date"><code>it\icosaedro\utils\Date</code></a></I> <BIG><B>getDateByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a gregorian date</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the column.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid format of the date.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getBytesByIndex()"></A>
+<CODE><I>string</I> <BIG><B>getBytesByIndex</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$column_index)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a block of bytes</b></P><P>
+Assumes the data coming from the data base be Base64 encoded.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_index&nbsp;&nbsp;</code></b></td> <td valign=top>Index of the column, starting from 0.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field, possibly containing arbitrary
+		sequences of bytes. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid Base64 encoding.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::getBytesByName()"></A>
+<CODE><I>string</I> <BIG><B>getBytesByName</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$column_name)</CODE>
+<br>throws <a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Returns a field value from the current row as a block of bytes</b></P><P>
+Assumes the data coming from the data base be Base64 encoded.
+
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$column_name&nbsp;&nbsp;</code></b></td> <td valign=top>Name of the column.</td></tr>
+</table>
+</p>
+
+<p><b>Return:</b> Value of the field, possibly containing arbitrary
+		sequences of bytes. Returns PHP NULL for SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<blockquote>
+<b>Throws:</b><ul>
+<li><a href="SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>&nbsp;&nbsp;&nbsp;&nbsp;Failed to retrieve data from SQL server.
+		Invalid Base64 encoding.
+</li>
+</ul>
+</blockquote>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::wasNull()"></A>
+<CODE><I>boolean</I> <BIG><B>wasNull</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Tells if the last field retrieved was SQL NULL</b></P><P>
+<p><b>Return:</b> True if the last field retrieved from the result set
+		was SQL NULL.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::close()"></A>
+<CODE>abstract <I>void</I> <BIG><B>close</B></BIG>()</CODE>
+<BLOCKQUOTE>
+<P><b>Releases the result set</b></P><P>
+Once released, this result set cannot
+		be used again. Doesn nothing if already closed.
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/ResultSet::__toString()"></A>
+<CODE><I>string</I> <BIG><B>__toString</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../containers/Printable.html#it/icosaedro/containers/Printable::__toString()"><code>it\icosaedro\containers\Printable</code></a><BLOCKQUOTE>
+<P><b>Returns the result set as a human-readable text</b></P><P>
+<p><b>Return:</b> The result set as a text, including records, field names
+		and values as string encoded as set in the driver.</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

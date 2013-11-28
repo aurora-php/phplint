@@ -1,0 +1,178 @@
+<HTML><BODY>
+<H1>ircg</H1>
+<P><b>IRC Gateway Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.ircg.php"><code>http://www.php.net/manual/en/ref.ircg.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="ircg_set_on_read_data()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_set_on_read_data</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="ircg_set_on_die()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_set_on_die</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$host,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$port,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$data)</CODE>
+<P>
+
+<A name="ircg_get_username()"></A>
+<CODE><I>string</I> <BIG><B>ircg_get_username</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ircg_set_file()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_set_file</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$path)</CODE>
+<P>
+
+<A name="ircg_set_current()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_set_current</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ircg_nickname_escape()"></A>
+<CODE><I>string</I> <BIG><B>ircg_nickname_escape</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$nick)</CODE>
+<P>
+
+<A name="ircg_nickname_unescape()"></A>
+<CODE><I>string</I> <BIG><B>ircg_nickname_unescape</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$nick)</CODE>
+<P>
+
+<A name="ircg_join()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_join</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$channel, ...)</CODE>
+<P>
+
+<A name="ircg_oper()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_oper</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$password)</CODE>
+<P>
+
+<A name="ircg_whois()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_whois</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$nick)</CODE>
+<P>
+
+<A name="ircg_ignore_add()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_ignore_add</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>resource</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$nick)</CODE>
+<P>
+
+<A name="ircg_fetch_error_msg()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ircg_fetch_error_msg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ircg_ignore_del()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_ignore_del</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$nick)</CODE>
+<P>
+
+<A name="ircg_channel_mode()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_channel_mode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$channel,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mode_spec,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$nick)</CODE>
+<P>
+
+<A name="ircg_topic()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_topic</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$channel,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$topic)</CODE>
+<P>
+
+<A name="ircg_html_encode()"></A>
+<CODE><I>string</I> <BIG><B>ircg_html_encode</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$html_text)</CODE>
+<P>
+
+<A name="ircg_who()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_who</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$mask, ...)</CODE>
+<P>
+
+<A name="ircg_invite()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_invite</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$channel,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$nickname)</CODE>
+<P>
+
+<A name="ircg_names()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_names</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$channel, ...)</CODE>
+<P>
+
+<A name="ircg_kick()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_kick</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$channel,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$nick,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$reason)</CODE>
+<P>
+
+<A name="ircg_lusers()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_lusers</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ircg_part()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_part</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$channel)</CODE>
+<P>
+
+<A name="ircg_is_conn_alive()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_is_conn_alive</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection)</CODE>
+<P>
+
+<A name="ircg_lookup_format_messages()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_lookup_format_messages</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name)</CODE>
+<P>
+
+<A name="ircg_register_format_messages()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_register_format_messages</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[]</I>&nbsp;$messages)</CODE>
+<P>
+
+<A name="ircg_pconnect()"></A>
+<CODE><I>int</I> <BIG><B>ircg_pconnect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$username, ...)</CODE>
+<P>
+
+<A name="ircg_disconnect()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_disconnect</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$reason)</CODE>
+<P>
+
+<A name="ircg_nick()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_nick</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$newnick)</CODE>
+<P>
+
+<A name="ircg_list()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_list</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$channel)</CODE>
+<P>
+
+<A name="ircg_notice()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_notice</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$recipient,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$message)</CODE>
+<P>
+
+<A name="ircg_eval_ecmascript_params()"></A>
+<CODE><I>mixed[]</I> <BIG><B>ircg_eval_ecmascript_params</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$params)</CODE>
+<P>
+
+<A name="ircg_msg()"></A>
+<CODE><I>boolean</I> <BIG><B>ircg_msg</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$connection,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$recipient,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$message, ...)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

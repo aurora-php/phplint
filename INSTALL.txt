@@ -1,0 +1,31 @@
+PHPLint pure-C version intallation
+==================================
+
+Compiling
+---------
+This is the pure-C version of the PHPLint parser and validator
+built from the original M2 source. To configure and compile
+simply run the compile script:
+
+   $ ./compile
+
+Installation
+------------
+Simply copy the executable program src/phplint[.exe] and the
+directory modules/ somewhere. That's all!
+
+Typical usage
+-------------
+
+   $ ./phpl YourProgram.php
+
+or if you have tcl/tk installed:
+
+   $ ./phplint.tk YourProgram.php
+
+For more info, all the available documentation is under doc/.
+Beginners of PHPLint should start reading the tutorial first,
+then the manual for more details.
+Please visit http://www.icosaedro.it/phplint/ to check for updates.
+
+- Umberto Salsi <phplint@icosaedro.it>

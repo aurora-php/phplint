@@ -1,0 +1,188 @@
+<HTML><BODY>
+<H1>posix</H1>
+<P><b>POSIX Functions</b></P><P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<I>none</I><P>
+<P><B>Required packages:</B>
+<I>none</I><P>
+<P>
+See: <a href="http://www.php.net/manual/en/ref.posix.php"><code>http://www.php.net/manual/en/ref.posix.php</code></a>
+
+
+</P>
+<HR>
+<P>
+
+<A name="POSIX_F_OK"></A>
+<CODE><BIG><B>POSIX_F_OK</B></BIG> = 1</CODE>
+<P>
+
+<A name="POSIX_X_OK"></A>
+<CODE><BIG><B>POSIX_X_OK</B></BIG> = 1</CODE>
+<P>
+
+<A name="POSIX_W_OK"></A>
+<CODE><BIG><B>POSIX_W_OK</B></BIG> = 1</CODE>
+<P>
+
+<A name="POSIX_R_OK"></A>
+<CODE><BIG><B>POSIX_R_OK</B></BIG> = 1</CODE>
+<P>
+
+<A name="POSIX_S_IFREG"></A>
+<CODE><BIG><B>POSIX_S_IFREG</B></BIG> = 1</CODE>
+<P>
+
+<A name="POSIX_S_IFCHR"></A>
+<CODE><BIG><B>POSIX_S_IFCHR</B></BIG> = 1</CODE>
+<P>
+
+<A name="POSIX_S_IFBLK"></A>
+<CODE><BIG><B>POSIX_S_IFBLK</B></BIG> = 1</CODE>
+<P>
+
+<A name="POSIX_S_IFIFO"></A>
+<CODE><BIG><B>POSIX_S_IFIFO</B></BIG> = 1</CODE>
+<P>
+
+<A name="POSIX_S_IFSOCK"></A>
+<CODE><BIG><B>POSIX_S_IFSOCK</B></BIG> = 1</CODE>
+<P>
+
+<A name="posix_kill()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_kill</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$sig)</CODE>
+<P>
+
+<A name="posix_getpid()"></A>
+<CODE><I>int</I> <BIG><B>posix_getpid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_getppid()"></A>
+<CODE><I>int</I> <BIG><B>posix_getppid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_getuid()"></A>
+<CODE><I>int</I> <BIG><B>posix_getuid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_setuid()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_setuid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$uid)</CODE>
+<P>
+
+<A name="posix_geteuid()"></A>
+<CODE><I>int</I> <BIG><B>posix_geteuid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_seteuid()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_seteuid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$uid)</CODE>
+<P>
+
+<A name="posix_getgid()"></A>
+<CODE><I>int</I> <BIG><B>posix_getgid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_setgid()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_setgid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$uid)</CODE>
+<P>
+
+<A name="posix_getegid()"></A>
+<CODE><I>int</I> <BIG><B>posix_getegid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_setegid()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_setegid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$uid)</CODE>
+<P>
+
+<A name="posix_getgroups()"></A>
+<CODE><I>mixed[]</I> <BIG><B>posix_getgroups</B></BIG>()</CODE>
+<P>
+
+<A name="posix_getlogin()"></A>
+<CODE><I>string</I> <BIG><B>posix_getlogin</B></BIG>()</CODE>
+<P>
+
+<A name="posix_getpgrp()"></A>
+<CODE><I>int</I> <BIG><B>posix_getpgrp</B></BIG>()</CODE>
+<P>
+
+<A name="posix_setsid()"></A>
+<CODE><I>int</I> <BIG><B>posix_setsid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_setpgid()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_setpgid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pid,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$pgid)</CODE>
+<P>
+
+<A name="posix_getpgid()"></A>
+<CODE><I>int</I> <BIG><B>posix_getpgid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_getsid()"></A>
+<CODE><I>int</I> <BIG><B>posix_getsid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_uname()"></A>
+<CODE><I>mixed[]</I> <BIG><B>posix_uname</B></BIG>()</CODE>
+<P>
+
+<A name="posix_times()"></A>
+<CODE><I>mixed[]</I> <BIG><B>posix_times</B></BIG>()</CODE>
+<P>
+
+<A name="posix_ctermid()"></A>
+<CODE><I>string</I> <BIG><B>posix_ctermid</B></BIG>()</CODE>
+<P>
+
+<A name="posix_ttyname()"></A>
+<CODE><I>string</I> <BIG><B>posix_ttyname</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fd)</CODE>
+<P>
+
+<A name="posix_isatty()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_isatty</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$fd)</CODE>
+<P>
+
+<A name="posix_getcwd()"></A>
+<CODE><I>string</I> <BIG><B>posix_getcwd</B></BIG>()</CODE>
+<P>
+
+<A name="posix_mkfifo()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_mkfifo</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$pathname,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$mode)</CODE>
+<P>
+
+<A name="posix_getgrnam()"></A>
+<CODE><I>mixed[]</I> <BIG><B>posix_getgrnam</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$groupname)</CODE>
+<P>
+
+<A name="posix_getgrgid()"></A>
+<CODE><I>mixed[]</I> <BIG><B>posix_getgrgid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$gid)</CODE>
+<P>
+
+<A name="posix_getpwnam()"></A>
+<CODE><I>mixed[]</I> <BIG><B>posix_getpwnam</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$groupname)</CODE>
+<P>
+
+<A name="posix_getpwuid()"></A>
+<CODE><I>mixed[]</I> <BIG><B>posix_getpwuid</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$uid)</CODE>
+<P>
+
+<A name="posix_getrlimit()"></A>
+<CODE><I>mixed[]</I> <BIG><B>posix_getrlimit</B></BIG>()</CODE>
+<P>
+
+<A name="posix_get_last_error()"></A>
+<CODE><I>int</I> <BIG><B>posix_get_last_error</B></BIG>()</CODE>
+<P>
+
+<A name="posix_strerror()"></A>
+<CODE><I>string</I> <BIG><B>posix_strerror</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$errno)</CODE>
+<P>
+
+<A name="posix_initgroups()"></A>
+<CODE><I>boolean</I> <BIG><B>posix_initgroups</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$name,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>int</I>&nbsp;$base_group_id)</CODE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>

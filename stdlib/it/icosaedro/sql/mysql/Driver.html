@@ -1,0 +1,93 @@
+<HTML><BODY>
+<H1>Driver</H1>
+<P><B>PHP version:</B> 5</P>
+<P><B>Required modules:</B>
+<a href="../../../../../modules/standard.html"><code>standard</code></a>, <a href="../../../../../modules/spl.html"><code>spl</code></a>, <a href="../../../../../modules/simplexml.html"><code>simplexml</code></a>, <a href="../../../../../modules/dom.html"><code>dom</code></a>, <a href="../../../../../modules/mysqli.html"><code>mysqli</code></a>, <a href="../../../../../modules/pcre.html"><code>pcre</code></a><P>
+<P><B>Required packages:</B>
+<a href="../../../../all.html"><code>all.php</code></a>, <a href="../../../../errors.html"><code>errors.php</code></a>, <a href="../../../../autoload.html"><code>autoload.php</code></a>, <a href="../../../../AutoloadException.html"><code>AutoloadException.php</code></a>, <a href="../../../../cast.html"><code>cast.php</code></a>, <a href="../../phplint/Types.html"><code>Types.php</code></a>, <a href="../../phplint/ArrayBothType.html"><code>ArrayBothType.php</code></a>, <a href="../../phplint/TypeInterface.html"><code>TypeInterface.php</code></a>, <a href="../../containers/Printable.html"><code>Printable.php</code></a>, <a href="../../phplint/ArrayIntType.html"><code>ArrayIntType.php</code></a>, <a href="../../phplint/ArrayStringType.html"><code>ArrayStringType.php</code></a>, <a href="../../phplint/BooleanType.html"><code>BooleanType.php</code></a>, <a href="../../phplint/ClassType.html"><code>ClassType.php</code></a>, <a href="../../phplint/FloatType.html"><code>FloatType.php</code></a>, <a href="../../phplint/IntType.html"><code>IntType.php</code></a>, <a href="../../phplint/NullType.html"><code>NullType.php</code></a>, <a href="../../phplint/ObjectType.html"><code>ObjectType.php</code></a>, <a href="../../phplint/ResourceType.html"><code>ResourceType.php</code></a>, <a href="../../phplint/StringType.html"><code>StringType.php</code></a>, <a href="../../../../CastException.html"><code>CastException.php</code></a>, <a href="../SQLDriverInterface.html"><code>SQLDriverInterface.php</code></a>, <a href="../SQLException.html"><code>SQLException.php</code></a>, <a href="../ResultSet.html"><code>ResultSet.php</code></a>, <a href="../../utils/Integers.html"><code>Integers.php</code></a>, <a href="../../bignumbers/BigInt.html"><code>BigInt.php</code></a>, <a href="../../containers/Comparable.html"><code>Comparable.php</code></a>, <a href="../../containers/Sortable.html"><code>Sortable.php</code></a>, <a href="../../containers/Hashable.html"><code>Hashable.php</code></a>, <a href="../../containers/Hash.html"><code>Hash.php</code></a>, <a href="../../bignumbers/BigFloat.html"><code>BigFloat.php</code></a>, <a href="../../utils/Date.html"><code>Date.php</code></a>, <a href="../PreparedStatement.html"><code>PreparedStatement.php</code></a>, <a href="ResultSet.html"><code>ResultSet.php</code></a>, <a href="PreparedStatement.html"><code>PreparedStatement.php</code></a><P>
+<HR>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/mysql/Driver"></A>
+<pre>class <BIG><B>it\icosaedro\sql\mysql\Driver</B></BIG>
+      |  
+      `--(<i><a href="../SQLDriverInterface.html#it/icosaedro/sql/SQLDriverInterface"><code>it\icosaedro\sql\SQLDriverInterface</code></a></i>)
+</pre>
+<BLOCKQUOTE>
+<P><b>MySQL specific implementation of the <a href="../SQLDriverInterface.html#it/icosaedro/sql/SQLDriverInterface"><code>it\icosaedro\sql\SQLDriverInterface</code></a></b></P><P><B>Version:</B> $Date: 2012/02/01 08:12:30 $</P>
+<P><B>Author:</B> Umberto Salsi &lt;salsi@icosaedro.it&gt;</P>
+<P>
+
+
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+<CODE>{</CODE>
+<BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/mysql/Driver::__construct()"></A>
+<CODE><I>void</I> <BIG><B>__construct</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>mixed[int]</I>&nbsp;$parameters,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$encoding = "UTF8")</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a><BLOCKQUOTE>
+<P><b>Establishes a new client connection with a remote MySQL 4/5 data 		base server</b></P><P>
+<p><b>Parameters:</b>
+<table>
+<tr><td valign=top><b><code>$parameters&nbsp;&nbsp;</code></b></td> <td valign=top>Lists the connection parameters to
+		be sent as arguments to the <a href="../../../../../modules/mysqli.html#mysqli::__construct()"><code>mysqli::__construct()</code></a> method.</td></tr>
+<tr><td valign=top><b><code>$encoding&nbsp;&nbsp;</code></b></td> <td valign=top>Character encoding for every string exchanged
+		by this client connection and the remote server. The default is
+		"UTF-8". All the functions of this library that accept or retrieve
+		strings assume this encoding, unless otherwise specified. Example:
+		<pre>
+		use it\icosaedro\sql\mysql\Driver;
+		$db = new Driver( array("localhost", "theuser", "pass", "dbname") );
+		</pre></td></tr>
+</table>
+</p>
+
+</P>
+</BLOCKQUOTE>
+<PRE>
+
+</PRE>
+
+<A name="it/icosaedro/sql/mysql/Driver::escape()"></A>
+<CODE><I>string</I> <BIG><B>escape</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$str)</CODE>
+
+<BR><I>implements</i> <a href="../SQLDriverInterface.html#it/icosaedro/sql/SQLDriverInterface::escape()"><code>it\icosaedro\sql\SQLDriverInterface</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/Driver::update()"></A>
+<CODE><I>int</I> <BIG><B>update</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>implements</i> <a href="../SQLDriverInterface.html#it/icosaedro/sql/SQLDriverInterface::update()"><code>it\icosaedro\sql\SQLDriverInterface</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/Driver::query()"></A>
+<CODE><I><a href="../ResultSet.html#it/icosaedro/sql/ResultSet"><code>it\icosaedro\sql\ResultSet</code></a></I> <BIG><B>query</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+<br>throws <a href="../SQLException.html#it/icosaedro/sql/SQLException"><code>it\icosaedro\sql\SQLException</code></a>
+<BR><I>implements</i> <a href="../SQLDriverInterface.html#it/icosaedro/sql/SQLDriverInterface::query()"><code>it\icosaedro\sql\SQLDriverInterface</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/Driver::prepareStatement()"></A>
+<CODE><I><a href="../PreparedStatement.html#it/icosaedro/sql/PreparedStatement"><code>it\icosaedro\sql\PreparedStatement</code></a></I> <BIG><B>prepareStatement</B></BIG>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>string</I>&nbsp;$cmd)</CODE>
+
+<BR><I>implements</i> <a href="../SQLDriverInterface.html#it/icosaedro/sql/SQLDriverInterface::prepareStatement()"><code>it\icosaedro\sql\SQLDriverInterface</code></a><P>
+
+<A name="it/icosaedro/sql/mysql/Driver::close()"></A>
+<CODE><I>void</I> <BIG><B>close</B></BIG>()</CODE>
+
+<BR><I>implements</i> <a href="../SQLDriverInterface.html#it/icosaedro/sql/SQLDriverInterface::close()"><code>it\icosaedro\sql\SQLDriverInterface</code></a><P>
+</BLOCKQUOTE>
+<CODE>}</CODE>
+<PRE>
+
+</PRE>
+
+<HR><P align=right><FONT size='-2'>Generated by <a href="http://www.icosaedro.it/phplint/"><code>PHPLint Documentator</code></a></FONT></P>
+</BODY></HTML>
